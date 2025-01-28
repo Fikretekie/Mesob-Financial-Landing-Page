@@ -6,8 +6,8 @@ import bg from "@/images/shapes/welcome-one-shape.png";
 export const welcomeOne = {
   bg,
   videoBg,
-  tagline: "welcome to our agency",
-  title: "Secure & Safe Advices for your Small & Big Businesses",
+  tagline: "welcome to Mesob Financial",
+  title: "Robust and Secure Accounting System for your business ! ",
   counter: [
     {
       id: 1,
@@ -24,19 +24,19 @@ export const welcomeOne = {
   features: [
     {
       id: 1,
-      title: "Wealth \n Management",
+      title: "Truck",
       href: "/consumer-product",
       icon: "icon-wealth",
     },
     {
       id: 2,
-      title: "Audit \n Marketing",
+      title: "Groceries",
       href: "/audit-marketing",
       icon: "icon-data-analytics",
     },
     {
       id: 3,
-      title: "Finance \n Consulting",
+      title: "Services",
       href: "/financial-advice",
       icon: "icon-report",
     },

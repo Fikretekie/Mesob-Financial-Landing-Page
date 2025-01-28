@@ -35,17 +35,17 @@ const footerData = {
     },
     {
       id: 2,
-      text: "Meet our team",
+      // text: "Meet our team",
       href: "/team",
     },
     {
       id: 3,
-      text: "Case stories",
+      // text: "Case stories",
       href: "/case",
     },
     {
       id: 4,
-      text: "Latest news",
+      // text: "Latest news",
       href: "/blog",
     },
     {
@@ -78,7 +78,7 @@ const footerData = {
   address: "60 road, broklyn golden street new york. USA",
   phone: "+1- ( 246 ) 333 - 0079",
   phoneHref: "12463330079",
-  email: "needhelp@company.com",
+  email: "mesob@mesobstore.com",
   author: "Oslim",
   year: new Date().getFullYear(),
 };

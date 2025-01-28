@@ -37,7 +37,7 @@ export const servicesOne = {
     },
     {
       id: 4,
-      title: "Business \n Growth",
+      title: "Truck",
       image: "services-1-4.jpg",
       icon: "icon-mobile-analytics",
       href: "/business-growth",
@@ -45,7 +45,7 @@ export const servicesOne = {
     },
     {
       id: 5,
-      title: "Audit \n Marketing",
+      title: "Groceries",
       image: "services-1-5.jpg",
       icon: "icon-analysis",
       href: "audit-marketing",
@@ -53,7 +53,7 @@ export const servicesOne = {
     },
     {
       id: 6,
-      title: "Financial \n Advice",
+      title: "Services",
       image: "services-1-6.jpg",
       icon: "icon-creative-1",
       href: "/financial-advice",

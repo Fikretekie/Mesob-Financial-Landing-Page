@@ -3,5 +3,5 @@ export const freeConsultation = {
   titleHighlight: "FREE",
   phone: "+1- ( 246 ) 333 - 0079",
   phoneHref: "12463330079",
-  email: "needhelp@company.com",
+  email: "mesob@mesobstore.com",
 };
