@@ -131,7 +131,7 @@ export const serviceDetailsSidebar = {
   title: "Contact with \n us for any \n advice",
   phoneIcon: "icon-phone-call",
   text: "Need help? Talk to an expert",
-  phone: "+1- ( 246 ) 333 - 0079",
+  phone: "+1 (571) 216-3509",
   phoneHref: "12463330079",
 };
 
