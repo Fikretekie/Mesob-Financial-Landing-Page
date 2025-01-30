@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 SwiperCore.use([Autoplay]);
 
+
 const options = {
   spaceBetween: 100,
   slidesPerView: 5,
