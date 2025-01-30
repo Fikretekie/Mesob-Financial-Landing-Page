@@ -11,9 +11,8 @@ const SingleSlideOne = ({ slider = {}, showShape = false }) => {
       <div
         className="image-layer"
         style={{
-          backgroundImage: `url(${
-            require(`@/images/backgrounds/${bg}`).default.src
-          })`,
+          backgroundImage: `url(${require(`@/images/backgrounds/${bg}`).default.src
+            })`,
         }}
       ></div>
 

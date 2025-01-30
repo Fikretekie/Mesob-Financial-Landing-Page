@@ -1,4 +1,4 @@
-import bg from "@/images/backgrounds/main-slider-3-bg.jpg";
+import bg from "../assets/images/backgrounds/main-slider-3-bg.jpg";
 
 export const mainSlider = [
   {
