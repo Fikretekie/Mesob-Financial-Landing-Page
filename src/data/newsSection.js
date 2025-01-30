@@ -1,4 +1,4 @@
-import image from "@/images/blog/news-details-img-1.jpg";
+import image from "../assets/images/blog/news1.jpg";
 import { inputs } from "./contact";
 import { socials } from "./teamSection";
 
@@ -8,7 +8,7 @@ export const newsOne = {
   newsData: [
     {
       id: 1,
-      image: "news-1-1.jpg",
+      image: "news1.jpg",
       subtitle: "finance",
       title: "Accounting Support During the Exponential Growth",
       date: "20 Oct, 2022",
@@ -16,7 +16,7 @@ export const newsOne = {
     },
     {
       id: 2,
-      image: "news-1-2.jpg",
+      image: "news2.jpg",
       subtitle: "finance",
       title: "Taking seamless key performance indicators offline",
       date: "20 Oct, 2022",
@@ -24,7 +24,7 @@ export const newsOne = {
     },
     {
       id: 3,
-      image: "news-1-3.jpg",
+      image: "news3.jpg",
       subtitle: "finance",
       title: "Competently parallel task fully researched data and",
       date: "20 Oct, 2022",
@@ -32,7 +32,7 @@ export const newsOne = {
     },
     {
       id: 4,
-      image: "news-1-4.jpg",
+      image: "news4.jpg",
       subtitle: "finance",
       title: "Competently parallel task fully researched data and",
       date: "20 Oct, 2022",
@@ -40,7 +40,7 @@ export const newsOne = {
     },
     {
       id: 5,
-      image: "news-1-5.jpg",
+      image: "news5.jpg",
       subtitle: "finance",
       title: "Competently parallel task fully researched data and",
       date: "20 Oct, 2022",
@@ -48,7 +48,7 @@ export const newsOne = {
     },
     {
       id: 6,
-      image: "news-1-6.jpg",
+      image: "news6.jpg",
       subtitle: "finance",
       title: "Competently parallel task fully researched data and",
       date: "20 Oct, 2022",
@@ -61,7 +61,7 @@ export const newsSidebar = {
   newses: [
     {
       id: 1,
-      image: "news-sidebar-img-1.jpg",
+      image: "news1.jpg",
       subtitle: "finance",
       date: "20 Oct, 2022",
       comments: 2,
@@ -70,7 +70,7 @@ export const newsSidebar = {
     },
     {
       id: 2,
-      image: "news-sidebar-img-2.jpg",
+      image: "news2.jpg",
       subtitle: "finance",
       date: "20 Oct, 2022",
       comments: 2,
@@ -79,7 +79,7 @@ export const newsSidebar = {
     },
     {
       id: 3,
-      image: "news-sidebar-img-3.jpg",
+      image: "new31.jpg",
       subtitle: "finance",
       date: "20 Oct, 2022",
       comments: 2,
@@ -88,7 +88,7 @@ export const newsSidebar = {
     },
     {
       id: 4,
-      image: "news-sidebar-img-4.jpg",
+      image: "new41.jpg",
       subtitle: "finance",
       date: "20 Oct, 2022",
       comments: 2,
@@ -102,19 +102,19 @@ export const newsSidebarSide = {
   posts: [
     {
       id: 1,
-      image: "lp-1-1.jpg",
+      image: "news5.jpg",
       date: "20 Oct, 2022",
       title: "Integer tristique odio vitae lorem gra",
     },
     {
       id: 1,
-      image: "lp-1-2.jpg",
+      image: "news6.jpg",
       date: "20 Oct, 2022",
       title: "Integer tristique odio vitae lorem gra",
     },
     {
       id: 1,
-      image: "lp-1-3.jpg",
+      image: "news5.jpg",
       date: "20 Oct, 2022",
       title: "Integer tristique odio vitae lorem gra",
     },

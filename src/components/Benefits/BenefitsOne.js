@@ -1,7 +1,7 @@
-import { benefitsOne } from "@/data/benefits";
-import React, { useState } from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Col, Container, Row, Image } from "react-bootstrap";
 import Title from "../Reuseable/Title";
+import { benefitsOne } from "@/data/benefits";
 
 const { tagline, title, images, points, rightText, faqs } = benefitsOne;
 
@@ -9,6 +9,24 @@ const faqsLength = faqs.length;
 
 const BenefitsOne = () => {
   const [faqActive, setFaqsActive] = useState(1);
+  const [imageSources, setImageSources] = useState({});
+
+  useEffect(() => {
+    const loadImages = async () => {
+      const sources = {};
+      for (const image of images) {
+        try {
+          const img = await import(`@/images/case/${image}`);
+          sources[image] = img.default.src;
+        } catch (error) {
+          console.error(`Error loading image: ${image}`, error);
+        }
+      }
+      setImageSources(sources);
+    };
+
+    loadImages();
+  }, []);
 
   return (
     <section className="benefits-one">
@@ -19,15 +37,16 @@ const BenefitsOne = () => {
               <Title title={title} tagline={tagline} className="text-left" />
               <div className="benefits-one__img-box">
                 <Row>
-                  {images.map((image, i) => (
-                    <Col key={i} xl={6} lg={6} md={6}>
+                  {images.map((image, index) => (
+                    <Col key={index} xl={6} lg={6} md={6}>
                       <div className="benefits-one__img-single">
-                        <Image
-                          src={
-                            require(`@/images/resources/${image}`).default.src
-                          }
-                          alt=""
-                        />
+                        {imageSources[image] && (
+                          <Image
+                            src={imageSources[image]}
+                            alt={`Benefit Image ${index + 1}`}
+                            fluid
+                          />
+                        )}
                       </div>
                     </Col>
                   ))}
@@ -49,7 +68,7 @@ const BenefitsOne = () => {
             </div>
           </Col>
           <Col xl={6} lg={6}>
-            <div className="benefits-one__rihgt">
+            <div className="benefits-one__right">
               <p className="benefits-one__right-text">{rightText}</p>
               <div className="accrodion-grp faq-one-accrodion">
                 {faqs.map(({ id, title, text }) => (

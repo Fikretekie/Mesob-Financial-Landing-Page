@@ -1,4 +1,4 @@
-import bg from "@/images/backgrounds/our-mission-bg.jpg";
+import bg from "../assets/images/case/case6.jpg";
 
 export const ourMission = {
   bg,

@@ -1,7 +1,7 @@
 export const benefitsOne = {
   tagline: "Our benefits",
   title: "Modern Technologies For Grow Business",
-  images: ["benefits-one-1.jpg", "benefits-one-2.jpg"],
+  images: ["case4.jpg", "case5.jpg"],
   points: [
     {
       id: 1,

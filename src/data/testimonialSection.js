@@ -1,11 +1,11 @@
-import quote from "@/images/icon/quote-icon.png";
-import quote2 from "@/images/icon/testimonial-3-quote-icon.png";
+import quote from "../assets/images/team/team1.jpg";
+import quote2 from "../assets/images/team/team2.jpg";
 
 export const testimonialOne = [
   {
     id: 1,
     quote,
-    image: "testimonial-1-client-img-1.jpg",
+    image: "team1.jpg",
     text: "This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. Duis aute lorem ipsum is simply free text irure dolor in reprehenderit in esse nulla pariatur.",
     name: "Aleesha Brown",
     title: "Customers",
@@ -13,7 +13,7 @@ export const testimonialOne = [
   {
     id: 2,
     quote,
-    image: "testimonial-1-client-img-2.jpg",
+    image: "team2.jpg",
     text: "This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. Duis aute lorem ipsum is simply free text irure dolor in reprehenderit in esse nulla pariatur.",
     name: "Aleesha Brown",
     title: "Customers",
@@ -21,7 +21,7 @@ export const testimonialOne = [
   {
     id: 3,
     quote,
-    image: "testimonial-1-client-img-3.jpg",
+    image: "team3.jpg",
     text: "This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. Duis aute lorem ipsum is simply free text irure dolor in reprehenderit in esse nulla pariatur.",
     name: "Aleesha Brown",
     title: "Customers",
@@ -35,7 +35,7 @@ export const testimonialThree = {
     {
       id: 1,
       text: "I was impresed by the company services, not lorem ipsum is simply free text of used. Neque porro est qui dolorem ipsum quia.",
-      image: "testimonial-3-client-img-1.jpg",
+      image: "team1.jpg",
       name: "Christine Rose",
       title: "Customer",
       quote: quote2,
@@ -43,7 +43,7 @@ export const testimonialThree = {
     {
       id: 2,
       text: "I was impresed by the company services, not lorem ipsum is simply free text of used. Neque porro est qui dolorem ipsum quia.",
-      image: "testimonial-3-client-img-2.jpg",
+      image: "team4.jpg",
       name: "Mike Hardson",
       title: "Customer",
       quote: quote2,
@@ -51,7 +51,7 @@ export const testimonialThree = {
     {
       id: 3,
       text: "I was impresed by the company services, not lorem ipsum is simply free text of used. Neque porro est qui dolorem ipsum quia.",
-      image: "testimonial-3-client-img-3.png",
+      image: "team3.jpg",
       name: "Christine Rose",
       title: "Customer",
       quote: quote2,
@@ -59,7 +59,7 @@ export const testimonialThree = {
     {
       id: 4,
       text: "I was impresed by the company services, not lorem ipsum is simply free text of used. Neque porro est qui dolorem ipsum quia.",
-      image: "testimonial-3-client-img-4.png",
+      image: "team4.jpg",
       name: "Mike Hardson",
       title: "Customer",
       quote: quote2,
@@ -67,7 +67,7 @@ export const testimonialThree = {
     {
       id: 5,
       text: "I was impresed by the company services, not lorem ipsum is simply free text of used. Neque porro est qui dolorem ipsum quia.",
-      image: "testimonial-3-client-img-5.png",
+      image: "team5.jpg",
       name: "Mike Hardson",
       title: "Customer",
       quote: quote2,
@@ -75,7 +75,7 @@ export const testimonialThree = {
     {
       id: 6,
       text: "I was impresed by the company services, not lorem ipsum is simply free text of used. Neque porro est qui dolorem ipsum quia.",
-      image: "testimonial-3-client-img-6.png",
+      image: "team6.jpg",
       name: "Mike Hardson",
       title: "Customer",
       quote: quote2,

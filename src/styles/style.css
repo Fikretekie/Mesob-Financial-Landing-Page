@@ -8744,7 +8744,7 @@ input[type="search"]::-webkit-search-results-decoration {
   display: block;
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.05);
-  padding: 93px 100px 87px;
+  /* padding: 93px 100px 87px; */
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }

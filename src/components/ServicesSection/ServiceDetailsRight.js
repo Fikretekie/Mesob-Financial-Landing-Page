@@ -4,8 +4,18 @@ import Faqs from "../FAQsPage/Faqs";
 import SingleHowHelp from "./SingleHowHelp";
 
 const ServiceDetailsRight = ({ service = {} }) => {
-  const { image, icon, title, text, text2, text3, contents, howHelps, faqs } =
-    service;
+  const {
+    image,
+    icon,
+    title,
+    title2,
+    text,
+    text2,
+    text3,
+    contents,
+    howHelps,
+    faqs,
+  } = service;
 
   return (
     <div className="service-details__right">
@@ -17,7 +27,7 @@ const ServiceDetailsRight = ({ service = {} }) => {
           <div className="service-details__title-icon">
             <span className={icon}></span>
           </div>
-          <h3 className="service-details__title">{title}</h3>
+          <h3 className="service-details__title">{title2}</h3>
         </div>
         <p className="service-details__text-1">{text}</p>
         <p className="service-details__text-2">{text2}</p>

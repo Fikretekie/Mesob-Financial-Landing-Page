@@ -1,23 +1,23 @@
-import image from "@/images/case/case-details-img-1.jpg";
+import image from "../assets/images/case/case1.jpg";
 
 export const cases = [
   {
     id: 1,
-    image: "case-1-1.jpg",
+    image: "case1.jpg",
     image2: "case-3-1.jpg",
     tagline: "leadership",
     title: "Businesses \n Growth",
   },
   {
     id: 2,
-    image: "case-1-2.jpg",
+    image: "case2.jpg",
     image2: "case-3-2.jpg",
     tagline: "Management",
     title: "Marketing \n Advice",
   },
   {
     id: 3,
-    image: "case-1-3.jpg",
+    image: "case3.jpg",
     image2: "case-3-3.jpg",
     tagline: "strategy",
     title: "Finance \n Consulting",

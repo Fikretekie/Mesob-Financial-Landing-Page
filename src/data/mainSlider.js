@@ -1,21 +1,21 @@
-import bg from "../assets/images/backgrounds/main-slider-3-bg.jpg";
+import bg from "../assets/images/backgrounds/main.jpg";
 
 export const mainSlider = [
   {
     id: 1,
-    bg: "main-slider-1-1.jpg",
+    bg: "main.jpg",
     title: "Award \n winning \n consulting",
     href: "/about",
   },
   {
     id: 2,
-    bg: "main-slider-1-2.jpg",
+    bg: "main.jpg",
     title: "Award \n winning \n consulting",
     href: "/about",
   },
   {
     id: 3,
-    bg: "main-slider-1-3.jpg",
+    bg: "main.jpg",
     title: "Award \n winning \n consulting",
     href: "/about",
   },
@@ -24,19 +24,19 @@ export const mainSlider = [
 export const mainSliderTwo = [
   {
     id: 1,
-    bg: "main-slider-2-1.jpg",
+    bg: "main.jpg",
     title: "Provides quality \n consultancy",
     href: "/about",
   },
   {
     id: 2,
-    bg: "main-slider-2-2.jpg",
+    bg: "main.jpg",
     title: "Provides quality \n consultancy",
     href: "/about",
   },
   {
     id: 3,
-    bg: "main-slider-2-3.jpg",
+    bg: "main.jpg",
     title: "Provides quality \n consultancy",
     href: "/about",
   },

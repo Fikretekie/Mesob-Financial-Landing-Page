@@ -1,8 +1,8 @@
-import image1 from "@/images/resources/work-together-img-1.jpg";
-import image2 from "@/images/resources/work-together-img-2.jpg";
-import parsonImage from "@/images/resources/work-together-person-img.jpg";
-import image3 from "@/images/resources/work-together-two-img-1.jpg";
-import shape from "@/images/shapes/work-together-shape-1.png";
+import image1 from "../assets/images/backgrounds/main.jpg";
+import image2 from "../assets/images/backgrounds/main.jpg";
+import parsonImage from "../assets/images/backgrounds/main.jpg";
+import image3 from "../assets/images/backgrounds/main.jpg";
+import shape from "../assets/images/backgrounds/main.jpg";
 
 export const workTogether = {
   shape,

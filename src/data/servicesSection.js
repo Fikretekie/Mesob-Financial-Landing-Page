@@ -98,7 +98,7 @@ export const servicesTwo = {
     {
       id: 5,
       icon: "icon-verification",
-      title: "business growth",
+      title: "Trucking",
       href: "/consumer-product",
       text: "Lorem ipsum is are \n many variations of \n pass of majority.",
     },
@@ -137,11 +137,9 @@ export const serviceDetailsSidebar = {
 
 const commonServiceDerails = {
   icon: "icon-global",
-  text: "Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Aelltes port lacus quis enim var sed efficitur turpis gilla sed sit amet finibus eros. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ndustry standard dummy text ever since the 1500s.",
-  text2:
-    "It has survived not only five centuries. Lorem Ipsum is simply dummy text of the new design printng and type setting Ipsum take a look at our round. When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.",
-  text3:
-    "When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. Lorem Ipsum has been the ndustry standard dummy text ever since the 1500s. It has survived not only five centuries, but also the leap into electronic typesetting.",
+  title2: "Welcome to Mesob Financial – Simple Accounting for Truck Owners",
+  text: "Managing your trucking finances is easy with Mesob Financial. Enter your financial details directly on our website and keep track of income, expenses, and balances effortlessly.",
+
   contents: [
     "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
     "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
@@ -185,7 +183,7 @@ export const bankingAdvising = {
 
 export const businessGrowth = {
   image: image4,
-  title: "Business Growth",
+  title: "Trucking",
   ...commonServiceDerails,
 };
 

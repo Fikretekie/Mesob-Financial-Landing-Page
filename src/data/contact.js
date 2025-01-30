@@ -1,4 +1,4 @@
-import bg from "@/images/shapes/contact-one-shape.png";
+import bg from "../assets/images/backgrounds/bac.jpg";
 
 export const inputs = [
   {
@@ -78,8 +78,10 @@ export const contactPage = {
 
 export const contactDetails = {
   title: "Get in Touch",
-  text: "Nulla quis commodo ligula. Curabitur bibendum ante at nibh lobortis, nec volutpat mauris faucibus.",
-  address: "60 Road Broklyn Golden Street of New York. USA",
+  text: `
+We’re delivering the best
+customer experience`,
+  address: "",
   contactIcon: "icon-phone1",
   ...common,
 };
