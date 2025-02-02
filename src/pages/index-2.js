@@ -11,7 +11,7 @@ import NewsOne from "@/components/NewsSection/NewsOne";
 import OurMissionTwo from "@/components/OurMission/OurMissionTwo";
 import QualityWork from "@/components/QualityWork/QualityWork";
 import ServicesOne from "@/components/ServicesSection/ServicesOne";
-import TestimonialOne from "@/components/TestimonialSection/TestimonialOne";
+// import TestimonialOne from "@/components/TestimonialSection/TestimonialOne";
 import WelcomeTwo from "@/components/WelcomeSection/WelcomeTwo";
 import WhyChooseOne from "@/components/WhyChoose/WhyChooseOne";
 import { mainSliderTwo } from "@/data/mainSlider";
@@ -31,7 +31,7 @@ const Home2 = () => {
       <QualityWork />
       <Experience />
       <ServicesOne serviceCount={3} />
-      <TestimonialOne className="testimonial-two" />
+      {/* <TestimonialOne className="testimonial-two" /> */}
       <BrandOne />
       <WhyChooseOne />
       <OurMissionTwo />

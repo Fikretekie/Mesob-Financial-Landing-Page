@@ -1,4 +1,4 @@
-import { testimonialOne } from "@/data/testimonialSection";
+// import { testimonialOne } from "@/data/testimonialSection";
 import useActive from "@/hooks/useActive";
 import dynamic from "next/dynamic";
 import React from "react";

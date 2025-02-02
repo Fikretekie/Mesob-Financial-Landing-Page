@@ -8,7 +8,7 @@ import QualityWork from "@/components/QualityWork/QualityWork";
 // import PageHeader from "@/components/Reuseable/PageHeader";
 import PageHeader from "../../src/components/Reuseable/PageHeader";
 import TeamOne from "@/components/TeamSection/TeamOne";
-import TestimonialOne from "@/components/TestimonialSection/TestimonialOne";
+// import TestimonialOne from "@/components/TestimonialSection/TestimonialOne";
 import WorkTogetherTwo from "@/components/WorkTogether/WorkTogetherTwo";
 import React from "react";
 
@@ -22,7 +22,7 @@ const About = () => {
       <QualityWork />
       <OurMissionTwo className="our-mission-three" shape={1} />
       <TeamOne />
-      <TestimonialOne className="testimonial-two" />
+      {/* <TestimonialOne className="testimonial-two" /> */}
       <BrandOne />
       <CtaOne />
     </Layout>

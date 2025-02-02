@@ -11,7 +11,7 @@ import NewsOne from "@/components/NewsSection/NewsOne";
 import OurMissionTwo from "@/components/OurMission/OurMissionTwo";
 import QualityWork from "@/components/QualityWork/QualityWork";
 import ServicesOne from "@/components/ServicesSection/ServicesOne";
-import TestimonialOne from "@/components/TestimonialSection/TestimonialOne";
+// import TestimonialOne from "@/components/TestimonialSection/TestimonialOne";
 import WelcomeTwo from "@/components/WelcomeSection/WelcomeTwo";
 import WhyChooseOne from "@/components/WhyChoose/WhyChooseOne";
 import { onePageNavItemsTwo } from "@/data/headerData";
@@ -37,7 +37,7 @@ const Home2OnePage = () => {
       <QualityWork />
       <Experience />
       <ServicesOne id="services" serviceCount={3} />
-      <TestimonialOne className="testimonial-two" id="testimonial" />
+      {/* <TestimonialOne className="testimonial-two" id="testimonial" /> */}
       <BrandOne />
       <WhyChooseOne />
       <OurMissionTwo />

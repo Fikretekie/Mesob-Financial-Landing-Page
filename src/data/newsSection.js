@@ -77,24 +77,6 @@ export const newsSidebar = {
       title: "Vivamus mattis Tristique Blandit vel Iaculis leo",
       text: "There are not many of passages of lorem ipsum available alteration in some form. Donec scelerisque dolor id nunc dictum, interdum gravida.",
     },
-    {
-      id: 3,
-      image: "new31.jpg",
-      subtitle: "finance",
-      date: "20 Oct, 2022",
-      comments: 2,
-      title: "Curabitur Scelerisque mi Porta justo porta",
-      text: "There are not many of passages of lorem ipsum available alteration in some form. Donec scelerisque dolor id nunc dictum, interdum gravida.",
-    },
-    {
-      id: 4,
-      image: "new41.jpg",
-      subtitle: "finance",
-      date: "20 Oct, 2022",
-      comments: 2,
-      title: "Pellentesque Pharetra Ornare dui, non Malesuada",
-      text: "There are not many of passages of lorem ipsum available alteration in some form. Donec scelerisque dolor id nunc dictum, interdum gravida.",
-    },
   ],
 };
 
