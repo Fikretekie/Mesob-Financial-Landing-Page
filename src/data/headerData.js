@@ -98,9 +98,7 @@ export const onePageNavItemsThree = [
   },
 ];
 
-export const servicesSubNavItems = [
-
-];
+export const servicesSubNavItems = [];
 
 export const navItems = [
   home,
@@ -114,7 +112,6 @@ export const navItems = [
     id: 3,
     name: "About",
     href: "/about",
-
   },
 
   {
@@ -150,10 +147,10 @@ const socials = [
 const headerData = {
   logo,
   navItems,
-  callText: "Need help? Talk to an expert",
-  phone: "+1 (571) 216-3509",
-  phoneHref: "12463330079",
-  email: "needhelp@oslim.com",
+  loginButton: {
+    text: "Login",
+    href: "https://app.mesobfinancial.com",
+  },
   socials,
 };
 

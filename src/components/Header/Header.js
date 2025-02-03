@@ -2,11 +2,11 @@ import { useRootContext } from "@/context/context";
 import headerData from "@/data/headerData";
 import useScroll from "@/hooks/useScroll";
 import React from "react";
-import { Image } from "react-bootstrap";
+import { Image, Button } from "react-bootstrap";
 import Link from "../Reuseable/Link";
 import MenuList from "./MenuList";
 
-const { logo, navItems: items, callText, phone, phoneHref } = headerData;
+const { logo, navItems: items, loginButton } = headerData;
 
 const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
   const { scrollTop } = useScroll(100);
@@ -22,7 +22,9 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
     document.body.classList.toggle("locked");
     toggleMenu();
   };
-
+  const handleLogin = () => {
+    window.location.href = loginButton.href;
+  };
   return (
     <header className="main-header clearfix">
       <nav
@@ -51,16 +53,10 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
             </div>
           </div>
           <div className="main-menu-wrapper__right">
-            <div className="main-menu-wrapper__call">
-              <div className="main-menu-wrapper__call-icon">
-                <span className="icon-phone-call"></span>
-              </div>
-              <div className="main-menu-wrapper__call-number">
-                <p>{callText}</p>
-                <h5>
-                  <a href={`tel:${phoneHref}`}>{phone}</a>
-                </h5>
-              </div>
+            <div className="main-menu-wrapper__login">
+              <Button onClick={handleLogin} variant="primary">
+                {loginButton.text}
+              </Button>
             </div>
             <div className="main-menu-wrapper__search-cat">
               <a

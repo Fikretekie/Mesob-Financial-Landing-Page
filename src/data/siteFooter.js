@@ -1,10 +1,11 @@
-import logo from "@/images/resources/logo-1.png";
+// import logo from "@/images/resources/logo-1.png";
 import bg from "@/images/shapes/site-footer-shape-1.png";
 
 const footerData = {
   bg,
-  logo,
-  aboutText: "Great Experience for Building Customers & Businesses",
+  text: "Mesob Financial",
+  aboutText:
+    "Empowering Growth: Tracking, Taxes, and Financial Success in the USA",
   socials: [
     {
       id: 1,
@@ -55,7 +56,7 @@ const footerData = {
     },
     {
       id: 6,
-      text: "Support",
+      // text: "Support",
       href: "/about",
     },
     {
@@ -70,16 +71,16 @@ const footerData = {
     },
     {
       id: 9,
-      text: "Help",
+      // text: "Help",
       href: "/about",
     },
   ],
-  newsletterText: "Subsrcibe for our upcoming latest articles and resources",
-  address: "60 road, broklyn golden street new york. USA",
+  // newsletterText: "Subsrcibe for our upcoming latest articles and resources",
+  // address: "60 road, broklyn golden street new york. USA",
   phone: "+1 (571) 216-3509",
   phoneHref: "12463330079",
   email: "mesob@mesobstore.com",
-  author: "Oslim",
+  author: "Mesob Financial",
   year: new Date().getFullYear(),
 };
 

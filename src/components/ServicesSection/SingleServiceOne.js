@@ -9,7 +9,7 @@ const SingleServiceOne = ({ service = {} }) => {
   return (
     <div className="services-one__single">
       <div className="services-one__img">
-        <Image src={require(`@/images/services/${image}`).default.src} alt="" />
+        <Image src={image} alt="" />
       </div>
       <div className="services-one__content">
         <div className="services-one__title-box">

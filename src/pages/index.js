@@ -17,7 +17,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <Layout pageTitle="Home One">
+    <Layout pageTitle="Mesob Financial">
       <Header />
       {/* <MainSlider sliders={mainSlider} showShape /> */}
       <WelcomeOne />

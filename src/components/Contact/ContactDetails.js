@@ -15,7 +15,7 @@ const ContactDetails = () => {
               className="contact-details__inner"
               style={{
                 display: "flex",
-                justifyContent: "center",
+                justifyContent: "left",
                 alignItems: "center",
               }}
             >

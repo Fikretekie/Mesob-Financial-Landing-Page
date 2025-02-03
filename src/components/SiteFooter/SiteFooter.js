@@ -5,7 +5,7 @@ import Link from "../Reuseable/Link";
 
 const {
   bg,
-  logo,
+  text,
   aboutText,
   author,
   year,
@@ -34,11 +34,18 @@ const SiteFooter = ({ footerClassName = "" }) => {
         ></div>
         <Container>
           <Row>
-            <Col xl={3} lg={6} md={6} className="animated fadeInUp">
+            <Col xl={4} lg={6} md={6} className="animated fadeInUp">
               <div className="footer-widget__column footer-widget__about">
                 <div className="footer-widget__logo">
-                  <Link href="/">
-                    <Image src={logo.src} alt="" />
+                  <Link
+                    style={{
+                      color: "white",
+                      fontWeight: "bold",
+                      fontSize: "26px",
+                    }}
+                    href="/"
+                  >
+                    {text}
                   </Link>
                 </div>
                 <div className="footer-widget__about-text-box">
@@ -53,7 +60,7 @@ const SiteFooter = ({ footerClassName = "" }) => {
                 </div>
               </div>
             </Col>
-            <Col xl={3} lg={6} md={6} className="animated fadeInUp">
+            <Col xl={4} lg={6} md={6} className="animated fadeInUp">
               <div className="footer-widget__column footer-widget__explore clearfix">
                 <h3 className="footer-widget__title">Explore</h3>
                 <ul className="footer-widget__explore-list list-unstyled clearfix">
@@ -72,7 +79,7 @@ const SiteFooter = ({ footerClassName = "" }) => {
                 </ul>
               </div>
             </Col>
-            <Col xl={3} lg={6} md={6} className="animated fadeInUp">
+            {/* <Col xl={3} lg={6} md={6} className="animated fadeInUp">
               <div className="footer-widget__column footer-widget__newsletter-box clearfix">
                 <h3 className="footer-widget__title">Newsletter</h3>
                 <p className="footer-widget__newsletter-text">
@@ -98,8 +105,8 @@ const SiteFooter = ({ footerClassName = "" }) => {
                   </div>
                 </form>
               </div>
-            </Col>
-            <Col xl={3} lg={6} md={6} className="animated fadeInUp">
+            </Col> */}
+            <Col xl={4} lg={6} md={6} className="animated fadeInUp">
               <div className="footer-widget__column footer-widget__contact clearfix">
                 <h3 className="footer-widget__title">Contact</h3>
                 <p className="footer-widget__contact-text">{address}</p>

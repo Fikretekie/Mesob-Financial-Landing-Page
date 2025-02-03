@@ -25,7 +25,12 @@ const WorkTogetherTwo = () => {
                 <div className="work-together-tow__icon">
                   <span className={icon}></span>
                 </div>
-                <h3 className="work-together-tow__text">{text}</h3>
+                <h3
+                  style={{ color: "black" }}
+                  className="work-together-tow__text"
+                >
+                  {text}
+                </h3>
               </div>
               <p className="work-together-tow__text-2">{text2}</p>
               <Link href="/about" className="thm-btn work-together-tow__btn">

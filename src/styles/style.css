@@ -8741,20 +8741,26 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .contact-details__content {
   position: relative;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.05);
-  /* padding: 93px 100px 87px; */
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+  /* padding: 93px 100px 87px; */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .contact-details__title-box {
   position: relative;
-  display: block;
-  border-bottom: 1px solid #dcdce0;
-  padding-bottom: 37px;
-  margin-bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+  max-width: 45%;
 }
 
 .contact-details__title {
@@ -8778,11 +8784,7 @@ input[type="search"]::-webkit-search-results-decoration {
   line-height: 30px;
 }
 
-.contact-details__contact-info {
-  position: relative;
-  display: flex;
-  margin-top: 40px;
-}
+ 
 
 .contact-details__contact-icon {
   position: relative;
