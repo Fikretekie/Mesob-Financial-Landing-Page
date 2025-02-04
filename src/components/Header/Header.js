@@ -28,16 +28,14 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
   return (
     <header className="main-header clearfix">
       <nav
-        className={`${
-          scrollTop
-            ? "stricky-header stricked-menu stricky-fixed slideInDown"
-            : "slideIn"
-        } main-menu ${mainMenuClass} animated clearfix`}
+        className={`${scrollTop
+          ? "stricky-header stricked-menu stricky-fixed slideInDown"
+          : "slideIn"
+          } main-menu ${mainMenuClass} animated clearfix`}
       >
         <div
-          className={`main-menu-wrapper clearfix${
-            scrollTop ? " sticky-header__content" : ""
-          }`}
+          className={`main-menu-wrapper clearfix${scrollTop ? " sticky-header__content" : ""
+            }`}
         >
           <div className="main-menu-wrapper__left">
             <div className="main-menu-wrapper__logo">
@@ -57,10 +55,11 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
               <Button
                 onClick={handleLogin}
                 style={{
-                  padding: "10px 20px",
+                  padding: "6px 20px",
                   backgroundColor: "#ff613c",
                   color: "white",
-                  borderRadius: "8px",
+                  borderRadius: "10px",
+                  marginRight: 30,
                   border: "none",
                   cursor: "pointer",
                 }}
