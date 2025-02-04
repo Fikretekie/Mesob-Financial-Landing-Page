@@ -46,7 +46,17 @@ const HeaderTwo = ({ navItems = items, onePage = false }) => {
             </div>
             <div className="main-header-two__top-right">
               <div className="main-header-two__top__login">
-                <Button onClick={handleLogin} variant="primary">
+                <Button
+                  onClick={handleLogin}
+                  style={{
+                    padding: "12px 20px",
+                    backgroundColor: "#ff613c",
+                    color: "white",
+                    borderRadius: "8px",
+                    border: "none",
+                    cursor: "pointer",
+                  }}
+                >
                   {loginButton.text}
                 </Button>
               </div>

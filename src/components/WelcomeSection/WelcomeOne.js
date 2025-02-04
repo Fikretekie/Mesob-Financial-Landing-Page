@@ -8,7 +8,7 @@ import VideoModal from "../Reuseable/VideoModal";
 import VisibilityCountUp from "../Reuseable/VisibilityCountUp";
 import SingleFeatureOne from "./SingleFeatureOne";
 
-const { tagline, title, counter, bg, videoBg, videoId, bottomText, features } =
+const { tagline, title, bg, videoBg, videoId, bottomText, features } =
   welcomeOne;
 
 const WelcomeOne = ({ id = "" }) => {
@@ -38,7 +38,7 @@ const WelcomeOne = ({ id = "" }) => {
               <Col xl={6} lg={6}>
                 <div className="welcome-one__top-right">
                   <div className="welcome-one__counter">
-                    <ul className="welcome-one__counter-list list-unstyled">
+                    {/* <ul className="welcome-one__counter-list list-unstyled">
                       {counter.map(({ id, text, count }) => (
                         <li
                           key={id}
@@ -50,7 +50,7 @@ const WelcomeOne = ({ id = "" }) => {
                           <p className="welcome-one__counter-text">{text}</p>
                         </li>
                       ))}
-                    </ul>
+                    </ul> */}
                   </div>
                   <div
                     className="welcome-one__video-link animated fadeInRight"

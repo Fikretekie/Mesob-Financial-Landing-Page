@@ -8,18 +8,18 @@ export const welcomeOne = {
   videoBg,
   tagline: "welcome to Mesob Financial",
   title: "Robust and Secure Accounting System for your business ! ",
-  counter: [
-    {
-      id: 1,
-      text: "Happy Customers",
-      count: 962,
-    },
-    {
-      id: 2,
-      text: "Completed Cases",
-      count: 882,
-    },
-  ],
+  // counter: [
+  //   {
+  //     id: 1,
+  //     text: "Happy Customers",
+  //     count: 962,
+  //   },
+  //   {
+  //     id: 2,
+  //     text: "Completed Cases",
+  //     count: 882,
+  //   },
+  // ],
   videoId: "Get7rqXYrbQ",
   features: [
     {

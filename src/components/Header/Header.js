@@ -54,7 +54,17 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
           </div>
           <div className="main-menu-wrapper__right">
             <div className="main-menu-wrapper__login">
-              <Button onClick={handleLogin} variant="primary">
+              <Button
+                onClick={handleLogin}
+                style={{
+                  padding: "10px 20px",
+                  backgroundColor: "#ff613c",
+                  color: "white",
+                  borderRadius: "8px",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
                 {loginButton.text}
               </Button>
             </div>
