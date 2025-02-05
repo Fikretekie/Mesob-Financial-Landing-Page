@@ -62,12 +62,12 @@ const footerData = {
     {
       id: 7,
       text: "Terms of use",
-      href: "/about",
+      href: "/terms-of-use",
     },
     {
       id: 8,
       text: "Privacy policy",
-      href: "/about",
+      href: "/privacy-policy",
     },
     {
       id: 9,

@@ -430,8 +430,8 @@ input[type="search"]::-webkit-search-results-decoration {
 .main-header {
   background: transparent;
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   width: 100%;
   z-index: 999;
   transition: all 500ms ease;
@@ -445,6 +445,7 @@ input[type="search"]::-webkit-search-results-decoration {
   height: 1px;
   content: "";
   background-color: rgba(var(--oslim-white-rgb), 0.1);
+  /* Subtle bottom border effect */
   z-index: -1;
 }
 
@@ -461,28 +462,47 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .main-menu-wrapper__left {
   position: relative;
-  display: block;
+  display: flex;
+  /* Use flexbox for better alignment */
+  align-items: center;
+  /* Align content vertically with the logo */
   float: left;
+  /* Keep the left alignment */
+}
+
+.main-menu-wrapper__logo img {
+  height: 90px;
+  /* Larger logo size */
+  width: auto;
+  /* Maintain aspect ratio */
+  object-fit: contain;
+  /* Ensure full image visibility */
 }
 
 .main-menu-wrapper__logo {
   position: relative;
   float: left;
-  padding-top: 36px;
-  padding-bottom: 36px;
+  padding-top: 0;
+  /* Remove unnecessary padding */
+  padding-bottom: 0;
   margin-right: 125px;
+  /* Maintain spacing after logo */
 }
 
 .main-menu-wrapper__logo:before {
   position: absolute;
-  top: 25px;
-  bottom: 26px;
+  top: 0;
+  /* Adjust top alignment */
+  bottom: 0;
+  /* Align the dividing line */
   right: -75px;
   content: "";
   background-color: rgba(var(--oslim-white-rgb), 0.15);
+  /* Divider color */
   width: 1px;
+  height: auto;
+  /* Allow height to adjust naturally */
 }
-
 .main-menu-wrapper__main-menu {
   position: relative;
   display: block;
