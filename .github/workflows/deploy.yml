@@ -37,4 +37,4 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy to S3
-        run: aws s3 sync ./out s3://mesobfinancial.com --delete
+        run: aws s3 sync out/ s3://mesobfinancial.com --delete
