@@ -25,34 +25,19 @@ class MyDocument extends Document {
         <Head>
           <link
             rel="shortcut icon"
-            href="favicon.ico"
+            href="logo.PNG"
             id="fav-shortcut"
             type="image/x-icon"
           />
-          <link
-            rel="icon"
-            href="favicon.ico"
-            id="fav-icon"
-            type="image/x-icon"
-          />
+          <link rel="icon" href="logo.PNG" id="fav-icon" type="image/x-icon" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
             href="apple-touch-icon.png"
           />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="favicon-16x16.png"
-          />
-          <link rel="icon" href="favicon.ico" />
+          <link rel="icon" type="image/png" sizes="32x32" href="logo.PNG" />
+          <link rel="icon" type="image/png" sizes="16x16" href="logo.PNG" />
+          <link rel="icon" href="logo.PNG" />
           <link rel="manifest" href="manifest.json" />
 
           <meta
