@@ -148,7 +148,7 @@ const headerData = {
   logo,
   navItems,
   loginButton: {
-    text: "Login",
+    text: "Sign In/Sign Up",
     href: "https://app.mesobfinancial.com",
   },
   socials,
