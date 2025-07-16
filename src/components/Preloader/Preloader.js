@@ -1,4 +1,4 @@
-import image from "@/images/loader.png";
+import image from "@/images/testimonial/loader.PNG";
 import React from "react";
 import { Image } from "react-bootstrap";
 
@@ -7,6 +7,8 @@ const Preloader = ({ loading = true }) => {
     <div
       style={{
         zIndex: loading ? 9999 : -1,
+        opacity: loading ? 1 : 0,
+        transition: 'opacity 0.5s ease, z-index 0.5s ease',
       }}
       className={`preloader animated${loading ? "" : " fadeOut"}`}
     >

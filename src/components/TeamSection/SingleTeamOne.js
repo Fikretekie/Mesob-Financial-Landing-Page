@@ -7,7 +7,6 @@ const SingleTeamOne = ({ team = {} }) => {
   return (
     <div className="team-one__single">
       <div className="team-one__img">
-        <Image src={require(`@/images/team/${image}`).default.src} alt="" />
         <div className="team-one__content">
           <h3 className="team-one__name">{name}</h3>
           <p className="team-one__title">{title}</p>

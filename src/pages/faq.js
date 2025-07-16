@@ -1,5 +1,5 @@
 import ContactPage from "@/components/Contact/ContactPage";
-import CtaOne from "@/components/CtaSection/CtaOne";
+//import CtaOne from "@/components/CtaSection/CtaOne";
 import FAQsPage from "@/components/FAQsPage/FAQsPage";
 import Header from "@/components/Header/Header";
 import Layout from "@/components/Layout/Layout";
@@ -13,7 +13,7 @@ const Faq = () => {
       <PageHeader title="FAQs" />
       <FAQsPage />
       <ContactPage />
-      <CtaOne />
+      
     </Layout>
   );
 };

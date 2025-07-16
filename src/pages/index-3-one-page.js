@@ -1,4 +1,4 @@
-import BrandOne from "@/components/BrandSection/BrandOne";
+//import BrandOne from "@/components/BrandSection/BrandOne";
 import CaseOne from "@/components/CaseSection/CaseOne";
 import ContactOne from "@/components/Contact/ContactOne";
 import FindSolution from "@/components/FindSolution/FindSolution";
@@ -36,11 +36,7 @@ const Home3OnePage = () => {
       <OurMissionTwo className="our-mission-three" shape={1} />
       <HowWeWorks />
       <TestimonialThree id="testimonial" />
-      <BrandOne
-        className="brand-two"
-        showShape
-        innerClassName="brand-two__inner"
-      />
+     
       <ContactOne id="contact" />
       <GoogleMapTwo />
       <NewsOne className="news-two" />

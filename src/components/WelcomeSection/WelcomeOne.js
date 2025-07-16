@@ -73,11 +73,6 @@ const WelcomeOne = ({ id = "" }) => {
               ))}
             </ul>
           </div>
-          <div className="welcome-one__find-solutions">
-            <p className="welcome-one__find-solutions-text">
-              {bottomText} <Link href="/about">Find Your Solution</Link>
-            </p>
-          </div>
         </Container>
       </section>
       <VideoModal isOpen={isOpen} setOpen={setOpen} videoId={videoId} />

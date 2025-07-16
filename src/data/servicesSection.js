@@ -59,6 +59,30 @@ export const servicesOne = {
       href: "/financial-advice",
       text: "A range of financial solutions tailored to support various business and personal needs.",
     },
+    {
+      id: 6,
+      title: "Services",
+      image: "services-1-6.jpg",
+      icon: "icon-creative-1",
+      href: "/financial-advice",
+      text: "A range of financial solutions tailored to support various business and personal needs.",
+    },
+    {
+      id: 6,
+      title: "Services",
+      image: "services-1-6.jpg",
+      icon: "icon-creative-1",
+      href: "/financial-advice",
+      text: "A range of financial solutions tailored to support various business and personal needs.",
+    },
+    {
+      id: 6,
+      title: "Services",
+      image: "services-1-6.jpg",
+      icon: "icon-creative-1",
+      href: "/financial-advice",
+      text: "A range of financial solutions tailored to support various business and personal needs.",
+    },
   ],
 };
 

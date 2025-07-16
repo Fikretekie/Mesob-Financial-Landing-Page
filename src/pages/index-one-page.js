@@ -1,6 +1,6 @@
 import BenefitsOne from "@/components/Benefits/BenefitsOne";
-// import CaseOne from "@/components/CaseSection/CaseOne";
-import CtaOne from "@/components/CtaSection/CtaOne";
+ import CaseOne from "@/components/CaseSection/CaseOne";
+//import CtaOne from "@/components/CtaSection/CtaOne";
 import FreeConsultation from "@/components/FreeConsultation/FreeConsultation";
 import Header from "@/components/Header/Header";
 import Layout from "@/components/Layout/Layout";
@@ -31,7 +31,7 @@ const HomeOnePage = () => {
       {/* <TestimonialOne /> */}
       <TrustedOne />
       {/* <NewsOne showShape id="news" /> */}
-      <CtaOne />
+      
     </Layout>
   );
 };

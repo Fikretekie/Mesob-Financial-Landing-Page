@@ -13,7 +13,6 @@ const TeamOne = ({ id = "" }) => {
   return (
     <section ref={ref} className="team-one" id={id}>
       <div className="team-one__container">
-        <Title title={title} tagline={tagline} className="text-center" />
         <Row>
           {teams.map((team) => (
             <Col

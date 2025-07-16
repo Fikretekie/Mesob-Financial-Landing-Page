@@ -22,23 +22,6 @@ const WorkTogether = ({ id = "" }) => {
   return (
     <section ref={ref} className="work-together" id={id}>
       <Container>
-        <Row>
-          <Col xl={6}>
-            <div className="work-together__left animated slideInLeft">
-              <div className="work-together__img-box">
-                <div className="work-together-shape-1">
-                  <Image src={shape.src} alt="" />
-                </div>
-                <div className="work-together__img-1">
-                  <Image src={image1.src} alt="" />
-                  <div className="work-together__img-2">
-                    <Image src={image2.src} alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col xl={6}>
             <div className="work-together__right">
               <Title title={title} tagline={tagline} className="text-left" />
               <p className="work-together__right-text">{text}</p>
@@ -61,8 +44,6 @@ const WorkTogether = ({ id = "" }) => {
                 <h2 className="work-together__person-name">{personName}</h2>
               </div>
             </div>
-          </Col>
-        </Row>
       </Container>
     </section>
   );

@@ -30,12 +30,10 @@ const Link = ({
     as,
   };
   return (
-    <NextLink {...linkProps}>
-      <a href={href} {...props}>
-        {children}
-      </a>
+    <NextLink href={href} {...props}>
+      {children}
     </NextLink>
-  );
+  );  
 };
 
 export default Link;

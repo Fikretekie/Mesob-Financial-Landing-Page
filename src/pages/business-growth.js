@@ -1,4 +1,3 @@
-import CtaOne from "@/components/CtaSection/CtaOne";
 import Header from "@/components/Header/Header";
 import Layout from "@/components/Layout/Layout";
 import PageHeader from "@/components/Reuseable/PageHeader";
@@ -19,7 +18,6 @@ const BusinessGrowth = () => {
         parentHref="/services"
       />
       <ServiceDetails service={businessGrowth} />
-      <CtaOne />
     </Layout>
   );
 };

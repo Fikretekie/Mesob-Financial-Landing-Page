@@ -51,13 +51,19 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
             </div>
           </div>
           <div className="main-menu-wrapper__right">
+            <div className="main-menu-wrapper__search-cat">
+              <a
+                onClick={handleToggleSearch}
+                className="main-menu-wrapper__search search-toggler icon-magnifying-glass cursor-pointer"
+              ></a>
+            </div>
             <div className="main-menu-wrapper__login">
               <Button
                 onClick={handleLogin}
                 style={{
                   marginRight: "20px",
                   padding: "10px 20px",
-                  backgroundColor: "#ff613c",
+                  backgroundColor: "#1D6BD4",
                   color: "white",
                   borderRadius: "8px",
                   border: "none",
@@ -66,12 +72,6 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
               >
                 {loginButton.text}
               </Button>
-            </div>
-            <div className="main-menu-wrapper__search-cat">
-              <a
-                onClick={handleToggleSearch}
-                className="main-menu-wrapper__search search-toggler icon-magnifying-glass cursor-pointer"
-              ></a>
             </div>
           </div>
         </div>

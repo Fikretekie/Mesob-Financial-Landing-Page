@@ -40,6 +40,24 @@ export const welcomeOne = {
       href: "/financial-advice",
       icon: "icon-report",
     },
+    {
+      id: 3,
+      title: "Services",
+      href: "/financial-advice",
+      icon: "icon-report",
+    },
+    {
+      id: 3,
+      title: "Services",
+      href: "/financial-advice",
+      icon: "icon-report",
+    },
+    {
+      id: 3,
+      title: "Services",
+      href: "/financial-advice",
+      icon: "icon-report",
+    },
   ],
   bottomText:
     "Consulting & Finance Services Built Specifically for your Business.",

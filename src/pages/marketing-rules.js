@@ -1,4 +1,4 @@
-import CtaOne from "@/components/CtaSection/CtaOne";
+//import CtaOne from "@/components/CtaSection/CtaOne";
 import Header from "@/components/Header/Header";
 import Layout from "@/components/Layout/Layout";
 import PageHeader from "@/components/Reuseable/PageHeader";
@@ -19,7 +19,7 @@ const MarketingRules = () => {
         parentHref="/services"
       />
       <ServiceDetails service={marketingRules} />
-      <CtaOne />
+     
     </Layout>
   );
 };
