@@ -35,7 +35,7 @@ class MyDocument extends Document {
             sizes="180x180"
             href="/apple-touch-icon.png"
           />
-          <link rel="manifest" href="/manifest.json" />
+          <link rel="manifest" href="/site.webmanifest" />
           <meta
             name="description"
             content="Oslim NextJS Template For Business"
