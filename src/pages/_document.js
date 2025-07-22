@@ -24,38 +24,25 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
-            rel="shortcut icon"
-            href="logo.PNG"
-            id="fav-shortcut"
-            type="image/x-icon"
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="/favicon-96x96.png"
           />
-          <link rel="icon" href="logo.PNG" id="fav-icon" type="image/x-icon" />
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+          <link rel="shortcut icon" href="/favicon.ico" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="apple-touch-icon.png"
+            href="/apple-touch-icon.png"
           />
-          <link rel="icon" type="image/png" sizes="32x32" href="logo.PNG" />
-          <link rel="icon" type="image/png" sizes="16x16" href="logo.PNG" />
-          <link rel="icon" href="logo.PNG" />
-          <link rel="manifest" href="manifest.json" />
-
+          <link rel="manifest" href="/site.webmanifest" />
           <meta
             name="description"
             content="Oslim NextJS Template For Business"
           />
-
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="true"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-          />
         </Head>
+
         <body>
           <Main />
           <NextScript />

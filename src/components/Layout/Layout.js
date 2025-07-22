@@ -29,9 +29,7 @@ const Layout = ({
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-          {pageTitle} || Oslim || Oslim NextJS Template For Business
-        </title>
+        <title>{pageTitle}</title>
       </Head>
       <Preloader loading={loading} />
       <main
