@@ -28,14 +28,16 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
   return (
     <header className="main-header clearfix">
       <nav
-        className={`${scrollTop
-          ? "stricky-header stricked-menu stricky-fixed slideInDown"
-          : "slideIn"
-          } main-menu ${mainMenuClass} animated clearfix`}
+        className={`${
+          scrollTop
+            ? "stricky-header stricked-menu stricky-fixed slideInDown"
+            : "slideIn"
+        } main-menu ${mainMenuClass} animated clearfix`}
       >
         <div
-          className={`main-menu-wrapper clearfix${scrollTop ? " sticky-header__content" : ""
-            }`}
+          className={`main-menu-wrapper clearfix${
+            scrollTop ? " sticky-header__content" : ""
+          }`}
         >
           <div className="main-menu-wrapper__left">
             <div className="main-menu-wrapper__logo">

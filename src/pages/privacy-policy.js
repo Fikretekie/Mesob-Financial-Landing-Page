@@ -146,7 +146,7 @@ const PrivacyPolicy = () => {
             <p>
               Mesob Financial
               <br />
-              Email: mesob@mesobstore.com
+              Email: info@mesobfinancial.com
               <br />
               Website: mesobfinancial.com
             </p>

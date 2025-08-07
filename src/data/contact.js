@@ -28,9 +28,9 @@ export const inputs = [
 ];
 
 const common = {
-  phone: "+1 (571) 216-3509",
+  phone: "+1 (614) 966-5005",
   phoneHref: "12463330079",
-  email: "mesob@mesobstore.com",
+  email: "info@mesobfinancial.com",
 };
 
 export const contactOne = {

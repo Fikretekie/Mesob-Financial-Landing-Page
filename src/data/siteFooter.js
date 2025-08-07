@@ -77,9 +77,9 @@ const footerData = {
   ],
   // newsletterText: "Subsrcibe for our upcoming latest articles and resources",
   // address: "60 road, broklyn golden street new york. USA",
-  phone: "+1 (571) 216-3509",
+  phone: "+1 (614) 966-5005",
   phoneHref: "12463330079",
-  email: "mesob@mesobstore.com",
+  email: "info@mesobfinancial.com",
   author: "Mesob Financial",
   year: new Date().getFullYear(),
 };

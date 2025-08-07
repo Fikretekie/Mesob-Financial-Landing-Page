@@ -1311,68 +1311,42 @@
 }
 
 @media (max-width: 767px) {
-  .main-menu .mobile-nav__toggler {
-    padding: 36px 0;
-    display: inline-block;
-  }
-
-  .main-menu-wrapper__right {
-    display: none;
-  }
-
-  .main-menu-wrapper__logo {
-    margin-right: 0px;
-  }
-
-  .main-menu-wrapper__logo:before {
-    display: none;
-  }
-
   .main-menu-wrapper__left {
-    float: none;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    position: relative !important;
   }
-
+  .main-menu-wrapper__logo {
+    min-width: 110px !important;
+    margin-right: 0 !important;
+  }
   .main-menu-wrapper__main-menu {
-    float: right;
+    flex: 1 1 auto !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    padding-right: 0 !important;
+    background: transparent !important;
   }
-
-  .main-menu {
-    padding: 0 30px;
+  .main-menu-wrapper__main-menu .mobile-nav__toggler {
+    order: 2 !important;
+    margin-left: auto !important;
+    display: block !important;
+    background: none !important;
+    border: none !important;
+    font-size: 28px !important;
+    padding: 10px 10px !important;
+    z-index: 100 !important;
+    float: none !important;
+    position: static !important;
   }
-
-  .main-menu-two {
-    padding: 0 0 0;
+  .main-menu-wrapper__main-menu ul,
+  .main-menu-wrapper__main-menu .MenuList {
+    display: none !important;
   }
-
-  .main-header-two__top-right {
-    display: none;
-  }
-
-  .main-header-two__top-social {
-    display: none;
-  }
-
-  .main-header-two__top-left {
-    float: none;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .main-header-two__logo {
-    margin-right: 0;
-  }
-
-  .main-header-two__logo:before {
-    display: none;
-  }
-
-  .main-menu-two .mobile-nav__toggler {
-    padding: 18px 0 13px;
-    display: inline-block;
-  }
-
-  .main-menu-three .mobile-nav__toggler:hover {
-    color: var(--oslim-black);
+  .main-menu-wrapper__right {
+    display: none !important;
   }
 }
-

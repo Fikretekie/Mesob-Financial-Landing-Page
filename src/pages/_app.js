@@ -10,6 +10,7 @@ import "node_modules/swiper/swiper-bundle.min.css";
 import "react-modal-video/css/modal-video.css";
 import "jarallax/dist/jarallax.css";
 import "tiny-slider/dist/tiny-slider.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 // extra css
 import "@/styles/style.css";
