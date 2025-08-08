@@ -14,7 +14,6 @@ export const servicesOne = {
     {
       id: 1,
       title: "Truck",
-      image: "services-1-4.jpg",
       icon: "icon-mobile-analytics",
       href: "https://app.mesobfinancial.com/login",
       text: "Reliable and affordable truck financing solutions to keep your business moving without financial hurdles.",
@@ -22,7 +21,6 @@ export const servicesOne = {
     {
       id: 2,
       title: "Groceries",
-      image: "services-1-5.jpg",
       icon: "icon-analysis",
       href: "https://app.mesobfinancial.com/login",
       text: "Convenient grocery financing options to help you stock up on essentials with flexible payment plans.",
@@ -30,7 +28,7 @@ export const servicesOne = {
     {
       id: 3,
       title: "RIDESHARE DRIVERS/PARTNERS",
-      image: "services-1-6.jpg",
+
       icon: "icon-creative-1",
       href: "https://app.mesobfinancial.com/login",
       text: "A range of financial solutions tailored to support various business and personal needs.",
@@ -38,7 +36,7 @@ export const servicesOne = {
     {
       id: 4,
       title: "Individual/Households",
-      image: "services-1-6.jpg",
+
       icon: "icon-creative-1",
       href: "https://app.mesobfinancial.com/login",
       text: "A range of financial solutions tailored to support various business and personal needs.",
@@ -46,7 +44,7 @@ export const servicesOne = {
     {
       id: 5,
       title: "Cafe",
-      image: "services-1-6.jpg",
+
       icon: "icon-creative-1",
       href: "https://app.mesobfinancial.com/login",
       text: "A range of financial solutions tailored to support various business and personal needs.",
@@ -54,7 +52,7 @@ export const servicesOne = {
     {
       id: 6,
       title: "Cleaning Services",
-      image: "services-1-6.jpg",
+
       icon: "icon-creative-1",
       href: "https://app.mesobfinancial.com/login",
       text: "A range of financial solutions tailored to support various business and personal needs.",
@@ -62,7 +60,7 @@ export const servicesOne = {
     {
       id: 7,
       title: "⁠Beauty & Grooming",
-      image: "services-1-6.jpg",
+
       icon: "icon-creative-1",
       href: "https://app.mesobfinancial.com/login",
       text: "A range of financial solutions tailored to support various business and personal needs.",
@@ -70,7 +68,7 @@ export const servicesOne = {
     {
       id: 8,
       title: "E-commerce Sellers",
-      image: "services-1-6.jpg",
+
       icon: "icon-creative-1",
       href: "https://app.mesobfinancial.com/login",
       text: "A range of financial solutions tailored to support various business and personal needs.",
@@ -78,7 +76,7 @@ export const servicesOne = {
     {
       id: 9,
       title: "Construction Trades",
-      image: "services-1-6.jpg",
+
       icon: "icon-creative-1",
       href: "https://app.mesobfinancial.com/login",
       text: "A range of financial solutions tailored to support various business and personal needs.",
@@ -86,7 +84,7 @@ export const servicesOne = {
     {
       id: 10,
       title: "Content Creator",
-      image: "services-1-6.jpg",
+
       icon: "icon-creative-1",
       href: "https://app.mesobfinancial.com/login",
       text: "A range of financial solutions tailored to support various business and personal needs.",

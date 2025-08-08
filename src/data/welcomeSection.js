@@ -25,7 +25,6 @@ export const welcomeOne = {
     {
       id: 1,
       title: "Truck",
-      image: "services-1-4.jpg",
       icon: "fas fa-truck", // FontAwesome truck icon
       href: "https://app.mesobfinancial.com/login",
       text: "Reliable and affordable truck financing solutions to keep your business moving without financial hurdles.",
@@ -41,7 +40,6 @@ export const welcomeOne = {
     {
       id: 3,
       title: "RIDESHARE",
-      image: "services-1-6.jpg",
       icon: "fas fa-car", // Car icon
       href: "https://app.mesobfinancial.com/login",
       text: "Flexible financing tailored for rideshare drivers to help you get or maintain your vehicle.",
@@ -49,7 +47,6 @@ export const welcomeOne = {
     {
       id: 4,
       title: "Individual/Households",
-      image: "services-1-6.jpg",
       icon: "fas fa-home", // Home icon
       href: "https://app.mesobfinancial.com/login",
       text: "Personalized financial support for individuals and households to meet everyday needs.",
@@ -57,7 +54,6 @@ export const welcomeOne = {
     {
       id: 5,
       title: "Cafe",
-      image: "services-1-6.jpg",
       icon: "fas fa-mug-hot", // Mug icon for cafes
       href: "https://app.mesobfinancial.com/login",
       text: "Financing options to help your cafe grow, restock, or renovate without stress.",
@@ -65,7 +61,6 @@ export const welcomeOne = {
     {
       id: 6,
       title: "Cleaning Services",
-      image: "services-1-6.jpg",
       icon: "fas fa-broom", // Broom icon for cleaning
       href: "https://app.mesobfinancial.com/login",
       text: "Support for cleaning businesses to manage equipment, supplies, and growth with ease.",
@@ -73,7 +68,6 @@ export const welcomeOne = {
     {
       id: 7,
       title: "⁠Beauty & Grooming",
-      image: "services-1-6.jpg",
       icon: "fas fa-cut", // Scissors icon
       href: "https://app.mesobfinancial.com/login",
       text: "Financial solutions for salons, barbershops, and beauty professionals to thrive.",
@@ -81,7 +75,6 @@ export const welcomeOne = {
     {
       id: 8,
       title: "E-commerce Sellers",
-      image: "services-1-6.jpg",
       icon: "fas fa-store", // Store icon
       href: "https://app.mesobfinancial.com/login",
       text: "Smart financing to scale your online store, manage inventory, or run marketing campaigns.",
@@ -89,7 +82,6 @@ export const welcomeOne = {
     {
       id: 9,
       title: "Construction Trades",
-      image: "services-1-6.jpg",
       icon: "fas fa-hammer", // Hammer icon for trades
       href: "https://app.mesobfinancial.com/login",
       text: "Robust financing for contractors and tradespeople to secure tools, materials, and labor.",
@@ -97,7 +89,6 @@ export const welcomeOne = {
     {
       id: 10,
       title: "Content Creator",
-      image: "services-1-6.jpg",
       icon: "fas fa-video", // Video icon
       href: "https://app.mesobfinancial.com/login",
       text: "Tools and funds for content creators to upgrade gear, advertise, and grow audiences.",
