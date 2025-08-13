@@ -7,7 +7,8 @@ export const welcomeOne = {
   bg,
   videoBg,
   tagline: "welcome to Mesob Financial",
-  title: "Robust and Secure Accounting System for your business ! ",
+  title:
+    "Track expenses, save receipts, create reports --do it yourself easily.",
   // counter: [
   //   {
   //     id: 1,
