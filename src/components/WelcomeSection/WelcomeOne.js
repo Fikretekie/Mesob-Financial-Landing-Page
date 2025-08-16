@@ -1,11 +1,9 @@
 import { welcomeOne } from "@/data/welcomeSection";
 import useActive from "@/hooks/useActive";
-import Link from "next/link";
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Title from "../Reuseable/Title";
 import VideoModal from "../Reuseable/VideoModal";
-import VisibilityCountUp from "../Reuseable/VisibilityCountUp";
 import SingleFeatureOne from "./SingleFeatureOne";
 
 const { tagline, title, bg, videoBg, videoId, bottomText, features } =
@@ -36,32 +34,29 @@ const WelcomeOne = ({ id = "" }) => {
                 </div>
               </Col>
               <Col xl={6} lg={6}>
-                <div className="welcome-one__top-right">
-                  <div className="welcome-one__counter">
-                    {/* <ul className="welcome-one__counter-list list-unstyled">
-                      {counter.map(({ id, text, count }) => (
-                        <li
-                          key={id}
-                          className="welcome-one__counter-single animated fadeInUp"
-                        >
-                          <h3 className="odometer">
-                            <VisibilityCountUp count={count} />
-                          </h3>
-                          <p className="welcome-one__counter-text">{text}</p>
-                        </li>
-                      ))}
-                    </ul> */}
+                <div className="welcome-one__top-right"
+
+                >
+                  <div className="welcome-one__counter"
+                  >
+
                   </div>
                   <div
                     className="welcome-one__video-link animated fadeInRight"
-                    style={{ backgroundImage: `url(${videoBg.src})` }}
                   >
-                    <a onClick={() => setOpen(true)} className="video-popup">
-                      <div className="welcome-one__video-icon">
-                        <span className="fas fa-play"></span>
-                      </div>
-                    </a>
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      style={{ width: 550 }}
+                      playsInline
+                      className="w-3/4 rounded-2xl shadow-lg" // smaller width & styled
+                    >
+                      <source src="/videos/introvideo.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
+
                 </div>
               </Col>
             </Row>

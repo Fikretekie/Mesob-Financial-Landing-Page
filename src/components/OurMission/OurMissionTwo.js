@@ -1,6 +1,6 @@
 import { ourMissionTwo } from "@/data/ourMission";
 import dynamic from "next/dynamic";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import JarallaxImage from "../Jarallax/JarallaxImage";
 import Link from "../Reuseable/Link";
@@ -9,29 +9,48 @@ import VideoModal from "../Reuseable/VideoModal";
 
 const Jarallax = dynamic(() => import("../Jarallax/Jarallax"), { ssr: false });
 
-const { bg, title, videoId, videoText } = ourMissionTwo;
+const { title, videoId, videoText } = ourMissionTwo;
 
 const OurMissionTwo = ({ className = "", shape = 2 }) => {
-  const [isOpen, setOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+
+  const handleTogglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   return (
     <>
       <section className={`our-mission-two ${className}`}>
         <div className="our-mission-two-bg-box">
-          <Jarallax
-            className="our-mission-two-bg"
-            speed={0.2}
-            imgPosition="50% 0%"
+          <video
+            ref={videoRef}
+            className="our-mission-two-bg-video"
+            loop
+            muted
+            playsInline
+            style={{
+              width: '100%',
+              height: 'auto',
+              objectFit: 'cover',
+              display: isPlaying ? 'block' : 'none'
+            }}
           >
-            <JarallaxImage src={bg.src} />
-          </Jarallax>
+            <source src="/videos/introvideo.mp4" type="video/mp4" />
+          </video>
         </div>
         {Array.from(Array(3)).map((_, i) => (
           <div
             key={i}
-            className={`our-mission${shape === 2 ? "-two" : ""}-shape-${
-              i + 1
-            } shapemover2`}
+            className={`our-mission${shape === 2 ? "-two" : ""}-shape-${i + 1
+              } shapemover2`}
           ></div>
         ))}
         <Container>
@@ -47,12 +66,12 @@ const OurMissionTwo = ({ className = "", shape = 2 }) => {
               <div className="our-mission-two__right">
                 <div className="our-mission-two__video-link">
                   <a
-                    onClick={() => setOpen(true)}
+                    onClick={handleTogglePlay}
                     style={{ cursor: "pointer" }}
                     className="video-popup"
                   >
                     <div className="our-mission-two__video-icon">
-                      <span className="fa fa-play"></span>
+                      <span className={`fa ${isPlaying ? 'fa-pause' : 'fa-play'}`}></span>
                       <i className="ripple"></i>
                     </div>
                   </a>
@@ -63,7 +82,6 @@ const OurMissionTwo = ({ className = "", shape = 2 }) => {
           </Row>
         </Container>
       </section>
-      <VideoModal isOpen={isOpen} setOpen={setOpen} videoId={videoId} />
     </>
   );
 };

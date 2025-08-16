@@ -24,9 +24,9 @@ const SingleServiceOne = ({ service = {} }) => {
         </div>
         <p className="services-one__text">{text}</p>
         <div className="services-one__bottom">
-          <Link href={href} className="services-one__read-more">
+          {/* <Link href={href} className="services-one__read-more">
             Read More
-          </Link>
+          </Link> */}
           <Link href={href} className="services-one__arrow">
             <span className="icon-right-arrow"></span>
           </Link>

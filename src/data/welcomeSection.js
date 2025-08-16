@@ -54,7 +54,7 @@ export const welcomeOne = {
     },
     {
       id: 5,
-      title: "Cafe",
+      title: "Cafe/Restaurants",
       icon: "fas fa-mug-hot", // Mug icon for cafes
       href: "https://app.mesobfinancial.com/login",
       text: "Financing options to help your cafe grow, restock, or renovate without stress.",

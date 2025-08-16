@@ -14,82 +14,75 @@ export const servicesOne = {
     {
       id: 1,
       title: "Truck",
-      icon: "icon-mobile-analytics",
+      icon: "fas fa-truck", // FontAwesome truck icon
       href: "https://app.mesobfinancial.com/login",
-      text: "Reliable and affordable truck financing solutions to keep your business moving without financial hurdles.",
+      text: "Flexible truck financing to help drivers and businesses expand their fleet and keep deliveries on schedule.",
     },
     {
       id: 2,
       title: "Groceries",
-      icon: "icon-analysis",
+      icon: "fas fa-shopping-cart", // Shopping cart icon
       href: "https://app.mesobfinancial.com/login",
-      text: "Convenient grocery financing options to help you stock up on essentials with flexible payment plans.",
+      text: "Affordable grocery financing so you can stock up on essentials and pay with ease over time.",
     },
     {
       id: 3,
-      title: "RIDESHARE DRIVERS/PARTNERS",
-
-      icon: "icon-creative-1",
+      title: "RIDESHARE",
+      icon: "fas fa-car", // Car icon
       href: "https://app.mesobfinancial.com/login",
-      text: "A range of financial solutions tailored to support various business and personal needs.",
+      text: "Smart financing options for rideshare drivers to cover car expenses and grow their earnings.",
     },
     {
       id: 4,
       title: "Individual/Households",
-
-      icon: "icon-creative-1",
+      icon: "fas fa-home", // Home icon
       href: "https://app.mesobfinancial.com/login",
-      text: "A range of financial solutions tailored to support various business and personal needs.",
+      text: "Personal and household financing designed to cover everyday needs, from bills to home essentials.",
     },
     {
       id: 5,
-      title: "Cafe",
-
-      icon: "icon-creative-1",
+      title: "Cafe/Restaurants",
+      icon: "fas fa-mug-hot", // Mug icon for cafes
       href: "https://app.mesobfinancial.com/login",
-      text: "A range of financial solutions tailored to support various business and personal needs.",
+      text: "Flexible funding for cafes and restaurants to manage supplies, equipment, and daily operations smoothly.",
     },
     {
       id: 6,
       title: "Cleaning Services",
-
-      icon: "icon-creative-1",
+      icon: "fas fa-broom", // Broom icon for cleaning
       href: "https://app.mesobfinancial.com/login",
-      text: "A range of financial solutions tailored to support various business and personal needs.",
+      text: "Financial support tailored for cleaning businesses to cover supplies, staff, and service expansion.",
     },
     {
       id: 7,
-      title: "⁠Beauty & Grooming",
-
-      icon: "icon-creative-1",
+      title: "Beauty & Grooming",
+      icon: "fas fa-cut", // Scissors icon
       href: "https://app.mesobfinancial.com/login",
-      text: "A range of financial solutions tailored to support various business and personal needs.",
+      text: "Beauty and grooming financing to help stylists and salons invest in tools, products, and growth.",
     },
     {
       id: 8,
       title: "E-commerce Sellers",
-
-      icon: "icon-creative-1",
+      icon: "fas fa-store", // Store icon
       href: "https://app.mesobfinancial.com/login",
-      text: "A range of financial solutions tailored to support various business and personal needs.",
+      text: "Custom financing for online sellers to manage inventory, shipping, and business expansion.",
     },
     {
       id: 9,
       title: "Construction Trades",
-
-      icon: "icon-creative-1",
+      icon: "fas fa-hammer", // Hammer icon for trades
       href: "https://app.mesobfinancial.com/login",
-      text: "A range of financial solutions tailored to support various business and personal needs.",
+      text: "Funding solutions for construction and trade professionals to cover tools, materials, and contracts.",
     },
     {
       id: 10,
       title: "Content Creator",
-
-      icon: "icon-creative-1",
+      icon: "fas fa-video", // Video icon
       href: "https://app.mesobfinancial.com/login",
-      text: "A range of financial solutions tailored to support various business and personal needs.",
+      text: "Creative financing for content creators to invest in equipment, production, and audience growth.",
     },
   ],
+
 };
 
 export const servicesTwo = {
