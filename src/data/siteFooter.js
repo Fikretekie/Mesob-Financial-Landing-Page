@@ -7,25 +7,21 @@ const footerData = {
   aboutText:
     "Empowering Growth: Tracking, Taxes, and Financial Success in the USA",
   socials: [
-    {
-      id: 1,
-      icon: "fab fa-twitter",
-      href: "#",
-    },
+
     {
       id: 2,
       icon: "fab fa-facebook",
-      href: "#",
+      href: "https://www.facebook.com/profile.php?id=61579534023491",
     },
     {
       id: 3,
-      icon: "fab fa-pinterest-p",
-      href: "#",
+      icon: "fab fa-tiktok",
+      href: "https://www.tiktok.com/@mesob85?_t=ZT-8yzttOuwr1r&_r=1",
     },
     {
       id: 4,
       icon: "fab fa-instagram",
-      href: "#",
+      href: "https://www.instagram.com/mesobfinancial?igsh=eWNoNWNoaG45cHI0",
     },
   ],
   links: [

@@ -28,7 +28,7 @@ export const welcomeOne = {
       title: "Truck",
       icon: "fas fa-truck", // FontAwesome truck icon
       href: "https://app.mesobfinancial.com/login",
-      text: "Reliable and affordable truck financing solutions to keep your business moving without financial hurdles.",
+      text: "Do it yourself accounting — track freight income, fuel, repairs, and receipts.",
     },
     {
       id: 2,
@@ -36,63 +36,63 @@ export const welcomeOne = {
       image: "services-1-5.jpg",
       icon: "fas fa-shopping-cart", // Shopping cart icon
       href: "https://app.mesobfinancial.com/login",
-      text: "Convenient grocery financing options to help you stock up on essentials with flexible payment plans.",
+      text: "Do it yourself accounting — track daily sales, supplier costs, and receipts.",
     },
     {
       id: 3,
       title: "RIDESHARE",
       icon: "fas fa-car", // Car icon
       href: "https://app.mesobfinancial.com/login",
-      text: "Flexible financing tailored for rideshare drivers to help you get or maintain your vehicle.",
+      text: "Do it yourself accounting — log fares income, fuel, repairs, and receipts.",
     },
     {
       id: 4,
       title: "Individual/Households",
       icon: "fas fa-home", // Home icon
       href: "https://app.mesobfinancial.com/login",
-      text: "Personalized financial support for individuals and households to meet everyday needs.",
+      text: "Do it yourself accounting — track bills, family expenses, and receipts easily.",
     },
     {
       id: 5,
       title: "Cafe/Restaurants",
       icon: "fas fa-mug-hot", // Mug icon for cafes
       href: "https://app.mesobfinancial.com/login",
-      text: "Financing options to help your cafe grow, restock, or renovate without stress.",
+      text: "Do it yourself accounting — track sales, supplier costs, staff, and receipts.",
     },
     {
       id: 6,
       title: "Cleaning Services",
       icon: "fas fa-broom", // Broom icon for cleaning
       href: "https://app.mesobfinancial.com/login",
-      text: "Support for cleaning businesses to manage equipment, supplies, and growth with ease.",
+      text: "Do it yourself accounting — track jobs, supply costs, and payments efficiently.",
     },
     {
       id: 7,
       title: "⁠Beauty & Grooming",
       icon: "fas fa-cut", // Scissors icon
       href: "https://app.mesobfinancial.com/login",
-      text: "Financial solutions for salons, barbershops, and beauty professionals to thrive.",
+      text: "Do it yourself accounting — track client payments, product costs, and receipts.",
     },
     {
       id: 8,
       title: "E-commerce Sellers",
       icon: "fas fa-store", // Store icon
       href: "https://app.mesobfinancial.com/login",
-      text: "Smart financing to scale your online store, manage inventory, or run marketing campaigns.",
+      text: "Do it yourself accounting — track online sales, fees, shipping, and receipts.",
     },
     {
       id: 9,
       title: "Construction Trades",
       icon: "fas fa-hammer", // Hammer icon for trades
       href: "https://app.mesobfinancial.com/login",
-      text: "Robust financing for contractors and tradespeople to secure tools, materials, and labor.",
+      text: "Do it yourself accounting — track project expenses, worker pay, and receipts.",
     },
     {
       id: 10,
       title: "Content Creator",
       icon: "fas fa-video", // Video icon
       href: "https://app.mesobfinancial.com/login",
-      text: "Tools and funds for content creators to upgrade gear, advertise, and grow audiences.",
+      text: "Do it yourself accounting — track earnings, expenses, sponsorships, and receipts easily.",
     },
   ],
 
