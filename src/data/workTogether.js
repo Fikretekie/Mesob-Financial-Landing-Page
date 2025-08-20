@@ -9,7 +9,7 @@ export const workTogether = {
   image1,
   image2,
   tagline: "About Mesob Financial",
-  title: "Work Together for your Business",
+  title: "Work Together for your Business ",
   text: "Lorem ipsum dolor sit amet, consectetur nod adipisicing elit sed do eiusmod tempor incididunt ut siply free text ois labore et dolore magna aliqua lonm andhn.",
   points: [
     "Nsectetur cing elit.",
@@ -34,4 +34,5 @@ export const workTogetherTwo = {
   Our system is tailored to help businesses address common financial challenges, providing clear insights into where your business stands at any given time. 
   With tools to track daily transactions and analyze your financial data, Mesob Financial empowers you to implement short and long-term strategies, optimizing business growth and success.
   Let Mesob Financial help you take control of your financial future with ease and confidence.`,
+  title2: "Mission is to Protect \n your Businesses & Much More",
 };

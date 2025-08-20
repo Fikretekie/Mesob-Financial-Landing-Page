@@ -7,7 +7,7 @@ export const ourMission = {
 
 export const ourMissionTwo = {
   bg,
-  title: "Mission is to Protect \n your Businesses & Much More",
+
   videoId: "Get7rqXYrbQ",
   videoText: "Watch video",
 };
