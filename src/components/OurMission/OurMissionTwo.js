@@ -88,8 +88,6 @@
 
 // export default OurMissionTwo;
 
-
-
 import { ourMissionTwo } from "@/data/ourMission";
 import dynamic from "next/dynamic";
 import React, { useState, useRef } from "react";
@@ -129,10 +127,10 @@ const OurMissionTwo = ({ className = "", shape = 2 }) => {
             muted
             playsInline
             style={{
-              width: '100%',
-              height: 'auto',
-              objectFit: 'cover',
-              display: isPlaying ? 'block' : 'none'
+              width: "100%",
+              height: "auto",
+              objectFit: "cover",
+              display: isPlaying ? "block" : "none",
             }}
           >
             <source src="/videos/introvideo.mp4" type="video/mp4" />
@@ -141,7 +139,9 @@ const OurMissionTwo = ({ className = "", shape = 2 }) => {
         {Array.from(Array(3)).map((_, i) => (
           <div
             key={i}
-            className={`our-mission${shape === 2 ? "-two" : ""}-shape-${i + 1} shapemover2`}
+            className={`our-mission${shape === 2 ? "-two" : ""}-shape-${
+              i + 1
+            } shapemover2`}
           ></div>
         ))}
         <Container>
@@ -162,7 +162,9 @@ const OurMissionTwo = ({ className = "", shape = 2 }) => {
                     className="video-popup"
                   >
                     <div className="our-mission-two__video-icon">
-                      <span className={`fa ${isPlaying ? 'fa-pause' : 'fa-play'}`}></span>
+                      <span
+                        className={`fa ${isPlaying ? "fa-pause" : "fa-play"}`}
+                      ></span>
                       <i className="ripple"></i>
                     </div>
                   </a>

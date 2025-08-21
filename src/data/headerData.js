@@ -130,7 +130,7 @@ const socials = [
   {
     id: 2,
     icon: "fab fa-facebook-square",
-    href: "#",
+    href: "https://www.facebook.com/profile.php?id=61579534023491",
   },
   {
     id: 3,
@@ -140,7 +140,12 @@ const socials = [
   {
     id: 4,
     icon: "fab fa-instagram",
-    href: "#",
+    href: "https://www.instagram.com/mesobfinancial?igsh=eWNoNWNoaG45cHI0",
+  },
+  {
+    id: 4,
+    icon: "fab fa-tiktok",
+    href: "https://www.tiktok.com/@mesob85?_t=ZT-8yzttOuwr1r&_r=1",
   },
 ];
 
