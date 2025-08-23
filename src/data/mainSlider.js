@@ -43,11 +43,7 @@ export const mainSliderTwo = [
 ];
 
 const socials = [
-  {
-    id: 1,
-    title: "Twitter",
-    href: "#",
-  },
+
   {
     id: 2,
     title: "Facebook",

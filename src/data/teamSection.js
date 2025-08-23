@@ -1,9 +1,5 @@
 export const socials = [
-  {
-    id: 1,
-    href: "#",
-    icon: "fab fa-twitter",
-  },
+
   {
     id: 2,
     href: "#",

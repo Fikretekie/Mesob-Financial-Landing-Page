@@ -10,4 +10,5 @@ export const ourMissionTwo = {
 
   videoId: "Get7rqXYrbQ",
   videoText: "Watch video",
+  thumbnail: "../assets/videothumbnail.png",
 };

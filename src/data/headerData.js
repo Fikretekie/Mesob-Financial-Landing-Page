@@ -122,11 +122,7 @@ export const navItems = [
 ];
 
 const socials = [
-  {
-    id: 1,
-    icon: "fab fa-twitter",
-    href: "#",
-  },
+
   {
     id: 2,
     icon: "fab fa-facebook-square",
