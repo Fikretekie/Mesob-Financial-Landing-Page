@@ -12,7 +12,7 @@ const WorkTogetherTwo = () => {
       <Container>
         <div className="work-together-tow__right">
           <Title title={title} tagline={tagline} className="text-left" />
-          <div className="work-together-tow__content">
+          <div className="work-together-tow__content d-flex flex-column align-items-center d-md-block flex-md-row align-items-md-start">
             <div className="work-together-tow__icon">
               <span className={icon}></span>
             </div>

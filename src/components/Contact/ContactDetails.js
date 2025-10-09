@@ -1,7 +1,7 @@
 import { contactDetails } from "@/data/contact";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-
+import styles from "./contact.module.css"
 const { phone, phoneHref, email, title, text, address, contactIcon } =
   contactDetails;
 
@@ -19,14 +19,26 @@ const ContactDetails = () => {
                 alignItems: "center",
               }}
             >
-              <div className="contact-details__content">
-                <div className="contact-details__title-box">
-                  <h4 className="contact-details__title">{title}</h4>
+              <div
+                className={`contact-details__content ${styles.contactDetailsContent}`}
+              >
+                <div
+                  className={`contact-details__title-box ${styles.contactDetailsTitleBox}`}
+                >
+                  <h4
+                    className={`contact-details__title ${styles.contactDetailsTitle}`}
+                  >
+                    {title}
+                  </h4>
                   <p className="contact-details__text">{text}</p>
                 </div>
                 <p className="contact-details__address">{address}</p>
-                <div className="contact-details__contact-info">
-                  <div className="contact-details__contact-icon">
+                <div
+                  className={`contact-details__contact-info ${styles.contactDetailsInfo}`}
+                >
+                  <div
+                    className={`contact-details__contact-icon ${styles.contactDetailsIcon}`}
+                  >
                     <span className={contactIcon}></span>
                   </div>
                   <h4 className="contact-details__contact-number-email">

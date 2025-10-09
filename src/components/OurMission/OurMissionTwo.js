@@ -6,7 +6,7 @@ import JarallaxImage from "../Jarallax/JarallaxImage";
 import Link from "../Reuseable/Link";
 import TextSplit from "../Reuseable/TextSplit";
 import VideoModal from "../Reuseable/VideoModal";
-
+import styles from "./ourmissiontwo.module.css"
 const Jarallax = dynamic(() => import("../Jarallax/Jarallax"), { ssr: false });
 
 const { title, videoId, videoText, thumbnail } = ourMissionTwo; // Assuming thumbnail is added to ourMissionTwo data
@@ -41,12 +41,11 @@ const OurMissionTwo = ({ className = "", shape = 2 }) => {
         <div className="our-mission-two-bg-box">
           <video
             ref={videoRef}
-            className="our-mission-two-bg-video"
             loop
-            muted={isMuted} // Controlled by isMuted state
+            muted={isMuted}
             playsInline
+            className={`our-mission-two-bg-video ${styles.OurMissionTwo_vedio}`}
             style={{
-              width: "100%",
               height: "auto",
               objectFit: "cover",
               display: isPlaying ? "block" : "none",
@@ -54,7 +53,6 @@ const OurMissionTwo = ({ className = "", shape = 2 }) => {
           >
             <source src="/videos/introvideo.mp4" type="video/mp4" />
           </video>
-          {/* Video Thumbnail */}
           {!isPlaying && thumbnail && (
             <div
               className="our-mission-two-thumbnail"
@@ -74,7 +72,9 @@ const OurMissionTwo = ({ className = "", shape = 2 }) => {
         {Array.from(Array(3)).map((_, i) => (
           <div
             key={i}
-            className={`our-mission${shape === 2 ? "-two" : ""}-shape-${i + 1} shapemover2`}
+            className={`our-mission${shape === 2 ? "-two" : ""}-shape-${
+              i + 1
+            } shapemover2`}
           ></div>
         ))}
         <Container>
@@ -94,19 +94,20 @@ const OurMissionTwo = ({ className = "", shape = 2 }) => {
                     style={{ cursor: "pointer" }}
                     className="video-popup"
                   >
-                    <div className="our-mission-two__video-icon">
+                    <div
+                      className={`our-mission-two__video-icon ${styles.OurMissionTwo_vedioicon}`}
+                    >
                       <span
                         className={`fa ${isPlaying ? "fa-pause" : "fa-play"}`}
                       ></span>
                       <i className="ripple"></i>
                     </div>
                   </a>
-                  {/* Mute Button with gap removed */}
                   <button
                     onClick={handleToggleMute}
-                    className="our-mission-two__mute-btn"
+                    className= {`our-mission-two__mute-btn ${styles.our_mission_two__mute_btn}`}
                     style={{
-                      marginLeft: "50px", // Removed the gap by setting to 0px
+                     
                       background: "none",
                       border: "none",
                       marginTop: "40px",
@@ -117,11 +118,9 @@ const OurMissionTwo = ({ className = "", shape = 2 }) => {
                   >
                     {isMuted ? "🔇" : "🔊"}
                   </button>
-                  {isPlaying == false ?
+                  {isPlaying === false ? (
                     <h3 className="our-mission-two__video-text">{videoText}</h3>
-                    : null
-
-                  }
+                  ) : null}
                 </div>
               </div>
             </Col>

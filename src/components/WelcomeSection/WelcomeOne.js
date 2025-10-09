@@ -5,7 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Title from "../Reuseable/Title";
 import VideoModal from "../Reuseable/VideoModal";
 import SingleFeatureOne from "./SingleFeatureOne";
-
+import styles from "./singlefeature.module.css"
 const { tagline, title, bg, videoId, features } = welcomeOne;
 
 const WelcomeOne = ({ id = "" }) => {
@@ -68,19 +68,26 @@ const WelcomeOne = ({ id = "" }) => {
             <Row>
               <Col xl={6} lg={6}>
                 <div className="welcome-one__top-left">
-                  <Title tagline={tagline} title={title} className="text-left" />
+                  <Title
+                    tagline={tagline}
+                    title={title}
+                    className="text-left"
+                  />
                 </div>
               </Col>
               <Col xl={6} lg={6}>
                 <div className="welcome-one__top-right">
-                  <div className="welcome-one__video-link animated fadeInRight relative inline-block">
+                  <div
+                    className="welcome-one__video-link animated fadeInRight relative inline-block"
+                  >
                     <video
                       ref={videoRef}
                       autoPlay
                       loop
                       playsInline
-                      style={{ width: 550 }}
-                      className="w-3/4 rounded-2xl shadow-lg"
+                     
+                      className={` rounded-2xl shadow-lg ${styles.welcome_one_vedio}`}
+                      
                     >
                       <source src="/videos/introvideo.mp4" type="video/mp4" />
                       Your browser does not support the video tag.

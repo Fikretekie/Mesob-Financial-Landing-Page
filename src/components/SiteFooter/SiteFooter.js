@@ -2,7 +2,7 @@ import footerData from "@/data/siteFooter";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Link from "../Reuseable/Link";
-
+import styles from "./sitefooter.module.css"
 const {
   bg,
   text,
@@ -24,7 +24,7 @@ const SiteFooter = ({ footerClassName = "" }) => {
           className="site-footer-shape-1"
           style={{ backgroundImage: `url(${bg.src})` }}
         ></div>
-        <Container>
+        <Container className={styles.customContainer}>
           <Row>
             <Col xl={4} lg={6} md={6} className="animated fadeInUp">
               <div className="footer-widget__column footer-widget__about">
@@ -45,7 +45,12 @@ const SiteFooter = ({ footerClassName = "" }) => {
                 </div>
                 <div className="site-footer__social">
                   {socials.map(({ id, href, icon }) => (
-                    <a key={id} href={href} target="_blank" rel="noopener noreferrer">
+                    <a
+                      key={id}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <i className={icon}></i>
                     </a>
                   ))}
