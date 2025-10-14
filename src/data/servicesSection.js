@@ -82,7 +82,6 @@ export const servicesOne = {
       text: "Do it yourself accounting — track earnings, expenses, sponsorships, and receipts easily.",
     },
   ],
-
 };
 
 export const servicesTwo = {

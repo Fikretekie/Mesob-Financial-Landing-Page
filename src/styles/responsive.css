@@ -499,7 +499,10 @@
     font-size: 35px;
     line-height: 49px;
   }
-
+  .welcome-one__feature {
+    grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+    grid-gap: 20px;
+  }
   .welcome-one__top-right {
     margin-left: 0;
     margin-top: 37px;
