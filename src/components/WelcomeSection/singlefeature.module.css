@@ -1,15 +1,11 @@
 @media (max-width: 767.98px) {
-
-    .welcome_one{
-        width: 80%;
-    }
-    .welcome_one_vedio{
-       width: 350px !important;
-  
-
-    }
+  .welcome_one {
+    width: 80%;
+  }
+  .welcome_one_vedio {
+    width: 350px !important;
+  }
 }
 .welcome_one_vedio {
-  width: 550px; 
-
+  width: 550px;
 }

@@ -15,8 +15,6 @@ const About = () => {
       <PageHeader page="About" title="About us" />
       <WorkTogetherTwo />
       <OurMissionTwo className="our-mission-three" shape={1} />
-      {/* <TeamOne /> */}
-      {/* <TestimonialOne className="testimonial-two" /> */}
     </Layout>
   );
 };

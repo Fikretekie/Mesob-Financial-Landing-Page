@@ -1,21 +1,22 @@
-.OurMissionTwo_vedio{
-    width: 100%;
-
+.OurMissionTwo_vedio {
+  width: 100%;
 }
-.our_mission_two__mute_btn{
-     margin-left: 50px !important
+.our_mission_two__mute_btn {
+  margin-left: 43px !important;
+  margin-top: 2rem;
 }
 @media (max-width: 767.98px) {
-    .OurMissionTwo_vedio{
-        width: 99%;
-        margin: auto;
-    }
-    .OurMissionTwo_vedioicon{
-        height: 50px;
-        width: 50px;
-        margin-left: 250px;
-    }
-    .our_mission_two__mute_btn{
- margin-left: 250px !important
-    }
+  .OurMissionTwo_vedio {
+    width: 99%;
+    margin: auto;
+  }
+  .OurMissionTwo_vedioicon {
+    height: 50px;
+    width: 50px;
+    margin-left: 134px;
+    top: 46px;
+  }
+  .our_mission_two__mute_btn {
+    margin-left: 250px !important;
+  }
 }
