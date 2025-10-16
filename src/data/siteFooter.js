@@ -4,8 +4,7 @@ import bg from "@/images/shapes/site-footer-shape-1.png";
 const footerData = {
   bg,
   text: "Mesob Financial",
-  aboutText:
-    "Empowering Growth: Tracking, Taxes, and Financial Success in the USA",
+ 
   socials: [
 
     {

@@ -40,9 +40,7 @@ const SiteFooter = ({ footerClassName = "" }) => {
                     {text}
                   </Link>
                 </div>
-                <div className="footer-widget__about-text-box desktop-only">
-                  <p className="footer-widget__about-text">{aboutText}</p>
-                </div>
+             
                 <div className="site-footer__social">
                   {socials.map(({ id, href, icon }) => (
                     <a

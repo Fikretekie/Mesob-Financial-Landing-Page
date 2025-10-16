@@ -113,13 +113,7 @@ const MobileMenu = ({ navItems = items, onePage = false }) => {
             <a href={`tel:${phoneHref}`}>{phone}</a>
           </li>
         </ul>
-        <div className="mobile-nav__top">
-          <div className="mobile-nav__social">
-            {socials.map(({ id, href, icon }) => (
-              <a key={id} href={href} className={icon}></a>
-            ))}
-          </div>
-        </div>
+       
       </div>
     </div>
   );
