@@ -85,7 +85,7 @@ export const welcomeOne = {
     {
       id: 11,
       title: "Other Businesses",
-      icon: "fas fa-tools", // Video icon
+      icon: "fas fa-briefcase", // Video icon
       href: "https://app.mesobfinancial.com/login",
       text: "Do it yourself accounting — track earnings, expenses, sponsorships, and receipts easily.",
     },

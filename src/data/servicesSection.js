@@ -81,6 +81,13 @@ export const servicesOne = {
       href: "https://app.mesobfinancial.com/login",
       text: "Do it yourself accounting — track earnings, expenses, sponsorships, and receipts easily.",
     },
+    {
+      id: 11,
+      title: "Other Businesses",
+      icon: "fas fa-briefcase", // Briefcase icon for general business
+      href: "https://app.mesobfinancial.com/login",
+      text: "Do it yourself accounting — track general income, expenses, and receipts for any business type.",
+    },
   ],
 };
 
