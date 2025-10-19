@@ -5,7 +5,7 @@ import Header from "@/components/Header/Header";
 import Layout from "@/components/Layout/Layout";
 // import MainSlider from "@/components/MainSlider/MainSlider";
 // import NewsOne from "@/components/NewsSection/NewsOne";
-import OurMission from "@/components/OurMission/OurMission";
+import OurMission from "@/components/VideoSection/OurMission";
 // import TeamOne from "@/components/TeamSection/TeamOne";
 // import TestimonialOne from "@/components/TestimonialSection/TestimonialOne";
 // import TrustedOne from "@/components/TrustedSection/TrustedOne";
@@ -18,17 +18,8 @@ const Home = () => {
   return (
     <Layout pageTitle="Mesob Financial">
       <Header />
-      {/* <MainSlider sliders={mainSlider} showShape /> */}
       <WelcomeOne />
-      {/* <WorkTogether /> */}
-      {/* <CaseOne /> */}
-      {/* <BenefitsOne /> */}
-      {/* <FreeConsultation /> */}
       <OurMission />
-      {/* <TeamOne /> */}
-      {/* <TestimonialOne /> */}
-      {/* <TrustedOne /> */}
-      {/* <NewsOne showShape /> */}
     </Layout>
   );
 };

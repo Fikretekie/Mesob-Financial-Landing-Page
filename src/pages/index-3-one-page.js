@@ -8,7 +8,7 @@ import HowWeWorks from "@/components/HowWeWorks/HowWeWorks";
 import Layout from "@/components/Layout/Layout";
 import MainSliderThree from "@/components/MainSlider/MainSliderThree";
 import NewsOne from "@/components/NewsSection/NewsOne";
-import OurMissionTwo from "@/components/OurMission/OurMissionTwo";
+// import OurMissionTwo from "@/components/OurMission/OurMissionTwo";
 import ServicesTwo from "@/components/ServicesSection/ServicesTwo";
 import TestimonialThree from "@/components/TestimonialSection/TestimonialThree";
 import WelcomeThree from "@/components/WelcomeSection/WelcomeThree";
@@ -33,10 +33,10 @@ const Home3OnePage = () => {
       <ServicesTwo id="services" />
       <WelcomeThree id="about" />
       <CaseOne id="cases" className="case-three" smallImage />
-      <OurMissionTwo className="our-mission-three" shape={1} />
+      {/* <OurMissionTwo className="our-mission-three" shape={1} /> */}
       <HowWeWorks />
       <TestimonialThree id="testimonial" />
-     
+
       <ContactOne id="contact" />
       <GoogleMapTwo />
       <NewsOne className="news-two" />

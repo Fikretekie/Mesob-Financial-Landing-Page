@@ -1,0 +1,317 @@
+/* ===== ABOUT VIDEO COMPONENT STYLES ===== */
+
+.aboutVideoWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Video Container - Maintains 16:9 Aspect Ratio */
+.videoContainerAbout {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #000;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Thumbnail Background */
+.thumbnailAbout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    background-color: #1a1a1a;
+}
+
+/* Video Element */
+.videoAbout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+/* Center Play Button */
+.centerPlayButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.playPauseBtn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(29, 107, 212, 0.9);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.playPauseBtn:hover {
+    background-color: rgba(29, 107, 212, 1);
+    transform: scale(1.12);
+    box-shadow: 0 12px 32px rgba(29, 107, 212, 0.5);
+}
+
+.playPauseBtn:active {
+    transform: scale(0.98);
+}
+
+.playPauseBtn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.playPauseBtn:hover::before {
+    width: 120px;
+    height: 120px;
+}
+
+/* Controls Bar - Bottom */
+.controlsBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    z-index: 9;
+    padding: 0 20px;
+    animation: slideUp 0.3s ease-out;
+}
+
+/* Control Buttons */
+.controlBtn,
+.muteBtn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.controlBtn:hover,
+.muteBtn:hover {
+    background-color: rgba(29, 107, 212, 0.8);
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 12px rgba(29, 107, 212, 0.4);
+    transform: scale(1.08);
+}
+
+.controlBtn:active,
+.muteBtn:active {
+    transform: scale(0.95);
+}
+
+.controlBtn::after,
+.muteBtn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+}
+
+.controlBtn:hover::after,
+.muteBtn:hover::after {
+    width: 60px;
+    height: 60px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .playPauseBtn {
+        width: 65px;
+        height: 65px;
+        font-size: 26px;
+    }
+
+    .controlBtn,
+    .muteBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .controlsBar {
+        height: 55px;
+        gap: 12px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .playPauseBtn {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+        border-width: 2px;
+    }
+
+    .playPauseBtn:hover {
+        transform: scale(1.1);
+    }
+
+    .controlBtn,
+    .muteBtn {
+        width: 38px;
+        height: 38px;
+        font-size: 12px;
+    }
+
+    .controlsBar {
+        height: 50px;
+        gap: 10px;
+        padding: 0 12px;
+    }
+
+    .videoContainerAbout {
+        border-radius: 8px;
+    }
+}
+
+/* Light Mode / Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .videoContainerAbout {
+        background-color: #0a0a0a;
+    }
+
+    .thumbnailAbout {
+        background-color: #0a0a0a;
+    }
+}
+
+/* Focus States for Accessibility */
+.playPauseBtn:focus,
+.controlBtn:focus,
+.muteBtn:focus {
+    outline: 2px solid rgba(29, 107, 212, 0.8);
+    outline-offset: 2px;
+}
+
+/* Smooth Transitions */
+.videoAbout {
+    transition: opacity 0.3s ease;
+}
+
+.thumbnailAbout {
+    transition: opacity 0.3s ease;
+}
+
+.our-mission-two__video-icon {
+    height: 112px;
+    width: 112px;
+    line-height: 112px;
+    font-size: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tablet - Medium size */
+@media (max-width: 768px) {
+    .our-mission-two__video-icon {
+        height: 90px;
+        width: 90px;
+        line-height: 90px;
+        font-size: 20px;
+    }
+}
+
+/* Mobile - Small size */
+@media (max-width: 480px) {
+    .our-mission-two__video-icon {
+        height: 65px;
+        width: 65px;
+        line-height: 65px;
+        font-size: 16px;
+    }
+}
+
+/* Mobile landscape */
+@media (max-width: 768px) and (orientation: landscape) {
+    .our-mission-two__video-icon {
+        height: 70px;
+        width: 70px;
+        line-height: 70px;
+        font-size: 18px;
+    }
+}

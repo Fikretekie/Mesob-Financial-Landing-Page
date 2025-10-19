@@ -94,7 +94,7 @@
   }
 
   .services-one__content {
-    padding: 40px 20px 20px;
+    padding: 20px 15px 15px;
   }
 
   .why-choose-one__left {
@@ -123,11 +123,15 @@
     font-size: 66px;
     line-height: 71px;
   }
+
+
+
   .our-mission-two-bg-box {
     position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Prevent video from escaping container */
+    overflow: hidden;
+    /* Prevent video from escaping container */
   }
 
   .our-mission-two-bg-video {
@@ -140,6 +144,7 @@
     left: 0;
     z-index: 1;
   }
+
   .our-mission-two-shape-1,
   .our-mission-two-shape-2,
   .our-mission-two-shape-3 {
@@ -176,7 +181,7 @@
     padding: 93px 80px 87px;
   }
 
-  .service-details__two-icon-single + .service-details__two-icon-single {
+  .service-details__two-icon-single+.service-details__two-icon-single {
     margin-left: 0;
     margin-top: 18px;
   }
@@ -420,7 +425,7 @@
     margin-bottom: 52px;
   }
 
-  .case-details__details li + li {
+  .case-details__details li+li {
     margin-left: 30px;
   }
 
@@ -445,7 +450,7 @@
     font-size: 28px;
   }
 
-  .service-details__two-icon-single + .service-details__two-icon-single {
+  .service-details__two-icon-single+.service-details__two-icon-single {
     margin-left: 0;
     margin-top: 18px;
   }
@@ -494,14 +499,23 @@
     font-size: 35px;
     line-height: 49px;
   }
+
   .welcome-one__feature {
-    grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+    grid-template-columns: repeat(1, 1fr);
+    /* 1 column on mobile */
+    width: 100%;
     grid-gap: 20px;
   }
+
+  .welcome-one__feature-title {
+    font-size: 18px;
+  }
+
   .our-mission-two__video-link {
     margin-top: 1rem;
     margin-left: 0;
   }
+
   .welcome-one__top-right {
     margin-left: 0;
     margin-top: 37px;
@@ -523,6 +537,7 @@
   .welcome-one__feature-single {
     flex: 0 0 100%;
     max-width: 100%;
+    padding: 10px;
     margin-bottom: 30px;
     border-radius: var(--oslim-bdr-radius);
   }
@@ -533,6 +548,10 @@
 
   .welcome-one__feature-single:before {
     display: none;
+  }
+
+  welcome-one__feature-icon span {
+    font-size: 45px;
   }
 
   .work-together__img-2 {
@@ -653,7 +672,7 @@
     float: none;
   }
 
-  .trusted.one__single + .trusted.one__single {
+  .trusted.one__single+.trusted.one__single {
     margin-left: 0px;
   }
 
@@ -713,7 +732,7 @@
     display: block;
   }
 
-  .quality-work__tab-box .tab-buttons .tab-btn + .tab-btn {
+  .quality-work__tab-box .tab-buttons .tab-btn+.tab-btn {
     margin-left: 0;
     margin-top: 15px;
   }
@@ -766,7 +785,7 @@
     align-items: baseline;
   }
 
-  .why-choose-one__points li + li {
+  .why-choose-one__points li+li {
     margin-left: 0;
     margin-top: 15px;
   }
@@ -839,7 +858,7 @@
     align-items: baseline;
   }
 
-  .welcome-three__points li + li {
+  .welcome-three__points li+li {
     margin-left: 0;
     margin-top: 10px;
   }
@@ -849,7 +868,7 @@
     align-items: baseline;
   }
 
-  .welcome-three__points-content li + li {
+  .welcome-three__points-content li+li {
     margin-left: 0;
     margin-top: 20px;
   }
@@ -947,7 +966,7 @@
     top: 16px;
   }
 
-  .case-details__details li + li {
+  .case-details__details li+li {
     margin-left: 0px;
     margin-top: 14px;
   }
@@ -1014,7 +1033,7 @@
     margin-left: 15px;
   }
 
-  .service-details__two-icon-single + .service-details__two-icon-single {
+  .service-details__two-icon-single+.service-details__two-icon-single {
     margin-left: 0;
     margin-top: 18px;
   }
@@ -1338,10 +1357,12 @@
     width: 100% !important;
     position: relative !important;
   }
+
   .main-menu-wrapper__logo {
     min-width: 110px !important;
     margin-right: 0 !important;
   }
+
   .main-menu-wrapper__main-menu {
     flex: 1 1 auto !important;
     display: flex !important;
@@ -1350,6 +1371,7 @@
     padding-right: 0 !important;
     background: transparent !important;
   }
+
   .main-menu-wrapper__main-menu .mobile-nav__toggler {
     order: 2 !important;
     margin-left: auto !important;
@@ -1363,10 +1385,12 @@
     position: relative !important;
     left: 3rem;
   }
+
   .main-menu-wrapper__main-menu ul,
   .main-menu-wrapper__main-menu .MenuList {
     display: none !important;
   }
+
   .main-menu-wrapper__right {
     display: none !important;
   }

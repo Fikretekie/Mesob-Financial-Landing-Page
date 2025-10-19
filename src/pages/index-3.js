@@ -8,7 +8,6 @@ import HowWeWorks from "@/components/HowWeWorks/HowWeWorks";
 import Layout from "@/components/Layout/Layout";
 import MainSliderThree from "@/components/MainSlider/MainSliderThree";
 import NewsOne from "@/components/NewsSection/NewsOne";
-import OurMissionTwo from "@/components/OurMission/OurMissionTwo";
 import ServicesTwo from "@/components/ServicesSection/ServicesTwo";
 import TestimonialThree from "@/components/TestimonialSection/TestimonialThree";
 import WelcomeThree from "@/components/WelcomeSection/WelcomeThree";
@@ -23,10 +22,9 @@ const Home3 = () => {
       <ServicesTwo />
       <WelcomeThree />
       <CaseOne className="case-three" smallImage />
-      <OurMissionTwo className="our-mission-three" shape={1} />
       <HowWeWorks />
       <TestimonialThree />
-     
+
       <ContactOne />
       <GoogleMapTwo />
       <NewsOne className="news-two" />

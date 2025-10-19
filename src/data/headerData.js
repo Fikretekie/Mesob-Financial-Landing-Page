@@ -148,6 +148,9 @@ const socials = [
 const headerData = {
   logo,
   navItems,
+  phone: '+1 (614) 966-5005',
+  email: 'info@mesobfinancial.com',
+
   loginButton: {
     text: "Sign In/Sign Up",
     href: "https://app.mesobfinancial.com",

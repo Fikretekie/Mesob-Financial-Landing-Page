@@ -9,18 +9,6 @@ export const welcomeOne = {
   tagline: "welcome to Mesob Financial",
   title:
     "Track expenses, save receipts, create reports --do it yourself easily.",
-  // counter: [
-  //   {
-  //     id: 1,
-  //     text: "Happy Customers",
-  //     count: 962,
-  //   },
-  //   {
-  //     id: 2,
-  //     text: "Completed Cases",
-  //     count: 882,
-  //   },
-  // ],
   videoId: "Get7rqXYrbQ",
   features: [
     {
@@ -96,7 +84,7 @@ export const welcomeOne = {
     },
     {
       id: 11,
-      title: "Other Services",
+      title: "Other Businesses",
       icon: "fas fa-tools", // Video icon
       href: "https://app.mesobfinancial.com/login",
       text: "Do it yourself accounting — track earnings, expenses, sponsorships, and receipts easily.",

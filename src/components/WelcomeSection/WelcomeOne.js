@@ -80,14 +80,15 @@ const WelcomeOne = ({ id = "" }) => {
                   <div
                     className="welcome-one__video-link animated fadeInRight relative inline-block"
                   >
+
                     <video
                       ref={videoRef}
                       autoPlay
                       loop
                       playsInline
-                     
+
                       className={` rounded-2xl shadow-lg ${styles.welcome_one_vedio}`}
-                      
+
                     >
                       <source src="/videos/introvideo.mp4" type="video/mp4" />
                       Your browser does not support the video tag.

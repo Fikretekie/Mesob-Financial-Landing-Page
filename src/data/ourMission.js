@@ -7,7 +7,6 @@ export const ourMission = {
 
 export const ourMissionTwo = {
   bg,
-
   videoId: "Get7rqXYrbQ",
   videoText: "Watch video",
   thumbnail: "../assets/videothumbnail.png",

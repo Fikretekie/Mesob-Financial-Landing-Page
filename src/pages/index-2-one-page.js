@@ -8,7 +8,7 @@ import HeaderTwo from "@/components/Header/HeaderTwo";
 import Layout from "@/components/Layout/Layout";
 import MainSlider from "@/components/MainSlider/MainSlider";
 import NewsOne from "@/components/NewsSection/NewsOne";
-import OurMissionTwo from "@/components/OurMission/OurMissionTwo";
+// import OurMissionTwo from "@/components/OurMission/OurMissionTwo";
 //import QualityWork from "@/components/QualityWork/QualityWork";
 import ServicesOne from "@/components/ServicesSection/ServicesOne";
 // import TestimonialOne from "@/components/TestimonialSection/TestimonialOne";
@@ -34,18 +34,18 @@ const Home2OnePage = () => {
       />
       <WelcomeTwo id="about" />
       <CaseTwo id="cases" />
-      
+
       <Experience />
       <ServicesOne id="services" serviceCount={3} />
       {/* <TestimonialOne className="testimonial-two" id="testimonial" /> */}
-      
+
       <WhyChooseOne />
-      <OurMissionTwo />
+      {/* <OurMissionTwo /> */}
       <CounterOne />
       <NewsOne className="news-two" id="news" />
       <GoogleMap />
-     
-     
+
+
     </Layout>
   );
 };

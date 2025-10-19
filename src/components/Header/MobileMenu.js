@@ -105,15 +105,15 @@ const MobileMenu = ({ navItems = items, onePage = false }) => {
         </div>
         <ul className="mobile-nav__contact list-unstyled">
           <li>
-            <i className="fa fa-envelope"></i>
+            <i href={`mailto:${email}`} className="fa fa-envelope"></i>
             <a href={`mailto:${email}`}>{email}</a>
           </li>
           <li>
-            <i className="fa fa-phone-alt"></i>
+            <i href={`tel:${phoneHref}`} className="fa fa-phone-alt"></i>
             <a href={`tel:${phoneHref}`}>{phone}</a>
           </li>
         </ul>
-       
+
       </div>
     </div>
   );
