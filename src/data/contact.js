@@ -70,18 +70,20 @@ export const contactOne = {
 };
 
 export const contactPage = {
-  tagline: "Contact with us",
+  tagline: "CONTACT WITH US",
   title: "Have Any Question?",
   title2: "Write a Message",
   inputs,
+  buttonText: "SEND A MESSAGE",
 };
 
 export const contactDetails = {
   title: "Get in Touch",
-  text: `
-We’re delivering the best
-customer experience`,
-  address: "",
-  contactIcon: "icon-phone1",
+  text: "We're delivering the best customer experience",
+  address: "3130 Westerville Rd, Columbus, OH 43224",
+  addressLabel: "Our Office",
+  phoneIcon: "fas fa-phone",
+  locationIcon: "fas fa-map-marker-alt",
   ...common,
 };
+

@@ -3,17 +3,27 @@
 .contactDetailsContent{
   display: flex;
   flex-direction: column;
-  margin-top: -30px;
+  gap: 30px;
+  padding: 40px 20px;
 }
+
 .contactDetailsTitleBox{
   max-width: 100%;
+  width: 100%;
 }
 
 .contactDetailsInfo{
-  margin-top: -70px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
 }
+
 .contactDetailsIcon{
   display: flex;
+  align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 }

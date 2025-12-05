@@ -2,7 +2,11 @@ import bg from "../assets/images/case/case6.jpg";
 
 export const ourMission = {
   bg,
-  title: "Mission is to Protect \n your Businesses & \n Much More",
+  title: "Mission is to Protect your Businesses &",
+  titleHighlight: "Much More",
+  buttonText: "DISCOVER MORE",
+  buttonHref: "/about",
+  watermarkText: "Global Finance",
 };
 
 export const ourMissionTwo = {

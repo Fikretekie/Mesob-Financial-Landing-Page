@@ -1,36 +1,34 @@
 import React from "react";
-import { Image } from "react-bootstrap";
 import Link from "../Reuseable/Link";
 import TextSplit from "../Reuseable/TextSplit";
 
 const SingleServiceOne = ({ service = {} }) => {
-  const { title, image, icon, href, text } = service;
+  const { title, icon, href, text } = service;
 
   return (
-    <div className="services-one__single">
-      <div className="services-one__img">
-        <Image src={image} alt="" />
-      </div>
-      <div className="services-one__content">
-        <div className="services-one__title-box">
-          <div className="services-one__title-icon">
+    <li className="services-one__feature-single animated fadeInUp">
+      <div className="services-one__feature-left">
+        <div className="services-one__feature-title-row">
+          <div className="services-one__feature-icon">
             <span className={icon}></span>
           </div>
-          <h3 className="services-one__title">
+          <h3 className="services-one__feature-title">
             <Link href={href}>
               <TextSplit text={title} />
             </Link>
           </h3>
         </div>
-        <p className="services-one__text">{text}</p>
-        <div className="services-one__bottom">
-
-          <Link href={href} className="services-one__arrow">
+        {text && <p className="services-one__feature-text">{text}</p>}
+        <div className="services-one__feature-arrow">
+          <Link href={href}>
             <span className="icon-right-arrow"></span>
           </Link>
         </div>
       </div>
-    </div>
+      <div className="services-one__feature-right">
+        <div className="services-one__feature-count"></div>
+      </div>
+    </li>
   );
 };
 

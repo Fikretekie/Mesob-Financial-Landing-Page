@@ -115,6 +115,7 @@ const WelcomeOne = ({ id = "" }) => {
             </Row>
           </div>
           <div className="welcome-one__bottom">
+            <h2 className="welcome-one__business-type-title">Select Your Business Type</h2>
             <ul className="list-unstyled welcome-one__feature">
               {features.map((feature) => (
                 <SingleFeatureOne key={feature.id} feature={feature} />

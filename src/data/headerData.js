@@ -119,6 +119,7 @@ export const navItems = [
     name: "Contact",
     href: "/contact",
   },
+  
 ];
 
 const socials = [

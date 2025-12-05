@@ -4,7 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Title from "../Reuseable/Title";
 import ContactForm from "./ContactForm";
 
-const { tagline, title, inputs, title2 } = contactPage;
+const { tagline, title, inputs, title2, buttonText } = contactPage;
 
 const ContactPage = ({ isTitleTwo = false }) => {
   const newTitle = isTitleTwo ? title2 : title;
@@ -12,11 +12,14 @@ const ContactPage = ({ isTitleTwo = false }) => {
   return (
     <section className="contact-page">
       <Container>
-        <Title title={newTitle} tagline={tagline} className="text-center" />
         <Row>
           <Col xl={12}>
             <div className="contact-page__form">
-              <ContactForm inputs={inputs} />
+              <div className="contact-page__title-wrapper">
+                <span className="contact-page__tagline">{tagline}</span>
+                <Title title={newTitle} className="text-left" />
+              </div>
+              <ContactForm inputs={inputs} btnText={buttonText} />
             </div>
           </Col>
         </Row>

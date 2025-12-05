@@ -4,6 +4,7 @@ import PageHeader from "../../src/components/Reuseable/PageHeader";
 import WorkTogetherTwo from "@/components/WorkTogether/WorkTogetherTwo";
 import Videopage from "@/components/VideoSection/AboutVideo";
 import React from "react";
+import OurMission from "@/components/VideoSection/OurMission";
 
 const About = () => {
   return (
@@ -13,6 +14,7 @@ const About = () => {
       <WorkTogetherTwo />
       {/* <OurMissionTwo className="our-mission-three" shape={1} /> */}
       <Videopage />
+      <OurMission/>
     </Layout>
   );
 };

@@ -6,6 +6,7 @@ import styles from "./sitefooter.module.css";
 const {
   bg,
   text,
+  tagline,
   aboutText,
   author,
   year,
@@ -28,19 +29,15 @@ const SiteFooter = ({ footerClassName = "" }) => {
           <Row>
             <Col xl={4} lg={6} md={6} className="animated fadeInUp">
               <div className="footer-widget__column footer-widget__about">
-                <div className="footer-widget__logo desktop-only">
-                  <Link
-                    style={{
-                      color: "white",
-                      fontWeight: "bold",
-                      fontSize: "26px",
-                    }}
-                    href="/"
-                  >
-                    {text}
+                <div className="footer-widget__logo">
+                  <Link href="/" className="footer-widget__logo-link">
+                    <span className="footer-widget__logo-mesob">Mesob</span>{" "}
+                    <span className="footer-widget__logo-financial">Financial</span>
                   </Link>
                 </div>
-             
+                {tagline && (
+                  <p className="footer-widget__tagline">{tagline}</p>
+                )}
                 <div className="site-footer__social">
                   {socials.map(({ id, href, icon }) => (
                     <a
@@ -56,17 +53,10 @@ const SiteFooter = ({ footerClassName = "" }) => {
               </div>
             </Col>
             <Col xl={4} lg={6} md={6} className="animated fadeInUp">
-              <div className="footer-widget__column footer-widget__explore clearfix">
+              <div className="footer-widget__column footer-widget__explore">
                 <h3 className="footer-widget__title">Explore</h3>
-                <ul className="footer-widget__explore-list list-unstyled clearfix">
-                  {links.slice(0, 5).map(({ id, href, text }) => (
-                    <li key={id}>
-                      <Link href={href}>{text}</Link>
-                    </li>
-                  ))}
-                </ul>
-                <ul className="footer-widget__explore-list footer-widget__explore-list-two list-unstyled clearfix">
-                  {links.slice(5).map(({ id, href, text }) => (
+                <ul className="footer-widget__explore-list list-unstyled">
+                  {links.map(({ id, href, text }) => (
                     <li key={id}>
                       <Link href={href}>{text}</Link>
                     </li>
@@ -77,20 +67,20 @@ const SiteFooter = ({ footerClassName = "" }) => {
             <Col xl={4} lg={6} md={6} className="animated fadeInUp">
               <div className="footer-widget__column footer-widget__contact clearfix">
                 <h3 className="footer-widget__title">Contact</h3>
-                <h4 className="footer-widget__contact-info">
+                <div className="footer-widget__contact-info">
                   <a
                     href={`tel:${phoneHref}`}
                     className="footer-widget__contact-number"
                   >
                     {phone}
-                  </a>{" "}
+                  </a>
                   <a
                     href={`mailto:${email}`}
                     className="footer-widget__contact-email"
                   >
                     {email}
                   </a>
-                </h4>
+                </div>
               </div>
             </Col>
           </Row>
@@ -102,7 +92,7 @@ const SiteFooter = ({ footerClassName = "" }) => {
             <Col xl={12}>
               <div className="site-footer__bottom-inner">
                 <p className="site-footer__bottom-text">
-                  © Copyright {year} by <a href="#">{author}</a>
+                  © Copyright {year} by <a href="#">{author}</a>. All rights reserved.
                 </p>
               </div>
             </Col>

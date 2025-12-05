@@ -4,12 +4,12 @@ import { useForm } from "react-hook-form";
 
 const ContactForm = ({
   inputs = [],
-  formClassName = "comment-one__form",
-  inputClassName = "comment-form__input-box",
-  messageClassName = "text-message-box",
-  btnBoxClassName = "btn-box",
-  btnClassName = "comment-form__btn",
-  btnText = "Send a message",
+  formClassName = "contact-page__form-element",
+  inputClassName = "contact-page__input-box",
+  messageClassName = "contact-page__message-box",
+  btnBoxClassName = "contact-page__btn-box",
+  btnClassName = "contact-page__btn",
+  btnText = "SEND A MESSAGE",
 }) => {
   const {
     register,
@@ -28,6 +28,9 @@ const ContactForm = ({
         {inputs.map(({ name, placeholder, type, required }) => (
           <Col key={name} xl={6}>
             <div className={inputClassName}>
+              <label htmlFor={name} className="contact-page__label">
+                {placeholder}
+              </label>
               <input
                 type={type}
                 placeholder={placeholder}
@@ -47,14 +50,18 @@ const ContactForm = ({
       <Row>
         <Col xl={12}>
           <div className={`${inputClassName} ${messageClassName}`}>
+            <label htmlFor="message" className="contact-page__label">
+              Write a Message
+            </label>
             <textarea
               name="message"
-              placeholder="Write a Message"
+              id="message"
+              placeholder="How can we help your business?"
               {...register("message")}
             ></textarea>
           </div>
           <div className={btnBoxClassName}>
-            <button type="submit" className={`thm-btn ${btnClassName}`}>
+            <button type="submit" className={btnClassName}>
               {btnText}
             </button>
           </div>

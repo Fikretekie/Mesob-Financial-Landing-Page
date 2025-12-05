@@ -4,6 +4,7 @@ import bg from "@/images/shapes/site-footer-shape-1.png";
 const footerData = {
   bg,
   text: "Mesob Financial",
+  tagline: "Empowering your business financial future.",
  
   socials: [
 
@@ -31,43 +32,18 @@ const footerData = {
     },
     {
       id: 2,
-      // text: "Meet our team",
-      href: "/team",
-    },
-    {
-      id: 3,
-      // text: "Case stories",
-      href: "/case",
-    },
-    {
-      id: 4,
-      // text: "Latest news",
-      href: "/blog",
-    },
-    {
-      id: 5,
-      text: "Contact",
-      href: "/contact",
-    },
-    {
-      id: 6,
-      // text: "Support",
-      href: "/about",
-    },
-    {
-      id: 7,
       text: "Terms of use",
       href: "/terms-of-use",
     },
     {
-      id: 8,
+      id: 3,
       text: "Privacy policy",
       href: "/privacy-policy",
     },
     {
-      id: 9,
-      // text: "Help",
-      href: "/about",
+      id: 4,
+      text: "Content",
+      href: "/content",
     },
   ],
   // newsletterText: "Subsrcibe for our upcoming latest articles and resources",

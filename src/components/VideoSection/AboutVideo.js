@@ -28,7 +28,7 @@ const AboutVideo = ({ className = "" }) => {
   return (
     <>
       <section className={`${className}`}>
-        <div className={styles.aboutVideoWrapper} style={{ maxWidth: "100%", marginBottom: 30, padding: "0" }}>
+        <div className={styles.aboutVideoWrapper} style={{ maxWidth: "100%", padding: "0" ,background:"#18222c"}}>
           {/* Video Container with Thumbnail Background */}
           <div
             className={styles.videoContainerAbout}
