@@ -24,12 +24,12 @@ class MyDocument extends Document {
         <Head>
           <link
             rel="icon"
-            type="image/png"
+            type="image/jpeg"
             sizes="96x96"
-            href="/favicon-96x96.png"
+            href="/logo_fav.jpeg"
           />
-          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-          <link rel="shortcut icon" href="/favicon.ico" />
+          <link rel="icon" type="image/jpeg" href="/logo_fav.jpeg" />
+          <link rel="shortcut icon" href="/logo_fav.jpeg" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
