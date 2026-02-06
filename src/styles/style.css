@@ -9709,3 +9709,63 @@ padding-top: 30px;
 .login-signup-link:hover {
   color: #1d6bd4;
 }
+
+/* ============================================
+   Try Demo Button Animation
+   ============================================ */
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(29, 107, 212, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(29, 107, 212, 0.8), 0 0 60px rgba(29, 107, 212, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(29, 107, 212, 0.5);
+  }
+}
+
+.welcome-one__demo-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: #1D6BD4;
+  color: white !important;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none !important;
+  cursor: pointer;
+  animation: pulseGlow 2s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(29, 107, 212, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome-one__demo-btn:hover {
+  transform: scale(1.08) !important;
+  box-shadow: 0 0 40px rgba(29, 107, 212, 0.9) !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.welcome-one__demo-btn-wrapper {
+  margin-top: 30px;
+}
+
+/* Responsive adjustments for demo button */
+@media (max-width: 991px) {
+  .welcome-one__demo-btn-wrapper {
+    text-align: center;
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 575px) {
+  .welcome-one__demo-btn {
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+}

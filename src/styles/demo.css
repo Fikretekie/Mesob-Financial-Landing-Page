@@ -1,0 +1,658 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Demo app scoped CSS variables - using standard names for Tailwind */
+.demo-app {
+  --background: 222 47% 6%;
+  --foreground: 210 40% 98%;
+  --card: 217 33% 17%;
+  --card-foreground: 210 40% 98%;
+  --popover: 217 33% 17%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 199 89% 48%;
+  --primary-foreground: 222 47% 6%;
+  --secondary: 217 33% 22%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217 33% 22%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 160 84% 39%;
+  --accent-foreground: 222 47% 6%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217 33% 22%;
+  --input: 217 33% 22%;
+  --ring: 199 89% 48%;
+  --radius: 0.5rem;
+  --sidebar-background: 222 47% 8%;
+  --sidebar-foreground: 210 40% 98%;
+  --sidebar-primary: 199 89% 48%;
+  --sidebar-primary-foreground: 222 47% 6%;
+  --sidebar-accent: 217 33% 17%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-border: 217 33% 22%;
+  --sidebar-ring: 199 89% 48%;
+}
+
+/* Main demo app layout - override Bootstrap completely */
+.demo-app {
+  display: flex !important;
+  height: 100vh !important;
+  width: 100% !important;
+  background-color: #0b1120 !important;
+  color: #f8fafc !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 9999 !important;
+  overflow: hidden !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+/* Ensure all text elements inherit the font */
+.demo-app *,
+.demo-app h1,
+.demo-app h2,
+.demo-app h3,
+.demo-app h4,
+.demo-app h5,
+.demo-app h6,
+.demo-app p,
+.demo-app span,
+.demo-app div,
+.demo-app label {
+  font-family: inherit !important;
+}
+
+/* Demo sidebar - the w-64 sidebar container */
+.demo-app > div:first-child {
+  flex-shrink: 0 !important;
+  width: 16rem !important; /* w-64 = 256px */
+  min-width: 16rem !important;
+  background-color: #0f172a !important;
+  border-right: 1px solid #1e293b !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Sidebar internal flex structure */
+.demo-app > div:first-child > nav {
+  flex: 1 !important;
+  overflow: hidden !important;
+}
+
+/* Sidebar demo badge container at bottom */
+.demo-app > div:first-child > div:last-child {
+  padding: 1rem !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Demo badge styling */
+.demo-app > div:first-child > div:last-child > div {
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.2), rgba(249, 115, 22, 0.2)) !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.75rem !important;
+}
+
+/* Sidebar class - explicit targeting */
+.demo-app .w-64.bg-\[\#0f172a\] {
+  width: 16rem !important;
+  min-width: 16rem !important;
+  background-color: #0f172a !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+/* Sidebar p-4 container for demo badge */
+.demo-app .w-64 > .p-4 {
+  padding: 1rem !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+}
+
+/* Demo main content area */
+.demo-app > div:nth-child(2) {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+/* Demo main scrollable area */
+.demo-app main {
+  flex: 1 !important;
+  overflow: auto !important;
+  background-color: #0b1120 !important;
+}
+
+/* Main content padding */
+.demo-app main > div {
+  padding: 1.5rem !important;
+}
+
+/* Grid gaps */
+.demo-app .grid {
+  gap: 1rem !important;
+}
+
+.demo-app .gap-4 {
+  gap: 1rem !important;
+}
+
+.demo-app .gap-6 {
+  gap: 1.5rem !important;
+}
+
+.demo-app .space-y-6 > * + * {
+  margin-top: 1.5rem !important;
+}
+
+.demo-app .space-y-4 > * + * {
+  margin-top: 1rem !important;
+}
+
+.demo-app .space-y-3 > * + * {
+  margin-top: 0.75rem !important;
+}
+
+.demo-app .space-y-2 > * + * {
+  margin-top: 0.5rem !important;
+}
+
+/* Breakdown section spacing */
+.demo-app h4.mt-6 {
+  margin-top: 1.5rem !important;
+}
+
+.demo-app h4.mb-3 {
+  margin-bottom: 0.75rem !important;
+}
+
+/* Row padding in summary card */
+.demo-app .py-2 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.demo-app .py-1 {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
+/* Reset all elements within demo-app */
+.demo-app *,
+.demo-app *::before,
+.demo-app *::after {
+  box-sizing: border-box !important;
+}
+
+/* Reset Bootstrap specific styles */
+.demo-app .row {
+  display: block !important;
+  margin: 0 !important;
+}
+
+.demo-app .container,
+.demo-app .container-fluid {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: none !important;
+}
+
+.demo-app button {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid #475569 !important;
+}
+
+/* Override Bootstrap button styles */
+.demo-app button.btn,
+.demo-app .btn {
+  all: revert;
+}
+
+/* Style buttons with data-slot attribute (shadcn buttons) */
+.demo-app button[data-slot="button"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+}
+
+/* Ensure navigation buttons in sidebar work correctly */
+.demo-app nav button {
+  background: transparent;
+  /* Reset borders - let classes control them */
+  border: none !important;
+  border-left: 3px solid transparent !important;
+  /* Ensure proper alignment */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  width: 100% !important;
+  padding: 0.75rem 1rem !important;
+  gap: 0.75rem !important;
+  border-radius: 0.75rem !important;
+}
+
+/* Active nav button with cyan border and background */
+.demo-app nav button.border-l-\[3px\],
+.demo-app nav button.border-cyan-400 {
+  border-left-width: 3px !important;
+  border-left-style: solid !important;
+  border-left-color: #22d3ee !important;
+  background-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+/* Card styling - remove visible borders */
+.demo-app .bg-\[\#1e293b\] {
+  background-color: #1e293b !important;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  padding: 1.25rem !important;
+}
+
+/* Summary cards and chart cards - NO border */
+.demo-app .rounded-xl {
+  border-radius: 0.75rem !important;
+}
+
+/* Remove borders from card containers only, NOT from internal row borders */
+/* Target the card wrapper divs with bg-[#1e293b] that have border class */
+.demo-app main > div > div > div.border.border-slate-700\/50.bg-\[\#1e293b\] {
+  border: none !important;
+}
+
+/* Keep border-b for internal rows (the bottom border separators) */
+.demo-app .border-b {
+  border-bottom-width: 1px !important;
+  border-bottom-style: solid !important;
+  border-bottom-color: rgba(51, 65, 85, 0.5) !important;
+}
+
+.demo-app .border-b.border-slate-700\/50 {
+  border-bottom-color: rgba(51, 65, 85, 0.5) !important;
+}
+
+.demo-app .border-b.border-slate-700 {
+  border-bottom-color: #334155 !important;
+}
+
+/* Explicit border-bottom for row separators in Financial Report cards */
+.demo-app .flex.justify-between.items-center.py-2.border-b {
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5) !important;
+}
+
+/* Also for rows with space-y-4 wrapper */
+.demo-app .space-y-4 > .border-b {
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5) !important;
+}
+
+/* Income Statement and Balance Sheet rows */
+.demo-app .space-y-3 > .border-b {
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5) !important;
+}
+
+/* Table header border */
+.demo-app table thead tr.border-b {
+  border-bottom: 1px solid #334155 !important;
+}
+
+.demo-app table tbody tr.border-b {
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5) !important;
+}
+
+/* Explicitly target cards in the grid */
+.demo-app main > div > div > div {
+  border: none !important;
+}
+
+/* Remove all card borders */
+.demo-app [class*="bg-[#1e293b]"] {
+  border: none !important;
+}
+
+/* Fix card content flex layout */
+.demo-app .flex.items-start.justify-between {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+/* Icon container in cards */
+.demo-app .w-10.h-10.rounded-lg {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 0.5rem !important;
+  flex-shrink: 0 !important;
+}
+
+/* Card title */
+.demo-app .text-slate-400.text-xs {
+  color: #94a3b8 !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* Card amount */
+.demo-app .text-2xl.font-bold {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin-top: 0.5rem !important;
+}
+
+/* Card change text */
+.demo-app .text-xs.mt-1 {
+  font-size: 0.75rem !important;
+  margin-top: 0.25rem !important;
+}
+
+/* Reset input styles */
+.demo-app input {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  background: transparent;
+  border: 1px solid #334155;
+  color: inherit !important;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+}
+
+.demo-app input:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+}
+
+/* Reset select styles */
+.demo-app select {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  background: transparent;
+  border: 1px solid #334155;
+  color: inherit !important;
+}
+
+/* Don't override all borders - let Tailwind handle it */
+
+/* Custom scrollbar for demo dark theme */
+.demo-app ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.demo-app ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+.demo-app ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+.demo-app ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Selection color */
+.demo-app ::selection {
+  background: rgba(6, 182, 212, 0.3);
+  color: white;
+}
+
+/* Ensure grid layouts work properly */
+.demo-app .grid {
+  display: grid !important;
+}
+
+/* Ensure flex layouts work properly */
+.demo-app .flex {
+  display: flex !important;
+}
+
+.demo-app .flex-1 {
+  flex: 1 1 0% !important;
+}
+
+.demo-app .w-64 {
+  width: 16rem !important;
+}
+
+.demo-app .h-full {
+  height: 100% !important;
+}
+
+.demo-app .flex-col {
+  flex-direction: column !important;
+}
+
+.demo-app .items-center {
+  align-items: center !important;
+}
+
+.demo-app .justify-between {
+  justify-content: space-between !important;
+}
+
+.demo-app .gap-3 {
+  gap: 0.75rem !important;
+}
+
+.demo-app .gap-4 {
+  gap: 1rem !important;
+}
+
+.demo-app .gap-6 {
+  gap: 1.5rem !important;
+}
+
+.demo-app .space-y-1 > * + * {
+  margin-top: 0.25rem !important;
+}
+
+/* Override any inherited margins/paddings - but allow mt-* and mb-* classes to work */
+.demo-app h1,
+.demo-app h2,
+.demo-app h3,
+.demo-app h5,
+.demo-app h6 {
+  margin: 0 !important;
+}
+
+/* Allow h4 margin classes to work (for Breakdown: heading) */
+.demo-app h4 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ============================================
+   Radix UI Dialog Portal Styles
+   (These render at body level, outside .demo-app)
+   ============================================ */
+
+/* Dialog overlay */
+[data-slot="dialog-overlay"] {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 10000 !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Dialog content */
+[data-slot="dialog-content"] {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 10001 !important;
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 0.5rem !important;
+  padding: 1.5rem !important;
+  max-width: 28rem !important;
+  width: calc(100% - 2rem) !important;
+  color: #f8fafc !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-slot="dialog-content"] * {
+  box-sizing: border-box !important;
+}
+
+/* Dialog header */
+[data-slot="dialog-header"] {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+  text-align: center !important;
+}
+
+/* Dialog title */
+[data-slot="dialog-title"] {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #f8fafc !important;
+  margin: 0 !important;
+}
+
+/* Dialog close button */
+[data-slot="dialog-close"] {
+  position: absolute !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  padding: 0.25rem !important;
+  color: #94a3b8 !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  border-radius: 0.25rem !important;
+  transition: opacity 0.2s !important;
+}
+
+[data-slot="dialog-close"]:hover {
+  opacity: 1 !important;
+  color: #f8fafc !important;
+}
+
+/* Dialog form elements */
+[data-slot="dialog-content"] form {
+  margin-top: 1rem !important;
+}
+
+[data-slot="dialog-content"] label {
+  display: block !important;
+  font-size: 0.875rem !important;
+  color: #cbd5e1 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+[data-slot="dialog-content"] input {
+  width: 100% !important;
+  padding: 0.5rem 0.75rem !important;
+  background-color: #1e293b !important;
+  border: 1px solid #475569 !important;
+  border-radius: 0.375rem !important;
+  color: #f8fafc !important;
+  font-size: 0.875rem !important;
+  font-family: inherit !important;
+}
+
+[data-slot="dialog-content"] input::placeholder {
+  color: #64748b !important;
+}
+
+[data-slot="dialog-content"] input:focus {
+  outline: none !important;
+  border-color: #0ea5e9 !important;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2) !important;
+}
+
+/* Dialog buttons */
+[data-slot="dialog-content"] button[data-slot="button"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  border-radius: 0.375rem !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+  font-family: inherit !important;
+}
+
+/* Select trigger in dialog */
+[data-slot="select-trigger"] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  padding: 0.5rem 0.75rem !important;
+  background-color: #1e293b !important;
+  border: 1px solid #475569 !important;
+  border-radius: 0.375rem !important;
+  color: #f8fafc !important;
+  font-size: 0.875rem !important;
+  cursor: pointer !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Select content dropdown */
+[data-slot="select-content"] {
+  z-index: 10002 !important;
+  background-color: #1e293b !important;
+  border: 1px solid #475569 !important;
+  border-radius: 0.375rem !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-slot="select-item"] {
+  padding: 0.5rem 0.75rem !important;
+  color: #f8fafc !important;
+  cursor: pointer !important;
+  font-size: 0.875rem !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+[data-slot="select-item"]:hover,
+[data-slot="select-item"][data-highlighted] {
+  background-color: #334155 !important;
+}
+
+/* Sonner Toast styles */
+.toaster.group {
+  z-index: 10003 !important;
+}
+
+[data-sonner-toast] {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}

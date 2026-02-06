@@ -16,6 +16,9 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "@/styles/style.css";
 import "@/styles/responsive.css";
 
+// Demo page styles (scoped to .demo-app class)
+import "@/styles/demo.css";
+
 const MyApp = ({ Component, pageProps }) => {
   return (
     <ContextProvider>

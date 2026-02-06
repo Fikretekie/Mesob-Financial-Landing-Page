@@ -6,6 +6,7 @@ import Title from "../Reuseable/Title";
 import VideoModal from "../Reuseable/VideoModal";
 import SingleFeatureOne from "./SingleFeatureOne";
 import styles from "./singlefeature.module.css"
+import Link from "next/link";
 const { tagline, title, bg, videoId, features } = welcomeOne;
 
 const WelcomeOne = ({ id = "" }) => {
@@ -73,6 +74,11 @@ const WelcomeOne = ({ id = "" }) => {
                     title={title}
                     className="text-left"
                   />
+                  <div className="welcome-one__demo-btn-wrapper">
+                    <Link href="/demo" className="welcome-one__demo-btn">
+                      Try Demo
+                    </Link>
+                  </div>
                 </div>
               </Col>
               <Col xl={6} lg={6}>

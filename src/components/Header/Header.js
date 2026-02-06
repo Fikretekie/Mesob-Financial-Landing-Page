@@ -6,7 +6,7 @@ import { Image, Button } from "react-bootstrap";
 import Link from "../Reuseable/Link";
 import MenuList from "./MenuList";
 
-const { logo, navItems: items, loginButton } = headerData;
+const { logo, navItems: items, loginButton, signupButton } = headerData;
 
 const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
   const { scrollTop } = useScroll(100);
@@ -24,6 +24,10 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
   };
   const handleLogin = () => {
     window.location.href = loginButton.href;
+  };
+
+  const handleSignup = () => {
+    window.location.href = signupButton.href;
   };
   return (
     <header className="main-header clearfix">
@@ -59,20 +63,41 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
                 className="main-menu-wrapper__search search-toggler icon-magnifying-glass cursor-pointer"
               ></a>
             </div>
-            <div className="main-menu-wrapper__login">
-              <Button
-                onClick={handleLogin}
+            <div className="main-menu-wrapper__login" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+              <a
+                href={loginButton.href}
+                onClick={(e) => { e.preventDefault(); handleLogin(); }}
                 style={{
-                  marginRight: "20px",
-                  padding: "10px 20px",
-                  backgroundColor: "#1D6BD4",
-                  color: "white",
-                  borderRadius: "8px",
-                  border: "none",
+                  color: "#ffffff",
+                  fontWeight: "500",
+                  fontSize: "15px",
+                  textDecoration: "none",
                   cursor: "pointer",
+                  transition: "color 0.3s ease",
                 }}
+                onMouseOver={(e) => e.target.style.color = "#1D6BD4"}
+                onMouseOut={(e) => e.target.style.color = "#ffffff"}
               >
                 {loginButton.text}
+              </a>
+              <Button
+                onClick={handleSignup}
+                style={{
+                  padding: "12px 24px",
+                  backgroundColor: "#1D6BD4",
+                  color: "white",
+                  borderRadius: "50px",
+                  border: "none",
+                  cursor: "pointer",
+                  fontWeight: "500",
+                  fontSize: "15px",
+                  transition: "background-color 0.3s ease",
+                  whiteSpace: "nowrap",
+                }}
+                onMouseOver={(e) => e.target.style.backgroundColor = "#1558b0"}
+                onMouseOut={(e) => e.target.style.backgroundColor = "#1D6BD4"}
+              >
+                {signupButton.text}
               </Button>
             </div>
           </div>

@@ -97,9 +97,39 @@ const MobileMenu = ({ navItems = items, onePage = false }) => {
         </div>
         <div className="mobile-nav__container">
           <MenuList navItems={navItems} mobile onePage={onePage} />
-          <div className="mobile-nav__button">
-            <Link href="https://app.mesobfinancial.com" className="thm-btn">
-              Sign In/Sign Up
+          <div className="mobile-nav__buttons" style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "20px", padding: "0 15px" }}>
+            <Link 
+              href="https://app.mesobfinancial.com/login" 
+              style={{
+                color: "#ffffff",
+                fontWeight: "500",
+                fontSize: "16px",
+                textDecoration: "none",
+                textAlign: "center",
+                padding: "12px 20px",
+                border: "1px solid rgba(255,255,255,0.3)",
+                borderRadius: "50px",
+                transition: "all 0.3s ease",
+              }}
+            >
+              Log in
+            </Link>
+            <Link 
+              href="https://app.mesobfinancial.com/signup" 
+              style={{
+                backgroundColor: "#1D6BD4",
+                color: "white",
+                fontWeight: "500",
+                fontSize: "16px",
+                textDecoration: "none",
+                textAlign: "center",
+                padding: "12px 20px",
+                borderRadius: "50px",
+                border: "none",
+                transition: "background-color 0.3s ease",
+              }}
+            >
+              Get started for free
             </Link>
           </div>
         </div>

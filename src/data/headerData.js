@@ -153,8 +153,12 @@ const headerData = {
   email: 'info@mesobfinancial.com',
 
   loginButton: {
-    text: "Sign In/Sign Up",
-    href: "https://app.mesobfinancial.com",
+    text: "Log in",
+    href: "https://app.mesobfinancial.com/login",
+  },
+  signupButton: {
+    text: "Get started for free",
+    href: "https://app.mesobfinancial.com/signup",
   },
   socials,
 };
