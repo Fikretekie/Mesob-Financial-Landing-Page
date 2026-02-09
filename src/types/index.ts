@@ -21,4 +21,4 @@ export interface ChartDataPoint {
   amount: number;
 }
 
-export type ViewType = 'dashboard' | 'financial-report' | 'receipts';
+export type ViewType = 'dashboard' | 'financial-report' | 'receipts' | 'user-profile' | 'backup-csv' | 'subscribe';

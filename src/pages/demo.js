@@ -13,6 +13,9 @@ import { useTransactions } from '@/hooks/demo/useTransactions'
 import { downloadPDFReport } from '@/utils/pdfReport'
 import { Toaster } from '@/components/demo/ui/sonner'
 import { toast } from 'sonner'
+import { SubscriptionPlan } from '@/components/demo/sections/subscription'
+import { UserProfile } from '@/components/demo/sections/userprofile'
+import { BackupFile } from '@/components/demo/sections/backup'
 
 // Demo styles are imported in _app.js to comply with Next.js CSS rules
 
@@ -120,6 +123,15 @@ export default function DemoPage() {
         )
       case 'receipts':
         return <Receipts />
+
+      case 'user-profile':
+        return <UserProfile />
+
+      case 'backup-csv':
+        return <BackupFile />
+
+      case 'subscribe':
+        return <SubscriptionPlan />
       default:
         return (
           <Dashboard

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import { LayoutDashboard, FileText, Receipt, type LucideIcon } from 'lucide-react';
@@ -13,7 +14,10 @@ interface SidebarItem {
 const sidebarItems: SidebarItem[] = [
   { id: 'dashboard', label: 'DASHBOARD', icon: LayoutDashboard },
   { id: 'financial-report', label: 'FINANCIAL REPORT', icon: FileText },
-  // { id: 'receipts', label: 'RECEIPTS', icon: Receipt },
+  { id: 'receipts', label: 'RECEIPTS', icon: Receipt },
+  { id: 'user-profile', label: 'USER PROFILE', icon: Receipt },
+  { id: 'backup-csv', label: 'BACKUP CSV', icon: Receipt },
+  { id: 'subscribe', label: 'SUBSCRIBE', icon: Receipt },
 ];
 
 interface SidebarProps {
@@ -26,9 +30,7 @@ export function Sidebar({ currentView, onViewChange }: SidebarProps) {
     <div className="w-64 bg-[#0f172a] border-r border-slate-800 flex flex-col h-full">
       {/* Logo */}
       <div className="p-6 flex items-center gap-3">
-        <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
-          <span className="text-white font-bold text-lg">M</span>
-        </div>
+          <img src="/logo.png" alt="Logo" className="logo_img" width={60} height={60} />
         <div className="flex flex-col">
           <span className="text-white font-semibold text-sm">MESOB</span>
           <span className="text-slate-400 text-xs">Financial</span>

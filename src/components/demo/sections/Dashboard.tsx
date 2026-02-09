@@ -3,6 +3,7 @@
 import { SummaryCard } from '@/components/demo/SummaryCard';
 import { AreaChart } from '@/components/demo/AreaChart';
 import type { FinancialSummary, ChartDataPoint } from '@/types';
+import { Sparkles } from 'lucide-react';
 
 interface DashboardProps {
   summary: FinancialSummary;
@@ -13,8 +14,45 @@ interface DashboardProps {
 }
 
 export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, payableData }: DashboardProps) {
+ 
+    // Check if user has at least one transaction
+  const hasTransactions = cashOnHandData.length > 0 || revenueData.length > 0 || expenseData.length > 0;
+
+    const handleGetStarted = () => {
+    // Replace with your actual signup/pricing link
+    window.open('https://app.mesobfinancial.com/signup', '_blank');
+  };
   return (
     <div className="p-6 space-y-6">
+            {/* Get Started Banner - Shows after first transaction */}
+      {hasTransactions && (
+        <div className="relative overflow-hidden">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 border border-blue-500/50 shadow-lg shadow-blue-500/20">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center animate-pulse">
+                  <Sparkles className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-1">
+                    Ready to unlock all features?
+                  </h3>
+                  
+                </div>
+              </div>
+              <button
+                onClick={handleGetStarted}
+                className="bg-white text-blue-600 font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105 animate-pulse"
+              >
+                Get Started for Free
+              </button>
+            </div>
+          </div>
+          {/* Decorative animated border */}
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-75 blur-xl -z-10 animate-pulse"></div>
+        </div>
+      )}
+
       {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <SummaryCard
