@@ -1,3 +1,4 @@
+
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -16,13 +17,14 @@ import { toast } from 'sonner'
 import { SubscriptionPlan } from '@/components/demo/sections/subscription'
 import { UserProfile } from '@/components/demo/sections/userprofile'
 import { BackupFile } from '@/components/demo/sections/backup'
-
-// Demo styles are imported in _app.js to comply with Next.js CSS rules
+import { BusinessTypeSelector } from '@/components/demo/BusinessTypeSelector'
 
 export default function DemoPage() {
   const [currentView, setCurrentView] = useState('dashboard')
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false)
   const [isSignupDialogOpen, setIsSignupDialogOpen] = useState(false)
+  const [selectedBusinessType, setSelectedBusinessType] = useState('Trucking')
+  const [showBusinessTypeSelector, setShowBusinessTypeSelector] = useState(false)
   
   const {
     summary,
@@ -39,6 +41,24 @@ export default function DemoPage() {
     deleteTransaction,
   } = useTransactions()
 
+  // Load business type from localStorage on mount
+  useEffect(() => {
+    const storedBusinessType = localStorage.getItem('mesob_demo_business_type')
+    if (storedBusinessType) {
+      setSelectedBusinessType(storedBusinessType)
+    } else {
+      // Show business type selector on first visit
+      setShowBusinessTypeSelector(true)
+    }
+  }, [])
+
+  // Save business type to localStorage when it changes
+  useEffect(() => {
+    if (selectedBusinessType) {
+      localStorage.setItem('mesob_demo_business_type', selectedBusinessType)
+    }
+  }, [selectedBusinessType])
+
   // Show signup dialog when limit is reached
   useEffect(() => {
     if (hasReachedLimit) {
@@ -52,12 +72,17 @@ export default function DemoPage() {
       return
     }
     
-    addTransaction(transaction)
-    toast.success('Transaction added successfully!')
+    const success = addTransaction(transaction)
     
-    // Show warning when approaching limit
-    if (transactionCount === maxTransactions - 2) {
-      toast.warning('You have 2 transactions remaining in the demo.')
+    if (success) {
+      toast.success('Transaction added successfully!')
+      
+      // Show warning when approaching limit
+      if (transactionCount === maxTransactions - 2) {
+        toast.warning('You have 2 transactions remaining in the demo.')
+      } else if (transactionCount === maxTransactions - 1) {
+        toast.warning('You have 1 transaction remaining in the demo.')
+      }
     }
   }
 
@@ -98,6 +123,11 @@ export default function DemoPage() {
   const handleContinueDemo = () => {
     setIsSignupDialogOpen(false)
     toast.info('You can continue viewing your data, but cannot add more transactions.')
+  }
+
+  const handleBusinessTypeSelected = (businessType) => {
+    setSelectedBusinessType(businessType)
+    setShowBusinessTypeSelector(false)
   }
 
   const renderContent = () => {
@@ -176,10 +206,18 @@ export default function DemoPage() {
           </main>
         </div>
 
+        <BusinessTypeSelector
+          open={showBusinessTypeSelector}
+          onOpenChange={setShowBusinessTypeSelector}
+          onSelect={handleBusinessTypeSelected}
+          currentBusinessType={selectedBusinessType}
+        />
+
         <AddTransactionDialog
           open={isAddDialogOpen}
           onOpenChange={setIsAddDialogOpen}
           onAdd={handleAddTransaction}
+          selectedBusinessType={selectedBusinessType}
         />
 
         <SignupDialog

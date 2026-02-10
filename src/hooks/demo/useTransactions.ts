@@ -1,7 +1,10 @@
 'use client'
 
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import type { Transaction, FinancialSummary, ChartDataPoint } from '@/types';
+
+const STORAGE_KEY = 'mesob_demo_transactions';
+const MAX_DEMO_TRANSACTIONS = 7;
 
 // Demo starts with 0 transactions
 const initialTransactions: Transaction[] = [];
@@ -92,7 +95,7 @@ const generateExpenseData = (transactions: Transaction[]): ChartDataPoint[] => {
 };
 
 const generatePayableData = (transactions: Transaction[]): ChartDataPoint[] => {
-  const sortedTransactions = [...transactions].filter(t => t.type === 'payable').sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  const sortedTransactions = [...transactions].filter(t => t.category === 'Payable').sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
   
   const dataPoints: ChartDataPoint[] = [];
   let runningPayable = 0;
@@ -120,11 +123,39 @@ const generatePayableData = (transactions: Transaction[]): ChartDataPoint[] => {
   return dataPoints;
 };
 
-const MAX_DEMO_TRANSACTIONS = 7;
-
 export function useTransactions() {
   const [transactions, setTransactions] = useState<Transaction[]>(initialTransactions);
   const [hasReachedLimit, setHasReachedLimit] = useState(false);
+
+  // Load transactions from localStorage on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        try {
+          const parsedTransactions = JSON.parse(stored);
+          setTransactions(parsedTransactions);
+          if (parsedTransactions.length >= MAX_DEMO_TRANSACTIONS) {
+            setHasReachedLimit(true);
+          }
+        } catch (error) {
+          console.error('Error loading transactions from localStorage:', error);
+        }
+      }
+    }
+  }, []);
+
+  // Save transactions to localStorage whenever they change
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (transactions.length > 0) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(transactions));
+      } else {
+        // Clear localStorage if no transactions
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }
+  }, [transactions]);
 
   const addTransaction = useCallback((transaction: Omit<Transaction, 'id' | 'srNo'>) => {
     setTransactions(prev => {
@@ -149,10 +180,15 @@ export function useTransactions() {
 
   const deleteTransaction = useCallback((id: number) => {
     setTransactions(prev => {
-      const newTransactions = prev.filter(t => t.id !== id);
+      const newTransactions = prev.filter(t => t.id !== id).map((t, index) => ({
+        ...t,
+        srNo: index + 1
+      }));
+      
       if (newTransactions.length < MAX_DEMO_TRANSACTIONS) {
         setHasReachedLimit(false);
       }
+      
       return newTransactions;
     });
   }, []);
@@ -160,13 +196,18 @@ export function useTransactions() {
   const resetTransactions = useCallback(() => {
     setTransactions([]);
     setHasReachedLimit(false);
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem(STORAGE_KEY);
+    }
   }, []);
 
   const summary: FinancialSummary = useMemo(() => {
     const revenue = transactions.reduce((sum, t) => sum + t.credit, 0);
     const totalExpenses = transactions.reduce((sum, t) => sum + t.debit, 0);
     const totalCashOnHand = revenue - totalExpenses;
-    const totalPayable = 0; // Start from 0
+    const totalPayable = transactions
+      .filter(t => t.category === 'Payable')
+      .reduce((sum, t) => sum + t.debit, 0);
     
     return {
       totalCashOnHand,
@@ -187,10 +228,11 @@ export function useTransactions() {
 
   const expenseBreakdown = useMemo(() => {
     const fuelExpense = transactions
-      .filter(t => t.category === 'Fuel Expense')
+      .filter(t => t.category?.toLowerCase().includes('fuel'))
       .reduce((sum, t) => sum + t.debit, 0);
     const wagesExpense = transactions
-      .filter(t => t.category === 'Wages (Expense)')
+      .filter(t => t.category?.toLowerCase().includes('wage') || 
+                   t.category?.toLowerCase().includes('salary'))
       .reduce((sum, t) => sum + t.debit, 0);
     
     return {
