@@ -4,6 +4,9 @@
 import { LayoutDashboard, FileText, Receipt, type LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { ViewType } from '@/types';
+import headerData from '@/data/headerData';
+import { Image, Button } from "react-bootstrap";
+
 
 interface SidebarItem {
   id: ViewType;
@@ -25,17 +28,17 @@ interface SidebarProps {
   onViewChange: (view: ViewType) => void;
 }
 
+const { logo, navItems: items, loginButton, signupButton } = headerData;
+
+
 export function Sidebar({ currentView, onViewChange }: SidebarProps) {
   return (
-    <div className="w-64 bg-[#0f172a] border-r border-slate-800 flex flex-col h-full">
-      {/* Logo */}
-      <div className="p-6 flex items-center gap-3">
-          <img src="/logo.png" alt="Logo" className="logo_img" width={60} height={60} />
-        <div className="flex flex-col">
-          <span className="text-white font-semibold text-sm">MESOB</span>
-          <span className="text-slate-400 text-xs">Financial</span>
-        </div>
+      <div className="w-64 bg-[#0f172a] border-r border-slate-800 flex flex-col h-full">
+      {/* Logo - Centered */}
+      <div className="p-2 flex items-center justify-center">
+           <Image src={logo.src} alt="" width={120} height={120}  />
       </div>
+
 
       {/* Navigation */}
       <nav className="flex-1 px-3 py-4 space-y-2">
