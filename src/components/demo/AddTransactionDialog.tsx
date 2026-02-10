@@ -230,7 +230,7 @@ export function AddTransactionDialog({
                     : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
                 }`}
               >
-                Haven't Yet Paid
+                Haven&apos;t Yet Paid
               </Button>
             </div>
           </div>

@@ -40,7 +40,10 @@ export function SubscriptionPlan() {
             <p className="text-3xl font-bold text-blue-400">$29.99<span className="text-lg text-slate-400">/month</span></p>
           </div>
 
-          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+          <button
+            onClick={() => window.location.href = 'https://app.mesobfinancial.com/signup'}
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+          >
             Subscribe
           </button>
         </div>
