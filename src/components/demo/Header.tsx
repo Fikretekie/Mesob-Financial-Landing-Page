@@ -22,50 +22,51 @@ export function Header({
   const isAtLimit = transactionCount >= maxTransactions;
 
   return (
-    <header className="h-16 bg-[#0f172a] flex items-center justify-between px-6">
-      <div className="flex items-center gap-4">
-        <h1 className="text-xl font-semibold text-white">{companyName}</h1>
+    <header className="min-h-16 bg-[#0f172a] flex flex-wrap items-center justify-between px-4 md:px-6 py-3 md:py-0 gap-3 md:gap-0">
+      <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto pl-12 md:pl-0">
+        <h1 className="text-base md:text-xl font-semibold text-white truncate">{companyName}</h1>
         
         {/* Transaction Counter */}
-        <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium ${
+        <div className={`flex items-center gap-1 md:gap-2 px-2 pt-4  md:px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${
           isAtLimit 
             ? 'bg-rose-500/20 text-rose-400' 
             : isNearLimit 
               ? 'bg-amber-500/20 text-amber-400'
               : 'bg-slate-800 text-slate-400'
         }`}>
-          <span>Transactions: {transactionCount}/{maxTransactions}</span>
-          {isNearLimit && <span className="animate-pulse">(Limit approaching)</span>}
-          {isAtLimit && <span>(Demo limit reached)</span>}
+          <span>{transactionCount}/{maxTransactions}</span>
+          {isNearLimit && <span className="hidden lg:inline animate-pulse">(Limit approaching)</span>}
+          {isAtLimit && <span className="hidden lg:inline">(Demo limit reached)</span>}
         </div>
       </div>
       
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 md:gap-3 w-full md:w-auto">
         <Button
           variant="outline"
           onClick={onDownloadReport}
-          className="text-slate-300 hover:bg-slate-700 hover:text-white gap-2"
+          className="text-slate-300 hover:bg-slate-700 hover:text-white gap-1 md:gap-2 flex-1 md:flex-initial text-xs md:text-sm px-2 md:px-4 h-9"
         >
           <FileText className="w-4 h-4" />
-          Download Report
+          <span className="hidden sm:inline">Download Report</span>
+          <span className="sm:hidden">Report</span>
         </Button>
         
         <Button
           onClick={onAddTransaction}
           disabled={isAtLimit}
-          className={`gap-2 ${
+          className={`gap-1 md:gap-2 flex-1 md:flex-initial text-xs md:text-sm px-2 md:px-4 h-9 ${
             isAtLimit 
               ? 'bg-slate-600 cursor-not-allowed' 
               : 'bg-emerald-600 hover:bg-emerald-700'
           } text-white`}
         >
           <Plus className="w-4 h-4" />
-          Add Transaction
+          <span className="hidden sm:inline">Add Transaction</span>
+          <span className="sm:hidden">Add</span>
         </Button>
-     
         
-        <button className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-slate-700 transition-colors">
-          <User className="w-5 h-5 text-slate-400" />
+        <button className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0">
+          <User className="w-4 h-4 md:w-5 md:h-5 text-slate-400" />
         </button>
       </div>
     </header>

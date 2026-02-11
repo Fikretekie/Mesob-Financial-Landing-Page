@@ -90,7 +90,7 @@
 
 /* Sidebar internal flex structure */
 .demo-app > div:first-child > nav {
-  flex: 1 !important;
+  /* flex: 1 !important; */
   overflow: hidden !important;
 }
 
@@ -129,7 +129,7 @@
 
 /* Demo main content area */
 .demo-app > div:nth-child(2) {
-  flex: 1 !important;
+  /* flex: 1 !important; */
   display: flex !important;
   flex-direction: column !important;
   overflow: hidden !important;
