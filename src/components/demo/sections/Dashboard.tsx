@@ -25,7 +25,7 @@ export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, p
   
 
 return (
-  <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+  <div className="p-4 sm:p-6 space-y-4 sm:space-y-6  ">
     {/* Get Started Banner - Shows after first transaction */}
     {hasTransactions && (
       <div className="relative overflow-hidden">
@@ -62,7 +62,7 @@ return (
         change="No change"
         changeType="neutral"
         icon="cash"
-        chartColor="#10b981"
+        chartColor="#41926f"
       />
       <SummaryCard
         title="TOTAL EXPENSES"
@@ -70,7 +70,7 @@ return (
         change="+300% vs last month"
         changeType="negative"
         icon="expense"
-        chartColor="#f43f5e"
+        chartColor="#a7565d"
       />
       <SummaryCard
         title="TOTAL PAYABLE"
@@ -78,7 +78,7 @@ return (
         change="No change"
         changeType="neutral"
         icon="payable"
-        chartColor="#f59e0b"
+        chartColor="#c7ae4f"
       />
       <SummaryCard
         title="Revenue"
@@ -86,12 +86,12 @@ return (
         change="+5134% vs last month"
         changeType="positive"
         icon="revenue"
-        chartColor="#3b82f6"
+        chartColor="#2b427d"
       />
     </div>
 
     {/* Charts Grid */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 text-center">
       <AreaChart
         data={cashOnHandData}
         title="TOTAL CASH ON HAND"

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -41,9 +41,9 @@
   display: flex !important;
   height: 100vh !important;
   width: 100% !important;
-  background-color: #0b1120 !important;
+  /* background-color: #0b1120 !important; */
   color: #f8fafc !important;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+ font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0 !important;
@@ -74,20 +74,14 @@
   font-family: inherit !important;
 }
 
-/* Demo sidebar - the w-64 sidebar container */
-.demo-app > div:first-child {
-  flex-shrink: 0 !important;
-  width: 16rem !important; /* w-64 = 256px */
-  min-width: 16rem !important;
-  background-color: #0f172a !important;
-  border-right: 1px solid #1e293b !important;
-  display: flex !important;
-  flex-direction: column !important;
-  height: 100% !important;
-  position: relative !important;
-  overflow: visible !important;
-}
 
+ .demo-app .w-64 {
+  flex-shrink: 0 !important;
+  background-color: #101926 !important;
+}
+.demo-app > div:first-child.fixed {
+  background-color: #101926 !important;
+}
 /* Sidebar internal flex structure */
 .demo-app > div:first-child > nav {
   /* flex: 1 !important; */
@@ -111,10 +105,10 @@
 }
 
 /* Sidebar class - explicit targeting */
-.demo-app .w-64.bg-\[\#0f172a\] {
+.demo-app .w-64.bg-\[\#101926\] {
   width: 16rem !important;
   min-width: 16rem !important;
-  background-color: #0f172a !important;
+  background-color: #101926 !important;
   display: flex !important;
   flex-direction: column !important;
   height: 100% !important;
@@ -222,7 +216,7 @@
   line-height: inherit !important;
   margin: 0;
   cursor: pointer;
-  border: 1px solid #475569 !important;
+  border: none !important;
 }
 
 /* Override Bootstrap button styles */
@@ -242,9 +236,7 @@
 /* Ensure navigation buttons in sidebar work correctly */
 .demo-app nav button {
   background: transparent;
-  /* Reset borders - let classes control them */
   border: none !important;
-  border-left: 3px solid transparent !important;
   /* Ensure proper alignment */
   display: flex !important;
   align-items: center !important;
@@ -253,24 +245,52 @@
   width: 100% !important;
   padding: 0.75rem 1rem !important;
   gap: 0.75rem !important;
-  border-radius: 0.75rem !important;
+  border-radius: 9999px !important; /* rounded-full */
+  transition: all 0.2s ease-in-out !important;
+  font-size: 0.75rem !important;
+  font-weight: 200 !important;
 }
 
-/* Active nav button with cyan border and background */
-.demo-app nav button.border-l-\[3px\],
-.demo-app nav button.border-cyan-400 {
-  border-left-width: 3px !important;
-  border-left-style: solid !important;
-  border-left-color: #22d3ee !important;
-  background-color: rgba(30, 41, 59, 0.8) !important;
+/* Active nav button - white pill background with shadow */
+.demo-app nav button.bg-white\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Inactive nav button hover state */
+.demo-app nav button:not(.bg-white\/95):hover {
+  background-color: rgba(30, 41, 59, 0.3) !important;
+}
+
+.demo-app nav button.text-cyan-500 {
+  color: #2CA8FF !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.demo-app nav button.text-cyan-400 {
+  color: #2CA8FF  !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Inactive button text color */
+.demo-app nav button.text-slate-300 {
+  color: #cbd5e1 !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Ensure all nav button text uses Montserrat font */
+.demo-app nav button span {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
 /* Card styling - remove visible borders */
 .demo-app .bg-\[\#1e293b\] {
-  background-color: #1e293b !important;
-  border: none !important;
-  border-radius: 0.75rem !important;
-  padding: 1.25rem !important;
+  background-color: #101926 !important;
+   border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0.2rem !important;
+  padding: 1rem !important;
 }
 
 /* Summary cards and chart cards - NO border */
@@ -324,14 +344,14 @@
 }
 
 /* Explicitly target cards in the grid */
-.demo-app main > div > div > div {
+/* .demo-app main > div > div > div {
   border: none !important;
-}
+} */
 
 /* Remove all card borders */
-.demo-app [class*="bg-[#1e293b]"] {
+/* .demo-app [class*="bg-[#1e293b]"] {
   border: none !important;
-}
+} */
 
 /* Fix card content flex layout */
 .demo-app .flex.items-start.justify-between {
@@ -409,7 +429,7 @@
 }
 
 .demo-app ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #101926;
 }
 
 .demo-app ::-webkit-scrollbar-thumb {
@@ -480,7 +500,6 @@
 /* Override any inherited margins/paddings - but allow mt-* and mb-* classes to work */
 .demo-app h1,
 .demo-app h2,
-.demo-app h3,
 .demo-app h5,
 .demo-app h6 {
   margin: 0 !important;

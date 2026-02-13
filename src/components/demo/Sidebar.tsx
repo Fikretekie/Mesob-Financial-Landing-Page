@@ -1,4 +1,3 @@
-
 'use client'
 
 import { LayoutDashboard, FileText, Receipt, X, Menu, type LucideIcon } from 'lucide-react';
@@ -77,7 +76,7 @@ export function Sidebar({ currentView, onViewChange }: SidebarProps) {
       {/* Sidebar - Hidden on mobile by default, always visible on desktop */}
       <div
         className={cn(
-          "w-64 bg-[#0f172a] border-r border-slate-800 flex flex-col h-full transition-transform duration-300 ease-in-out md:translate-x-0",
+          "w-64 bg-[#101926] border-r border-slate-800 flex flex-col h-full transition-transform duration-300 ease-in-out md:translate-x-0",
           // Mobile: fixed and slides in/out
           "fixed md:static inset-y-0 left-0 z-40",
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
@@ -98,14 +97,14 @@ export function Sidebar({ currentView, onViewChange }: SidebarProps) {
               <button
                 key={item.id}
                 onClick={() => handleViewChange(item.id)}
-                className={cn(
-                  'w-full flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-xl',
+               className={cn(
+                    'w-full flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-full',
                   isActive
-                    ? 'bg-slate-800/80 text-cyan-400 border-l-[3px] border-cyan-400'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                    ? 'bg-white/95 text-cyan-500 shadow-lg'
+                    : 'text-slate-300 hover:text-white hover:bg-slate-800/30'
                 )}
               >
-                <Icon className={cn('w-5 h-5 flex-shrink-0', isActive ? 'text-cyan-400' : 'text-slate-500')} />
+                <Icon className={cn('w-5 h-5 flex-shrink-0', isActive ? 'text-cyan-500' : 'text-slate-400')} />
                 <span className="text-left">{item.label}</span>
               </button>
             );

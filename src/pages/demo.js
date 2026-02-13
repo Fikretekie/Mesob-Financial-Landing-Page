@@ -175,70 +175,7 @@ export default function DemoPage() {
     }
   }
 
-  // return (
-  //   <>
-  //     <Head>
-  //       <title>MESOB Financial - Demo</title>
-  //       <meta name="description" content="MESOB Financial Management Dashboard Demo" />
-  //     </Head>
-      
-  //     {/* Wrap everything in demo-app class to scope Tailwind styles */}
-  //     <div className="demo-app flex h-screen bg-[#0b1120]">
-  //       <Sidebar currentView={currentView} onViewChange={setCurrentView} />
-        
-  //       <div className="flex-1 flex flex-col overflow-hidden">
-  //         <Header 
-  //           companyName="HH LLC" 
-  //           onAddTransaction={() => {
-  //             if (transactionCount >= maxTransactions) {
-  //               setIsSignupDialogOpen(true)
-  //             } else {
-  //               setIsAddDialogOpen(true)
-  //             }
-  //           }}
-  //           onDownloadReport={handleDownloadReport}
-  //           transactionCount={transactionCount}
-  //           maxTransactions={maxTransactions}
-  //         />
-          
-  //         <main className="flex-1 overflow-auto">
-  //           {renderContent()}
-  //         </main>
-  //       </div>
 
-  //       <BusinessTypeSelector
-  //         open={showBusinessTypeSelector}
-  //         onOpenChange={setShowBusinessTypeSelector}
-  //         onSelect={handleBusinessTypeSelected}
-  //         currentBusinessType={selectedBusinessType}
-  //       />
-
-  //       <AddTransactionDialog
-  //         open={isAddDialogOpen}
-  //         onOpenChange={setIsAddDialogOpen}
-  //         onAdd={handleAddTransaction}
-  //         selectedBusinessType={selectedBusinessType}
-  //       />
-
-  //       <SignupDialog
-  //         open={isSignupDialogOpen}
-  //         onOpenChange={setIsSignupDialogOpen}
-  //         onContinueDemo={handleContinueDemo}
-  //       />
-        
-  //       <Toaster 
-  //         position="top-right"
-  //         toastOptions={{
-  //           style: {
-  //             background: '#1e293b',
-  //             color: '#fff',
-  //             border: '1px solid #334155',
-  //           },
-  //         }}
-  //       />
-  //     </div>
-  //   </>
-  // )
 
 return (
   <>
@@ -248,7 +185,7 @@ return (
     </Head>
     
     {/* Wrap everything in demo-app class to scope Tailwind styles */}
-    <div className="demo-app flex flex-col sm:flex-row h-screen bg-[#0b1120]">
+    <div className="demo-app flex flex-col sm:flex-row h-screen bg-[#101926]">
       <Sidebar currentView={currentView} onViewChange={setCurrentView} />
       
       <div className="flex-1 flex flex-col overflow-hidden">

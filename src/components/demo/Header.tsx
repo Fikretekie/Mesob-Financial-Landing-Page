@@ -22,7 +22,7 @@ export function Header({
   const isAtLimit = transactionCount >= maxTransactions;
 
   return (
-    <header className="min-h-16 bg-[#0f172a] flex flex-wrap items-center justify-between px-4 md:px-6 py-3 md:py-0 gap-3 md:gap-0">
+    <header className="min-h-16 bg-[#101926] flex flex-wrap items-center justify-between px-4 md:px-6 py-3 md:py-0 gap-3 md:gap-0">
       <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto pl-12 md:pl-0">
         <h1 className="text-base md:text-xl font-semibold text-white truncate">{companyName}</h1>
         
