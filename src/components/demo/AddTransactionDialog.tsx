@@ -213,7 +213,7 @@ export function AddTransactionDialog({
                     : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
                 }`}
               >
-                Pay Cash
+                Paid Cash
               </Button>
               <Button
                 type="button"
