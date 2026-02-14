@@ -26,8 +26,8 @@ export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, p
 const getChange = (data: ChartDataPoint[]): { text: string; type: 'positive' | 'negative' | 'neutral' } => {
   if (data.length < 2) return { text: 'No change', type: 'neutral' };
   
-  const current = data[data.length - 1]?.value ?? 0;
-  const previous = data[data.length - 2]?.value ?? 0;
+  const current = data[data.length - 1]?.amount ?? 0;
+  const previous = data[data.length - 2]?.amount ?? 0;
   
   if (previous === 0 && current === 0) return { text: 'No change', type: 'neutral' };
   if (previous === 0) return { text: 'New', type: 'positive' };
