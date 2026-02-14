@@ -1,4 +1,3 @@
-
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -25,6 +24,7 @@ export default function DemoPage() {
   const [isSignupDialogOpen, setIsSignupDialogOpen] = useState(false)
   const [selectedBusinessType, setSelectedBusinessType] = useState('Trucking')
   const [showBusinessTypeSelector, setShowBusinessTypeSelector] = useState(false)
+  const [businessName, setBusinessName] = useState('Your Business LLC')
   
   const {
     summary,
@@ -41,13 +41,27 @@ export default function DemoPage() {
     deleteTransaction,
   } = useTransactions()
 
+  // Load business name from localStorage on mount
+  useEffect(() => {
+    const storedName = localStorage.getItem('mesob_demo_business_name')
+    if (storedName) {
+      setBusinessName(storedName)
+    }
+  }, [])
+
+  // Save business name to localStorage when it changes
+  useEffect(() => {
+    if (businessName) {
+      localStorage.setItem('mesob_demo_business_name', businessName)
+    }
+  }, [businessName])
+
   // Load business type from localStorage on mount
   useEffect(() => {
     const storedBusinessType = localStorage.getItem('mesob_demo_business_type')
     if (storedBusinessType) {
       setSelectedBusinessType(storedBusinessType)
     } else {
-      // Show business type selector on first visit
       setShowBusinessTypeSelector(true)
     }
   }, [])
@@ -77,7 +91,6 @@ export default function DemoPage() {
     if (success) {
       toast.success('Transaction added successfully!')
       
-      // Show warning when approaching limit
       if (transactionCount === maxTransactions - 2) {
         toast.warning('You have 2 transactions remaining in the demo.')
       } else if (transactionCount === maxTransactions - 1) {
@@ -97,7 +110,6 @@ export default function DemoPage() {
       return
     }
 
-    // Get date range from transactions
     const dates = transactions.map(t => new Date(t.date))
     const minDate = new Date(Math.min(...dates.map(d => d.getTime())))
     const maxDate = new Date(Math.max(...dates.map(d => d.getTime())))
@@ -105,7 +117,7 @@ export default function DemoPage() {
     const dateRange = `${minDate.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }).toUpperCase()} – ${maxDate.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }).toUpperCase()}`
 
     const reportData = {
-      companyName: 'HH LLC',
+      companyName: businessName,
       dateRange,
       totalCashOnHand: summary.totalCashOnHand,
       totalRevenue: summary.revenue,
@@ -153,13 +165,10 @@ export default function DemoPage() {
         )
       case 'receipts':
         return <Receipts />
-
       case 'user-profile':
         return <UserProfile />
-
       case 'backup-csv':
         return <BackupFile />
-
       case 'subscribe':
         return <SubscriptionPlan />
       default:
@@ -175,71 +184,68 @@ export default function DemoPage() {
     }
   }
 
-
-
-return (
-  <>
-    <Head>
-      <title>MESOB Financial - Demo</title>
-      <meta name="description" content="MESOB Financial Management Dashboard Demo" />
-    </Head>
-    
-    {/* Wrap everything in demo-app class to scope Tailwind styles */}
-    <div className="demo-app flex flex-col sm:flex-row h-screen bg-[#101926]">
-      <Sidebar currentView={currentView} onViewChange={setCurrentView} />
+  return (
+    <>
+      <Head>
+        <title>MESOB Financial - Demo</title>
+        <meta name="description" content="MESOB Financial Management Dashboard Demo" />
+      </Head>
       
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <Header 
-          companyName="HH LLC" 
-          onAddTransaction={() => {
-            if (transactionCount >= maxTransactions) {
-              setIsSignupDialogOpen(true)
-            } else {
-              setIsAddDialogOpen(true)
-            }
-          }}
-          onDownloadReport={handleDownloadReport}
-          transactionCount={transactionCount}
-          maxTransactions={maxTransactions}
+      <div className="demo-app flex flex-col sm:flex-row h-screen bg-[#101926]">
+        <Sidebar currentView={currentView} onViewChange={setCurrentView} />
+        
+        <div className="flex-1 flex flex-col overflow-hidden">
+          <Header 
+            companyName={businessName}
+            onCompanyNameChange={setBusinessName}
+            onAddTransaction={() => {
+              if (transactionCount >= maxTransactions) {
+                setIsSignupDialogOpen(true)
+              } else {
+                setIsAddDialogOpen(true)
+              }
+            }}
+            onDownloadReport={handleDownloadReport}
+            transactionCount={transactionCount}
+            maxTransactions={maxTransactions}
+          />
+          
+          <main className="flex-1 overflow-auto">
+            {renderContent()}
+          </main>
+        </div>
+
+        <BusinessTypeSelector
+          open={showBusinessTypeSelector}
+          onOpenChange={setShowBusinessTypeSelector}
+          onSelect={handleBusinessTypeSelected}
+          currentBusinessType={selectedBusinessType}
+        />
+
+        <AddTransactionDialog
+          open={isAddDialogOpen}
+          onOpenChange={setIsAddDialogOpen}
+          onAdd={handleAddTransaction}
+          selectedBusinessType={selectedBusinessType}
+        />
+
+        <SignupDialog
+          open={isSignupDialogOpen}
+          onOpenChange={setIsSignupDialogOpen}
+          onContinueDemo={handleContinueDemo}
         />
         
-        <main className="flex-1 overflow-auto">
-          {renderContent()}
-        </main>
+        <Toaster 
+          position="top-right"
+          toastOptions={{
+            style: {
+              background: '#1e293b',
+              color: '#fff',
+              border: '1px solid #334155',
+            },
+          }}
+        />
       </div>
-
-      <BusinessTypeSelector
-        open={showBusinessTypeSelector}
-        onOpenChange={setShowBusinessTypeSelector}
-        onSelect={handleBusinessTypeSelected}
-        currentBusinessType={selectedBusinessType}
-      />
-
-      <AddTransactionDialog
-        open={isAddDialogOpen}
-        onOpenChange={setIsAddDialogOpen}
-        onAdd={handleAddTransaction}
-        selectedBusinessType={selectedBusinessType}
-      />
-
-      <SignupDialog
-        open={isSignupDialogOpen}
-        onOpenChange={setIsSignupDialogOpen}
-        onContinueDemo={handleContinueDemo}
-      />
-      
-      <Toaster 
-        position="top-right"
-        toastOptions={{
-          style: {
-            background: '#1e293b',
-            color: '#fff',
-            border: '1px solid #334155',
-          },
-        }}
-      />
-    </div>
-  </>
-);
-
+    </>
+  )
 }

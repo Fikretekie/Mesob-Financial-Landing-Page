@@ -8,6 +8,7 @@ import { Label } from '@/components/demo/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/demo/ui/select';
 import type { Transaction } from '@/types';
 import { businessTypes } from '@/utils/businessTypes';
+import { Upload, Lock, X } from 'lucide-react';
 
 interface AddTransactionDialogProps {
   open: boolean;
@@ -31,8 +32,8 @@ export function AddTransactionDialog({
   const [manualPurpose, setManualPurpose] = useState('');
   const [transactionAmount, setTransactionAmount] = useState('');
   const [purposes, setPurposes] = useState<string[]>([]);
+  const [showUpgradeMessage, setShowUpgradeMessage] = useState(false);
 
-  // Get business purposes based on selected business type
   const getBusinessPurposes = (type: string) => {
     if (businessTypes[type]) {
       return businessTypes[type];
@@ -44,7 +45,6 @@ export function AddTransactionDialog({
     };
   };
 
-  // Update purposes when transaction type or payment mode changes
   useEffect(() => {
     const businessPurposes = getBusinessPurposes(selectedBusinessType);
     
@@ -68,6 +68,7 @@ export function AddTransactionDialog({
     setTransactionPurpose('');
     setManualPurpose('');
     setTransactionAmount('');
+    setShowUpgradeMessage(false);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -78,12 +79,10 @@ export function AddTransactionDialog({
       return;
     }
 
-    // Validate purpose
     if (transactionPurpose === 'manual' && !manualPurpose.trim()) {
       return;
     }
 
-    // For "Pay Cash" with "Recorded Earlier as Payable"
     if (transactionType === 'pay' && paymentMode === 'recorded') {
       const finalPurpose = transactionPurpose === 'manual' 
         ? manualPurpose 
@@ -100,7 +99,6 @@ export function AddTransactionDialog({
 
       onAdd(transaction);
     } 
-    // For "Pay Cash" with "Bought a New Item"
     else if (transactionType === 'pay' && paymentMode === 'boughtItem') {
       const finalPurpose = transactionPurpose === 'manual' 
         ? manualPurpose 
@@ -117,7 +115,6 @@ export function AddTransactionDialog({
 
       onAdd(transaction);
     }
-    // For "Received Cash"
     else if (transactionType === 'receive') {
       const finalPurpose = transactionPurpose === 'manual' 
         ? manualPurpose 
@@ -134,7 +131,6 @@ export function AddTransactionDialog({
 
       onAdd(transaction);
     }
-    // For "Haven't Yet Paid" (Payable)
     else if (transactionType === 'payable') {
       const finalPurpose = transactionPurpose === 'manual' 
         ? manualPurpose 
@@ -151,7 +147,6 @@ export function AddTransactionDialog({
 
       onAdd(transaction);
     }
-    // For "Pay Cash" with "New Expense"
     else if (transactionType === 'pay' && paymentMode === 'new') {
       const finalPurpose = transactionPurpose === 'manual' 
         ? manualPurpose 
@@ -195,6 +190,7 @@ export function AddTransactionDialog({
                 onClick={() => {
                   setTransactionType('receive');
                   setPaymentMode(null);
+                  setShowUpgradeMessage(false);
                 }}
                 className={`w-full h-11 text-sm font-medium rounded-md transition-all duration-200 ${
                   transactionType === 'receive'
@@ -209,6 +205,7 @@ export function AddTransactionDialog({
                 onClick={() => {
                   setTransactionType('pay');
                   setPaymentMode(null);
+                  setShowUpgradeMessage(false);
                 }}
                 className={`w-full h-11 text-sm font-medium rounded-md transition-all duration-200 ${
                   transactionType === 'pay'
@@ -223,6 +220,7 @@ export function AddTransactionDialog({
                 onClick={() => {
                   setTransactionType('payable');
                   setPaymentMode(null);
+                  setShowUpgradeMessage(false);
                 }}
                 className={`w-full h-11 text-sm font-medium rounded-md transition-all duration-200 ${
                   transactionType === 'payable'
@@ -242,7 +240,7 @@ export function AddTransactionDialog({
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <Button
                   type="button"
-                  onClick={() => setPaymentMode('recorded')}
+                  onClick={() => { setPaymentMode('recorded'); setShowUpgradeMessage(false); }}
                   className={`w-full min-h-[44px] h-auto py-2.5 px-3 text-sm font-medium rounded-md transition-all duration-200 whitespace-normal leading-tight ${
                     paymentMode === 'recorded'
                       ? 'bg-[#3b82f6] hover:bg-[#2563eb] text-white shadow-md'
@@ -253,7 +251,7 @@ export function AddTransactionDialog({
                 </Button>
                 <Button
                   type="button"
-                  onClick={() => setPaymentMode('new')}
+                  onClick={() => { setPaymentMode('new'); setShowUpgradeMessage(false); }}
                   className={`w-full min-h-[44px] h-auto py-2.5 px-3 text-sm font-medium rounded-md transition-all duration-200 whitespace-normal leading-tight ${
                     paymentMode === 'new'
                       ? 'bg-[#ef4444] hover:bg-[#dc2626] text-white shadow-md'
@@ -264,7 +262,7 @@ export function AddTransactionDialog({
                 </Button>
                 <Button
                   type="button"
-                  onClick={() => setPaymentMode('boughtItem')}
+                  onClick={() => { setPaymentMode('boughtItem'); setShowUpgradeMessage(false); }}
                   className={`w-full min-h-[44px] h-auto py-2.5 px-3 text-sm font-medium rounded-md transition-all duration-200 whitespace-normal leading-tight ${
                     paymentMode === 'boughtItem'
                       ? 'bg-[#f59e0b] hover:bg-[#d97706] text-white shadow-md'
@@ -277,7 +275,7 @@ export function AddTransactionDialog({
             </div>
           )}
 
-          {/* Purpose Selection - Show for appropriate transaction types */}
+          {/* Purpose Selection */}
           {((transactionType === 'receive') || 
             (transactionType === 'pay' && (paymentMode === 'new' || paymentMode === 'boughtItem')) ||
             (transactionType === 'payable')) && (
@@ -307,7 +305,6 @@ export function AddTransactionDialog({
                 </SelectContent>
               </Select>
 
-              {/* Manual Purpose Input */}
               {transactionPurpose === 'manual' && (
                 <Input
                   type="text"
@@ -322,7 +319,7 @@ export function AddTransactionDialog({
             </div>
           )}
 
-          {/* Amount Input - Show when appropriate */}
+          {/* Amount Input */}
           {((transactionType === 'receive') || 
             (transactionType === 'pay' && paymentMode !== null) ||
             (transactionType === 'payable')) && (
@@ -336,6 +333,53 @@ export function AddTransactionDialog({
                 placeholder="0.00"
                 className="bg-[#374151] border-slate-600 text-white placeholder:text-slate-400 h-10 text-sm transition-all duration-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30"
               />
+            </div>
+          )}
+
+          {/* Upload Receipt Section */}
+          {((transactionType === 'receive') || 
+            (transactionType === 'pay' && paymentMode !== null) ||
+            (transactionType === 'payable')) && (
+            <div className="space-y-2">
+              <Label className="text-slate-200 text-sm font-medium">Upload Receipt (optional):</Label>
+              
+              {!showUpgradeMessage ? (
+                <button
+                  type="button"
+                  onClick={() => setShowUpgradeMessage(true)}
+                  className="w-full border-2 border-dashed border-slate-600 rounded-lg p-4 flex flex-col items-center gap-2 hover:border-slate-500 hover:bg-slate-700/30 transition-all duration-200 cursor-pointer"
+                >
+                  <Upload className="w-6 h-6 text-slate-400" />
+                  <span className="text-slate-400 text-sm">Click to upload receipt</span>
+                  <span className="text-slate-500 text-xs">PNG, JPG, PDF up to 5MB</span>
+                </button>
+              ) : (
+                <div className="relative bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/30 rounded-lg p-4">
+                  <button
+                    type="button"
+                    onClick={() => setShowUpgradeMessage(false)}
+                    className="absolute top-2 right-2 text-slate-400 hover:text-white transition-colors"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                  <div className="flex flex-col items-center text-center gap-3">
+                    <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center">
+                      <Lock className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <p className="text-slate-200 text-sm leading-relaxed">
+                      This feature is available in the <span className="font-semibold text-blue-400">Pro Plan</span>. 
+                      Unlock unlimited receipt uploads and tax-ready organization by upgrading today!
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => window.location.href = 'https://app.mesobfinancial.com/signup'}
+                      className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded-lg transition-all hover:shadow-lg hover:shadow-blue-500/25"
+                    >
+                      Upgrade to Pro
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           )}
 

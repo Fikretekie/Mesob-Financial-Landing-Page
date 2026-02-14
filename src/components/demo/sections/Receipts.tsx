@@ -12,7 +12,7 @@ export function Receipts() {
         <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-slate-400" />
       </div>
       <h2 className="text-lg sm:text-xl font-semibold text-white mb-2">Receipts Management</h2>
-      <p className="text-sm sm:text-base text-slate-400">This feature is coming soon. You&apos;ll be able to upload and manage receipts here.</p>
+      <p className="text-sm sm:text-base text-slate-400">This feature is available in the Pro Plan. Unlock unlimited receipt uploads and tax-ready organization by upgrading today!</p>
     </div>
   </div>
 );
