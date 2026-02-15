@@ -24,7 +24,7 @@ export default function DemoPage() {
   const [isSignupDialogOpen, setIsSignupDialogOpen] = useState(false)
   const [selectedBusinessType, setSelectedBusinessType] = useState('Trucking')
   const [showBusinessTypeSelector, setShowBusinessTypeSelector] = useState(false)
-  const [businessName, setBusinessName] = useState('Your Business LLC')
+  const [businessName, setBusinessName] = useState('Enter your business name')
   
   const {
     summary,

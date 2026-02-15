@@ -367,8 +367,7 @@ export function AddTransactionDialog({
                       <Lock className="w-5 h-5 text-blue-400" />
                     </div>
                     <p className="text-slate-200 text-sm leading-relaxed">
-                      This feature is available in the <span className="font-semibold text-blue-400">Pro Plan</span>. 
-                      Unlock unlimited receipt uploads and tax-ready organization by upgrading today!
+                      This feature is available in the <span className="font-semibold text-blue-400">Pro Plan</span>. Unlock unlimited receipt uploads and keep your finances ready for tax season by upgrading today!
                     </p>
                     <button
                       type="button"

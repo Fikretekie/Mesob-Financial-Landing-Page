@@ -11,7 +11,9 @@ interface ReportData {
   fuelExpense: number;
   wagesExpense: number;
 }
+import headerData from '@/data/headerData';
 
+const { logo } = headerData;
 const formatCurrency = (value: number) => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -30,8 +32,11 @@ const formatDate = (dateString: string) => {
   });
 };
 
-export function generateReportHTML(data: ReportData): string {
+export function generateReportHTML(data: ReportData, logoBase64?: string): string {
   const netIncome = data.totalRevenue - data.totalExpenses;
+  const companyName = data.companyName === 'Enter your business name' 
+    ? 'Company Name' 
+    : data.companyName;
   const totalAssets = data.totalCashOnHand;
   const totalLiabilities = data.totalPayable;
   const ownerEquity = totalAssets - totalLiabilities;
@@ -45,7 +50,7 @@ export function generateReportHTML(data: ReportData): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${data.companyName} - Financial Executive Report</title>
+  <title>${companyName} - Financial Executive Report</title>
   <style>
     * {
       margin: 0;
@@ -54,11 +59,13 @@ export function generateReportHTML(data: ReportData): string {
     }
     
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      font-size: 11pt;
-      line-height: 1.5;
-      color: #333;
-      background: white;
+     font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #333;
+  background: white;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
     }
     
     @page {
@@ -71,14 +78,18 @@ export function generateReportHTML(data: ReportData): string {
     }
     
     .cover {
-      width: 210mm;
-      height: 297mm;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-      position: relative;
-      overflow: hidden;
-      page-break-after: always;
-      padding: 2cm;
-    }
+   width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%) !important;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  padding: 1cm 2cm;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+
     
     .cover::before {
       content: '';
@@ -109,20 +120,19 @@ export function generateReportHTML(data: ReportData): string {
     }
     
     .cover-header {
-      text-align: center;
-      padding-top: 3cm;
-    }
+  text-align: center;
+  padding-top: 1.5cm;
+}
     
     .cover-logo {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, #06b6d4, #3b82f6);
-      border-radius: 12px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5cm;
-    }
+  display: inline-block;
+  margin-bottom: 1.0cm;
+}
+
+.cover-logo img {
+  border-radius: 12px;
+  object-fit: contain;
+}
     
     .cover-logo span {
       color: white;
@@ -143,7 +153,7 @@ export function generateReportHTML(data: ReportData): string {
       color: #94a3b8;
       text-transform: uppercase;
       letter-spacing: 3px;
-      margin-bottom: 2cm;
+      margin-bottom: 1cm;
     }
     
     .cover-date {
@@ -152,13 +162,13 @@ export function generateReportHTML(data: ReportData): string {
     }
     
     .summary-cards {
-      display: flex;
-      justify-content: center;
-      gap: 1cm;
-      margin-top: auto;
-      margin-bottom: 2cm;
-      flex-wrap: wrap;
-    }
+  display: flex;
+  justify-content: center;
+  gap: 0.6cm;
+  margin-top: 1.5cm;
+  margin-bottom: 1cm;
+  flex-wrap: wrap;
+}
     
     .summary-card {
       background: rgba(30, 41, 59, 0.8);
@@ -202,7 +212,7 @@ export function generateReportHTML(data: ReportData): string {
     }
     
     .page {
-      padding: 1cm 0;
+       padding: 1cm 1.5cm;
     }
     
     .page-header {
@@ -231,14 +241,14 @@ export function generateReportHTML(data: ReportData): string {
     }
     
     .section {
-      margin-bottom: 1cm;
+      margin-bottom: 0.6cm;
     }
     
     .section-title {
-      font-size: 12pt;
+      font-size: 11pt;
       font-weight: 700;
       color: #0f172a;
-      margin-bottom: 0.5cm;
+      margin-bottom: 0.3cm;
       padding-bottom: 0.2cm;
       border-bottom: 1px solid #e2e8f0;
     }
@@ -289,7 +299,7 @@ export function generateReportHTML(data: ReportData): string {
     }
     
     th {
-      background: #0f172a;
+       background: #0f172a !important;
       color: white;
       padding: 0.3cm;
       text-align: left;
@@ -351,28 +361,29 @@ export function generateReportHTML(data: ReportData): string {
     .two-column {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1cm;
+      gap: 1.5cm;
     }
     
-    .highlight-box {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
-      padding: 0.5cm;
-      border-radius: 6px;
-      margin-bottom: 0.5cm;
-    }
     
-    .highlight-box h4 {
-      font-size: 9pt;
-      color: #94a3b8;
-      margin-bottom: 0.2cm;
-      text-transform: uppercase;
-    }
-    
-    .highlight-box .value {
-      font-size: 14pt;
-      font-weight: 700;
-    }
+      .highlight-box {
+          background: linear-gradient(135deg, #0f172a, #1e293b) !important;
+        color: white;
+        padding: 0.4cm;
+        margin-top: 0.2cm;
+        border-radius: 6px;
+      }
+
+      .highlight-box h4 {
+        font-size: 7pt;
+        color: #94a3b8;
+        margin-bottom: 0.15cm;
+        text-transform: uppercase;
+      }
+
+      .highlight-box .value {
+        font-size: 12pt;
+        font-weight: 700;
+      }
   </style>
 </head>
 <body>
@@ -380,10 +391,10 @@ export function generateReportHTML(data: ReportData): string {
   <div class="cover">
     <div class="cover-content">
       <div class="cover-header">
-        <div class="cover-logo">
-          <span>M</span>
-        </div>
-        <h1 class="cover-title">${data.companyName}</h1>
+      <div class="cover-logo">
+        <img src="${logoBase64 || logo.src}" alt="${companyName} Logo" width="120" height="120" />
+      </div>
+        <h1 class="cover-title">${companyName}</h1>
         <p class="cover-subtitle">Financial Executive Report</p>
         <p class="cover-date">${data.dateRange}</p>
       </div>
@@ -423,22 +434,24 @@ export function generateReportHTML(data: ReportData): string {
     <div class="two-column">
       <div>
         <div class="section">
-          <h3 class="section-title">Statement Summary</h3>
-          <div class="highlight-box">
-            <h4>Total Cash on Hand</h4>
-            <div class="value" style="color: #10b981;">${formatCurrency(data.totalCashOnHand)}</div>
-          </div>
-          <div class="highlight-box">
-            <h4>Gross Revenue</h4>
-            <div class="value" style="color: #3b82f6;">${formatCurrency(data.totalRevenue)}</div>
-          </div>
-          <div class="highlight-box">
-            <h4>Total Payable (Unpaid)</h4>
-            <div class="value" style="color: #f59e0b;">${formatCurrency(data.totalPayable)}</div>
-          </div>
-          <div class="highlight-box">
-            <h4>Total Expense</h4>
-            <div class="value" style="color: #f43f5e;">${formatCurrency(data.totalExpenses)}</div>
+         <h3 class="section-title">Statement Summary</h3>
+          <div class="highlight-grid">
+            <div class="highlight-box">
+              <h4>Total Cash on Hand</h4>
+              <div class="value" style="color: #10b981;">${formatCurrency(data.totalCashOnHand)}</div>
+            </div>
+            <div class="highlight-box">
+              <h4>Gross Revenue</h4>
+              <div class="value" style="color: #3b82f6;">${formatCurrency(data.totalRevenue)}</div>
+            </div>
+            <div class="highlight-box">
+              <h4>Total Payable (Unpaid)</h4>
+              <div class="value" style="color: #f59e0b;">${formatCurrency(data.totalPayable)}</div>
+            </div>
+            <div class="highlight-box">
+              <h4>Total Expense</h4>
+              <div class="value" style="color: #f43f5e;">${formatCurrency(data.totalExpenses)}</div>
+            </div>
           </div>
         </div>
         
@@ -549,13 +562,20 @@ export function generateReportHTML(data: ReportData): string {
 }
 
 export async function downloadPDFReport(data: ReportData): Promise<void> {
-  const html = generateReportHTML(data);
+  // Convert logo to base64 so it works in the new window
+  const response = await fetch(logo.src);
+  const blob = await response.blob();
+  const logoBase64: string = await new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result as string);
+    reader.readAsDataURL(blob);
+  });
+
+  const html = generateReportHTML(data, logoBase64);
   
-  // Create a blob and download as HTML first
-  const blob = new Blob([html], { type: 'text/html' });
-  const url = URL.createObjectURL(blob);
+  const htmlBlob = new Blob([html], { type: 'text/html' });
+  const url = URL.createObjectURL(htmlBlob);
   
-  // Open in new window for printing/saving as PDF
   const printWindow = window.open(url, '_blank');
   
   if (printWindow) {
