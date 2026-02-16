@@ -22,25 +22,59 @@ export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, p
     window.open('https://app.mesobfinancial.com/signup', '_blank');
   };
 
-  // Calculate percentage change from chart data
+// Calculate percentage change from chart data
 const getChange = (data: ChartDataPoint[]): { text: string; type: 'positive' | 'negative' | 'neutral' } => {
   if (data.length < 2) return { text: 'No change', type: 'neutral' };
   
+  // Find the first NON-ZERO entry to use as baseline
+  let baselineIndex = -1;
+  let baseline = 0;
+  
+  for (let i = 0; i < data.length; i++) {
+    const value = data[i]?.amount ?? 0;
+    if (value !== 0) {
+      baseline = value;
+      baselineIndex = i;
+      break;
+    }
+  }
+  
+  // If no non-zero value found, everything is zero
+  if (baselineIndex === -1) {
+    return { text: 'No change', type: 'neutral' };
+  }
+  
+  // If we only have one non-zero entry, show as baseline (no comparison possible)
+  if (baselineIndex === data.length - 1) {
+    return { text: 'No change', type: 'neutral' };
+  }
+  
+  // Get current value (last entry)
   const current = data[data.length - 1]?.amount ?? 0;
-  const previous = data[data.length - 2]?.amount ?? 0;
   
-  if (previous === 0 && current === 0) return { text: 'No change', type: 'neutral' };
-  if (previous === 0) return { text: 'New', type: 'positive' };
+  // If current equals baseline
+  if (current === baseline) {
+    return { text: 'No change', type: 'neutral' };
+  }
   
-  const pctChange = ((current - previous) / Math.abs(previous)) * 100;
+  // Calculate percentage change from baseline to current
+  const change = ((current - baseline) / Math.abs(baseline)) * 100;
+  const roundedChange = Math.round(change);
   
-  if (isNaN(pctChange) || !isFinite(pctChange)) return { text: 'No change', type: 'neutral' };
+  if (isNaN(change) || !isFinite(change)) {
+    return { text: 'No change', type: 'neutral' };
+  }
   
-  const rounded = Math.round(pctChange);
+  if (roundedChange === 0) {
+    return { text: 'No change', type: 'neutral' };
+  }
   
-  if (rounded === 0) return { text: 'No change', type: 'neutral' };
-  if (rounded > 0) return { text: `+${rounded}% vs last period`, type: 'positive' };
-  return { text: `${rounded}% vs last period`, type: 'negative' };
+  const sign = roundedChange > 0 ? '+' : '';
+  
+  return {
+    text: `${sign}${roundedChange}% vs last month`,
+    type: roundedChange > 0 ? 'positive' : 'negative'
+  };
 };
 
   const cashChange = getChange(cashOnHandData);

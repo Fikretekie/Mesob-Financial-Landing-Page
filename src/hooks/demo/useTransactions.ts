@@ -226,22 +226,40 @@ export function useTransactions() {
     return [...transactions].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }, [transactions]);
 
-  const expenseBreakdown = useMemo(() => {
-    const fuelExpense = transactions
-      .filter(t => t.category?.toLowerCase().includes('fuel'))
-      .reduce((sum, t) => sum + t.debit, 0);
-    const wagesExpense = transactions
-      .filter(t => t.category?.toLowerCase().includes('wage') || 
-                   t.category?.toLowerCase().includes('salary'))
-      .reduce((sum, t) => sum + t.debit, 0);
+  // const expenseBreakdown = useMemo(() => {
+  //   const fuelExpense = transactions
+  //     .filter(t => t.category?.toLowerCase().includes('fuel'))
+  //     .reduce((sum, t) => sum + t.debit, 0);
+  //   const wagesExpense = transactions
+  //     .filter(t => t.category?.toLowerCase().includes('wage') || 
+  //                  t.category?.toLowerCase().includes('salary'))
+  //     .reduce((sum, t) => sum + t.debit, 0);
     
-    return {
-      fuelExpense,
-      wagesExpense,
-      totalExpenses: fuelExpense + wagesExpense
-    };
-  }, [transactions]);
+  //   return {
+  //     fuelExpense,
+  //     wagesExpense,
+  //     totalExpenses: fuelExpense + wagesExpense
+  //   };
+  // }, [transactions]);
+const expenseBreakdown = useMemo(() => {
+  const breakdown: Record<string, number> = {};
+  let totalExpenses = 0;
 
+  transactions.forEach((t) => {
+    if (t.type === 'expense') {
+      const amount = t.debit;
+      const category = t.category || 'Other Expenses';
+      
+      breakdown[category] = (breakdown[category] || 0) + amount;
+      totalExpenses += amount;
+    }
+  });
+
+  return {
+    ...breakdown,
+    totalExpenses
+  };
+}, [transactions]);
   return {
     transactions: sortedTransactions,
     summary,

@@ -274,29 +274,45 @@ return (
           </div>
         </div>
 
-        <h4 className="text-white text-sm font-medium mt-4 mb-2">Breakdown:</h4>
-        
-        <div className="space-y-1">
-          <div className="flex justify-between items-center">
-            <span className="text-slate-400 text-sm">Revenue:</span>
-            <span className="text-emerald-400 text-sm">{formatCurrency(summary.revenue)}</span>
-          </div>
-          
-          <div className="flex justify-between items-center">
-            <span className="text-slate-400 text-sm">Total Expense:</span>
-            <span className="text-rose-400 text-sm">{formatCurrency(expenseBreakdown.totalExpenses)}</span>
-          </div>
-          
-          <div className="flex justify-between items-center">
-            <span className="text-slate-400 text-sm">Fuel Expense:</span>
-            <span className="text-rose-400 text-sm">{formatCurrency(expenseBreakdown.fuelExpense)}</span>
-          </div>
-          
-          <div className="flex justify-between items-center">
-            <span className="text-slate-400 text-sm">Wages (Expense):</span>
-            <span className="text-rose-400 text-sm">{formatCurrency(expenseBreakdown.wagesExpense)}</span>
-          </div>
+       <h4 className="text-white text-sm font-medium mt-4 mb-2">Breakdown:</h4>
+
+<div className="space-y-1">
+  <div className="flex justify-between items-center">
+    <span className="text-slate-400 text-sm">Revenue:</span>
+    <span className="text-emerald-400 text-sm">{formatCurrency(summary.revenue)}</span>
+  </div>
+  
+  <div className="flex justify-between items-center">
+    <span className="text-slate-400 text-sm">Total Expense:</span>
+    <span className="text-rose-400 text-sm">{formatCurrency(expenseBreakdown.totalExpenses)}</span>
+  </div>
+  
+  {/* Dynamically show individual expense categories */}
+  {(() => {
+    // Group expenses by category
+    const expensesByCategory: Record<string, number> = {};
+    
+    transactions
+      .filter(t => t.type === 'expense')
+      .forEach(t => {
+        const category = t.category || 'Other';
+        if (!expensesByCategory[category]) {
+          expensesByCategory[category] = 0;
+        }
+        expensesByCategory[category] += t.debit;
+      });
+    
+    // Convert to array and render
+    return Object.entries(expensesByCategory)
+      .filter(([_, amount]) => amount > 0)
+      .map(([category, amount]) => (
+        <div key={category} className="flex justify-between items-center">
+          <span className="text-slate-400 text-sm">{category}:</span>
+          <span className="text-rose-400 text-sm">{formatCurrency(amount)}</span>
         </div>
+      ));
+  })()}
+</div>
       </div>
 
      {/* Journal Entry Section */}
@@ -316,51 +332,77 @@ return (
         </tr>
       </thead>
       <tbody className="text-sm">
-        {transactions.map((transaction) => (
-          <tr key={transaction.id}>
-            <td className="p-2 text-white text-xs" >
-              {formatDate(transaction.date)}
-            </td>
-            <td className="p-2 text-white text-center" >
-              {transaction.srNo}
-            </td>
-            <td className="p-2 text-white text-sm" >
-              <div className="font-medium">{transaction.description.split('\n')[0]}</div>
-              {transaction.description.includes('\n') && (
-                <div className="text-xs text-white">{transaction.description.split('\n')[1]}</div>
-              )}
-            </td>
-            <td className="p-2 text-right" >
-              {transaction.debit > 0 ? (
-                <span className="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-xs inline-block">
-                  {formatCurrency(transaction.debit)}
-                </span>
-              ) : (
-                <span className="text-slate-500">-</span>
-              )}
-            </td>
-            <td className="p-2 text-right" >
-              {transaction.credit > 0 ? (
-                <span className="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-xs inline-block">
-                  {formatCurrency(transaction.credit)}
-                </span>
-              ) : (
-                <span className="text-slate-500">-</span>
-              )}
-            </td>
-            <td className="p-2 text-center" >
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => onDeleteTransaction(transaction.id)}
-                className="text-rose-400 hover:text-rose-300 hover:bg-rose-500/10"
-              >
-                <Trash2 className="w-4 h-4" />
-              </Button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
+  {transactions.map((transaction) => {
+    // Determine colors and amounts based on transaction type
+    let debitAmount = 0;
+    let creditAmount = 0;
+    let debitColor = '';
+    let creditColor = '';
+    
+    if (transaction.type === 'income') {
+      // Income: Debit = Cash (green), Credit = Revenue (green)
+      debitAmount = transaction.credit;
+      creditAmount = transaction.credit;
+      debitColor = 'bg-emerald-500/20 text-emerald-400';
+      creditColor = 'bg-emerald-500/20 text-emerald-400';
+    } else if (transaction.type === 'expense') {
+      // Expense: Debit = Expense (red), Credit = Cash (green)
+      debitAmount = transaction.debit;
+      creditAmount = transaction.debit;
+      debitColor = 'bg-rose-500/20 text-rose-400';
+      creditColor = 'bg-emerald-500/20 text-emerald-400';
+    } else if (transaction.category === 'Payable') {
+      // Payable: Debit = Expense (red), Credit = Payable (yellow)
+      debitAmount = transaction.debit;
+      creditAmount = transaction.debit;
+      debitColor = 'bg-rose-500/20 text-rose-400';
+      creditColor = 'bg-amber-500/20 text-amber-400';
+    }
+    
+    return (
+      <tr key={transaction.id}>
+        <td className="p-2 text-white text-xs">
+          {formatDate(transaction.date)}
+        </td>
+        <td className="p-2 text-white text-center">
+          {transaction.srNo}
+        </td>
+        <td className="p-2 text-white text-sm">
+          <div className="font-medium">{transaction.description.split('\n')[0]}</div>
+          {transaction.description.includes('\n') && (
+            <div className="text-xs text-white">{transaction.description.split('\n')[1]}</div>
+          )}
+        </td>
+        <td className="p-2 text-right">
+          <div className="flex flex-col items-end gap-1">
+            <span className={`${debitColor} px-2 py-1 rounded text-xs inline-block min-w-[70px]`}>
+              {formatCurrency(debitAmount)}
+            </span>
+            <span className="text-slate-500 text-xs">-</span>
+          </div>
+        </td>
+        <td className="p-2 text-right">
+          <div className="flex flex-col items-end gap-1">
+            <span className="text-slate-500 text-xs">-</span>
+            <span className={`${creditColor} px-2 py-1 rounded text-xs inline-block min-w-[70px]`}>
+              {formatCurrency(creditAmount)}
+            </span>
+          </div>
+        </td>
+        <td className="p-2 text-center">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => onDeleteTransaction(transaction.id)}
+            className="text-rose-400 hover:text-rose-300 hover:bg-rose-500/10"
+          >
+            <Trash2 className="w-4 h-4" />
+          </Button>
+        </td>
+      </tr>
+    );
+  })}
+</tbody>
     </table>
   </div>
 </div>
