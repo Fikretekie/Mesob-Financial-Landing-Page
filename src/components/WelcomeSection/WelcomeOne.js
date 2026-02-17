@@ -78,12 +78,18 @@ const WelcomeOne = ({ id = "" }) => {
                     title={title}
                     className="text-left"
                   />
-                  <div className="welcome-one__demo-btn-wrapper">
-                   <Link href="/demo" className="welcome-one__demo-btn">
-                    Try Demo
-                  </Link>
+                 <div style={{ display: 'flex', flexDirection: 'row', gap: '16px', alignItems: 'center', marginTop: '30px', flexWrap: 'wrap' }}>
+                <Link href="/demo" className="welcome-one__demo-btn">
+                  Try Demo — No Signup
+                </Link>
+                <Link href="/register" className="welcome-one__trial-btn">
+                  Start 30-Day Free Trial
+                </Link>
+              </div>
 
-                  </div>
+              <p style={{ marginTop: '10px', fontSize: '13px', color: 'rgba(231, 230, 230, 1)' }}>
+                No credit card required. Full access for 30 days.
+              </p>
                 </div>
               </Col>
               <Col xl={6} lg={6}>

@@ -9,6 +9,7 @@ const Title = ({ title = "", tagline = "", children, className, ...props }) => {
     <div className={`section-title ${className}`} {...props}>
       {tagline && <span className="section-title__tagline">{tagline}</span>}
       <h2 className="section-title__title">{title || children}</h2>
+      <p style={{color:'#dbdbdeff'}}>Track expense, generate Tax-ready reports, and manage receipts effortlessly — built for small business owners. Start interacting immediately</p>
     </div>
   );
 };
