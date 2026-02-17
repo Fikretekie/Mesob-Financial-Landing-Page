@@ -129,7 +129,7 @@ export default function DemoPage() {
     }
 
     downloadPDFReport(reportData)
-    toast.success('Report opened for download! Use Ctrl+P (or Cmd+P) to save as PDF.')
+   toast.success('Your report is ready! Save it as PDF from the print dialog.')
   }
 
   const handleContinueDemo = () => {
