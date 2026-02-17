@@ -561,8 +561,39 @@ export function generateReportHTML(data: ReportData, logoBase64?: string): strin
 </html>`;
 }
 
+// export async function downloadPDFReport(data: ReportData): Promise<void> {
+//   // Convert logo to base64 so it works in the new window
+//   const response = await fetch(logo.src);
+//   const blob = await response.blob();
+//   const logoBase64: string = await new Promise((resolve) => {
+//     const reader = new FileReader();
+//     reader.onloadend = () => resolve(reader.result as string);
+//     reader.readAsDataURL(blob);
+//   });
+
+//   const html = generateReportHTML(data, logoBase64);
+  
+//   const htmlBlob = new Blob([html], { type: 'text/html' });
+//   const url = URL.createObjectURL(htmlBlob);
+  
+//   const printWindow = window.open(url, '_blank');
+  
+//   if (printWindow) {
+//     printWindow.onload = () => {
+//       setTimeout(() => {
+//         printWindow.print();
+//       }, 500);
+//     };
+//   }
+  
+//   // Clean up
+//   setTimeout(() => {
+//     URL.revokeObjectURL(url);
+//   }, 60000);
+// }
+
+
 export async function downloadPDFReport(data: ReportData): Promise<void> {
-  // Convert logo to base64 so it works in the new window
   const response = await fetch(logo.src);
   const blob = await response.blob();
   const logoBase64: string = await new Promise((resolve) => {
@@ -572,22 +603,36 @@ export async function downloadPDFReport(data: ReportData): Promise<void> {
   });
 
   const html = generateReportHTML(data, logoBase64);
-  
   const htmlBlob = new Blob([html], { type: 'text/html' });
   const url = URL.createObjectURL(htmlBlob);
-  
-  const printWindow = window.open(url, '_blank');
-  
-  if (printWindow) {
-    printWindow.onload = () => {
-      setTimeout(() => {
-        printWindow.print();
-      }, 500);
-    };
+
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+  if (isIOS || isSafari) {
+    // Open in same tab — iOS Safari can then use share sheet to Print > Save as PDF
+    window.location.href = url;
+
+    // Show user instructions after a short delay
+    setTimeout(() => {
+      alert(
+        '📄 Report opened!\n\nTo save as PDF on iPhone:\n1. Tap the Share button (□↑) at the bottom\n2. Tap "Print"\n3. Pinch-zoom on the preview\n4. Tap the Share icon again → "Save to Files"'
+      );
+    }, 1000);
+
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+  } else {
+    // Desktop / Android
+    const printWindow = window.open(url, '_blank');
+
+    if (printWindow) {
+      printWindow.onload = () => {
+        setTimeout(() => {
+          printWindow.print();
+        }, 500);
+      };
+    }
+
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
   }
-  
-  // Clean up
-  setTimeout(() => {
-    URL.revokeObjectURL(url);
-  }, 60000);
 }
