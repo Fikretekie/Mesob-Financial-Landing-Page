@@ -82,7 +82,7 @@ const WelcomeOne = ({ id = "" }) => {
                 <Link href="/demo" className="welcome-one__demo-btn">
                   Try Demo — No Signup
                 </Link>
-                <Link href="/register" className="welcome-one__trial-btn">
+                <Link href="https://app.mesobfinancial.com/signup" className="welcome-one__trial-btn">
                   Start 30-Day Free Trial
                 </Link>
               </div>
