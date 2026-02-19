@@ -308,8 +308,8 @@ input[type="search"]::-webkit-search-results-decoration {
 .section-title__title {
   margin: 0;
   font-size: 40px;
-  line-height: 65px;
-  font-weight: 800;
+  line-height: 50px;
+  font-weight: 700;
 }
 
 .bootstrap-select .btn-light:not(:disabled):not(.disabled).active,

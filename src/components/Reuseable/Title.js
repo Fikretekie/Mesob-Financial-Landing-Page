@@ -7,7 +7,7 @@ import React from "react";
 const Title = ({ title = "", tagline = "", children, className, ...props }) => {
   return (
     <div className={`section-title ${className}`} {...props}>
-      {tagline && <span className="section-title__tagline">{tagline}</span>}
+      {tagline && <span className="section-title__tagline" style={{marginTop:20}}>{tagline}</span>}
       <h2 className="section-title__title">{title || children}</h2>
       <p style={{color:'#dbdbdeff'}}>Track expense, generate Tax-ready reports, and manage receipts effortlessly — built for small business owners. Start interacting immediately</p>
     </div>
