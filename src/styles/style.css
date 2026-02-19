@@ -2234,7 +2234,8 @@ input[type="search"]::-webkit-search-results-decoration {
   position: relative;
   display: block;
   background-color: var(--oslim-black);
-  padding: 120px 0 120px;
+  /* padding: 120px 0 120px; */
+  padding-top: 120px;
   z-index: 1;
 }
 

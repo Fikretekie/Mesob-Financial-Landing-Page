@@ -112,7 +112,7 @@ const WelcomeOne = ({ id = "" }) => {
                     </video>
 
                     {/* 🎛 Overlay Video Controls */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex gap-2">
+                    <div className="absolute flex gap-2">
                       <button
                         onClick={togglePlay}
                         className="p-2 bg-black/60 text-white rounded-lg hover:bg-black/80"

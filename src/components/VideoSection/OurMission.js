@@ -10,7 +10,10 @@ const OurMission = () => {
   
     <section className="our-mission">
       
-      <p style={{ textAlign: 'center', width: '100%', marginBottom: '20px', fontSize: '20px', fontWeight: 'semi-bold' }}>Trusted by hundreds of small business owners to manage finances effortlessly.</p>
+<h2 className="text-2xl sm:text-3xl lg:text-4xl text-center font-bold text-white leading-snug pt-3 pb-3">
+          Trusted by hundreds of{" "}small business owners
+
+        </h2>
     <div className="our-mission-container">
   
       <div className="our-mission-watermark">{watermarkText}</div>

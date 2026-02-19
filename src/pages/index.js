@@ -3,6 +3,7 @@
 // import FreeConsultation from "@/components/FreeConsultation/FreeConsultation";
 import Header from "@/components/Header/Header";
 import Layout from "@/components/Layout/Layout";
+import Testimonials from "@/components/Testimonials";
 // import MainSlider from "@/components/MainSlider/MainSlider";
 // import NewsOne from "@/components/NewsSection/NewsOne";
 import OurMission from "@/components/VideoSection/OurMission";
@@ -19,7 +20,8 @@ const Home = () => {
     <Layout pageTitle="Mesob Financial">
       <Header />
       <WelcomeOne />
-      <OurMission />
+      {/* <OurMission /> */}
+      <Testimonials />
     </Layout>
   );
 };
