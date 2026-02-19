@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Mohamed Hassan",
     reviewCount: "4 reviews",
-    rating: 1,
+    rating: 5,
     timeAgo: "6 days ago",
     avatar: "M",
     avatarBg: "#e8b4b8",
@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: "Selam",
     reviewCount: "1 review",
-    rating: 4,
+    rating: 5,
     timeAgo: "3 days ago",
     avatar: "S",
     avatarBg: "#4a90a4",
@@ -152,7 +152,7 @@ const TestimonialRow = ({ items }) => {
 
       {/* Nav controls */}
       {totalPages > 1 && (
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-4 mb-3">
           <button
             onClick={() => go(page - 1)}
             disabled={page === 0}
@@ -177,7 +177,7 @@ const TestimonialRow = ({ items }) => {
           <button
             onClick={() => go(page + 1)}
             disabled={page >= totalPages - 1}
-            className="w-9 h-9 rounded-full bg-[#2a2f45] flex items-center justify-center text-gray-300 hover:text-white hover:bg-[#363c58] disabled:opacity-30 disabled:cursor-default transition-all duration-200"
+            className="w-9 h-9 rounded-full bg-[#2a2f45] flex items-center  justify-center text-gray-300 hover:text-white hover:bg-[#363c58] disabled:opacity-30 disabled:cursor-default transition-all duration-200"
           >
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
