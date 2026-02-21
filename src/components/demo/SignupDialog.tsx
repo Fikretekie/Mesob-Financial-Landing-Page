@@ -25,9 +25,8 @@ export function SignupDialog({ open, onOpenChange, onContinueDemo }: SignupDialo
         <DialogHeader>
           {/* Smaller icon on mobile */}
           <div className="flex items-center justify-center mb-1">
-            <div className="w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center">
-              <Sparkles className="w-5 h-5 sm:w-8 sm:h-8 text-white" />
-            </div>
+           <img src="/logo.png" alt="Logo" className="logo_img" width={70} height={70} />
+
           </div>
           <DialogTitle className="text-lg sm:text-2xl font-bold text-center">
             Unlock Full Access
