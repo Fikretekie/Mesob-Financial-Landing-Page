@@ -90,7 +90,7 @@ export function AddTransactionDialog({
         
       const transaction: Omit<Transaction, 'id' | 'srNo'> = {
         date: new Date().toISOString(),
-        description: `Pay [Cash] ${finalPurpose}`,
+        description: `Paid [Cash] ${finalPurpose}`,
         debit: numAmount,
         credit: 0,
         type: 'expense',
@@ -154,7 +154,7 @@ export function AddTransactionDialog({
         
       const transaction: Omit<Transaction, 'id' | 'srNo'> = {
         date: new Date().toISOString(),
-        description: `Pay [Cash] ${finalPurpose}`,
+        description: `Paid [Cash] ${finalPurpose}`,
         debit: numAmount,
         credit: 0,
         type: 'expense',
