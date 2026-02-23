@@ -20,7 +20,7 @@ export const businessTypes = {
       "Insurance (Expense)",
     ],
   },
-  "RIDESHARE DRIVERS/PARTNERS": {
+  "RideShare Drivers/Partners": {
     income: [
       "Fare from Passengers",
       "Bonuses and Incentives",
@@ -110,7 +110,7 @@ export const businessTypes = {
       "Miscellaneous (Expense)",
     ],
   },
-  Cafe: {
+  "Cafe/Resturants": {
     income: [
       "Food Sales",
       "Beverage Sales",
