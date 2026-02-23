@@ -15,10 +15,10 @@ interface BusinessTypeSelectorProps {
 
 const businessTypes = [
   'Trucking',
-  'RIDESHARE DRIVERS/PARTNERS',
+  'RideShare Drivers/Partners',
   'Individual/Households',
   'Groceries',
-  'Cafe',
+  'Cafe/Resturant',
   'Cleaning Services',
   'Beauty & Grooming',
   'E-commerce Sellers',
