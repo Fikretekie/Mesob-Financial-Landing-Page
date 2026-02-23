@@ -27,7 +27,7 @@ export const servicesOne = {
     },
     {
       id: 3,
-      title: "Rideshare",
+      title: "RideShare Drivers/Partners",
       icon: "fas fa-car", // Car icon
       href: "https://app.mesobfinancial.com/signup",
       text: "Do it yourself accounting — log fares income, fuel, repairs, and receipts",

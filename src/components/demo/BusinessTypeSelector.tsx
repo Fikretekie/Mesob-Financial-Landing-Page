@@ -18,7 +18,7 @@ const businessTypes = [
   'RideShare Drivers/Partners',
   'Individual/Households',
   'Groceries',
-  'Cafe/Resturant',
+  'Cafe/Resturants',
   'Cleaning Services',
   'Beauty & Grooming',
   'E-commerce Sellers',
