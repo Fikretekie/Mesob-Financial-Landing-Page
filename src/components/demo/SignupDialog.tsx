@@ -4,12 +4,15 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/d
 import { Button } from '@/components/demo/ui/button';
 import { Check, Sparkles } from 'lucide-react';
 import Image from "next/image";
+import headerData from '@/data/headerData';
 
 interface SignupDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onContinueDemo: () => void;
 }
+
+const { logo } = headerData;
 
 export function SignupDialog({ open, onOpenChange, onContinueDemo }: SignupDialogProps) {
   return (
@@ -26,7 +29,8 @@ export function SignupDialog({ open, onOpenChange, onContinueDemo }: SignupDialo
         <DialogHeader>
           {/* Smaller icon on mobile */}
           <div className="flex items-center justify-center mb-1">
-          <Image src="/logo.png" alt="Logo" className="logo_img" width={70} height={70} />
+          <Image src={logo.src} alt="" width={70} height={70} />
+
           </div>
           <DialogTitle className="text-lg sm:text-2xl font-bold text-center">
             Unlock Full Access
