@@ -187,7 +187,7 @@ export default function DemoPage() {
   return (
     <>
       <Head>
-        <title>meksova - Demo</title>
+        <title>Meksova - Demo</title>
         <meta name="description" content="meksova Management Dashboard Demo" />
       </Head>
       
