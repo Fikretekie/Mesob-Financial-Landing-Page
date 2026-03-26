@@ -17,7 +17,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <Layout pageTitle="Mesob Financial">
+    <Layout pageTitle="Meksova">
       <Header />
       <WelcomeOne />
       {/* <OurMission /> */}

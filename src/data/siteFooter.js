@@ -3,7 +3,7 @@ import bg from "@/images/shapes/site-footer-shape-1.png";
 
 const footerData = {
   bg,
-  text: "Mesob Financial",
+  text: "meksova",
   tagline: "Empowering your business financial future.",
  
   socials: [
@@ -50,8 +50,8 @@ const footerData = {
   // address: "60 road, broklyn golden street new york. USA",
   phone: "+1 (614) 966-5005",
   phoneHref: "12463330079",
-  email: "info@mesobfinancial.com",
-  author: "Mesob Financial",
+  email: "info@meksova.com",
+  author: "Meksova",
   year: new Date().getFullYear(),
 };
 

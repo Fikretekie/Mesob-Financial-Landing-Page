@@ -187,8 +187,8 @@ export default function DemoPage() {
   return (
     <>
       <Head>
-        <title>MESOB Financial - Demo</title>
-        <meta name="description" content="MESOB Financial Management Dashboard Demo" />
+        <title>meksova - Demo</title>
+        <meta name="description" content="meksova Management Dashboard Demo" />
       </Head>
       
       <div className="demo-app flex flex-col sm:flex-row h-screen bg-[#101926]">

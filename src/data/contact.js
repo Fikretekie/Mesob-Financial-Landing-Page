@@ -30,7 +30,7 @@ export const inputs = [
 const common = {
   phone: "+1 (614) 966-5005",
   phoneHref: "12463330079",
-  email: "info@mesobfinancial.com",
+  email: "info@meksova.com",
 };
 
 export const contactOne = {

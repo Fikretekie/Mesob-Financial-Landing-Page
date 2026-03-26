@@ -150,15 +150,15 @@ const headerData = {
   logo,
   navItems,
   phone: '+1 (614) 966-5005',
-  email: 'info@mesobfinancial.com',
+  email: 'info@meksova.com',
 
   loginButton: {
     text: "Log in",
-    href: "https://app.mesobfinancial.com/login",
+    href: "https://app.meksova.com/login",
   },
   signupButton: {
     text: "Get started for free",
-    href: "https://app.mesobfinancial.com/signup",
+    href: "https://app.meksova.com/signup",
   },
   socials,
 };

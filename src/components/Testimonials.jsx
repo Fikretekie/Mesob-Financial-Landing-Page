@@ -10,7 +10,7 @@ const testimonials = [
     avatar: "M",
     avatarBg: "#e8b4b8",
     avatarColor: "#5a3a3a",
-    text: "Meson Financial is a great app and super easy to use. It keeps all your receipts in one place, which makes tracking expenses and dealing with the IRS stress-free. I highly recommend it!",
+    text: "Meksova is a great app and super easy to use. It keeps all your receipts in one place, which makes tracking expenses and dealing with the IRS stress-free. I highly recommend it!",
   },
   {
     name: "Selam",
@@ -20,7 +20,7 @@ const testimonials = [
     avatar: "S",
     avatarBg: "#4a90a4",
     avatarColor: "#fff",
-    text: "Mesob Financial has completely changed how we manage our grocery store finances. Recording daily sales, supplier payments, and expenses used to take hours, but now everything is simple and organized in one place.",
+    text: "Meksova has completely changed how we manage our grocery store finances. Recording daily sales, supplier payments, and expenses used to take hours, but now everything is simple and organized in one place.",
   },
   {
     name: "Dawit Bekele",
@@ -50,7 +50,7 @@ const testimonials = [
     avatar: "Y",
     avatarBg: "#8b7db5",
     avatarColor: "#fff",
-    text: "Simple, clean, and incredibly efficient. I manage three stores and Mesob Financial lets me keep everything separate and clear. The reporting feature is especially useful.",
+    text: "Simple, clean, and incredibly efficient. I manage three stores and meksova lets me keep everything separate and clear. The reporting feature is especially useful.",
   },
   {
     name: "Hana Mekonnen",

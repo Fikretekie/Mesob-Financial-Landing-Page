@@ -4,20 +4,20 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const PrivacyPolicy = () => {
   return (
-    <Layout pageTitle="Privacy Policy | Mesob Financial">
+    <Layout pageTitle="Privacy Policy | meksova">
       <Container className="py-5 mb-5">
         <Row>
           <Col>
-            <h1 className="mb-4">Privacy Policy for Mesob Financial</h1>
+            <h1 className="mb-4">Privacy Policy for meksova</h1>
             <p className="lead">
               <strong>Effective Date: 01/01/2025</strong>
             </p>
             <p>
-              At Mesob Financial, we are committed to protecting and respecting
+              At meksova, we are committed to protecting and respecting
               your privacy. This Privacy Policy explains how we collect, use,
               store, and protect your personal and financial information when
               you use our website and services (&quot;the Service&quot;). By
-              using Mesob Financial, you agree to the practices described in
+              using meksova, you agree to the practices described in
               this Privacy Policy.
             </p>
 
@@ -39,7 +39,7 @@ const PrivacyPolicy = () => {
 
             <h2 className="mt-5 mb-3">2. How We Use Your Information</h2>
             <p>
-              Mesob Financial uses the information we collect in the following
+              meksova uses the information we collect in the following
               ways:
             </p>
             <ul>
@@ -100,7 +100,7 @@ const PrivacyPolicy = () => {
             <h2 className="mt-5 mb-3">6. User Responsibility for Data</h2>
             <p>
               You are responsible for the accuracy and completeness of the
-              information you enter into the system. Mesob Financial is not
+              information you enter into the system. meksova is not
               responsible for inaccuracies in user-input data.
             </p>
 
@@ -121,7 +121,7 @@ const PrivacyPolicy = () => {
 
             <h2 className="mt-5 mb-3">9. Children&apos;s Privacy</h2>
             <p>
-              Mesob Financial is not intended for children under 13. We do not
+              meksova is not intended for children under 13. We do not
               knowingly collect personal information from children under 13.
             </p>
 
@@ -144,11 +144,11 @@ const PrivacyPolicy = () => {
               please contact us at:
             </p>
             <p>
-              Mesob Financial
+              meksova
               <br />
-              Email: info@mesobfinancial.com
+              Email: info@meksova.com
               <br />
-              Website: mesobfinancial.com
+              Website: meksova.com
             </p>
           </Col>
         </Row>

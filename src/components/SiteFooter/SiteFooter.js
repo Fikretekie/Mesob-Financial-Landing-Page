@@ -31,8 +31,7 @@ const SiteFooter = ({ footerClassName = "" }) => {
               <div className="footer-widget__column footer-widget__about">
                 <div className="footer-widget__logo">
                   <Link href="/" className="footer-widget__logo-link">
-                    <span className="footer-widget__logo-mesob">Mesob</span>{" "}
-                    <span className="footer-widget__logo-financial">Financial</span>
+                    <span className="footer-widget__logo-mesob">Meksova</span>{" "}
                   </Link>
                 </div>
                 {tagline && (

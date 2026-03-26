@@ -550,7 +550,7 @@ export function generateReportHTML(data: ReportData, logoBase64?: string): strin
     </div>
     
     <div class="disclaimer">
-      <strong>Terms & Responsibility:</strong> The user is fully responsible for the accuracy and completeness of information entered into the system. Mesob Financial is not responsible for inaccuracies in user-input data.
+      <strong>Terms & Responsibility:</strong> The user is fully responsible for the accuracy and completeness of information entered into the system. meksova is not responsible for inaccuracies in user-input data.
     </div>
     
     <div class="footer">

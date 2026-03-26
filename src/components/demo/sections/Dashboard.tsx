@@ -19,7 +19,7 @@ export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, p
   const hasTransactions = cashOnHandData.length > 0 || revenueData.length > 0 || expenseData.length > 0;
 
   const handleGetStarted = () => {
-    window.open('https://app.mesobfinancial.com/signup', '_blank');
+    window.open('https://app.meksova.com/signup', '_blank');
   };
 
 // Calculate percentage change from chart data

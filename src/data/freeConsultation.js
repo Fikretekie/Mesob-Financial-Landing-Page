@@ -3,5 +3,5 @@ export const freeConsultation = {
   titleHighlight: "FREE",
   phone: "+1 (614) 966-5005",
   phoneHref: "12463330079",
-  email: "info@mesobfinancial.com",
+  email: "info@meksova.com",
 };

@@ -70,7 +70,7 @@ export function SubscriptionPlan() {
 
             {/* CTA Button */}
             <button
-              onClick={() => window.location.href = 'https://app.mesobfinancial.com/signup'}
+              onClick={() => window.location.href = 'https://app.meksova.com/signup'}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 sm:py-3.5 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-blue-500/25 text-sm sm:text-base"
             >
               Start My Free Trial

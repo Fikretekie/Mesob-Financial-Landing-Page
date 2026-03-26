@@ -86,7 +86,7 @@ export function SignupDialog({ open, onOpenChange, onContinueDemo }: SignupDialo
 
         <Button
           onClick={() => {
-            window.location.href = 'https://app.mesobfinancial.com/signup';
+            window.location.href = 'https://app.meksova.com/signup';
           }}
           className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-semibold text-sm py-2.5"
         >

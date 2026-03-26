@@ -99,7 +99,7 @@ const MobileMenu = ({ navItems = items, onePage = false }) => {
           <MenuList navItems={navItems} mobile onePage={onePage} />
           <div className="mobile-nav__buttons" style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "20px", padding: "0 15px" }}>
             <Link 
-              href="https://app.mesobfinancial.com/login" 
+              href="https://app.meksova.com/login" 
               style={{
                 color: "#ffffff",
                 fontWeight: "500",
@@ -115,7 +115,7 @@ const MobileMenu = ({ navItems = items, onePage = false }) => {
               Log in
             </Link>
             <Link 
-              href="https://app.mesobfinancial.com/signup" 
+              href="https://app.meksova.com/signup" 
               style={{
                 backgroundColor: "#1D6BD4",
                 color: "white",

@@ -24,7 +24,7 @@ const OurMission = () => {
               <h2 className="our-mission__title">
                 {title} <span className="our-mission__title-highlight">{titleHighlight}</span>
               </h2>
-              <p style={{color:'white', marginBottom:15}}>Mesob Financial is a great app and super easy to use. It keeps all your receipts in one place, which makes tracking expenses and dealing with the IRS stress-free. I highly recommend it!</p>
+              <p style={{color:'white', marginBottom:15}}>Meksova is a great app and super easy to use. It keeps all your receipts in one place, which makes tracking expenses and dealing with the IRS stress-free. I highly recommend it!</p>
               <Link href={buttonHref} className="our-mission__btn">
                 {buttonText}
               </Link>

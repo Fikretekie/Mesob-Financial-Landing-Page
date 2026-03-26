@@ -15,77 +15,77 @@ export const servicesOne = {
       id: 1,
       title: "Truck",
       icon: "fas fa-truck", // FontAwesome truck icon
-      href: "https://app.mesobfinancial.com/signup",
+      href: "https://app.meksova.com/signup",
       text: "Do it yourself accounting — track freight income, fuel, repairs, and receipts.",
     },
     {
       id: 2,
       title: "Groceries",
       icon: "fas fa-shopping-cart", // Shopping cart icon
-      href: "https://app.mesobfinancial.com/signup",
+      href: "https://app.meksova.com/signup",
       text: "Do it yourself accounting — track daily sales, supplier costs, and receipts.",
     },
     {
       id: 3,
       title: "RideShare Drivers/Partners",
       icon: "fas fa-car", // Car icon
-      href: "https://app.mesobfinancial.com/signup",
+      href: "https://app.meksova.com/signup",
       text: "Do it yourself accounting — log fares income, fuel, repairs, and receipts",
     },
     {
       id: 4,
       title: "Individual/Households",
       icon: "fas fa-home", // Home icon
-      href: "https://app.mesobfinancial.com/signup",
+      href: "https://app.meksova.com/signup",
       text: "Do it yourself accounting — track bills, family expenses, and receipts easily.",
     },
     {
       id: 5,
       title: "Cafe/Resturants",
       icon: "fas fa-mug-hot", // Mug icon for cafes
-      href: "https://app.mesobfinancial.com/signup",
+      href: "https://app.meksova.com/signup",
       text: "Do it yourself accounting — track sales, supplier costs, staff, and receipts.",
     },
     {
       id: 6,
       title: "Cleaning Services",
       icon: "fas fa-broom", // Broom icon for cleaning
-      href: "https://app.mesobfinancial.com/signup",
+      href: "https://app.meksova.com/signup",
       text: "Do it yourself accounting — track jobs, supply costs, and payments efficiently.",
     },
     {
       id: 7,
       title: "Beauty & Grooming",
       icon: "fas fa-cut", // Scissors icon
-      href: "https://app.mesobfinancial.com/signup",
+      href: "https://app.meksova.com/signup",
       text: "Do it yourself accounting — track client payments, product costs, and receipts.",
     },
     {
       id: 8,
       title: "E-commerce Sellers",
       icon: "fas fa-store", // Store icon
-      href: "https://app.mesobfinancial.com/signup",
+      href: "https://app.meksova.com/signup",
       text: "Do it yourself accounting — track online sales, fees, shipping, and receipts.",
     },
     {
       id: 9,
       title: "Construction Trades",
       icon: "fas fa-hammer", // Hammer icon for trades
-      href: "https://app.mesobfinancial.com/signup",
+      href: "https://app.meksova.com/signup",
       text: "Do it yourself accounting — track project expenses, worker pay, and receipts.",
     },
     {
       id: 10,
       title: "Content Creator",
       icon: "fas fa-video", // Video icon
-      href: "https://app.mesobfinancial.com/signup",
+      href: "https://app.meksova.com/signup",
       text: "Do it yourself accounting — track earnings, expenses, sponsorships, and receipts easily.",
     },
     {
       id: 11,
       title: "Other Businesses",
       icon: "fas fa-briefcase", // Briefcase icon for general business
-      href: "https://app.mesobfinancial.com/signup",
+      href: "https://app.meksova.com/signup",
       text: "Do it yourself accounting — track general income, expenses, and receipts for any business type.",
     },
   ],
@@ -166,8 +166,8 @@ export const serviceDetailsSidebar = {
 
 const commonServiceDerails = {
   icon: "icon-global",
-  title2: "Welcome to Mesob Financial – Simple Accounting for Truck Owners",
-  text: "Managing your trucking finances is easy with Mesob Financial. Enter your financial details directly on our website and keep track of income, expenses, and balances effortlessly.",
+  title2: "Welcome to meksova – Simple Accounting for Truck Owners",
+  text: "Managing your trucking finances is easy with meksova. Enter your financial details directly on our website and keep track of income, expenses, and balances effortlessly.",
 
   contents: [
     "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
