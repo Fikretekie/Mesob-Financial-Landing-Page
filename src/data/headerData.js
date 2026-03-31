@@ -1,4 +1,5 @@
-import logo from "@/images/resources/logo.PNG";
+
+const logo = { src: "/tlogo.png" };
 
 const home = {
   id: 1,

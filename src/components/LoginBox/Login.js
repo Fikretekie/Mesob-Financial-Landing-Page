@@ -4,7 +4,7 @@ import Image from "next/image";
 const Login = () => {
   return (
     <div className="login-box">
-      <Image src="/logo.png" alt="Logo" className="logo_img" width={100} height={100} />
+      <Image src="/transparent.png" alt="Logo" className="logo_img" width={100} height={100} />
       <h2>Login</h2>
       <p>Welcome! Login to access the Mesob Store</p>
       <form>

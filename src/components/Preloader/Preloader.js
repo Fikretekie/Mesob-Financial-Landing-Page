@@ -1,4 +1,5 @@
-import image from "@/images/testimonial/loader.PNG";
+
+const preloaderImageSrc = "/Horizontal.png";
 import React from "react";
 import { Image } from "react-bootstrap";
 
@@ -12,7 +13,7 @@ const Preloader = ({ loading = true }) => {
       }}
       className={`preloader animated${loading ? "" : " fadeOut"}`}
     >
-      <Image className="preloader__image" width={60} src={image.src} alt="" />
+      <Image className="preloader__image" width={60} src={preloaderImageSrc} alt="preloader" />
     </div>
   );
 };
