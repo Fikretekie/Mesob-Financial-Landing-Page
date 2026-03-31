@@ -1,5 +1,5 @@
 
-const preloaderImageSrc = "/Horizontal.png";
+const preloaderImageSrc = "/tlogo.png";
 import React from "react";
 import { Image } from "react-bootstrap";
 

@@ -30,7 +30,7 @@ const testimonials = [
     avatar: "D",
     avatarBg: "#7b9e6b",
     avatarColor: "#fff",
-    text: "Running a restaurant means hundreds of expenses daily. Mesob keeps it all under control. The receipt scanner saves me two hours every week. Worth every penny.",
+    text: "Running a restaurant means hundreds of expenses daily. Meksova keeps it all under control. The receipt scanner saves me two hours every week. Worth every penny.",
   },
   {
     name: "Fatuma Ali",
@@ -40,7 +40,7 @@ const testimonials = [
     avatar: "F",
     avatarBg: "#c4916b",
     avatarColor: "#fff",
-    text: "I was drowning in paperwork before Mesob. Now my boutique's financials are always up to date. Tax season is no longer a nightmare. This app is a lifesaver for any small business owner.",
+    text: "I was drowning in paperwork before Meksova. Now my boutique's financials are always up to date. Tax season is no longer a nightmare. This app is a lifesaver for any small business owner.",
   },
   {
     name: "Yonas Girma",
@@ -60,7 +60,7 @@ const testimonials = [
     avatar: "H",
     avatarBg: "#b5847d",
     avatarColor: "#fff",
-    text: "Finally an app that understands the needs of small businesses. The interface is intuitive and the support team is incredibly responsive. Mesob has made bookkeeping something I no longer dread.",
+    text: "Finally an app that understands the needs of small businesses. The interface is intuitive and the support team is incredibly responsive. Meksova has made bookkeeping something I no longer dread.",
   },
 ];
 
