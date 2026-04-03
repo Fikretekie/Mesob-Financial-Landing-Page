@@ -62,7 +62,7 @@ const AboutVideo = ({ className = "", shape = 2 }) => {
               display: isPlaying ? "block" : "none",
             }}
           >
-            <source src="/videos/introvideo.mp4" type="video/mp4" />
+            <source src="/videos/final.mp4" type="video/mp4" />
           </video>
 
           {/* Play button and text - shown when not playing */}

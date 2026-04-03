@@ -83,7 +83,7 @@ const AboutVideo = ({ className = "" }) => {
                 borderRadius: "20px",
               }}
             >
-              <source src="/videos/introvideo.mp4" type="video/mp4" />
+              <source src="/videos/final.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
