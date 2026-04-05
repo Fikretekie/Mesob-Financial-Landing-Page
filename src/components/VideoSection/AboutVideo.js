@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import styles from "./ourmissiontwo.module.css";
-import thumbnail from "../../assets/videothumbnail.png"
 
 const AboutVideo = ({ className = "" }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -29,7 +28,6 @@ const AboutVideo = ({ className = "" }) => {
     <>
       <section className={`${className}`}>
         <div className={styles.aboutVideoWrapper} style={{ maxWidth: "100%", padding: "0" ,background:"#18222c"}}>
-          {/* Video Container with Thumbnail Background */}
           <div
             className={styles.videoContainerAbout}
             style={{
@@ -45,34 +43,15 @@ const AboutVideo = ({ className = "" }) => {
               backgroundColor: "#000",
             }}
           >
-            {/* Thumbnail - shown when not playing */}
-            {!isPlaying && thumbnail && (
-              <div
-                className={styles.thumbnailAbout}
-                style={{
-                  backgroundImage: `url(${thumbnail?.src})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  zIndex: 1,
-                  borderRadius: "20px",
-                }}
-              />
-            )}
-
-            {/* Video Element */}
             <video
               ref={videoRef}
               loop
               muted={isMuted}
               playsInline
+              preload="metadata"
               className={styles.videoAbout}
               style={{
-                display: isPlaying ? "block" : "none",
+                display: "block",
                 position: "absolute",
                 top: 0,
                 left: 0,
