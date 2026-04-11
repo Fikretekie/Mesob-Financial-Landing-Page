@@ -8,7 +8,10 @@ import OurMission from "@/components/VideoSection/OurMission";
 
 const About = () => {
   return (
-    <Layout pageTitle="About">
+    <Layout
+      pageTitle="About - Meksova"
+      pageDescription="Learn about Meksova and how we built simple bookkeeping for trucks, stores, rideshare, households, and more."
+    >
       <Header />
       <PageHeader page="About" title="About us" />
       <WorkTogetherTwo />

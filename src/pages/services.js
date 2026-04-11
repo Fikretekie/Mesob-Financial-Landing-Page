@@ -7,7 +7,11 @@ import React from "react";
 
 const Services = () => {
   return (
-    <Layout pageTitle="Services" footerClassName="site-footer-three">
+    <Layout
+      pageTitle="Services - Meksova"
+      pageDescription="Meksova features and business types we support—from trucking and groceries to households and professional services."
+      footerClassName="site-footer-three"
+    >
       <Header />
       <PageHeader page="services" title="Our Services" />
       <ServicesOne hideTitle />
