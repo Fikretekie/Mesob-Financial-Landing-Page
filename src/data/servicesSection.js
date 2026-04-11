@@ -41,7 +41,7 @@ export const servicesOne = {
     },
     {
       id: 5,
-      title: "Cafe/Resturants",
+      title: "Cafe / Restaurants",
       icon: "fas fa-mug-hot", // Mug icon for cafes
       href: "https://app.meksova.com/signup",
       text: "Do it yourself accounting — track sales, supplier costs, staff, and receipts.",
