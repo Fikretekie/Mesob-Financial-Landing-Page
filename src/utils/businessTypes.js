@@ -110,7 +110,7 @@ export const businessTypes = {
       "Miscellaneous (Expense)",
     ],
   },
-  "Cafe/Resturants": {
+  "Cafe / Restaurants": {
     income: [
       "Food Sales",
       "Beverage Sales",
