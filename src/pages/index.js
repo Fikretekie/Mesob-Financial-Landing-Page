@@ -17,7 +17,10 @@ import React from "react";
 
 const Home = () => {
   return (
-    <Layout pageTitle="Meksova">
+    <Layout
+      pageTitle="Meksova"
+      pageDescription="Meksova is an easy bookkeeping app for small businesses—receipts, expenses, and tax season in one place."
+    >
       <Header />
       <WelcomeOne />
       {/* <OurMission /> */}

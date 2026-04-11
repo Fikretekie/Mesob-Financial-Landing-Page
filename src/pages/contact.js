@@ -8,7 +8,10 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <Layout pageTitle="Contact">
+    <Layout
+      pageTitle="Contact - Meksova"
+      pageDescription="Contact Meksova for product questions, support, or partnerships."
+    >
       <Header />
       <PageHeader title="Contact" />
       <ContactDetails />

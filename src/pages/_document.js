@@ -22,24 +22,27 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {/* Google uses these (especially /favicon.ico and rel=icon). Replace files in /public with your Meksova mark. */}
+          <link rel="icon" href="/favicon.ico" sizes="any" />
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
           <link
             rel="icon"
             type="image/png"
             sizes="96x96"
-            href="/favicon.png"
+            href="/favicon-96x96.png"
           />
-          <link rel="icon" type="image/png" href="/favicon.png" />
-          <link rel="shortcut icon" href="/favicon.png" />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/android-chrome-192x192.png"
+          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/favicon.png"
+            href="/apple-touch-icon.png"
           />
           <link rel="manifest" href="/manifest.json" />
-          <meta
-            name="description"
-            content="Oslim NextJS Template For Business"
-          />
         </Head>
 
         <body>
