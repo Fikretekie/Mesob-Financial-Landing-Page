@@ -38,6 +38,23 @@ const Layout = ({
           name="description"
           content={pageDescription ?? DEFAULT_META_DESCRIPTION}
         />
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription ?? DEFAULT_META_DESCRIPTION} />
+        <meta property="og:image" content="https://meksova.com/ICON.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="1200" />
+        <meta property="og:image:alt" content="Meksova Logo" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription ?? DEFAULT_META_DESCRIPTION} />
+        <meta name="twitter:image" content="https://meksova.com/ICON.png" />
+        
+        {/* Additional SEO */}
+        <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : 'https://meksova.com'} />
       </Head>
       <Preloader loading={loading} />
       <main
