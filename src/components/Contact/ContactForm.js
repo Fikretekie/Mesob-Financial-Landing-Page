@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 const ContactForm = ({
   inputs = [],
@@ -11,6 +12,7 @@ const ContactForm = ({
   btnClassName = "contact-page__btn",
   btnText = "SEND A MESSAGE",
 }) => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -40,7 +42,7 @@ const ContactForm = ({
               />
               {required && errors[name] && (
                 <label htmlFor={name} className="error">
-                  This field is required.
+                  {t("common.formRequired")}
                 </label>
               )}
             </div>
@@ -51,12 +53,12 @@ const ContactForm = ({
         <Col xl={12}>
           <div className={`${inputClassName} ${messageClassName}`}>
             <label htmlFor="message" className="contact-page__label">
-              Write a Message
+              {t("contact.form.fields.message")}
             </label>
             <textarea
               name="message"
               id="message"
-              placeholder="How can we help your business?"
+              placeholder={t("contact.form.fields.messagePlaceholder")}
               {...register("message")}
             ></textarea>
           </div>

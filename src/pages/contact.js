@@ -5,18 +5,20 @@ import Layout from "@/components/Layout/Layout";
 import PageHeader from "@/components/Reuseable/PageHeader";
 import OurMission from "@/components/VideoSection/OurMission";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <Layout
-      pageTitle="Contact - Meksova"
-      pageDescription="Contact Meksova for product questions, support, or partnerships."
+      pageTitle={t("contact.meta.title")}
+      pageDescription={t("contact.meta.description")}
     >
       <Header />
-      <PageHeader title="Contact" />
+      <PageHeader title={t("contact.pageTitle")} />
       <ContactDetails />
       <ContactPage isTitleTwo />
-      
       <OurMission />
     </Layout>
   );

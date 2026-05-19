@@ -1,11 +1,12 @@
 import { contactDetails } from "@/data/contact";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "./contact.module.css"
-const { phone, phoneHref, email, title, text, address, addressLabel, phoneIcon, locationIcon } =
-  contactDetails;
+const { phone, phoneHref, email, address, phoneIcon, locationIcon } = contactDetails;
 
 const ContactDetails = () => {
+  const { t } = useTranslation();
   return (
     <section className="contact-details">
       <Container>
@@ -15,9 +16,9 @@ const ContactDetails = () => {
               <div className={`contact-details__content ${styles.contactDetailsContent}`}>
                 <div className={`contact-details__title-box ${styles.contactDetailsTitleBox}`}>
                   <h4 className={`contact-details__title ${styles.contactDetailsTitle}`}>
-                    {title}
+                    {t("contact.details.title")}
                   </h4>
-                  <p className="contact-details__text">{text}</p>
+                  <p className="contact-details__text">{t("contact.details.text")}</p>
                 </div>
                 
                 {/* Phone and Email Section */}
@@ -48,7 +49,7 @@ const ContactDetails = () => {
                       <span className={locationIcon}></span>
                     </div>
                     <div className="contact-details__address-content">
-                      <h5 className="contact-details__address-label">{addressLabel}</h5>
+                      <h5 className="contact-details__address-label">{t("contact.details.addressLabel")}</h5>
                       <p className="contact-details__address">{address}</p>
                     </div>
                   </div>

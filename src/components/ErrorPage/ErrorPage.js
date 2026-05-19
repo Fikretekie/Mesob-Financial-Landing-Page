@@ -1,11 +1,11 @@
-import errorPage from "@/data/errorPage";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 import Link from "../Reuseable/Link";
 
-const { title, tagline, text } = errorPage;
-
 const ErrorPage = () => {
+  const { t } = useTranslation();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -19,16 +19,16 @@ const ErrorPage = () => {
           <Col xl={12}>
             <div className="error-page__inner">
               <div className="error-page__title-box">
-                <h2 className="error-page__title">{title}</h2>
-                <h2 className="error-page__title-2">{title}</h2>
+                <h2 className="error-page__title">{t("error.code")}</h2>
+                <h2 className="error-page__title-2">{t("error.code")}</h2>
               </div>
-              <h3 className="error-page__tagline">{tagline}</h3>
-              <p className="error-page__text">{text}</p>
+              <h3 className="error-page__tagline">{t("error.tagline")}</h3>
+              <p className="error-page__text">{t("error.text")}</p>
               <form onSubmit={handleSubmit} className="error-page__form">
                 <div className="error-page__form-input">
                   <input
                     type="search"
-                    placeholder="Search here"
+                    placeholder={t("error.searchPlaceholder")}
                     name="search"
                     required
                   />
@@ -38,7 +38,7 @@ const ErrorPage = () => {
                 </div>
               </form>
               <Link href="/" className="thm-btn error-page__btn">
-                back to home
+                {t("error.backHome")}
               </Link>
             </div>
           </Col>

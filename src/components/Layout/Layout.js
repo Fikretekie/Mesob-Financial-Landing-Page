@@ -2,13 +2,11 @@ import Preloader from "@/components/Preloader/Preloader";
 import useScroll from "@/hooks/useScroll";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link as ScrollLink } from "react-scroll";
 import MobileMenu from "../Header/MobileMenu";
 import SearchPopup from "../Header/SearchPopup";
 import SiteFooter from "../SiteFooter/SiteFooter";
-
-const DEFAULT_META_DESCRIPTION =
-  "Meksova helps small businesses track receipts, income, and expenses with simple, tax-ready bookkeeping.";
 
 const Layout = ({
   children,
@@ -18,6 +16,8 @@ const Layout = ({
   navItems,
   onePage = false,
 }) => {
+  const { t } = useTranslation();
+  const defaultDescription = t("common.meta.defaultDescription");
   const [loading, setLoading] = useState(true);
   const { scrollTop } = useScroll(100);
 
@@ -36,21 +36,21 @@ const Layout = ({
         <title>{pageTitle}</title>
         <meta
           name="description"
-          content={pageDescription ?? DEFAULT_META_DESCRIPTION}
+          content={pageDescription ?? defaultDescription}
         />
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription ?? DEFAULT_META_DESCRIPTION} />
+        <meta property="og:description" content={pageDescription ?? defaultDescription} />
         <meta property="og:image" content="https://meksova.com/ICON.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="1200" />
-        <meta property="og:image:alt" content="Meksova Logo" />
+        <meta property="og:image:alt" content={t("common.meta.ogImageAlt")} />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription ?? DEFAULT_META_DESCRIPTION} />
+        <meta name="twitter:description" content={pageDescription ?? defaultDescription} />
         <meta name="twitter:image" content="https://meksova.com/ICON.png" />
         
         {/* Additional SEO */}

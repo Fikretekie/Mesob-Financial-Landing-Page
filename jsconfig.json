@@ -10,7 +10,9 @@
       "@/context/*": ["src/context/*"],
       "@/hooks/*": ["src/hooks/*"],
       "@/data/*": ["src/data/*"],
-      "@/utils/*": ["src/utils/*"]
+      "@/utils/*": ["src/utils/*"],
+      "@/i18n": ["src/i18n/index.js"],
+      "@/i18n/*": ["src/i18n/*"]
     }
   }
 }

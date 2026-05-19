@@ -1,69 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect, useCallback } from "react";
-
-const testimonials = [
-  {
-    name: "Mohamed Hassan",
-    reviewCount: "4 reviews",
-    rating: 5,
-    timeAgo: "6 days ago",
-    avatar: "M",
-    avatarBg: "#e8b4b8",
-    avatarColor: "#5a3a3a",
-    text: "Meksova is a great app and super easy to use. It keeps all your receipts in one place, which makes tracking expenses and dealing with the IRS stress-free. I highly recommend it!",
-  },
-  {
-    name: "Selam",
-    reviewCount: "1 review",
-    rating: 5,
-    timeAgo: "3 days ago",
-    avatar: "S",
-    avatarBg: "#4a90a4",
-    avatarColor: "#fff",
-    text: "Meksova has completely changed how we manage our grocery store finances. Recording daily sales, supplier payments, and expenses used to take hours, but now everything is simple and organized in one place.",
-  },
-  {
-    name: "Dawit Bekele",
-    reviewCount: "7 reviews",
-    rating: 5,
-    timeAgo: "1 week ago",
-    avatar: "D",
-    avatarBg: "#7b9e6b",
-    avatarColor: "#fff",
-    text: "Running a restaurant means hundreds of expenses daily. Meksova keeps it all under control. The receipt scanner saves me two hours every week. Worth every penny.",
-  },
-  {
-    name: "Fatuma Ali",
-    reviewCount: "2 reviews",
-    rating: 5,
-    timeAgo: "2 weeks ago",
-    avatar: "F",
-    avatarBg: "#c4916b",
-    avatarColor: "#fff",
-    text: "I was drowning in paperwork before Meksova. Now my boutique's financials are always up to date. Tax season is no longer a nightmare. This app is a lifesaver for any small business owner.",
-  },
-  {
-    name: "Yonas Girma",
-    reviewCount: "3 reviews",
-    rating: 5,
-    timeAgo: "10 days ago",
-    avatar: "Y",
-    avatarBg: "#8b7db5",
-    avatarColor: "#fff",
-    text: "Simple, clean, and incredibly efficient. I manage three stores and meksova lets me keep everything separate and clear. The reporting feature is especially useful.",
-  },
-  {
-    name: "Hana Mekonnen",
-    reviewCount: "5 reviews",
-    rating: 4,
-    timeAgo: "5 days ago",
-    avatar: "H",
-    avatarBg: "#b5847d",
-    avatarColor: "#fff",
-    text: "Finally an app that understands the needs of small businesses. The interface is intuitive and the support team is incredibly responsive. Meksova has made bookkeeping something I no longer dread.",
-  },
-];
-
+import { useTranslation } from "react-i18next";
 
 const StarRating = ({ rating }) => (
   <div className="flex gap-0.5">
@@ -76,10 +13,8 @@ const StarRating = ({ rating }) => (
   </div>
 );
 
-
 const TestimonialCard = ({ testimonial }) => (
   <div className="flex flex-col gap-4 bg-[#262b3d]  p-6 h-full" style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3)" }}>
-    {/* Header */}
     <div className="flex items-center gap-3">
       <div
         className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0"
@@ -91,23 +26,18 @@ const TestimonialCard = ({ testimonial }) => (
         <p className="text-white font-semibold text-sm leading-snug">{testimonial.name}</p>
         <p className="text-gray-500 text-xs">{testimonial.reviewCount}</p>
       </div>
-      
     </div>
 
-    {/* Stars + time + badge */}
     <div className="flex items-center gap-2 flex-wrap">
       <StarRating rating={testimonial.rating} />
       <span className="text-gray-400 text-xs">{testimonial.timeAgo}</span>
-      
     </div>
 
-    {/* Text */}
     <p className="text-gray-300 text-sm leading-relaxed">
       {testimonial.text}
     </p>
   </div>
 );
-
 
 const TestimonialRow = ({ items }) => {
   const [page, setPage]       = useState(0);
@@ -138,7 +68,6 @@ const TestimonialRow = ({ items }) => {
 
   return (
     <div className="flex flex-col gap-6">
-      {/* 2-column grid, equal width */}
       <div
         className="grid gap-5"
         style={{ gridTemplateColumns: `repeat(${perPage}, minmax(0, 1fr))` }}
@@ -150,7 +79,6 @@ const TestimonialRow = ({ items }) => {
         ))}
       </div>
 
-      {/* Nav controls */}
       {totalPages > 1 && (
         <div className="flex items-center justify-center gap-4 mb-3">
           <button
@@ -190,27 +118,41 @@ const TestimonialRow = ({ items }) => {
   );
 };
 
+const avatarStyles = [
+  { avatar: "M", avatarBg: "#e8b4b8", avatarColor: "#5a3a3a", rating: 5 },
+  { avatar: "S", avatarBg: "#4a90a4", avatarColor: "#fff", rating: 5 },
+  { avatar: "D", avatarBg: "#7b9e6b", avatarColor: "#fff", rating: 5 },
+  { avatar: "F", avatarBg: "#c4916b", avatarColor: "#fff", rating: 5 },
+  { avatar: "Y", avatarBg: "#8b7db5", avatarColor: "#fff", rating: 5 },
+  { avatar: "H", avatarBg: "#b5847d", avatarColor: "#fff", rating: 4 },
+];
 
-const Testimonials = () => (
-  <section className="py-16 sm:py-24" style={{ backgroundColor: "#1d212c" }}>
-    <div className="max-w-5xl mx-auto px-6 sm:px-10">
+const Testimonials = () => {
+  const { t } = useTranslation();
+  const rawItems = t("home.testimonials.items", { returnObjects: true });
+  const items = Array.isArray(rawItems)
+    ? rawItems.map((item, index) => ({
+        ...item,
+        ...avatarStyles[index],
+      }))
+    : [];
 
-      {/* Heading */}
-      <div className="text-center mb-12">
-  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug pt-3 pb-3">
-          Trusted by hundreds of{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
-            small business owners
-          </span>
-        </h2>
-      
+  return (
+    <section className="py-16 sm:py-24" style={{ backgroundColor: "#1d212c" }}>
+      <div className="max-w-5xl mx-auto px-6 sm:px-10">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug pt-3 pb-3">
+            {t("home.testimonials.heading")}{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
+              {t("home.testimonials.headingHighlight")}
+            </span>
+          </h2>
+        </div>
+
+        <TestimonialRow items={items} />
       </div>
-
-
-      <TestimonialRow items={testimonials} />
-
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Testimonials;

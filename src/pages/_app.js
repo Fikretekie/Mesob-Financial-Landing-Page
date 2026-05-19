@@ -1,4 +1,6 @@
+import "@/i18n";
 import ContextProvider from "@/context/ContextProvider";
+import LanguageEffect from "@/components/LanguageSwitcher/LanguageEffect";
 import "@/vendors/animate/animate.min.css";
 import "@/vendors/animate/custom-animate.css";
 import "@/vendors/fontawesome/css/all.min.css";
@@ -22,6 +24,7 @@ import "@/styles/demo.css";
 const MyApp = ({ Component, pageProps }) => {
   return (
     <ContextProvider>
+      <LanguageEffect />
       <Component {...pageProps} />
     </ContextProvider>
   );

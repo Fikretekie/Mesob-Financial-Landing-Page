@@ -1,19 +1,20 @@
 import ContactPage from "@/components/Contact/ContactPage";
-//import CtaOne from "@/components/CtaSection/CtaOne";
 import FAQsPage from "@/components/FAQsPage/FAQsPage";
 import Header from "@/components/Header/Header";
 import Layout from "@/components/Layout/Layout";
 import PageHeader from "@/components/Reuseable/PageHeader";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Faq = () => {
+  const { t } = useTranslation();
+
   return (
-    <Layout pageTitle="FAQs">
+    <Layout pageTitle={t("faq.meta.title")}>
       <Header />
-      <PageHeader title="FAQs" />
+      <PageHeader title={t("faq.pageTitle")} />
       <FAQsPage />
       <ContactPage />
-      
     </Layout>
   );
 };

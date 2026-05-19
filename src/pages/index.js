@@ -1,29 +1,20 @@
-// import BenefitsOne from "@/components/Benefits/BenefitsOne";
-// import CaseOne from "@/components/CaseSection/CaseOne";
-// import FreeConsultation from "@/components/FreeConsultation/FreeConsultation";
 import Header from "@/components/Header/Header";
 import Layout from "@/components/Layout/Layout";
 import Testimonials from "@/components/Testimonials";
-// import MainSlider from "@/components/MainSlider/MainSlider";
-// import NewsOne from "@/components/NewsSection/NewsOne";
-import OurMission from "@/components/VideoSection/OurMission";
-// import TeamOne from "@/components/TeamSection/TeamOne";
-// import TestimonialOne from "@/components/TestimonialSection/TestimonialOne";
-// import TrustedOne from "@/components/TrustedSection/TrustedOne";
 import WelcomeOne from "@/components/WelcomeSection/WelcomeOne";
-// import WorkTogether from "@/components/WorkTogether/WorkTogether";
-// import { mainSlider } from "@/data/mainSlider";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <Layout
-      pageTitle="Meksova"
-      pageDescription="Meksova is an easy bookkeeping app for small businesses—receipts, expenses, and tax season in one place."
+      pageTitle={t("home.meta.title")}
+      pageDescription={t("home.meta.description")}
     >
       <Header />
       <WelcomeOne />
-      {/* <OurMission /> */}
       <Testimonials />
     </Layout>
   );

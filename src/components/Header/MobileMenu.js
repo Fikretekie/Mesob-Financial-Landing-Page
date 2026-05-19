@@ -60,9 +60,11 @@
 
 // export default MobileMenu;
 
+import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
 import { useRootContext } from "@/context/context";
 import headerData from "@/data/headerData";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Image } from "react-bootstrap";
 import Link from "../Reuseable/Link";
 import MenuList from "./MenuList";
@@ -70,7 +72,14 @@ import MenuList from "./MenuList";
 const { logo, navItems: items, phone, phoneHref, email, socials } = headerData;
 
 const MobileMenu = ({ navItems = items, onePage = false }) => {
+  const { t } = useTranslation();
   const { menuStatus, toggleMenu } = useRootContext();
+
+  const translatedNavItems = navItems.map((item) => {
+    const keyMap = { Home: "home", Services: "services", About: "about", Contact: "contact" };
+    const navKey = keyMap[item.name];
+    return navKey ? { ...item, name: t(`header.nav.${navKey}`) } : item;
+  });
 
   const handleToggleMenu = () => {
     document.body.classList.toggle("locked");
@@ -96,7 +105,10 @@ const MobileMenu = ({ navItems = items, onePage = false }) => {
           </Link>
         </div>
         <div className="mobile-nav__container">
-          <MenuList navItems={navItems} mobile onePage={onePage} />
+          <MenuList navItems={translatedNavItems} mobile onePage={onePage} />
+          <div style={{ padding: "0 15px", marginTop: "16px" }}>
+            <LanguageSwitcher />
+          </div>
           <div className="mobile-nav__buttons" style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "20px", padding: "0 15px" }}>
             <Link 
               href="https://app.meksova.com/login" 
@@ -112,7 +124,7 @@ const MobileMenu = ({ navItems = items, onePage = false }) => {
                 transition: "all 0.3s ease",
               }}
             >
-              Log in
+              {t("header.login")}
             </Link>
             <Link 
               href="https://app.meksova.com/signup" 
@@ -129,7 +141,7 @@ const MobileMenu = ({ navItems = items, onePage = false }) => {
                 transition: "background-color 0.3s ease",
               }}
             >
-              Get started for free
+              {t("header.signup")}
             </Link>
           </div>
         </div>

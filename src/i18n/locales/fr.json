@@ -1,0 +1,460 @@
+{
+  "common": {
+    "brandName": "Meksova",
+    "meta": {
+      "defaultDescription": "Meksova aide les petites entreprises à suivre reçus, revenus et dépenses avec une comptabilité simple et prête pour les impôts.",
+      "ogImageAlt": "Meksova Logo"
+    },
+    "breadcrumb": {
+      "home": "Accueil"
+    },
+    "titleSubtitle": "Suivez les dépenses, générez des rapports fiscaux et gérez les reçus — conçu pour les petites entreprises. Commencez maintenant",
+    "videoUnsupported": "Your browser does not support the video tag.",
+    "formRequired": "Ce champ est obligatoire.",
+    "reviews": "avis",
+    "review": "avis"
+  },
+  "header": {
+    "nav": {
+      "home": "Accueil",
+      "services": "Services",
+      "about": "À propos",
+      "contact": "Contact"
+    },
+    "login": "Connexion",
+    "signup": "Commencer gratuitement"
+  },
+  "search": {
+    "label": "rechercher ici",
+    "placeholder": "Rechercher ici...",
+    "submitAria": "envoyer la recherche"
+  },
+  "footer": {
+    "tagline": "Propulser l'avenir financier de votre entreprise.",
+    "explore": "Explorer",
+    "contact": "Contact",
+    "links": {
+      "about": "À propos",
+      "terms": "Conditions d'utilisation",
+      "privacy": "Politique de confidentialité",
+      "content": "Contenu"
+    },
+    "copyright": "© Copyright {{year}} par {{author}}. Tous droits réservés.",
+    "author": "Meksova"
+  },
+  "home": {
+    "meta": {
+      "title": "Meksova",
+      "description": "Meksova est une application de comptabilité facile pour les petites entreprises."
+    },
+    "hero": {
+      "tagline": "bienvenue sur meksova",
+      "title": "Voyez vos profits en minutes — Essayez notre démo en direct",
+      "ctaDemo": "Essayer la démo — Sans inscription",
+      "ctaTrial": "Essai gratuit de 30 jours",
+      "trialNote": "Aucune carte de crédit requise. Accès complet pendant 30 jours.",
+      "businessTypesTitle": "Sélectionnez votre type d'entreprise",
+      "videoPlay": "Play",
+      "videoPause": "Pause",
+      "videoMute": "Mute",
+      "videoUnmute": "Unmute",
+      "videoPlayback": "Video playback"
+    },
+    "testimonials": {
+      "heading": "Approuvé par des centaines de",
+      "headingHighlight": "propriétaires de petites entreprises",
+      "items": [
+        {
+          "name": "Mohamed Hassan",
+          "reviewCount": "4 reviews",
+          "timeAgo": "6 days ago",
+          "text": "Meksova is a great app and super easy to use. It keeps all your receipts in one place, which makes tracking expenses and dealing with the IRS stress-free. I highly recommend it!"
+        },
+        {
+          "name": "Selam",
+          "reviewCount": "1 review",
+          "timeAgo": "3 days ago",
+          "text": "Meksova has completely changed how we manage our grocery store finances. Recording daily sales, supplier payments, and expenses used to take hours, but now everything is simple and organized in one place."
+        },
+        {
+          "name": "Dawit Bekele",
+          "reviewCount": "7 reviews",
+          "timeAgo": "1 week ago",
+          "text": "Running a restaurant means hundreds of expenses daily. Meksova keeps it all under control. The receipt scanner saves me two hours every week. Worth every penny."
+        },
+        {
+          "name": "Fatuma Ali",
+          "reviewCount": "2 reviews",
+          "timeAgo": "2 weeks ago",
+          "text": "I was drowning in paperwork before Meksova. Now my boutique's financials are always up to date. Tax season is no longer a nightmare. This app is a lifesaver for any small business owner."
+        },
+        {
+          "name": "Yonas Girma",
+          "reviewCount": "3 reviews",
+          "timeAgo": "10 days ago",
+          "text": "Simple, clean, and incredibly efficient. I manage three stores and meksova lets me keep everything separate and clear. The reporting feature is especially useful."
+        },
+        {
+          "name": "Hana Mekonnen",
+          "reviewCount": "5 reviews",
+          "timeAgo": "5 days ago",
+          "text": "Finally an app that understands the needs of small businesses. The interface is intuitive and the support team is incredibly responsive. Meksova has made bookkeeping something I no longer dread."
+        }
+      ]
+    }
+  },
+  "businessTypes": [
+    {
+      "id": "truck",
+      "title": "Camion",
+      "text": "Comptabilité DIY — suivez revenus fret, carburant, réparations et reçus."
+    },
+    {
+      "id": "groceries",
+      "title": "Épicerie",
+      "text": "Comptabilité DIY — ventes quotidiennes, fournisseurs et reçus."
+    },
+    {
+      "id": "rideshare",
+      "title": "Chauffeurs VTC",
+      "text": "Comptabilité DIY — courses, carburant, réparations et reçus."
+    },
+    {
+      "id": "households",
+      "title": "Foyers",
+      "text": "Comptabilité DIY — factures, dépenses familiales et reçus."
+    },
+    {
+      "id": "cafe",
+      "title": "Café / Restaurants",
+      "text": "Comptabilité DIY — ventes, fournisseurs, personnel et reçus."
+    },
+    {
+      "id": "cleaning",
+      "title": "Nettoyage",
+      "text": "Comptabilité DIY — travaux, fournitures et paiements."
+    },
+    {
+      "id": "beauty",
+      "title": "Beauté",
+      "text": "Comptabilité DIY — paiements clients, produits et reçus."
+    },
+    {
+      "id": "ecommerce",
+      "title": "E-commerce",
+      "text": "Comptabilité DIY — ventes en ligne, frais, livraison et reçus."
+    },
+    {
+      "id": "construction",
+      "title": "Construction",
+      "text": "Comptabilité DIY — dépenses projet, salaires et reçus."
+    },
+    {
+      "id": "contentCreator",
+      "title": "Créateur de contenu",
+      "text": "Comptabilité DIY — revenus, dépenses, sponsors et reçus."
+    },
+    {
+      "id": "other",
+      "title": "Autres entreprises",
+      "text": "Comptabilité DIY — revenus, dépenses et reçus pour tout commerce."
+    }
+  ],
+  "services": {
+    "meta": {
+      "title": "Services - Meksova",
+      "description": "Types d'entreprises pris en charge par Meksova."
+    },
+    "pageTitle": "Nos services",
+    "tagline": "Nos services",
+    "title": "Services que nous offrons"
+  },
+  "about": {
+    "meta": {
+      "title": "À propos - Meksova",
+      "description": "Découvrez Meksova et notre comptabilité simple."
+    },
+    "pageTitle": "À propos de nous",
+    "pageBreadcrumb": "À propos",
+    "story": {
+      "tagline": "À propos de meksova",
+      "titlePrefix": "Travaillons ensemble pour ",
+      "titleHighlight": "votre entreprise",
+      "text": "meksova was born out of our own struggles with managing and recording financial transactions accurately and efficiently. After facing challenges in handling our finances, we realized the need for a robust, automated solution. That's when we created meksova — a system designed to streamline and simplify the process of financial transaction recording. meksova leverages automation to seamlessly track and record every transaction in your day-to-day operations, transforming the way you manage your business finances. Our platform offers professional, easy-to-understand reports like journal entries, income statements, and balance sheets, ensuring that your financial data is always organized and accessible. Our system is tailored to help businesses address common financial challenges, providing clear insights into where your business stands at any given time. With tools to track daily transactions and analyze your financial data, meksova empowers you to implement short and long-term strategies, optimizing business growth and success. Let meksova help you take control of your financial future with ease and confidence.",
+      "missionTitle": "Mission : protéger \n votre entreprise et bien plus"
+    }
+  },
+  "ourMission": {
+    "trustedHeading": "Approuvé par des centaines de",
+    "trustedHighlight": "propriétaires de petites entreprises",
+    "title": "Mission : protéger votre entreprise &",
+    "titleHighlight": "Bien plus",
+    "testimonial": "Meksova is a great app and super easy to use. It keeps all your receipts in one place, which makes tracking expenses and dealing with the IRS stress-free. I highly recommend it!",
+    "cta": "EN SAVOIR PLUS",
+    "watermark": "Finance mondiale"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact - Meksova",
+      "description": "Contactez Meksova pour le support ou les partenariats."
+    },
+    "pageTitle": "Contact",
+    "details": {
+      "title": "Contactez-nous",
+      "text": "Nous offrons la meilleure expérience client",
+      "addressLabel": "Notre bureau",
+      "address": "3130 Westerville Rd, Columbus, OH 43224"
+    },
+    "form": {
+      "tagline": "CONTACTEZ-NOUS",
+      "title": "Une question ?",
+      "titleAlt": "Écrire un message",
+      "submit": "ENVOYER LE MESSAGE",
+      "fields": {
+        "fullName": "Nom complet",
+        "email": "Adresse e-mail",
+        "phone": "Téléphone",
+        "subject": "Sujet",
+        "message": "Écrire un message",
+        "messagePlaceholder": "Comment pouvons-nous aider votre entreprise ?"
+      }
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "FAQ"
+    },
+    "pageTitle": "FAQ"
+  },
+  "error": {
+    "meta": {
+      "title": "Erreur 404"
+    },
+    "pageTitle": "Erreur 404",
+    "code": "404",
+    "tagline": "Désolé, nous ne trouvons pas cette page !",
+    "text": "La page que vous recherchez n'a jamais existé.",
+    "searchPlaceholder": "Rechercher ici",
+    "backHome": "retour à l'accueil"
+  },
+  "legal": {
+    "terms": {
+      "metaTitle": "Terms of Use | meksova",
+      "title": "Terms of Use for meksova",
+      "effectiveDate": "Effective Date: 01/01/2025",
+      "intro": "Welcome to meksova, an online service platform designed to help users record and track daily transactions for trucking, groceries, and service provider companies. By accessing or using our services, you agree to be bound by the following terms and conditions (\"Terms of Use\").",
+      "sections": [
+        {
+          "title": "1. Acceptance of Terms",
+          "paragraphs": [
+            "By accessing or using the meksova platform, you acknowledge and agree to abide by these Terms of Use, including any future modifications or updates. We reserve the right to update, modify, or change these Terms of Use at any time, and such changes will be effective immediately upon posting."
+          ]
+        },
+        {
+          "title": "2. User Responsibility",
+          "paragraphs": [
+            "You are solely responsible for all entries, data, and transactions you input into the meksova system. This includes but is not limited to recording transactions, managing receipts, and providing correct financial information. meksova is not responsible for any errors or inaccuracies in the data entered by the user. Users are responsible for ensuring that all transactions are accurate, and for the appropriate classification and categorization of financial data."
+          ]
+        },
+        {
+          "title": "3. System Features",
+          "paragraphs": [
+            "meksova provides users with the following features:"
+          ],
+          "list": [
+            {
+              "label": "Transaction Recording:",
+              "text": "Users can record daily transactions, including expenses, income, and other financial activities."
+            },
+            {
+              "label": "Journal Entries, Balance Sheet, and Income Statement:",
+              "text": "All recorded transactions will be reflected in the system's journal entries and will be available to generate balance sheets and income statements."
+            },
+            {
+              "label": "Daily, Monthly, and Yearly Summaries:",
+              "text": "Users will have access to a summary of their financial data in daily, monthly, or yearly intervals, showing total expenses, income, and other key financial metrics."
+            },
+            {
+              "label": "Receipt Recording:",
+              "text": "Users have the option to upload and record receipts for every transaction input into the system, allowing for better tracking and documentation of expenses."
+            }
+          ]
+        },
+        {
+          "title": "4. Limitation of Liability",
+          "paragraphs": [
+            "meksova makes no representations or warranties regarding the accuracy, completeness, or reliability of the data or financial statements generated by the system. The system's reports, including but not limited to the journal entries, balance sheets, and income statements, are based on the information entered by the user.",
+            "By using the Service, you acknowledge and agree that Mesob Financial is not responsible for any financial losses, damages, or consequences resulting from the user's data entries or decisions based on the system's output. You agree that any inaccuracies in data entries, calculations, or financial statements are solely your responsibility, and that Mesob Financial is not liable for any resulting issues."
+          ]
+        },
+        {
+          "title": "5. User Conduct",
+          "paragraphs": [
+            "Users agree to use the Service in compliance with all applicable laws, rules, and regulations. You must not use the Service for any unlawful or fraudulent activities, and you agree not to engage in conduct that may harm the functionality or security of the Service."
+          ]
+        },
+        {
+          "title": "6. Data Privacy and Security",
+          "paragraphs": [
+            "meksova takes the security of your data seriously and will take reasonable measures to protect your information. However, we cannot guarantee absolute security, and you acknowledge that any transmission of data over the internet carries inherent risks. By using our Service, you consent to the collection, use, and storage of your data as described in our Privacy Policy."
+          ]
+        },
+        {
+          "title": "7. Termination",
+          "paragraphs": [
+            "meksova reserves the right to suspend or terminate your access to the Service at any time, without prior notice, if you violate these Terms of Use or if we deem it necessary for any reason. Upon termination, your right to use the Service will immediately cease."
+          ]
+        },
+        {
+          "title": "8. No Warranty",
+          "paragraphs": [
+            "meksova provides the Service \"as is\" and without warranties of any kind, either express or implied. We do not guarantee the accuracy, reliability, or availability of the Service or the data you input into the system. You use the Service at your own risk."
+          ]
+        },
+        {
+          "title": "9. Indemnification",
+          "paragraphs": [
+            "You agree to indemnify, defend, and hold harmless meksova and its affiliates, employees, agents, and partners from any claims, damages, liabilities, or expenses (including legal fees) arising from your use of the Service, including but not limited to any errors in data entries or failure to comply with these Terms of Use."
+          ]
+        },
+        {
+          "title": "10. Governing Law",
+          "paragraphs": [
+            "These Terms of Use are governed by and construed in accordance with the laws of Columbus, OH USA, without regard to its conflict of law principles. Any disputes arising under or in connection with these Terms of Use will be subject to the exclusive jurisdiction of the courts located in Columbus, OH USA."
+          ]
+        },
+        {
+          "title": "11. Contact Information",
+          "paragraphs": [
+            "If you have any questions or concerns regarding these Terms of Use, please contact us at:"
+          ]
+        }
+      ],
+      "contactBlock": "meksova\nEmail: info@meksova.com\nWebsite: meksova.com"
+    },
+    "privacy": {
+      "metaTitle": "Privacy Policy | meksova",
+      "title": "Privacy Policy for meksova",
+      "effectiveDate": "Effective Date: 01/01/2025",
+      "intro": "At meksova, we are committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use, store, and protect your personal and financial information when you use our website and services (\"the Service\"). By using meksova, you agree to the practices described in this Privacy Policy.",
+      "sections": [
+        {
+          "title": "1. Information We Collect",
+          "paragraphs": [
+            "We collect two types of information:"
+          ],
+          "list": [
+            {
+              "label": "Personal Information:",
+              "text": "Information that can be used to identify you personally, such as your name, email address, phone number, and billing information."
+            },
+            {
+              "label": "Transactional and Financial Data:",
+              "text": "Information related to your use of the Service, including transaction records, receipts, account balances, income, expenses, and other financial information you input into the system."
+            }
+          ]
+        },
+        {
+          "title": "2. How We Use Your Information",
+          "paragraphs": [
+            "meksova uses the information we collect in the following ways:"
+          ],
+          "list": [
+            {
+              "label": "To Provide the Service:",
+              "text": "To process and record your transactions, generate financial reports, and offer summaries of your financial data."
+            },
+            {
+              "label": "To Improve the Service:",
+              "text": "To analyze usage patterns and improve the functionality and user experience of the Service."
+            },
+            {
+              "label": "To Communicate with You:",
+              "text": "To send important updates, account notifications, and customer support messages related to the Service."
+            },
+            {
+              "label": "To Comply with Legal Obligations:",
+              "text": "To comply with applicable laws, regulations, and legal processes."
+            }
+          ]
+        },
+        {
+          "title": "3. Data Security",
+          "paragraphs": [
+            "We implement reasonable administrative, technical, and physical measures to protect your personal and financial data. However, no system can guarantee 100% security. While we strive to protect your information, we cannot guarantee the absolute security of data transmitted to or from the Service."
+          ]
+        },
+        {
+          "title": "4. Data Retention",
+          "paragraphs": [
+            "We retain your data for as long as necessary to provide the Service and fulfill our legal obligations. After account termination, we retain data only as required by law or for resolving disputes and enforcing agreements."
+          ]
+        },
+        {
+          "title": "5. Sharing Your Information",
+          "paragraphs": [
+            "We do not sell, rent, or trade your information to third parties. We may share your information with:"
+          ],
+          "list": [
+            {
+              "label": "Service Providers:",
+              "text": "Third-party providers assisting in operating the Service."
+            },
+            {
+              "label": "Legal Compliance:",
+              "text": "When required by law or in response to legal requests."
+            }
+          ]
+        },
+        {
+          "title": "6. User Responsibility for Data",
+          "paragraphs": [
+            "You are responsible for the accuracy and completeness of the information you enter into the system. meksova is not responsible for inaccuracies in user-input data."
+          ]
+        },
+        {
+          "title": "7. Cookies and Tracking Technologies",
+          "paragraphs": [
+            "We may use cookies and similar technologies to enhance your experience with the Service. You can manage cookie preferences through your browser settings."
+          ]
+        },
+        {
+          "title": "8. Your Rights and Choices",
+          "paragraphs": [
+            "You have the right to access, update, or delete your personal information. Contact us to review or change your information. You can opt out of promotional emails using the unsubscribe instructions in those emails."
+          ]
+        },
+        {
+          "title": "9. Children's Privacy",
+          "paragraphs": [
+            "meksova is not intended for children under 13. We do not knowingly collect personal information from children under 13."
+          ]
+        },
+        {
+          "title": "10. Third-Party Links",
+          "paragraphs": [
+            "The Service may contain links to third-party websites. We are not responsible for the privacy practices or content of these sites."
+          ]
+        },
+        {
+          "title": "11. Changes to This Privacy Policy",
+          "paragraphs": [
+            "We may update this Privacy Policy at any time. Changes are effective immediately upon posting. We will notify you of significant changes by email or through a notice on our platform."
+          ]
+        },
+        {
+          "title": "12. Contact Us",
+          "paragraphs": [
+            "If you have questions or concerns about this Privacy Policy, please contact us at:"
+          ]
+        }
+      ],
+      "contactBlock": "meksova\nEmail: info@meksova.com\nWebsite: meksova.com"
+    }
+  },
+  "marketingRules": {
+    "title": "Règles marketing",
+    "breadcrumbParent": "Services",
+    "breadcrumbPage": "Détails"
+  }
+}

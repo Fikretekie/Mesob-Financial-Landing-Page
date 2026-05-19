@@ -24,6 +24,8 @@
       "@/hooks/*": ["src/hooks/*"],
       "@/data/*": ["src/data/*"],
       "@/utils/*": ["src/utils/*"],
+      "@/i18n": ["src/i18n/index.js"],
+      "@/i18n/*": ["src/i18n/*"],
       "@/lib/*": ["src/lib/*"],
       "@/types/*": ["src/types/*"],
       "@/types": ["src/types/index.ts"]

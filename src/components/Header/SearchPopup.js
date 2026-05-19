@@ -1,7 +1,9 @@
 import { useRootContext } from "@/context/context";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const SearchPopup = () => {
+  const { t } = useTranslation();
   const { openSearch, toggleSearch } = useRootContext();
 
   const handleToggleSearch = () => {
@@ -25,16 +27,16 @@ const SearchPopup = () => {
       <div className="search-popup__content">
         <form onSubmit={handleSubmit}>
           <label htmlFor="search" className="sr-only">
-            search here
+            {t("search.label")}
           </label>
           <input
             type="text"
             id="search"
             name="search"
-            placeholder="Search Here..."
+            placeholder={t("search.placeholder")}
             required
           />
-          <button type="submit" aria-label="search submit" className="thm-btn">
+          <button type="submit" aria-label={t("search.submitAria")} className="thm-btn">
             <i className="icon-magnifying-glass"></i>
           </button>
         </form>

@@ -1,16 +1,20 @@
 import { welcomeOne } from "@/data/welcomeSection";
+import useBusinessTypes from "@/hooks/useBusinessTypes";
 import useActive from "@/hooks/useActive";
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import Link from "next/link";
 import Title from "../Reuseable/Title";
 import VideoModal from "../Reuseable/VideoModal";
 import SingleFeatureOne from "./SingleFeatureOne";
 import styles from "./singlefeature.module.css";
-import Link from "next/link";
 
-const { tagline, title, bg, videoId, features } = welcomeOne;
+const { bg, videoId } = welcomeOne;
 
 const WelcomeOne = ({ id = "" }) => {
+  const { t } = useTranslation();
+  const features = useBusinessTypes();
   const [isOpen, setOpen] = useState(false);
   const ref = useActive(id);
 
@@ -81,8 +85,8 @@ const WelcomeOne = ({ id = "" }) => {
               <Col xl={6} lg={6}>
                 <div className="welcome-one__top-left">
                   <Title
-                    tagline={tagline}
-                    title={title}
+                    tagline={t("home.hero.tagline")}
+                    title={t("home.hero.title")}
                     className="text-left"
                   />
                   <div
@@ -96,13 +100,13 @@ const WelcomeOne = ({ id = "" }) => {
                     }}
                   >
                     <Link href="/demo" className="welcome-one__demo-btn">
-                      Try Demo — No Signup
+                      {t("home.hero.ctaDemo")}
                     </Link>
                     <Link
                       href="https://app.meksova.com/signup"
                       className="welcome-one__trial-btn"
                     >
-                      Start 30-Day Free Trial
+                      {t("home.hero.ctaTrial")}
                     </Link>
                   </div>
 
@@ -113,7 +117,7 @@ const WelcomeOne = ({ id = "" }) => {
                       color: "rgba(231, 230, 230, 1)",
                     }}
                   >
-                    No credit card required. Full access for 30 days.
+                    {t("home.hero.trialNote")}
                   </p>
                 </div>
               </Col>
@@ -129,18 +133,18 @@ const WelcomeOne = ({ id = "" }) => {
                         className={`rounded-2xl shadow-lg ${styles.welcome_one_vedio}`}
                       >
                         <source src="/videos/final.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
+                        {t("common.videoUnsupported")}
                       </video>
                       <div
                         className={styles.heroVideoControls}
                         role="group"
-                        aria-label="Video playback"
+                        aria-label={t("home.hero.videoPlayback")}
                       >
                         <button
                           type="button"
                           className={styles.heroVideoBtn}
                           onClick={togglePlay}
-                          aria-label={isPlaying ? "Pause" : "Play"}
+                          aria-label={isPlaying ? t("home.hero.videoPause") : t("home.hero.videoPlay")}
                         >
                           {isPlaying ? "❚❚" : "▶"}
                         </button>
@@ -148,7 +152,7 @@ const WelcomeOne = ({ id = "" }) => {
                           type="button"
                           className={styles.heroVideoBtn}
                           onClick={toggleMute}
-                          aria-label={isMuted ? "Unmute" : "Mute"}
+                          aria-label={isMuted ? t("home.hero.videoUnmute") : t("home.hero.videoMute")}
                         >
                           {isMuted ? "🔇" : "🔊"}
                         </button>
@@ -161,7 +165,7 @@ const WelcomeOne = ({ id = "" }) => {
           </div>
           <div className="welcome-one__bottom">
             <h2 className="welcome-one__business-type-title">
-              Select Your Business Type
+              {t("home.hero.businessTypesTitle")}
             </h2>
             <ul className="list-unstyled welcome-one__feature">
               {features.map((feature) => (
