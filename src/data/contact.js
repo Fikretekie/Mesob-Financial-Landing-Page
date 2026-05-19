@@ -29,7 +29,7 @@ export const inputs = [
 
 const common = {
   phone: "+1 (614) 966-5005",
-  phoneHref: "12463330079",
+  phoneHref: "+1 (614) 966-5005",
   email: "info@meksova.com",
 };
 
