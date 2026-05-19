@@ -5,7 +5,7 @@ const footerData = {
   bg,
   text: "meksova",
   tagline: "Empowering your business financial future.",
- 
+
   socials: [
 
     {
@@ -49,7 +49,7 @@ const footerData = {
   // newsletterText: "Subsrcibe for our upcoming latest articles and resources",
   // address: "60 road, broklyn golden street new york. USA",
   phone: "+1 (614) 966-5005",
-  phoneHref: "12463330079",
+  phoneHref: "+1 (614) 966-5005",
   email: "info@meksova.com",
   author: "Meksova",
   year: new Date().getFullYear(),
