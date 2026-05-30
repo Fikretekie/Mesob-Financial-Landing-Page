@@ -8,7 +8,7 @@
   align-items: center;
   gap: 8px;
   padding: 10px 14px;
-  background: #4a6fa5;
+  background: #1d6bd4;
   border: none;
   border-radius: 8px;
   color: #fff;
@@ -22,7 +22,7 @@
 
 .trigger:hover,
 .triggerOpen {
-  background: #3d5f8f;
+  background: #1859b5;
 }
 
 .flag {
@@ -75,7 +75,7 @@
 
 .option:hover,
 .optionActive {
-  background: rgba(74, 111, 165, 0.35);
+  background: rgba(29, 107, 212, 0.35);
 }
 
 .optionActive {

@@ -456,5 +456,206 @@
     "title": "የግብይት ህጎች",
     "breadcrumbParent": "አገልግሎቶች",
     "breadcrumbPage": "ዝርዝር"
+  },
+  "demo": {
+    "meta": {
+      "title": "Meksova - ዴሞ",
+      "description": "የMeksova የአስተዳደር ዳሽቦርድ ዴሞ"
+    },
+    "defaultBusinessName": "የንግድ ስምዎን ያስገቡ",
+    "sidebar": {
+      "dashboard": "ዳሽቦርድ",
+      "financialReport": "የፋይናንስ ሪፖርት",
+      "receipts": "ደረሰኞች",
+      "userProfile": "የተጠቃሚ መገለጫ",
+      "backupCsv": "CSV ቅጂ",
+      "subscribe": "ይመዝገቡ",
+      "demoMode": "ዴሞ ሁነታ",
+      "limitedTransactions": "{{count}} ግብይቶች ብቻ",
+      "toggleMenu": "ምናሌ ቀይር"
+    },
+    "header": {
+      "businessNamePlaceholder": "የንግድ ስም ያስገቡ",
+      "downloadReport": "ሪፖርት አውርድ",
+      "reportShort": "ሪፖርት",
+      "addTransaction": "ግብይት ጨምር",
+      "addShort": "ጨምር",
+      "transactions": "{{current}}/{{max}} ግብይቶች",
+      "limitApproaching": " · ገደብ ቀርቧል",
+      "demoLimitReached": " · የዴሞ ገደብ ተሞልቷል"
+    },
+    "dashboard": {
+      "unlockFeatures": "ሁሉንም ባህሪያት ለመክፈት ዝግጁ ነዎት?",
+      "getStartedFree": "በነጻ ይጀምሩ",
+      "totalCashOnHand": "ጠቅላላ ካሽ",
+      "totalExpenses": "ጠቅላላ ወጪ",
+      "totalPayable": "ጠቅላላ የሚከፈል",
+      "revenue": "ገቢ",
+      "noChange": "ለውጥ የለም",
+      "changeVsLastMonth": "{{sign}}{{percent}}% ከባለፈው ወር",
+      "chartSuffix": " ግራፍ"
+    },
+    "chart": {
+      "initial": "መነሻ",
+      "amount": "Amount"
+    },
+    "toast": {
+      "transactionAdded": "ግብይት በተሳካ ሁኔታ ታክሏል!",
+      "transactionsRemaining2": "በዴሞ ውስጥ 2 ግብይቶች ቀርተዋል።",
+      "transactionsRemaining1": "በዴሞ ውስጥ 1 ግብይት ቀርቷል።",
+      "transactionDeleted": "ግብይት በተሳካ ሁኔታ ተሰርዟል!",
+      "noTransactionsForReport": "ለሪፖርት ግብይት የለም። በመጀመሪያ ግብይቶችን ያክሉ!",
+      "reportReady": "ሪፖርትዎ ዝግጁ ነው! ከማተሚያ ዳይሎግ እንደ PDF ያስቀምጡ።",
+      "continueViewing": "መረጃዎን ማየት ትችላለህ፣ ነገር ግን ተጨማሪ ግብይት ማከል አትችልም።"
+    },
+    "businessTypeSelector": {
+      "title": "የንግድ አይነትዎን ይምረጡ",
+      "description": "ንግድዎን የሚገልጸውን ምድብ ይምረጡ። ይህ የግብይት ዓላማዎችን ያበጃጅልልዎታል።",
+      "label": "የንግድ አይነት",
+      "placeholder": "የንግድ አይነት ይምረጡ",
+      "cancel": "ሰርዝ",
+      "confirm": "አረጋግጥ"
+    },
+    "addTransaction": {
+      "title": "ግብይት ጨምር",
+      "type": "አይነት:",
+      "receivedCash": "ካሽ ተቀበለ",
+      "paidCash": "ካሽ ከፈለ",
+      "haventPaid": "ገና አልከፈለም",
+      "selectAction": "ተግባር ይምረጡ:",
+      "recordedPayable": "ቀደም ብሎ እንደ ተከፈል ተመዝግቧል",
+      "newExpense": "አዲስ ወጪ",
+      "boughtNewItem": "አዲስ እቃ ተገዛ",
+      "purpose": "ዓላማ:",
+      "itemDescription": "የእቃ መግለጫ:",
+      "selectPurpose": "ዓላማ ይምረጡ",
+      "enterManually": "በእጅ ያስገቡ",
+      "enterItemDescription": "የእቃ መግለጫ ያስገቡ...",
+      "enterPurposeManually": "ዓላማ በእጅ ያስገቡ...",
+      "amount": "መጠን ($):",
+      "uploadReceipt": "ደረሰኝ ይስቀሉ (አማራጭ):",
+      "clickUpload": "ደረሰኝ ለመስቀል ጠቅ ያድርጉ",
+      "fileTypes": "PNG, JPG, PDF እስከ 5MB",
+      "proFeature": "ይህ ባህሪ በፕሮ እቅድ ውስጥ ይገኛል። ያልተገደበ ደረሰኝ ስቀላት እና ለታክስ ዝግጁ ፋይናንስ ይፈልጉ!",
+      "proFeatureHighlight": "ፕሮ እቅድ",
+      "upgradeToPro": "ወደ ፕሮ ያሻሽሉ",
+      "cancel": "ሰርዝ",
+      "save": "አስቀምጥ"
+    },
+    "signup": {
+      "title": "ሙሉ መዳረሻ ይክፈቱ",
+      "descriptionBefore": "ዴሞ እስከ",
+      "descriptionTransactions": "7 ግብይቶች ድረስ ይፈቅዳል።",
+      "descriptionAfter": "ያልተገደበ ክትትል እና",
+      "descriptionReports": "ለታክስ ዝግጁ ሪፖርቶች ያሻሽሉ።",
+      "freeTrial": "ነጻ ሙከራ",
+      "free": "ነጻ",
+      "for30Days": "ለ30 ቀናት",
+      "thenJust": "ከዚያ",
+      "perMonth": "/ወር",
+      "features": {
+        "unlimited": "ያልተገደበ ግብይቶች",
+        "reports": "ለታክስ ዝግጁ ሪፖርቶች",
+        "scanning": "ደረሰኝ ስካን",
+        "export": "CSV ላክ",
+        "support": "ቅድሚያ ድጋፍ"
+      },
+      "tagline": "ፋይናንስዎን ያለ ገደብ ይቆጣጠሩ እና በሳምንት ሰዓታት ይቆጥቡ።",
+      "startTrial": "30 ቀን ነጻ ሙከራ ይጀምሩ",
+      "noCard": "ክሬዲት ካርድ አያስፈልግም። በማንኛውም ጊዜ ይሰርዙ።",
+      "continueDemo": "በተገደበ ዴሞ ይቀጥሉ"
+    },
+    "financialReport": {
+      "summary": "ማጠቃለያ",
+      "totalCashOnHand": "ጠቅላላ ካሽ:",
+      "totalPayableUnpaid": "ጠቅላላ የማይከፈል (ያልተከፈለ):",
+      "breakdown": "ዝርዝር:",
+      "revenue": "ገቢ:",
+      "totalExpense": "ጠቅላላ ወጪ:",
+      "other": "ሌላ",
+      "journalEntry": "የመዝገብ ግቤት",
+      "date": "ቀን",
+      "srNo": "ተ.ቁ.",
+      "transaction": "ግብይት",
+      "debit": "ዴቢት",
+      "credit": "ክሬዲት",
+      "actions": "ተግባሮች",
+      "deleteConfirm": "\"{{name}}\" ይሰረዝ?",
+      "incomeStatement": "የገቢ መግለጫ",
+      "revenueManual": "ገቢ (እጅ ሽያጭ)",
+      "totalRevenue": "ጠቅላላ ገቢ",
+      "expenses": "ወጪዎች",
+      "fuelExpense": "ወጪ (ነዳጅ)",
+      "wagesExpense": "ወጪ (ደመወዝ)",
+      "totalExpenses": "ጠቅላላ ወጪ",
+      "netIncome": "ንብረት ገቢ",
+      "balanceSheet": "ሚዛን ወረቀት",
+      "assets": "ንብረቶች",
+      "amount": "መጠን",
+      "cash": "ካሽ",
+      "inventory": "ክምችት",
+      "totalAssets": "ጠቅላላ ንብረት",
+      "liabilitiesEquity": "ግዴታዎች እና ኢኩዊቲ",
+      "payable": "የሚከፈል",
+      "beginningEquity": "መነሻ ኢኩዊቲ",
+      "retainedEarnings": "የተጠበቀ ገቢ / ንብረት ገቢ",
+      "totalLiabilitiesEquity": "ጠቅላላ ግዴታ እና ኢኩዊቲ",
+      "total": "ጠቅላላ"
+    },
+    "receipts": {
+      "title": "የደረሰኞች አስተዳደር",
+      "description": "ይህ ባህሪ በፕሮ እቅድ ውስጥ ይገኛል። ያልተገደበ ደረሰኝ ስቀላት እና ለታክስ ዝግጁ ፋይናንስ ይፈልጉ!"
+    },
+    "userProfile": {
+      "title": "የተጠቃሚ መገለጫ",
+      "name": "ስም",
+      "email": "ኢሜይል",
+      "phone": "ስልክ",
+      "companyName": "የኩባንያ ስም",
+      "businessType": "የንግድ አይነት",
+      "cashBalance": "የካሽ ቀሪ",
+      "outstandingDebt": "ያልተከፈለ ዕዳ",
+      "valuableItems": "ዋጋ ያላቸው እቃዎች",
+      "editProfile": "መገለጫ አርትዕ",
+      "deleteAccount": "መለያ ሰርዝ"
+    },
+    "backup": {
+      "pageTitle": "CSV ሪፖርት",
+      "sectionTitle": "የቅጂ ፋይል",
+      "download": "አውርድ"
+    },
+    "subscription": {
+      "title": "ሙሉ መዳረሻ ከ",
+      "proPlan": "ፕሮ እቅድ",
+      "introBefore": "ይደሰቱ",
+      "introHighlight": "30 ቀን ነጻ ያልተገደበ መዳረሻ",
+      "introAfter": "— ክሬዲት ካርድ አያስፈልግም።",
+      "afterTrialBefore": "ከሙከራ በኋላ በራስ-ሰር ይቀጥላል በ",
+      "afterTrialPrice": "$29.99/ወር",
+      "afterTrialEnd": "።",
+      "features": [
+        {
+          "title": "ያልተገደበ ግብይቶች:",
+          "description": "ሁሉንም ግብይቶች ያለ ገደብ ይከታተሉ — እውነተኛ ትርፍዎን ይወቁ።"
+        },
+        {
+          "title": "ለታክስ ዝግጁ ሪፖርቶች:",
+          "description": "ለታክስ ወቅት ዝግጁ ሪፖርቶችን ወዲያውኑ ይፍጠሩ።"
+        },
+        {
+          "title": "ደረሰኞች ላክ እና አውርድ:",
+          "description": "ሁሉንም ደረሰኞች ያዘጋጁ እና ለኦዲት ዝግጁ ይሁኑ።"
+        },
+        {
+          "title": "የተጠቃሚ መገለጫ አስተዳደር:",
+          "description": "የንግድ መረጃዎን በቀላሉ ያስተዳድሩ።"
+        }
+      ],
+      "pitch": "በሳምንት ሰዓታት በመዝገብ ስራ ይቆጥቡ። ገንዘብዎ ወዴት እንደሄደ አትጨነቁ።",
+      "price": "$29.99",
+      "perMonth": "/ ወር",
+      "cta": "ነጻ ሙከራዬን ይጀምሩ",
+      "footer": "ክሬዲት ካርድ አያስፈልግም። ከ30 ቀን ሙከራ በፊት ይሰርዙ።"
+    }
   }
 }

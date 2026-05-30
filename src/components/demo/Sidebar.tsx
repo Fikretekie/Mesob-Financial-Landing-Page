@@ -6,20 +6,21 @@ import type { ViewType } from '@/types';
 import headerData from '@/data/headerData';
 import { Image } from "react-bootstrap";
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface SidebarItem {
   id: ViewType;
-  label: string;
+  labelKey: string;
   icon: LucideIcon;
 }
 
 const sidebarItems: SidebarItem[] = [
-  { id: 'dashboard', label: 'DASHBOARD', icon: LayoutDashboard },
-  { id: 'financial-report', label: 'FINANCIAL REPORT', icon: FileText },
-  { id: 'receipts', label: 'RECEIPTS', icon: Receipt },
-  { id: 'user-profile', label: 'USER PROFILE', icon: Receipt },
-  { id: 'backup-csv', label: 'BACKUP CSV', icon: Receipt },
-  { id: 'subscribe', label: 'SUBSCRIBE', icon: Receipt },
+  { id: 'dashboard', labelKey: 'demo.sidebar.dashboard', icon: LayoutDashboard },
+  { id: 'financial-report', labelKey: 'demo.sidebar.financialReport', icon: FileText },
+  { id: 'receipts', labelKey: 'demo.sidebar.receipts', icon: Receipt },
+  { id: 'user-profile', labelKey: 'demo.sidebar.userProfile', icon: Receipt },
+  { id: 'backup-csv', labelKey: 'demo.sidebar.backupCsv', icon: Receipt },
+  { id: 'subscribe', labelKey: 'demo.sidebar.subscribe', icon: Receipt },
 ];
 
 interface SidebarProps {
@@ -30,6 +31,7 @@ interface SidebarProps {
 const { logo } = headerData;
 
 export function Sidebar({ currentView, onViewChange }: SidebarProps) {
+  const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Close mobile menu when view changes
@@ -60,7 +62,7 @@ export function Sidebar({ currentView, onViewChange }: SidebarProps) {
       <button
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         className="md:hidden fixed top-4 left-4 z-50 bg-slate-800 text-white p-2 rounded-lg shadow-lg border border-slate-700"
-        aria-label="Toggle menu"
+        aria-label={t('demo.sidebar.toggleMenu')}
       >
         {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
       </button>
@@ -92,20 +94,20 @@ export function Sidebar({ currentView, onViewChange }: SidebarProps) {
           {sidebarItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentView === item.id;
-            
+
             return (
               <button
                 key={item.id}
                 onClick={() => handleViewChange(item.id)}
-               className={cn(
-                    'w-full flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-full',
+                className={cn(
+                  'w-full flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-full',
                   isActive
                     ? 'bg-white/95 text-cyan-500 shadow-lg'
                     : 'text-slate-300 hover:text-white hover:bg-slate-800/30'
                 )}
               >
                 <Icon className={cn('w-5 h-5 flex-shrink-0', isActive ? 'text-cyan-500' : 'text-slate-400')} />
-                <span className="text-left">{item.label}</span>
+                <span className="text-left">{t(item.labelKey)}</span>
               </button>
             );
           })}
@@ -114,8 +116,8 @@ export function Sidebar({ currentView, onViewChange }: SidebarProps) {
         {/* Demo Badge */}
         <div className="p-4">
           <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 rounded-lg p-3">
-            <p className="text-amber-400 text-xs font-medium mb-2">Demo Mode</p>
-            <p className="text-slate-400 text-xs">Limited to 7 transactions</p>
+            <p className="text-amber-400 text-xs font-medium mb-2">{t('demo.sidebar.demoMode')}</p>
+            <p className="text-slate-400 text-xs">{t('demo.sidebar.limitedTransactions', { count: 7 })}</p>
           </div>
         </div>
       </div>

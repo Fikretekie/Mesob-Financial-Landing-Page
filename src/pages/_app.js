@@ -1,6 +1,7 @@
-import "@/i18n";
+import i18n from "@/i18n";
 import ContextProvider from "@/context/ContextProvider";
 import LanguageEffect from "@/components/LanguageSwitcher/LanguageEffect";
+import { I18nextProvider } from "react-i18next";
 import "@/vendors/animate/animate.min.css";
 import "@/vendors/animate/custom-animate.css";
 import "@/vendors/fontawesome/css/all.min.css";
@@ -23,10 +24,12 @@ import "@/styles/demo.css";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <ContextProvider>
-      <LanguageEffect />
-      <Component {...pageProps} />
-    </ContextProvider>
+    <I18nextProvider i18n={i18n}>
+      <ContextProvider>
+        <LanguageEffect />
+        <Component {...pageProps} />
+      </ContextProvider>
+    </I18nextProvider>
   );
 };
 

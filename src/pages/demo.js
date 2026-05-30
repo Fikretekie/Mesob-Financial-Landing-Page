@@ -1,7 +1,9 @@
 'use client'
 
+import '@/i18n'
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
+import { useTranslation } from 'react-i18next'
 import { Sidebar } from '@/components/demo/Sidebar'
 import { Header } from '@/components/demo/Header'
 import { AddTransactionDialog } from '@/components/demo/AddTransactionDialog'
@@ -19,13 +21,14 @@ import { BackupFile } from '@/components/demo/sections/backup'
 import { BusinessTypeSelector } from '@/components/demo/BusinessTypeSelector'
 
 export default function DemoPage() {
+  const { t, i18n } = useTranslation()
   const [currentView, setCurrentView] = useState('dashboard')
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false)
   const [isSignupDialogOpen, setIsSignupDialogOpen] = useState(false)
   const [selectedBusinessType, setSelectedBusinessType] = useState('Trucking')
   const [showBusinessTypeSelector, setShowBusinessTypeSelector] = useState(false)
-  const [businessName, setBusinessName] = useState('Enter your business name')
-  
+  const [businessName, setBusinessName] = useState('')
+
   const {
     summary,
     cashOnHandData,
@@ -41,13 +44,15 @@ export default function DemoPage() {
     deleteTransaction,
   } = useTransactions()
 
-  // Load business name from localStorage on mount
+  // Load business name from localStorage on mount / language change
   useEffect(() => {
     const storedName = localStorage.getItem('mesob_demo_business_name')
     if (storedName) {
       setBusinessName(storedName)
+    } else {
+      setBusinessName(t('demo.defaultBusinessName'))
     }
-  }, [])
+  }, [t, i18n.language])
 
   // Save business name to localStorage when it changes
   useEffect(() => {
@@ -85,35 +90,35 @@ export default function DemoPage() {
       setIsSignupDialogOpen(true)
       return
     }
-    
+
     const success = addTransaction(transaction)
-    
+
     if (success) {
-      toast.success('Transaction added successfully!')
-      
+      toast.success(t('demo.toast.transactionAdded'))
+
       if (transactionCount === maxTransactions - 2) {
-        toast.warning('You have 2 transactions remaining in the demo.')
+        toast.warning(t('demo.toast.transactionsRemaining2'))
       } else if (transactionCount === maxTransactions - 1) {
-        toast.warning('You have 1 transaction remaining in the demo.')
+        toast.warning(t('demo.toast.transactionsRemaining1'))
       }
     }
   }
 
   const handleDeleteTransaction = (id) => {
     deleteTransaction(id)
-    toast.success('Transaction deleted successfully!')
+    toast.success(t('demo.toast.transactionDeleted'))
   }
 
   const handleDownloadReport = () => {
     if (transactions.length === 0) {
-      toast.error('No transactions to include in the report. Add some transactions first!')
+      toast.error(t('demo.toast.noTransactionsForReport'))
       return
     }
 
     const dates = transactions.map(t => new Date(t.date))
     const minDate = new Date(Math.min(...dates.map(d => d.getTime())))
     const maxDate = new Date(Math.max(...dates.map(d => d.getTime())))
-    
+
     const dateRange = `${minDate.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }).toUpperCase()} – ${maxDate.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }).toUpperCase()}`
 
     const reportData = {
@@ -129,12 +134,12 @@ export default function DemoPage() {
     }
 
     downloadPDFReport(reportData)
-   toast.success('Your report is ready! Save it as PDF from the print dialog.')
+    toast.success(t('demo.toast.reportReady'))
   }
 
   const handleContinueDemo = () => {
     setIsSignupDialogOpen(false)
-    toast.info('You can continue viewing your data, but cannot add more transactions.')
+    toast.info(t('demo.toast.continueViewing'))
   }
 
   const handleBusinessTypeSelected = (businessType) => {
@@ -187,15 +192,15 @@ export default function DemoPage() {
   return (
     <>
       <Head>
-        <title>Meksova - Demo</title>
-        <meta name="description" content="meksova Management Dashboard Demo" />
+        <title>{t('demo.meta.title')}</title>
+        <meta name="description" content={t('demo.meta.description')} />
       </Head>
-      
+
       <div className="demo-app flex flex-col sm:flex-row h-screen bg-[#101926]">
         <Sidebar currentView={currentView} onViewChange={setCurrentView} />
-        
+
         <div className="flex-1 flex flex-col overflow-hidden">
-          <Header 
+          <Header
             companyName={businessName}
             onCompanyNameChange={setBusinessName}
             onAddTransaction={() => {
@@ -209,7 +214,7 @@ export default function DemoPage() {
             transactionCount={transactionCount}
             maxTransactions={maxTransactions}
           />
-          
+
           <main className="flex-1 overflow-auto">
             {renderContent()}
           </main>
@@ -234,8 +239,8 @@ export default function DemoPage() {
           onOpenChange={setIsSignupDialogOpen}
           onContinueDemo={handleContinueDemo}
         />
-        
-        <Toaster 
+
+        <Toaster
           position="top-right"
           toastOptions={{
             style: {

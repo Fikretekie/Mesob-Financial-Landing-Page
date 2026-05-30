@@ -456,5 +456,206 @@
     "title": "Règles marketing",
     "breadcrumbParent": "Services",
     "breadcrumbPage": "Détails"
+  },
+  "demo": {
+    "meta": {
+      "title": "Meksova - Démo",
+      "description": "Démo du tableau de bord Meksova"
+    },
+    "defaultBusinessName": "Entrez le nom de votre entreprise",
+    "sidebar": {
+      "dashboard": "TABLEAU DE BORD",
+      "financialReport": "RAPPORT FINANCIER",
+      "receipts": "REÇUS",
+      "userProfile": "PROFIL",
+      "backupCsv": "SAUVEGARDE CSV",
+      "subscribe": "S'ABONNER",
+      "demoMode": "Mode démo",
+      "limitedTransactions": "Limité à {{count}} transactions",
+      "toggleMenu": "Toggle menu"
+    },
+    "header": {
+      "businessNamePlaceholder": "Enter business name",
+      "downloadReport": "Télécharger le rapport",
+      "reportShort": "Report",
+      "addTransaction": "Ajouter une transaction",
+      "addShort": "Add",
+      "transactions": "{{current}}/{{max}} transactions",
+      "limitApproaching": " · Limite proche",
+      "demoLimitReached": " · Limite démo atteinte"
+    },
+    "dashboard": {
+      "unlockFeatures": "Prêt à débloquer toutes les fonctionnalités ?",
+      "getStartedFree": "Commencer gratuitement",
+      "totalCashOnHand": "TRÉSORERIE TOTALE",
+      "totalExpenses": "DÉPENSES TOTALES",
+      "totalPayable": "À PAYER TOTAL",
+      "revenue": "REVENUS",
+      "noChange": "Aucun changement",
+      "changeVsLastMonth": "{{sign}}{{percent}}% vs mois dernier",
+      "chartSuffix": " Graphique"
+    },
+    "chart": {
+      "initial": "Initial",
+      "amount": "Amount"
+    },
+    "toast": {
+      "transactionAdded": "Transaction added successfully!",
+      "transactionsRemaining2": "You have 2 transactions remaining in the demo.",
+      "transactionsRemaining1": "You have 1 transaction remaining in the demo.",
+      "transactionDeleted": "Transaction deleted successfully!",
+      "noTransactionsForReport": "No transactions to include in the report. Add some transactions first!",
+      "reportReady": "Your report is ready! Save it as PDF from the print dialog.",
+      "continueViewing": "You can continue viewing your data, but cannot add more transactions."
+    },
+    "businessTypeSelector": {
+      "title": "Select Your Business Type",
+      "description": "Choose the category that best describes your business. This will customize the transaction purposes for your needs.",
+      "label": "Business Type",
+      "placeholder": "Select business type",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "addTransaction": {
+      "title": "Add Transaction",
+      "type": "Type:",
+      "receivedCash": "Received Cash",
+      "paidCash": "Paid Cash",
+      "haventPaid": "Haven't Yet Paid",
+      "selectAction": "Select Action:",
+      "recordedPayable": "Recorded Earlier as Payable",
+      "newExpense": "New Expense",
+      "boughtNewItem": "Bought a New Item",
+      "purpose": "Purpose:",
+      "itemDescription": "Item Description:",
+      "selectPurpose": "Select purpose",
+      "enterManually": "Enter Manually",
+      "enterItemDescription": "Enter item description...",
+      "enterPurposeManually": "Enter purpose manually...",
+      "amount": "Amount ($):",
+      "uploadReceipt": "Upload Receipt (optional):",
+      "clickUpload": "Click to upload receipt",
+      "fileTypes": "PNG, JPG, PDF up to 5MB",
+      "proFeature": "This feature is available in the Pro Plan. Unlock unlimited receipt uploads and keep your finances ready for tax season by upgrading today!",
+      "proFeatureHighlight": "Pro Plan",
+      "upgradeToPro": "Upgrade to Pro",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "signup": {
+      "title": "Débloquer l'accès complet",
+      "descriptionBefore": "Demo allows up to",
+      "descriptionTransactions": "7 transactions.",
+      "descriptionAfter": "Upgrade for unlimited tracking &",
+      "descriptionReports": "tax-ready reports.",
+      "freeTrial": "FREE TRIAL",
+      "free": "FREE",
+      "for30Days": "for 30 days",
+      "thenJust": "Then just",
+      "perMonth": "/month",
+      "features": {
+        "unlimited": "Unlimited transactions",
+        "reports": "Tax-Ready Reports",
+        "scanning": "Receipt scanning",
+        "export": "CSV export",
+        "support": "Priority support"
+      },
+      "tagline": "Take control of your finances without limits and save hours every week.",
+      "startTrial": "Essai gratuit de 30 jours",
+      "noCard": "No credit card required. Cancel anytime.",
+      "continueDemo": "Continuer avec la démo limitée"
+    },
+    "financialReport": {
+      "summary": "Summary",
+      "totalCashOnHand": "Total Cash on Hand:",
+      "totalPayableUnpaid": "Total Payable (Unpaid):",
+      "breakdown": "Breakdown:",
+      "revenue": "Revenue:",
+      "totalExpense": "Total Expense:",
+      "other": "Other",
+      "journalEntry": "Journal Entry",
+      "date": "Date",
+      "srNo": "Sr. No",
+      "transaction": "Transaction",
+      "debit": "Debit",
+      "credit": "Credit",
+      "actions": "Actions",
+      "deleteConfirm": "Delete \"{{name}}\"?",
+      "incomeStatement": "Income Statement",
+      "revenueManual": "Revenue (manual sales)",
+      "totalRevenue": "Total Revenue",
+      "expenses": "Expenses",
+      "fuelExpense": "Expenses (Fuel Expense)",
+      "wagesExpense": "Expenses (Wages (Expense))",
+      "totalExpenses": "Total Expenses",
+      "netIncome": "Net Income",
+      "balanceSheet": "Balance Sheet",
+      "assets": "Assets",
+      "amount": "Amount",
+      "cash": "Cash",
+      "inventory": "Inventory",
+      "totalAssets": "Total Assets",
+      "liabilitiesEquity": "Liabilities & Equity",
+      "payable": "Payable",
+      "beginningEquity": "Beginning Equity",
+      "retainedEarnings": "Retained Earnings / Net Income",
+      "totalLiabilitiesEquity": "Total Liabilities & Equity",
+      "total": "Total"
+    },
+    "receipts": {
+      "title": "Receipts Management",
+      "description": "This feature is available in the Pro Plan. Unlock unlimited receipt uploads and keep your finances ready for tax season by upgrading today!"
+    },
+    "userProfile": {
+      "title": "User Profile",
+      "name": "Name",
+      "email": "Email address",
+      "phone": "Phone",
+      "companyName": "Company Name",
+      "businessType": "Business Type",
+      "cashBalance": "Cash Balance",
+      "outstandingDebt": "Outstanding Debt",
+      "valuableItems": "Valuable Items",
+      "editProfile": "Edit Profile",
+      "deleteAccount": "Delete Account"
+    },
+    "backup": {
+      "pageTitle": "CSV Report",
+      "sectionTitle": "Backup File",
+      "download": "Download"
+    },
+    "subscription": {
+      "title": "Accès complet avec",
+      "proPlan": "Plan Pro",
+      "introBefore": "Enjoy",
+      "introHighlight": "unlimited access free for 30 days",
+      "introAfter": "— no credit card required.",
+      "afterTrialBefore": "After your trial, your subscription continues automatically at",
+      "afterTrialPrice": "$29.99/month",
+      "afterTrialEnd": ".",
+      "features": [
+        {
+          "title": "Unlimited Transactions:",
+          "description": "Track every transaction without limits — always know your real profit."
+        },
+        {
+          "title": "Tax-Ready Financial Reports:",
+          "description": "Instantly generate clear reports to stay prepared for tax season and make smarter decisions."
+        },
+        {
+          "title": "Export & Download Receipts:",
+          "description": "Keep all your receipts organized and audit-ready."
+        },
+        {
+          "title": "User Profile Management:",
+          "description": "Manage your business info easily, no confusion or lost data."
+        }
+      ],
+      "pitch": "Save hours every week on bookkeeping. Stop guessing where your money goes — focus on growing your business.",
+      "price": "$29.99",
+      "perMonth": "/ month",
+      "cta": "Commencer mon essai gratuit",
+      "footer": "No credit card required. Cancel anytime before your 30-day trial ends."
+    }
   }
 }

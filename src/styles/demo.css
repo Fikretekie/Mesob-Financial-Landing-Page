@@ -43,7 +43,7 @@
   width: 100% !important;
   /* background-color: #0b1120 !important; */
   color: #f8fafc !important;
- font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0 !important;
@@ -75,21 +75,23 @@
 }
 
 
- .demo-app .w-64 {
+.demo-app .w-64 {
   flex-shrink: 0 !important;
   background-color: #101926 !important;
 }
-.demo-app > div:first-child.fixed {
+
+.demo-app>div:first-child.fixed {
   background-color: #101926 !important;
 }
+
 /* Sidebar internal flex structure */
-.demo-app > div:first-child > nav {
+.demo-app>div:first-child>nav {
   /* flex: 1 !important; */
   overflow: hidden !important;
 }
 
 /* Sidebar demo badge container at bottom */
-.demo-app > div:first-child > div:last-child {
+.demo-app>div:first-child>div:last-child {
   padding: 1rem !important;
   flex-shrink: 0 !important;
   position: relative !important;
@@ -97,7 +99,7 @@
 }
 
 /* Demo badge styling */
-.demo-app > div:first-child > div:last-child > div {
+.demo-app>div:first-child>div:last-child>div {
   background: linear-gradient(to right, rgba(245, 158, 11, 0.2), rgba(249, 115, 22, 0.2)) !important;
   border: 1px solid rgba(245, 158, 11, 0.3) !important;
   border-radius: 0.5rem !important;
@@ -115,14 +117,14 @@
 }
 
 /* Sidebar p-4 container for demo badge */
-.demo-app .w-64 > .p-4 {
+.demo-app .w-64>.p-4 {
   padding: 1rem !important;
   flex-shrink: 0 !important;
   position: relative !important;
 }
 
 /* Demo main content area */
-.demo-app > div:nth-child(2) {
+.demo-app>div:nth-child(2) {
   /* flex: 1 !important; */
   display: flex !important;
   flex-direction: column !important;
@@ -137,7 +139,7 @@
 }
 
 /* Main content padding */
-.demo-app main > div {
+.demo-app main>div {
   padding: 1.5rem !important;
 }
 
@@ -154,19 +156,19 @@
   gap: 1.5rem !important;
 }
 
-.demo-app .space-y-6 > * + * {
+.demo-app .space-y-6>*+* {
   margin-top: 1.5rem !important;
 }
 
-.demo-app .space-y-4 > * + * {
+.demo-app .space-y-4>*+* {
   margin-top: 1rem !important;
 }
 
-.demo-app .space-y-3 > * + * {
+.demo-app .space-y-3>*+* {
   margin-top: 0.75rem !important;
 }
 
-.demo-app .space-y-2 > * + * {
+.demo-app .space-y-2>*+* {
   margin-top: 0.5rem !important;
 }
 
@@ -245,7 +247,8 @@
   width: 100% !important;
   padding: 0.75rem 1rem !important;
   gap: 0.75rem !important;
-  border-radius: 9999px !important; /* rounded-full */
+  border-radius: 9999px !important;
+  /* rounded-full */
   transition: all 0.2s ease-in-out !important;
   font-size: 0.75rem !important;
   font-weight: 200 !important;
@@ -268,7 +271,7 @@
 }
 
 .demo-app nav button.text-cyan-400 {
-  color: #2CA8FF  !important;
+  color: #2CA8FF !important;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
@@ -286,7 +289,7 @@
 /* Card styling - remove visible borders */
 .demo-app .bg-\[\#1e293b\] {
   background-color: #101926 !important;
-   border-top: none !important;
+  border-top: none !important;
   border-left: none !important;
   border-right: none !important;
   border-radius: 0.2rem !important;
@@ -300,7 +303,7 @@
 
 /* Remove borders from card containers only, NOT from internal row borders */
 /* Target the card wrapper divs with bg-[#1e293b] that have border class */
-.demo-app main > div > div > div.border.border-slate-700\/50.bg-\[\#1e293b\] {
+.demo-app main>div>div>div.border.border-slate-700\/50.bg-\[\#1e293b\] {
   border: none !important;
 }
 
@@ -325,12 +328,12 @@
 }
 
 /* Also for rows with space-y-4 wrapper */
-.demo-app .space-y-4 > .border-b {
+.demo-app .space-y-4>.border-b {
   border-bottom: 1px solid rgba(51, 65, 85, 0.5) !important;
 }
 
 /* Income Statement and Balance Sheet rows */
-.demo-app .space-y-3 > .border-b {
+.demo-app .space-y-3>.border-b {
   border-bottom: 1px solid rgba(51, 65, 85, 0.5) !important;
 }
 
@@ -493,7 +496,7 @@
   gap: 1.5rem !important;
 }
 
-.demo-app .space-y-1 > * + * {
+.demo-app .space-y-1>*+* {
   margin-top: 0.25rem !important;
 }
 
