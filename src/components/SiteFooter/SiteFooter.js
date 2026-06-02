@@ -1,23 +1,30 @@
 import footerData from "@/data/siteFooter";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Col, Container, Row } from "react-bootstrap";
 import Link from "../Reuseable/Link";
 import styles from "./sitefooter.module.css";
 const {
   bg,
-  text,
-  tagline,
-  aboutText,
   author,
   year,
-  links,
   socials,
   phone,
   phoneHref,
   email,
 } = footerData;
 
+const footerLinkKeys = ["about", "terms", "privacy", "content"];
+const footerHrefs = ["/about", "/terms-of-use", "/privacy-policy", "/content"];
+
 const SiteFooter = ({ footerClassName = "" }) => {
+  const { t } = useTranslation();
+  const links = footerLinkKeys.map((key, index) => ({
+    id: index + 1,
+    href: footerHrefs[index],
+    text: t(`footer.links.${key}`),
+  }));
+
   return (
     <footer className={`site-footer ${footerClassName}`}>
       <div className="site-footer__top">
@@ -34,9 +41,7 @@ const SiteFooter = ({ footerClassName = "" }) => {
                     <span className="footer-widget__logo-mesob">Meksova</span>{" "}
                   </Link>
                 </div>
-                {tagline && (
-                  <p className="footer-widget__tagline">{tagline}</p>
-                )}
+                <p className="footer-widget__tagline">{t("footer.tagline")}</p>
                 <div className="site-footer__social">
                   {socials.map(({ id, href, icon }) => (
                     <a
@@ -53,7 +58,7 @@ const SiteFooter = ({ footerClassName = "" }) => {
             </Col>
             <Col xl={4} lg={6} md={6} className="animated fadeInUp">
               <div className="footer-widget__column footer-widget__explore">
-                <h3 className="footer-widget__title">Explore</h3>
+                <h3 className="footer-widget__title">{t("footer.explore")}</h3>
                 <ul className="footer-widget__explore-list list-unstyled">
                   {links.map(({ id, href, text }) => (
                     <li key={id}>
@@ -65,7 +70,7 @@ const SiteFooter = ({ footerClassName = "" }) => {
             </Col>
             <Col xl={4} lg={6} md={6} className="animated fadeInUp">
               <div className="footer-widget__column footer-widget__contact clearfix">
-                <h3 className="footer-widget__title">Contact</h3>
+                <h3 className="footer-widget__title">{t("footer.contact")}</h3>
                 <div className="footer-widget__contact-info">
                   <a
                     href={`tel:${phoneHref}`}
@@ -91,7 +96,7 @@ const SiteFooter = ({ footerClassName = "" }) => {
             <Col xl={12}>
               <div className="site-footer__bottom-inner">
                 <p className="site-footer__bottom-text">
-                  © Copyright {year} by <a href="#">{author}</a>. All rights reserved.
+                  {t("footer.copyright", { year, author: t("footer.author") })}
                 </p>
               </div>
             </Col>

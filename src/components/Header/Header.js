@@ -1,7 +1,9 @@
+import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
 import { useRootContext } from "@/context/context";
 import headerData from "@/data/headerData";
 import useScroll from "@/hooks/useScroll";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Image, Button } from "react-bootstrap";
 import Link from "../Reuseable/Link";
 import MenuList from "./MenuList";
@@ -9,8 +11,17 @@ import MenuList from "./MenuList";
 const { logo, navItems: items, loginButton, signupButton } = headerData;
 
 const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
+  const { t } = useTranslation();
   const { scrollTop } = useScroll(100);
   const { toggleMenu, toggleSearch } = useRootContext();
+
+  const translatedNavItems = navItems.map((item) => {
+    const keyMap = { Home: "home", Services: "services", About: "about", Contact: "contact" };
+    const navKey = keyMap[item.name];
+    return navKey
+      ? { ...item, name: t(`header.nav.${navKey}`) }
+      : item;
+  });
 
   const handleToggleSearch = () => {
     toggleSearch();
@@ -53,7 +64,7 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
               <a onClick={handleToggleMenu} className="mobile-nav__toggler">
                 <i className="fa fa-bars"></i>
               </a>
-              <MenuList navItems={navItems} onePage={onePage} />
+              <MenuList navItems={translatedNavItems} onePage={onePage} />
             </div>
           </div>
           <div className="main-menu-wrapper__right">
@@ -64,6 +75,7 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
               ></a>
             </div>
             <div className="main-menu-wrapper__login" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+              <LanguageSwitcher />
               <a
                 href={loginButton.href}
                 onClick={(e) => { e.preventDefault(); handleLogin(); }}
@@ -78,7 +90,7 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
                 onMouseOver={(e) => e.target.style.color = "#1D6BD4"}
                 onMouseOut={(e) => e.target.style.color = "#ffffff"}
               >
-                {loginButton.text}
+                {t("header.login")}
               </a>
               <Button
                 onClick={handleSignup}
@@ -97,7 +109,7 @@ const Header = ({ mainMenuClass = "", navItems = items, onePage = false }) => {
                 onMouseOver={(e) => e.target.style.backgroundColor = "#1558b0"}
                 onMouseOut={(e) => e.target.style.backgroundColor = "#1D6BD4"}
               >
-                {signupButton.text}
+                {t("header.signup")}
               </Button>
             </div>
           </div>

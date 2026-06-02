@@ -9815,3 +9815,26 @@ padding-top: 30px;
     text-align: center;
   }
 }
+
+/* RTL layout (Arabic) */
+body.rtl-layout {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl-layout .main-menu-wrapper__left,
+body.rtl-layout .main-menu-wrapper__right {
+  flex-direction: row-reverse;
+}
+
+body.rtl-layout .thm-breadcrumb {
+  direction: rtl;
+}
+
+body.rtl-layout .section-title.text-left {
+  text-align: right;
+}
+
+body.rtl-layout .contact-page__form-element .row {
+  direction: rtl;
+}

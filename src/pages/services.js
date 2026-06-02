@@ -4,18 +4,21 @@ import PageHeader from "@/components/Reuseable/PageHeader";
 import ServicesOne from "@/components/ServicesSection/ServicesOne";
 import OurMission from "@/components/VideoSection/OurMission";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const { t } = useTranslation();
+
   return (
     <Layout
-      pageTitle="Services - Meksova"
-      pageDescription="Meksova features and business types we support—from trucking and groceries to households and professional services."
+      pageTitle={t("services.meta.title")}
+      pageDescription={t("services.meta.description")}
       footerClassName="site-footer-three"
     >
       <Header />
-      <PageHeader page="services" title="Our Services" />
+      <PageHeader page={t("header.nav.services")} title={t("services.pageTitle")} />
       <ServicesOne hideTitle />
-      <OurMission/>
+      <OurMission />
     </Layout>
   );
 };

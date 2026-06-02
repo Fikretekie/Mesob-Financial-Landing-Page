@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import type { Transaction } from '@/types';
 import { businessTypes } from '@/utils/businessTypes';
 import { Upload, Lock, X } from 'lucide-react';
+import { Trans, useTranslation } from 'react-i18next';
 
 interface AddTransactionDialogProps {
   open: boolean;
@@ -20,12 +21,13 @@ interface AddTransactionDialogProps {
 type TransactionType = 'receive' | 'pay' | 'payable' | null;
 type PaymentMode = 'recorded' | 'new' | 'boughtItem' | null;
 
-export function AddTransactionDialog({ 
-  open, 
-  onOpenChange, 
+export function AddTransactionDialog({
+  open,
+  onOpenChange,
   onAdd,
-  selectedBusinessType = 'Trucking' 
+  selectedBusinessType = 'Trucking'
 }: AddTransactionDialogProps) {
+  const { t } = useTranslation();
   const [transactionType, setTransactionType] = useState<TransactionType>(null);
   const [paymentMode, setPaymentMode] = useState<PaymentMode>(null);
   const [transactionPurpose, setTransactionPurpose] = useState('');
@@ -47,7 +49,7 @@ export function AddTransactionDialog({
 
   useEffect(() => {
     const businessPurposes = getBusinessPurposes(selectedBusinessType);
-    
+
     if (transactionType === 'receive') {
       setPurposes(businessPurposes.income || []);
     } else if (transactionType === 'pay' && paymentMode === 'new') {
@@ -57,7 +59,7 @@ export function AddTransactionDialog({
     } else {
       setPurposes([]);
     }
-    
+
     setTransactionPurpose('');
     setManualPurpose('');
   }, [transactionType, paymentMode, selectedBusinessType]);
@@ -73,7 +75,7 @@ export function AddTransactionDialog({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const numAmount = parseFloat(transactionAmount);
     if (!transactionAmount || isNaN(numAmount)) {
       return;
@@ -84,10 +86,10 @@ export function AddTransactionDialog({
     }
 
     if (transactionType === 'pay' && paymentMode === 'recorded') {
-      const finalPurpose = transactionPurpose === 'manual' 
-        ? manualPurpose 
+      const finalPurpose = transactionPurpose === 'manual'
+        ? manualPurpose
         : `Payment for ${transactionPurpose}`;
-        
+
       const transaction: Omit<Transaction, 'id' | 'srNo'> = {
         date: new Date().toISOString(),
         description: `Paid [Cash] ${finalPurpose}`,
@@ -98,12 +100,12 @@ export function AddTransactionDialog({
       };
 
       onAdd(transaction);
-    } 
+    }
     else if (transactionType === 'pay' && paymentMode === 'boughtItem') {
-      const finalPurpose = transactionPurpose === 'manual' 
-        ? manualPurpose 
+      const finalPurpose = transactionPurpose === 'manual'
+        ? manualPurpose
         : transactionPurpose;
-        
+
       const transaction: Omit<Transaction, 'id' | 'srNo'> = {
         date: new Date().toISOString(),
         description: `New Item [Cash] ${finalPurpose}`,
@@ -116,10 +118,10 @@ export function AddTransactionDialog({
       onAdd(transaction);
     }
     else if (transactionType === 'receive') {
-      const finalPurpose = transactionPurpose === 'manual' 
-        ? manualPurpose 
+      const finalPurpose = transactionPurpose === 'manual'
+        ? manualPurpose
         : transactionPurpose;
-        
+
       const transaction: Omit<Transaction, 'id' | 'srNo'> = {
         date: new Date().toISOString(),
         description: `Receive [Cash] ${finalPurpose}`,
@@ -132,10 +134,10 @@ export function AddTransactionDialog({
       onAdd(transaction);
     }
     else if (transactionType === 'payable') {
-      const finalPurpose = transactionPurpose === 'manual' 
-        ? manualPurpose 
+      const finalPurpose = transactionPurpose === 'manual'
+        ? manualPurpose
         : transactionPurpose;
-        
+
       const transaction: Omit<Transaction, 'id' | 'srNo'> = {
         date: new Date().toISOString(),
         description: `Payable ${finalPurpose}`,
@@ -148,10 +150,10 @@ export function AddTransactionDialog({
       onAdd(transaction);
     }
     else if (transactionType === 'pay' && paymentMode === 'new') {
-      const finalPurpose = transactionPurpose === 'manual' 
-        ? manualPurpose 
+      const finalPurpose = transactionPurpose === 'manual'
+        ? manualPurpose
         : transactionPurpose;
-        
+
       const transaction: Omit<Transaction, 'id' | 'srNo'> = {
         date: new Date().toISOString(),
         description: `Paid [Cash] ${finalPurpose}`,
@@ -163,7 +165,7 @@ export function AddTransactionDialog({
 
       onAdd(transaction);
     }
-    
+
     resetForm();
     onOpenChange(false);
   };
@@ -177,13 +179,13 @@ export function AddTransactionDialog({
     <Dialog open={open} onOpenChange={handleClose}>
       <DialogContent className="bg-[#2d3748] border-slate-600 text-white max-w-3xl max-h-[90vh] overflow-y-auto p-6">
         <DialogHeader>
-          <DialogTitle className="text-xl font-semibold text-center">Add Transaction</DialogTitle>
+          <DialogTitle className="text-xl font-semibold text-center">{t('demo.addTransaction.title')}</DialogTitle>
         </DialogHeader>
-        
+
         <form onSubmit={handleSubmit} className="space-y-6 mt-4">
           {/* Transaction Type Selection */}
           <div className="space-y-3">
-            <Label className="text-slate-200 text-sm font-medium block">Type:</Label>
+            <Label className="text-slate-200 text-sm font-medium block">{t('demo.addTransaction.type')}</Label>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <Button
                 type="button"
@@ -192,13 +194,12 @@ export function AddTransactionDialog({
                   setPaymentMode(null);
                   setShowUpgradeMessage(false);
                 }}
-                className={`w-full h-11 text-sm font-medium rounded-md transition-all duration-200 ${
-                  transactionType === 'receive'
+                className={`w-full h-11 text-sm font-medium rounded-md transition-all duration-200 ${transactionType === 'receive'
                     ? 'bg-[#3b82f6] hover:bg-[#2563eb] text-white shadow-md'
                     : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
-                }`}
+                  }`}
               >
-                Received Cash
+                {t('demo.addTransaction.receivedCash')}
               </Button>
               <Button
                 type="button"
@@ -207,13 +208,12 @@ export function AddTransactionDialog({
                   setPaymentMode(null);
                   setShowUpgradeMessage(false);
                 }}
-                className={`w-full h-11 text-sm font-medium rounded-md transition-all duration-200 ${
-                  transactionType === 'pay'
+                className={`w-full h-11 text-sm font-medium rounded-md transition-all duration-200 ${transactionType === 'pay'
                     ? 'bg-[#3b82f6] hover:bg-[#2563eb] text-white shadow-md'
                     : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
-                }`}
+                  }`}
               >
-                Paid Cash
+                {t('demo.addTransaction.paidCash')}
               </Button>
               <Button
                 type="button"
@@ -222,13 +222,12 @@ export function AddTransactionDialog({
                   setPaymentMode(null);
                   setShowUpgradeMessage(false);
                 }}
-                className={`w-full h-11 text-sm font-medium rounded-md transition-all duration-200 ${
-                  transactionType === 'payable'
+                className={`w-full h-11 text-sm font-medium rounded-md transition-all duration-200 ${transactionType === 'payable'
                     ? 'bg-[#3b82f6] hover:bg-[#2563eb] text-white shadow-md'
                     : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
-                }`}
+                  }`}
               >
-                Haven&apos;t Yet Paid
+                {t('demo.addTransaction.haventPaid')}
               </Button>
             </div>
           </div>
@@ -236,178 +235,180 @@ export function AddTransactionDialog({
           {/* Payment Mode Selection (only for "Pay Cash") */}
           {transactionType === 'pay' && (
             <div className="space-y-3">
-              <Label className="text-slate-200 text-sm font-medium block">Select Action:</Label>
+              <Label className="text-slate-200 text-sm font-medium block">{t('demo.addTransaction.selectAction')}</Label>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <Button
                   type="button"
                   onClick={() => { setPaymentMode('recorded'); setShowUpgradeMessage(false); }}
-                  className={`w-full min-h-[44px] h-auto py-2.5 px-3 text-sm font-medium rounded-md transition-all duration-200 whitespace-normal leading-tight ${
-                    paymentMode === 'recorded'
+                  className={`w-full min-h-[44px] h-auto py-2.5 px-3 text-sm font-medium rounded-md transition-all duration-200 whitespace-normal leading-tight ${paymentMode === 'recorded'
                       ? 'bg-[#3b82f6] hover:bg-[#2563eb] text-white shadow-md'
                       : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
-                  }`}
+                    }`}
                 >
-                  Recorded Earlier as Payable
+                  {t('demo.addTransaction.recordedPayable')}
                 </Button>
                 <Button
                   type="button"
                   onClick={() => { setPaymentMode('new'); setShowUpgradeMessage(false); }}
-                  className={`w-full min-h-[44px] h-auto py-2.5 px-3 text-sm font-medium rounded-md transition-all duration-200 whitespace-normal leading-tight ${
-                    paymentMode === 'new'
+                  className={`w-full min-h-[44px] h-auto py-2.5 px-3 text-sm font-medium rounded-md transition-all duration-200 whitespace-normal leading-tight ${paymentMode === 'new'
                       ? 'bg-[#ef4444] hover:bg-[#dc2626] text-white shadow-md'
                       : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
-                  }`}
+                    }`}
                 >
-                  New Expense
+                  {t('demo.addTransaction.newExpense')}
                 </Button>
                 <Button
                   type="button"
                   onClick={() => { setPaymentMode('boughtItem'); setShowUpgradeMessage(false); }}
-                  className={`w-full min-h-[44px] h-auto py-2.5 px-3 text-sm font-medium rounded-md transition-all duration-200 whitespace-normal leading-tight ${
-                    paymentMode === 'boughtItem'
+                  className={`w-full min-h-[44px] h-auto py-2.5 px-3 text-sm font-medium rounded-md transition-all duration-200 whitespace-normal leading-tight ${paymentMode === 'boughtItem'
                       ? 'bg-[#f59e0b] hover:bg-[#d97706] text-white shadow-md'
                       : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
-                  }`}
+                    }`}
                 >
-                  Bought a New Item
+                  {t('demo.addTransaction.boughtNewItem')}
                 </Button>
               </div>
             </div>
           )}
 
           {/* Purpose Selection */}
-          {((transactionType === 'receive') || 
+          {((transactionType === 'receive') ||
             (transactionType === 'pay' && (paymentMode === 'new' || paymentMode === 'boughtItem')) ||
             (transactionType === 'payable')) && (
-            <div className="space-y-2">
-              <Label className="text-slate-200 text-sm font-medium">
-                {transactionType === 'pay' && paymentMode === 'boughtItem' 
-                  ? 'Item Description:' 
-                  : 'Purpose:'}
-              </Label>
-              <Select value={transactionPurpose} onValueChange={setTransactionPurpose}>
-                <SelectTrigger className="bg-[#374151] border-slate-600 text-white h-10 text-sm transition-all duration-200 hover:border-slate-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30">
-                  <SelectValue placeholder="Select purpose" />
-                </SelectTrigger>
-                <SelectContent className="bg-[#374151] border-slate-600 max-h-[250px]">
-                  {purposes.map((purpose, index) => (
-                    <SelectItem 
-                      key={index} 
-                      value={purpose} 
-                      className="text-white hover:bg-slate-600 text-sm py-2"
-                    >
-                      {purpose}
+              <div className="space-y-2">
+                <Label className="text-slate-200 text-sm font-medium">
+                  {transactionType === 'pay' && paymentMode === 'boughtItem'
+                    ? t('demo.addTransaction.itemDescription')
+                    : t('demo.addTransaction.purpose')}
+                </Label>
+                <Select value={transactionPurpose} onValueChange={setTransactionPurpose}>
+                  <SelectTrigger className="bg-[#374151] border-slate-600 text-white h-10 text-sm transition-all duration-200 hover:border-slate-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30">
+                    <SelectValue placeholder={t('demo.addTransaction.selectPurpose')} />
+                  </SelectTrigger>
+                  <SelectContent className="bg-[#374151] border-slate-600 max-h-[250px]">
+                    {purposes.map((purpose, index) => (
+                      <SelectItem
+                        key={index}
+                        value={purpose}
+                        className="text-white hover:bg-slate-600 text-sm py-2"
+                      >
+                        {purpose}
+                      </SelectItem>
+                    ))}
+                    <SelectItem value="manual" className="text-white hover:bg-slate-600 font-semibold text-sm py-2">
+                      {t('demo.addTransaction.enterManually')}
                     </SelectItem>
-                  ))}
-                  <SelectItem value="manual" className="text-white hover:bg-slate-600 font-semibold text-sm py-2">
-                    Enter Manually
-                  </SelectItem>
-                </SelectContent>
-              </Select>
+                  </SelectContent>
+                </Select>
 
-              {transactionPurpose === 'manual' && (
-                <Input
-                  type="text"
-                  placeholder={transactionType === 'pay' && paymentMode === 'boughtItem' 
-                    ? 'Enter item description...' 
-                    : 'Enter purpose manually...'}
-                  value={manualPurpose}
-                  onChange={(e) => setManualPurpose(e.target.value)}
-                  className="bg-[#374151] border-slate-600 text-white placeholder:text-slate-400 mt-2 h-10 text-sm transition-all duration-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30"
-                />
-              )}
-            </div>
-          )}
+                {transactionPurpose === 'manual' && (
+                  <Input
+                    type="text"
+                    placeholder={transactionType === 'pay' && paymentMode === 'boughtItem'
+                      ? t('demo.addTransaction.enterItemDescription')
+                      : t('demo.addTransaction.enterPurposeManually')}
+                    value={manualPurpose}
+                    onChange={(e) => setManualPurpose(e.target.value)}
+                    className="bg-[#374151] border-slate-600 text-white placeholder:text-slate-400 mt-2 h-10 text-sm transition-all duration-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30"
+                  />
+                )}
+              </div>
+            )}
 
           {/* Amount Input */}
-          {((transactionType === 'receive') || 
+          {((transactionType === 'receive') ||
             (transactionType === 'pay' && paymentMode !== null) ||
             (transactionType === 'payable')) && (
-            <div className="space-y-2">
-              <Label className="text-slate-200 text-sm font-medium">Amount ($):</Label>
-              <Input
-                type="number"
-                step="0.01"
-                value={transactionAmount}
-                onChange={(e) => setTransactionAmount(e.target.value)}
-                placeholder="0.00"
-                className="bg-[#374151] border-slate-600 text-white placeholder:text-slate-400 h-10 text-sm transition-all duration-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30"
-              />
-            </div>
-          )}
+              <div className="space-y-2">
+                <Label className="text-slate-200 text-sm font-medium">{t('demo.addTransaction.amount')}</Label>
+                <Input
+                  type="number"
+                  step="0.01"
+                  value={transactionAmount}
+                  onChange={(e) => setTransactionAmount(e.target.value)}
+                  placeholder="0.00"
+                  className="bg-[#374151] border-slate-600 text-white placeholder:text-slate-400 h-10 text-sm transition-all duration-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30"
+                />
+              </div>
+            )}
 
           {/* Upload Receipt Section */}
-          {((transactionType === 'receive') || 
+          {((transactionType === 'receive') ||
             (transactionType === 'pay' && paymentMode !== null) ||
             (transactionType === 'payable')) && (
-            <div className="space-y-2">
-              <Label className="text-slate-200 text-sm font-medium">Upload Receipt (optional):</Label>
-              
-              {!showUpgradeMessage ? (
-                <button
-                  type="button"
-                  onClick={() => setShowUpgradeMessage(true)}
-                  className="w-full border-2 border-dashed border-slate-600 rounded-lg p-4 flex flex-col items-center gap-2 hover:border-slate-500 hover:bg-slate-700/30 transition-all duration-200 cursor-pointer"
-                >
-                  <Upload className="w-6 h-6 text-slate-400" />
-                  <span className="text-slate-400 text-sm">Click to upload receipt</span>
-                  <span className="text-slate-500 text-xs">PNG, JPG, PDF up to 5MB</span>
-                </button>
-              ) : (
-                <div className="relative bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/30 rounded-lg p-4">
+              <div className="space-y-2">
+                <Label className="text-slate-200 text-sm font-medium">{t('demo.addTransaction.uploadReceipt')}</Label>
+
+                {!showUpgradeMessage ? (
                   <button
                     type="button"
-                    onClick={() => setShowUpgradeMessage(false)}
-                    className="absolute top-2 right-2 text-slate-400 hover:text-white transition-colors"
+                    onClick={() => setShowUpgradeMessage(true)}
+                    className="w-full border-2 border-dashed border-slate-600 rounded-lg p-4 flex flex-col items-center gap-2 hover:border-slate-500 hover:bg-slate-700/30 transition-all duration-200 cursor-pointer"
                   >
-                    <X className="w-4 h-4" />
+                    <Upload className="w-6 h-6 text-slate-400" />
+                    <span className="text-slate-400 text-sm">{t('demo.addTransaction.clickUpload')}</span>
+                    <span className="text-slate-500 text-xs">{t('demo.addTransaction.fileTypes')}</span>
                   </button>
-                  <div className="flex flex-col items-center text-center gap-3">
-                    <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center">
-                      <Lock className="w-5 h-5 text-blue-400" />
-                    </div>
-                    <p className="text-slate-200 text-sm leading-relaxed">
-                      This feature is available in the <span className="font-semibold text-blue-400">Pro Plan</span>. Unlock unlimited receipt uploads and keep your finances ready for tax season by upgrading today!
-                    </p>
+                ) : (
+                  <div className="relative bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/30 rounded-lg p-4">
                     <button
                       type="button"
-                      onClick={() => window.location.href = 'https://app.meksova.com/signup'}
-                      className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded-lg transition-all hover:shadow-lg hover:shadow-blue-500/25"
+                      onClick={() => setShowUpgradeMessage(false)}
+                      className="absolute top-2 right-2 text-slate-400 hover:text-white transition-colors"
                     >
-                      Upgrade to Pro
+                      <X className="w-4 h-4" />
                     </button>
+                    <div className="flex flex-col items-center text-center gap-3">
+                      <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center">
+                        <Lock className="w-5 h-5 text-blue-400" />
+                      </div>
+                      <p className="text-slate-200 text-sm leading-relaxed">
+                        <Trans
+                          i18nKey="demo.addTransaction.proFeature"
+                          components={{
+                            highlight: <span className="font-semibold text-blue-400" />,
+                          }}
+                        />
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => window.location.href = 'https://app.meksova.com/signup'}
+                        className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded-lg transition-all hover:shadow-lg hover:shadow-blue-500/25"
+                      >
+                        {t('demo.addTransaction.upgradeToPro')}
+                      </button>
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-          )}
+                )}
+              </div>
+            )}
 
           {/* Action Buttons */}
-          {((transactionType === 'receive') || 
+          {((transactionType === 'receive') ||
             (transactionType === 'pay' && paymentMode !== null) ||
             (transactionType === 'payable')) && (
-            <div className="grid grid-cols-2 gap-3 pt-4">
-              <Button
-                type="button"
-                variant="outline"
-                onClick={handleClose}
-                className="h-10 border-slate-600 bg-transparent text-slate-200 hover:bg-slate-700 hover:text-white text-sm font-medium transition-all duration-200"
-              >
-                Cancel
-              </Button>
-              <Button
-                type="submit"
-                disabled={
-                  !transactionAmount || 
-                  (transactionPurpose === 'manual' && !manualPurpose.trim()) ||
-                  (!transactionPurpose && transactionType !== 'pay')
-                }
-                className="h-10 bg-emerald-600 hover:bg-emerald-700 text-white disabled:bg-slate-600 disabled:cursor-not-allowed disabled:opacity-50 text-sm font-medium transition-all duration-200"
-              >
-                Save
-              </Button>
-            </div>
-          )}
+              <div className="grid grid-cols-2 gap-3 pt-4">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={handleClose}
+                  className="h-10 border-slate-600 bg-transparent text-slate-200 hover:bg-slate-700 hover:text-white text-sm font-medium transition-all duration-200"
+                >
+                  {t('demo.addTransaction.cancel')}
+                </Button>
+                <Button
+                  type="submit"
+                  disabled={
+                    !transactionAmount ||
+                    (transactionPurpose === 'manual' && !manualPurpose.trim()) ||
+                    (!transactionPurpose && transactionType !== 'pay')
+                  }
+                  className="h-10 bg-emerald-600 hover:bg-emerald-700 text-white disabled:bg-slate-600 disabled:cursor-not-allowed disabled:opacity-50 text-sm font-medium transition-all duration-200"
+                >
+                  {t('demo.addTransaction.save')}
+                </Button>
+              </div>
+            )}
         </form>
       </DialogContent>
     </Dialog>
