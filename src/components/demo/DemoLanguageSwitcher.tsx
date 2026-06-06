@@ -30,7 +30,7 @@ export function DemoLanguageSwitcher() {
   }
 
   return (
-    <div className="relative flex-shrink-0" ref={ref}>
+    <div className="relative w-fit flex-shrink-0" data-demo-lang-switcher ref={ref}>
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -56,7 +56,8 @@ export function DemoLanguageSwitcher() {
       </button>
       {open && (
         <ul
-          className="absolute right-0 top-[calc(100%+6px)] z-[200] min-w-[200px] m-0 p-1.5 list-none bg-[#1a2332] border border-slate-600/80 rounded-lg shadow-xl shadow-black/40"
+          data-demo-lang-menu
+          className="absolute left-0 lg:left-auto lg:right-0 top-[calc(100%+6px)] z-[200] min-w-[200px] w-max m-0 p-1.5 list-none bg-[#1a2332] border border-slate-600/80 rounded-lg shadow-xl shadow-black/40"
           role="listbox"
           aria-label="Languages"
         >
