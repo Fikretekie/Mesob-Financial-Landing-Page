@@ -14,33 +14,16 @@ import "react-modal-video/css/modal-video.css";
 import "jarallax/dist/jarallax.css";
 import "tiny-slider/dist/tiny-slider.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
 // extra css
 import "@/styles/style.css";
 import "@/styles/responsive.css";
-
 // Demo page styles (scoped to .demo-app class)
 import "@/styles/demo.css";
-
-import Script from "next/script";
-const GA_ADS_ID = "AW-18245722845";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <I18nextProvider i18n={i18n}>
       <ContextProvider>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ADS_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads-gtag" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_ADS_ID}');
-          `}
-        </Script>
         <LanguageEffect />
         <Component {...pageProps} />
       </ContextProvider>
