@@ -7,6 +7,7 @@ export interface Transaction {
   credit: number;
   type: 'income' | 'expense' | 'payable';
   category?: string;
+  sample?: boolean;
 }
 
 export interface FinancialSummary {
@@ -21,4 +22,16 @@ export interface ChartDataPoint {
   amount: number;
 }
 
-export type ViewType = 'dashboard' | 'financial-report' | 'receipts' | 'user-profile' | 'backup-csv' | 'subscribe';
+export type ViewType =
+  | 'dashboard'
+  | 'financial-report'
+  | 'receipts'
+  | 'documents'
+  | 'mileage-tracker'
+  | 'trip-history'
+  | 'fuel-purchase'
+  | 'ifta-report'
+  | 'connections'
+  | 'user-profile'
+  | 'backup-csv'
+  | 'subscribe';

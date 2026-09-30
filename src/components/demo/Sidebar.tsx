@@ -1,126 +1,113 @@
 'use client'
 
-import { LayoutDashboard, FileText, Receipt, X, Menu, type LucideIcon } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import {
+  LayoutDashboard,
+  FileText,
+  Receipt,
+  User,
+  Database,
+  CreditCard,
+  FolderClosed,
+  MapPin,
+  Map as MapIcon,
+  Fuel,
+  BarChart3,
+  Link2,
+  Lock,
+  type LucideIcon,
+} from 'lucide-react';
 import type { ViewType } from '@/types';
+import type { DemoFeature } from '@/data/demoIndustryExtras';
 import headerData from '@/data/headerData';
-import { Image } from "react-bootstrap";
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface SidebarItem {
   id: ViewType;
   labelKey: string;
   icon: LucideIcon;
+  feature?: DemoFeature;
+  locked?: boolean;
+  soon?: boolean;
 }
 
+// Same order as the app's customer sidebar. Industry-specific entries only
+// show when the industry has that feature; Connections is the planned
+// bank/POS sync, shown to every industry as "coming soon".
 const sidebarItems: SidebarItem[] = [
   { id: 'dashboard', labelKey: 'demo.sidebar.dashboard', icon: LayoutDashboard },
   { id: 'financial-report', labelKey: 'demo.sidebar.financialReport', icon: FileText },
-  { id: 'receipts', labelKey: 'demo.sidebar.receipts', icon: Receipt },
-  { id: 'user-profile', labelKey: 'demo.sidebar.userProfile', icon: Receipt },
-  { id: 'backup-csv', labelKey: 'demo.sidebar.backupCsv', icon: Receipt },
-  { id: 'subscribe', labelKey: 'demo.sidebar.subscribe', icon: Receipt },
+  { id: 'receipts', labelKey: 'demo.sidebar.receipts', icon: Receipt, locked: true },
+  { id: 'documents', labelKey: 'demo.app.nav.documents', icon: FolderClosed, feature: 'documents' },
+  { id: 'mileage-tracker', labelKey: 'demo.app.nav.mileageTracker', icon: MapPin, feature: 'mileage' },
+  { id: 'trip-history', labelKey: 'demo.app.nav.tripHistory', icon: MapIcon, feature: 'trips' },
+  { id: 'fuel-purchase', labelKey: 'demo.app.nav.fuelPurchase', icon: Fuel, feature: 'fuel' },
+  { id: 'ifta-report', labelKey: 'demo.app.nav.iftaReport', icon: BarChart3, feature: 'ifta' },
+  { id: 'connections', labelKey: 'demo.connections.nav', icon: Link2, soon: true },
+  { id: 'user-profile', labelKey: 'demo.sidebar.userProfile', icon: User },
+  { id: 'backup-csv', labelKey: 'demo.sidebar.backupCsv', icon: Database, locked: true },
+  { id: 'subscribe', labelKey: 'demo.sidebar.subscribe', icon: CreditCard },
 ];
 
 interface SidebarProps {
   currentView: ViewType;
   onViewChange: (view: ViewType) => void;
+  isOpen: boolean;
+  onClose: () => void;
+  maxTransactions: number;
+  features: DemoFeature[];
 }
 
 const { logo } = headerData;
 
-export function Sidebar({ currentView, onViewChange }: SidebarProps) {
+export function Sidebar({ currentView, onViewChange, isOpen, onClose, maxTransactions, features }: SidebarProps) {
   const { t } = useTranslation();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Close mobile menu when view changes
   useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [currentView]);
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [isOpen, onClose]);
 
-  // Prevent body scroll when mobile menu is open
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isMobileMenuOpen]);
-
-  const handleViewChange = (view: ViewType) => {
-    onViewChange(view);
-    setIsMobileMenuOpen(false);
-  };
+  const items = sidebarItems.filter((item) => !item.feature || features.includes(item.feature));
 
   return (
     <>
-      {/* Mobile Menu Toggle Button - Only visible on mobile */}
-      <button
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="md:hidden fixed top-4 left-4 z-50 bg-slate-800 text-white p-2 rounded-lg shadow-lg border border-slate-700"
-        aria-label={t('demo.sidebar.toggleMenu')}
-      >
-        {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-      </button>
+      {isOpen && <button type="button" className="dm-scrim" aria-label={t('demo.sidebar.toggleMenu')} onClick={onClose} />}
 
-      {/* Overlay for mobile */}
-      {isMobileMenuOpen && (
-        <div
-          className="md:hidden fixed inset-0 bg-black/50 z-30"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
-
-      {/* Sidebar - Hidden on mobile by default, always visible on desktop */}
-      <div
-        className={cn(
-          "w-64 bg-[#101926] border-r border-slate-800 flex flex-col h-full transition-transform duration-300 ease-in-out md:translate-x-0",
-          // Mobile: fixed and slides in/out
-          "fixed md:static inset-y-0 left-0 z-40",
-          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        )}
-      >
-        {/* Logo - Centered */}
-        <div className="p-2 flex items-center justify-center">
-          <Image src={logo.src} alt="" width={120} height={120} />
+      <aside className={`dm-sidebar${isOpen ? ' is-open' : ''}`} aria-label="Demo navigation">
+        <div className="dm-sidebar__logo">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logo.src} alt="Meksova" />
         </div>
 
-        {/* Navigation */}
-        <nav className="flex-1 px-3 py-4 space-y-2 overflow-y-auto">
-          {sidebarItems.map((item) => {
+        <nav className="dm-nav">
+          {items.map((item) => {
             const Icon = item.icon;
             const isActive = currentView === item.id;
-
             return (
               <button
                 key={item.id}
-                onClick={() => handleViewChange(item.id)}
-                className={cn(
-                  'w-full flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-full',
-                  isActive
-                    ? 'bg-white/95 text-cyan-500 shadow-lg'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-800/30'
-                )}
+                type="button"
+                onClick={() => { onViewChange(item.id); onClose(); }}
+                className={`dm-nav__link${isActive ? ' is-active' : ''}`}
+                aria-current={isActive ? 'page' : undefined}
               >
-                <Icon className={cn('w-5 h-5 flex-shrink-0', isActive ? 'text-cyan-500' : 'text-slate-400')} />
-                <span className="text-left">{t(item.labelKey)}</span>
+                <Icon aria-hidden />
+                <span>{t(item.labelKey)}</span>
+                {item.locked && <Lock className="dm-nav__lock" aria-hidden />}
+                {item.soon && <span className="mk-badge mk-badge--info dm-nav__soon">{t('demo.connections.soon')}</span>}
               </button>
             );
           })}
         </nav>
 
-        {/* Demo Badge */}
-        <div className="p-4">
-          <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 rounded-lg p-3">
-            <p className="text-amber-400 text-xs font-medium mb-2">{t('demo.sidebar.demoMode')}</p>
-            <p className="text-slate-400 text-xs">{t('demo.sidebar.limitedTransactions', { count: 7 })}</p>
-          </div>
+        <div className="dm-demo-note">
+          <span className="mk-eyebrow">{t('demo.sidebar.demoMode')}</span>
+          <p>{t('demo.sidebar.limitedTransactions', { count: maxTransactions })}</p>
         </div>
-      </div>
+      </aside>
     </>
   );
 }

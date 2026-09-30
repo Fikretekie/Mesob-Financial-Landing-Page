@@ -1,116 +1,83 @@
 'use client'
 
+import { useEffect, useState } from 'react';
+import { Lock } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useIndustryCopy } from '@/components/demo/IndustryIntro';
 
-export function UserProfile() {
+interface UserProfileProps {
+  companyName: string;
+  onCompanyNameChange: (name: string) => void;
+  industryLocaleId: string;
+}
+
+// Read-only account page, except the business name, which feeds the navbar
+// and the PDF report.
+export function UserProfile({ companyName, onCompanyNameChange, industryLocaleId }: UserProfileProps) {
   const { t } = useTranslation();
+  const { title: industryTitle } = useIndustryCopy(industryLocaleId);
+  const [draft, setDraft] = useState(companyName);
+
+  useEffect(() => setDraft(companyName), [companyName]);
+
+  const commit = () => {
+    const trimmed = draft.trim();
+    if (trimmed) onCompanyNameChange(trimmed);
+    else setDraft(companyName);
+  };
+
+  const locked = (id: string, label: string, value: string) => (
+    <div className="dm-field">
+      <label className="dm-label" htmlFor={id}>{label}</label>
+      <input id={id} className="dm-input" value={value} disabled readOnly />
+    </div>
+  );
 
   return (
-    <div className="p-4 sm:p-6">
-      <div className="max-w-4xl">
-        <h1 className="text-xl sm:text-2xl font-semibold text-white mb-6 sm:mb-8">{t('demo.userProfile.title')}</h1>
+    <div className="dm-stack">
+      <header className="dash-overview">
+        <div className="dash-overview__main">
+          <h1 className="dash-overview__title">{t('demo.userProfile.title')}</h1>
+        </div>
+      </header>
 
-        <div className="bg-[#1e293b] rounded-xl p-4 sm:p-8 border border-slate-700/50">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
-            <div>
-              <label className="block text-slate-300 text-sm mb-2">{t('demo.userProfile.name')}</label>
+      <section className="mk-card">
+        <div className="dm-stack" style={{ gap: 16 }}>
+          <div className="dm-form-grid">
+            <div className="dm-field">
+              <label className="dm-label" htmlFor="dm-company">{t('demo.userProfile.companyName')}</label>
               <input
-                type="text"
-                value="xyz"
-                disabled
-                className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 sm:px-4 py-2 sm:py-2.5 text-slate-400 cursor-not-allowed text-sm sm:text-base"
+                id="dm-company"
+                className="dm-input"
+                value={draft}
+                placeholder={t('demo.header.businessNamePlaceholder')}
+                onChange={(e) => setDraft(e.target.value)}
+                onBlur={commit}
+                onKeyDown={(e) => { if (e.key === 'Enter') (e.target as HTMLInputElement).blur(); }}
               />
             </div>
-
-            <div>
-              <label className="block text-slate-300 text-sm mb-2">{t('demo.userProfile.email')}</label>
-              <input
-                type="email"
-                value="abc@domain.com"
-                disabled
-                className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 sm:px-4 py-2 sm:py-2.5 text-slate-400 cursor-not-allowed text-sm sm:text-base"
-              />
-            </div>
-
-            <div>
-              <label className="block text-slate-300 text-sm mb-2">{t('demo.userProfile.phone')}</label>
-              <input
-                type="tel"
-                value="+14525252535"
-                disabled
-                className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 sm:px-4 py-2 sm:py-2.5 text-slate-400 cursor-not-allowed text-sm sm:text-base"
-              />
-            </div>
-
-            <div>
-              <label className="block text-slate-300 text-sm mb-2">{t('demo.userProfile.companyName')}</label>
-              <input
-                type="text"
-                value="xyz"
-                disabled
-                className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 sm:px-4 py-2 sm:py-2.5 text-slate-400 cursor-not-allowed text-sm sm:text-base"
-              />
-            </div>
+            {locked('dm-type', t('demo.userProfile.businessType'), industryTitle)}
+            {locked('dm-name', t('demo.userProfile.name'), 'Demo User')}
+            {locked('dm-email', t('demo.userProfile.email'), 'demo@meksova.com')}
           </div>
 
-          <div className="mb-4 sm:mb-6">
-            <label className="block text-slate-300 text-sm mb-2">{t('demo.userProfile.businessType')}</label>
-            <input
-              type="text"
-              value="Trucking"
-              disabled
-              className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 sm:px-4 py-2 sm:py-2.5 text-slate-400 cursor-not-allowed text-sm sm:text-base"
-            />
+          <div className="dm-form-grid dm-form-grid--3">
+            {locked('dm-cash', t('demo.userProfile.cashBalance'), '$0.00')}
+            {locked('dm-debt', t('demo.userProfile.outstandingDebt'), '$0.00')}
+            {locked('dm-items', t('demo.userProfile.valuableItems'), '$0.00')}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
-            <div>
-              <label className="block text-slate-300 text-sm mb-2">{t('demo.userProfile.cashBalance')}</label>
-              <input
-                type="text"
-                value="900"
-                disabled
-                className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 sm:px-4 py-2 sm:py-2.5 text-slate-400 cursor-not-allowed text-sm sm:text-base"
-              />
-            </div>
-
-            <div>
-              <label className="block text-slate-300 text-sm mb-2">{t('demo.userProfile.outstandingDebt')}</label>
-              <input
-                type="text"
-                value="500"
-                disabled
-                className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 sm:px-4 py-2 sm:py-2.5 text-slate-400 cursor-not-allowed text-sm sm:text-base"
-              />
-            </div>
-
-            <div>
-              <label className="block text-slate-300 text-sm mb-2">{t('demo.userProfile.valuableItems')}</label>
-              <input
-                type="text"
-                value="1000"
-                disabled
-                className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 sm:px-4 py-2 sm:py-2.5 text-slate-400 cursor-not-allowed text-sm sm:text-base"
-              />
-            </div>
+          <div className="dm-locked">
+            <Lock aria-hidden />
+            <span style={{ flex: '1 1 240px' }}>{t('demo.industry.profileLocked')}</span>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3">
-            <button
-              disabled
-              className="bg-blue-600/50 text-white/50 font-medium py-2 sm:py-2.5 px-4 sm:px-6 rounded-lg cursor-not-allowed text-sm sm:text-base"
-            >
-              {t('demo.userProfile.editProfile')}
-            </button>
-            <button
-              disabled
-              className="bg-red-600/50 text-white/50 font-medium py-2 sm:py-2.5 px-4 sm:px-6 rounded-lg cursor-not-allowed text-sm sm:text-base"
-            >
-              {t('demo.userProfile.deleteAccount')}
-            </button>
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            <button type="button" className="mk-btn mk-btn--primary" disabled>{t('demo.userProfile.editProfile')}</button>
+            <button type="button" className="mk-btn mk-btn--danger" disabled>{t('demo.userProfile.deleteAccount')}</button>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

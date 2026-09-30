@@ -1,105 +1,71 @@
 'use client'
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/demo/ui/dialog';
-import { Button } from '@/components/demo/ui/button';
-import { Check, Sparkles } from 'lucide-react';
-import Image from "next/image";
+import { Dialog, DialogContent, DialogTitle } from '@/components/demo/ui/dialog';
+import { Check } from 'lucide-react';
 import headerData from '@/data/headerData';
 import { useTranslation } from 'react-i18next';
+import { useDemoIndustrySlug } from '@/components/demo/DemoIndustryContext';
+import { goToSignup } from '@/utils/demoTracking';
 
 interface SignupDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onContinueDemo: () => void;
+  maxTransactions: number;
 }
 
 const { logo } = headerData;
 
 const signupFeatureKeys = ['unlimited', 'reports', 'scanning', 'export', 'support'] as const;
 
-export function SignupDialog({ open, onOpenChange, onContinueDemo }: SignupDialogProps) {
+export function SignupDialog({ open, onOpenChange, onContinueDemo, maxTransactions }: SignupDialogProps) {
   const { t } = useTranslation();
+  const industrySlug = useDemoIndustrySlug();
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="
-        bg-[#1e293b] border-slate-700 text-white 
-        w-[95vw] max-w-md 
-        max-h-[85vh] 
-        overflow-y-auto 
-        p-3 sm:p-6
-        fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-        rounded-2xl
-      ">
-        <DialogHeader>
-          <div className="flex items-center justify-center mb-1">
-            <Image src={logo.src} alt="" width={70} height={70} />
+      <DialogContent aria-describedby="dm-signup-desc" style={{ maxWidth: 460 }}>
+        <div className="dm-modal__head" style={{ textAlign: 'center', paddingRight: 24 }}>
+          <div className="dm-signup__logo">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={logo.src} alt="" width={120} />
           </div>
-          <DialogTitle className="text-lg sm:text-2xl font-bold text-center">
-            {t('demo.signup.title')}
-          </DialogTitle>
-        </DialogHeader>
-
-        <div className="text-center mb-1">
-          <p className="text-slate-300 text-xs">
+          <DialogTitle className="dm-modal__title">{t('demo.signup.title')}</DialogTitle>
+          <p id="dm-signup-desc" className="dm-modal__sub">
             {t('demo.signup.descriptionBefore')}{' '}
-            <span className="text-white font-bold">{t('demo.signup.descriptionTransactions')}</span>{' '}
+            <strong style={{ color: 'var(--text-1)' }}>{t('demo.industry.transactionsLimit', { count: maxTransactions })}</strong>{' '}
             {t('demo.signup.descriptionAfter')}{' '}
-            <span className="text-white font-bold">{t('demo.signup.descriptionReports')}</span>
+            <strong style={{ color: 'var(--text-1)' }}>{t('demo.signup.descriptionReports')}</strong>
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-cyan-600/20 to-blue-600/20 rounded-xl p-2.5 sm:p-4 border-2 border-cyan-500">
-          <div className="text-center mb-2">
-            <span className="inline-block bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded-full mb-1">
-              {t('demo.signup.freeTrial')}
-            </span>
-            <h3 className="text-xl sm:text-3xl font-bold text-white mb-0.5">
+        <div className="dm-modal__body">
+          <div className="dm-signup__offer">
+            <span className="mk-badge mk-badge--ok">{t('demo.signup.freeTrial')}</span>
+            <p style={{ marginTop: 10, fontSize: '1.9rem', fontWeight: 700, letterSpacing: '-0.02em' }}>
               {t('demo.signup.free')}{' '}
-              <span className="text-sm sm:text-lg font-normal text-slate-400">{t('demo.signup.for30Days')}</span>
-            </h3>
-            <p className="text-slate-400 text-xs">{t('demo.signup.thenJust')}</p>
-            <p className="text-lg sm:text-2xl font-bold text-cyan-400">
-              $29.99<span className="text-xs text-slate-400">{t('demo.signup.perMonth')}</span>
+              <span style={{ fontSize: '0.95rem', fontWeight: 500, color: 'var(--text-3)' }}>{t('demo.signup.for30Days')}</span>
             </p>
+            <p style={{ color: 'var(--text-3)', fontSize: '0.8rem', marginTop: 4 }}>
+              {t('demo.signup.thenJust')}{' '}
+              <span className="num" style={{ color: 'var(--accent)', fontWeight: 700 }}>$29.99</span>
+              {t('demo.signup.perMonth')}
+            </p>
+            <ul className="dm-signup__features">
+              {signupFeatureKeys.map((key) => (
+                <li key={key}><Check aria-hidden />{t(`demo.signup.features.${key}`)}</li>
+              ))}
+            </ul>
           </div>
 
-          <ul className="grid grid-cols-2 sm:grid-cols-1 gap-1.5 sm:gap-3">
-            {signupFeatureKeys.map((key) => (
-              <li key={key} className="flex items-center gap-1.5 text-xs text-slate-300">
-                <div className="w-4 h-4 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Check className="w-2.5 h-2.5 text-emerald-400" />
-                </div>
-                {t(`demo.signup.features.${key}`)}
-              </li>
-            ))}
-          </ul>
+          <button type="button" className="mk-btn mk-btn--primary dm-save" onClick={() => goToSignup(industrySlug, 'limit_dialog')}>
+            {t('demo.signup.startTrial')}
+          </button>
+          <p style={{ textAlign: 'center', color: 'var(--text-3)', fontSize: '0.75rem', marginTop: -8 }}>{t('demo.signup.noCard')}</p>
+          <button type="button" className="mk-btn mk-btn--muted-link" style={{ alignSelf: 'center' }} onClick={onContinueDemo}>
+            {t('demo.signup.continueDemo')}
+          </button>
         </div>
-
-        <p className="text-xs text-center text-slate-400 hidden sm:block">
-          {t('demo.signup.tagline')}
-        </p>
-
-        <Button
-          onClick={() => {
-            window.location.href = 'https://app.meksova.com/signup';
-          }}
-          className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-semibold text-sm py-2.5"
-        >
-          {t('demo.signup.startTrial')}
-        </Button>
-
-        <p className="text-center text-xs text-slate-500">
-          {t('demo.signup.noCard')}
-        </p>
-
-        <button
-          onClick={onContinueDemo}
-          className="w-full text-slate-400 text-xs hover:text-slate-300 transition-colors pb-1"
-        >
-          {t('demo.signup.continueDemo')}
-        </button>
-
       </DialogContent>
     </Dialog>
   );
