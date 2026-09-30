@@ -9,13 +9,23 @@ const MAX_DEMO_TRANSACTIONS = 7;
 // Demo starts with 0 transactions
 const initialTransactions: Transaction[] = [];
 
+const formatPointDate = (date: Date) =>
+  date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+// Series start at zero on the day before their first entry.
+const startLabel = (sorted: Transaction[]) => {
+  const first = sorted.length > 0 ? new Date(sorted[0].date) : new Date();
+  first.setDate(first.getDate() - 1);
+  return formatPointDate(first);
+};
+
 const generateChartData = (transactions: Transaction[]): ChartDataPoint[] => {
   const sortedTransactions = [...transactions].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
   const dataPoints: ChartDataPoint[] = [];
   let runningCash = 0;
 
-  dataPoints.push({ date: 'Initial', amount: 0 });
+  dataPoints.push({ date: startLabel(sortedTransactions), amount: 0 });
 
   sortedTransactions.forEach(t => {
     runningCash += t.credit - t.debit;
@@ -23,17 +33,6 @@ const generateChartData = (transactions: Transaction[]): ChartDataPoint[] => {
     const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
     dataPoints.push({ date: dateStr, amount: runningCash });
   });
-
-  // Add future dates for visualization
-  const lastDate = sortedTransactions.length > 0 ? new Date(sortedTransactions[sortedTransactions.length - 1].date) : new Date();
-  for (let i = 1; i <= 3; i++) {
-    const futureDate = new Date(lastDate);
-    futureDate.setDate(futureDate.getDate() + i * 7);
-    dataPoints.push({
-      date: futureDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-      amount: runningCash
-    });
-  }
 
   return dataPoints;
 };
@@ -44,7 +43,7 @@ const generateRevenueData = (transactions: Transaction[]): ChartDataPoint[] => {
   const dataPoints: ChartDataPoint[] = [];
   let runningRevenue = 0;
 
-  dataPoints.push({ date: 'Initial', amount: 0 });
+  dataPoints.push({ date: startLabel(sortedTransactions), amount: 0 });
 
   sortedTransactions.forEach(t => {
     runningRevenue += t.credit;
@@ -52,16 +51,6 @@ const generateRevenueData = (transactions: Transaction[]): ChartDataPoint[] => {
     const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
     dataPoints.push({ date: dateStr, amount: runningRevenue });
   });
-
-  const lastDate = sortedTransactions.length > 0 ? new Date(sortedTransactions[sortedTransactions.length - 1].date) : new Date();
-  for (let i = 1; i <= 3; i++) {
-    const futureDate = new Date(lastDate);
-    futureDate.setDate(futureDate.getDate() + i * 7);
-    dataPoints.push({
-      date: futureDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-      amount: runningRevenue
-    });
-  }
 
   return dataPoints;
 };
@@ -72,7 +61,7 @@ const generateExpenseData = (transactions: Transaction[]): ChartDataPoint[] => {
   const dataPoints: ChartDataPoint[] = [];
   let runningExpense = 0;
 
-  dataPoints.push({ date: 'Initial', amount: 0 });
+  dataPoints.push({ date: startLabel(sortedTransactions), amount: 0 });
 
   sortedTransactions.forEach(t => {
     runningExpense += t.debit;
@@ -80,16 +69,6 @@ const generateExpenseData = (transactions: Transaction[]): ChartDataPoint[] => {
     const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
     dataPoints.push({ date: dateStr, amount: runningExpense });
   });
-
-  const lastDate = sortedTransactions.length > 0 ? new Date(sortedTransactions[sortedTransactions.length - 1].date) : new Date();
-  for (let i = 1; i <= 3; i++) {
-    const futureDate = new Date(lastDate);
-    futureDate.setDate(futureDate.getDate() + i * 7);
-    dataPoints.push({
-      date: futureDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-      amount: runningExpense
-    });
-  }
 
   return dataPoints;
 };
@@ -100,7 +79,7 @@ const generatePayableData = (transactions: Transaction[]): ChartDataPoint[] => {
   const dataPoints: ChartDataPoint[] = [];
   let runningPayable = 0;
 
-  dataPoints.push({ date: 'Initial', amount: 0 });
+  dataPoints.push({ date: startLabel(sortedTransactions), amount: 0 });
 
   sortedTransactions.forEach(t => {
     runningPayable += t.debit;
@@ -109,96 +88,72 @@ const generatePayableData = (transactions: Transaction[]): ChartDataPoint[] => {
     dataPoints.push({ date: dateStr, amount: runningPayable });
   });
 
-  // Fill with constant value if no payable transactions
-  const lastDate = sortedTransactions.length > 0 ? new Date(sortedTransactions[sortedTransactions.length - 1].date) : new Date();
-  for (let i = 1; i <= 3; i++) {
-    const futureDate = new Date(lastDate);
-    futureDate.setDate(futureDate.getDate() + i * 7);
-    dataPoints.push({
-      date: futureDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-      amount: runningPayable
-    });
-  }
-
   return dataPoints;
 };
 
-export function useTransactions() {
+// Each industry demo keeps its own transactions, so trying Trucking and then
+// Cafe never mixes data. Sample rows are seeded on first visit and do not
+// count toward the demo cap — visitors always get MAX_DEMO_TRANSACTIONS of
+// their own.
+export function useTransactions(industrySlug: string, sampleTransactions: Transaction[] = []) {
+  const storageKey = `${STORAGE_KEY}_${industrySlug}`;
   const [transactions, setTransactions] = useState<Transaction[]>(initialTransactions);
-  const [hasReachedLimit, setHasReachedLimit] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
-  // Load transactions from localStorage on mount
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) {
-        try {
-          const parsedTransactions = JSON.parse(stored);
-          setTransactions(parsedTransactions);
-          if (parsedTransactions.length >= MAX_DEMO_TRANSACTIONS) {
-            setHasReachedLimit(true);
-          }
-        } catch (error) {
-          console.error('Error loading transactions from localStorage:', error);
-        }
-      }
-    }
-  }, []);
+  const ownCount = transactions.filter((t) => !t.sample).length;
+  const hasReachedLimit = ownCount >= MAX_DEMO_TRANSACTIONS;
 
-  // Save transactions to localStorage whenever they change
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      if (transactions.length > 0) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(transactions));
-      } else {
-        // Clear localStorage if no transactions
-        localStorage.removeItem(STORAGE_KEY);
-      }
+    if (typeof window === 'undefined') return;
+    let next: Transaction[] = sampleTransactions;
+    try {
+      const stored = localStorage.getItem(storageKey);
+      if (stored !== null) next = JSON.parse(stored);
+    } catch (error) {
+      console.error('Error loading transactions from localStorage:', error);
     }
-  }, [transactions]);
+    setTransactions(next);
+    setLoaded(true);
+    // sampleTransactions is rebuilt per render; the storage key is the identity.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [storageKey]);
+
+  // Persist even an empty list, so clearing the samples sticks across reloads.
+  useEffect(() => {
+    if (!loaded || typeof window === 'undefined') return;
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(transactions));
+    } catch (error) {
+      console.error('Error saving transactions to localStorage:', error);
+    }
+  }, [transactions, loaded, storageKey]);
 
   const addTransaction = useCallback((transaction: Omit<Transaction, 'id' | 'srNo'>) => {
+    if (ownCount >= MAX_DEMO_TRANSACTIONS) return false;
     setTransactions(prev => {
-      // Check if we've reached the limit
-      if (prev.length >= MAX_DEMO_TRANSACTIONS) {
-        setHasReachedLimit(true);
-        return prev;
-      }
-
       const newId = Math.max(...prev.map(t => t.id), 0) + 1;
       const newSrNo = Math.max(...prev.map(t => t.srNo), 0) + 1;
-      const newTransactions = [...prev, { ...transaction, id: newId, srNo: newSrNo }];
-
-      // Check if we've reached the limit after adding
-      if (newTransactions.length >= MAX_DEMO_TRANSACTIONS) {
-        setHasReachedLimit(true);
-      }
-
-      return newTransactions;
+      return [...prev, { ...transaction, id: newId, srNo: newSrNo }];
     });
-  }, []);
+    return true;
+  }, [ownCount]);
 
   const deleteTransaction = useCallback((id: number) => {
-    setTransactions(prev => {
-      const newTransactions = prev.filter(t => t.id !== id).map((t, index) => ({
-        ...t,
-        srNo: index + 1
-      }));
+    setTransactions(prev => prev.filter(t => t.id !== id).map((t, index) => ({
+      ...t,
+      srNo: index + 1
+    })));
+  }, []);
 
-      if (newTransactions.length < MAX_DEMO_TRANSACTIONS) {
-        setHasReachedLimit(false);
-      }
-
-      return newTransactions;
-    });
+  const clearSamples = useCallback(() => {
+    setTransactions(prev => prev.filter(t => !t.sample).map((t, index) => ({
+      ...t,
+      srNo: index + 1
+    })));
   }, []);
 
   const resetTransactions = useCallback(() => {
     setTransactions([]);
-    setHasReachedLimit(false);
-    if (typeof window !== 'undefined') {
-      localStorage.removeItem(STORAGE_KEY);
-    }
   }, []);
 
   const summary: FinancialSummary = useMemo(() => {
@@ -269,10 +224,12 @@ export function useTransactions() {
     payableData,
     expenseBreakdown,
     hasReachedLimit,
-    transactionCount: transactions.length,
+    transactionCount: ownCount,
     maxTransactions: MAX_DEMO_TRANSACTIONS,
+    hasSamples: transactions.some((t) => t.sample),
     addTransaction,
     deleteTransaction,
+    clearSamples,
     resetTransactions
   };
 }

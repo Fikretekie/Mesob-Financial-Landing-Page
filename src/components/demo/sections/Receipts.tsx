@@ -1,20 +1,31 @@
 'use client'
 
-import { FileText } from 'lucide-react';
+import { Receipt, Lock } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useDemoIndustrySlug } from '@/components/demo/DemoIndustryContext';
+import { goToSignup } from '@/utils/demoTracking';
 
 export function Receipts() {
   const { t } = useTranslation();
+  const industrySlug = useDemoIndustrySlug();
 
   return (
-    <div className="p-4 sm:p-6">
-      <div className="bg-[#1e293b] rounded-xl p-6 sm:p-8 border border-slate-700/50 text-center">
-        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
-          <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-slate-400" />
+    <div className="dm-stack">
+      <header className="dash-overview">
+        <div className="dash-overview__main">
+          <h1 className="dash-overview__title">{t('demo.receipts.title')}</h1>
         </div>
-        <h2 className="text-lg sm:text-xl font-semibold text-white mb-2">{t('demo.receipts.title')}</h2>
-        <p className="text-sm sm:text-base text-slate-400">{t('demo.receipts.description')}</p>
-      </div>
+      </header>
+
+      <section className="mk-card" style={{ textAlign: 'center', padding: '40px 24px' }}>
+        <span className="mk-chip" style={{ background: 'var(--accent-soft)', color: 'var(--accent)', margin: '0 auto 16px' }}>
+          <Receipt aria-hidden />
+        </span>
+        <p style={{ color: 'var(--text-2)', maxWidth: 520, margin: '0 auto 20px' }}>{t('demo.receipts.description')}</p>
+        <button type="button" className="mk-btn mk-btn--primary" onClick={() => goToSignup(industrySlug, 'receipts')}>
+          <Lock aria-hidden />{t('demo.addTransaction.upgradeToPro')}
+        </button>
+      </section>
     </div>
   );
 }

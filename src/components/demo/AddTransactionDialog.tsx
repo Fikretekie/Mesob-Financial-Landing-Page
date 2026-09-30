@@ -1,15 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/demo/ui/dialog';
-import { Button } from '@/components/demo/ui/button';
-import { Input } from '@/components/demo/ui/input';
-import { Label } from '@/components/demo/ui/label';
+import { Dialog, DialogContent, DialogTitle } from '@/components/demo/ui/dialog';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/demo/ui/select';
 import type { Transaction } from '@/types';
 import { businessTypes } from '@/utils/businessTypes';
-import { Upload, Lock, X } from 'lucide-react';
+import { Upload, Lock, ArrowDownLeft, ArrowUpRight, Clock } from 'lucide-react';
 import { Trans, useTranslation } from 'react-i18next';
+import { useDemoIndustrySlug } from '@/components/demo/DemoIndustryContext';
+import { goToSignup } from '@/utils/demoTracking';
 
 interface AddTransactionDialogProps {
   open: boolean;
@@ -17,6 +16,8 @@ interface AddTransactionDialogProps {
   onAdd: (transaction: Omit<Transaction, 'id' | 'srNo'>) => void;
   selectedBusinessType?: string;
 }
+
+const LABEL_COLON = /\s*[:：]\s*$/;
 
 type TransactionType = 'receive' | 'pay' | 'payable' | null;
 type PaymentMode = 'recorded' | 'new' | 'boughtItem' | null;
@@ -28,6 +29,7 @@ export function AddTransactionDialog({
   selectedBusinessType = 'Trucking'
 }: AddTransactionDialogProps) {
   const { t } = useTranslation();
+  const industrySlug = useDemoIndustrySlug();
   const [transactionType, setTransactionType] = useState<TransactionType>(null);
   const [paymentMode, setPaymentMode] = useState<PaymentMode>(null);
   const [transactionPurpose, setTransactionPurpose] = useState('');
@@ -175,240 +177,174 @@ export function AddTransactionDialog({
     onOpenChange(false);
   };
 
+  // Field labels end in ":" in the locale files; the eyebrow style does not want it.
+  const label = (key: string) => t(key).replace(LABEL_COLON, '');
+
+  const showDetails =
+    transactionType === 'receive' ||
+    transactionType === 'payable' ||
+    (transactionType === 'pay' && paymentMode !== null);
+  const showPurpose =
+    transactionType === 'receive' ||
+    transactionType === 'payable' ||
+    (transactionType === 'pay' && (paymentMode === 'new' || paymentMode === 'boughtItem'));
+  const flowColor =
+    transactionType === 'receive' ? 'var(--green)' : transactionType === 'payable' ? 'var(--amber)' : 'var(--red)';
+
+  const types: { id: Exclude<TransactionType, null>; label: string; icon: typeof ArrowDownLeft; tone: string }[] = [
+    { id: 'receive', label: t('demo.addTransaction.receivedCash'), icon: ArrowDownLeft, tone: 'dm-type--in' },
+    { id: 'pay', label: t('demo.addTransaction.paidCash'), icon: ArrowUpRight, tone: 'dm-type--out' },
+    { id: 'payable', label: t('demo.addTransaction.haventPaid'), icon: Clock, tone: 'dm-type--owed' },
+  ];
+  const payModes: { id: Exclude<PaymentMode, null>; label: string }[] = [
+    { id: 'recorded', label: t('demo.addTransaction.recordedPayable') },
+    { id: 'new', label: t('demo.addTransaction.newExpense') },
+    { id: 'boughtItem', label: t('demo.addTransaction.boughtNewItem') },
+  ];
+
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="bg-[#2d3748] border-slate-600 text-white max-w-3xl max-h-[90vh] overflow-y-auto p-6">
-        <DialogHeader>
-          <DialogTitle className="text-xl font-semibold text-center">{t('demo.addTransaction.title')}</DialogTitle>
-        </DialogHeader>
+      <DialogContent aria-describedby={undefined}>
+        <div className="dm-modal__head">
+          <DialogTitle className="dm-modal__title">{t('demo.addTransaction.title')}</DialogTitle>
+        </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6 mt-4">
-          {/* Transaction Type Selection */}
-          <div className="space-y-3">
-            <Label className="text-slate-200 text-sm font-medium block">{t('demo.addTransaction.type')}</Label>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <Button
-                type="button"
-                onClick={() => {
-                  setTransactionType('receive');
-                  setPaymentMode(null);
-                  setShowUpgradeMessage(false);
-                }}
-                className={`w-full h-11 text-sm font-medium rounded-md transition-all duration-200 ${transactionType === 'receive'
-                    ? 'bg-[#3b82f6] hover:bg-[#2563eb] text-white shadow-md'
-                    : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
-                  }`}
-              >
-                {t('demo.addTransaction.receivedCash')}
-              </Button>
-              <Button
-                type="button"
-                onClick={() => {
-                  setTransactionType('pay');
-                  setPaymentMode(null);
-                  setShowUpgradeMessage(false);
-                }}
-                className={`w-full h-11 text-sm font-medium rounded-md transition-all duration-200 ${transactionType === 'pay'
-                    ? 'bg-[#3b82f6] hover:bg-[#2563eb] text-white shadow-md'
-                    : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
-                  }`}
-              >
-                {t('demo.addTransaction.paidCash')}
-              </Button>
-              <Button
-                type="button"
-                onClick={() => {
-                  setTransactionType('payable');
-                  setPaymentMode(null);
-                  setShowUpgradeMessage(false);
-                }}
-                className={`w-full h-11 text-sm font-medium rounded-md transition-all duration-200 ${transactionType === 'payable'
-                    ? 'bg-[#3b82f6] hover:bg-[#2563eb] text-white shadow-md'
-                    : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
-                  }`}
-              >
-                {t('demo.addTransaction.haventPaid')}
-              </Button>
+        <form onSubmit={handleSubmit} className="dm-modal__body">
+          <div className="dm-modal__group">
+            <span className="dm-label">{label('demo.addTransaction.type')}</span>
+            <div className="dm-types">
+              {types.map(({ id, label, icon: Icon, tone }) => (
+                <button
+                  key={id}
+                  type="button"
+                  className={`dm-type ${tone}${transactionType === id ? ' is-selected' : ''}`}
+                  aria-pressed={transactionType === id}
+                  onClick={() => {
+                    setTransactionType(id);
+                    setPaymentMode(null);
+                    setShowUpgradeMessage(false);
+                  }}
+                >
+                  <Icon aria-hidden />
+                  {label}
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Payment Mode Selection (only for "Pay Cash") */}
           {transactionType === 'pay' && (
-            <div className="space-y-3">
-              <Label className="text-slate-200 text-sm font-medium block">{t('demo.addTransaction.selectAction')}</Label>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <Button
-                  type="button"
-                  onClick={() => { setPaymentMode('recorded'); setShowUpgradeMessage(false); }}
-                  className={`w-full min-h-[44px] h-auto py-2.5 px-3 text-sm font-medium rounded-md transition-all duration-200 whitespace-normal leading-tight ${paymentMode === 'recorded'
-                      ? 'bg-[#3b82f6] hover:bg-[#2563eb] text-white shadow-md'
-                      : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
-                    }`}
-                >
-                  {t('demo.addTransaction.recordedPayable')}
-                </Button>
-                <Button
-                  type="button"
-                  onClick={() => { setPaymentMode('new'); setShowUpgradeMessage(false); }}
-                  className={`w-full min-h-[44px] h-auto py-2.5 px-3 text-sm font-medium rounded-md transition-all duration-200 whitespace-normal leading-tight ${paymentMode === 'new'
-                      ? 'bg-[#ef4444] hover:bg-[#dc2626] text-white shadow-md'
-                      : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
-                    }`}
-                >
-                  {t('demo.addTransaction.newExpense')}
-                </Button>
-                <Button
-                  type="button"
-                  onClick={() => { setPaymentMode('boughtItem'); setShowUpgradeMessage(false); }}
-                  className={`w-full min-h-[44px] h-auto py-2.5 px-3 text-sm font-medium rounded-md transition-all duration-200 whitespace-normal leading-tight ${paymentMode === 'boughtItem'
-                      ? 'bg-[#f59e0b] hover:bg-[#d97706] text-white shadow-md'
-                      : 'bg-[#374151] hover:bg-[#4b5563] text-slate-200'
-                    }`}
-                >
-                  {t('demo.addTransaction.boughtNewItem')}
-                </Button>
+            <div className="dm-modal__group">
+              <span className="dm-label">{label('demo.addTransaction.selectAction')}</span>
+              <div className="dm-actions" style={{ '--flow-color': flowColor } as React.CSSProperties}>
+                {payModes.map(({ id, label }) => (
+                  <button
+                    key={id}
+                    type="button"
+                    className={`dm-action${paymentMode === id ? ' is-selected' : ''}`}
+                    aria-pressed={paymentMode === id}
+                    onClick={() => { setPaymentMode(id); setShowUpgradeMessage(false); }}
+                  >
+                    {label}
+                  </button>
+                ))}
               </div>
             </div>
           )}
 
-          {/* Purpose Selection */}
-          {((transactionType === 'receive') ||
-            (transactionType === 'pay' && (paymentMode === 'new' || paymentMode === 'boughtItem')) ||
-            (transactionType === 'payable')) && (
-              <div className="space-y-2">
-                <Label className="text-slate-200 text-sm font-medium">
-                  {transactionType === 'pay' && paymentMode === 'boughtItem'
-                    ? t('demo.addTransaction.itemDescription')
-                    : t('demo.addTransaction.purpose')}
-                </Label>
-                <Select value={transactionPurpose} onValueChange={setTransactionPurpose}>
-                  <SelectTrigger className="bg-[#374151] border-slate-600 text-white h-10 text-sm transition-all duration-200 hover:border-slate-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30">
-                    <SelectValue placeholder={t('demo.addTransaction.selectPurpose')} />
-                  </SelectTrigger>
-                  <SelectContent className="bg-[#374151] border-slate-600 max-h-[250px]">
-                    {purposes.map((purpose, index) => (
-                      <SelectItem
-                        key={index}
-                        value={purpose}
-                        className="text-white hover:bg-slate-600 text-sm py-2"
-                      >
-                        {purpose}
-                      </SelectItem>
-                    ))}
-                    <SelectItem value="manual" className="text-white hover:bg-slate-600 font-semibold text-sm py-2">
-                      {t('demo.addTransaction.enterManually')}
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
+          {showPurpose && (
+            <div className="dm-modal__group">
+              <span className="dm-label">
+                {transactionType === 'pay' && paymentMode === 'boughtItem'
+                  ? label('demo.addTransaction.itemDescription')
+                  : label('demo.addTransaction.purpose')}
+              </span>
+              <Select value={transactionPurpose} onValueChange={setTransactionPurpose}>
+                <SelectTrigger>
+                  <SelectValue placeholder={t('demo.addTransaction.selectPurpose')} />
+                </SelectTrigger>
+                <SelectContent sideOffset={6}>
+                  {purposes.map((purpose, index) => (
+                    <SelectItem key={index} value={purpose}>{purpose}</SelectItem>
+                  ))}
+                  <SelectItem value="manual">{t('demo.addTransaction.enterManually')}</SelectItem>
+                </SelectContent>
+              </Select>
 
-                {transactionPurpose === 'manual' && (
-                  <Input
-                    type="text"
-                    placeholder={transactionType === 'pay' && paymentMode === 'boughtItem'
-                      ? t('demo.addTransaction.enterItemDescription')
-                      : t('demo.addTransaction.enterPurposeManually')}
-                    value={manualPurpose}
-                    onChange={(e) => setManualPurpose(e.target.value)}
-                    className="bg-[#374151] border-slate-600 text-white placeholder:text-slate-400 mt-2 h-10 text-sm transition-all duration-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30"
-                  />
-                )}
-              </div>
-            )}
-
-          {/* Amount Input */}
-          {((transactionType === 'receive') ||
-            (transactionType === 'pay' && paymentMode !== null) ||
-            (transactionType === 'payable')) && (
-              <div className="space-y-2">
-                <Label className="text-slate-200 text-sm font-medium">{t('demo.addTransaction.amount')}</Label>
-                <Input
-                  type="number"
-                  step="0.01"
-                  value={transactionAmount}
-                  onChange={(e) => setTransactionAmount(e.target.value)}
-                  placeholder="0.00"
-                  className="bg-[#374151] border-slate-600 text-white placeholder:text-slate-400 h-10 text-sm transition-all duration-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30"
+              {transactionPurpose === 'manual' && (
+                <input
+                  type="text"
+                  className="dm-input"
+                  placeholder={transactionType === 'pay' && paymentMode === 'boughtItem'
+                    ? t('demo.addTransaction.enterItemDescription')
+                    : t('demo.addTransaction.enterPurposeManually')}
+                  value={manualPurpose}
+                  onChange={(e) => setManualPurpose(e.target.value)}
                 />
-              </div>
-            )}
+              )}
+            </div>
+          )}
 
-          {/* Upload Receipt Section */}
-          {((transactionType === 'receive') ||
-            (transactionType === 'pay' && paymentMode !== null) ||
-            (transactionType === 'payable')) && (
-              <div className="space-y-2">
-                <Label className="text-slate-200 text-sm font-medium">{t('demo.addTransaction.uploadReceipt')}</Label>
+          {showDetails && (
+            <div className="dm-modal__group">
+              <label className="dm-label" htmlFor="dm-amount">{label('demo.addTransaction.amount')}</label>
+              <input
+                id="dm-amount"
+                type="number"
+                inputMode="decimal"
+                step="0.01"
+                min="0"
+                className="dm-input dm-input--num"
+                value={transactionAmount}
+                onChange={(e) => setTransactionAmount(e.target.value)}
+                placeholder="0.00"
+              />
+            </div>
+          )}
 
-                {!showUpgradeMessage ? (
-                  <button
-                    type="button"
-                    onClick={() => setShowUpgradeMessage(true)}
-                    className="w-full border-2 border-dashed border-slate-600 rounded-lg p-4 flex flex-col items-center gap-2 hover:border-slate-500 hover:bg-slate-700/30 transition-all duration-200 cursor-pointer"
-                  >
-                    <Upload className="w-6 h-6 text-slate-400" />
-                    <span className="text-slate-400 text-sm">{t('demo.addTransaction.clickUpload')}</span>
-                    <span className="text-slate-500 text-xs">{t('demo.addTransaction.fileTypes')}</span>
+          {showDetails && (
+            <div className="dm-modal__group">
+              <span className="dm-label">{label('demo.addTransaction.uploadReceipt')}</span>
+              {!showUpgradeMessage ? (
+                <button type="button" className="dm-upload" onClick={() => setShowUpgradeMessage(true)}>
+                  <Upload aria-hidden />
+                  <span>{t('demo.addTransaction.clickUpload')}</span>
+                  <small>{t('demo.addTransaction.fileTypes')}</small>
+                </button>
+              ) : (
+                <div className="dm-locked">
+                  <Lock aria-hidden />
+                  <span style={{ flex: '1 1 220px' }}>
+                    <Trans
+                      i18nKey="demo.addTransaction.proFeature"
+                      components={{ highlight: <strong style={{ color: 'var(--accent)' }} /> }}
+                    />
+                  </span>
+                  <button type="button" className="mk-btn mk-btn--primary mk-btn--sm" onClick={() => goToSignup(industrySlug, 'receipt_upload')}>
+                    {t('demo.addTransaction.upgradeToPro')}
                   </button>
-                ) : (
-                  <div className="relative bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/30 rounded-lg p-4">
-                    <button
-                      type="button"
-                      onClick={() => setShowUpgradeMessage(false)}
-                      className="absolute top-2 right-2 text-slate-400 hover:text-white transition-colors"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-                    <div className="flex flex-col items-center text-center gap-3">
-                      <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center">
-                        <Lock className="w-5 h-5 text-blue-400" />
-                      </div>
-                      <p className="text-slate-200 text-sm leading-relaxed">
-                        <Trans
-                          i18nKey="demo.addTransaction.proFeature"
-                          components={{
-                            highlight: <span className="font-semibold text-blue-400" />,
-                          }}
-                        />
-                      </p>
-                      <button
-                        type="button"
-                        onClick={() => window.location.href = 'https://app.meksova.com/signup'}
-                        className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded-lg transition-all hover:shadow-lg hover:shadow-blue-500/25"
-                      >
-                        {t('demo.addTransaction.upgradeToPro')}
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
+                </div>
+              )}
+            </div>
+          )}
 
-          {/* Action Buttons */}
-          {((transactionType === 'receive') ||
-            (transactionType === 'pay' && paymentMode !== null) ||
-            (transactionType === 'payable')) && (
-              <div className="grid grid-cols-2 gap-3 pt-4">
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={handleClose}
-                  className="h-10 border-slate-600 bg-transparent text-slate-200 hover:bg-slate-700 hover:text-white text-sm font-medium transition-all duration-200"
-                >
-                  {t('demo.addTransaction.cancel')}
-                </Button>
-                <Button
-                  type="submit"
-                  disabled={
-                    !transactionAmount ||
-                    (transactionPurpose === 'manual' && !manualPurpose.trim()) ||
-                    (!transactionPurpose && transactionType !== 'pay')
-                  }
-                  className="h-10 bg-emerald-600 hover:bg-emerald-700 text-white disabled:bg-slate-600 disabled:cursor-not-allowed disabled:opacity-50 text-sm font-medium transition-all duration-200"
-                >
-                  {t('demo.addTransaction.save')}
-                </Button>
-              </div>
-            )}
+          {showDetails && (
+            <div style={{ display: 'flex', gap: 10 }}>
+              <button type="button" className="mk-btn mk-btn--ghost" onClick={handleClose} style={{ flex: '0 0 auto' }}>
+                {t('demo.addTransaction.cancel')}
+              </button>
+              <button
+                type="submit"
+                className="mk-btn mk-btn--primary dm-save"
+                disabled={
+                  !transactionAmount ||
+                  (transactionPurpose === 'manual' && !manualPurpose.trim()) ||
+                  (showPurpose && !transactionPurpose)
+                }
+              >
+                {t('demo.addTransaction.save')}
+              </button>
+            </div>
+          )}
         </form>
       </DialogContent>
     </Dialog>
