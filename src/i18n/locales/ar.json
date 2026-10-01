@@ -683,8 +683,8 @@
       "yearly": "سنوي",
       "save": "وفّر 17%",
       "perYear": "/ سنة",
-      "yearlyNote": "فقط {{price}} شهريًا، تُدفع سنويًا.",
-      "afterTrialPriceYearly": "$299.99/سنة"
+      "afterTrialPriceYearly": "$299.99/سنة",
+      "billedYearly": "{{price}} تُدفع سنويًا"
     },
     "industry": {
       "eyebrow": "عرض تجريبي حسب القطاع",

@@ -70,12 +70,13 @@ export function SubscriptionPlan() {
           </button>
         </div>
 
+        {/* Yearly leads with the monthly equivalent; the actual yearly charge sits right under it. */}
         <p className="dm-plan__price">
-          {yearly ? PLAN_PRICES.yearly : PLAN_PRICES.monthly}{' '}
-          <span className="dm-plan__per">{yearly ? t('demo.subscription.perYear') : t('demo.subscription.perMonth')}</span>
+          {yearly ? PLAN_PRICES.yearlyPerMonth : PLAN_PRICES.monthly}{' '}
+          <span className="dm-plan__per">{t('demo.subscription.perMonth')}</span>
         </p>
         <p className="dm-plan__note">
-          {yearly ? t('demo.subscription.yearlyNote', { price: PLAN_PRICES.yearlyPerMonth }) : ' '}
+          {yearly ? t('demo.subscription.billedYearly', { price: PLAN_PRICES.yearly }) : ' '}
         </p>
 
         <ul className="dm-checks" style={{ margin: '20px 0' }}>

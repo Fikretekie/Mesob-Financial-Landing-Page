@@ -683,8 +683,8 @@
       "yearly": "ዓመታዊ",
       "save": "17% ቁጠቡ",
       "perYear": "/ ዓመት",
-      "yearlyNote": "ኣብ ወርሒ {{price}} ጥራይ፣ ዓመታዊ ይኽፈል።",
-      "afterTrialPriceYearly": "$299.99/ዓመት"
+      "afterTrialPriceYearly": "$299.99/ዓመት",
+      "billedYearly": "{{price}} ዓመታዊ ዝኽፈል"
     },
     "industry": {
       "eyebrow": "ናይ ዘርፊ ዴሞ",

@@ -683,8 +683,8 @@
       "yearly": "Yearly",
       "save": "Save 17%",
       "perYear": "/ year",
-      "yearlyNote": "Just {{price}}/month, billed yearly.",
-      "afterTrialPriceYearly": "$299.99/year"
+      "afterTrialPriceYearly": "$299.99/year",
+      "billedYearly": "{{price}} billed yearly"
     },
     "industry": {
       "eyebrow": "Industry demo",

@@ -683,8 +683,8 @@
       "yearly": "ዓመታዊ",
       "save": "17% ይቆጥቡ",
       "perYear": "/ ዓመት",
-      "yearlyNote": "በወር {{price}} ብቻ፣ በዓመት ይከፈላል።",
-      "afterTrialPriceYearly": "$299.99/ዓመት"
+      "afterTrialPriceYearly": "$299.99/ዓመት",
+      "billedYearly": "{{price}} በዓመት የሚከፈል"
     },
     "industry": {
       "eyebrow": "የዘርፍ ዴሞ",

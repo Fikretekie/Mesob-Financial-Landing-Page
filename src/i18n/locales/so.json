@@ -683,8 +683,8 @@
       "yearly": "Sannadle",
       "save": "Badbaadi 17%",
       "perYear": "/ sannad",
-      "yearlyNote": "Kaliya {{price}}/bishii, lagu bixiyo sannadkii.",
-      "afterTrialPriceYearly": "$299.99/sannad"
+      "afterTrialPriceYearly": "$299.99/sannad",
+      "billedYearly": "{{price}} lagu bixiyo sannadkii"
     },
     "industry": {
       "eyebrow": "Demo qaybeed",

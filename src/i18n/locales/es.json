@@ -683,8 +683,8 @@
       "yearly": "Anual",
       "save": "Ahorra 17%",
       "perYear": "/ año",
-      "yearlyNote": "Solo {{price}}/mes, facturado anualmente.",
-      "afterTrialPriceYearly": "$299.99/año"
+      "afterTrialPriceYearly": "$299.99/año",
+      "billedYearly": "{{price}} facturado anualmente"
     },
     "industry": {
       "eyebrow": "Demo por sector",
