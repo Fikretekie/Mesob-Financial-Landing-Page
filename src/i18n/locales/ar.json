@@ -582,7 +582,8 @@
       "tagline": "Take control of your finances without limits and save hours every week.",
       "startTrial": "ابدأ تجربة مجانية 30 يومًا",
       "noCard": "No credit card required. Cancel anytime.",
-      "continueDemo": "متابعة العرض المحدود"
+      "continueDemo": "متابعة العرض المحدود",
+      "orYearly": "أو {{price}} شهريًا عند الدفع السنوي"
     },
     "financialReport": {
       "summary": "Summary",
@@ -621,7 +622,8 @@
       "totalLiabilitiesEquity": "Total Liabilities & Equity",
       "total": "Total",
       "subtitle": "تتبّع أعمالك وحلّلها ونمّها.",
-      "cogs": "تكلفة البضاعة المباعة"
+      "cogs": "تكلفة البضاعة المباعة",
+      "fixedAssets": "الأصول الثابتة"
     },
     "receipts": {
       "title": "Receipts Management",
@@ -676,7 +678,13 @@
       "price": "$29.99",
       "perMonth": "/ month",
       "cta": "ابدأ تجربتي المجانية",
-      "footer": "No credit card required. Cancel anytime before your 30-day trial ends."
+      "footer": "No credit card required. Cancel anytime before your 30-day trial ends.",
+      "monthly": "شهري",
+      "yearly": "سنوي",
+      "save": "وفّر 17%",
+      "perYear": "/ سنة",
+      "yearlyNote": "فقط {{price}} شهريًا، تُدفع سنويًا.",
+      "afterTrialPriceYearly": "$299.99/سنة"
     },
     "industry": {
       "eyebrow": "عرض تجريبي حسب القطاع",
@@ -829,6 +837,33 @@
         "tripHistory": "سجل الرحلات",
         "fuelPurchase": "شراء الوقود",
         "iftaReport": "تقرير IFTA"
+      },
+      "quickScan": {
+        "scanReceipt": "مسح الإيصال",
+        "badgeNew": "جديد",
+        "scannedReceipt": "الإيصال الممسوح",
+        "readingReceipt": "جارٍ قراءة الإيصال...",
+        "amount": "المبلغ",
+        "recordAs": "تسجيل كـ",
+        "destExpense": "مصروف تشغيلي",
+        "destCogs": "بضائع لإعادة البيع",
+        "destInventory": "مخزون (الاحتفاظ به كمخزون)",
+        "destFixed": "أصل ثابت",
+        "cogsHint": "يُسجَّل فورًا كتكلفة للأصناف المباعة — للبضائع المعدة لإعادة البيع التي تشتريها وتبيعها بسرعة.",
+        "assetHint": "يُرسمَل كـ {{kind}} — لن يُحتسب ضمن المصروفات حتى يُباع أو يُتخلَّص منه.",
+        "kindFixed": "أصل ثابت",
+        "kindInventory": "مخزون",
+        "itemName": "اسم العنصر",
+        "itemNamePlaceholder": "مثال: شراء مخزون",
+        "category": "الفئة",
+        "selectCategory": "اختر فئة...",
+        "state": "الولاية",
+        "detectingLocation": "جارٍ تحديد موقعك...",
+        "selectState": "اختر ولاية...",
+        "gallons": "جالون",
+        "cancel": "إلغاء",
+        "save": "حفظ",
+        "saving": "جارٍ الحفظ..."
       }
     },
     "logs": {
@@ -868,6 +903,64 @@
       "perkAuto": "بلا إدخال يدوي: يتم مزامنة النشاط الجديد في الخلفية.",
       "perkCategories": "تُطابَق القيود مع فئاتك وتكون جاهزة لتقاريرك.",
       "perkReadOnly": "مصمَّم للقراءة فقط: المزامنة تجلب المعاملات ولا تنقل الأموال أبدًا."
+    },
+    "business": {
+      "myBusiness": "عملي",
+      "switchLabel": "تبديل النشاط (الحالي: {{name}})",
+      "remove": "حذف {{name}}",
+      "removeConfirm": "حذف \"{{name}}\" وبياناته التجريبية؟",
+      "addAnother": "+ إضافة نشاط تجاري آخر",
+      "addTitle": "إضافة نشاط تجاري",
+      "billingNote": "تُحتسب الأنشطة الإضافية فوق اشتراكك الحالي.",
+      "name": "اسم النشاط التجاري",
+      "namePlaceholder": "مثال: شاحنة 2",
+      "type": "نوع النشاط",
+      "demoNote": "يتيح لك العرض التجريبي إضافة {{count}} نشاط إضافي، لكلٍّ منها حساباته الخاصة. أضف المزيد بعد التسجيل.",
+      "add": "إضافة النشاط",
+      "added": "تمت إضافة {{name}}. أنت الآن تعمل عليه."
+    },
+    "team": {
+      "nav": "الفريق",
+      "new": "جديد",
+      "title": "الفريق والمحاسب",
+      "subtitle": "امنح محاسبك أو أعضاء فريقك دخولًا خاصًا إلى حساباتك، بالصلاحيات التي يحتاجونها فقط.",
+      "members": "الأعضاء",
+      "you": "أنت",
+      "roleOwner": "المالك",
+      "role_accountant": "محاسب",
+      "role_member": "عضو فريق",
+      "role_viewer": "مشاهد",
+      "desc_accountant": "يرى كل المعاملات والتقارير وينزّلها في موسم الضرائب. بلا وصول إلى الفوترة.",
+      "desc_member": "يضيف المعاملات ويمسح الإيصالات ويسجّل الرحلات. لا يرى الفوترة.",
+      "desc_viewer": "لوحة تحكم وتقارير للقراءة فقط.",
+      "pending": "دعوة معلّقة",
+      "remove": "إزالة {{name}}",
+      "empty": "لم تتم دعوة أحد بعد.",
+      "inviteTitle": "دعوة شخص",
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "role": "الدور",
+      "send": "إرسال الدعوة",
+      "demoNote": "عرض تجريبي: تبقى الدعوات في هذا المتصفح ولا يُرسل أي بريد. حتى {{count}} دعوات.",
+      "invalid": "أدخل اسمًا وبريدًا إلكترونيًا صالحًا.",
+      "invited": "تمت إضافة الدعوة. في العرض التجريبي لا يُرسل أي بريد."
+    },
+    "scan": {
+      "sampleReceipt": "إيصال نموذجي",
+      "chooseSub": "اختر إيصالًا نموذجيًا لمسحه. يقرؤه Meksova ويضعه في المكان الصحيح.",
+      "items": "عناصر",
+      "scanThis": "مسح",
+      "uploadOwn": "امسح صورة إيصالك",
+      "ownLocked": "مسح صور إيصالاتك متاح في التطبيق الكامل.",
+      "detected": "تمت القراءة من {{vendor}}",
+      "fuelLinked": "سُجّل أيضًا كشراء وقود لتقرير IFTA.",
+      "errAmount": "أدخل مبلغًا صالحًا.",
+      "errItem": "أدخل اسم العنصر.",
+      "errCategory": "اختر فئة.",
+      "errFuel": "الولاية والجالونات مطلوبة لمصروف الوقود.",
+      "saved": "تم حفظ الإيصال.",
+      "savedFuel": "تم حفظ الإيصال وإضافته إلى شراء الوقود / IFTA.",
+      "badge": "ممسوح"
     }
   }
 }

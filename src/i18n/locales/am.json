@@ -582,7 +582,8 @@
       "tagline": "ፋይናንስዎን ያለ ገደብ ይቆጣጠሩ እና በሳምንት ሰዓታት ይቆጥቡ።",
       "startTrial": "30 ቀን ነጻ ሙከራ ይጀምሩ",
       "noCard": "ክሬዲት ካርድ አያስፈልግም። በማንኛውም ጊዜ ይሰርዙ።",
-      "continueDemo": "በተገደበ ዴሞ ይቀጥሉ"
+      "continueDemo": "በተገደበ ዴሞ ይቀጥሉ",
+      "orYearly": "ወይም በዓመታዊ ክፍያ በወር {{price}}"
     },
     "financialReport": {
       "summary": "ማጠቃለያ",
@@ -621,7 +622,8 @@
       "totalLiabilitiesEquity": "ጠቅላላ ግዴታ እና ኢኩዊቲ",
       "total": "ጠቅላላ",
       "subtitle": "ንግድዎን ይከታተሉ፣ ይተንትኑ እና ያሳድጉ።",
-      "cogs": "የተሸጡ ዕቃዎች ወጪ"
+      "cogs": "የተሸጡ ዕቃዎች ወጪ",
+      "fixedAssets": "ቋሚ ንብረቶች"
     },
     "receipts": {
       "title": "የደረሰኞች አስተዳደር",
@@ -676,7 +678,13 @@
       "price": "$29.99",
       "perMonth": "/ ወር",
       "cta": "ነጻ ሙከራዬን ይጀምሩ",
-      "footer": "ክሬዲት ካርድ አያስፈልግም። ከ30 ቀን ሙከራ በፊት ይሰርዙ።"
+      "footer": "ክሬዲት ካርድ አያስፈልግም። ከ30 ቀን ሙከራ በፊት ይሰርዙ።",
+      "monthly": "ወርሃዊ",
+      "yearly": "ዓመታዊ",
+      "save": "17% ይቆጥቡ",
+      "perYear": "/ ዓመት",
+      "yearlyNote": "በወር {{price}} ብቻ፣ በዓመት ይከፈላል።",
+      "afterTrialPriceYearly": "$299.99/ዓመት"
     },
     "industry": {
       "eyebrow": "የዘርፍ ዴሞ",
@@ -829,6 +837,33 @@
         "tripHistory": "የጉዞ ታሪክ",
         "fuelPurchase": "የነዳጅ ግዢ",
         "iftaReport": "IFTA ሪፖርት"
+      },
+      "quickScan": {
+        "scanReceipt": "ደረሰኝ ይቃኙ",
+        "badgeNew": "አዲስ",
+        "scannedReceipt": "የተቃኘ ደረሰኝ",
+        "readingReceipt": "ደረሰኝ በማንበብ ላይ...",
+        "amount": "መጠን",
+        "recordAs": "እንደ መዝግብ",
+        "destExpense": "የስራ ማስኬጃ ወጪ",
+        "destCogs": "ለዳግም ሽያጭ ዕቃዎች",
+        "destInventory": "ክምችት (እንደ ክምችት ይያዙ)",
+        "destFixed": "ቋሚ ንብረት",
+        "cogsHint": "ወዲያውኑ እንደ የተሸጡ ዕቃዎች ወጪ ይመዘገባል — በፍጥነት ለሚገዙና ለሚሸጡ ለዳግም ሽያጭ ዕቃዎች።",
+        "assetHint": "እንደ {{kind}} ካፒታል ይደረጋል — እስኪሸጥ ወይም እስኪወገድ ድረስ ወጪ ላይ አይመዘገብም።",
+        "kindFixed": "ቋሚ ንብረት",
+        "kindInventory": "ክምችት",
+        "itemName": "የዕቃ ስም",
+        "itemNamePlaceholder": "ለምሳሌ የክምችት ግዢ",
+        "category": "ምድብ",
+        "selectCategory": "ምድብ ይምረጡ...",
+        "state": "ግዛት",
+        "detectingLocation": "አካባቢዎን በመለየት ላይ...",
+        "selectState": "ግዛት ይምረጡ...",
+        "gallons": "ጋሎን",
+        "cancel": "ይቅር",
+        "save": "አስቀምጥ",
+        "saving": "በማስቀመጥ ላይ..."
       }
     },
     "logs": {
@@ -868,6 +903,64 @@
       "perkAuto": "በእጅ ማስገባት የለም፦ አዲስ እንቅስቃሴ ከበስተጀርባ ይመሳሰላል።",
       "perkCategories": "ግቤቶች ከምድቦችዎ ጋር ይዛመዳሉ፣ ለሪፖርቶችዎ ዝግጁ ናቸው።",
       "perkReadOnly": "ለንባብ ብቻ የተነደፈ፦ ማመሳሰሉ ግብይቶችን ያመጣል፣ ገንዘብ በጭራሽ አያንቀሳቅስም።"
+    },
+    "business": {
+      "myBusiness": "የእኔ ንግድ",
+      "switchLabel": "ንግድ ይቀይሩ (አሁን፦ {{name}})",
+      "remove": "{{name}}ን ሰርዝ",
+      "removeConfirm": "\"{{name}}\" እና የዴሞ መረጃውን ይሰርዙ?",
+      "addAnother": "+ ሌላ ንግድ ያክሉ",
+      "addTitle": "ንግድ ያክሉ",
+      "billingNote": "ተጨማሪ ንግዶች ከአሁኑ የደንበኝነት ክፍያዎ በተጨማሪ ይከፈላሉ።",
+      "name": "የንግድ ስም",
+      "namePlaceholder": "ለምሳሌ፦ የጭነት መኪና 2",
+      "type": "የንግድ ዓይነት",
+      "demoNote": "ዴሞው {{count}} ተጨማሪ ንግድ እንዲያክሉ ይፈቅዳል፤ እያንዳንዱ የራሱ ሂሳብ አለው። ከተመዘገቡ በኋላ ተጨማሪ ያክሉ።",
+      "add": "ንግድ ያክሉ",
+      "added": "{{name}} ተጨምሯል። አሁን በእሱ ላይ እየሰሩ ነው።"
+    },
+    "team": {
+      "nav": "ቡድን",
+      "new": "አዲስ",
+      "title": "ቡድን እና ሂሳብ ሹም",
+      "subtitle": "ለሂሳብ ሹምዎ ወይም ለቡድን አባላትዎ በሚያስፈልጋቸው ፈቃድ ብቻ የራሳቸውን መግቢያ ይስጡ።",
+      "members": "አባላት",
+      "you": "እርስዎ",
+      "roleOwner": "ባለቤት",
+      "role_accountant": "ሂሳብ ሹም",
+      "role_member": "የቡድን አባል",
+      "role_viewer": "ተመልካች",
+      "desc_accountant": "ሁሉንም ግብይቶች እና ሪፖርቶች ያያል፣ በግብር ወቅት ያወርዳል። የክፍያ መዳረሻ የለውም።",
+      "desc_member": "ግብይቶችን ያክላል፣ ደረሰኞችን ይቃኛል፣ ጉዞዎችን ይመዘግባል። ክፍያን አያይም።",
+      "desc_viewer": "ለንባብ ብቻ ዳሽቦርድ እና ሪፖርቶች።",
+      "pending": "ግብዣ በመጠባበቅ ላይ",
+      "remove": "{{name}}ን አስወግድ",
+      "empty": "እስካሁን ማንም አልተጋበዘም።",
+      "inviteTitle": "ሰው ይጋብዙ",
+      "name": "ስም",
+      "email": "ኢሜይል",
+      "role": "ሚና",
+      "send": "ግብዣ ላክ",
+      "demoNote": "ዴሞ፦ ግብዣዎች በዚህ አሳሽ ውስጥ ይቀራሉ፣ ምንም ኢሜይል አይላክም። እስከ {{count}} ግብዣዎች።",
+      "invalid": "ስም እና ትክክለኛ ኢሜይል ያስገቡ።",
+      "invited": "ግብዣ ተጨምሯል። በዴሞ ውስጥ ኢሜይል አይላክም።"
+    },
+    "scan": {
+      "sampleReceipt": "የናሙና ደረሰኝ",
+      "chooseSub": "ለመቃኘት የናሙና ደረሰኝ ይምረጡ። Meksova ያነበዋል እና በትክክለኛው ቦታ ያስቀምጠዋል።",
+      "items": "ዕቃዎች",
+      "scanThis": "ቃኝ",
+      "uploadOwn": "የራስዎን የደረሰኝ ፎቶ ይቃኙ",
+      "ownLocked": "የራስዎን የደረሰኝ ፎቶዎች መቃኘት በሙሉ መተግበሪያው ውስጥ ይገኛል።",
+      "detected": "ከ{{vendor}} ተነቧል",
+      "fuelLinked": "ለIFTA ሪፖርትዎ እንደ ነዳጅ ግዢም ተመዝግቧል።",
+      "errAmount": "ትክክለኛ መጠን ያስገቡ።",
+      "errItem": "የዕቃውን ስም ያስገቡ።",
+      "errCategory": "ምድብ ይምረጡ።",
+      "errFuel": "ለነዳጅ ወጪ ግዛት እና ጋሎን ያስፈልጋሉ።",
+      "saved": "ደረሰኙ ተቀምጧል።",
+      "savedFuel": "ደረሰኙ ተቀምጧል እና ወደ ነዳጅ ግዢ / IFTA ተጨምሯል።",
+      "badge": "የተቃኘ"
     }
   }
 }

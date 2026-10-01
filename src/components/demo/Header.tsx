@@ -3,6 +3,7 @@
 import { Plus, FileDown, Menu } from 'lucide-react';
 import { DemoLanguageSwitcher } from '@/components/demo/DemoLanguageSwitcher';
 import { useTranslation } from 'react-i18next';
+import type { ReactNode } from 'react';
 
 interface HeaderProps {
   pageLabel: string;
@@ -11,6 +12,7 @@ interface HeaderProps {
   onAddTransaction: () => void;
   onDownloadReport: () => void;
   onAccountClick: () => void;
+  businessSwitcher?: ReactNode;
   transactionCount: number;
   maxTransactions: number;
 }
@@ -32,6 +34,7 @@ export function Header({
   onAddTransaction,
   onDownloadReport,
   onAccountClick,
+  businessSwitcher,
   transactionCount,
   maxTransactions,
 }: HeaderProps) {
@@ -72,6 +75,7 @@ export function Header({
         </div>
       </div>
 
+      {businessSwitcher}
       <button type="button" className="dm-account" onClick={onAccountClick} title={companyName || undefined}>
         <span className="dm-account__avatar" aria-hidden>{initials(companyName)}</span>
         <span className="dm-account__name">{t('demo.header.account')}</span>

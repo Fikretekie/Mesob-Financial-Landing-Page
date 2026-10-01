@@ -582,7 +582,8 @@
       "tagline": "Take control of your finances without limits and save hours every week.",
       "startTrial": "Bilow tijaabo bilaash 30 maalmood",
       "noCard": "No credit card required. Cancel anytime.",
-      "continueDemo": "Sii wad demo xaddidan"
+      "continueDemo": "Sii wad demo xaddidan",
+      "orYearly": "ama {{price}}/bishii marka sannadkii la bixiyo"
     },
     "financialReport": {
       "summary": "Summary",
@@ -621,7 +622,8 @@
       "totalLiabilitiesEquity": "Total Liabilities & Equity",
       "total": "Total",
       "subtitle": "La soco, falanqee, oo kori ganacsigaaga.",
-      "cogs": "Kharashka alaabta la iibiyay"
+      "cogs": "Kharashka alaabta la iibiyay",
+      "fixedAssets": "Hantida go’an"
     },
     "receipts": {
       "title": "Receipts Management",
@@ -676,7 +678,13 @@
       "price": "$29.99",
       "perMonth": "/ month",
       "cta": "Bilow tijaabadayda bilaashka ah",
-      "footer": "No credit card required. Cancel anytime before your 30-day trial ends."
+      "footer": "No credit card required. Cancel anytime before your 30-day trial ends.",
+      "monthly": "Bille",
+      "yearly": "Sannadle",
+      "save": "Badbaadi 17%",
+      "perYear": "/ sannad",
+      "yearlyNote": "Kaliya {{price}}/bishii, lagu bixiyo sannadkii.",
+      "afterTrialPriceYearly": "$299.99/sannad"
     },
     "industry": {
       "eyebrow": "Demo qaybeed",
@@ -829,6 +837,33 @@
         "tripHistory": "Taariikhda Safarka",
         "fuelPurchase": "Iibsiga Shidaalka",
         "iftaReport": "Warbixinta IFTA"
+      },
+      "quickScan": {
+        "scanReceipt": "Sawir rasiidka",
+        "badgeNew": "CUSUB",
+        "scannedReceipt": "Rasiidka la sawiray",
+        "readingReceipt": "Waa la akhrinayaa rasiidka...",
+        "amount": "Qadarka",
+        "recordAs": "U diiwaangeli sida",
+        "destExpense": "Kharash hawlgal",
+        "destCogs": "Alaab dib loo iibiyo",
+        "destInventory": "Bakhaar (u hay sida bakhaar)",
+        "destFixed": "Hanti go'an",
+        "cogsHint": "Isla markiiba loo diiwaangeliyo qiimaha alaabta la iibiyay — alaabta dib loo iibiyo ee aad si dhaqso ah u iibsato oo aad u iibiso.",
+        "assetHint": "Waxaa loo qoray sida {{kind}} — ma saameyn doono kharashyada ilaa la iibiyo ama la tuuro.",
+        "kindFixed": "hanti go'an",
+        "kindInventory": "bakhaar",
+        "itemName": "Magaca alaabta",
+        "itemNamePlaceholder": "tusaale Iibsi bakhaar",
+        "category": "Qaybta",
+        "selectCategory": "Dooro qayb...",
+        "state": "Gobol",
+        "detectingLocation": "Waa la ogaanayaa goobtaada...",
+        "selectState": "Dooro gobol...",
+        "gallons": "Galaan",
+        "cancel": "Jooji",
+        "save": "Kaydi",
+        "saving": "Waa la kaydinayaa..."
       }
     },
     "logs": {
@@ -868,6 +903,64 @@
       "perkAuto": "Gelin gacan la’aan: dhaqdhaqaaqa cusub wuxuu isku dhafmaa gadaal.",
       "perkCategories": "Diiwaanada waxaa lagu waafajiyaa qaybahaaga, diyaar u ah warbixinnadaada.",
       "perkReadOnly": "Loo qaabeeyay akhris kaliya: isku-dhafku wuxuu keenaa macaamil, marnaba lacag ma dhaqaajiyo."
+    },
+    "business": {
+      "myBusiness": "Ganacsigayga",
+      "switchLabel": "Beddel ganacsiga (hadda: {{name}})",
+      "remove": "Tirtir {{name}}",
+      "removeConfirm": "Tirtir \"{{name}}\" iyo xogtiisa demo-ga?",
+      "addAnother": "+ Ku dar ganacsi kale",
+      "addTitle": "Ku dar ganacsi",
+      "billingNote": "Ganacsiyada dheeriga ah waxaa lagu dallacaa rukunkaaga hadda.",
+      "name": "Magaca ganacsiga",
+      "namePlaceholder": "tusaale: Gaari 2",
+      "type": "Nooca ganacsiga",
+      "demoNote": "Demo-gu wuxuu kuu oggolaanayaa inaad ku darto {{count}} ganacsi oo dheeri ah, mid walbana xisaabtiisa gaarka ah leh. Ku dar kuwo kale marka aad is-diiwaangeliso.",
+      "add": "Ku dar ganacsiga",
+      "added": "{{name}} waa lagu daray. Hadda waxaad ka shaqaynaysaa."
+    },
+    "team": {
+      "nav": "Kooxda",
+      "new": "Cusub",
+      "title": "Kooxda iyo xisaabiyaha",
+      "subtitle": "Sii xisaabiyahaaga ama xubnaha kooxdaada gelitaan u gaar ah oo xisaabaadkaaga ah, oo kaliya awoodda ay u baahan yihiin.",
+      "members": "Xubnaha",
+      "you": "Adiga",
+      "roleOwner": "Milkiile",
+      "role_accountant": "Xisaabiye",
+      "role_member": "Xubin kooxda",
+      "role_viewer": "Daawade",
+      "desc_accountant": "Wuxuu arkaa dhammaan macaamilada iyo warbixinnada, wuxuuna soo dejiyaa xilliga canshuurta. Gelitaan lacag-bixin ma leh.",
+      "desc_member": "Wuxuu ku daraa macaamil, sawiraa rasiidyo, diiwaangeliyaa safarro. Ma arko lacag-bixinta.",
+      "desc_viewer": "Dashboard iyo warbixinno akhris kaliya ah.",
+      "pending": "Martiqaad sugaya",
+      "remove": "Ka saar {{name}}",
+      "empty": "Weli cidna lama martiqaadin.",
+      "inviteTitle": "Martiqaad qof",
+      "name": "Magaca",
+      "email": "Iimayl",
+      "role": "Doorka",
+      "send": "Dir martiqaadka",
+      "demoNote": "Demo: martiqaadyadu waxay ku jiraan browser-kan, iimaylna lama diro. Ilaa {{count}} martiqaad.",
+      "invalid": "Geli magac iyo iimayl sax ah.",
+      "invited": "Martiqaadka waa lagu daray. Demo-ga iimayl lama diro."
+    },
+    "scan": {
+      "sampleReceipt": "Rasiid tusaale ah",
+      "chooseSub": "Dooro rasiid tusaale ah si aad u sawirto. Meksova wuu akhriyaa oo meesha saxda ah ayuu dhigaa.",
+      "items": "shay",
+      "scanThis": "Sawir",
+      "uploadOwn": "Sawir sawirka rasiidkaaga",
+      "ownLocked": "Sawirista sawirada rasiidyadaada waxay ku jirtaa app-ka buuxa.",
+      "detected": "Laga akhriyay {{vendor}}",
+      "fuelLinked": "Sidoo kale loo diiwaangeliyay iibsi shidaal oo warbixinta IFTA ah.",
+      "errAmount": "Geli qadar sax ah.",
+      "errItem": "Geli magaca shayga.",
+      "errCategory": "Dooro qayb.",
+      "errFuel": "Gobolka iyo galaannada ayaa loo baahan yahay kharashka shidaalka.",
+      "saved": "Rasiidka waa la kaydiyay.",
+      "savedFuel": "Rasiidka waa la kaydiyay waxaana lagu daray Iibsiga Shidaalka / IFTA.",
+      "badge": "La sawiray"
     }
   }
 }

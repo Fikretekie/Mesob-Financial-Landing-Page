@@ -71,7 +71,7 @@ export function useDemoLogs(industrySlug: string) {
     addTrip,
     addFuel,
     clearSampleLogs,
-    ownLogCount: trips.filter((t) => !t.sample).length + fuel.filter((f) => !f.sample).length,
+    ownLogCount: trips.filter((t) => !t.sample).length + fuel.filter((f) => !f.sample && !f.linked).length,
     hasSampleLogs: trips.some((t) => t.sample) || fuel.some((f) => f.sample),
   };
 }

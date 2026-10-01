@@ -13,6 +13,7 @@ import {
   Fuel,
   BarChart3,
   Link2,
+  Users,
   Lock,
   type LucideIcon,
 } from 'lucide-react';
@@ -29,6 +30,7 @@ interface SidebarItem {
   feature?: DemoFeature;
   locked?: boolean;
   soon?: boolean;
+  isNew?: boolean;
 }
 
 // Same order as the app's customer sidebar. Industry-specific entries only
@@ -44,6 +46,7 @@ const sidebarItems: SidebarItem[] = [
   { id: 'fuel-purchase', labelKey: 'demo.app.nav.fuelPurchase', icon: Fuel, feature: 'fuel' },
   { id: 'ifta-report', labelKey: 'demo.app.nav.iftaReport', icon: BarChart3, feature: 'ifta' },
   { id: 'connections', labelKey: 'demo.connections.nav', icon: Link2, soon: true },
+  { id: 'team', labelKey: 'demo.team.nav', icon: Users, isNew: true },
   { id: 'user-profile', labelKey: 'demo.sidebar.userProfile', icon: User },
   { id: 'backup-csv', labelKey: 'demo.sidebar.backupCsv', icon: Database, locked: true },
   { id: 'subscribe', labelKey: 'demo.sidebar.subscribe', icon: CreditCard },
@@ -98,6 +101,7 @@ export function Sidebar({ currentView, onViewChange, isOpen, onClose, maxTransac
                 <span>{t(item.labelKey)}</span>
                 {item.locked && <Lock className="dm-nav__lock" aria-hidden />}
                 {item.soon && <span className="mk-badge mk-badge--info dm-nav__soon">{t('demo.connections.soon')}</span>}
+                {item.isNew && <span className="mk-badge mk-badge--ok dm-nav__soon">{t('demo.team.new')}</span>}
               </button>
             );
           })}

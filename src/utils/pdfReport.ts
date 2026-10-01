@@ -12,6 +12,7 @@ interface ReportData {
   expenseRows: [string, number][];
   netIncome: number;
   totalInventory: number;
+  totalFixedAssets: number;
 }
 import headerData from '@/data/headerData';
 
@@ -39,7 +40,7 @@ export function generateReportHTML(data: ReportData, logoBase64?: string): strin
   const companyName = data.companyName === 'Enter your business name' 
     ? 'Company Name' 
     : data.companyName;
-  const totalAssets = data.totalCashOnHand + data.totalInventory;
+  const totalAssets = data.totalCashOnHand + data.totalInventory + data.totalFixedAssets;
   const totalLiabilities = data.totalPayable;
   const ownerEquity = totalAssets - totalLiabilities;
 

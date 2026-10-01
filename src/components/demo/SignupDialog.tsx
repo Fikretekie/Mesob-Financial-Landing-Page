@@ -6,6 +6,7 @@ import headerData from '@/data/headerData';
 import { useTranslation } from 'react-i18next';
 import { useDemoIndustrySlug } from '@/components/demo/DemoIndustryContext';
 import { goToSignup } from '@/utils/demoTracking';
+import { PLAN_PRICES } from '@/components/demo/sections/subscription';
 
 interface SignupDialogProps {
   open: boolean;
@@ -48,8 +49,11 @@ export function SignupDialog({ open, onOpenChange, onContinueDemo, maxTransactio
             </p>
             <p style={{ color: 'var(--text-3)', fontSize: '0.8rem', marginTop: 4 }}>
               {t('demo.signup.thenJust')}{' '}
-              <span className="num" style={{ color: 'var(--accent)', fontWeight: 700 }}>$29.99</span>
+              <span className="num" style={{ color: 'var(--accent)', fontWeight: 700 }}>{PLAN_PRICES.monthly}</span>
               {t('demo.signup.perMonth')}
+            </p>
+            <p style={{ color: 'var(--text-3)', fontSize: '0.75rem', marginTop: 2 }}>
+              {t('demo.signup.orYearly', { price: PLAN_PRICES.yearlyPerMonth })}
             </p>
             <ul className="dm-signup__features">
               {signupFeatureKeys.map((key) => (

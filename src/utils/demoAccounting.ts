@@ -74,7 +74,7 @@ export function toAppItem(tx: Transaction): AppItem {
       transactionType: 'New_Item',
       transactionAmount: tx.debit,
       subType: 'New_Item',
-      assetType: 'current',
+      assetType: tx.assetType ?? 'current',
       assetName: purposeOf(tx),
     };
   }
@@ -82,6 +82,7 @@ export function toAppItem(tx: Transaction): AppItem {
     ...base,
     transactionType: 'Pay',
     transactionAmount: tx.debit,
+    ...(tx.subType ? { subType: tx.subType } : {}),
     ...(tx.payableId != null ? { payableId: tx.payableId } : {}),
   };
 }
@@ -94,6 +95,7 @@ export function summarize(transactions: Transaction[]): FinancialSummary {
     totalExpenses: s.totalExpenses,
     totalPayable: s.totalPayable,
     totalInventory: s.totalInventory,
+    totalFixedAssets: s.totalFixedAssets,
     cogs: s.cogs,
     netIncome: s.netIncome,
     estimatedTax: s.estimatedTax,

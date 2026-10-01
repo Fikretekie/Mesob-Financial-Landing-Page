@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import type { ReactNode } from 'react';
 import { IndustryIcon } from '@/components/demo/IndustryIcon';
 
 interface IndustryIntroProps {
@@ -11,6 +12,7 @@ interface IndustryIntroProps {
   transactionCount: number;
   maxTransactions: number;
   onClearSamples: () => void;
+  scanButton?: ReactNode;
 }
 
 type BusinessTypeCopy = { id: string; title: string; text: string };
@@ -25,7 +27,7 @@ export function useIndustryCopy(localeId: string) {
 }
 
 // The dashboard's page header, in the app's .dash-overview layout.
-export function IndustryIntro({ localeId, slug, hasSamples, transactionCount, maxTransactions, onClearSamples }: IndustryIntroProps) {
+export function IndustryIntro({ localeId, slug, hasSamples, transactionCount, maxTransactions, onClearSamples, scanButton }: IndustryIntroProps) {
   const { t } = useTranslation();
   const { title, text } = useIndustryCopy(localeId);
 
@@ -46,6 +48,7 @@ export function IndustryIntro({ localeId, slug, hasSamples, transactionCount, ma
             : t('demo.industry.ownNote', { count: maxTransactions })}
         </p>
         <div className="dash-overview__links">
+          {scanButton}
           <Link href="/demo/" className="mk-btn mk-btn--link">{t('demo.industry.change')} →</Link>
           {hasSamples && (
             <button type="button" className="mk-btn mk-btn--muted-link" onClick={onClearSamples}>

@@ -26,6 +26,9 @@ export interface DemoFuelPurchase {
   pricePerGallon: number | null;
   totalCost: number | null;
   sample?: boolean;
+  // Created alongside a scanned fuel receipt; the receipt's transaction is
+  // what counts toward the demo cap, so this one does not.
+  linked?: boolean;
 }
 
 export interface DemoDocument {

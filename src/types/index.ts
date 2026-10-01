@@ -15,6 +15,11 @@ export interface Transaction {
   // Payments of a recorded payable (category "Payment") point at it, like the
   // app's Pay.payableId.
   payableId?: number;
+  // How a purchase is booked, as in the app's receipt scan: goods for resale
+  // expensed as COGS, or an item capitalized as inventory / fixed asset.
+  subType?: 'COGS';
+  assetType?: 'current' | 'fixed';
+  scanned?: boolean;
 }
 
 export interface FinancialSummary {
@@ -22,6 +27,7 @@ export interface FinancialSummary {
   totalExpenses: number;
   totalPayable: number;
   totalInventory: number;
+  totalFixedAssets: number;
   cogs: number;
   netIncome: number;
   estimatedTax: number;
@@ -43,6 +49,7 @@ export type ViewType =
   | 'fuel-purchase'
   | 'ifta-report'
   | 'connections'
+  | 'team'
   | 'user-profile'
   | 'backup-csv'
   | 'subscribe';

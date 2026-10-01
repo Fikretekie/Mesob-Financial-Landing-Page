@@ -2,6 +2,7 @@
 
 import { Trash2, Wallet, FileText, ArrowUp, ArrowDown, FileDown, Plus, CreditCard, type LucideIcon } from 'lucide-react';
 import type { FinancialSummary, Transaction } from '@/types';
+import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { purposeOf } from '@/utils/demoAccounting';
 
@@ -13,6 +14,7 @@ interface FinancialReportProps {
   onAddTransaction: () => void;
   onDownloadReport: () => void;
   onSubscribe: () => void;
+  scanButton?: ReactNode;
 }
 
 const COLORS = { cash: '#00B4D8', payable: '#FFA53B', revenue: '#00D97E', expense: '#A855F7', positive: '#00D97E', negative: '#FF4D4D' };
@@ -37,13 +39,14 @@ export function FinancialReport({
   onAddTransaction,
   onDownloadReport,
   onSubscribe,
+  scanButton,
 }: FinancialReportProps) {
   const { t: translate } = useTranslation();
   // Several report labels end in ":" in the locale files; the card layout supplies its own separation.
   const t = (key: string, options?: Record<string, unknown>) => String(translate(key, options)).replace(/\s*[:：]\s*$/, '');
   // Every figure below comes from the app's accounting engine (summary).
   const netIncome = summary.netIncome;
-  const totalAssets = summary.totalCashOnHand + summary.totalInventory;
+  const totalAssets = summary.totalCashOnHand + summary.totalInventory + summary.totalFixedAssets;
 
   const revenueByCategory: Record<string, number> = {};
   transactions.filter((tx) => tx.type === 'income').forEach((tx) => {
@@ -75,6 +78,7 @@ export function FinancialReport({
 
       <section className="mk-card mk-card--flush">
         <div className="dm-toolbar">
+          {scanButton}
           <button type="button" className="mk-btn mk-btn--ghost mk-btn--sm" onClick={onDownloadReport}>
             <FileDown aria-hidden />{t('demo.header.downloadReport')}
           </button>
@@ -156,6 +160,7 @@ export function FinancialReport({
                         <td className="dm-table__desc">
                           {tx.description.split('\n')[0]}
                           {tx.sample && <span className="mk-badge dm-table__sample">{t('demo.industry.sampleBadge')}</span>}
+                          {tx.scanned && <span className="mk-badge mk-badge--info dm-table__sample">{t('demo.scan.badge')}</span>}
                         </td>
                         <td className="is-num"><Pill value={amount} color={debitColor} /></td>
                         <td className="is-num"><Pill value={amount} color={creditColor} /></td>
@@ -244,6 +249,12 @@ export function FinancialReport({
                   <td className="dm-kv__k">{t('demo.financialReport.inventory')}</td>
                   <td className="is-num">{formatCurrency(summary.totalInventory)}</td>
                 </tr>
+                {summary.totalFixedAssets > 0 && (
+                  <tr>
+                    <td className="dm-kv__k">{t('demo.financialReport.fixedAssets')}</td>
+                    <td className="is-num">{formatCurrency(summary.totalFixedAssets)}</td>
+                  </tr>
+                )}
                 <tr className="is-strong">
                   <td>{t('demo.financialReport.totalAssets')}</td>
                   <td className="is-num" style={{ color: COLORS.cash }}>{formatCurrency(totalAssets)}</td>

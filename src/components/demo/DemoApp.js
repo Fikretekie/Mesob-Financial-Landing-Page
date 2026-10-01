@@ -18,6 +18,8 @@ import { FuelPurchase } from '@/components/demo/sections/FuelPurchase'
 import { IftaReport } from '@/components/demo/sections/IftaReport'
 import { Documents } from '@/components/demo/sections/Documents'
 import { Connections } from '@/components/demo/sections/Connections'
+import { Team } from '@/components/demo/sections/Team'
+import { ReceiptScan } from '@/components/demo/ReceiptScan'
 import { getIndustryExtras } from '@/data/demoIndustryExtras'
 import { downloadPDFReport } from '@/utils/pdfReport'
 import { Toaster } from '@/components/demo/ui/sonner'
@@ -27,7 +29,9 @@ import { UserProfile } from '@/components/demo/sections/userprofile'
 import { BackupFile } from '@/components/demo/sections/backup'
 import { IndustryIntro } from '@/components/demo/IndustryIntro'
 import { DemoIndustryContext } from '@/components/demo/DemoIndustryContext'
-import { buildSampleTransactions } from '@/data/demoIndustries'
+import { buildSampleTransactions, getDemoIndustry } from '@/data/demoIndustries'
+import { useDemoBusinesses } from '@/hooks/demo/useDemoBusinesses'
+import { BusinessSwitcher } from '@/components/demo/BusinessSwitcher'
 import { captureAttribution, trackDemoEvent } from '@/utils/demoTracking'
 
 export default function DemoApp({ industry }) {
@@ -38,10 +42,16 @@ export default function DemoApp({ industry }) {
   const [businessName, setBusinessName] = useState('')
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const closeSidebar = useCallback(() => setIsSidebarOpen(false), [])
-  const selectedBusinessType = industry.businessType
-  const businessNameKey = `mesob_demo_business_name_${industry.slug}`
-  const sampleTransactions = useMemo(() => buildSampleTransactions(industry), [industry])
-  const extras = useMemo(() => getIndustryExtras(industry.slug), [industry.slug])
+  // Multi-business: the page's business plus any the visitor adds. Each has
+  // its own data and its own industry (categories, screens).
+  const businesses = useDemoBusinesses(industry.slug)
+  const { activeExtra, dataKey } = businesses
+  const activeIndustry = (activeExtra && getDemoIndustry(activeExtra.slug)) || industry
+  const selectedBusinessType = activeIndustry.businessType
+  const businessNameKey = `mesob_demo_business_name_${dataKey}`
+  // Only the page's own business opens with samples; added businesses start empty.
+  const sampleTransactions = useMemo(() => (activeExtra ? [] : buildSampleTransactions(industry)), [industry, activeExtra])
+  const extras = useMemo(() => getIndustryExtras(activeIndustry.slug), [activeIndustry.slug])
 
   const {
     summary,
@@ -59,8 +69,8 @@ export default function DemoApp({ industry }) {
     addTransaction,
     deleteTransaction,
     clearSamples,
-  } = useTransactions(industry.slug, sampleTransactions)
-  const { trips, fuel, addTrip, addFuel, clearSampleLogs, ownLogCount, hasSampleLogs } = useDemoLogs(industry.slug)
+  } = useTransactions(dataKey, sampleTransactions)
+  const { trips, fuel, addTrip, addFuel, clearSampleLogs, ownLogCount, hasSampleLogs } = useDemoLogs(dataKey)
 
   // One demo cap across everything the visitor adds: transactions, trips and
   // fuel purchases. Sample rows never count.
@@ -76,18 +86,23 @@ export default function DemoApp({ industry }) {
   // names their business on the Account page.
   useEffect(() => {
     try {
-      setBusinessName(localStorage.getItem(businessNameKey) || '')
+      setBusinessName(localStorage.getItem(businessNameKey) || (activeExtra ? activeExtra.name : ''))
     } catch {
-      setBusinessName('')
+      setBusinessName(activeExtra ? activeExtra.name : '')
     }
-  }, [businessNameKey])
+  }, [businessNameKey, activeExtra])
 
-  // Save business name to localStorage when it changes
-  useEffect(() => {
-    if (businessName) {
-      localStorage.setItem(businessNameKey, businessName)
+  // Saved only on an explicit edit: an effect keyed on the name would, while
+  // switching businesses, write the previous business's name under the new key.
+  const saveBusinessName = (name) => {
+    setBusinessName(name)
+    try {
+      localStorage.setItem(businessNameKey, name)
+    } catch {
+      // Storage blocked — the name still applies for this visit.
     }
-  }, [businessName, businessNameKey])
+    if (activeExtra) businesses.renameBusiness(activeExtra.id, name)
+  }
 
   // Show signup dialog when limit is reached (also on return visits at the cap)
   useEffect(() => {
@@ -203,6 +218,7 @@ export default function DemoApp({ industry }) {
       expenseRows,
       netIncome: summary.netIncome,
       totalInventory: summary.totalInventory,
+      totalFixedAssets: summary.totalFixedAssets,
     }
 
     downloadPDFReport(reportData)
@@ -229,6 +245,43 @@ export default function DemoApp({ industry }) {
     }
   }
 
+  // Receipt scan: one transaction (counts toward the cap) plus, for fuel
+  // receipts, a linked fuel purchase for IFTA (does not count again).
+  const handleScanSave = (transaction, fuelPurchase) => {
+    if (usedCount >= maxTransactions) {
+      setIsSignupDialogOpen(true)
+      return
+    }
+    if (!addTransaction(transaction)) return
+    if (fuelPurchase) addFuel(fuelPurchase)
+    trackDemoEvent('demo_add_transaction', { industry: industry.slug, transaction_type: 'receipt_scan', count: usedCount + 1 })
+    if (usedCount + 1 >= maxTransactions) {
+      trackDemoEvent('demo_limit_reached', { industry: industry.slug })
+    }
+    toast.success(fuelPurchase ? t('demo.scan.savedFuel') : t('demo.scan.saved'))
+    warnIfNearLimit()
+  }
+
+  // The page business's name, also while an added business is active.
+  let mainBusinessName = businessName
+  if (activeExtra) {
+    try {
+      mainBusinessName = localStorage.getItem(`mesob_demo_business_name_${industry.slug}`) || ''
+    } catch {
+      mainBusinessName = ''
+    }
+  }
+
+  const scanButton = (
+    <ReceiptScan
+      industrySlug={activeIndustry.slug}
+      businessType={selectedBusinessType}
+      hasFuelLog={extras.features.includes('fuel')}
+      canAdd={canAddEntry}
+      onSave={handleScanSave}
+    />
+  )
+
   const pageLabels = {
     'dashboard': t('demo.sidebar.dashboard'),
     'financial-report': t('demo.sidebar.financialReport'),
@@ -239,6 +292,7 @@ export default function DemoApp({ industry }) {
     'fuel-purchase': t('demo.app.nav.fuelPurchase'),
     'ifta-report': t('demo.app.nav.iftaReport'),
     'connections': t('demo.connections.nav'),
+    'team': t('demo.team.nav'),
     'user-profile': t('demo.sidebar.userProfile'),
     'backup-csv': t('demo.sidebar.backupCsv'),
     'subscribe': t('demo.sidebar.subscribe'),
@@ -246,12 +300,13 @@ export default function DemoApp({ industry }) {
 
   const intro = (
     <IndustryIntro
-      localeId={industry.localeId}
-      slug={industry.slug}
+      localeId={activeIndustry.localeId}
+      slug={activeIndustry.slug}
       hasSamples={hasSamples || hasSampleLogs}
       transactionCount={usedCount}
       maxTransactions={maxTransactions}
       onClearSamples={handleClearSamples}
+      scanButton={scanButton}
     />
   )
 
@@ -267,6 +322,7 @@ export default function DemoApp({ industry }) {
             onAddTransaction={openAddTransaction}
             onDownloadReport={handleDownloadReport}
             onSubscribe={() => setCurrentView('subscribe')}
+            scanButton={scanButton}
           />
         )
       case 'receipts':
@@ -282,13 +338,25 @@ export default function DemoApp({ industry }) {
       case 'ifta-report':
         return <IftaReport trips={trips} fuel={fuel} />
       case 'connections':
-        return <Connections industry={industry} />
+        return <Connections industry={activeIndustry} />
+      case 'team':
+        return (
+          <Team
+            storageKey={`mesob_demo_team_${industry.slug}`}
+            ownerName={businessName || t('demo.business.myBusiness')}
+            onLimit={() => setIsSignupDialogOpen(true)}
+            onInvited={(role) => {
+              trackDemoEvent('demo_invite_user', { industry: industry.slug, role })
+              toast.success(t('demo.team.invited'))
+            }}
+          />
+        )
       case 'user-profile':
         return (
           <UserProfile
             companyName={businessName}
-            onCompanyNameChange={setBusinessName}
-            industryLocaleId={industry.localeId}
+            onCompanyNameChange={saveBusinessName}
+            industryLocaleId={activeIndustry.localeId}
           />
         )
       case 'backup-csv':
@@ -332,6 +400,31 @@ export default function DemoApp({ industry }) {
             onAddTransaction={openAddTransaction}
             onDownloadReport={handleDownloadReport}
             onAccountClick={() => setCurrentView('user-profile')}
+            businessSwitcher={
+              <BusinessSwitcher
+                mainName={mainBusinessName || t('demo.business.myBusiness')}
+                mainSlug={industry.slug}
+                extras={businesses.extras}
+                activeId={businesses.activeId}
+                canAddMore={businesses.canAddMore}
+                onSwitch={(id) => {
+                  businesses.switchTo(id)
+                  setCurrentView('dashboard')
+                }}
+                onAdd={(name, slug) => {
+                  if (businesses.addBusiness(name, slug)) {
+                    setCurrentView('dashboard')
+                    trackDemoEvent('demo_add_business', { industry: industry.slug, business_type: slug })
+                    toast.success(t('demo.business.added', { name: name.trim() }))
+                  }
+                }}
+                onRemove={businesses.removeBusiness}
+                onLimit={() => {
+                  trackDemoEvent('demo_business_limit', { industry: industry.slug })
+                  setIsSignupDialogOpen(true)
+                }}
+              />
+            }
             transactionCount={usedCount}
             maxTransactions={maxTransactions}
           />

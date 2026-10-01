@@ -582,7 +582,8 @@
       "tagline": "Take control of your finances without limits and save hours every week.",
       "startTrial": "Iniciar prueba gratis de 30 días",
       "noCard": "No credit card required. Cancel anytime.",
-      "continueDemo": "Continuar con demo limitado"
+      "continueDemo": "Continuar con demo limitado",
+      "orYearly": "o {{price}}/mes con facturación anual"
     },
     "financialReport": {
       "summary": "Summary",
@@ -621,7 +622,8 @@
       "totalLiabilitiesEquity": "Total Liabilities & Equity",
       "total": "Total",
       "subtitle": "Controla, analiza y haz crecer tu negocio.",
-      "cogs": "Costo de bienes vendidos"
+      "cogs": "Costo de bienes vendidos",
+      "fixedAssets": "Activos fijos"
     },
     "receipts": {
       "title": "Receipts Management",
@@ -676,7 +678,13 @@
       "price": "$29.99",
       "perMonth": "/ month",
       "cta": "Iniciar mi prueba gratis",
-      "footer": "No credit card required. Cancel anytime before your 30-day trial ends."
+      "footer": "No credit card required. Cancel anytime before your 30-day trial ends.",
+      "monthly": "Mensual",
+      "yearly": "Anual",
+      "save": "Ahorra 17%",
+      "perYear": "/ año",
+      "yearlyNote": "Solo {{price}}/mes, facturado anualmente.",
+      "afterTrialPriceYearly": "$299.99/año"
     },
     "industry": {
       "eyebrow": "Demo por sector",
@@ -829,6 +837,33 @@
         "tripHistory": "Historial de viajes",
         "fuelPurchase": "Compra de combustible",
         "iftaReport": "Informe IFTA"
+      },
+      "quickScan": {
+        "scanReceipt": "Escanear recibo",
+        "badgeNew": "NUEVO",
+        "scannedReceipt": "Recibo escaneado",
+        "readingReceipt": "Leyendo recibo...",
+        "amount": "Monto",
+        "recordAs": "Registrar como",
+        "destExpense": "Gasto operativo",
+        "destCogs": "Bienes para reventa",
+        "destInventory": "Inventario (mantener en stock)",
+        "destFixed": "Activo fijo",
+        "cogsHint": "Se registra como costo de los artículos vendidos de inmediato — para bienes de reventa que compras y vendes rápidamente.",
+        "assetHint": "Capitalizado como {{kind}} — no afectará los gastos hasta que se venda o se descarte.",
+        "kindFixed": "un activo fijo",
+        "kindInventory": "inventario",
+        "itemName": "Nombre del artículo",
+        "itemNamePlaceholder": "p. ej. Compra de inventario",
+        "category": "Categoría",
+        "selectCategory": "Selecciona una categoría...",
+        "state": "Estado",
+        "detectingLocation": "Detectando tu ubicación...",
+        "selectState": "Selecciona un estado...",
+        "gallons": "Galones",
+        "cancel": "Cancelar",
+        "save": "Guardar",
+        "saving": "Guardando..."
       }
     },
     "logs": {
@@ -868,6 +903,64 @@
       "perkAuto": "Sin registro manual: la actividad nueva se sincroniza en segundo plano.",
       "perkCategories": "Los movimientos se asignan a tus categorías, listos para tus informes.",
       "perkReadOnly": "Pensado como solo lectura: la sincronización trae transacciones y nunca mueve dinero."
+    },
+    "business": {
+      "myBusiness": "Mi negocio",
+      "switchLabel": "Cambiar de negocio (actual: {{name}})",
+      "remove": "Eliminar {{name}}",
+      "removeConfirm": "¿Eliminar \"{{name}}\" y sus datos de demo?",
+      "addAnother": "+ Agregar otro negocio",
+      "addTitle": "Agregar negocio",
+      "billingNote": "Los negocios adicionales se cobran además de tu suscripción actual.",
+      "name": "Nombre del negocio",
+      "namePlaceholder": "p. ej. Camión 2",
+      "type": "Tipo de negocio",
+      "demoNote": "La demo te permite agregar {{count}} negocio adicional, cada uno con sus propias cuentas. Agrega más al registrarte.",
+      "add": "Agregar negocio",
+      "added": "{{name}} agregado. Ahora estás trabajando en él."
+    },
+    "team": {
+      "nav": "Equipo",
+      "new": "Nuevo",
+      "title": "Equipo y contador",
+      "subtitle": "Dale a tu contador o a tu equipo su propio acceso a tus cuentas, solo con los permisos que necesitan.",
+      "members": "Miembros",
+      "you": "Tú",
+      "roleOwner": "Propietario",
+      "role_accountant": "Contador",
+      "role_member": "Miembro del equipo",
+      "role_viewer": "Solo lectura",
+      "desc_accountant": "Ve todas las transacciones e informes y los descarga en temporada de impuestos. Sin acceso a facturación.",
+      "desc_member": "Agrega transacciones, escanea recibos y registra viajes. No ve la facturación.",
+      "desc_viewer": "Panel e informes de solo lectura.",
+      "pending": "Invitación pendiente",
+      "remove": "Quitar a {{name}}",
+      "empty": "Aún no has invitado a nadie.",
+      "inviteTitle": "Invitar a alguien",
+      "name": "Nombre",
+      "email": "Correo",
+      "role": "Rol",
+      "send": "Enviar invitación",
+      "demoNote": "Demo: las invitaciones se quedan en este navegador y no se envía ningún correo. Hasta {{count}} invitaciones.",
+      "invalid": "Escribe un nombre y un correo válido.",
+      "invited": "Invitación agregada. En la demo no se envía ningún correo."
+    },
+    "scan": {
+      "sampleReceipt": "Recibo de ejemplo",
+      "chooseSub": "Elige un recibo de ejemplo para escanear. Meksova lo lee y lo registra en el lugar correcto.",
+      "items": "artículos",
+      "scanThis": "Escanear",
+      "uploadOwn": "Escanear una foto de tu recibo",
+      "ownLocked": "Escanear fotos de tus propios recibos está disponible en la app completa.",
+      "detected": "Leído de {{vendor}}",
+      "fuelLinked": "También registrado como compra de combustible para tu informe IFTA.",
+      "errAmount": "Ingresa un monto válido.",
+      "errItem": "Ingresa el nombre del artículo.",
+      "errCategory": "Elige una categoría.",
+      "errFuel": "El estado y los galones son obligatorios para un gasto de combustible.",
+      "saved": "Recibo guardado.",
+      "savedFuel": "Recibo guardado y agregado a Compra de combustible / IFTA.",
+      "badge": "Escaneado"
     }
   }
 }

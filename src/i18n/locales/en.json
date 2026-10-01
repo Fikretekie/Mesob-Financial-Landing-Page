@@ -582,7 +582,8 @@
       "tagline": "Take control of your finances without limits and save hours every week.",
       "startTrial": "Start Free 30-Day Trial",
       "noCard": "No credit card required. Cancel anytime.",
-      "continueDemo": "Continue with limited demo"
+      "continueDemo": "Continue with limited demo",
+      "orYearly": "or {{price}}/month billed yearly"
     },
     "financialReport": {
       "summary": "Summary",
@@ -621,7 +622,8 @@
       "totalLiabilitiesEquity": "Total Liabilities & Equity",
       "total": "Total",
       "subtitle": "Track, analyze, and grow your business.",
-      "cogs": "Cost of goods sold"
+      "cogs": "Cost of goods sold",
+      "fixedAssets": "Fixed assets"
     },
     "receipts": {
       "title": "Receipts Management",
@@ -676,7 +678,13 @@
       "price": "$29.99",
       "perMonth": "/ month",
       "cta": "Start My Free Trial",
-      "footer": "No credit card required. Cancel anytime before your 30-day trial ends."
+      "footer": "No credit card required. Cancel anytime before your 30-day trial ends.",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "save": "Save 17%",
+      "perYear": "/ year",
+      "yearlyNote": "Just {{price}}/month, billed yearly.",
+      "afterTrialPriceYearly": "$299.99/year"
     },
     "industry": {
       "eyebrow": "Industry demo",
@@ -821,6 +829,33 @@
         "tripHistory": "Trip History",
         "fuelPurchase": "Fuel Purchase",
         "iftaReport": "IFTA Report"
+      },
+      "quickScan": {
+        "scanReceipt": "Scan Receipt",
+        "badgeNew": "NEW",
+        "scannedReceipt": "Scanned Receipt",
+        "readingReceipt": "Reading receipt...",
+        "amount": "Amount",
+        "recordAs": "Record as",
+        "destExpense": "Operating expense",
+        "destCogs": "Goods for resale",
+        "destInventory": "Inventory (keep as stock)",
+        "destFixed": "Fixed asset",
+        "cogsHint": "Recorded as cost of items sold right away — for resale goods you buy and sell quickly.",
+        "assetHint": "Capitalized as {{kind}} — it won't hit expenses until sold or disposed.",
+        "kindFixed": "a fixed asset",
+        "kindInventory": "inventory",
+        "itemName": "Item name",
+        "itemNamePlaceholder": "e.g. Inventory purchase",
+        "category": "Category",
+        "selectCategory": "Select category...",
+        "state": "State",
+        "detectingLocation": "Detecting your location...",
+        "selectState": "Select a state...",
+        "gallons": "Gallons",
+        "cancel": "Cancel",
+        "save": "Save",
+        "saving": "Saving..."
       }
     },
     "logs": {
@@ -860,6 +895,64 @@
       "perkAuto": "No manual entry: new activity syncs in the background.",
       "perkCategories": "Entries are matched to your categories, ready for your reports.",
       "perkReadOnly": "Designed to be read-only: syncing brings transactions in and never moves money."
+    },
+    "business": {
+      "myBusiness": "My business",
+      "switchLabel": "Switch business (current: {{name}})",
+      "remove": "Delete {{name}}",
+      "removeConfirm": "Delete \"{{name}}\" and its demo data?",
+      "addAnother": "+ Add another business",
+      "addTitle": "Add Business",
+      "billingNote": "Additional businesses are billed on top of your current subscription.",
+      "name": "Business name",
+      "namePlaceholder": "e.g. Truck 2",
+      "type": "Business type",
+      "demoNote": "The demo lets you add {{count}} extra business, each with its own books. Add more after you sign up.",
+      "add": "Add business",
+      "added": "{{name}} added. You are now working in it."
+    },
+    "team": {
+      "nav": "Team",
+      "new": "New",
+      "title": "Team & accountant",
+      "subtitle": "Give your accountant or team members their own login to your books, with only the access they need.",
+      "members": "Members",
+      "you": "You",
+      "roleOwner": "Owner",
+      "role_accountant": "Accountant",
+      "role_member": "Team member",
+      "role_viewer": "Viewer",
+      "desc_accountant": "Sees every transaction and report and downloads them at tax time. No billing access.",
+      "desc_member": "Adds transactions, scans receipts and logs trips. Cannot see billing.",
+      "desc_viewer": "Read-only dashboard and reports.",
+      "pending": "Invite pending",
+      "remove": "Remove {{name}}",
+      "empty": "No one invited yet.",
+      "inviteTitle": "Invite someone",
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "send": "Send invite",
+      "demoNote": "Demo: invites stay in this browser and no email is sent. Up to {{count}} invites.",
+      "invalid": "Enter a name and a valid email address.",
+      "invited": "Invite added. In the demo no email is sent."
+    },
+    "scan": {
+      "sampleReceipt": "Sample receipt",
+      "chooseSub": "Pick a sample receipt to scan. Meksova reads it and files it in the right place.",
+      "items": "items",
+      "scanThis": "Scan",
+      "uploadOwn": "Scan your own receipt photo",
+      "ownLocked": "Scanning your own receipt photos is available in the full app.",
+      "detected": "Read from {{vendor}}",
+      "fuelLinked": "Also logged as a fuel purchase for your IFTA report.",
+      "errAmount": "Enter a valid amount.",
+      "errItem": "Enter an item name.",
+      "errCategory": "Choose a category.",
+      "errFuel": "State and gallons are required for a fuel expense.",
+      "saved": "Receipt saved.",
+      "savedFuel": "Receipt saved and added to Fuel Purchase / IFTA.",
+      "badge": "Scanned"
     }
   }
 }

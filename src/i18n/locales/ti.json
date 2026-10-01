@@ -582,7 +582,8 @@
       "tagline": "Take control of your finances without limits and save hours every week.",
       "startTrial": "30 መዓልቲ ብነጻ ጀምር",
       "noCard": "No credit card required. Cancel anytime.",
-      "continueDemo": "ብደረቅ ዴሞ ቀጽል"
+      "continueDemo": "ብደረቅ ዴሞ ቀጽል",
+      "orYearly": "ወይ ብዓመታዊ ክፍሊት ኣብ ወርሒ {{price}}"
     },
     "financialReport": {
       "summary": "Summary",
@@ -621,7 +622,8 @@
       "totalLiabilitiesEquity": "Total Liabilities & Equity",
       "total": "Total",
       "subtitle": "ንግድኹም ተኸታተሉ፣ ተንትኑን ኣዕብዩን።",
-      "cogs": "ዋጋ ዝተሸጡ ኣቑሑ"
+      "cogs": "ዋጋ ዝተሸጡ ኣቑሑ",
+      "fixedAssets": "ቀወምቲ ንብረታት"
     },
     "receipts": {
       "title": "Receipts Management",
@@ -676,7 +678,13 @@
       "price": "$29.99",
       "perMonth": "/ month",
       "cta": "ነጻ ፈተነይ ጀምር",
-      "footer": "No credit card required. Cancel anytime before your 30-day trial ends."
+      "footer": "No credit card required. Cancel anytime before your 30-day trial ends.",
+      "monthly": "ወርሓዊ",
+      "yearly": "ዓመታዊ",
+      "save": "17% ቁጠቡ",
+      "perYear": "/ ዓመት",
+      "yearlyNote": "ኣብ ወርሒ {{price}} ጥራይ፣ ዓመታዊ ይኽፈል።",
+      "afterTrialPriceYearly": "$299.99/ዓመት"
     },
     "industry": {
       "eyebrow": "ናይ ዘርፊ ዴሞ",
@@ -829,6 +837,33 @@
         "tripHistory": "ታሪኽ ጉዕዞ",
         "fuelPurchase": "ግዝኣት ነዳዲ",
         "iftaReport": "IFTA ሪፖርት"
+      },
+      "quickScan": {
+        "scanReceipt": "ቅብሊት ኣንብቡ",
+        "badgeNew": "ሓድሽ",
+        "scannedReceipt": "ዝተነበበ ቅብሊት",
+        "readingReceipt": "ቅብሊት ይንበብ ኣሎ...",
+        "amount": "መጠን",
+        "recordAs": "ከም መዝግብ",
+        "destExpense": "ናይ ስራሕ ወጻኢ",
+        "destCogs": "ንዳግማይ ሽያጭ ኣቕሑ",
+        "destInventory": "ዕቑር (ከም ዕቑር ሓዝዎ)",
+        "destFixed": "ቀዋሚ ንብረት",
+        "cogsHint": "ብቕጽበት ከም ወጻኢ ናይ ዝተሸጡ ኣቕሑ ይምዝገብ — ብቕልጡፍ ንእትገዝኡን እትሸጡን ንዳግማይ ሽያጭ ኣቕሑ።",
+        "assetHint": "ከም {{kind}} ካፒታል ይግበር — ክሳብ ዝሽየጥ ወይ ዝእለ ኣብ ወጻኢ ኣይምዝገብን።",
+        "kindFixed": "ቀዋሚ ንብረት",
+        "kindInventory": "ዕቑር",
+        "itemName": "ስም ኣቕሓ",
+        "itemNamePlaceholder": "ንኣብነት ግዝኣት ዕቑር",
+        "category": "ምድብ",
+        "selectCategory": "ምድብ ምረጹ...",
+        "state": "ግዝኣት",
+        "detectingLocation": "ኣድራሻኹም ይልለ ኣሎ...",
+        "selectState": "ግዝኣት ምረጹ...",
+        "gallons": "ጋሎን",
+        "cancel": "ሰርዝ",
+        "save": "ኣቐምጥ",
+        "saving": "ይቕመጥ ኣሎ..."
       }
     },
     "logs": {
@@ -868,6 +903,64 @@
       "perkAuto": "ብኢድ ምእታው የለን፦ ሓድሽ ንጥፈት ኣብ ድሕሪት ይሰማማዕ።",
       "perkCategories": "ምዝገባታት ምስ ምድባትኩም ይዛመዱ፣ ንሪፖርትኩም ድሉዋት እዮም።",
       "perkReadOnly": "ንንባብ ጥራይ ዝተዳለወ፦ ምስማዕ ግብይታት የምጽእ፣ ገንዘብ ፈጺሙ ኣየንቀሳቕስን።"
+    },
+    "business": {
+      "myBusiness": "ናተይ ንግዲ",
+      "switchLabel": "ንግዲ ቀይሩ (ሕጂ፦ {{name}})",
+      "remove": "{{name}} ደምስስ",
+      "removeConfirm": "\"{{name}}\"ን ናይ ዴሞ ሓበሬታኡን ይደምሰስ?",
+      "addAnother": "+ ካልእ ንግዲ ወስኹ",
+      "addTitle": "ንግዲ ወስኹ",
+      "billingNote": "ተወሰኽቲ ንግድታት ልዕሊ ናይ ሕጂ ምዝገባኹም ይኽፈሉ።",
+      "name": "ስም ንግዲ",
+      "namePlaceholder": "ንኣብነት፦ መኪና ጽዕነት 2",
+      "type": "ዓይነት ንግዲ",
+      "demoNote": "እቲ ዴሞ {{count}} ተወሳኺ ንግዲ ክትውስኹ የፍቅድ፤ ነፍሲ ወከፍ ናይ ገዛእ ርእሱ ሕሳብ ኣለዎ። ድሕሪ ምምዝጋብ ተወሰኽቲ ወስኹ።",
+      "add": "ንግዲ ወስኹ",
+      "added": "{{name}} ተወሲኹ። ሕጂ ኣብኡ ትሰርሑ ኣለኹም።"
+    },
+    "team": {
+      "nav": "ጉጅለ",
+      "new": "ሓድሽ",
+      "title": "ጉጅለን ሓላፊ ሕሳብን",
+      "subtitle": "ንሓላፊ ሕሳብኩም ወይ ኣባላት ጉጅለኹም ዘድልዮም ፍቓድ ጥራይ ዘለዎ ናይ ገዛእ ርእሶም መእተዊ ሃቡ።",
+      "members": "ኣባላት",
+      "you": "ንስኹም",
+      "roleOwner": "ዋና",
+      "role_accountant": "ሓላፊ ሕሳብ",
+      "role_member": "ኣባል ጉጅለ",
+      "role_viewer": "ተዓዛቢ",
+      "desc_accountant": "ኩሉ ግብይታትን ሪፖርታትን ይርኢ፣ ኣብ ግዜ ግብሪ የውርድ። ናይ ክፍሊት ተበጻሕነት የብሉን።",
+      "desc_member": "ግብይታት ይውስኽ፣ ቅብሊታት ይቃኝ፣ ጉዕዞታት ይምዝግብ። ክፍሊት ኣይርእን።",
+      "desc_viewer": "ንንባብ ጥራይ ዳሽቦርድን ሪፖርታትን።",
+      "pending": "ዕድመ ይጽበ ኣሎ",
+      "remove": "{{name}} ኣውጽእ",
+      "empty": "ክሳብ ሕጂ ዝተዓደመ የለን።",
+      "inviteTitle": "ሰብ ዕደሙ",
+      "name": "ስም",
+      "email": "ኢመይል",
+      "role": "ተራ",
+      "send": "ዕድመ ስደድ",
+      "demoNote": "ዴሞ፦ ዕድመታት ኣብዚ ብራውዘር ይተርፉ፣ ኢመይል ኣይስደድን። ክሳብ {{count}} ዕድመታት።",
+      "invalid": "ስምን ቅኑዕ ኢመይልን ኣእትዉ።",
+      "invited": "ዕድመ ተወሲኹ። ኣብ ዴሞ ኢመይል ኣይስደድን።"
+    },
+    "scan": {
+      "sampleReceipt": "ኣብነታዊ ቅብሊት",
+      "chooseSub": "ንምቅናይ ኣብነታዊ ቅብሊት ምረጹ። Meksova የንብቦን ኣብ ቅኑዕ ቦታ የቐምጦን።",
+      "items": "ኣቑሑ",
+      "scanThis": "ቃኝ",
+      "uploadOwn": "ናይ ገዛእ ርእስኹም ስእሊ ቅብሊት ቃኙ",
+      "ownLocked": "ናይ ገዛእ ርእስኹም ስእልታት ቅብሊት ምቅናይ ኣብቲ ምሉእ መተግበሪ ይርከብ።",
+      "detected": "ካብ {{vendor}} ተነቢቡ",
+      "fuelLinked": "ንናይ IFTA ሪፖርትኩም ከም ግዝኣት ነዳዲ እውን ተመዝጊቡ።",
+      "errAmount": "ቅኑዕ መጠን ኣእትዉ።",
+      "errItem": "ስም ኣቕሓ ኣእትዉ።",
+      "errCategory": "ምድብ ምረጹ።",
+      "errFuel": "ንወጻኢ ነዳዲ ግዝኣትን ጋሎንን የድልዩ።",
+      "saved": "ቅብሊት ተቐሚጡ።",
+      "savedFuel": "ቅብሊት ተቐሚጡን ናብ ግዝኣት ነዳዲ / IFTA ተወሲኹን።",
+      "badge": "ዝተቓነየ"
     }
   }
 }

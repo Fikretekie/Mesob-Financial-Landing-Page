@@ -582,7 +582,8 @@
       "tagline": "Take control of your finances without limits and save hours every week.",
       "startTrial": "Essai gratuit de 30 jours",
       "noCard": "No credit card required. Cancel anytime.",
-      "continueDemo": "Continuer avec la démo limitée"
+      "continueDemo": "Continuer avec la démo limitée",
+      "orYearly": "ou {{price}}/mois en facturation annuelle"
     },
     "financialReport": {
       "summary": "Summary",
@@ -621,7 +622,8 @@
       "totalLiabilitiesEquity": "Total Liabilities & Equity",
       "total": "Total",
       "subtitle": "Suivez, analysez et développez votre entreprise.",
-      "cogs": "Coût des marchandises vendues"
+      "cogs": "Coût des marchandises vendues",
+      "fixedAssets": "Immobilisations"
     },
     "receipts": {
       "title": "Receipts Management",
@@ -676,7 +678,13 @@
       "price": "$29.99",
       "perMonth": "/ month",
       "cta": "Commencer mon essai gratuit",
-      "footer": "No credit card required. Cancel anytime before your 30-day trial ends."
+      "footer": "No credit card required. Cancel anytime before your 30-day trial ends.",
+      "monthly": "Mensuel",
+      "yearly": "Annuel",
+      "save": "Économisez 17 %",
+      "perYear": "/ an",
+      "yearlyNote": "Seulement {{price}}/mois, facturé annuellement.",
+      "afterTrialPriceYearly": "$299.99/an"
     },
     "industry": {
       "eyebrow": "Démo par secteur",
@@ -829,6 +837,33 @@
         "tripHistory": "Historique des trajets",
         "fuelPurchase": "Achat de carburant",
         "iftaReport": "Rapport IFTA"
+      },
+      "quickScan": {
+        "scanReceipt": "Scanner le reçu",
+        "badgeNew": "NOUVEAU",
+        "scannedReceipt": "Reçu scanné",
+        "readingReceipt": "Lecture du reçu...",
+        "amount": "Montant",
+        "recordAs": "Enregistrer comme",
+        "destExpense": "Charge d'exploitation",
+        "destCogs": "Marchandises pour revente",
+        "destInventory": "Stock (conserver en stock)",
+        "destFixed": "Actif immobilisé",
+        "cogsHint": "Comptabilisé immédiatement comme coût des articles vendus — pour les marchandises de revente que vous achetez et vendez rapidement.",
+        "assetHint": "Immobilisé comme {{kind}} — n'affectera pas les charges avant sa vente ou sa cession.",
+        "kindFixed": "un actif immobilisé",
+        "kindInventory": "du stock",
+        "itemName": "Nom de l'article",
+        "itemNamePlaceholder": "ex. Achat de stock",
+        "category": "Catégorie",
+        "selectCategory": "Sélectionnez une catégorie...",
+        "state": "État",
+        "detectingLocation": "Détection de votre position...",
+        "selectState": "Sélectionnez un État...",
+        "gallons": "Gallons",
+        "cancel": "Annuler",
+        "save": "Enregistrer",
+        "saving": "Enregistrement..."
       }
     },
     "logs": {
@@ -868,6 +903,64 @@
       "perkAuto": "Aucune saisie : la nouvelle activité se synchronise en arrière-plan.",
       "perkCategories": "Les opérations sont associées à vos catégories, prêtes pour vos rapports.",
       "perkReadOnly": "Conçu en lecture seule : la synchronisation importe les transactions et ne déplace jamais d'argent."
+    },
+    "business": {
+      "myBusiness": "Mon entreprise",
+      "switchLabel": "Changer d'entreprise (actuelle : {{name}})",
+      "remove": "Supprimer {{name}}",
+      "removeConfirm": "Supprimer « {{name}} » et ses données de démo ?",
+      "addAnother": "+ Ajouter une autre entreprise",
+      "addTitle": "Ajouter une entreprise",
+      "billingNote": "Les entreprises supplémentaires sont facturées en plus de votre abonnement actuel.",
+      "name": "Nom de l'entreprise",
+      "namePlaceholder": "ex. Camion 2",
+      "type": "Type d'entreprise",
+      "demoNote": "La démo vous permet d'ajouter {{count}} entreprise supplémentaire, chacune avec sa propre comptabilité. Ajoutez-en d'autres après l'inscription.",
+      "add": "Ajouter l'entreprise",
+      "added": "{{name}} ajoutée. Vous travaillez maintenant dessus."
+    },
+    "team": {
+      "nav": "Équipe",
+      "new": "Nouveau",
+      "title": "Équipe et comptable",
+      "subtitle": "Donnez à votre comptable ou à votre équipe leur propre accès à vos comptes, avec uniquement les droits nécessaires.",
+      "members": "Membres",
+      "you": "Vous",
+      "roleOwner": "Propriétaire",
+      "role_accountant": "Comptable",
+      "role_member": "Membre de l'équipe",
+      "role_viewer": "Lecture seule",
+      "desc_accountant": "Voit toutes les transactions et tous les rapports et les télécharge pour les impôts. Aucun accès à la facturation.",
+      "desc_member": "Ajoute des transactions, scanne des reçus et saisit des trajets. Ne voit pas la facturation.",
+      "desc_viewer": "Tableau de bord et rapports en lecture seule.",
+      "pending": "Invitation en attente",
+      "remove": "Retirer {{name}}",
+      "empty": "Personne n'a encore été invité.",
+      "inviteTitle": "Inviter quelqu’un",
+      "name": "Nom",
+      "email": "E-mail",
+      "role": "Rôle",
+      "send": "Envoyer l'invitation",
+      "demoNote": "Démo : les invitations restent dans ce navigateur et aucun e-mail n'est envoyé. Jusqu'à {{count}} invitations.",
+      "invalid": "Saisissez un nom et une adresse e-mail valide.",
+      "invited": "Invitation ajoutée. Dans la démo, aucun e-mail n'est envoyé."
+    },
+    "scan": {
+      "sampleReceipt": "Reçu d'exemple",
+      "chooseSub": "Choisissez un reçu d'exemple à scanner. Meksova le lit et le classe au bon endroit.",
+      "items": "articles",
+      "scanThis": "Scanner",
+      "uploadOwn": "Scanner une photo de votre reçu",
+      "ownLocked": "Scanner vos propres photos de reçus est disponible dans l'application complète.",
+      "detected": "Lu sur {{vendor}}",
+      "fuelLinked": "Également enregistré comme achat de carburant pour votre rapport IFTA.",
+      "errAmount": "Saisissez un montant valide.",
+      "errItem": "Saisissez le nom de l'article.",
+      "errCategory": "Choisissez une catégorie.",
+      "errFuel": "L'État et les gallons sont obligatoires pour une dépense de carburant.",
+      "saved": "Reçu enregistré.",
+      "savedFuel": "Reçu enregistré et ajouté à Achat de carburant / IFTA.",
+      "badge": "Scanné"
     }
   }
 }
