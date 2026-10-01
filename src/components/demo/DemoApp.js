@@ -50,7 +50,9 @@ export default function DemoApp({ industry }) {
     expenseData,
     payableData,
     transactions,
-    expenseBreakdown,
+    expenseRows,
+    openPayables,
+    payPayable,
     transactionCount,
     maxTransactions,
     hasSamples,
@@ -154,6 +156,25 @@ export default function DemoApp({ industry }) {
     toast.success(t('demo.logs.fuelSaved'))
   }
 
+  const handlePayPayable = (payableId, amount) => {
+    if (usedCount >= maxTransactions) {
+      setIsSignupDialogOpen(true)
+      return
+    }
+    if (payPayable(payableId, amount)) {
+      trackDemoEvent('demo_add_transaction', {
+        industry: industry.slug,
+        transaction_type: 'payable_payment',
+        count: usedCount + 1,
+      })
+      if (usedCount + 1 >= maxTransactions) {
+        trackDemoEvent('demo_limit_reached', { industry: industry.slug })
+      }
+      toast.success(t('demo.toast.transactionAdded'))
+      warnIfNearLimit()
+    }
+  }
+
   const handleDeleteTransaction = (id) => {
     deleteTransaction(id)
     toast.success(t('demo.toast.transactionDeleted'))
@@ -179,8 +200,9 @@ export default function DemoApp({ industry }) {
       totalExpenses: summary.totalExpenses,
       totalPayable: summary.totalPayable,
       transactions,
-      fuelExpense: expenseBreakdown.fuelExpense,
-      wagesExpense: expenseBreakdown.wagesExpense,
+      expenseRows,
+      netIncome: summary.netIncome,
+      totalInventory: summary.totalInventory,
     }
 
     downloadPDFReport(reportData)
@@ -240,7 +262,7 @@ export default function DemoApp({ industry }) {
           <FinancialReport
             transactions={transactions}
             summary={summary}
-            expenseBreakdown={expenseBreakdown}
+            expenseRows={expenseRows}
             onDeleteTransaction={handleDeleteTransaction}
             onAddTransaction={openAddTransaction}
             onDownloadReport={handleDownloadReport}
@@ -282,6 +304,7 @@ export default function DemoApp({ industry }) {
             expenseData={expenseData}
             payableData={payableData}
             transactions={transactions}
+            expenseRows={expenseRows}
             intro={intro}
             onViewAll={() => setCurrentView('financial-report')}
           />
@@ -322,6 +345,8 @@ export default function DemoApp({ industry }) {
           open={isAddDialogOpen}
           onOpenChange={setIsAddDialogOpen}
           onAdd={handleAddTransaction}
+          onPayPayable={handlePayPayable}
+          openPayables={openPayables}
           selectedBusinessType={selectedBusinessType}
         />
 

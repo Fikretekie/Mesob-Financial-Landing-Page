@@ -557,7 +557,9 @@
       "proFeatureHighlight": "Pro Plan",
       "upgradeToPro": "Upgrade to Pro",
       "cancel": "Cancel",
-      "save": "Save"
+      "save": "Save",
+      "whichPayable": "Biilkee ayaad bixinaysaa?",
+      "noOpenPayables": "Weli ma jiro biil aan la bixin. Marka hore mid ku diiwaangeli \"{{button}}\"."
     },
     "signup": {
       "title": "Fur helitaanka buuxa",
@@ -618,7 +620,8 @@
       "retainedEarnings": "Retained Earnings / Net Income",
       "totalLiabilitiesEquity": "Total Liabilities & Equity",
       "total": "Total",
-      "subtitle": "La soco, falanqee, oo kori ganacsigaaga."
+      "subtitle": "La soco, falanqee, oo kori ganacsigaaga.",
+      "cogs": "Kharashka alaabta la iibiyay"
     },
     "receipts": {
       "title": "Receipts Management",

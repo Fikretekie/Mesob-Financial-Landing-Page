@@ -8,8 +8,10 @@ interface ReportData {
   totalExpenses: number;
   totalPayable: number;
   transactions: Transaction[];
-  fuelExpense: number;
-  wagesExpense: number;
+  // From the app's accounting engine (utils/demoAccounting.ts).
+  expenseRows: [string, number][];
+  netIncome: number;
+  totalInventory: number;
 }
 import headerData from '@/data/headerData';
 
@@ -33,11 +35,11 @@ const formatDate = (dateString: string) => {
 };
 
 export function generateReportHTML(data: ReportData, logoBase64?: string): string {
-  const netIncome = data.totalRevenue - data.totalExpenses;
+  const netIncome = data.netIncome;
   const companyName = data.companyName === 'Enter your business name' 
     ? 'Company Name' 
     : data.companyName;
-  const totalAssets = data.totalCashOnHand;
+  const totalAssets = data.totalCashOnHand + data.totalInventory;
   const totalLiabilities = data.totalPayable;
   const ownerEquity = totalAssets - totalLiabilities;
 
@@ -497,7 +499,7 @@ export function generateReportHTML(data: ReportData, logoBase64?: string): strin
                 <td colspan="2"><strong>Revenue</strong></td>
               </tr>
               <tr>
-                <td style="padding-left: 0.5cm;">Freight Revenue / Manual Sales</td>
+                <td style="padding-left: 0.5cm;">Sales / Revenue</td>
                 <td class="text-right amount-positive">${formatCurrency(data.totalRevenue)}</td>
               </tr>
               <tr>
@@ -507,17 +509,18 @@ export function generateReportHTML(data: ReportData, logoBase64?: string): strin
               <tr>
                 <td colspan="2"><strong>Expenses</strong></td>
               </tr>
+              ${data.expenseRows.map(([label, amount]) => `
               <tr>
-                <td style="padding-left: 0.5cm;">Fuel Expenses</td>
-                <td class="text-right amount-negative">(${formatCurrency(data.fuelExpense)})</td>
-              </tr>
+                <td style="padding-left: 0.5cm;">${label}</td>
+                <td class="text-right amount-negative">(${formatCurrency(amount)})</td>
+              </tr>`).join('')}
               <tr>
-                <td style="padding-left: 0.5cm;">Wages & Fees</td>
-                <td class="text-right amount-negative">(${formatCurrency(data.wagesExpense)})</td>
+                <td><strong>Total Expenses</strong></td>
+                <td class="text-right"><strong class="amount-negative">(${formatCurrency(data.totalExpenses)})</strong></td>
               </tr>
               <tr>
                 <td><strong>Net Income</strong></td>
-                <td class="text-right"><strong class="amount-positive">${formatCurrency(netIncome)}</strong></td>
+                <td class="text-right"><strong class="${netIncome >= 0 ? 'amount-positive' : 'amount-negative'}">${formatCurrency(netIncome)}</strong></td>
               </tr>
             </tbody>
           </table>

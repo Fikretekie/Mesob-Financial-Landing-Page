@@ -557,7 +557,9 @@
       "proFeatureHighlight": "Pro Plan",
       "upgradeToPro": "Upgrade to Pro",
       "cancel": "Cancel",
-      "save": "Save"
+      "save": "Save",
+      "whichPayable": "ኣየናይ ሕሳብ ትኸፍሉ ኣለኹም?",
+      "noOpenPayables": "ክሳብ ሕጂ ዘይተኸፍለ ሕሳብ የለን። መጀመርታ ብ\"{{button}}\" ሓደ መዝግቡ።"
     },
     "signup": {
       "title": "ምሉእ መእተዊ ክፈት",
@@ -618,7 +620,8 @@
       "retainedEarnings": "Retained Earnings / Net Income",
       "totalLiabilitiesEquity": "Total Liabilities & Equity",
       "total": "Total",
-      "subtitle": "ንግድኹም ተኸታተሉ፣ ተንትኑን ኣዕብዩን።"
+      "subtitle": "ንግድኹም ተኸታተሉ፣ ተንትኑን ኣዕብዩን።",
+      "cogs": "ዋጋ ዝተሸጡ ኣቑሑ"
     },
     "receipts": {
       "title": "Receipts Management",

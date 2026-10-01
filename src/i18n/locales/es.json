@@ -557,7 +557,9 @@
       "proFeatureHighlight": "Pro Plan",
       "upgradeToPro": "Upgrade to Pro",
       "cancel": "Cancel",
-      "save": "Save"
+      "save": "Save",
+      "whichPayable": "¿Qué factura estás pagando?",
+      "noOpenPayables": "Aún no hay facturas pendientes. Primero registra una con \"{{button}}\"."
     },
     "signup": {
       "title": "Desbloquear acceso completo",
@@ -618,7 +620,8 @@
       "retainedEarnings": "Retained Earnings / Net Income",
       "totalLiabilitiesEquity": "Total Liabilities & Equity",
       "total": "Total",
-      "subtitle": "Controla, analiza y haz crecer tu negocio."
+      "subtitle": "Controla, analiza y haz crecer tu negocio.",
+      "cogs": "Costo de bienes vendidos"
     },
     "receipts": {
       "title": "Receipts Management",

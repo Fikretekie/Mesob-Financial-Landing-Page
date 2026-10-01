@@ -7,7 +7,7 @@ import type { Transaction } from '@/types';
 
 type SampleSeed = {
   daysAgo: number;
-  kind: 'income' | 'expense';
+  kind: 'income' | 'expense' | 'payable';
   purpose: string;
   amount: number;
 };
@@ -30,6 +30,7 @@ export const DEMO_INDUSTRIES: DemoIndustry[] = [
       { daysAgo: 13, kind: 'income', purpose: 'Fuel Surcharge Revenue', amount: 640 },
       { daysAgo: 8, kind: 'expense', purpose: 'Truck Repairs and Maintenance', amount: 780 },
       { daysAgo: 3, kind: 'expense', purpose: 'Toll Charges', amount: 96 },
+      { daysAgo: 6, kind: 'payable', purpose: 'Insurance (Expense)', amount: 650 },
     ],
   },
   {
@@ -42,6 +43,7 @@ export const DEMO_INDUSTRIES: DemoIndustry[] = [
       { daysAgo: 12, kind: 'income', purpose: 'Bonuses and Incentives', amount: 180 },
       { daysAgo: 7, kind: 'expense', purpose: 'Rideshare Fees', amount: 310 },
       { daysAgo: 2, kind: 'expense', purpose: 'Vehicle Maintenance & Repairs', amount: 140 },
+      { daysAgo: 5, kind: 'payable', purpose: 'Insurance (Expense)', amount: 180 },
     ],
   },
   {
@@ -54,6 +56,7 @@ export const DEMO_INDUSTRIES: DemoIndustry[] = [
       { daysAgo: 16, kind: 'expense', purpose: 'Food & Groceries', amount: 385 },
       { daysAgo: 10, kind: 'income', purpose: 'Self-Employment/Side Hustles', amount: 420 },
       { daysAgo: 4, kind: 'expense', purpose: 'Transportation', amount: 160 },
+      { daysAgo: 5, kind: 'payable', purpose: 'Utilities (Expense)', amount: 210 },
     ],
   },
   {
@@ -66,6 +69,7 @@ export const DEMO_INDUSTRIES: DemoIndustry[] = [
       { daysAgo: 14, kind: 'expense', purpose: 'Labor Costs', amount: 1400 },
       { daysAgo: 9, kind: 'income', purpose: 'Delivery Fees', amount: 350 },
       { daysAgo: 3, kind: 'expense', purpose: 'Utilities', amount: 410 },
+      { daysAgo: 4, kind: 'payable', purpose: 'Inventory Purchases (Expense)', amount: 900 },
     ],
   },
   {
@@ -78,6 +82,7 @@ export const DEMO_INDUSTRIES: DemoIndustry[] = [
       { daysAgo: 12, kind: 'income', purpose: 'Beverage Sales', amount: 1900 },
       { daysAgo: 8, kind: 'expense', purpose: 'Labor Costs', amount: 2100 },
       { daysAgo: 2, kind: 'expense', purpose: 'Rent or Lease', amount: 1600 },
+      { daysAgo: 4, kind: 'payable', purpose: 'Food Costs (Expense)', amount: 720 },
     ],
   },
   {
@@ -90,6 +95,7 @@ export const DEMO_INDUSTRIES: DemoIndustry[] = [
       { daysAgo: 11, kind: 'income', purpose: 'Airbnb Turnover Services', amount: 900 },
       { daysAgo: 6, kind: 'expense', purpose: 'Employee Wages', amount: 1300 },
       { daysAgo: 2, kind: 'expense', purpose: 'Fuel and Transportation', amount: 140 },
+      { daysAgo: 5, kind: 'payable', purpose: 'Supplies (Expense)', amount: 240 },
     ],
   },
   {
@@ -102,6 +108,7 @@ export const DEMO_INDUSTRIES: DemoIndustry[] = [
       { daysAgo: 13, kind: 'income', purpose: 'Hair Coloring and Treatments', amount: 1150 },
       { daysAgo: 7, kind: 'expense', purpose: 'Rent and Utilities', amount: 1200 },
       { daysAgo: 3, kind: 'income', purpose: 'Product Retail (shampoos, conditioners, gels)', amount: 260 },
+      { daysAgo: 5, kind: 'payable', purpose: 'Product Supplies (Expense)', amount: 310 },
     ],
   },
   {
@@ -114,6 +121,7 @@ export const DEMO_INDUSTRIES: DemoIndustry[] = [
       { daysAgo: 15, kind: 'expense', purpose: 'Platform Fees (Shopify, Amazon seller fees)', amount: 310 },
       { daysAgo: 9, kind: 'expense', purpose: 'Online Advertising (Meta, Google, SEO)', amount: 450 },
       { daysAgo: 4, kind: 'income', purpose: 'Bulk/Wholesale Orders', amount: 1250 },
+      { daysAgo: 5, kind: 'payable', purpose: 'Shipping Materials (Expense)', amount: 260 },
     ],
   },
   {
@@ -126,6 +134,7 @@ export const DEMO_INDUSTRIES: DemoIndustry[] = [
       { daysAgo: 15, kind: 'expense', purpose: 'Subcontractor Wages', amount: 1900 },
       { daysAgo: 9, kind: 'income', purpose: 'Repair and Installation Jobs', amount: 1350 },
       { daysAgo: 4, kind: 'expense', purpose: 'Vehicle Fuel and Maintenance', amount: 230 },
+      { daysAgo: 6, kind: 'payable', purpose: 'Tools & Materials (Expense)', amount: 1150 },
     ],
   },
   {
@@ -138,6 +147,7 @@ export const DEMO_INDUSTRIES: DemoIndustry[] = [
       { daysAgo: 13, kind: 'expense', purpose: 'Equipment purchases or rentals (cameras, mics, lights)', amount: 890 },
       { daysAgo: 7, kind: 'expense', purpose: 'Contractors or freelancers (editors, thumbnail designers)', amount: 600 },
       { daysAgo: 3, kind: 'expense', purpose: 'Software subscriptions (editing tools, cloud storage)', amount: 75 },
+      { daysAgo: 5, kind: 'payable', purpose: 'Scheduled payments to freelancers or agencies', amount: 400 },
     ],
   },
   {
@@ -149,6 +159,7 @@ export const DEMO_INDUSTRIES: DemoIndustry[] = [
       { daysAgo: 16, kind: 'expense', purpose: 'Supplies', amount: 540 },
       { daysAgo: 10, kind: 'expense', purpose: 'Rent', amount: 1100 },
       { daysAgo: 4, kind: 'income', purpose: 'Services', amount: 850 },
+      { daysAgo: 5, kind: 'payable', purpose: 'Utilities', amount: 180 },
     ],
   },
 ];
@@ -164,10 +175,27 @@ export function buildSampleTransactions(industry: DemoIndustry): Transaction[] {
     .sort((a, b) => b.daysAgo - a.daysAgo)
     .map((seed, index) => {
       const isIncome = seed.kind === 'income';
+      const date = new Date(now - seed.daysAgo * 24 * 60 * 60 * 1000).toISOString();
+      if (seed.kind === 'payable') {
+        // Owed, not yet paid: an expense now, no cash out (app's Payable).
+        return {
+          id: index + 1,
+          srNo: index + 1,
+          date,
+          description: `Payable ${seed.purpose}`,
+          debit: seed.amount,
+          credit: 0,
+          type: 'expense' as const,
+          category: 'Payable',
+          status: 'Payable' as const,
+          remainingAmount: seed.amount,
+          sample: true,
+        };
+      }
       return {
         id: index + 1,
         srNo: index + 1,
-        date: new Date(now - seed.daysAgo * 24 * 60 * 60 * 1000).toISOString(),
+        date,
         description: `${isIncome ? 'Receive' : 'Paid'} [Cash] ${seed.purpose}`,
         debit: isIncome ? 0 : seed.amount,
         credit: isIncome ? seed.amount : 0,

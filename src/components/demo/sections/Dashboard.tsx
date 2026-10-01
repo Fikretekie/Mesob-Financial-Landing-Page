@@ -8,6 +8,7 @@ import type { FinancialSummary, ChartDataPoint, Transaction } from '@/types';
 import { useTranslation } from 'react-i18next';
 import { useDemoIndustrySlug } from '@/components/demo/DemoIndustryContext';
 import { goToSignup } from '@/utils/demoTracking';
+import { purposeOf } from '@/utils/demoAccounting';
 
 interface DashboardProps {
   summary: FinancialSummary;
@@ -16,6 +17,7 @@ interface DashboardProps {
   expenseData: ChartDataPoint[];
   payableData: ChartDataPoint[];
   transactions: Transaction[];
+  expenseRows: [string, number][];
   intro?: ReactNode;
   onViewAll: () => void;
 }
@@ -37,13 +39,7 @@ const EXPENSE_COLORS = ['#A855F7', '#C084FC', '#8B5CF6', '#7C3AED', '#6D28D9'];
 const money = (n: number, digits = 2) =>
   `${n < 0 ? '−' : ''}$${Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
 
-export const purposeOf = (tx: Transaction) =>
-  (tx.category && !['Payable', 'Payment', 'New Item'].includes(tx.category)
-    ? tx.category
-    : tx.description.replace(/^(Receive|Paid|Payable|New Item)(\s*\[Cash\])?\s*/i, '')
-  ).replace(/\s*\(Expense\)\s*/i, '').trim();
-
-export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, payableData, transactions, intro, onViewAll }: DashboardProps) {
+export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, payableData, transactions, expenseRows, intro, onViewAll }: DashboardProps) {
   const { t } = useTranslation();
   const industrySlug = useDemoIndustrySlug();
   const [heroMetric, setHeroMetric] = useState<MetricKey>('cash');
@@ -76,20 +72,15 @@ export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, p
 
   const recent = transactions.slice(0, 6);
 
-  const topExpenses = useMemo(() => {
-    const groups: Record<string, number> = {};
-    transactions.forEach((tx) => {
-      if (tx.type !== 'expense' || tx.category === 'Payable') return;
-      const key = purposeOf(tx) || t('demo.financialReport.other');
-      groups[key] = (groups[key] || 0) + tx.debit;
-    });
-    return Object.entries(groups).sort((a, b) => b[1] - a[1]).slice(0, 5);
-  }, [transactions, t]);
+  // Same expense rule as the app: accrued payables count, item purchases
+  // (inventory) and payments of an already-counted payable do not.
+  const topExpenses = useMemo(() => expenseRows.slice(0, 5), [expenseRows]);
   const topExpenseTotal = topExpenses.reduce((sum, [, v]) => sum + v, 0);
 
   const rowStyle = (tx: Transaction) => {
     if (tx.type === 'income') return { color: COLORS.positive, sign: '+', label: t('demo.dashboard.typeIn') };
     if (tx.category === 'Payable') return { color: COLORS.payable, sign: '', label: t('demo.dashboard.typeOwed') };
+    if (tx.category === 'New Item') return { color: COLORS.cash, sign: '−', label: t('demo.dashboard.typeOut') };
     return { color: COLORS.negative, sign: '−', label: t('demo.dashboard.typeOut') };
   };
 
@@ -149,7 +140,7 @@ export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, p
               </div>
               <div>
                 <span className="hk">{t('demo.dashboard.taxSetAside')}</span>
-                <span className="hv">{money(Math.max(summary.totalCashOnHand, 0) * 0.3, 0)}</span>
+                <span className="hv">{money(summary.estimatedTax, 0)}</span>
               </div>
             </div>
           </div>
@@ -298,7 +289,7 @@ export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, p
             </div>
             <div className="dash-status__row">
               <span className="dash-status__k">{t('demo.dashboard.taxSetAside')}</span>
-              <span className="mk-badge mk-badge--info">{money(Math.max(summary.totalCashOnHand, 0) * 0.3, 0)}</span>
+              <span className="mk-badge mk-badge--info">{money(summary.estimatedTax, 0)}</span>
             </div>
             <div className="dash-status__row">
               <span className="dash-status__k">{t('demo.dashboard.recordedTransactions')}</span>

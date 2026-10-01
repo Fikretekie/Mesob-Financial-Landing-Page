@@ -1,19 +1,14 @@
 'use client'
 
 import { Trash2, Wallet, FileText, ArrowUp, ArrowDown, FileDown, Plus, CreditCard, type LucideIcon } from 'lucide-react';
-import type { Transaction } from '@/types';
+import type { FinancialSummary, Transaction } from '@/types';
 import { useTranslation } from 'react-i18next';
-import { purposeOf } from '@/components/demo/sections/Dashboard';
+import { purposeOf } from '@/utils/demoAccounting';
 
 interface FinancialReportProps {
   transactions: Transaction[];
-  summary: {
-    totalCashOnHand: number;
-    totalPayable: number;
-    totalExpenses: number;
-    revenue: number;
-  };
-  expenseBreakdown: Record<string, number> & { totalExpenses: number };
+  summary: FinancialSummary;
+  expenseRows: [string, number][];
   onDeleteTransaction: (id: number) => void;
   onAddTransaction: () => void;
   onDownloadReport: () => void;
@@ -37,7 +32,7 @@ function Pill({ value, color }: { value: number; color: string }) {
 export function FinancialReport({
   transactions,
   summary,
-  expenseBreakdown,
+  expenseRows,
   onDeleteTransaction,
   onAddTransaction,
   onDownloadReport,
@@ -46,14 +41,15 @@ export function FinancialReport({
   const { t: translate } = useTranslation();
   // Several report labels end in ":" in the locale files; the card layout supplies its own separation.
   const t = (key: string, options?: Record<string, unknown>) => String(translate(key, options)).replace(/\s*[:：]\s*$/, '');
-  const netIncome = summary.revenue - summary.totalExpenses;
+  // Every figure below comes from the app's accounting engine (summary).
+  const netIncome = summary.netIncome;
+  const totalAssets = summary.totalCashOnHand + summary.totalInventory;
 
   const revenueByCategory: Record<string, number> = {};
   transactions.filter((tx) => tx.type === 'income').forEach((tx) => {
     const key = purposeOf(tx) || t('demo.financialReport.other');
     revenueByCategory[key] = (revenueByCategory[key] || 0) + tx.credit;
   });
-  const expenseRows = Object.entries(expenseBreakdown).filter(([key, amount]) => key !== 'totalExpenses' && amount > 0);
 
   const handleDeleteClick = (id: number, description: string) => {
     if (window.confirm(t('demo.financialReport.deleteConfirm', { name: description.split('\n')[0] }))) {
@@ -116,7 +112,7 @@ export function FinancialReport({
               <p className="mk-eyebrow" style={{ margin: '18px 0 4px' }}>{t('demo.financialReport.breakdown')}</p>
               {expenseRows.map(([category, amount]) => (
                 <div className="dm-kv" key={category}>
-                  <span className="dm-kv__k">{category.replace(/\s*\(Expense\)\s*/i, '')}</span>
+                  <span className="dm-kv__k">{category}</span>
                   <span className="dm-kv__v" style={{ color: COLORS.negative }}>{formatCurrency(amount)}</span>
                 </div>
               ))}
@@ -147,9 +143,12 @@ export function FinancialReport({
                   {transactions.map((tx) => {
                     const isIncome = tx.type === 'income';
                     const isPayable = tx.category === 'Payable';
+                    const isPayment = tx.category === 'Payment' && tx.payableId != null;
+                    const isItem = tx.category === 'New Item';
                     const amount = isIncome ? tx.credit : tx.debit;
-                    const debitColor = isIncome ? COLORS.positive : COLORS.negative;
-                    const creditColor = isIncome ? COLORS.positive : isPayable ? COLORS.payable : COLORS.positive;
+                    // Dr cash / Cr revenue · Dr expense / Cr payable · Dr payable / Cr cash · Dr inventory / Cr cash · Dr expense / Cr cash
+                    const debitColor = isIncome ? COLORS.positive : isPayment ? COLORS.payable : isItem ? COLORS.cash : COLORS.negative;
+                    const creditColor = isIncome ? COLORS.positive : isPayable ? COLORS.payable : COLORS.negative;
                     return (
                       <tr key={tx.id}>
                         <td className="dm-table__date">{formatDate(tx.date)}</td>
@@ -202,10 +201,16 @@ export function FinancialReport({
                 <tr className="is-section"><td colSpan={2}>{t('demo.financialReport.expenses')}</td></tr>
                 {expenseRows.map(([category, amount]) => (
                   <tr key={category}>
-                    <td className="dm-kv__k">{category.replace(/\s*\(Expense\)\s*/i, '')}</td>
+                    <td className="dm-kv__k">{category}</td>
                     <td className="is-num">{formatCurrency(amount)}</td>
                   </tr>
                 ))}
+                {summary.cogs > 0 && (
+                  <tr>
+                    <td className="dm-kv__k">{t('demo.financialReport.cogs')}</td>
+                    <td className="is-num">{formatCurrency(summary.cogs)}</td>
+                  </tr>
+                )}
                 <tr className="is-strong">
                   <td>{t('demo.financialReport.totalExpenses')}</td>
                   <td className="is-num" style={{ color: COLORS.negative }}>{formatCurrency(summary.totalExpenses)}</td>
@@ -213,6 +218,10 @@ export function FinancialReport({
                 <tr className="is-strong">
                   <td>{t('demo.financialReport.netIncome')}</td>
                   <td className="is-num" style={{ color: netIncome >= 0 ? COLORS.positive : COLORS.negative }}>{formatCurrency(netIncome)}</td>
+                </tr>
+                <tr>
+                  <td className="dm-kv__k">{t('demo.dashboard.taxSetAside')}</td>
+                  <td className="is-num">{formatCurrency(summary.estimatedTax)}</td>
                 </tr>
               </tbody>
             </table>
@@ -233,11 +242,11 @@ export function FinancialReport({
                 </tr>
                 <tr>
                   <td className="dm-kv__k">{t('demo.financialReport.inventory')}</td>
-                  <td className="is-num">{formatCurrency(0)}</td>
+                  <td className="is-num">{formatCurrency(summary.totalInventory)}</td>
                 </tr>
                 <tr className="is-strong">
                   <td>{t('demo.financialReport.totalAssets')}</td>
-                  <td className="is-num" style={{ color: COLORS.cash }}>{formatCurrency(summary.totalCashOnHand)}</td>
+                  <td className="is-num" style={{ color: COLORS.cash }}>{formatCurrency(totalAssets)}</td>
                 </tr>
                 <tr className="is-section"><td colSpan={2}>{t('demo.financialReport.liabilitiesEquity')}</td></tr>
                 <tr>

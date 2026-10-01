@@ -557,7 +557,9 @@
       "proFeatureHighlight": "Pro Plan",
       "upgradeToPro": "Upgrade to Pro",
       "cancel": "Cancel",
-      "save": "Save"
+      "save": "Save",
+      "whichPayable": "أي فاتورة تدفع؟",
+      "noOpenPayables": "لا توجد فواتير غير مدفوعة بعد. سجّل واحدة أولًا باستخدام \"{{button}}\"."
     },
     "signup": {
       "title": "فتح الوصول الكامل",
@@ -618,7 +620,8 @@
       "retainedEarnings": "Retained Earnings / Net Income",
       "totalLiabilitiesEquity": "Total Liabilities & Equity",
       "total": "Total",
-      "subtitle": "تتبّع أعمالك وحلّلها ونمّها."
+      "subtitle": "تتبّع أعمالك وحلّلها ونمّها.",
+      "cogs": "تكلفة البضاعة المباعة"
     },
     "receipts": {
       "title": "Receipts Management",

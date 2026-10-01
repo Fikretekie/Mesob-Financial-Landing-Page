@@ -9,11 +9,14 @@ import { Upload, Lock, ArrowDownLeft, ArrowUpRight, Clock } from 'lucide-react';
 import { Trans, useTranslation } from 'react-i18next';
 import { useDemoIndustrySlug } from '@/components/demo/DemoIndustryContext';
 import { goToSignup } from '@/utils/demoTracking';
+import { purposeOf, remainingOf } from '@/utils/demoAccounting';
 
 interface AddTransactionDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onAdd: (transaction: Omit<Transaction, 'id' | 'srNo'>) => void;
+  onPayPayable: (payableId: number, amount: number) => void;
+  openPayables: Transaction[];
   selectedBusinessType?: string;
 }
 
@@ -26,6 +29,8 @@ export function AddTransactionDialog({
   open,
   onOpenChange,
   onAdd,
+  onPayPayable,
+  openPayables,
   selectedBusinessType = 'Trucking'
 }: AddTransactionDialogProps) {
   const { t } = useTranslation();
@@ -88,20 +93,10 @@ export function AddTransactionDialog({
     }
 
     if (transactionType === 'pay' && paymentMode === 'recorded') {
-      const finalPurpose = transactionPurpose === 'manual'
-        ? manualPurpose
-        : `Payment for ${transactionPurpose}`;
-
-      const transaction: Omit<Transaction, 'id' | 'srNo'> = {
-        date: new Date().toISOString(),
-        description: `Paid [Cash] ${finalPurpose}`,
-        debit: numAmount,
-        credit: 0,
-        type: 'expense',
-        category: 'Payment',
-      };
-
-      onAdd(transaction);
+      // Settle a payable the visitor recorded earlier (full or partial).
+      const payable = openPayables.find((tx) => String(tx.id) === transactionPurpose);
+      if (!payable || numAmount <= 0) return;
+      onPayPayable(payable.id, Math.min(numAmount, remainingOf(payable)));
     }
     else if (transactionType === 'pay' && paymentMode === 'boughtItem') {
       const finalPurpose = transactionPurpose === 'manual'
@@ -147,6 +142,8 @@ export function AddTransactionDialog({
         credit: 0,
         type: 'expense',
         category: 'Payable',
+        status: 'Payable',
+        remainingAmount: numAmount,
       };
 
       onAdd(transaction);
@@ -188,6 +185,9 @@ export function AddTransactionDialog({
     transactionType === 'receive' ||
     transactionType === 'payable' ||
     (transactionType === 'pay' && (paymentMode === 'new' || paymentMode === 'boughtItem'));
+  const payingPayable = transactionType === 'pay' && paymentMode === 'recorded';
+  const selectedPayable = payingPayable ? openPayables.find((tx) => String(tx.id) === transactionPurpose) : undefined;
+  const money = (n: number) => `$${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   const flowColor =
     transactionType === 'receive' ? 'var(--green)' : transactionType === 'payable' ? 'var(--amber)' : 'var(--red)';
 
@@ -251,6 +251,37 @@ export function AddTransactionDialog({
             </div>
           )}
 
+          {payingPayable && (
+            <div className="dm-modal__group">
+              <span className="dm-label">{label('demo.addTransaction.whichPayable')}</span>
+              {openPayables.length === 0 ? (
+                <div className="dm-locked">
+                  <span style={{ flex: '1 1 220px' }}>{t('demo.addTransaction.noOpenPayables', { button: t('demo.addTransaction.haventPaid') })}</span>
+                </div>
+              ) : (
+                <Select
+                  value={transactionPurpose}
+                  onValueChange={(value) => {
+                    setTransactionPurpose(value);
+                    const payable = openPayables.find((tx) => String(tx.id) === value);
+                    if (payable) setTransactionAmount(String(remainingOf(payable)));
+                  }}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder={t('demo.addTransaction.selectPurpose')} />
+                  </SelectTrigger>
+                  <SelectContent sideOffset={6}>
+                    {openPayables.map((payable) => (
+                      <SelectItem key={payable.id} value={String(payable.id)}>
+                        {purposeOf(payable)} · {money(remainingOf(payable))}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              )}
+            </div>
+          )}
+
           {showPurpose && (
             <div className="dm-modal__group">
               <span className="dm-label">
@@ -294,6 +325,7 @@ export function AddTransactionDialog({
                 step="0.01"
                 min="0"
                 className="dm-input dm-input--num"
+                max={selectedPayable ? remainingOf(selectedPayable) : undefined}
                 value={transactionAmount}
                 onChange={(e) => setTransactionAmount(e.target.value)}
                 placeholder="0.00"
@@ -338,7 +370,8 @@ export function AddTransactionDialog({
                 disabled={
                   !transactionAmount ||
                   (transactionPurpose === 'manual' && !manualPurpose.trim()) ||
-                  (showPurpose && !transactionPurpose)
+                  (showPurpose && !transactionPurpose) ||
+                  (payingPayable && (!selectedPayable || Number(transactionAmount) <= 0))
                 }
               >
                 {t('demo.addTransaction.save')}

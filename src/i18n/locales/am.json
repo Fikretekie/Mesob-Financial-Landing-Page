@@ -557,7 +557,9 @@
       "proFeatureHighlight": "ፕሮ እቅድ",
       "upgradeToPro": "ወደ ፕሮ ያሻሽሉ",
       "cancel": "ሰርዝ",
-      "save": "አስቀምጥ"
+      "save": "አስቀምጥ",
+      "whichPayable": "የትኛውን ሂሳብ እየከፈሉ ነው?",
+      "noOpenPayables": "እስካሁን ያልተከፈለ ሂሳብ የለም። መጀመሪያ \"{{button}}\" በመጠቀም አንዱን ይመዝግቡ።"
     },
     "signup": {
       "title": "ሙሉ መዳረሻ ይክፈቱ",
@@ -618,7 +620,8 @@
       "retainedEarnings": "የተጠበቀ ገቢ / ንብረት ገቢ",
       "totalLiabilitiesEquity": "ጠቅላላ ግዴታ እና ኢኩዊቲ",
       "total": "ጠቅላላ",
-      "subtitle": "ንግድዎን ይከታተሉ፣ ይተንትኑ እና ያሳድጉ።"
+      "subtitle": "ንግድዎን ይከታተሉ፣ ይተንትኑ እና ያሳድጉ።",
+      "cogs": "የተሸጡ ዕቃዎች ወጪ"
     },
     "receipts": {
       "title": "የደረሰኞች አስተዳደር",
