@@ -145,7 +145,6 @@ export function ReceiptScan({ industrySlug, businessType, hasFuelLog, canAdd, on
       <button type="button" className="dm-scan-btn" onClick={openScanner}>
         <Camera aria-hidden />
         {t('demo.app.quickScan.scanReceipt')}
-        <span className="dm-scan-btn__new">{t('demo.app.quickScan.badgeNew')}</span>
       </button>
 
       <Dialog open={open} onOpenChange={(next) => { if (step !== 'scanning') setOpen(next); }}>

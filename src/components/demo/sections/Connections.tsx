@@ -72,8 +72,7 @@ export function Connections({ industry }: { industry: DemoIndustry }) {
     <div className="dm-stack">
       <header className="dash-overview">
         <div className="dash-overview__main">
-          <span className="mk-badge mk-badge--info">{t('demo.connections.soon')}</span>
-          <h1 className="dash-overview__title" style={{ marginTop: 10 }}>{t('demo.connections.title')}</h1>
+          <h1 className="dash-overview__title">{t('demo.connections.title')}</h1>
           <p className="dash-overview__sub">{t('demo.connections.subtitle')}</p>
         </div>
         <div className="dash-overview__side">
@@ -92,7 +91,6 @@ export function Connections({ industry }: { industry: DemoIndustry }) {
                 <p className="report-card__title" style={{ fontSize: '1rem' }}>{title}</p>
                 {highlight && <span className="mk-eyebrow" style={{ color: 'var(--accent)' }}>{t('demo.connections.recommended')}</span>}
               </div>
-              <span className="mk-badge" style={{ marginInlineStart: 'auto' }}>{t('demo.connections.soon')}</span>
             </div>
             <p style={{ color: 'var(--text-2)', fontSize: '0.88rem', lineHeight: 1.55 }}>{body}</p>
             <button type="button" className="mk-btn mk-btn--ghost mk-btn--sm" style={{ marginTop: 16 }} disabled>

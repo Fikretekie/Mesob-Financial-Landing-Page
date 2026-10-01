@@ -74,8 +74,7 @@ export function Team({ storageKey, ownerName, onLimit, onInvited }: TeamProps) {
     <div className="dm-stack">
       <header className="dash-overview">
         <div className="dash-overview__main">
-          <span className="mk-badge mk-badge--info">{t('demo.team.new')}</span>
-          <h1 className="dash-overview__title" style={{ marginTop: 10 }}>{t('demo.team.title')}</h1>
+          <h1 className="dash-overview__title">{t('demo.team.title')}</h1>
           <p className="dash-overview__sub">{t('demo.team.subtitle')}</p>
         </div>
       </header>

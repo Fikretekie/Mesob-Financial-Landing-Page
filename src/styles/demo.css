@@ -1246,7 +1246,6 @@ button.card-stats--selectable.is-selected {
   line-height: 1.45;
 }
 .dm-perk svg { width: 16px; height: 16px; color: var(--accent); flex: none; margin-top: 2px; }
-.dm-nav__soon { margin-inline-start: auto; font-size: 0.6rem; padding: 1px 6px; }
 @media (max-width: 767px) {
   .dm-grid--perks { grid-template-columns: minmax(0, 1fr); }
   .dm-tracker__start { width: 150px; height: 150px; }
@@ -1319,7 +1318,7 @@ button.card-stats--selectable.is-selected {
 .dm-role__desc { font-size: 0.72rem; color: var(--text-3); line-height: 1.4; }
 @media (max-width: 479px) { .dm-roles { grid-template-columns: minmax(0, 1fr); } }
 
-/* Receipt scan (app's dashed "Scan Receipt [NEW]" pill + review) */
+/* Receipt scan (app's dashed "Scan Receipt" pill + review) */
 .dm-scan-btn {
   display: inline-flex; align-items: center; gap: 7px;
   height: 32px; padding: 0 8px 0 12px;
@@ -1330,10 +1329,6 @@ button.card-stats--selectable.is-selected {
 }
 .dm-scan-btn:hover { background: var(--accent-soft); }
 .dm-scan-btn svg { width: 15px; height: 15px; }
-.dm-scan-btn__new {
-  font-size: 9px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
-  color: #fff; background: var(--accent-solid); border-radius: 4px; padding: 2px 5px;
-}
 .dm-receipt-picks { display: grid; gap: 8px; }
 .dm-receipt-pick {
   display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: center;

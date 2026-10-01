@@ -29,13 +29,11 @@ interface SidebarItem {
   icon: LucideIcon;
   feature?: DemoFeature;
   locked?: boolean;
-  soon?: boolean;
-  isNew?: boolean;
 }
 
 // Same order as the app's customer sidebar. Industry-specific entries only
 // show when the industry has that feature; Connections is the planned
-// bank/POS sync, shown to every industry as "coming soon".
+// bank/POS sync, shown to every industry.
 const sidebarItems: SidebarItem[] = [
   { id: 'dashboard', labelKey: 'demo.sidebar.dashboard', icon: LayoutDashboard },
   { id: 'financial-report', labelKey: 'demo.sidebar.financialReport', icon: FileText },
@@ -45,8 +43,8 @@ const sidebarItems: SidebarItem[] = [
   { id: 'trip-history', labelKey: 'demo.app.nav.tripHistory', icon: MapIcon, feature: 'trips' },
   { id: 'fuel-purchase', labelKey: 'demo.app.nav.fuelPurchase', icon: Fuel, feature: 'fuel' },
   { id: 'ifta-report', labelKey: 'demo.app.nav.iftaReport', icon: BarChart3, feature: 'ifta' },
-  { id: 'connections', labelKey: 'demo.connections.nav', icon: Link2, soon: true },
-  { id: 'team', labelKey: 'demo.team.nav', icon: Users, isNew: true },
+  { id: 'connections', labelKey: 'demo.connections.nav', icon: Link2 },
+  { id: 'team', labelKey: 'demo.team.nav', icon: Users },
   { id: 'user-profile', labelKey: 'demo.sidebar.userProfile', icon: User },
   { id: 'backup-csv', labelKey: 'demo.sidebar.backupCsv', icon: Database, locked: true },
   { id: 'subscribe', labelKey: 'demo.sidebar.subscribe', icon: CreditCard },
@@ -100,8 +98,6 @@ export function Sidebar({ currentView, onViewChange, isOpen, onClose, maxTransac
                 <Icon aria-hidden />
                 <span>{t(item.labelKey)}</span>
                 {item.locked && <Lock className="dm-nav__lock" aria-hidden />}
-                {item.soon && <span className="mk-badge mk-badge--info dm-nav__soon">{t('demo.connections.soon')}</span>}
-                {item.isNew && <span className="mk-badge mk-badge--ok dm-nav__soon">{t('demo.team.new')}</span>}
               </button>
             );
           })}
