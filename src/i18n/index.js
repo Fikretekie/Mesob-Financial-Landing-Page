@@ -1,50 +1,64 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { DEFAULT_LANGUAGE, LANGUAGES, STORAGE_KEY } from "./languages";
-import am from "./locales/am.json";
-import ar from "./locales/ar.json";
 import en from "./locales/en.json";
-import es from "./locales/es.json";
-import fr from "./locales/fr.json";
-import so from "./locales/so.json";
-import ti from "./locales/ti.json";
+import siteEn from "./site/en.json";
 
-const resources = {
-  en: { translation: en },
-  am: { translation: am },
-  ti: { translation: ti },
-  ar: { translation: ar },
-  es: { translation: es },
-  fr: { translation: fr },
-  so: { translation: so },
-};
-
-const getInitialLanguage = () => {
-  if (typeof window === "undefined") return DEFAULT_LANGUAGE;
-  const saved = localStorage.getItem(STORAGE_KEY);
-  return saved && resources[saved] ? saved : DEFAULT_LANGUAGE;
+// English ships with every page. The other six languages are fetched only when
+// a visitor picks one, so nobody downloads all seven. Each language is the
+// shared app/demo strings (locales/<lng>.json) plus the marketing-site copy
+// (site/<lng>.json, checked against en.json by scripts/check-site-locales.js)
+// under `site.*`. A missing key falls back to English.
+const LazyLocaleBackend = {
+  type: "backend",
+  init() {},
+  read(language, namespace, callback) {
+    Promise.all([import(`./locales/${language}.json`), import(`./site/${language}.json`)])
+      .then(([base, site]) => callback(null, { ...base.default, site: site.default }))
+      .catch((error) => callback(error, null));
+  },
 };
 
 const supportedLngs = LANGUAGES.map((lang) => lang.code);
 
+// The static HTML is rendered in English, so the client must hydrate in English
+// too; the saved language is applied right after mount (see LanguageEffect).
+export const getSavedLanguage = () => {
+  if (typeof window === "undefined") return null;
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return saved && supportedLngs.includes(saved) ? saved : null;
+  } catch {
+    return null;
+  }
+};
+
 if (!i18n.isInitialized) {
-  i18n.use(initReactI18next).init({
-    resources,
-    lng: getInitialLanguage(),
-    fallbackLng: DEFAULT_LANGUAGE,
-    supportedLngs,
-    nonExplicitSupportedLngs: true,
-    load: "languageOnly",
-    interpolation: { escapeValue: false },
-    react: { useSuspense: false },
-    initImmediate: true,
-  });
+  i18n
+    .use(LazyLocaleBackend)
+    .use(initReactI18next)
+    .init({
+      resources: { en: { translation: { ...en, site: siteEn } } },
+      partialBundledLanguages: true,
+      lng: DEFAULT_LANGUAGE,
+      fallbackLng: DEFAULT_LANGUAGE,
+      supportedLngs,
+      nonExplicitSupportedLngs: true,
+      load: "languageOnly",
+      interpolation: { escapeValue: false },
+      react: { useSuspense: false },
+      initImmediate: true,
+    });
 }
 
 export const changeLanguage = (code) => {
   i18n.changeLanguage(code);
   if (typeof window !== "undefined") {
-    localStorage.setItem(STORAGE_KEY, code);
+    try {
+      localStorage.setItem(STORAGE_KEY, code);
+    } catch {
+      // Private mode — the choice just won't persist.
+    }
   }
 };
 

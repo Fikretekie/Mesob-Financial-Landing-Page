@@ -1,16 +1,5 @@
-import LegalDocument from "@/components/Legal/LegalDocument";
-import Layout from "@/components/Layout/Layout";
-import React from "react";
-import { useTranslation } from "react-i18next";
+import LegalPage from "@/components/site/LegalPage";
 
-const TermsOfUse = () => {
-  const { t } = useTranslation();
-
-  return (
-    <Layout pageTitle={t("legal.terms.metaTitle")}>
-      <LegalDocument namespace="terms" />
-    </Layout>
-  );
-};
-
-export default TermsOfUse;
+export default function TermsOfUse() {
+  return <LegalPage namespace="terms" />;
+}

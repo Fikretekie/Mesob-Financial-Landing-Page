@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
-    "start": "next start"
+    "start": "next start",
+    "check:locales": "node scripts/check-site-locales.js",
+    "postbuild": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",

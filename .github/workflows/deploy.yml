@@ -59,9 +59,11 @@ jobs:
           if [ "${{ github.ref }}" == "refs/heads/main" ]; then
             echo "S3_BUCKET=meksova.com" >> $GITHUB_ENV
             echo "NEXT_PUBLIC_ENV=production" >> $GITHUB_ENV
+            echo "CF_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_PROD_ID }}" >> $GITHUB_ENV
           else
             echo "S3_BUCKET=stage.meksova.com" >> $GITHUB_ENV
             echo "NEXT_PUBLIC_ENV=staging" >> $GITHUB_ENV
+            echo "CF_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_STAGE_ID }}" >> $GITHUB_ENV
           fi
 
       - name: Set up Node.js
@@ -94,3 +96,10 @@ jobs:
 
       - name: Deploy to S3
         run: aws s3 sync ./out s3://${{ env.S3_BUCKET }} --delete
+
+      # CloudFront keeps serving old copies until it is told to refresh. This
+      # step does nothing until the CLOUDFRONT_PROD_ID / CLOUDFRONT_STAGE_ID
+      # repository secrets exist (and the AWS key has cloudfront:CreateInvalidation).
+      - name: Refresh CloudFront cache
+        if: ${{ env.CF_DISTRIBUTION_ID != '' }}
+        run: aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION_ID" --paths "/*"

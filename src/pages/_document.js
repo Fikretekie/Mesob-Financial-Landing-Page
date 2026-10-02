@@ -20,12 +20,11 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" data-theme="dark">
         <Head>
           {/* Google uses these (especially /favicon.ico and rel=icon). Replace files in /public with your Meksova mark. */}
           <link rel="icon" href="/favicon.ico" sizes="any" />
-          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-          <link
+                    <link
             rel="icon"
             type="image/png"
             sizes="96x96"
@@ -43,6 +42,20 @@ class MyDocument extends Document {
             href="/apple-touch-icon.png"
           />
           <link rel="manifest" href="/manifest.json" />
+          {/* Theme before first paint (dark unless the visitor chose light), and
+              a flag so scroll-reveal only hides content when JS is running. */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(){var d=document.documentElement;try{var t=localStorage.getItem('meksova-theme');d.dataset.theme=t==='light'?'light':'dark'}catch(e){d.dataset.theme='dark'}d.classList.add('ks-js')})();`,
+            }}
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Sans+Ethiopic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+          />
+          <meta name="theme-color" content="#050608" />
           {/* Google tag (gtag.js) */}
           <script
             async

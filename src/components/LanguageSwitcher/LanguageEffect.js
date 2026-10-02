@@ -1,3 +1,4 @@
+import { getSavedLanguage } from "@/i18n";
 import { getLanguage } from "@/i18n/languages";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -5,6 +6,11 @@ import { useTranslation } from "react-i18next";
 const LanguageEffect = () => {
   const { i18n } = useTranslation();
   const lang = getLanguage(i18n.language);
+
+  useEffect(() => {
+    const saved = getSavedLanguage();
+    if (saved && saved !== i18n.language) i18n.changeLanguage(saved);
+  }, [i18n]);
 
   useEffect(() => {
     document.documentElement.lang = lang.code;

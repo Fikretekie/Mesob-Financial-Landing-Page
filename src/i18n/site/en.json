@@ -1,0 +1,1187 @@
+{
+  "nav": {
+    "industries": "Industries",
+    "features": "Features",
+    "pricing": "Pricing",
+    "blog": "Guides",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Log in",
+    "trial": "Start free trial",
+    "menu": "Open menu",
+    "close": "Close menu",
+    "skip": "Skip to content",
+    "home": "Meksova home",
+    "language": "Language",
+    "themeToLight": "Switch to light mode",
+    "themeToDark": "Switch to dark mode"
+  },
+  "common": {
+    "tryDemo": "Try the live demo",
+    "startTrial": "Start 30-day free trial",
+    "startTrialShort": "Start free trial",
+    "googleRating": "{{rating}} on Google",
+    "noCard": "No credit card",
+    "fromPrice": "From {{price}}/month",
+    "seeReviews": "See all reviews on Google",
+    "perMonth": "/ month",
+    "billedYearly": "{{price}} billed yearly",
+    "billedMonthly": "Billed monthly · cancel any time",
+    "orMonthly": "or {{price}} month to month",
+    "allIndustries": "All industries",
+    "readGuide": "Read the guide",
+    "minRead": "{{count}} min read",
+    "home": "Home",
+    "sample": "Sample"
+  },
+  "preview": {
+    "business": "Abebe Trucking",
+    "dashboard": "Dashboard",
+    "cash": "Total cash on hand",
+    "moneyIn": "Money in",
+    "moneyOut": "Money out",
+    "revenue": "Revenue",
+    "payable": "Payable",
+    "tax": "Est. tax",
+    "scanned": "Receipt scanned",
+    "scannedText": "Fuel · IN · 98.4 gal → IFTA",
+    "chartLabel": "Cash on hand over the last 30 days, rising",
+    "synced": "Bank & POS synced",
+    "syncedText": "14 new transactions, sorted"
+  },
+  "home": {
+    "metaTitle": "Meksova — Simple bookkeeping for small business, in your language",
+    "metaDescription": "Track income and expenses, scan receipts, log miles and fuel, and get tax-ready reports. Set up for truckers, drivers, stores, cafés and more — in 7 languages. 30-day free trial.",
+    "eyebrow": "Bookkeeping for small business · 7 languages",
+    "titleA": "Your books, done right.",
+    "titleEm": "In your language,",
+    "titleB": "for your trade.",
+    "lede": "Connect your bank and POS, scan receipts, log miles and fuel, and get tax-ready reports — already set up for truckers, drivers, stores, cafés, cleaners and more.",
+    "langTitle": "Speaks your language — tap one to switch the whole site",
+    "industriesEyebrow": "Built for your trade",
+    "industriesTitle": "Pick your business. It's already set up for you.",
+    "industriesLede": "Each trade gets its own categories, screens and sample books — fuel and IFTA for truckers, cost of goods for stores and cafés.",
+    "featuredText": "Freight income, fuel by state, mileage and a quarterly IFTA report — from the cab.",
+    "seePage": "See Meksova for {{name}}",
+    "moreTitle": "Households, freelancers and every other business",
+    "moreText": "11 setups in total",
+    "stepsEyebrow": "How it works",
+    "stepsTitle": "Three steps. No accounting degree.",
+    "steps": [
+      {
+        "title": "Connect or record",
+        "text": "Link your bank card and POS so money in and out syncs automatically — or tap Received, Paid or Owed yourself."
+      },
+      {
+        "title": "Snap your receipts",
+        "text": "Scan a receipt and Meksova files it — expense, stock, equipment, or fuel for IFTA."
+      },
+      {
+        "title": "Get tax-ready reports",
+        "text": "Income statement, balance sheet and journal. Download a PDF or hand it to your accountant."
+      }
+    ],
+    "featuresEyebrow": "Everything in one app",
+    "featuresTitle": "The tools a busy owner actually uses.",
+    "scanKicker": "Receipt scan",
+    "scanTitle": "Snap it. It files itself.",
+    "scanText": "Amount, category and where it belongs — operating expense, goods for resale, inventory or equipment. Fuel receipts also land in your IFTA report.",
+    "scanTags": [
+      "Expense",
+      "Inventory",
+      "Equipment",
+      "IFTA fuel"
+    ],
+    "receipt": {
+      "store": "INTERSTATE FUEL STOP",
+      "place": "I-70 Exit 91 · Indianapolis, IN",
+      "item": "Diesel 98.40 gal",
+      "total": "TOTAL"
+    },
+    "reviewsEyebrow": "From owners like you",
+    "reviewsTitle": "Rated {{rating}} by real customers on Google.",
+    "reviewsCount": "from {{count}} Google reviews",
+    "reviews": [
+      {
+        "quote": "I had receipts everywhere — fuel, wholesale invoices, repairs, utilities — and at the end of the month it was very hard to know my real profit. Now I record my daily income and expenses in one place.",
+        "name": "Tewolde Haile",
+        "role": "Grocery store owner"
+      },
+      {
+        "quote": "The monthly reports give me a clear picture of profit and loss for each project.",
+        "name": "Heavily Realms",
+        "role": "Construction"
+      },
+      {
+        "quote": "I scan my receipts as I go, and at the end of the month I can see exactly where my money went.",
+        "name": "Teddy Z",
+        "role": "Household"
+      }
+    ],
+    "reviewSource": "Google review",
+    "trust": [
+      {
+        "title": "Your data stays yours",
+        "text": "Export everything to CSV any time. No lock-in."
+      },
+      {
+        "title": "Private sign-in",
+        "text": "Each account has its own secure login. Your accountant gets a separate one."
+      },
+      {
+        "title": "Real people, in Columbus",
+        "text": "Call {{phone}} or email {{email}}."
+      }
+    ],
+    "faqEyebrow": "Questions",
+    "faqTitle": "Good to know.",
+    "faq": [
+      {
+        "q": "How much does it cost?",
+        "a": "$29.99 a month, or $299.99 a year — that works out to $24.99 a month. Every feature is included."
+      },
+      {
+        "q": "Do I need a credit card for the free trial?",
+        "a": "No. Try everything free for 30 days and cancel any time."
+      },
+      {
+        "q": "Can it connect to my bank and POS?",
+        "a": "Yes. Connect your bank card and your POS system and transactions sync in automatically. You review them and Meksova puts them in the right category. You can always add entries by hand too."
+      },
+      {
+        "q": "Can I use it in my language?",
+        "a": "Yes — English, Amharic, Tigrinya, Arabic, Spanish, French and Somali. Switch any time."
+      },
+      {
+        "q": "I'm a trucker. Does it do IFTA?",
+        "a": "Yes. It tracks miles and fuel by state and builds your quarterly IFTA totals. It gives you the totals — it doesn't file the return for you."
+      },
+      {
+        "q": "Can my accountant see my books?",
+        "a": "Yes. Invite them with their own login, or download the reports as a PDF and send them."
+      },
+      {
+        "q": "I'm not good with accounting. Will I manage?",
+        "a": "Yes. You tap Received, Paid or Owed and pick a category. Meksova does the debits, credits and reports for you."
+      }
+    ],
+    "ctaTitle": "See your own numbers in two minutes.",
+    "ctaText": "Open the demo for your trade — no sign-up, nothing to install."
+  },
+  "features": {
+    "sync": {
+      "title": "Bank & POS sync",
+      "text": "Connect your bank card and POS system — sales and purchases come in automatically, no typing."
+    },
+    "mileage": {
+      "title": "Mileage tracker",
+      "text": "Start and stop a trip with one tap, or add it by hand."
+    },
+    "trips": {
+      "title": "Trip history",
+      "text": "Business miles and an estimated deduction, by date."
+    },
+    "fuel": {
+      "title": "Fuel by state",
+      "text": "Gallons and cost per state, from your fuel receipts."
+    },
+    "ifta": {
+      "title": "IFTA report",
+      "text": "Quarterly miles and gallons by state, ready to export."
+    },
+    "scan": {
+      "title": "Receipt scan",
+      "text": "Snap a receipt — the amount and category are filled in for you."
+    },
+    "payables": {
+      "title": "Bills you owe",
+      "text": "Record what you owe now and pay it later, in full or in parts."
+    },
+    "reports": {
+      "title": "Tax-ready reports",
+      "text": "Income statement, balance sheet and journal that always add up."
+    },
+    "multi": {
+      "title": "More than one business",
+      "text": "Separate books for each business under one login."
+    },
+    "accountant": {
+      "title": "Accountant access",
+      "text": "Give your accountant or partner their own login."
+    },
+    "languages": {
+      "title": "7 languages",
+      "text": "English, Amharic, Tigrinya, Arabic, Spanish, French, Somali."
+    },
+    "documents": {
+      "title": "Documents",
+      "text": "Licenses, leases and invoices, stored next to your books."
+    },
+    "inventory": {
+      "title": "Stock & cost of goods",
+      "text": "Know what you paid for what you sold — your real gross profit."
+    },
+    "export": {
+      "title": "CSV export",
+      "text": "Download all your records any time. They're yours."
+    }
+  },
+  "pricing": {
+    "metaTitle": "Pricing — Meksova",
+    "metaDescription": "One plan with every feature: $29.99 a month, or $299.99 a year ($24.99 a month). 30-day free trial, no credit card.",
+    "eyebrow": "Simple pricing",
+    "title": "One plan. Everything included.",
+    "lede": "Try it free for 30 days — no credit card. Then keep going monthly, or pay yearly and save 17%.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "save": "Save 17%",
+    "planName": "Meksova Pro",
+    "includes": "Everything in Pro",
+    "items": [
+      "Unlimited transactions",
+      "Bank & POS sync",
+      "Receipt scan",
+      "Tax-ready reports & PDF",
+      "Mileage, fuel & IFTA",
+      "Bills you owe (payables)",
+      "Stock & cost of goods",
+      "Documents storage",
+      "CSV backup & export",
+      "Accountant login",
+      "All 7 languages"
+    ],
+    "fine": "No credit card for the trial. Cancel any time before your 30 days end and you pay nothing.",
+    "stripTitle": "One plan · everything included",
+    "faqTitle": "Pricing questions",
+    "faq": [
+      {
+        "q": "What happens after the 30 days?",
+        "a": "If you choose to continue, your plan starts at $29.99 a month, or $299.99 a year. If you don't, nothing is charged."
+      },
+      {
+        "q": "Is there a cheaper plan with fewer features?",
+        "a": "No. There's one plan and it includes everything, so you never hit a paywall in the middle of tax season."
+      },
+      {
+        "q": "Can I switch from monthly to yearly later?",
+        "a": "Yes. Switch to yearly any time to bring your cost down to $24.99 a month."
+      },
+      {
+        "q": "Can I cancel any time?",
+        "a": "Yes. There is no contract. You can export your records to CSV before you go."
+      }
+    ]
+  },
+  "industriesPage": {
+    "metaTitle": "Bookkeeping for your industry — Meksova",
+    "metaDescription": "Meksova comes set up for 11 kinds of business: trucking, rideshare, grocery stores, cafés, construction, cleaning, beauty, e-commerce, content creators, households and more.",
+    "eyebrow": "Industries",
+    "title": "Set up for the way you work.",
+    "lede": "Pick your business to see what Meksova does for it — or jump straight into a demo with sample books.",
+    "learn": "How it works",
+    "demo": "Try the demo"
+  },
+  "industryPage": {
+    "painsEyebrow": "Sound familiar?",
+    "painsTitle": "Less paperwork. More money you can see.",
+    "weekEyebrow": "A week with Meksova",
+    "weekTitle": "A few minutes a day. Books that add up.",
+    "featuresEyebrow": "Made for {{name}}",
+    "featuresTitle": "Everything on one dashboard.",
+    "faqEyebrow": "Questions",
+    "faqTitle": "Straight answers.",
+    "ctaTitle": "Take your books for a test drive.",
+    "ctaText": "The demo opens with sample books for your trade already filled in — no sign-up.",
+    "openDemo": "Open the live demo",
+    "sampleBooks": "Sample books · last 30 days",
+    "in": "In",
+    "out": "Out",
+    "owed": "Owed",
+    "iftaTitle": "IFTA quarterly report",
+    "iftaQuarter": "Q3 · Jul–Sep",
+    "state": "State",
+    "miles": "Miles",
+    "gallons": "Gallons",
+    "total": "Total",
+    "fuelChip": "Fuel receipt · Indianapolis",
+    "milesTitle": "This week's trips",
+    "business": "Business",
+    "personal": "Personal",
+    "otherIndustries": "Other industries",
+    "days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
+    ]
+  },
+  "industries": {
+    "truck": {
+      "name": "Trucking",
+      "short": "Freight, fuel by state, IFTA",
+      "metaTitle": "Bookkeeping & IFTA app for truckers — Meksova",
+      "metaDescription": "Freight income, fuel receipts, mileage by state and quarterly IFTA totals in one app for owner-operators and small fleets. 30-day free trial.",
+      "eyebrow": "For owner-operators & small fleets",
+      "title": "Bookkeeping that knows the road.",
+      "em": "IFTA included.",
+      "lede": "Freight income, fuel by state, repairs and tolls in one place. Snap a fuel receipt and it lands in your books and your IFTA report.",
+      "preview": [
+        "Freight income",
+        "Fuel",
+        "Fuel surcharge",
+        "Truck repairs",
+        "Tolls",
+        "Insurance (owed)"
+      ],
+      "pains": [
+        {
+          "was": "A visor stuffed with fuel receipts",
+          "title": "Snap it at the pump",
+          "text": "Scan the receipt; the amount, state and gallons are read and filed for you."
+        },
+        {
+          "was": "The end-of-quarter IFTA scramble",
+          "title": "Totals ready every quarter",
+          "text": "Miles and gallons by state, built from your trips and fuel. Export to CSV for your filing."
+        },
+        {
+          "was": "Not sure what the truck really earns",
+          "title": "Profit per truck, at a glance",
+          "text": "Income statement and estimated tax — with separate books for each truck if you run more than one."
+        }
+      ],
+      "week": [
+        {
+          "day": "Mon",
+          "title": "Load out of Columbus",
+          "text": "Log the trip — 184 miles across Ohio and Indiana."
+        },
+        {
+          "day": "Tue",
+          "title": "Fuel in Indianapolis",
+          "text": "Scan the receipt. It's an expense and an IFTA entry."
+        },
+        {
+          "day": "Wed",
+          "title": "Brake job, pay later",
+          "text": "Record it as owed. It shows under Payable until you pay."
+        },
+        {
+          "day": "Fri",
+          "title": "Freight check clears",
+          "text": "Tap Received. Cash on hand updates instantly."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Does Meksova file my IFTA return?",
+          "a": "No. It builds your miles and gallons by state for the quarter so filing takes minutes. Use the totals with your return, or hand them to your preparer."
+        },
+        {
+          "q": "I run two trucks. Do I need two accounts?",
+          "a": "No. Add a business for each truck under one login and switch between them in one tap."
+        },
+        {
+          "q": "Does mileage need GPS?",
+          "a": "No. You can use the one-tap trip tracker, or type your miles in by state yourself."
+        }
+      ]
+    },
+    "rideshare": {
+      "name": "Rideshare drivers",
+      "short": "Fares, fuel, miles",
+      "metaTitle": "Mileage & expense tracker for rideshare drivers — Meksova",
+      "metaDescription": "Track fares, tips, bonuses, fuel and business miles for Uber, Lyft and delivery driving. See your real profit and estimated tax. 30-day free trial.",
+      "eyebrow": "For Uber, Lyft & delivery drivers",
+      "title": "Know what you really earn",
+      "em": "after the miles.",
+      "lede": "Fares, bonuses, fuel, platform fees and every business mile in one place — so tax time isn't a guess.",
+      "preview": [
+        "Fares",
+        "Fuel",
+        "Bonuses",
+        "Platform fees",
+        "Car repairs",
+        "Insurance (owed)"
+      ],
+      "pains": [
+        {
+          "was": "Miles you forgot to write down",
+          "title": "One tap to log a trip",
+          "text": "Start and stop a trip, or add it by hand afterwards. Business and personal kept apart."
+        },
+        {
+          "was": "Payouts that hide the fees",
+          "title": "See fees and fuel next to fares",
+          "text": "Record what came in and what it cost, and your real profit shows up on the dashboard."
+        },
+        {
+          "was": "A surprise tax bill in April",
+          "title": "Estimated tax as you go",
+          "text": "Meksova estimates tax from your profit so you can set money aside each week."
+        }
+      ],
+      "week": [
+        {
+          "day": "Mon",
+          "title": "Morning airport runs",
+          "text": "Track the trip — 112 business miles."
+        },
+        {
+          "day": "Tue",
+          "title": "Fill up the tank",
+          "text": "Scan the fuel receipt. It's filed as an expense."
+        },
+        {
+          "day": "Thu",
+          "title": "Weekly payout lands",
+          "text": "Record fares and the bonus as money in."
+        },
+        {
+          "day": "Sun",
+          "title": "Check the week",
+          "text": "Profit, miles and estimated deduction on one screen."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Does it work for more than one app?",
+          "a": "Yes. Connect the bank account your payouts land in and they sync in automatically — Uber, Lyft, DoorDash or any other app."
+        },
+        {
+          "q": "Does it calculate my mileage deduction?",
+          "a": "It shows an estimated deduction from your business miles. Your tax preparer confirms the final number."
+        },
+        {
+          "q": "Do I have to keep GPS on?",
+          "a": "No. You can type trips in by hand whenever it suits you."
+        }
+      ]
+    },
+    "groceries": {
+      "name": "Grocery stores",
+      "short": "Sales, stock, suppliers",
+      "metaTitle": "Bookkeeping for grocery & convenience stores — Meksova",
+      "metaDescription": "Record daily sales, supplier invoices and stock, see cost of goods and real gross profit, and keep tax-ready books for your store. 30-day free trial.",
+      "eyebrow": "For grocery & convenience stores",
+      "title": "Daily sales in.",
+      "em": "Real profit out.",
+      "lede": "Record the day's sales, supplier invoices and stock in minutes, and see what the store actually makes after cost of goods.",
+      "preview": [
+        "Daily sales",
+        "Cost of goods sold",
+        "Staff wages",
+        "Delivery fees",
+        "Utilities",
+        "Supplier invoice (owed)"
+      ],
+      "pains": [
+        {
+          "was": "Wholesale invoices in a shoebox",
+          "title": "Scan supplier invoices",
+          "text": "Snap the invoice and file it as stock or an expense — nothing goes missing."
+        },
+        {
+          "was": "Busy register, no idea of profit",
+          "title": "Sales sync in from your POS",
+          "text": "Connect your register and bank card — sales land in your books automatically, and gross profit accounts for what the goods cost you."
+        },
+        {
+          "was": "Bills due to suppliers piling up",
+          "title": "Know what you owe",
+          "text": "Record supplier invoices as owed and pay them in full or in parts."
+        }
+      ],
+      "week": [
+        {
+          "day": "Mon",
+          "title": "Sales sync overnight",
+          "text": "Yesterday's register sales arrive from your POS."
+        },
+        {
+          "day": "Tue",
+          "title": "Produce delivery",
+          "text": "Scan the supplier invoice. It's added as owed."
+        },
+        {
+          "day": "Thu",
+          "title": "Pay half the invoice",
+          "text": "Record a partial payment. The rest stays in Payable."
+        },
+        {
+          "day": "Sat",
+          "title": "Check the week",
+          "text": "Sales, cost of goods and gross profit, side by side."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Does it connect to my register?",
+          "a": "Yes. Connect your POS system and bank card and daily sales and purchases sync in automatically. You can still record totals by hand if you prefer."
+        },
+        {
+          "q": "Can I track stock I buy for resale?",
+          "a": "Yes. Record goods for resale as inventory, and the cost moves into cost of goods sold as you sell."
+        },
+        {
+          "q": "I have two stores. Can I keep them apart?",
+          "a": "Yes. Add a business for each store and switch between them under one login."
+        }
+      ]
+    },
+    "cafe": {
+      "name": "Cafés & restaurants",
+      "short": "Sales, food cost, staff",
+      "metaTitle": "Bookkeeping for cafés & restaurants — Meksova",
+      "metaDescription": "Track food and drink sales, food costs, staff and rent, and see your real food-cost margin. Tax-ready reports for small restaurants. 30-day free trial.",
+      "eyebrow": "For cafés, restaurants & food trucks",
+      "title": "Know your food cost",
+      "em": "before the month ends.",
+      "lede": "Food and drink sales, supplier costs, staff and rent in one place — so you can see the margin on every plate, not just the bank balance.",
+      "preview": [
+        "Food sales",
+        "Food costs",
+        "Drink sales",
+        "Staff wages",
+        "Rent",
+        "Supplier invoice (owed)"
+      ],
+      "pains": [
+        {
+          "was": "Supplier receipts on the kitchen spike",
+          "title": "Scan them on the spot",
+          "text": "Snap each supplier receipt; it's filed as food cost automatically."
+        },
+        {
+          "was": "Busy nights, thin margins",
+          "title": "Sales sync, food cost visible",
+          "text": "Sales come in from your POS automatically, next to food cost — so you spot a slipping margin early."
+        },
+        {
+          "was": "Rent and wages sneaking up",
+          "title": "Every bill in one place",
+          "text": "Record what's owed now and pay it when cash comes in."
+        }
+      ],
+      "week": [
+        {
+          "day": "Mon",
+          "title": "Weekend sales sync in",
+          "text": "Your POS sales are already in the books."
+        },
+        {
+          "day": "Tue",
+          "title": "Produce & meat delivery",
+          "text": "Scan the invoice and mark it as owed."
+        },
+        {
+          "day": "Thu",
+          "title": "Payroll",
+          "text": "Record wages. Profit updates instantly."
+        },
+        {
+          "day": "Sun",
+          "title": "Check the margin",
+          "text": "See food cost against sales for the week."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Does it connect to my POS?",
+          "a": "Yes. Connect your POS and bank card and sales and supplier payments sync in automatically — no end-of-night typing."
+        },
+        {
+          "q": "Can I separate food and drink sales?",
+          "a": "Yes. Both are ready-made categories, along with catering and delivery."
+        },
+        {
+          "q": "Can my accountant see it?",
+          "a": "Yes. Give them their own login, or send the PDF report."
+        }
+      ]
+    },
+    "construction": {
+      "name": "Construction trades",
+      "short": "Jobs, materials, crews",
+      "metaTitle": "Bookkeeping for contractors & construction trades — Meksova",
+      "metaDescription": "Track job income, materials, subcontractors, tools and vehicle miles, and see profit by project. Built for small contractors. 30-day free trial.",
+      "eyebrow": "For contractors, remodelers & tradespeople",
+      "title": "See profit on every job,",
+      "em": "not just the bank balance.",
+      "lede": "Contracts, materials, subcontractors, tools and miles to the site — tracked as you go, so you know which jobs pay.",
+      "preview": [
+        "Remodel contract",
+        "Materials",
+        "Subcontractors",
+        "Repair job",
+        "Truck fuel",
+        "Tools (owed)"
+      ],
+      "pains": [
+        {
+          "was": "Supply-house receipts in the truck",
+          "title": "Scan at the counter",
+          "text": "Snap materials receipts on the spot and file them as job costs or equipment."
+        },
+        {
+          "was": "Not sure which jobs made money",
+          "title": "Profit per project",
+          "text": "Monthly reports show money in and out so each job's result is clear."
+        },
+        {
+          "was": "Miles to job sites never logged",
+          "title": "Trips logged in a tap",
+          "text": "Track drives to sites and supply runs for an estimated mileage deduction."
+        }
+      ],
+      "week": [
+        {
+          "day": "Mon",
+          "title": "Deposit on a remodel",
+          "text": "Record the deposit as money in."
+        },
+        {
+          "day": "Tue",
+          "title": "Materials pickup",
+          "text": "Scan the receipt and log the 52-mile run."
+        },
+        {
+          "day": "Thu",
+          "title": "New tools on credit",
+          "text": "Record them as equipment you owe on."
+        },
+        {
+          "day": "Fri",
+          "title": "Pay the sub",
+          "text": "Record subcontractor pay. Profit updates."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Can I track equipment and tools?",
+          "a": "Yes. Record big purchases as equipment so they show on your balance sheet, not as a one-off expense."
+        },
+        {
+          "q": "Does it handle subcontractor payments?",
+          "a": "Yes. Subcontractor wages are a ready-made category. Keep each sub's invoices in Documents."
+        },
+        {
+          "q": "Can I use it from the job site?",
+          "a": "Yes. It works in your phone's browser — no install needed."
+        }
+      ]
+    },
+    "cleaning": {
+      "name": "Cleaning services",
+      "short": "Contracts, supplies, miles",
+      "metaTitle": "Bookkeeping for cleaning businesses — Meksova",
+      "metaDescription": "Track cleaning contracts, Airbnb turnovers, supplies, wages and miles between clients. Simple, tax-ready books for cleaning services. 30-day free trial.",
+      "eyebrow": "For house, office & Airbnb cleaners",
+      "title": "Clean books",
+      "em": "for a cleaning business.",
+      "lede": "Recurring contracts, turnovers, supplies, wages and the miles between clients — all in one simple app.",
+      "preview": [
+        "Recurring contracts",
+        "Supplies",
+        "Airbnb turnovers",
+        "Staff wages",
+        "Fuel & travel",
+        "Supplies (owed)"
+      ],
+      "pains": [
+        {
+          "was": "Supply receipts lost in the van",
+          "title": "Scan as you buy",
+          "text": "Snap supply receipts and they're filed as expenses straight away."
+        },
+        {
+          "was": "Miles between clients forgotten",
+          "title": "Log every drive",
+          "text": "Track trips between jobs for an estimated mileage deduction."
+        },
+        {
+          "was": "Unsure which contracts pay best",
+          "title": "See your income by type",
+          "text": "Recurring contracts, one-off cleans and turnovers, each in its own category."
+        }
+      ],
+      "week": [
+        {
+          "day": "Mon",
+          "title": "Office contract paid",
+          "text": "Record the monthly contract as money in."
+        },
+        {
+          "day": "Tue",
+          "title": "Supply run",
+          "text": "Scan the receipt; log the 18-mile drive."
+        },
+        {
+          "day": "Thu",
+          "title": "Two Airbnb turnovers",
+          "text": "Record each one as income."
+        },
+        {
+          "day": "Fri",
+          "title": "Pay the crew",
+          "text": "Record wages and see the week's profit."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Can I track Airbnb turnovers separately?",
+          "a": "Yes. Turnovers, recurring contracts and one-off cleans are separate ready-made categories."
+        },
+        {
+          "q": "Do I need GPS for mileage?",
+          "a": "No. Use the trip tracker or enter miles by hand."
+        },
+        {
+          "q": "Can I store client contracts?",
+          "a": "Yes. Keep contracts, insurance and licenses in Documents."
+        }
+      ]
+    },
+    "beauty": {
+      "name": "Beauty & barbers",
+      "short": "Clients, products, booth rent",
+      "metaTitle": "Bookkeeping for salons, barbers & beauty pros — Meksova",
+      "metaDescription": "Track services, product sales, booth rent and supplies. Simple, tax-ready books for salons, barbers, braiders and beauty professionals. 30-day free trial.",
+      "eyebrow": "For salons, barbers, braiders & stylists",
+      "title": "More time in the chair,",
+      "em": "less on paperwork.",
+      "lede": "Services, retail products, booth rent and supplies in one place — so you know what the chair really earns.",
+      "preview": [
+        "Haircuts & styling",
+        "Beauty products",
+        "Color & treatments",
+        "Rent & utilities",
+        "Retail products",
+        "Product order (owed)"
+      ],
+      "pains": [
+        {
+          "was": "Cash and card tips, no record",
+          "title": "Record the day in a minute",
+          "text": "Add the day's services and products in one or two entries."
+        },
+        {
+          "was": "Product costs eating the margin",
+          "title": "See product cost vs. sales",
+          "text": "Track what you pay for products you resell, so retail actually adds profit."
+        },
+        {
+          "was": "Booth rent and bills piling up",
+          "title": "Know what you owe",
+          "text": "Record supplier orders and rent as owed, then pay them off."
+        }
+      ],
+      "week": [
+        {
+          "day": "Tue",
+          "title": "Busy service day",
+          "text": "Record cuts and color as money in."
+        },
+        {
+          "day": "Wed",
+          "title": "Product order arrives",
+          "text": "Scan the invoice and mark it as owed."
+        },
+        {
+          "day": "Fri",
+          "title": "Booth rent due",
+          "text": "Record the rent payment."
+        },
+        {
+          "day": "Sat",
+          "title": "Retail sales",
+          "text": "Record product sales. Gross profit updates."
+        }
+      ],
+      "faq": [
+        {
+          "q": "I rent a booth. Is this for me?",
+          "a": "Yes. Booth rent, supplies and your service income are all ready-made categories."
+        },
+        {
+          "q": "Can I track products I resell?",
+          "a": "Yes. Record them as inventory and see the margin when they sell."
+        },
+        {
+          "q": "Does it connect to my card reader or POS?",
+          "a": "Yes. Connect your POS and bank card and your sales sync in automatically. You can still add cash sales by hand."
+        }
+      ]
+    },
+    "ecommerce": {
+      "name": "E-commerce sellers",
+      "short": "Orders, fees, shipping",
+      "metaTitle": "Bookkeeping for online sellers — Meksova",
+      "metaDescription": "Track online sales, platform fees, ads, shipping and inventory for Shopify, Amazon, Etsy and eBay sellers. See real profit per month. 30-day free trial.",
+      "eyebrow": "For Shopify, Amazon, Etsy & eBay sellers",
+      "title": "Sales are easy to see.",
+      "em": "Profit isn't. Until now.",
+      "lede": "Online sales, platform fees, ads, shipping and stock in one place — so you see what's left after everyone takes a cut.",
+      "preview": [
+        "Online sales",
+        "Inventory",
+        "Platform fees",
+        "Online ads",
+        "Wholesale order",
+        "Shipping supplies (owed)"
+      ],
+      "pains": [
+        {
+          "was": "Fees buried in payout reports",
+          "title": "Fees as their own line",
+          "text": "Record platform and payment fees separately and see what they really cost you."
+        },
+        {
+          "was": "Ad spend with no clear return",
+          "title": "Ads next to sales",
+          "text": "Track ad spend in the same place as revenue, month by month."
+        },
+        {
+          "was": "Inventory bought, profit unclear",
+          "title": "Cost of goods, done for you",
+          "text": "Record stock as inventory; the cost moves to cost of goods as you sell."
+        }
+      ],
+      "week": [
+        {
+          "day": "Mon",
+          "title": "Weekly payout",
+          "text": "Record sales and the platform fee."
+        },
+        {
+          "day": "Tue",
+          "title": "Restock from supplier",
+          "text": "Record the purchase as inventory."
+        },
+        {
+          "day": "Wed",
+          "title": "Ads invoice",
+          "text": "Scan it and file it as advertising."
+        },
+        {
+          "day": "Fri",
+          "title": "Wholesale order ships",
+          "text": "Record the order. Profit updates."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Does it sync with my store?",
+          "a": "Connect the bank account your payouts land in, plus your POS if you also sell in person, and transactions sync in automatically. Fees and payouts can then be categorized in a tap."
+        },
+        {
+          "q": "Can I sell on more than one platform?",
+          "a": "Yes. Record sales from every platform in one set of books, or keep a business for each."
+        },
+        {
+          "q": "Does it track inventory?",
+          "a": "Yes. Goods for resale go to inventory, and their cost moves to cost of goods sold as you sell."
+        }
+      ]
+    },
+    "contentCreator": {
+      "name": "Content creators",
+      "short": "Ad revenue, sponsors, gear",
+      "metaTitle": "Bookkeeping for content creators & influencers — Meksova",
+      "metaDescription": "Track ad revenue, sponsorships, gear, software and freelancers. Tax-ready books for YouTubers, TikTokers and creators. 30-day free trial.",
+      "eyebrow": "For YouTubers, TikTokers & creators",
+      "title": "You make the content.",
+      "em": "We'll make sense of the money.",
+      "lede": "Ad revenue, sponsorships, gear, software and editors in one place — tidy books for when the 1099s arrive.",
+      "preview": [
+        "Ad revenue",
+        "Sponsorship",
+        "Camera gear",
+        "Video editor",
+        "Software",
+        "Agency fee (owed)"
+      ],
+      "pains": [
+        {
+          "was": "Income from five platforms",
+          "title": "All income in one view",
+          "text": "Ad revenue, sponsors and affiliate income, each in its own category."
+        },
+        {
+          "was": "Gear receipts in your email",
+          "title": "Gear tracked as equipment",
+          "text": "Record cameras and lights as equipment, not a one-off expense."
+        },
+        {
+          "was": "Tax season panic",
+          "title": "Reports ready for your preparer",
+          "text": "Income statement and balance sheet, with your 1099s stored in Documents."
+        }
+      ],
+      "week": [
+        {
+          "day": "Mon",
+          "title": "Sponsor pays",
+          "text": "Record the sponsorship as money in."
+        },
+        {
+          "day": "Tue",
+          "title": "New microphone",
+          "text": "Scan the receipt and file it as equipment."
+        },
+        {
+          "day": "Thu",
+          "title": "Pay your editor",
+          "text": "Record the freelancer payment."
+        },
+        {
+          "day": "Sat",
+          "title": "Ad revenue lands",
+          "text": "Record it. See the month's profit."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Does it handle income from several platforms?",
+          "a": "Yes. Record each payout in its category — ad revenue, sponsorship, affiliate, merch."
+        },
+        {
+          "q": "Where do I keep my 1099s and contracts?",
+          "a": "In Documents, next to your books."
+        },
+        {
+          "q": "Do I need an accountant to use it?",
+          "a": "No. But if you have one, they can log in and see your reports."
+        }
+      ]
+    },
+    "households": {
+      "name": "Households",
+      "short": "Bills, family budget",
+      "metaTitle": "Family budget & bill tracker — Meksova",
+      "metaDescription": "Track salary, side income, rent, groceries and bills for your household, and see where the money goes each month. In 7 languages. 30-day free trial.",
+      "eyebrow": "For families & individuals",
+      "title": "See where the money goes,",
+      "em": "every month.",
+      "lede": "Salary, side income, rent, groceries and bills in one simple place — in the language your family speaks.",
+      "preview": [
+        "Salary",
+        "Rent",
+        "Groceries",
+        "Side income",
+        "Transport",
+        "Utilities (owed)"
+      ],
+      "pains": [
+        {
+          "was": "Paychecks gone by the 20th",
+          "title": "See your spending by category",
+          "text": "Rent, food, transport and bills, each with its own total."
+        },
+        {
+          "was": "Bills you forgot were due",
+          "title": "Bills you owe, listed",
+          "text": "Record upcoming bills and mark them paid when they're done."
+        },
+        {
+          "was": "Receipts for taxes all over the house",
+          "title": "Receipts and W-2s in one place",
+          "text": "Scan receipts and keep tax papers in Documents."
+        }
+      ],
+      "week": [
+        {
+          "day": "Fri",
+          "title": "Payday",
+          "text": "Record your salary as money in."
+        },
+        {
+          "day": "Sat",
+          "title": "Weekly groceries",
+          "text": "Scan the receipt. Filed under food."
+        },
+        {
+          "day": "Mon",
+          "title": "Electric bill arrives",
+          "text": "Record it as owed until you pay."
+        },
+        {
+          "day": "Wed",
+          "title": "Side job paid",
+          "text": "Record it and see the month so far."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is this only for businesses?",
+          "a": "No. The household setup has family categories like rent, food, transport and bills."
+        },
+        {
+          "q": "Can the whole family use it?",
+          "a": "Yes. Invite a partner with their own login."
+        },
+        {
+          "q": "Is it in Amharic, Tigrinya or Somali?",
+          "a": "Yes — plus English, Arabic, Spanish and French."
+        }
+      ]
+    },
+    "other": {
+      "name": "Any small business",
+      "short": "Sales, services, bills",
+      "metaTitle": "Simple bookkeeping for any small business — Meksova",
+      "metaDescription": "Track sales, services, supplies, rent and bills, scan receipts and get tax-ready reports. Simple bookkeeping for any small business. 30-day free trial.",
+      "eyebrow": "For every other kind of business",
+      "title": "Simple books",
+      "em": "for whatever you do.",
+      "lede": "Sales, services, supplies, rent and bills — with receipt scan and tax-ready reports, set up in a minute.",
+      "preview": [
+        "Sales",
+        "Supplies",
+        "Rent",
+        "Services",
+        "Utilities (owed)"
+      ],
+      "pains": [
+        {
+          "was": "Typing every transaction by hand",
+          "title": "Connect your bank and card",
+          "text": "Transactions sync in automatically — Meksova does the debits and credits."
+        },
+        {
+          "was": "Receipts in every pocket",
+          "title": "Scan and forget",
+          "text": "Snap a receipt and it's filed in the right category."
+        },
+        {
+          "was": "Dreading tax season",
+          "title": "Reports ready any day",
+          "text": "Income statement, balance sheet and estimated tax, ready to download."
+        }
+      ],
+      "week": [
+        {
+          "day": "Mon",
+          "title": "Customer pays",
+          "text": "Record it as money in."
+        },
+        {
+          "day": "Tue",
+          "title": "Buy supplies",
+          "text": "Scan the receipt."
+        },
+        {
+          "day": "Thu",
+          "title": "Rent due",
+          "text": "Record it as owed, then pay."
+        },
+        {
+          "day": "Fri",
+          "title": "Check the week",
+          "text": "Profit and estimated tax on one screen."
+        }
+      ],
+      "faq": [
+        {
+          "q": "My business isn't listed. Will it work?",
+          "a": "Yes. The general setup has the categories most businesses need — sales, services, supplies, rent, utilities and more."
+        },
+        {
+          "q": "Can I switch to an industry setup later?",
+          "a": "Yes. Add a business with the setup that fits and keep both under one login."
+        },
+        {
+          "q": "Do I need accounting experience?",
+          "a": "No. If you can tell what came in and what went out, you can use Meksova."
+        }
+      ]
+    }
+  },
+  "about": {
+    "metaTitle": "About Meksova",
+    "metaDescription": "Meksova is a Columbus, Ohio company building simple, multilingual bookkeeping for immigrant-owned and small businesses.",
+    "eyebrow": "About us",
+    "title": "Built by owners who were",
+    "em": "drowning in receipts.",
+    "lede": "We ran our own small businesses and struggled to keep our books straight. So we built the tool we wished we had — simple, honest, and in the languages our community speaks.",
+    "storyTitle": "Why Meksova exists",
+    "story": [
+      "Most bookkeeping software is built for accountants. It's in English, full of jargon, and assumes you already know what a journal entry is.",
+      "Meksova starts from the other side. You tell it what happened — money came in, money went out, or you owe something — and it does the accounting behind the scenes: journal, income statement, balance sheet and estimated tax.",
+      "Every setup comes ready for a real trade, from trucking and IFTA to grocery stock and cost of goods, and the whole app speaks seven languages."
+    ],
+    "valuesTitle": "What we care about",
+    "values": [
+      {
+        "title": "Plain language",
+        "text": "Received, Paid, Owed. No debits and credits unless you want them."
+      },
+      {
+        "title": "Your language",
+        "text": "English, Amharic, Tigrinya, Arabic, Spanish, French and Somali."
+      },
+      {
+        "title": "Honest numbers",
+        "text": "Reports that balance, built on real double-entry accounting."
+      },
+      {
+        "title": "Local support",
+        "text": "A real team in Columbus, Ohio you can call."
+      }
+    ]
+  },
+  "contact": {
+    "metaTitle": "Contact Meksova",
+    "metaDescription": "Questions about Meksova? Call +1 (614) 966-5005, email info@meksova.com, or visit us at 3130 Westerville Rd, Columbus, OH.",
+    "eyebrow": "Contact",
+    "title": "Talk to a real person.",
+    "lede": "Questions about setup, pricing or your books? We're happy to help — in your language.",
+    "call": "Call us",
+    "email": "Email",
+    "visit": "Visit",
+    "reviews": "Google reviews",
+    "formTitle": "Send us a message",
+    "name": "Your name",
+    "emailField": "Email",
+    "phoneField": "Phone (optional)",
+    "business": "Type of business",
+    "businessPick": "Choose one",
+    "message": "How can we help?",
+    "send": "Open in my email app",
+    "required": "Please fill this in.",
+    "invalidEmail": "Please enter a valid email.",
+    "formNote": "This opens your email app with the message ready to send to info@meksova.com.",
+    "subject": "Question from {{name}}"
+  },
+  "blog": {
+    "metaTitle": "Guides for small business owners — Meksova",
+    "metaDescription": "Plain-language guides on IFTA, receipts, cost of goods and bookkeeping for truckers, store owners and small businesses.",
+    "eyebrow": "Guides",
+    "title": "Bookkeeping, explained plainly.",
+    "lede": "Short guides for owners who'd rather run their business than read tax code.",
+    "back": "All guides",
+    "englishOnly": "This guide is in English.",
+    "disclaimer": "This guide is general information, not tax or legal advice. Rules change and every business is different — check with a tax professional for your situation.",
+    "related": "Try it in Meksova"
+  },
+  "notFound": {
+    "metaTitle": "Page not found — Meksova",
+    "title": "This page took a wrong turn.",
+    "lede": "The page you're looking for doesn't exist or has moved.",
+    "home": "Back to home"
+  },
+  "footer": {
+    "tagline": "Simple bookkeeping for small businesses, in your language.",
+    "product": "Product",
+    "company": "Company",
+    "demo": "Live demo",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "rights": "© {{year}} Meksova. All rights reserved."
+  },
+  "faqPage": {
+    "metaTitle": "Questions & answers — Meksova",
+    "metaDescription": "Answers about Meksova pricing, the free trial, languages, IFTA, accountant access and how the app works.",
+    "title": "Questions & answers"
+  }
+}

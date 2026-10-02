@@ -2,6 +2,8 @@ const path = require("path");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Lets a local production build run beside the dev server without sharing .next
+  distDir: process.env.NEXT_DIST_DIR || '.next',
   trailingSlash: true,
   output: 'export', // Enables static site export in Next.js 13+
   images: {
