@@ -1,56 +1,1215 @@
 {
-  "nav": {"industries":"Secteurs","features":"Fonctionnalités","pricing":"Tarifs","blog":"Guides","about":"À propos","contact":"Contact","login":"Connexion","trial":"Essai gratuit","menu":"Ouvrir le menu","close":"Fermer le menu","skip":"Aller au contenu","home":"Accueil Meksova","language":"Langue","themeToLight":"Passer en mode clair","themeToDark":"Passer en mode sombre"},
-  "common": {"tryDemo":"Essayer la démo","startTrial":"Essai gratuit de 30 jours","startTrialShort":"Essai gratuit","googleRating":"{{rating}} sur Google","noCard":"Sans carte bancaire","fromPrice":"À partir de {{price}}/mois","seeReviews":"Voir tous les avis sur Google","perMonth":"/ mois","billedYearly":"{{price}} facturé par an","billedMonthly":"Facturé chaque mois · résiliable à tout moment","orMonthly":"ou {{price}} au mois","allIndustries":"Tous les secteurs","readGuide":"Lire le guide","minRead":"{{count}} min de lecture","home":"Accueil","sample":"Exemple"},
-  "preview": {"business":"Abebe Trucking","dashboard":"Tableau de bord","cash":"Trésorerie totale","moneyIn":"Entrées","moneyOut":"Sorties","revenue":"Chiffre d'affaires","payable":"À payer","tax":"Impôt est.","scanned":"Reçu scanné","scannedText":"Carburant · IN · 98.4 gal → IFTA","chartLabel":"Trésorerie sur les 30 derniers jours, en hausse","synced":"Banque et TPV synchronisés","syncedText":"14 nouvelles opérations, classées"},
-  "home": {
-    "metaTitle":"Meksova — La comptabilité simple pour les petites entreprises, dans votre langue",
-    "metaDescription":"Suivez recettes et dépenses, scannez vos reçus, notez kilométrage et carburant, et obtenez des rapports prêts pour les impôts. Pour routiers, chauffeurs, commerces, cafés et plus — en 7 langues. Essai gratuit de 30 jours.",
-    "eyebrow":"Comptabilité pour petites entreprises · 7 langues",
-    "titleA":"Vos comptes, bien tenus.","titleEm":"Dans votre langue,","titleB":"pour votre métier.",
-    "lede":"Connectez votre banque et votre TPV, scannez vos reçus, notez kilométrage et carburant, et obtenez des rapports prêts pour les impôts — déjà configuré pour routiers, chauffeurs, commerces, cafés, entreprises de nettoyage et plus.",
-    "langTitle":"Parle votre langue — touchez-en une pour changer tout le site",
-    "industriesEyebrow":"Conçu pour votre métier",
-    "industriesTitle":"Choisissez votre activité. Tout est déjà prêt.",
-    "industriesLede":"Chaque métier a ses catégories, ses écrans et ses comptes d'exemple — carburant et IFTA pour les routiers, coût des marchandises pour les commerces et cafés.",
-    "featuredText":"Revenus de fret, carburant par État, kilométrage et rapport IFTA trimestriel — depuis la cabine.",
-    "seePage":"Voir Meksova pour {{name}}",
-    "moreTitle":"Ménages, indépendants et toute autre activité","moreText":"11 configurations au total",
-    "stepsEyebrow":"Comment ça marche","stepsTitle":"Trois étapes. Aucun diplôme de comptable.",
-    "steps":[{"title":"Connectez ou saisissez","text":"Reliez votre carte bancaire et votre TPV pour que les entrées et sorties se synchronisent seules — ou touchez Reçu, Payé ou Dû vous-même."},{"title":"Photographiez vos reçus","text":"Scannez un reçu et Meksova le classe — dépense, stock, équipement ou carburant pour l'IFTA."},{"title":"Obtenez des rapports fiscaux","text":"Compte de résultat, bilan et journal. Téléchargez un PDF ou transmettez-le à votre comptable."}],
-    "featuresEyebrow":"Tout dans une seule app","featuresTitle":"Les outils qu'un patron pressé utilise vraiment.",
-    "scanKicker":"Scan de reçus","scanTitle":"Une photo. Il se classe tout seul.",
-    "scanText":"Montant, catégorie et bonne destination — charge d'exploitation, marchandises à revendre, stock ou équipement. Les reçus de carburant vont aussi dans votre rapport IFTA.",
-    "scanTags":["Dépense","Stock","Équipement","Carburant IFTA"],
-    "receipt":{"store":"INTERSTATE FUEL STOP","place":"I-70 Exit 91 · Indianapolis, IN","item":"Diesel 98.40 gal","total":"TOTAL"},
-    "reviewsEyebrow":"De patrons comme vous","reviewsTitle":"Noté {{rating}} par de vrais clients sur Google.","reviewsCount":"sur {{count}} avis Google",
-    "reviews":[{"quote":"I had receipts everywhere — fuel, wholesale invoices, repairs, utilities — and at the end of the month it was very hard to know my real profit. Now I record my daily income and expenses in one place.","name":"Tewolde Haile","role":"Propriétaire d'épicerie"},{"quote":"The monthly reports give me a clear picture of profit and loss for each project.","name":"Heavily Realms","role":"Construction"},{"quote":"I scan my receipts as I go, and at the end of the month I can see exactly where my money went.","name":"Teddy Z","role":"Ménage"}],
-    "reviewSource":"Avis Google",
-    "trust":[{"title":"Vos données restent à vous","text":"Exportez tout en CSV à tout moment. Aucun engagement."},{"title":"Connexion privée","text":"Chaque compte a sa propre connexion sécurisée. Votre comptable en reçoit une à part."},{"title":"De vraies personnes, à Columbus","text":"Appelez le {{phone}} ou écrivez à {{email}}."}],
-    "faqEyebrow":"Questions","faqTitle":"Bon à savoir.",
-    "faq":[{"q":"Combien ça coûte ?","a":"29,99 $ par mois, ou 299,99 $ par an — soit 24,99 $ par mois. Toutes les fonctionnalités sont incluses."},{"q":"Faut-il une carte bancaire pour l'essai gratuit ?","a":"Non. Essayez tout gratuitement pendant 30 jours et résiliez quand vous voulez."},{"q":"Peut-il se connecter à ma banque et à mon TPV ?","a":"Oui. Connectez votre carte bancaire et votre système de caisse et les opérations se synchronisent automatiquement. Vous les vérifiez et Meksova les range dans la bonne catégorie. Vous pouvez toujours saisir à la main."},{"q":"Puis-je l'utiliser dans ma langue ?","a":"Oui — anglais, amharique, tigrinya, arabe, espagnol, français et somali. Changez quand vous voulez."},{"q":"Je suis routier. Gère-t-il l'IFTA ?","a":"Oui. Il suit les miles et le carburant par État et calcule vos totaux IFTA trimestriels. Il vous donne les totaux — il ne dépose pas la déclaration à votre place."},{"q":"Mon comptable peut-il voir mes comptes ?","a":"Oui. Invitez-le avec sa propre connexion, ou téléchargez les rapports en PDF et envoyez-les."},{"q":"Je ne m'y connais pas en comptabilité. Vais-je m'en sortir ?","a":"Oui. Vous touchez Reçu, Payé ou Dû et choisissez une catégorie. Meksova fait les débits, crédits et rapports pour vous."}],
-    "ctaTitle":"Voyez vos propres chiffres en deux minutes.","ctaText":"Ouvrez la démo de votre métier — sans inscription, rien à installer."
+  "nav": {
+    "industries": "Secteurs",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "blog": "Guides",
+    "about": "À propos",
+    "contact": "Contact",
+    "login": "Connexion",
+    "trial": "Essai gratuit",
+    "menu": "Ouvrir le menu",
+    "close": "Fermer le menu",
+    "skip": "Aller au contenu",
+    "home": "Accueil Meksova",
+    "language": "Langue",
+    "themeToLight": "Passer en mode clair",
+    "themeToDark": "Passer en mode sombre"
   },
-  "features": {"sync":{"title":"Synchro banque et TPV","text":"Connectez votre carte bancaire et votre caisse — ventes et achats arrivent tout seuls, sans saisie."},"mileage":{"title":"Suivi du kilométrage","text":"Démarrez et arrêtez un trajet d'un toucher, ou ajoutez-le à la main."},"trips":{"title":"Historique des trajets","text":"Miles professionnels et déduction estimée, par date."},"fuel":{"title":"Carburant par État","text":"Gallons et coût par État, d'après vos reçus de carburant."},"ifta":{"title":"Rapport IFTA","text":"Miles et gallons trimestriels par État, prêts à exporter."},"scan":{"title":"Scan de reçus","text":"Photographiez un reçu — montant et catégorie se remplissent seuls."},"payables":{"title":"Factures à payer","text":"Notez ce que vous devez maintenant et payez plus tard, en totalité ou en plusieurs fois."},"reports":{"title":"Rapports fiscaux","text":"Compte de résultat, bilan et journal toujours équilibrés."},"multi":{"title":"Plusieurs entreprises","text":"Des comptes séparés pour chaque entreprise avec une seule connexion."},"accountant":{"title":"Accès comptable","text":"Donnez à votre comptable ou associé sa propre connexion."},"languages":{"title":"7 langues","text":"Anglais, amharique, tigrinya, arabe, espagnol, français, somali."},"documents":{"title":"Documents","text":"Licences, baux et factures, rangés à côté de vos comptes."},"inventory":{"title":"Stock et coût des marchandises","text":"Sachez ce que vous a coûté ce que vous avez vendu — votre vraie marge brute."},"export":{"title":"Export CSV","text":"Téléchargez tous vos enregistrements à tout moment. Ils sont à vous."}},
-  "pricing": {"metaTitle":"Tarifs — Meksova","metaDescription":"Un seul forfait avec toutes les fonctionnalités : 29,99 $ par mois, ou 299,99 $ par an (24,99 $ par mois). Essai gratuit de 30 jours, sans carte.","eyebrow":"Des tarifs simples","title":"Un forfait. Tout inclus.","lede":"Essayez gratuitement pendant 30 jours — sans carte. Ensuite, continuez au mois, ou payez à l'année et économisez 17 %.","monthly":"Mensuel","yearly":"Annuel","save":"−17 %","planName":"Meksova Pro","includes":"Tout dans Pro","items":["Opérations illimitées","Synchro banque et TPV","Scan de reçus","Rapports fiscaux et PDF","Kilométrage, carburant et IFTA","Factures à payer","Stock et coût des marchandises","Stockage de documents","Sauvegarde et export CSV","Accès comptable","Les 7 langues"],"fine":"Aucune carte pour l'essai. Résiliez avant la fin de vos 30 jours et vous ne payez rien.","stripTitle":"Un forfait · tout inclus","faqTitle":"Questions sur les tarifs","faq":[{"q":"Que se passe-t-il après les 30 jours ?","a":"Si vous continuez, votre forfait démarre à 29,99 $ par mois, ou 299,99 $ par an. Sinon, rien n'est prélevé."},{"q":"Existe-t-il un forfait moins cher avec moins de fonctions ?","a":"Non. Il n'y a qu'un forfait et il inclut tout, pour ne jamais être bloqué en pleine saison des impôts."},{"q":"Puis-je passer du mensuel à l'annuel plus tard ?","a":"Oui. Passez à l'annuel quand vous voulez pour ramener votre coût à 24,99 $ par mois."},{"q":"Puis-je résilier à tout moment ?","a":"Oui. Il n'y a pas de contrat. Vous pouvez exporter vos données en CSV avant de partir."}]},
-  "industriesPage": {"metaTitle":"La comptabilité pour votre secteur — Meksova","metaDescription":"Meksova est préconfiguré pour 11 types d'activité : transport routier, VTC, épiceries, cafés, construction, nettoyage, beauté, e-commerce, créateurs de contenu, ménages et plus.","eyebrow":"Secteurs","title":"Configuré pour votre façon de travailler.","lede":"Choisissez votre activité pour voir ce que Meksova fait pour elle — ou lancez directement une démo avec des comptes d'exemple.","learn":"Comment ça marche","demo":"Essayer la démo"},
-  "industryPage": {"painsEyebrow":"Ça vous parle ?","painsTitle":"Moins de paperasse. Plus d'argent visible.","weekEyebrow":"Une semaine avec Meksova","weekTitle":"Quelques minutes par jour. Des comptes justes.","featuresEyebrow":"Conçu pour {{name}}","featuresTitle":"Tout sur un seul tableau de bord.","faqEyebrow":"Questions","faqTitle":"Des réponses claires.","ctaTitle":"Faites l'essai avec vos comptes.","ctaText":"La démo s'ouvre avec des comptes d'exemple de votre métier déjà remplis — sans inscription.","openDemo":"Ouvrir la démo","sampleBooks":"Comptes d'exemple · 30 derniers jours","in":"Entrées","out":"Sorties","owed":"Dû","iftaTitle":"Rapport IFTA trimestriel","iftaQuarter":"T3 · juil.–sept.","state":"État","miles":"Miles","gallons":"Gallons","total":"Total","fuelChip":"Reçu de carburant · Indianapolis","milesTitle":"Trajets de la semaine","business":"Professionnel","personal":"Personnel","otherIndustries":"Autres secteurs","days":["Lun","Mar","Mer","Jeu"]},
-  "about": {"metaTitle":"À propos de Meksova","metaDescription":"Meksova est une entreprise de Columbus, Ohio, qui crée une comptabilité simple et multilingue pour les entreprises d'immigrants et les petites entreprises.","eyebrow":"À propos","title":"Créé par des patrons qui","em":"croulaient sous les reçus.","lede":"Nous avons tenu nos propres petites entreprises et peinions à garder nos comptes en ordre. Alors nous avons créé l'outil que nous aurions voulu avoir — simple, honnête et dans les langues de notre communauté.","storyTitle":"Pourquoi Meksova existe","story":["La plupart des logiciels de comptabilité sont faits pour les comptables. Ils sont en anglais, pleins de jargon, et supposent que vous savez déjà ce qu'est une écriture de journal.","Meksova part de l'autre côté. Vous lui dites ce qui s'est passé — de l'argent est entré, de l'argent est sorti ou vous devez quelque chose — et il fait la comptabilité en coulisses : journal, compte de résultat, bilan et impôt estimé.","Chaque configuration est prête pour un vrai métier, du transport et de l'IFTA au stock d'une épicerie et au coût des marchandises, et toute l'app parle sept langues."],"valuesTitle":"Ce qui compte pour nous","values":[{"title":"Un langage simple","text":"Reçu, Payé, Dû. Pas de débits ni de crédits, sauf si vous le voulez."},{"title":"Votre langue","text":"Anglais, amharique, tigrinya, arabe, espagnol, français et somali."},{"title":"Des chiffres honnêtes","text":"Des rapports équilibrés, fondés sur une vraie comptabilité en partie double."},{"title":"Un support local","text":"Une vraie équipe à Columbus, Ohio, que vous pouvez appeler."}]},
-  "contact": {"metaTitle":"Contacter Meksova","metaDescription":"Des questions sur Meksova ? Appelez le +1 (614) 966-5005, écrivez à info@meksova.com ou passez nous voir au 3130 Westerville Rd, Columbus, OH.","eyebrow":"Contact","title":"Parlez à une vraie personne.","lede":"Des questions sur la configuration, les tarifs ou vos comptes ? Nous sommes là pour vous aider — dans votre langue.","call":"Appelez-nous","email":"E-mail","visit":"Venez nous voir","reviews":"Avis Google","formTitle":"Envoyez-nous un message","name":"Votre nom","emailField":"E-mail","phoneField":"Téléphone (facultatif)","business":"Type d'activité","businessPick":"Choisissez","message":"Comment pouvons-nous vous aider ?","send":"Ouvrir dans ma messagerie","required":"Veuillez remplir ce champ.","invalidEmail":"Veuillez saisir un e-mail valide.","formNote":"Votre messagerie s'ouvre avec le message prêt à envoyer à info@meksova.com.","subject":"Question de {{name}}"},
-  "blog": {"metaTitle":"Guides pour patrons de petites entreprises — Meksova","metaDescription":"Des guides en langage simple sur l'IFTA, les reçus, le coût des marchandises et la comptabilité pour routiers, commerçants et petites entreprises.","eyebrow":"Guides","title":"La comptabilité, expliquée simplement.","lede":"Des guides courts pour les patrons qui préfèrent gérer leur affaire plutôt que lire le code des impôts.","back":"Tous les guides","englishOnly":"Ce guide est en anglais.","disclaimer":"Ce guide est une information générale, pas un conseil fiscal ou juridique. Les règles changent et chaque entreprise est différente — consultez un professionnel pour votre situation.","related":"Essayez-le dans Meksova"},
-  "notFound": {"metaTitle":"Page introuvable — Meksova","title":"Cette page a pris un mauvais virage.","lede":"La page que vous cherchez n'existe pas ou a été déplacée.","home":"Retour à l'accueil"},
-  "footer": {"tagline":"La comptabilité simple pour les petites entreprises, dans votre langue.","product":"Produit","company":"Entreprise","demo":"Démo en ligne","privacy":"Confidentialité","terms":"Conditions","rights":"© {{year}} Meksova. Tous droits réservés."},
-  "faqPage": {"metaTitle":"Questions et réponses — Meksova","metaDescription":"Réponses sur les tarifs de Meksova, l'essai gratuit, les langues, l'IFTA, l'accès comptable et le fonctionnement de l'app.","title":"Questions et réponses"},
+  "common": {
+    "tryDemo": "Essayer la démo",
+    "startTrial": "Essai gratuit de 30 jours",
+    "startTrialShort": "Essai gratuit",
+    "googleRating": "{{rating}} sur Google",
+    "noCard": "Sans carte bancaire",
+    "fromPrice": "À partir de {{price}}/mois",
+    "seeReviews": "Voir tous les avis sur Google",
+    "perMonth": "/ mois",
+    "billedYearly": "{{price}} facturé par an",
+    "billedMonthly": "Facturé chaque mois · résiliable à tout moment",
+    "orMonthly": "ou {{price}} au mois",
+    "allIndustries": "Tous les secteurs",
+    "readGuide": "Lire le guide",
+    "minRead": "{{count}} min de lecture",
+    "home": "Accueil",
+    "sample": "Exemple"
+  },
+  "preview": {
+    "business": "Abebe Trucking",
+    "dashboard": "Tableau de bord",
+    "cash": "Trésorerie totale",
+    "moneyIn": "Entrées",
+    "moneyOut": "Sorties",
+    "revenue": "Chiffre d'affaires",
+    "payable": "À payer",
+    "tax": "Impôt est.",
+    "scanned": "Reçu scanné",
+    "scannedText": "Carburant · IN · 98.4 gal → IFTA",
+    "chartLabel": "Trésorerie sur les 30 derniers jours, en hausse",
+    "synced": "Banque et TPV synchronisés",
+    "syncedText": "14 nouvelles opérations, classées"
+  },
+  "home": {
+    "metaTitle": "Meksova — La comptabilité simple pour les petites entreprises, dans votre langue",
+    "metaDescription": "Suivez recettes et dépenses, scannez vos reçus, notez kilométrage et carburant, et obtenez des rapports prêts pour les impôts. Pour routiers, chauffeurs, commerces, cafés et plus — en 7 langues. Essai gratuit de 30 jours.",
+    "eyebrow": "Comptabilité pour petites entreprises · 7 langues",
+    "titleA": "Vos comptes, bien tenus.",
+    "titleEm": "Dans votre langue,",
+    "titleB": "pour votre métier.",
+    "lede": "Connectez votre banque et votre TPV, scannez vos reçus, notez kilométrage et carburant, et obtenez des rapports prêts pour les impôts — déjà configuré pour routiers, chauffeurs, commerces, cafés, entreprises de nettoyage et plus.",
+    "langTitle": "Parle votre langue — touchez-en une pour changer tout le site",
+    "industriesEyebrow": "Conçu pour votre métier",
+    "industriesTitle": "Choisissez votre activité. Tout est déjà prêt.",
+    "industriesLede": "Chaque métier a ses catégories, ses écrans et ses comptes d'exemple — carburant et IFTA pour les routiers, coût des marchandises pour les commerces et cafés.",
+    "featuredText": "Revenus de fret, carburant par État, kilométrage et rapport IFTA trimestriel — depuis la cabine.",
+    "seePage": "Voir Meksova pour {{name}}",
+    "moreTitle": "Ménages, indépendants et toute autre activité",
+    "moreText": "11 configurations au total",
+    "stepsEyebrow": "Comment ça marche",
+    "stepsTitle": "Trois étapes. Aucun diplôme de comptable.",
+    "steps": [
+      {
+        "title": "Connectez ou saisissez",
+        "text": "Reliez votre carte bancaire et votre TPV pour que les entrées et sorties se synchronisent seules — ou touchez Reçu, Payé ou Dû vous-même."
+      },
+      {
+        "title": "Photographiez vos reçus",
+        "text": "Scannez un reçu et Meksova le classe — dépense, stock, équipement ou carburant pour l'IFTA."
+      },
+      {
+        "title": "Obtenez des rapports fiscaux",
+        "text": "Compte de résultat, bilan et journal. Téléchargez un PDF ou transmettez-le à votre comptable."
+      }
+    ],
+    "featuresEyebrow": "Tout dans une seule app",
+    "featuresTitle": "Les outils qu'un patron pressé utilise vraiment.",
+    "scanKicker": "Scan de reçus",
+    "scanTitle": "Une photo. Il se classe tout seul.",
+    "scanText": "Montant, catégorie et bonne destination — charge d'exploitation, marchandises à revendre, stock ou équipement. Les reçus de carburant vont aussi dans votre rapport IFTA.",
+    "scanTags": [
+      "Dépense",
+      "Stock",
+      "Équipement",
+      "Carburant IFTA"
+    ],
+    "receipt": {
+      "store": "INTERSTATE FUEL STOP",
+      "place": "I-70 Exit 91 · Indianapolis, IN",
+      "item": "Diesel 98.40 gal",
+      "total": "TOTAL"
+    },
+    "reviewsEyebrow": "De patrons comme vous",
+    "reviewsTitle": "Noté {{rating}} par de vrais clients sur Google.",
+    "reviewsCount": "sur {{count}} avis Google",
+    "reviews": [
+      {
+        "quote": "I had receipts everywhere — fuel, wholesale invoices, repairs, utilities — and at the end of the month it was very hard to know my real profit. Now I record my daily income and expenses in one place.",
+        "name": "Tewolde Haile",
+        "role": "Propriétaire d'épicerie"
+      },
+      {
+        "quote": "The monthly reports give me a clear picture of profit and loss for each project.",
+        "name": "Heavily Realms",
+        "role": "Construction"
+      },
+      {
+        "quote": "I scan my receipts as I go, and at the end of the month I can see exactly where my money went.",
+        "name": "Teddy Z",
+        "role": "Ménage"
+      }
+    ],
+    "reviewSource": "Avis Google",
+    "trust": [
+      {
+        "title": "Vos données restent à vous",
+        "text": "Exportez tout en CSV à tout moment. Aucun engagement."
+      },
+      {
+        "title": "Connexion privée",
+        "text": "Chaque compte a sa propre connexion sécurisée. Votre comptable en reçoit une à part."
+      },
+      {
+        "title": "De vraies personnes, à Columbus",
+        "text": "Appelez le {{phone}} ou écrivez à {{email}}."
+      }
+    ],
+    "faqEyebrow": "Questions",
+    "faqTitle": "Bon à savoir.",
+    "faq": [
+      {
+        "q": "Combien ça coûte ?",
+        "a": "29,99 $ par mois, ou 299,99 $ par an — soit 24,99 $ par mois. Toutes les fonctionnalités sont incluses."
+      },
+      {
+        "q": "Faut-il une carte bancaire pour l'essai gratuit ?",
+        "a": "Non. Essayez tout gratuitement pendant 30 jours et résiliez quand vous voulez."
+      },
+      {
+        "q": "Peut-il se connecter à ma banque et à mon TPV ?",
+        "a": "Oui. Connectez votre carte bancaire et votre système de caisse et les opérations se synchronisent automatiquement. Vous les vérifiez et Meksova les range dans la bonne catégorie. Vous pouvez toujours saisir à la main."
+      },
+      {
+        "q": "Puis-je l'utiliser dans ma langue ?",
+        "a": "Oui — anglais, amharique, tigrinya, arabe, espagnol, français et somali. Changez quand vous voulez."
+      },
+      {
+        "q": "Je suis routier. Gère-t-il l'IFTA ?",
+        "a": "Oui. Il suit les miles et le carburant par État et calcule vos totaux IFTA trimestriels. Il vous donne les totaux — il ne dépose pas la déclaration à votre place."
+      },
+      {
+        "q": "Mon comptable peut-il voir mes comptes ?",
+        "a": "Oui. Invitez-le avec sa propre connexion, ou téléchargez les rapports en PDF et envoyez-les."
+      },
+      {
+        "q": "Je ne m'y connais pas en comptabilité. Vais-je m'en sortir ?",
+        "a": "Oui. Vous touchez Reçu, Payé ou Dû et choisissez une catégorie. Meksova fait les débits, crédits et rapports pour vous."
+      }
+    ],
+    "ctaTitle": "Voyez vos propres chiffres en deux minutes.",
+    "ctaText": "Ouvrez la démo de votre métier — sans inscription, rien à installer."
+  },
+  "features": {
+    "sync": {
+      "title": "Synchro banque et TPV",
+      "text": "Connectez votre carte bancaire et votre caisse — ventes et achats arrivent tout seuls, sans saisie."
+    },
+    "mileage": {
+      "title": "Suivi du kilométrage",
+      "text": "Démarrez et arrêtez un trajet d'un toucher, ou ajoutez-le à la main."
+    },
+    "trips": {
+      "title": "Historique des trajets",
+      "text": "Miles professionnels et déduction estimée, par date."
+    },
+    "fuel": {
+      "title": "Carburant par État",
+      "text": "Gallons et coût par État, d'après vos reçus de carburant."
+    },
+    "ifta": {
+      "title": "Rapport IFTA",
+      "text": "Miles et gallons trimestriels par État, prêts à exporter."
+    },
+    "scan": {
+      "title": "Scan de reçus",
+      "text": "Photographiez un reçu — montant et catégorie se remplissent seuls."
+    },
+    "payables": {
+      "title": "Factures à payer",
+      "text": "Notez ce que vous devez maintenant et payez plus tard, en totalité ou en plusieurs fois."
+    },
+    "reports": {
+      "title": "Rapports fiscaux",
+      "text": "Compte de résultat, bilan et journal toujours équilibrés."
+    },
+    "multi": {
+      "title": "Plusieurs entreprises",
+      "text": "Des comptes séparés pour chaque entreprise avec une seule connexion."
+    },
+    "accountant": {
+      "title": "Accès comptable",
+      "text": "Donnez à votre comptable ou associé sa propre connexion."
+    },
+    "languages": {
+      "title": "7 langues",
+      "text": "Anglais, amharique, tigrinya, arabe, espagnol, français, somali."
+    },
+    "documents": {
+      "title": "Documents",
+      "text": "Licences, baux et factures, rangés à côté de vos comptes."
+    },
+    "inventory": {
+      "title": "Stock et coût des marchandises",
+      "text": "Sachez ce que vous a coûté ce que vous avez vendu — votre vraie marge brute."
+    },
+    "export": {
+      "title": "Export CSV",
+      "text": "Téléchargez tous vos enregistrements à tout moment. Ils sont à vous."
+    }
+  },
+  "pricing": {
+    "metaTitle": "Tarifs — Meksova",
+    "metaDescription": "Un seul forfait avec toutes les fonctionnalités : 29,99 $ par mois, ou 299,99 $ par an (24,99 $ par mois). Essai gratuit de 30 jours, sans carte.",
+    "eyebrow": "Des tarifs simples",
+    "title": "Un forfait. Tout inclus.",
+    "lede": "Essayez gratuitement pendant 30 jours — sans carte. Ensuite, continuez au mois, ou payez à l'année et économisez 17 %.",
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "save": "−17 %",
+    "planName": "Meksova Pro",
+    "includes": "Tout dans Pro",
+    "items": [
+      "Opérations illimitées",
+      "Synchro banque et TPV",
+      "Scan de reçus",
+      "Rapports fiscaux et PDF",
+      "Kilométrage, carburant et IFTA",
+      "Factures à payer",
+      "Stock et coût des marchandises",
+      "Stockage de documents",
+      "Sauvegarde et export CSV",
+      "Accès comptable",
+      "Les 7 langues"
+    ],
+    "fine": "Aucune carte pour l'essai. Résiliez avant la fin de vos 30 jours et vous ne payez rien.",
+    "stripTitle": "Un forfait · tout inclus",
+    "faqTitle": "Questions sur les tarifs",
+    "faq": [
+      {
+        "q": "Que se passe-t-il après les 30 jours ?",
+        "a": "Si vous continuez, votre forfait démarre à 29,99 $ par mois, ou 299,99 $ par an. Sinon, rien n'est prélevé."
+      },
+      {
+        "q": "Existe-t-il un forfait moins cher avec moins de fonctions ?",
+        "a": "Non. Il n'y a qu'un forfait et il inclut tout, pour ne jamais être bloqué en pleine saison des impôts."
+      },
+      {
+        "q": "Puis-je passer du mensuel à l'annuel plus tard ?",
+        "a": "Oui. Passez à l'annuel quand vous voulez pour ramener votre coût à 24,99 $ par mois."
+      },
+      {
+        "q": "Puis-je résilier à tout moment ?",
+        "a": "Oui. Il n'y a pas de contrat. Vous pouvez exporter vos données en CSV avant de partir."
+      }
+    ]
+  },
+  "industriesPage": {
+    "metaTitle": "La comptabilité pour votre secteur — Meksova",
+    "metaDescription": "Meksova est préconfiguré pour 11 types d'activité : transport routier, VTC, épiceries, cafés, construction, nettoyage, beauté, e-commerce, créateurs de contenu, ménages et plus.",
+    "eyebrow": "Secteurs",
+    "title": "Configuré pour votre façon de travailler.",
+    "lede": "Choisissez votre activité pour voir ce que Meksova fait pour elle — ou lancez directement une démo avec des comptes d'exemple.",
+    "learn": "Comment ça marche",
+    "demo": "Essayer la démo"
+  },
+  "industryPage": {
+    "painsEyebrow": "Ça vous parle ?",
+    "painsTitle": "Moins de paperasse. Plus d'argent visible.",
+    "weekEyebrow": "Une semaine avec Meksova",
+    "weekTitle": "Quelques minutes par jour. Des comptes justes.",
+    "featuresEyebrow": "Conçu pour {{name}}",
+    "featuresTitle": "Tout sur un seul tableau de bord.",
+    "faqEyebrow": "Questions",
+    "faqTitle": "Des réponses claires.",
+    "ctaTitle": "Faites l'essai avec vos comptes.",
+    "ctaText": "La démo s'ouvre avec des comptes d'exemple de votre métier déjà remplis — sans inscription.",
+    "openDemo": "Ouvrir la démo",
+    "sampleBooks": "Comptes d'exemple · 30 derniers jours",
+    "in": "Entrées",
+    "out": "Sorties",
+    "owed": "Dû",
+    "iftaTitle": "Rapport IFTA trimestriel",
+    "iftaQuarter": "T3 · juil.–sept.",
+    "state": "État",
+    "miles": "Miles",
+    "gallons": "Gallons",
+    "total": "Total",
+    "fuelChip": "Reçu de carburant · Indianapolis",
+    "milesTitle": "Trajets de la semaine",
+    "business": "Professionnel",
+    "personal": "Personnel",
+    "otherIndustries": "Autres secteurs",
+    "days": [
+      "Lun",
+      "Mar",
+      "Mer",
+      "Jeu"
+    ]
+  },
+  "about": {
+    "metaTitle": "À propos de Meksova",
+    "metaDescription": "Meksova est une entreprise de Columbus, Ohio, qui crée une comptabilité simple et multilingue pour les entreprises d'immigrants et les petites entreprises.",
+    "eyebrow": "À propos",
+    "title": "Créé par des patrons qui",
+    "em": "croulaient sous les reçus.",
+    "lede": "Nous avons tenu nos propres petites entreprises et peinions à garder nos comptes en ordre. Alors nous avons créé l'outil que nous aurions voulu avoir — simple, honnête et dans les langues de notre communauté.",
+    "storyTitle": "Pourquoi Meksova existe",
+    "story": [
+      "La plupart des logiciels de comptabilité sont faits pour les comptables. Ils sont en anglais, pleins de jargon, et supposent que vous savez déjà ce qu'est une écriture de journal.",
+      "Meksova part de l'autre côté. Vous lui dites ce qui s'est passé — de l'argent est entré, de l'argent est sorti ou vous devez quelque chose — et il fait la comptabilité en coulisses : journal, compte de résultat, bilan et impôt estimé.",
+      "Chaque configuration est prête pour un vrai métier, du transport et de l'IFTA au stock d'une épicerie et au coût des marchandises, et toute l'app parle sept langues."
+    ],
+    "valuesTitle": "Ce qui compte pour nous",
+    "values": [
+      {
+        "title": "Un langage simple",
+        "text": "Reçu, Payé, Dû. Pas de débits ni de crédits, sauf si vous le voulez."
+      },
+      {
+        "title": "Votre langue",
+        "text": "Anglais, amharique, tigrinya, arabe, espagnol, français et somali."
+      },
+      {
+        "title": "Des chiffres honnêtes",
+        "text": "Des rapports équilibrés, fondés sur une vraie comptabilité en partie double."
+      },
+      {
+        "title": "Un support local",
+        "text": "Une vraie équipe à Columbus, Ohio, que vous pouvez appeler."
+      }
+    ]
+  },
+  "contact": {
+    "metaTitle": "Contacter Meksova",
+    "metaDescription": "Des questions sur Meksova ? Appelez le +1 (614) 966-5005, écrivez à info@meksova.com ou passez nous voir au 3130 Westerville Rd, Columbus, OH.",
+    "eyebrow": "Contact",
+    "title": "Parlez à une vraie personne.",
+    "lede": "Des questions sur la configuration, les tarifs ou vos comptes ? Nous sommes là pour vous aider — dans votre langue.",
+    "call": "Appelez-nous",
+    "email": "E-mail",
+    "visit": "Venez nous voir",
+    "reviews": "Avis Google",
+    "formTitle": "Envoyez-nous un message",
+    "name": "Votre nom",
+    "emailField": "E-mail",
+    "phoneField": "Téléphone (facultatif)",
+    "business": "Type d'activité",
+    "businessPick": "Choisissez",
+    "message": "Comment pouvons-nous vous aider ?",
+    "send": "Ouvrir dans ma messagerie",
+    "required": "Veuillez remplir ce champ.",
+    "invalidEmail": "Veuillez saisir un e-mail valide.",
+    "formNote": "Votre messagerie s'ouvre avec le message prêt à envoyer à info@meksova.com.",
+    "subject": "Question de {{name}}"
+  },
+  "blog": {
+    "metaTitle": "Guides pour patrons de petites entreprises — Meksova",
+    "metaDescription": "Des guides en langage simple sur l'IFTA, les reçus, le coût des marchandises et la comptabilité pour routiers, commerçants et petites entreprises.",
+    "eyebrow": "Guides",
+    "title": "La comptabilité, expliquée simplement.",
+    "lede": "Des guides courts pour les patrons qui préfèrent gérer leur affaire plutôt que lire le code des impôts.",
+    "back": "Tous les guides",
+    "englishOnly": "Ce guide est en anglais.",
+    "disclaimer": "Ce guide est une information générale, pas un conseil fiscal ou juridique. Les règles changent et chaque entreprise est différente — consultez un professionnel pour votre situation.",
+    "related": "Essayez-le dans Meksova"
+  },
+  "notFound": {
+    "metaTitle": "Page introuvable — Meksova",
+    "title": "Cette page a pris un mauvais virage.",
+    "lede": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "home": "Retour à l'accueil"
+  },
+  "footer": {
+    "tagline": "La comptabilité simple pour les petites entreprises, dans votre langue.",
+    "product": "Produit",
+    "company": "Entreprise",
+    "demo": "Démo en ligne",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "rights": "© {{year}} Meksova. Tous droits réservés."
+  },
+  "faqPage": {
+    "metaTitle": "Questions et réponses — Meksova",
+    "metaDescription": "Réponses sur les tarifs de Meksova, l'essai gratuit, les langues, l'IFTA, l'accès comptable et le fonctionnement de l'app.",
+    "title": "Questions et réponses"
+  },
   "industries": {
-    "truck": {"name":"Transport routier","short":"Fret, carburant par État, IFTA","metaTitle":"Appli de comptabilité et d'IFTA pour routiers — Meksova","metaDescription":"Revenus de fret, reçus de carburant, miles par État et totaux IFTA trimestriels dans une seule app pour routiers indépendants et petites flottes. Essai gratuit de 30 jours.","eyebrow":"Pour routiers indépendants et petites flottes","title":"Une comptabilité qui connaît la route.","em":"IFTA inclus.","lede":"Revenus de fret, carburant par État, réparations et péages au même endroit. Scannez un reçu de carburant et il va dans vos comptes et votre rapport IFTA.","preview":["Revenus de fret","Carburant","Surtaxe carburant","Réparations du camion","Péages","Assurance (à payer)"],"pains":[{"was":"Un pare-soleil bourré de reçus de carburant","title":"Une photo à la pompe","text":"Scannez le reçu ; montant, État et gallons sont lus et classés pour vous."},{"was":"La course à l'IFTA en fin de trimestre","title":"Des totaux prêts chaque trimestre","text":"Miles et gallons par État, issus de vos trajets et de votre carburant. Export CSV pour votre déclaration."},{"was":"Ne pas savoir ce que rapporte vraiment le camion","title":"Le bénéfice par camion, d'un coup d'œil","text":"Compte de résultat et impôt estimé — avec des comptes séparés pour chaque camion si vous en avez plusieurs."}],"week":[{"day":"Lun","title":"Chargement au départ de Columbus","text":"Notez le trajet — 184 miles entre l'Ohio et l'Indiana."},{"day":"Mar","title":"Plein à Indianapolis","text":"Scannez le reçu. C'est une dépense et une entrée IFTA."},{"day":"Mer","title":"Freins, payés plus tard","text":"Notez-le comme dû. Il apparaît dans À payer jusqu'au paiement."},{"day":"Ven","title":"Le paiement du fret arrive","text":"Touchez Reçu. La trésorerie se met à jour aussitôt."}],"faq":[{"q":"Meksova dépose-t-il ma déclaration IFTA ?","a":"Non. Il prépare vos miles et gallons par État pour le trimestre afin que la déclaration prenne quelques minutes. Utilisez les totaux pour votre déclaration ou donnez-les à votre préparateur."},{"q":"J'ai deux camions. Me faut-il deux comptes ?","a":"Non. Ajoutez une entreprise par camion sous une seule connexion et passez de l'une à l'autre d'un toucher."},{"q":"Le kilométrage nécessite-t-il le GPS ?","a":"Non. Utilisez le suivi de trajet d'un toucher, ou saisissez vos miles par État vous-même."}]},
-    "rideshare": {"name":"Chauffeurs VTC","short":"Courses, carburant, miles","metaTitle":"Suivi des miles et dépenses pour chauffeurs VTC — Meksova","metaDescription":"Suivez courses, pourboires, primes, carburant et miles professionnels pour Uber, Lyft et la livraison. Voyez votre vrai bénéfice et l'impôt estimé. Essai gratuit de 30 jours.","eyebrow":"Pour chauffeurs Uber, Lyft et livreurs","title":"Sachez ce que vous gagnez vraiment","em":"après les miles.","lede":"Courses, primes, carburant, commissions et chaque mile professionnel au même endroit — pour que les impôts ne soient plus une devinette.","preview":["Courses","Carburant","Primes","Commissions de la plateforme","Réparations de la voiture","Assurance (à payer)"],"pains":[{"was":"Des miles oubliés","title":"Un toucher pour noter un trajet","text":"Démarrez et arrêtez un trajet, ou ajoutez-le à la main ensuite. Pro et perso bien séparés."},{"was":"Des versements qui cachent les commissions","title":"Commissions et carburant à côté des courses","text":"Notez ce qui est entré et ce que ça a coûté, et votre vrai bénéfice s'affiche sur le tableau de bord."},{"was":"Une mauvaise surprise fiscale en avril","title":"L'impôt estimé au fil de l'eau","text":"Meksova estime l'impôt à partir de votre bénéfice pour que vous mettiez de côté chaque semaine."}],"week":[{"day":"Lun","title":"Courses vers l'aéroport le matin","text":"Suivez le trajet — 112 miles professionnels."},{"day":"Mar","title":"Faire le plein","text":"Scannez le reçu. Il est classé en dépense."},{"day":"Jeu","title":"Le versement de la semaine arrive","text":"Notez courses et prime comme entrées."},{"day":"Dim","title":"Faites le point","text":"Bénéfice, miles et déduction estimée sur un seul écran."}],"faq":[{"q":"Ça marche pour plusieurs applis ?","a":"Oui. Connectez le compte bancaire où arrivent vos versements et ils se synchronisent automatiquement — Uber, Lyft, DoorDash ou toute autre appli."},{"q":"Calcule-t-il ma déduction kilométrique ?","a":"Il affiche une déduction estimée d'après vos miles professionnels. Votre préparateur confirme le montant final."},{"q":"Dois-je laisser le GPS allumé ?","a":"Non. Vous pouvez saisir vos trajets à la main quand ça vous arrange."}]},
-    "groceries": {"name":"Épiceries","short":"Ventes, stock, fournisseurs","metaTitle":"Comptabilité pour épiceries et supérettes — Meksova","metaDescription":"Enregistrez ventes du jour, factures fournisseurs et stock, voyez le coût des marchandises et la vraie marge brute, et tenez des comptes prêts pour les impôts. Essai gratuit de 30 jours.","eyebrow":"Pour épiceries et supérettes","title":"Les ventes du jour entrent.","em":"Le vrai bénéfice sort.","lede":"Enregistrez les ventes du jour, les factures fournisseurs et le stock en quelques minutes, et voyez ce que la boutique gagne vraiment après le coût des marchandises.","preview":["Ventes du jour","Coût des marchandises vendues","Salaires","Frais de livraison","Charges","Facture fournisseur (à payer)"],"pains":[{"was":"Des factures de grossistes dans une boîte à chaussures","title":"Scannez les factures fournisseurs","text":"Photographiez la facture et classez-la en stock ou en dépense — rien ne se perd."},{"was":"Caisse qui tourne, bénéfice inconnu","title":"Les ventes arrivent de votre caisse","text":"Connectez votre caisse et votre carte bancaire — les ventes entrent seules dans vos comptes, et la marge brute tient compte du coût des marchandises."},{"was":"Les factures fournisseurs s'accumulent","title":"Sachez ce que vous devez","text":"Notez les factures fournisseurs comme dues et payez-les en totalité ou en plusieurs fois."}],"week":[{"day":"Lun","title":"Ventes synchronisées la nuit","text":"Les ventes d'hier arrivent depuis votre caisse."},{"day":"Mar","title":"Livraison de fruits et légumes","text":"Scannez la facture fournisseur. Elle est ajoutée en dû."},{"day":"Jeu","title":"Payez la moitié de la facture","text":"Notez un paiement partiel. Le reste reste dans À payer."},{"day":"Sam","title":"Faites le point","text":"Ventes, coût des marchandises et marge brute, côte à côte."}],"faq":[{"q":"Se connecte-t-il à ma caisse ?","a":"Oui. Connectez votre système de caisse et votre carte bancaire et les ventes et achats du jour se synchronisent automatiquement. Vous pouvez aussi saisir les totaux à la main."},{"q":"Puis-je suivre le stock que j'achète pour revendre ?","a":"Oui. Enregistrez les marchandises à revendre en stock, et leur coût passe en coût des marchandises vendues à mesure que vous vendez."},{"q":"J'ai deux magasins. Puis-je les séparer ?","a":"Oui. Ajoutez une entreprise par magasin et passez de l'un à l'autre avec une seule connexion."}]},
-    "cafe": {"name":"Cafés et restaurants","short":"Ventes, coût matière, personnel","metaTitle":"Comptabilité pour cafés et restaurants — Meksova","metaDescription":"Suivez ventes de nourriture et de boissons, coût matière, personnel et loyer, et connaissez votre vraie marge. Rapports prêts pour les impôts pour petits restaurants. Essai gratuit de 30 jours.","eyebrow":"Pour cafés, restaurants et food trucks","title":"Connaissez votre coût matière","em":"avant la fin du mois.","lede":"Ventes de nourriture et de boissons, coûts fournisseurs, personnel et loyer au même endroit — pour voir la marge de chaque assiette, pas seulement le solde bancaire.","preview":["Ventes nourriture","Coût matière","Ventes boissons","Salaires","Loyer","Facture fournisseur (à payer)"],"pains":[{"was":"Des reçus fournisseurs piqués en cuisine","title":"Scannez-les sur-le-champ","text":"Photographiez chaque reçu fournisseur ; il est classé automatiquement en coût matière."},{"was":"Des soirs pleins, des marges minces","title":"Ventes synchronisées, coût visible","text":"Les ventes arrivent seules de votre caisse, à côté du coût matière — pour repérer tôt une marge qui glisse."},{"was":"Loyer et salaires qui grimpent","title":"Chaque facture au même endroit","text":"Notez ce qui est dû maintenant et payez quand l'argent rentre."}],"week":[{"day":"Lun","title":"Les ventes du week-end arrivent","text":"Vos ventes de caisse sont déjà dans les comptes."},{"day":"Mar","title":"Livraison de légumes et de viande","text":"Scannez la facture et marquez-la comme due."},{"day":"Jeu","title":"Paie","text":"Notez les salaires. Le bénéfice se met à jour aussitôt."},{"day":"Dim","title":"Vérifiez la marge","text":"Voyez le coût matière face aux ventes de la semaine."}],"faq":[{"q":"Se connecte-t-il à ma caisse ?","a":"Oui. Connectez votre caisse et votre carte bancaire et les ventes et paiements fournisseurs se synchronisent automatiquement — plus de saisie à la fermeture."},{"q":"Puis-je séparer nourriture et boissons ?","a":"Oui. Ce sont deux catégories toutes prêtes, avec le traiteur et la livraison."},{"q":"Mon comptable peut-il voir les comptes ?","a":"Oui. Donnez-lui sa propre connexion, ou envoyez-lui le rapport en PDF."}]},
-    "construction": {"name":"Métiers du bâtiment","short":"Chantiers, matériaux, équipes","metaTitle":"Comptabilité pour entrepreneurs et artisans du bâtiment — Meksova","metaDescription":"Suivez revenus de chantier, matériaux, sous-traitants, outils et miles du véhicule, et voyez le bénéfice par projet. Pour petits entrepreneurs. Essai gratuit de 30 jours.","eyebrow":"Pour entrepreneurs, rénovateurs et artisans","title":"Voyez le bénéfice de chaque chantier,","em":"pas seulement le solde bancaire.","lede":"Contrats, matériaux, sous-traitants, outils et miles jusqu'au chantier — suivis au fur et à mesure, pour savoir quels chantiers rapportent.","preview":["Contrat de rénovation","Matériaux","Sous-traitants","Travaux de réparation","Carburant du camion","Outils (à payer)"],"pains":[{"was":"Des reçus de quincaillerie dans le camion","title":"Scannez au comptoir","text":"Photographiez les reçus de matériaux sur place et classez-les en coût de chantier ou en équipement."},{"was":"Ne pas savoir quels chantiers ont rapporté","title":"Le bénéfice par projet","text":"Les rapports mensuels montrent entrées et sorties pour que le résultat de chaque chantier soit clair."},{"was":"Des miles de chantier jamais notés","title":"Des trajets notés d'un toucher","text":"Suivez les trajets vers les chantiers et les achats de matériaux pour une déduction kilométrique estimée."}],"week":[{"day":"Lun","title":"Acompte sur une rénovation","text":"Notez l'acompte comme entrée."},{"day":"Mar","title":"Retrait de matériaux","text":"Scannez le reçu et notez le trajet de 52 miles."},{"day":"Jeu","title":"Nouveaux outils à crédit","text":"Enregistrez-les comme équipement dû."},{"day":"Ven","title":"Payez le sous-traitant","text":"Notez le paiement. Le bénéfice se met à jour."}],"faq":[{"q":"Puis-je suivre le matériel et les outils ?","a":"Oui. Enregistrez les gros achats en équipement pour qu'ils apparaissent au bilan, et non comme une dépense ponctuelle."},{"q":"Gère-t-il les paiements aux sous-traitants ?","a":"Oui. Les paiements aux sous-traitants sont une catégorie toute prête. Gardez leurs factures dans Documents."},{"q":"Puis-je l'utiliser depuis le chantier ?","a":"Oui. Il fonctionne dans le navigateur de votre téléphone — rien à installer."}]},
-    "cleaning": {"name":"Services de nettoyage","short":"Contrats, fournitures, miles","metaTitle":"Comptabilité pour entreprises de nettoyage — Meksova","metaDescription":"Suivez contrats de nettoyage, rotations Airbnb, fournitures, salaires et miles entre clients. Des comptes simples et prêts pour les impôts. Essai gratuit de 30 jours.","eyebrow":"Pour le nettoyage de maisons, bureaux et Airbnb","title":"Des comptes propres","em":"pour une entreprise de nettoyage.","lede":"Contrats réguliers, rotations Airbnb, fournitures, salaires et miles entre clients — tout dans une app simple.","preview":["Contrats réguliers","Fournitures","Rotations Airbnb","Salaires","Carburant et déplacements","Fournitures (à payer)"],"pains":[{"was":"Des reçus de fournitures perdus dans la camionnette","title":"Scannez en achetant","text":"Photographiez les reçus de fournitures et ils sont classés en dépenses aussitôt."},{"was":"Des miles entre clients oubliés","title":"Notez chaque trajet","text":"Suivez les trajets entre missions pour une déduction kilométrique estimée."},{"was":"Ne pas savoir quels contrats rapportent le plus","title":"Vos revenus par type","text":"Contrats réguliers, ménages ponctuels et rotations, chacun dans sa catégorie."}],"week":[{"day":"Lun","title":"Le contrat de bureau est payé","text":"Notez le contrat mensuel comme entrée."},{"day":"Mar","title":"Achat de fournitures","text":"Scannez le reçu ; notez le trajet de 18 miles."},{"day":"Jeu","title":"Deux rotations Airbnb","text":"Notez chacune comme revenu."},{"day":"Ven","title":"Payez l'équipe","text":"Notez les salaires et voyez le bénéfice de la semaine."}],"faq":[{"q":"Puis-je suivre les rotations Airbnb à part ?","a":"Oui. Rotations, contrats réguliers et ménages ponctuels sont des catégories séparées toutes prêtes."},{"q":"Faut-il le GPS pour le kilométrage ?","a":"Non. Utilisez le suivi de trajet ou saisissez les miles à la main."},{"q":"Puis-je stocker les contrats clients ?","a":"Oui. Gardez contrats, assurances et licences dans Documents."}]},
-    "beauty": {"name":"Beauté et barbiers","short":"Clients, produits, location de fauteuil","metaTitle":"Comptabilité pour salons, barbiers et pros de la beauté — Meksova","metaDescription":"Suivez prestations, ventes de produits, location de fauteuil et fournitures. Des comptes simples et prêts pour les impôts pour salons, barbiers, tresseuses et coiffeurs. Essai gratuit de 30 jours.","eyebrow":"Pour salons, barbiers, tresseuses et coiffeurs","title":"Plus de temps au fauteuil,","em":"moins de paperasse.","lede":"Prestations, ventes de produits, location de fauteuil et fournitures au même endroit — pour savoir ce que rapporte vraiment le fauteuil.","preview":["Coupes et coiffage","Produits de beauté","Coloration et soins","Loyer et charges","Vente de produits","Commande de produits (à payer)"],"pains":[{"was":"Pourboires en espèces et par carte, sans trace","title":"La journée notée en une minute","text":"Ajoutez les prestations et produits du jour en une ou deux saisies."},{"was":"Le coût des produits mange la marge","title":"Coût des produits face aux ventes","text":"Suivez ce que vous payez les produits revendus, pour que la vente rapporte vraiment."},{"was":"Location de fauteuil et factures qui s'accumulent","title":"Sachez ce que vous devez","text":"Notez commandes et loyer comme dus, puis réglez-les."}],"week":[{"day":"Mar","title":"Journée chargée","text":"Notez coupes et colorations comme entrées."},{"day":"Mer","title":"La commande de produits arrive","text":"Scannez la facture et marquez-la comme due."},{"day":"Ven","title":"Loyer du fauteuil à payer","text":"Notez le paiement du loyer."},{"day":"Sam","title":"Ventes de produits","text":"Notez les ventes. La marge brute se met à jour."}],"faq":[{"q":"Je loue un fauteuil. C'est pour moi ?","a":"Oui. Location de fauteuil, fournitures et revenus de prestations sont des catégories toutes prêtes."},{"q":"Puis-je suivre les produits que je revends ?","a":"Oui. Enregistrez-les en stock et voyez la marge quand ils se vendent."},{"q":"Se connecte-t-il à mon terminal de paiement ou ma caisse ?","a":"Oui. Connectez votre caisse et votre carte bancaire et vos ventes se synchronisent automatiquement. Vous pouvez ajouter les ventes en espèces à la main."}]},
-    "ecommerce": {"name":"Vendeurs en ligne","short":"Commandes, frais, expédition","metaTitle":"Comptabilité pour vendeurs en ligne — Meksova","metaDescription":"Suivez ventes en ligne, frais de plateforme, publicité, expédition et stock pour les vendeurs Shopify, Amazon, Etsy et eBay. Voyez votre vrai bénéfice chaque mois. Essai gratuit de 30 jours.","eyebrow":"Pour vendeurs Shopify, Amazon, Etsy et eBay","title":"Les ventes se voient facilement.","em":"Le bénéfice, non. Jusqu'à maintenant.","lede":"Ventes en ligne, frais de plateforme, publicité, expédition et stock au même endroit — pour voir ce qui reste une fois que chacun a pris sa part.","preview":["Ventes en ligne","Stock","Frais de plateforme","Publicité en ligne","Commande en gros","Matériel d'expédition (à payer)"],"pains":[{"was":"Des frais cachés dans les relevés de versement","title":"Les frais sur leur propre ligne","text":"Enregistrez séparément frais de plateforme et de paiement et voyez ce qu'ils vous coûtent vraiment."},{"was":"De la pub sans retour clair","title":"La pub à côté des ventes","text":"Suivez les dépenses publicitaires au même endroit que vos revenus, mois par mois."},{"was":"Du stock acheté, un bénéfice flou","title":"Le coût des marchandises, fait pour vous","text":"Enregistrez le stock ; son coût passe en coût des marchandises à mesure que vous vendez."}],"week":[{"day":"Lun","title":"Versement hebdomadaire","text":"Notez les ventes et les frais de plateforme."},{"day":"Mar","title":"Réassort chez le fournisseur","text":"Enregistrez l'achat en stock."},{"day":"Mer","title":"Facture publicitaire","text":"Scannez-la et classez-la en publicité."},{"day":"Ven","title":"Une commande en gros part","text":"Notez la commande. Le bénéfice se met à jour."}],"faq":[{"q":"Se synchronise-t-il avec ma boutique ?","a":"Connectez le compte bancaire où arrivent vos versements, plus votre caisse si vous vendez aussi en personne, et les opérations se synchronisent automatiquement. Frais et versements se classent ensuite d'un toucher."},{"q":"Puis-je vendre sur plusieurs plateformes ?","a":"Oui. Enregistrez les ventes de toutes les plateformes dans les mêmes comptes, ou gardez une entreprise pour chacune."},{"q":"Gère-t-il le stock ?","a":"Oui. Les marchandises à revendre vont en stock, et leur coût passe en coût des marchandises vendues à mesure que vous vendez."}]},
-    "contentCreator": {"name":"Créateurs de contenu","short":"Pub, sponsors, matériel","metaTitle":"Comptabilité pour créateurs de contenu et influenceurs — Meksova","metaDescription":"Suivez revenus publicitaires, sponsors, matériel, logiciels et freelances. Des comptes prêts pour les impôts pour YouTubeurs, TikTokeurs et créateurs. Essai gratuit de 30 jours.","eyebrow":"Pour YouTubeurs, TikTokeurs et créateurs","title":"Vous créez le contenu.","em":"Nous mettons de l'ordre dans l'argent.","lede":"Revenus publicitaires, sponsors, matériel, logiciels et monteurs au même endroit — des comptes propres pour l'arrivée des formulaires 1099.","preview":["Revenus publicitaires","Sponsoring","Matériel caméra","Monteur vidéo","Logiciels","Frais d'agence (à payer)"],"pains":[{"was":"Des revenus de cinq plateformes","title":"Tous les revenus d'un coup d'œil","text":"Pub, sponsors et affiliation, chacun dans sa catégorie."},{"was":"Des reçus de matériel dans vos e-mails","title":"Le matériel suivi comme équipement","text":"Enregistrez caméras et lumières en équipement, pas en dépense ponctuelle."},{"was":"La panique de la saison fiscale","title":"Des rapports prêts pour votre préparateur","text":"Compte de résultat et bilan, avec vos 1099 rangés dans Documents."}],"week":[{"day":"Lun","title":"Le sponsor paie","text":"Notez le sponsoring comme entrée."},{"day":"Mar","title":"Nouveau micro","text":"Scannez le reçu et classez-le en équipement."},{"day":"Jeu","title":"Payez votre monteur","text":"Notez le paiement du freelance."},{"day":"Sam","title":"Les revenus pub arrivent","text":"Notez-les. Voyez le bénéfice du mois."}],"faq":[{"q":"Gère-t-il des revenus de plusieurs plateformes ?","a":"Oui. Notez chaque versement dans sa catégorie — pub, sponsoring, affiliation, merch."},{"q":"Où ranger mes 1099 et contrats ?","a":"Dans Documents, à côté de vos comptes."},{"q":"Faut-il un comptable pour l'utiliser ?","a":"Non. Mais si vous en avez un, il peut se connecter et voir vos rapports."}]},
-    "households": {"name":"Ménages","short":"Factures, budget familial","metaTitle":"Budget familial et suivi des factures — Meksova","metaDescription":"Suivez salaire, revenus d'appoint, loyer, courses et factures de votre foyer, et voyez où va l'argent chaque mois. En 7 langues. Essai gratuit de 30 jours.","eyebrow":"Pour les familles et les particuliers","title":"Voyez où va l'argent,","em":"chaque mois.","lede":"Salaire, revenus d'appoint, loyer, courses et factures au même endroit — dans la langue que parle votre famille.","preview":["Salaire","Loyer","Courses","Revenu d'appoint","Transport","Charges (à payer)"],"pains":[{"was":"Le salaire envolé avant le 20","title":"Vos dépenses par catégorie","text":"Loyer, alimentation, transport et factures, chacun avec son total."},{"was":"Des factures oubliées","title":"Les factures à payer, listées","text":"Notez les factures à venir et marquez-les payées une fois réglées."},{"was":"Des reçus pour les impôts partout dans la maison","title":"Reçus et W-2 au même endroit","text":"Scannez les reçus et gardez vos papiers fiscaux dans Documents."}],"week":[{"day":"Ven","title":"Jour de paie","text":"Notez votre salaire comme entrée."},{"day":"Sam","title":"Courses de la semaine","text":"Scannez le ticket. Classé en alimentation."},{"day":"Lun","title":"La facture d'électricité arrive","text":"Notez-la comme due jusqu'au paiement."},{"day":"Mer","title":"Un petit boulot est payé","text":"Notez-le et voyez où en est le mois."}],"faq":[{"q":"C'est seulement pour les entreprises ?","a":"Non. La configuration foyer a des catégories familiales comme le loyer, l'alimentation, le transport et les factures."},{"q":"Toute la famille peut-elle l'utiliser ?","a":"Oui. Invitez votre conjoint avec sa propre connexion."},{"q":"Est-il en amharique, tigrinya ou somali ?","a":"Oui — ainsi qu'en anglais, arabe, espagnol et français."}]},
-    "other": {"name":"Toute petite entreprise","short":"Ventes, services, factures","metaTitle":"Comptabilité simple pour toute petite entreprise — Meksova","metaDescription":"Suivez ventes, services, fournitures, loyer et factures, scannez vos reçus et obtenez des rapports prêts pour les impôts. La comptabilité simple pour toute petite entreprise. Essai gratuit de 30 jours.","eyebrow":"Pour tout autre type d'activité","title":"Des comptes simples","em":"quel que soit votre métier.","lede":"Ventes, services, fournitures, loyer et factures — avec scan de reçus et rapports fiscaux, configuré en une minute.","preview":["Ventes","Fournitures","Loyer","Services","Charges (à payer)"],"pains":[{"was":"Saisir chaque opération à la main","title":"Connectez votre banque et votre carte","text":"Les opérations se synchronisent automatiquement — Meksova fait les débits et crédits."},{"was":"Des reçus dans toutes les poches","title":"Scannez et oubliez","text":"Photographiez un reçu et il est classé dans la bonne catégorie."},{"was":"Redouter la saison des impôts","title":"Des rapports prêts tous les jours","text":"Compte de résultat, bilan et impôt estimé, prêts à télécharger."}],"week":[{"day":"Lun","title":"Un client paie","text":"Notez-le comme entrée."},{"day":"Mar","title":"Achat de fournitures","text":"Scannez le reçu."},{"day":"Jeu","title":"Loyer à payer","text":"Notez-le comme dû, puis réglez-le."},{"day":"Ven","title":"Faites le point","text":"Bénéfice et impôt estimé sur un seul écran."}],"faq":[{"q":"Mon activité n'est pas listée. Ça marchera ?","a":"Oui. La configuration générale a les catégories dont la plupart des entreprises ont besoin — ventes, services, fournitures, loyer, charges et plus."},{"q":"Puis-je passer à une configuration métier plus tard ?","a":"Oui. Ajoutez une entreprise avec la configuration qui convient et gardez les deux sous une seule connexion."},{"q":"Faut-il de l'expérience en comptabilité ?","a":"Non. Si vous savez ce qui est entré et ce qui est sorti, vous pouvez utiliser Meksova."}]}
+    "truck": {
+      "name": "Transport routier",
+      "short": "Fret, carburant par État, IFTA",
+      "metaTitle": "Appli de comptabilité et d'IFTA pour routiers — Meksova",
+      "metaDescription": "Revenus de fret, reçus de carburant, miles par État et totaux IFTA trimestriels dans une seule app pour routiers indépendants et petites flottes. Essai gratuit de 30 jours.",
+      "eyebrow": "Pour routiers indépendants et petites flottes",
+      "title": "Une comptabilité qui connaît la route.",
+      "em": "IFTA inclus.",
+      "lede": "Revenus de fret, carburant par État, réparations et péages au même endroit. Scannez un reçu de carburant et il va dans vos comptes et votre rapport IFTA.",
+      "preview": [
+        "Revenus de fret",
+        "Carburant",
+        "Surtaxe carburant",
+        "Réparations du camion",
+        "Péages",
+        "Assurance (à payer)"
+      ],
+      "pains": [
+        {
+          "was": "Un pare-soleil bourré de reçus de carburant",
+          "title": "Une photo à la pompe",
+          "text": "Scannez le reçu ; montant, État et gallons sont lus et classés pour vous."
+        },
+        {
+          "was": "La course à l'IFTA en fin de trimestre",
+          "title": "Des totaux prêts chaque trimestre",
+          "text": "Miles et gallons par État, issus de vos trajets et de votre carburant. Export CSV pour votre déclaration."
+        },
+        {
+          "was": "Ne pas savoir ce que rapporte vraiment le camion",
+          "title": "Le bénéfice par camion, d'un coup d'œil",
+          "text": "Compte de résultat et impôt estimé — avec des comptes séparés pour chaque camion si vous en avez plusieurs."
+        }
+      ],
+      "week": [
+        {
+          "day": "Lun",
+          "title": "Chargement au départ de Columbus",
+          "text": "Notez le trajet — 184 miles entre l'Ohio et l'Indiana."
+        },
+        {
+          "day": "Mar",
+          "title": "Plein à Indianapolis",
+          "text": "Scannez le reçu. C'est une dépense et une entrée IFTA."
+        },
+        {
+          "day": "Mer",
+          "title": "Freins, payés plus tard",
+          "text": "Notez-le comme dû. Il apparaît dans À payer jusqu'au paiement."
+        },
+        {
+          "day": "Ven",
+          "title": "Le paiement du fret arrive",
+          "text": "Touchez Reçu. La trésorerie se met à jour aussitôt."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Meksova dépose-t-il ma déclaration IFTA ?",
+          "a": "Non. Il prépare vos miles et gallons par État pour le trimestre afin que la déclaration prenne quelques minutes. Utilisez les totaux pour votre déclaration ou donnez-les à votre préparateur."
+        },
+        {
+          "q": "J'ai deux camions. Me faut-il deux comptes ?",
+          "a": "Non. Ajoutez une entreprise par camion sous une seule connexion et passez de l'une à l'autre d'un toucher."
+        },
+        {
+          "q": "Le kilométrage nécessite-t-il le GPS ?",
+          "a": "Non. Utilisez le suivi de trajet d'un toucher, ou saisissez vos miles par État vous-même."
+        }
+      ]
+    },
+    "rideshare": {
+      "name": "Chauffeurs VTC",
+      "short": "Courses, carburant, miles",
+      "metaTitle": "Suivi des miles et dépenses pour chauffeurs VTC — Meksova",
+      "metaDescription": "Suivez courses, pourboires, primes, carburant et miles professionnels pour Uber, Lyft et la livraison. Voyez votre vrai bénéfice et l'impôt estimé. Essai gratuit de 30 jours.",
+      "eyebrow": "Pour chauffeurs Uber, Lyft et livreurs",
+      "title": "Sachez ce que vous gagnez vraiment",
+      "em": "après les miles.",
+      "lede": "Courses, primes, carburant, commissions et chaque mile professionnel au même endroit — pour que les impôts ne soient plus une devinette.",
+      "preview": [
+        "Courses",
+        "Carburant",
+        "Primes",
+        "Commissions de la plateforme",
+        "Réparations de la voiture",
+        "Assurance (à payer)"
+      ],
+      "pains": [
+        {
+          "was": "Des miles oubliés",
+          "title": "Un toucher pour noter un trajet",
+          "text": "Démarrez et arrêtez un trajet, ou ajoutez-le à la main ensuite. Pro et perso bien séparés."
+        },
+        {
+          "was": "Des versements qui cachent les commissions",
+          "title": "Commissions et carburant à côté des courses",
+          "text": "Notez ce qui est entré et ce que ça a coûté, et votre vrai bénéfice s'affiche sur le tableau de bord."
+        },
+        {
+          "was": "Une mauvaise surprise fiscale en avril",
+          "title": "L'impôt estimé au fil de l'eau",
+          "text": "Meksova estime l'impôt à partir de votre bénéfice pour que vous mettiez de côté chaque semaine."
+        }
+      ],
+      "week": [
+        {
+          "day": "Lun",
+          "title": "Courses vers l'aéroport le matin",
+          "text": "Suivez le trajet — 112 miles professionnels."
+        },
+        {
+          "day": "Mar",
+          "title": "Faire le plein",
+          "text": "Scannez le reçu. Il est classé en dépense."
+        },
+        {
+          "day": "Jeu",
+          "title": "Le versement de la semaine arrive",
+          "text": "Notez courses et prime comme entrées."
+        },
+        {
+          "day": "Dim",
+          "title": "Faites le point",
+          "text": "Bénéfice, miles et déduction estimée sur un seul écran."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ça marche pour plusieurs applis ?",
+          "a": "Oui. Connectez le compte bancaire où arrivent vos versements et ils se synchronisent automatiquement — Uber, Lyft, DoorDash ou toute autre appli."
+        },
+        {
+          "q": "Calcule-t-il ma déduction kilométrique ?",
+          "a": "Il affiche une déduction estimée d'après vos miles professionnels. Votre préparateur confirme le montant final."
+        },
+        {
+          "q": "Dois-je laisser le GPS allumé ?",
+          "a": "Non. Vous pouvez saisir vos trajets à la main quand ça vous arrange."
+        }
+      ]
+    },
+    "groceries": {
+      "name": "Épiceries",
+      "short": "Ventes, stock, fournisseurs",
+      "metaTitle": "Comptabilité pour épiceries et supérettes — Meksova",
+      "metaDescription": "Enregistrez ventes du jour, factures fournisseurs et stock, voyez le coût des marchandises et la vraie marge brute, et tenez des comptes prêts pour les impôts. Essai gratuit de 30 jours.",
+      "eyebrow": "Pour épiceries et supérettes",
+      "title": "Les ventes du jour entrent.",
+      "em": "Le vrai bénéfice sort.",
+      "lede": "Enregistrez les ventes du jour, les factures fournisseurs et le stock en quelques minutes, et voyez ce que la boutique gagne vraiment après le coût des marchandises.",
+      "preview": [
+        "Ventes du jour",
+        "Coût des marchandises vendues",
+        "Salaires",
+        "Frais de livraison",
+        "Charges",
+        "Facture fournisseur (à payer)"
+      ],
+      "pains": [
+        {
+          "was": "Des factures de grossistes dans une boîte à chaussures",
+          "title": "Scannez les factures fournisseurs",
+          "text": "Photographiez la facture et classez-la en stock ou en dépense — rien ne se perd."
+        },
+        {
+          "was": "Caisse qui tourne, bénéfice inconnu",
+          "title": "Les ventes arrivent de votre caisse",
+          "text": "Connectez votre caisse et votre carte bancaire — les ventes entrent seules dans vos comptes, et la marge brute tient compte du coût des marchandises."
+        },
+        {
+          "was": "Les factures fournisseurs s'accumulent",
+          "title": "Sachez ce que vous devez",
+          "text": "Notez les factures fournisseurs comme dues et payez-les en totalité ou en plusieurs fois."
+        }
+      ],
+      "week": [
+        {
+          "day": "Lun",
+          "title": "Ventes synchronisées la nuit",
+          "text": "Les ventes d'hier arrivent depuis votre caisse."
+        },
+        {
+          "day": "Mar",
+          "title": "Livraison de fruits et légumes",
+          "text": "Scannez la facture fournisseur. Elle est ajoutée en dû."
+        },
+        {
+          "day": "Jeu",
+          "title": "Payez la moitié de la facture",
+          "text": "Notez un paiement partiel. Le reste reste dans À payer."
+        },
+        {
+          "day": "Sam",
+          "title": "Faites le point",
+          "text": "Ventes, coût des marchandises et marge brute, côte à côte."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Se connecte-t-il à ma caisse ?",
+          "a": "Oui. Connectez votre système de caisse et votre carte bancaire et les ventes et achats du jour se synchronisent automatiquement. Vous pouvez aussi saisir les totaux à la main."
+        },
+        {
+          "q": "Puis-je suivre le stock que j'achète pour revendre ?",
+          "a": "Oui. Enregistrez les marchandises à revendre en stock, et leur coût passe en coût des marchandises vendues à mesure que vous vendez."
+        },
+        {
+          "q": "J'ai deux magasins. Puis-je les séparer ?",
+          "a": "Oui. Ajoutez une entreprise par magasin et passez de l'un à l'autre avec une seule connexion."
+        }
+      ]
+    },
+    "cafe": {
+      "name": "Cafés et restaurants",
+      "short": "Ventes, coût matière, personnel",
+      "metaTitle": "Comptabilité pour cafés et restaurants — Meksova",
+      "metaDescription": "Suivez ventes de nourriture et de boissons, coût matière, personnel et loyer, et connaissez votre vraie marge. Rapports prêts pour les impôts pour petits restaurants. Essai gratuit de 30 jours.",
+      "eyebrow": "Pour cafés, restaurants et food trucks",
+      "title": "Connaissez votre coût matière",
+      "em": "avant la fin du mois.",
+      "lede": "Ventes de nourriture et de boissons, coûts fournisseurs, personnel et loyer au même endroit — pour voir la marge de chaque assiette, pas seulement le solde bancaire.",
+      "preview": [
+        "Ventes nourriture",
+        "Coût matière",
+        "Ventes boissons",
+        "Salaires",
+        "Loyer",
+        "Facture fournisseur (à payer)"
+      ],
+      "pains": [
+        {
+          "was": "Des reçus fournisseurs piqués en cuisine",
+          "title": "Scannez-les sur-le-champ",
+          "text": "Photographiez chaque reçu fournisseur ; il est classé automatiquement en coût matière."
+        },
+        {
+          "was": "Des soirs pleins, des marges minces",
+          "title": "Ventes synchronisées, coût visible",
+          "text": "Les ventes arrivent seules de votre caisse, à côté du coût matière — pour repérer tôt une marge qui glisse."
+        },
+        {
+          "was": "Loyer et salaires qui grimpent",
+          "title": "Chaque facture au même endroit",
+          "text": "Notez ce qui est dû maintenant et payez quand l'argent rentre."
+        }
+      ],
+      "week": [
+        {
+          "day": "Lun",
+          "title": "Les ventes du week-end arrivent",
+          "text": "Vos ventes de caisse sont déjà dans les comptes."
+        },
+        {
+          "day": "Mar",
+          "title": "Livraison de légumes et de viande",
+          "text": "Scannez la facture et marquez-la comme due."
+        },
+        {
+          "day": "Jeu",
+          "title": "Paie",
+          "text": "Notez les salaires. Le bénéfice se met à jour aussitôt."
+        },
+        {
+          "day": "Dim",
+          "title": "Vérifiez la marge",
+          "text": "Voyez le coût matière face aux ventes de la semaine."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Se connecte-t-il à ma caisse ?",
+          "a": "Oui. Connectez votre caisse et votre carte bancaire et les ventes et paiements fournisseurs se synchronisent automatiquement — plus de saisie à la fermeture."
+        },
+        {
+          "q": "Puis-je séparer nourriture et boissons ?",
+          "a": "Oui. Ce sont deux catégories toutes prêtes, avec le traiteur et la livraison."
+        },
+        {
+          "q": "Mon comptable peut-il voir les comptes ?",
+          "a": "Oui. Donnez-lui sa propre connexion, ou envoyez-lui le rapport en PDF."
+        }
+      ]
+    },
+    "construction": {
+      "name": "Métiers du bâtiment",
+      "short": "Chantiers, matériaux, équipes",
+      "metaTitle": "Comptabilité pour entrepreneurs et artisans du bâtiment — Meksova",
+      "metaDescription": "Suivez revenus de chantier, matériaux, sous-traitants, outils et miles du véhicule, et voyez le bénéfice par projet. Pour petits entrepreneurs. Essai gratuit de 30 jours.",
+      "eyebrow": "Pour entrepreneurs, rénovateurs et artisans",
+      "title": "Voyez le bénéfice de chaque chantier,",
+      "em": "pas seulement le solde bancaire.",
+      "lede": "Contrats, matériaux, sous-traitants, outils et miles jusqu'au chantier — suivis au fur et à mesure, pour savoir quels chantiers rapportent.",
+      "preview": [
+        "Contrat de rénovation",
+        "Matériaux",
+        "Sous-traitants",
+        "Travaux de réparation",
+        "Carburant du camion",
+        "Outils (à payer)"
+      ],
+      "pains": [
+        {
+          "was": "Des reçus de quincaillerie dans le camion",
+          "title": "Scannez au comptoir",
+          "text": "Photographiez les reçus de matériaux sur place et classez-les en coût de chantier ou en équipement."
+        },
+        {
+          "was": "Ne pas savoir quels chantiers ont rapporté",
+          "title": "Le bénéfice par projet",
+          "text": "Les rapports mensuels montrent entrées et sorties pour que le résultat de chaque chantier soit clair."
+        },
+        {
+          "was": "Des miles de chantier jamais notés",
+          "title": "Des trajets notés d'un toucher",
+          "text": "Suivez les trajets vers les chantiers et les achats de matériaux pour une déduction kilométrique estimée."
+        }
+      ],
+      "week": [
+        {
+          "day": "Lun",
+          "title": "Acompte sur une rénovation",
+          "text": "Notez l'acompte comme entrée."
+        },
+        {
+          "day": "Mar",
+          "title": "Retrait de matériaux",
+          "text": "Scannez le reçu et notez le trajet de 52 miles."
+        },
+        {
+          "day": "Jeu",
+          "title": "Nouveaux outils à crédit",
+          "text": "Enregistrez-les comme équipement dû."
+        },
+        {
+          "day": "Ven",
+          "title": "Payez le sous-traitant",
+          "text": "Notez le paiement. Le bénéfice se met à jour."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Puis-je suivre le matériel et les outils ?",
+          "a": "Oui. Enregistrez les gros achats en équipement pour qu'ils apparaissent au bilan, et non comme une dépense ponctuelle."
+        },
+        {
+          "q": "Gère-t-il les paiements aux sous-traitants ?",
+          "a": "Oui. Les paiements aux sous-traitants sont une catégorie toute prête. Gardez leurs factures dans Documents."
+        },
+        {
+          "q": "Puis-je l'utiliser depuis le chantier ?",
+          "a": "Oui. Il fonctionne dans le navigateur de votre téléphone — rien à installer."
+        }
+      ]
+    },
+    "cleaning": {
+      "name": "Services de nettoyage",
+      "short": "Contrats, fournitures, miles",
+      "metaTitle": "Comptabilité pour entreprises de nettoyage — Meksova",
+      "metaDescription": "Suivez contrats de nettoyage, rotations Airbnb, fournitures, salaires et miles entre clients. Des comptes simples et prêts pour les impôts. Essai gratuit de 30 jours.",
+      "eyebrow": "Pour le nettoyage de maisons, bureaux et Airbnb",
+      "title": "Des comptes propres",
+      "em": "pour une entreprise de nettoyage.",
+      "lede": "Contrats réguliers, rotations Airbnb, fournitures, salaires et miles entre clients — tout dans une app simple.",
+      "preview": [
+        "Contrats réguliers",
+        "Fournitures",
+        "Rotations Airbnb",
+        "Salaires",
+        "Carburant et déplacements",
+        "Fournitures (à payer)"
+      ],
+      "pains": [
+        {
+          "was": "Des reçus de fournitures perdus dans la camionnette",
+          "title": "Scannez en achetant",
+          "text": "Photographiez les reçus de fournitures et ils sont classés en dépenses aussitôt."
+        },
+        {
+          "was": "Des miles entre clients oubliés",
+          "title": "Notez chaque trajet",
+          "text": "Suivez les trajets entre missions pour une déduction kilométrique estimée."
+        },
+        {
+          "was": "Ne pas savoir quels contrats rapportent le plus",
+          "title": "Vos revenus par type",
+          "text": "Contrats réguliers, ménages ponctuels et rotations, chacun dans sa catégorie."
+        }
+      ],
+      "week": [
+        {
+          "day": "Lun",
+          "title": "Le contrat de bureau est payé",
+          "text": "Notez le contrat mensuel comme entrée."
+        },
+        {
+          "day": "Mar",
+          "title": "Achat de fournitures",
+          "text": "Scannez le reçu ; notez le trajet de 18 miles."
+        },
+        {
+          "day": "Jeu",
+          "title": "Deux rotations Airbnb",
+          "text": "Notez chacune comme revenu."
+        },
+        {
+          "day": "Ven",
+          "title": "Payez l'équipe",
+          "text": "Notez les salaires et voyez le bénéfice de la semaine."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Puis-je suivre les rotations Airbnb à part ?",
+          "a": "Oui. Rotations, contrats réguliers et ménages ponctuels sont des catégories séparées toutes prêtes."
+        },
+        {
+          "q": "Faut-il le GPS pour le kilométrage ?",
+          "a": "Non. Utilisez le suivi de trajet ou saisissez les miles à la main."
+        },
+        {
+          "q": "Puis-je stocker les contrats clients ?",
+          "a": "Oui. Gardez contrats, assurances et licences dans Documents."
+        }
+      ]
+    },
+    "beauty": {
+      "name": "Beauté et barbiers",
+      "short": "Clients, produits, location de fauteuil",
+      "metaTitle": "Comptabilité pour salons, barbiers et pros de la beauté — Meksova",
+      "metaDescription": "Suivez prestations, ventes de produits, location de fauteuil et fournitures. Des comptes simples et prêts pour les impôts pour salons, barbiers, tresseuses et coiffeurs. Essai gratuit de 30 jours.",
+      "eyebrow": "Pour salons, barbiers, tresseuses et coiffeurs",
+      "title": "Plus de temps au fauteuil,",
+      "em": "moins de paperasse.",
+      "lede": "Prestations, ventes de produits, location de fauteuil et fournitures au même endroit — pour savoir ce que rapporte vraiment le fauteuil.",
+      "preview": [
+        "Coupes et coiffage",
+        "Produits de beauté",
+        "Coloration et soins",
+        "Loyer et charges",
+        "Vente de produits",
+        "Commande de produits (à payer)"
+      ],
+      "pains": [
+        {
+          "was": "Pourboires en espèces et par carte, sans trace",
+          "title": "La journée notée en une minute",
+          "text": "Ajoutez les prestations et produits du jour en une ou deux saisies."
+        },
+        {
+          "was": "Le coût des produits mange la marge",
+          "title": "Coût des produits face aux ventes",
+          "text": "Suivez ce que vous payez les produits revendus, pour que la vente rapporte vraiment."
+        },
+        {
+          "was": "Location de fauteuil et factures qui s'accumulent",
+          "title": "Sachez ce que vous devez",
+          "text": "Notez commandes et loyer comme dus, puis réglez-les."
+        }
+      ],
+      "week": [
+        {
+          "day": "Mar",
+          "title": "Journée chargée",
+          "text": "Notez coupes et colorations comme entrées."
+        },
+        {
+          "day": "Mer",
+          "title": "La commande de produits arrive",
+          "text": "Scannez la facture et marquez-la comme due."
+        },
+        {
+          "day": "Ven",
+          "title": "Loyer du fauteuil à payer",
+          "text": "Notez le paiement du loyer."
+        },
+        {
+          "day": "Sam",
+          "title": "Ventes de produits",
+          "text": "Notez les ventes. La marge brute se met à jour."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Je loue un fauteuil. C'est pour moi ?",
+          "a": "Oui. Location de fauteuil, fournitures et revenus de prestations sont des catégories toutes prêtes."
+        },
+        {
+          "q": "Puis-je suivre les produits que je revends ?",
+          "a": "Oui. Enregistrez-les en stock et voyez la marge quand ils se vendent."
+        },
+        {
+          "q": "Se connecte-t-il à mon terminal de paiement ou ma caisse ?",
+          "a": "Oui. Connectez votre caisse et votre carte bancaire et vos ventes se synchronisent automatiquement. Vous pouvez ajouter les ventes en espèces à la main."
+        }
+      ]
+    },
+    "ecommerce": {
+      "name": "Vendeurs en ligne",
+      "short": "Commandes, frais, expédition",
+      "metaTitle": "Comptabilité pour vendeurs en ligne — Meksova",
+      "metaDescription": "Suivez ventes en ligne, frais de plateforme, publicité, expédition et stock pour les vendeurs Shopify, Amazon, Etsy et eBay. Voyez votre vrai bénéfice chaque mois. Essai gratuit de 30 jours.",
+      "eyebrow": "Pour vendeurs Shopify, Amazon, Etsy et eBay",
+      "title": "Les ventes se voient facilement.",
+      "em": "Le bénéfice, non. Jusqu'à maintenant.",
+      "lede": "Ventes en ligne, frais de plateforme, publicité, expédition et stock au même endroit — pour voir ce qui reste une fois que chacun a pris sa part.",
+      "preview": [
+        "Ventes en ligne",
+        "Stock",
+        "Frais de plateforme",
+        "Publicité en ligne",
+        "Commande en gros",
+        "Matériel d'expédition (à payer)"
+      ],
+      "pains": [
+        {
+          "was": "Des frais cachés dans les relevés de versement",
+          "title": "Les frais sur leur propre ligne",
+          "text": "Enregistrez séparément frais de plateforme et de paiement et voyez ce qu'ils vous coûtent vraiment."
+        },
+        {
+          "was": "De la pub sans retour clair",
+          "title": "La pub à côté des ventes",
+          "text": "Suivez les dépenses publicitaires au même endroit que vos revenus, mois par mois."
+        },
+        {
+          "was": "Du stock acheté, un bénéfice flou",
+          "title": "Le coût des marchandises, fait pour vous",
+          "text": "Enregistrez le stock ; son coût passe en coût des marchandises à mesure que vous vendez."
+        }
+      ],
+      "week": [
+        {
+          "day": "Lun",
+          "title": "Versement hebdomadaire",
+          "text": "Notez les ventes et les frais de plateforme."
+        },
+        {
+          "day": "Mar",
+          "title": "Réassort chez le fournisseur",
+          "text": "Enregistrez l'achat en stock."
+        },
+        {
+          "day": "Mer",
+          "title": "Facture publicitaire",
+          "text": "Scannez-la et classez-la en publicité."
+        },
+        {
+          "day": "Ven",
+          "title": "Une commande en gros part",
+          "text": "Notez la commande. Le bénéfice se met à jour."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Se synchronise-t-il avec ma boutique ?",
+          "a": "Connectez le compte bancaire où arrivent vos versements, plus votre caisse si vous vendez aussi en personne, et les opérations se synchronisent automatiquement. Frais et versements se classent ensuite d'un toucher."
+        },
+        {
+          "q": "Puis-je vendre sur plusieurs plateformes ?",
+          "a": "Oui. Enregistrez les ventes de toutes les plateformes dans les mêmes comptes, ou gardez une entreprise pour chacune."
+        },
+        {
+          "q": "Gère-t-il le stock ?",
+          "a": "Oui. Les marchandises à revendre vont en stock, et leur coût passe en coût des marchandises vendues à mesure que vous vendez."
+        }
+      ]
+    },
+    "contentCreator": {
+      "name": "Créateurs de contenu",
+      "short": "Pub, sponsors, matériel",
+      "metaTitle": "Comptabilité pour créateurs de contenu et influenceurs — Meksova",
+      "metaDescription": "Suivez revenus publicitaires, sponsors, matériel, logiciels et freelances. Des comptes prêts pour les impôts pour YouTubeurs, TikTokeurs et créateurs. Essai gratuit de 30 jours.",
+      "eyebrow": "Pour YouTubeurs, TikTokeurs et créateurs",
+      "title": "Vous créez le contenu.",
+      "em": "Nous mettons de l'ordre dans l'argent.",
+      "lede": "Revenus publicitaires, sponsors, matériel, logiciels et monteurs au même endroit — des comptes propres pour l'arrivée des formulaires 1099.",
+      "preview": [
+        "Revenus publicitaires",
+        "Sponsoring",
+        "Matériel caméra",
+        "Monteur vidéo",
+        "Logiciels",
+        "Frais d'agence (à payer)"
+      ],
+      "pains": [
+        {
+          "was": "Des revenus de cinq plateformes",
+          "title": "Tous les revenus d'un coup d'œil",
+          "text": "Pub, sponsors et affiliation, chacun dans sa catégorie."
+        },
+        {
+          "was": "Des reçus de matériel dans vos e-mails",
+          "title": "Le matériel suivi comme équipement",
+          "text": "Enregistrez caméras et lumières en équipement, pas en dépense ponctuelle."
+        },
+        {
+          "was": "La panique de la saison fiscale",
+          "title": "Des rapports prêts pour votre préparateur",
+          "text": "Compte de résultat et bilan, avec vos 1099 rangés dans Documents."
+        }
+      ],
+      "week": [
+        {
+          "day": "Lun",
+          "title": "Le sponsor paie",
+          "text": "Notez le sponsoring comme entrée."
+        },
+        {
+          "day": "Mar",
+          "title": "Nouveau micro",
+          "text": "Scannez le reçu et classez-le en équipement."
+        },
+        {
+          "day": "Jeu",
+          "title": "Payez votre monteur",
+          "text": "Notez le paiement du freelance."
+        },
+        {
+          "day": "Sam",
+          "title": "Les revenus pub arrivent",
+          "text": "Notez-les. Voyez le bénéfice du mois."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Gère-t-il des revenus de plusieurs plateformes ?",
+          "a": "Oui. Notez chaque versement dans sa catégorie — pub, sponsoring, affiliation, merch."
+        },
+        {
+          "q": "Où ranger mes 1099 et contrats ?",
+          "a": "Dans Documents, à côté de vos comptes."
+        },
+        {
+          "q": "Faut-il un comptable pour l'utiliser ?",
+          "a": "Non. Mais si vous en avez un, il peut se connecter et voir vos rapports."
+        }
+      ]
+    },
+    "households": {
+      "name": "Ménages",
+      "short": "Factures, budget familial",
+      "metaTitle": "Budget familial et suivi des factures — Meksova",
+      "metaDescription": "Suivez salaire, revenus d'appoint, loyer, courses et factures de votre foyer, et voyez où va l'argent chaque mois. En 7 langues. Essai gratuit de 30 jours.",
+      "eyebrow": "Pour les familles et les particuliers",
+      "title": "Voyez où va l'argent,",
+      "em": "chaque mois.",
+      "lede": "Salaire, revenus d'appoint, loyer, courses et factures au même endroit — dans la langue que parle votre famille.",
+      "preview": [
+        "Salaire",
+        "Loyer",
+        "Courses",
+        "Revenu d'appoint",
+        "Transport",
+        "Charges (à payer)"
+      ],
+      "pains": [
+        {
+          "was": "Le salaire envolé avant le 20",
+          "title": "Vos dépenses par catégorie",
+          "text": "Loyer, alimentation, transport et factures, chacun avec son total."
+        },
+        {
+          "was": "Des factures oubliées",
+          "title": "Les factures à payer, listées",
+          "text": "Notez les factures à venir et marquez-les payées une fois réglées."
+        },
+        {
+          "was": "Des reçus pour les impôts partout dans la maison",
+          "title": "Reçus et W-2 au même endroit",
+          "text": "Scannez les reçus et gardez vos papiers fiscaux dans Documents."
+        }
+      ],
+      "week": [
+        {
+          "day": "Ven",
+          "title": "Jour de paie",
+          "text": "Notez votre salaire comme entrée."
+        },
+        {
+          "day": "Sam",
+          "title": "Courses de la semaine",
+          "text": "Scannez le ticket. Classé en alimentation."
+        },
+        {
+          "day": "Lun",
+          "title": "La facture d'électricité arrive",
+          "text": "Notez-la comme due jusqu'au paiement."
+        },
+        {
+          "day": "Mer",
+          "title": "Un petit boulot est payé",
+          "text": "Notez-le et voyez où en est le mois."
+        }
+      ],
+      "faq": [
+        {
+          "q": "C'est seulement pour les entreprises ?",
+          "a": "Non. La configuration foyer a des catégories familiales comme le loyer, l'alimentation, le transport et les factures."
+        },
+        {
+          "q": "Toute la famille peut-elle l'utiliser ?",
+          "a": "Oui. Invitez votre conjoint avec sa propre connexion."
+        },
+        {
+          "q": "Est-il en amharique, tigrinya ou somali ?",
+          "a": "Oui — ainsi qu'en anglais, arabe, espagnol et français."
+        }
+      ]
+    },
+    "other": {
+      "name": "Toute petite entreprise",
+      "short": "Ventes, services, factures",
+      "metaTitle": "Comptabilité simple pour toute petite entreprise — Meksova",
+      "metaDescription": "Suivez ventes, services, fournitures, loyer et factures, scannez vos reçus et obtenez des rapports prêts pour les impôts. La comptabilité simple pour toute petite entreprise. Essai gratuit de 30 jours.",
+      "eyebrow": "Pour tout autre type d'activité",
+      "title": "Des comptes simples",
+      "em": "quel que soit votre métier.",
+      "lede": "Ventes, services, fournitures, loyer et factures — avec scan de reçus et rapports fiscaux, configuré en une minute.",
+      "preview": [
+        "Ventes",
+        "Fournitures",
+        "Loyer",
+        "Services",
+        "Charges (à payer)"
+      ],
+      "pains": [
+        {
+          "was": "Saisir chaque opération à la main",
+          "title": "Connectez votre banque et votre carte",
+          "text": "Les opérations se synchronisent automatiquement — Meksova fait les débits et crédits."
+        },
+        {
+          "was": "Des reçus dans toutes les poches",
+          "title": "Scannez et oubliez",
+          "text": "Photographiez un reçu et il est classé dans la bonne catégorie."
+        },
+        {
+          "was": "Redouter la saison des impôts",
+          "title": "Des rapports prêts tous les jours",
+          "text": "Compte de résultat, bilan et impôt estimé, prêts à télécharger."
+        }
+      ],
+      "week": [
+        {
+          "day": "Lun",
+          "title": "Un client paie",
+          "text": "Notez-le comme entrée."
+        },
+        {
+          "day": "Mar",
+          "title": "Achat de fournitures",
+          "text": "Scannez le reçu."
+        },
+        {
+          "day": "Jeu",
+          "title": "Loyer à payer",
+          "text": "Notez-le comme dû, puis réglez-le."
+        },
+        {
+          "day": "Ven",
+          "title": "Faites le point",
+          "text": "Bénéfice et impôt estimé sur un seul écran."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Mon activité n'est pas listée. Ça marchera ?",
+          "a": "Oui. La configuration générale a les catégories dont la plupart des entreprises ont besoin — ventes, services, fournitures, loyer, charges et plus."
+        },
+        {
+          "q": "Puis-je passer à une configuration métier plus tard ?",
+          "a": "Oui. Ajoutez une entreprise avec la configuration qui convient et gardez les deux sous une seule connexion."
+        },
+        {
+          "q": "Faut-il de l'expérience en comptabilité ?",
+          "a": "Non. Si vous savez ce qui est entré et ce qui est sorti, vous pouvez utiliser Meksova."
+        }
+      ]
+    }
+  },
+  "tour": {
+    "eyebrow": "La vraie app",
+    "title": "Voici ce que vous obtenez.",
+    "lede": "De vrais écrans de Meksova — pas des maquettes. Parcourez ce que vous utiliserez chaque jour.",
+    "note": "Vrais écrans de l'app Meksova, avec des données d'exemple.",
+    "tabs": {
+      "dashboard": {
+        "label": "Tableau de bord",
+        "text": "Trésorerie, entrées et sorties, et impôt estimé d'un coup d'œil.",
+        "alt": "Tableau de bord Meksova avec trésorerie, entrées, sorties, impôt estimé et graphique"
+      },
+      "scan": {
+        "label": "Scan de reçus",
+        "text": "Photographiez un reçu ; montant, catégorie, État et gallons se remplissent seuls.",
+        "alt": "Un reçu de carburant scanné dans Meksova avec montant, catégorie, État et gallons"
+      },
+      "ifta": {
+        "label": "Rapport IFTA",
+        "text": "Miles et gallons par État pour le trimestre, prêts à exporter.",
+        "alt": "Rapport IFTA trimestriel de Meksova avec miles et gallons par État"
+      },
+      "report": {
+        "label": "Rapport financier",
+        "text": "Journal, compte de résultat et bilan toujours équilibrés.",
+        "alt": "Rapport financier Meksova avec résumé, détail et écritures de journal"
+      }
+    }
   }
 }

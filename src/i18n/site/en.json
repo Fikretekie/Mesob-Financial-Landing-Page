@@ -1183,5 +1183,33 @@
     "metaTitle": "Questions & answers — Meksova",
     "metaDescription": "Answers about Meksova pricing, the free trial, languages, IFTA, accountant access and how the app works.",
     "title": "Questions & answers"
+  },
+  "tour": {
+    "eyebrow": "The real app",
+    "title": "This is what you get.",
+    "lede": "Real screens from Meksova — not mockups. Tap through the parts you'll use every day.",
+    "note": "Real screens from the Meksova app, shown with sample data.",
+    "tabs": {
+      "dashboard": {
+        "label": "Dashboard",
+        "text": "Cash on hand, money in and out, and estimated tax at a glance.",
+        "alt": "Meksova dashboard showing total cash on hand, money in and out, estimated tax and a cash chart"
+      },
+      "scan": {
+        "label": "Receipt scan",
+        "text": "Snap a receipt; the amount, category, state and gallons are filled in.",
+        "alt": "A fuel receipt being scanned in Meksova, with amount, category, state and gallons filled in"
+      },
+      "ifta": {
+        "label": "IFTA report",
+        "text": "Miles and gallons by state for the quarter, ready to export.",
+        "alt": "Meksova IFTA quarterly report listing miles and gallons by state"
+      },
+      "report": {
+        "label": "Financial report",
+        "text": "Journal, income statement and balance sheet that always add up.",
+        "alt": "Meksova financial report with summary, breakdown and journal entries"
+      }
+    }
   }
 }

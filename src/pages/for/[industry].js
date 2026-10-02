@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Fuel } from "lucide-react";
 import SiteLayout from "@/components/site/SiteLayout";
 import { Arrow, Cta, Eyebrow, FeatureGlyph, IndustryGlyph, Section, money } from "@/components/site/ui";
-import { CtaBand, Faq, ProofLine, faqJsonLd } from "@/components/site/sections";
+import { CtaBand, Faq, ProductTour, ProofLine, faqJsonLd } from "@/components/site/sections";
 import { IFTA_SAMPLE, INDUSTRIES, PRICES, SITE_URL, getIndustry } from "@/data/site";
 import { getDemoIndustry } from "@/data/demoIndustries";
 
@@ -36,7 +36,7 @@ export default function IndustryPage({ slug }) {
       <section className="ks-hero">
         <div className="ks-orb ks-glow-a ks-hero__orb-a" aria-hidden />
         <div className="ks-wrap">
-          <nav className="ks-crumbs ks-reveal" aria-label="Breadcrumb">
+          <nav className="ks-crumbs ks-rise" aria-label="Breadcrumb">
             <Link href="/">{t("site.common.home")}</Link>
             <span aria-hidden>/</span>
             <Link href="/industries/">{t("site.nav.industries")}</Link>
@@ -45,14 +45,14 @@ export default function IndustryPage({ slug }) {
           </nav>
           <div className="ks-hero__grid">
             <div className="ks-hero__copy">
-              <div className="ks-reveal">
+              <div className="ks-rise">
                 <Eyebrow>{t(`${key}.eyebrow`)}</Eyebrow>
               </div>
-              <h1 className="ks-display ks-display--md ks-reveal" data-delay="1">
+              <h1 className="ks-display ks-display--md ks-rise" data-delay="1">
                 {t(`${key}.title`)} <span className="ks-em ks-accent">{t(`${key}.em`)}</span>
               </h1>
-              <p className="ks-lede ks-reveal" data-delay="2">{t(`${key}.lede`)}</p>
-              <div className="ks-actions ks-reveal" data-delay="3">
+              <p className="ks-lede ks-rise" data-delay="2">{t(`${key}.lede`)}</p>
+              <div className="ks-actions ks-rise" data-delay="3">
                 <Cta href={demoHref} track={`industry_${industry.id}_hero_demo`}>
                   {t("site.industryPage.openDemo", { name })}
                 </Cta>
@@ -60,7 +60,7 @@ export default function IndustryPage({ slug }) {
                   {t("site.common.startTrial")}
                 </Cta>
               </div>
-              <div className="ks-reveal" data-delay="3">
+              <div className="ks-rise" data-delay="3">
                 <ProofLine />
               </div>
             </div>
@@ -103,6 +103,19 @@ export default function IndustryPage({ slug }) {
               </li>
             ))}
         </ol>
+      </Section>
+
+      {/* Real product screens — trucking leads with IFTA */}
+      <Section line labelledBy="tour-title">
+        <div className="ks-head ks-reveal">
+          <Eyebrow>{t("site.tour.eyebrow")}</Eyebrow>
+          <h2 className="ks-h2" id="tour-title">{t("site.tour.title")}</h2>
+          <p className="ks-lede">{t("site.tour.lede")}</p>
+        </div>
+        <ProductTour
+          initial={industry.features.includes("ifta") ? "ifta" : "dashboard"}
+          tabs={industry.features.includes("ifta") ? ["ifta", "scan", "dashboard", "report"] : ["dashboard", "scan", "report"]}
+        />
       </Section>
 
       {/* Features */}
@@ -186,7 +199,7 @@ function IftaPreview() {
   const miles = IFTA_SAMPLE.reduce((sum, row) => sum + row.miles, 0);
   const gallons = IFTA_SAMPLE.reduce((sum, row) => sum + (row.gallons ?? 0), 0);
   return (
-    <div className="ks-hero__visual ks-reveal" data-delay="2">
+    <div className="ks-hero__visual ks-rise" data-delay="2">
       <div className="ks-shell">
         <div className="ks-core ks-app">
           <div className="ks-app__top">
@@ -241,7 +254,7 @@ function MilesPreview() {
   const days = t("site.industryPage.days", { returnObjects: true });
   const business = TRIPS.filter((trip) => trip.business).reduce((sum, trip) => sum + trip.miles, 0);
   return (
-    <div className="ks-hero__visual ks-reveal" data-delay="2">
+    <div className="ks-hero__visual ks-rise" data-delay="2">
       <div className="ks-shell">
         <div className="ks-core ks-app">
           <div className="ks-app__top">
@@ -280,7 +293,7 @@ function BooksPreview({ industry }) {
   const tone = { income: "ks-amt--in", expense: "", payable: "ks-amt--owed" };
 
   return (
-    <div className="ks-hero__visual ks-reveal" data-delay="2">
+    <div className="ks-hero__visual ks-rise" data-delay="2">
       <div className="ks-shell">
         <div className="ks-core ks-app">
           <div className="ks-app__top">

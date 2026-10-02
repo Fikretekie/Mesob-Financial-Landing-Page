@@ -12,7 +12,7 @@ export default function About() {
       <header className="ks-pagehead">
         <div className="ks-orb ks-glow-a ks-hero__orb-a" aria-hidden />
         <div className="ks-wrap">
-          <div className="ks-head ks-reveal">
+          <div className="ks-head ks-rise">
             <Eyebrow>{t("site.about.eyebrow")}</Eyebrow>
             <h1 className="ks-display ks-display--md ks-gap">
               {t("site.about.title")} <span className="ks-em ks-accent">{t("site.about.em")}</span>

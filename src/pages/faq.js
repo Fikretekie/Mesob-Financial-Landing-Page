@@ -13,7 +13,7 @@ export default function FaqPage() {
     <SiteLayout title={t("site.faqPage.metaTitle")} description={t("site.faqPage.metaDescription")} jsonLd={faqJsonLd(all)}>
       <header className="ks-pagehead">
         <div className="ks-wrap ks-wrap--narrow">
-          <div className="ks-head ks-reveal">
+          <div className="ks-head ks-rise">
             <Eyebrow>{t("site.home.faqEyebrow")}</Eyebrow>
             <h1 className="ks-display ks-display--md ks-gap">{t("site.faqPage.title")}</h1>
           </div>

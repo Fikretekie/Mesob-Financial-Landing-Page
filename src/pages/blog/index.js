@@ -12,7 +12,7 @@ export default function Blog() {
       <header className="ks-pagehead">
         <div className="ks-orb ks-glow-a ks-hero__orb-a" aria-hidden />
         <div className="ks-wrap">
-          <div className="ks-head ks-reveal">
+          <div className="ks-head ks-rise">
             <Eyebrow>{t("site.blog.eyebrow")}</Eyebrow>
             <h1 className="ks-display ks-display--md">{t("site.blog.title")}</h1>
             <p className="ks-lede">{t("site.blog.lede")}</p>

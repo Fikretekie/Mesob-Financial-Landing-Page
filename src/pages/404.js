@@ -9,7 +9,7 @@ export default function NotFound() {
       <header className="ks-pagehead ks-pad-b">
         <div className="ks-orb ks-glow-a ks-hero__orb-a" aria-hidden />
         <div className="ks-wrap">
-          <div className="ks-head ks-reveal">
+          <div className="ks-head ks-rise">
             <p className="ks-kicker">404</p>
             <h1 className="ks-display ks-display--md">{t("site.notFound.title")}</h1>
             <p className="ks-lede">{t("site.notFound.lede")}</p>

@@ -14,7 +14,7 @@ const S = 1.5;
 export function AppPreview() {
   const { t } = useTranslation();
   return (
-    <div className="ks-hero__visual ks-reveal" data-delay="2">
+    <div className="ks-hero__visual ks-rise" data-delay="2">
       <div className="ks-shell">
         <div className="ks-core ks-app">
           <div className="ks-app__top">
@@ -313,3 +313,74 @@ export function ContactLinks() {
 }
 
 export { Link };
+
+/* ---------- Product tour: real screens from the app ---------------------- */
+const TOUR = ["dashboard", "scan", "ifta", "report"];
+
+export function ProductTour({ initial = "dashboard", tabs = TOUR, id = "tour" }) {
+  const { t } = useTranslation();
+  const [active, setActive] = useState(initial);
+  const items = t("site.tour.tabs", { returnObjects: true }) || {};
+
+  const onKey = (event) => {
+    const index = tabs.indexOf(active);
+    const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[event.key];
+    if (!step) return;
+    event.preventDefault();
+    const next = tabs[(index + step + tabs.length) % tabs.length];
+    setActive(next);
+    document.getElementById(`${id}-tab-${next}`)?.focus();
+  };
+
+  return (
+    <div className="ks-tour">
+      <div className="ks-tour__tabs ks-reveal" role="tablist" aria-label={t("site.tour.title")} onKeyDown={onKey}>
+        {tabs.map((key) => (
+          <button
+            key={key}
+            id={`${id}-tab-${key}`}
+            type="button"
+            role="tab"
+            aria-selected={active === key}
+            aria-controls={`${id}-panel`}
+            tabIndex={active === key ? 0 : -1}
+            className="ks-tour__tab"
+            onClick={() => {
+              setActive(key);
+              trackDemoEvent("site_tour", { tab: key });
+            }}
+          >
+            <span className="ks-tour__label">{items[key]?.label}</span>
+            <span className="ks-tour__text">{items[key]?.text}</span>
+          </button>
+        ))}
+      </div>
+      <div id={`${id}-panel`} role="tabpanel" aria-labelledby={`${id}-tab-${active}`} className="ks-tour__panel ks-reveal" data-delay="1">
+      <figure className="ks-shell ks-tour__frame">
+        <div className="ks-core ks-tour__core">
+          <div className="ks-tour__bar" aria-hidden>
+            <span /><span /><span />
+            <i>Meksova</i>
+          </div>
+          {/* Phones get the app's mobile layout; a shrunken desktop shot is unreadable there. */}
+          <picture key={active}>
+            <source media="(max-width: 760px)" srcSet={`/shots/${active}-m.webp`} width="780" height="1688" />
+            <img
+              className="ks-tour__img"
+              src={`/shots/${active}-1600.webp`}
+              srcSet={`/shots/${active}-900.webp 900w, /shots/${active}-1600.webp 1600w`}
+              sizes="(max-width: 1080px) 100vw, 760px"
+              width="1600"
+              height="1000"
+              loading="lazy"
+              decoding="async"
+              alt={items[active]?.alt}
+            />
+          </picture>
+        </div>
+        <figcaption className="ks-tour__note">{t("site.tour.note")}</figcaption>
+      </figure>
+      </div>
+    </div>
+  );
+}

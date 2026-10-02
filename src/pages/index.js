@@ -8,6 +8,7 @@ import {
   Faq,
   LanguageStrip,
   PricingCard,
+  ProductTour,
   ProofLine,
   Reviews,
   TrustRow,
@@ -71,18 +72,18 @@ export default function Home() {
         <div className="ks-wrap">
           <div className="ks-hero__grid">
             <div className="ks-hero__copy">
-              <div className="ks-reveal">
+              <div className="ks-rise">
                 <Eyebrow>{t("site.home.eyebrow")}</Eyebrow>
               </div>
-              <h1 className="ks-display ks-reveal" data-delay="1">
+              <h1 className="ks-display ks-rise" data-delay="1">
                 {t("site.home.titleA")} <span className="ks-em ks-accent">{t("site.home.titleEm")}</span> {t("site.home.titleB")}
               </h1>
-              <p className="ks-lede ks-reveal" data-delay="2">{t("site.home.lede")}</p>
-              <div className="ks-actions ks-reveal" data-delay="3">
+              <p className="ks-lede ks-rise" data-delay="2">{t("site.home.lede")}</p>
+              <div className="ks-actions ks-rise" data-delay="3">
                 <Cta href="/demo/" track="hero_demo">{t("site.common.tryDemo")}</Cta>
                 <Cta signup track="hero_trial" variant="ghost">{t("site.common.startTrial")}</Cta>
               </div>
-              <div className="ks-reveal" data-delay="3">
+              <div className="ks-rise" data-delay="3">
                 <ProofLine />
               </div>
             </div>
@@ -152,6 +153,16 @@ export default function Home() {
               </li>
             ))}
         </ol>
+      </Section>
+
+      {/* Real product screens */}
+      <Section id="tour" line labelledBy="tour-title">
+        <div className="ks-head ks-reveal">
+          <Eyebrow>{t("site.tour.eyebrow")}</Eyebrow>
+          <h2 className="ks-h2" id="tour-title">{t("site.tour.title")}</h2>
+          <p className="ks-lede">{t("site.tour.lede")}</p>
+        </div>
+        <ProductTour />
       </Section>
 
       {/* Features */}

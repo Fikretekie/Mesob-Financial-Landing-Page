@@ -12,7 +12,7 @@ export default function Industries() {
       <header className="ks-pagehead">
         <div className="ks-orb ks-glow-a ks-hero__orb-a" aria-hidden />
         <div className="ks-wrap">
-          <div className="ks-head ks-reveal">
+          <div className="ks-head ks-rise">
             <Eyebrow>{t("site.industriesPage.eyebrow")}</Eyebrow>
             <h1 className="ks-display ks-display--md ks-gap">{t("site.industriesPage.title")}</h1>
             <p className="ks-lede">{t("site.industriesPage.lede")}</p>

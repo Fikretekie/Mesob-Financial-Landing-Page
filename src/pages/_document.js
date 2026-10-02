@@ -49,12 +49,6 @@ class MyDocument extends Document {
               __html: `(function(){var d=document.documentElement;try{var t=localStorage.getItem('meksova-theme');d.dataset.theme=t==='light'?'light':'dark'}catch(e){d.dataset.theme='dark'}d.classList.add('ks-js')})();`,
             }}
           />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Sans+Ethiopic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
-          />
           <meta name="theme-color" content="#050608" />
           {/* Google tag (gtag.js) */}
           <script

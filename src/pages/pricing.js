@@ -11,7 +11,7 @@ export default function Pricing() {
       <header className="ks-pagehead">
         <div className="ks-orb ks-glow-a ks-hero__orb-a" aria-hidden />
         <div className="ks-wrap">
-          <div className="ks-head ks-head--center ks-reveal">
+          <div className="ks-head ks-head--center ks-rise">
             <Eyebrow>{t("site.pricing.eyebrow")}</Eyebrow>
             <h1 className="ks-display ks-display--md ks-gap">{t("site.pricing.title")}</h1>
             <p className="ks-lede">{t("site.pricing.lede")}</p>

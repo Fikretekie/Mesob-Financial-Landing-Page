@@ -1,56 +1,1215 @@
 {
-  "nav": {"industries":"Ganacsiyada","features":"Astaamaha","pricing":"Qiimaha","blog":"Hagayaal","about":"Nagu saabsan","contact":"La xiriir","login":"Gal","trial":"Bilow tijaabo bilaash ah","menu":"Fur liiska","close":"Xir liiska","skip":"U gudub nuxurka","home":"Bogga hore ee Meksova","language":"Luqadda","themeToLight":"U beddel qaabka iftiinka","themeToDark":"U beddel qaabka mugdiga"},
-  "common": {"tryDemo":"Tijaabi bandhigga tooska ah","startTrial":"Bilow tijaabo bilaash ah oo 30 maalmood ah","startTrialShort":"Bilow tijaabo bilaash ah","googleRating":"{{rating}} Google","noCard":"Kaar deyn looma baahna","fromPrice":"Laga bilaabo {{price}}/bishii","seeReviews":"Ka eeg dhammaan faallooyinka Google","perMonth":"/ bishii","billedYearly":"{{price}} sannadkii","billedMonthly":"Bil kasta · jooji goor kasta","orMonthly":"ama {{price}} bil kasta","allIndustries":"Dhammaan ganacsiyada","readGuide":"Akhri hagaha","minRead":"{{count}} daqiiqo akhris","home":"Bogga hore","sample":"Tusaale"},
-  "preview": {"business":"Abebe Trucking","dashboard":"Dashboard","cash":"Lacagta gacanta ku jirta oo dhan","moneyIn":"Lacag soo gashay","moneyOut":"Lacag baxday","revenue":"Dakhli","payable":"Lagu leeyahay","tax":"Canshuurta la qiyaasay","scanned":"Rasiidka waa la sawiray","scannedText":"Shidaal · IN · 98.4 galaan → IFTA","chartLabel":"Lacagta gacanta ku jirta 30-kii maalmood ee la soo dhaafay, kor u kacaysa","synced":"Bangiga iyo POS waa la isku xiray","syncedText":"14 dhaqdhaqaaq oo cusub, la kala soocay"},
-  "home": {
-    "metaTitle":"Meksova — Xisaab fudud oo ganacsiga yar, luqaddaada",
-    "metaDescription":"La soco dakhliga iyo kharashka, sawir rasiidhada, diiwaan geli maylka iyo shidaalka, oo hel warbixino canshuur-diyaar ah. Loogu talagalay darawallada baabuurta waaweyn, darawallada, dukaamada, maqaaxiyaha iyo kuwo kale — 7 luqadood. Tijaabo bilaash ah oo 30 maalmood ah.",
-    "eyebrow":"Xisaab ganacsiga yar · 7 luqadood",
-    "titleA":"Xisaabtaada, si sax ah.","titleEm":"Luqaddaada,","titleB":"shaqadaada.",
-    "lede":"Ku xir bangigaaga iyo POS-kaaga, sawir rasiidhada, diiwaan geli maylka iyo shidaalka, oo hel warbixino canshuur-diyaar ah — horay ugu diyaarsan darawallada baabuurta waaweyn, darawallada, dukaamada, maqaaxiyaha, nadiifinta iyo kuwo kale.",
-    "langTitle":"Wuxuu ku hadlaa luqaddaada — taabo mid si aad u beddesho goobta oo dhan",
-    "industriesEyebrow":"Loo sameeyay shaqadaada",
-    "industriesTitle":"Dooro ganacsigaaga. Wax walba waa laguu diyaariyay.",
-    "industriesLede":"Shaqo kasta waxay leedahay qaybaheeda, shaashadaheeda iyo xisaab tusaale ah — shidaal iyo IFTA darawallada baabuurta, qiimaha alaabta dukaamada iyo maqaaxiyaha.",
-    "featuredText":"Dakhliga xamuulka, shidaalka gobol kasta, maylka iyo warbixinta IFTA ee rubuc sannadeedka — adigoo baabuurka ku jira.",
-    "seePage":"Eeg Meksova ee {{name}}",
-    "moreTitle":"Qoysaska, kuwa iskood u shaqeeya iyo ganacsi kasta oo kale","moreText":"11 habayn oo dhan",
-    "stepsEyebrow":"Sida uu u shaqeeyo","stepsTitle":"Saddex tallaabo. Shahaado xisaabeed looma baahna.",
-    "steps":[{"title":"Ku xir ama diiwaan geli","text":"Ku xir kaarka bangiga iyo POS-ka si lacagta soo gasha iyo tan baxda ay iskood u isku xirmaan — ama adigu taabo Helay, Bixiyay ama Lagu leeyahay."},{"title":"Sawir rasiidhadaada","text":"Sawir rasiid, Meksova ayaa kaydinaya — kharash, alaab, qalab, ama shidaal IFTA."},{"title":"Hel warbixino canshuur-diyaar ah","text":"Bayaanka dakhliga, xaashida dheelitirka iyo buugga maalinlaha. Soo deji PDF ama u dhiib xisaabiyahaaga."}],
-    "featuresEyebrow":"Wax walba hal app","featuresTitle":"Qalabka uu runtii isticmaalo milkiile mashquul ah.",
-    "scanKicker":"Sawirka rasiidka","scanTitle":"Sawir. Isagaa is kaydiya.",
-    "scanText":"Lacagta, qaybta iyo meesha uu ka tirsan yahay — kharash hawleed, alaab dib loo iibinayo, kayd ama qalab. Rasiidhada shidaalka sidoo kale waxay galaan warbixintaada IFTA.",
-    "scanTags":["Kharash","Kayd","Qalab","Shidaal IFTA"],
-    "receipt":{"store":"INTERSTATE FUEL STOP","place":"I-70 Exit 91 · Indianapolis, IN","item":"Diesel 98.40 gal","total":"TOTAL"},
-    "reviewsEyebrow":"Milkiilayaal adiga oo kale ah","reviewsTitle":"Macaamiil dhab ah ayaa Google ku siiyay {{rating}}.","reviewsCount":"{{count}} faallo oo Google ah",
-    "reviews":[{"quote":"I had receipts everywhere — fuel, wholesale invoices, repairs, utilities — and at the end of the month it was very hard to know my real profit. Now I record my daily income and expenses in one place.","name":"Tewolde Haile","role":"Milkiilaha dukaanka raashinka"},{"quote":"The monthly reports give me a clear picture of profit and loss for each project.","name":"Heavily Realms","role":"Dhismo"},{"quote":"I scan my receipts as I go, and at the end of the month I can see exactly where my money went.","name":"Teddy Z","role":"Qoys"}],
-    "reviewSource":"Faallo Google",
-    "trust":[{"title":"Xogtaadu adigaa leh","text":"U dhoofi wax walba CSV goor kasta. Xayiraad ma jirto."},{"title":"Gal gaar ah","text":"Akoon kasta wuxuu leeyahay gal ammaan ah oo u gaar ah. Xisaabiyahaagu wuxuu helaa mid kale."},{"title":"Dad dhab ah, Columbus","text":"Wac {{phone}} ama u qor {{email}}."}],
-    "faqEyebrow":"Su'aalo","faqTitle":"Waa wanaagsan tahay inaad ogaato.",
-    "faq":[{"q":"Imisa ayuu ku kacayaa?","a":"$29.99 bishii, ama $299.99 sannadkii — taasoo u dhiganta $24.99 bishii. Astaamaha oo dhan waa ku jiraan."},{"q":"Kaar deyn ma u baahanahay tijaabada bilaashka ah?","a":"Maya. Tijaabi wax walba bilaash 30 maalmood, oo jooji goor kasta."},{"q":"Ma ku xirmi karaa bangigayga iyo POS-kayga?","a":"Haa. Ku xir kaarka bangigaaga iyo nidaamka POS, dhaqdhaqaaqyaduna iskood ayay u soo galaan. Adigu waad eegaysaa, Meksova-na qaybta saxda ah ayuu dhigayaa. Had iyo jeer gacanta ayaad ku geli kartaa sidoo kale."},{"q":"Ma ku isticmaali karaa luqaddayda?","a":"Haa — Ingiriis, Amxaari, Tigrinya, Carabi, Isbaanish, Faransiis iyo Soomaali. Beddel goor kasta."},{"q":"Waxaan ahay darawal baabuur weyn. Ma sameeyaa IFTA?","a":"Haa. Wuxuu la socdaa maylka iyo shidaalka gobol kasta, wuxuuna diyaariyaa wadarta IFTA ee rubuc sannadeedka. Wadarta ayuu ku siinayaa — ma gudbinayo warbixinta adiga kugu beddel."},{"q":"Xisaabiyahaygu ma arki karaa xisaabtayda?","a":"Haa. Ku martiqaad gal u gaar ah, ama soo deji warbixinada PDF oo u dir."},{"q":"Xisaabta kuma fiicni. Ma awoodi doonaa?","a":"Haa. Waxaad taabanaysaa Helay, Bixiyay ama Lagu leeyahay oo dooranaysaa qayb. Meksova ayaa kuu samaynaya deyn-bixinta, deyn-qaadashada iyo warbixinada."}],
-    "ctaTitle":"Ku arag tirooyinkaaga laba daqiiqo gudahood.","ctaText":"Fur bandhigga shaqadaada — is diiwaan gelin la'aan, wax lagu rakibo ma jiraan."
+  "nav": {
+    "industries": "Ganacsiyada",
+    "features": "Astaamaha",
+    "pricing": "Qiimaha",
+    "blog": "Hagayaal",
+    "about": "Nagu saabsan",
+    "contact": "La xiriir",
+    "login": "Gal",
+    "trial": "Bilow tijaabo bilaash ah",
+    "menu": "Fur liiska",
+    "close": "Xir liiska",
+    "skip": "U gudub nuxurka",
+    "home": "Bogga hore ee Meksova",
+    "language": "Luqadda",
+    "themeToLight": "U beddel qaabka iftiinka",
+    "themeToDark": "U beddel qaabka mugdiga"
   },
-  "features": {"sync":{"title":"Isku xirka bangiga iyo POS","text":"Ku xir kaarka bangigaaga iyo nidaamka POS — iibka iyo iibsiga iskood ayay u soo galaan, qoraal la'aan."},"mileage":{"title":"La socodka maylka","text":"Bilow oo jooji safar hal taabasho, ama gacanta ku geli."},"trips":{"title":"Taariikhda safarrada","text":"Maylka shaqada iyo dhimis la qiyaasay, taariikh ahaan."},"fuel":{"title":"Shidaalka gobol kasta","text":"Galaannada iyo qiimaha gobol kasta, rasiidhada shidaalka."},"ifta":{"title":"Warbixinta IFTA","text":"Maylka iyo galaannada rubuc sannadeedka gobol kasta, diyaar u ah dhoofinta."},"scan":{"title":"Sawirka rasiidka","text":"Sawir rasiid — lacagta iyo qaybta iskood ayay u buuxsamaan."},"payables":{"title":"Biilasha lagugu leeyahay","text":"Hadda diiwaan geli waxa lagugu leeyahay, mar dambe bixi, dhammaan ama qaybo."},"reports":{"title":"Warbixino canshuur-diyaar ah","text":"Bayaanka dakhliga, xaashida dheelitirka iyo buugga maalinlaha oo had iyo jeer isku dheelitiran."},"multi":{"title":"Ka badan hal ganacsi","text":"Xisaab gooni ah ganacsi kasta, hal gal."},"accountant":{"title":"Galka xisaabiyaha","text":"Sii xisaabiyahaaga ama shuraakadaada gal u gaar ah."},"languages":{"title":"7 luqadood","text":"Ingiriis, Amxaari, Tigrinya, Carabi, Isbaanish, Faransiis, Soomaali."},"documents":{"title":"Dukumentiyada","text":"Ruqsadaha, heshiisyada kirada iyo qaansheegyada, oo ku kaydsan xisaabtaada agteeda."},"inventory":{"title":"Kaydka iyo qiimaha alaabta","text":"Ogow waxa aad ku bixisay waxa aad iibisay — faa'iidadaada guud ee dhabta ah."},"export":{"title":"Dhoofinta CSV","text":"Soo deji dhammaan diiwaannadaada goor kasta. Adigaa leh."}},
-  "pricing": {"metaTitle":"Qiimaha — Meksova","metaDescription":"Hal qorshe oo leh astaamaha oo dhan: $29.99 bishii, ama $299.99 sannadkii ($24.99 bishii). Tijaabo bilaash ah oo 30 maalmood ah, kaar la'aan.","eyebrow":"Qiime fudud","title":"Hal qorshe. Wax walba waa ku jiraan.","lede":"Tijaabi bilaash 30 maalmood — kaar la'aan. Kadib sii wad bil kasta, ama sannadkii bixi oo badbaadi 17%.","monthly":"Bille","yearly":"Sannadle","save":"Badbaadi 17%","planName":"Meksova Pro","includes":"Wax walba oo Pro ku jira","items":["Dhaqdhaqaaq aan xad lahayn","Isku xirka bangiga iyo POS","Sawirka rasiidka","Warbixino canshuur-diyaar ah iyo PDF","Mayl, shidaal iyo IFTA","Biilasha lagugu leeyahay","Kaydka iyo qiimaha alaabta","Kaydinta dukumentiyada","Kayd iyo dhoofin CSV","Galka xisaabiyaha","Dhammaan 7-da luqadood"],"fine":"Kaar looma baahna tijaabada. Jooji ka hor inta aysan dhammaan 30-kaaga maalmood, waxba ma bixin doontid.","stripTitle":"Hal qorshe · wax walba waa ku jiraan","faqTitle":"Su'aalaha qiimaha","faq":[{"q":"Maxaa dhacaya 30-ka maalmood kadib?","a":"Haddii aad go'aansato inaad sii wadato, qorshahaagu wuxuu ka bilaabmayaa $29.99 bishii, ama $299.99 sannadkii. Haddii kale, waxba lagaa ma jarayo."},{"q":"Ma jiraa qorshe ka jaban oo astaamo yar leh?","a":"Maya. Hal qorshe ayaa jira wax walbana wuu ka kooban yahay, si aadan ugu xirmin bartamaha xilliga canshuurta."},{"q":"Mar dambe ma uga beddeli karaa bille una beddeli karaa sannadle?","a":"Haa. U beddel sannadle goor kasta si kharashkaagu ugu dhaco $24.99 bishii."},{"q":"Ma joojin karaa goor kasta?","a":"Haa. Heshiis ma jiro. Waxaad u dhoofin kartaa diiwaannadaada CSV ka hor intaadan bixin."}]},
-  "industriesPage": {"metaTitle":"Xisaab ganacsigaaga — Meksova","metaDescription":"Meksova wuxuu u diyaarsan yahay 11 nooc oo ganacsi: gaadiidka baabuurta waaweyn, darawallada app-ka, dukaamada raashinka, maqaaxiyaha, dhismaha, nadiifinta, quruxda, ganacsiga online-ka, abuurayaasha nuxurka, qoysaska iyo kuwo kale.","eyebrow":"Ganacsiyada","title":"Loo habeeyay sida aad u shaqayso.","lede":"Dooro ganacsigaaga si aad u aragto waxa Meksova u qabto — ama si toos ah u gal bandhig leh xisaab tusaale ah.","learn":"Sida uu u shaqeeyo","demo":"Tijaabi bandhigga"},
-  "industryPage": {"painsEyebrow":"Ma kuu muuqataa?","painsTitle":"Waraaqo yar. Lacag badan oo aad arki karto.","weekEyebrow":"Usbuuc la jira Meksova","weekTitle":"Dhowr daqiiqo maalintii. Xisaab isku dheelitiran.","featuresEyebrow":"Loo sameeyay {{name}}","featuresTitle":"Wax walba hal dashboard.","faqEyebrow":"Su'aalo","faqTitle":"Jawaabo toos ah.","ctaTitle":"Tijaabi xisaabtaada.","ctaText":"Bandhiggu wuxuu ku furmayaa xisaab tusaale ah oo shaqadaada ah oo horay u buuxsan — is diiwaan gelin la'aan.","openDemo":"Fur bandhigga tooska ah","sampleBooks":"Xisaab tusaale · 30-kii maalmood ee la soo dhaafay","in":"Soo gal","out":"Bax","owed":"Lagu leeyahay","iftaTitle":"Warbixinta IFTA ee rubuc sannadeedka","iftaQuarter":"R3 · Luulyo–Sebtembar","state":"Gobol","miles":"Mayl","gallons":"Galaan","total":"Wadarta","fuelChip":"Rasiidka shidaalka · Indianapolis","milesTitle":"Safarrada usbuucan","business":"Shaqo","personal":"Shakhsi","otherIndustries":"Ganacsiyo kale","days":["Isniin","Talaado","Arbaco","Khamiis"]},
-  "about": {"metaTitle":"Ku saabsan Meksova","metaDescription":"Meksova waa shirkad ku taal Columbus, Ohio, oo dhisaysa xisaab fudud oo luqado badan leh ganacsiyada ay leeyihiin soo-galootiga iyo ganacsiyada yaryar.","eyebrow":"Nagu saabsan","title":"Waxaa dhisay milkiilayaal","em":"rasiidhadu ku hafteen.","lede":"Waxaan maamulnay ganacsiyadeenna yaryar waxaana nagu adkaatay inaan xisaabteenna nidaamsan ku hayno. Sidaas darteed waxaan dhisnay qalabkii aan jeclaan lahayn inaan haysanno — fudud, daacad ah, oo ku qoran luqadaha bulshadeenna.","storyTitle":"Sababta Meksova u jiro","story":["Barnaamijyada xisaabta badankood waxaa loo sameeyay xisaabiyayaasha. Waa Ingiriis, waxaa ka buuxa ereyo farsamo, waxayna u malaynayaan inaad horay u taqaan waxa uu yahay diiwaanka buugga maalinlaha.","Meksova wuxuu ka bilaabmaa dhinaca kale. Waxaad u sheegaysaa waxa dhacay — lacag ayaa soo gashay, lacag ayaa baxday, ama wax ayaa lagugu leeyahay — isaguna xisaabta ayuu gadaal ka sameeyaa: buugga maalinlaha, bayaanka dakhliga, xaashida dheelitirka iyo canshuurta la qiyaasay.","Habayn kasta wuxuu diyaar u yahay shaqo dhab ah, laga bilaabo gaadiidka baabuurta iyo IFTA ilaa kaydka dukaanka iyo qiimaha alaabta, app-ka oo dhanna wuxuu ku hadlaa toddoba luqadood."],"valuesTitle":"Waxa aan danaynno","values":[{"title":"Luqad fudud","text":"Helay, Bixiyay, Lagu leeyahay. Deyn-bixin iyo deyn-qaadasho ma jiraan ilaa aad rabto mooyee."},{"title":"Luqaddaada","text":"Ingiriis, Amxaari, Tigrinya, Carabi, Isbaanish, Faransiis iyo Soomaali."},{"title":"Tirooyin daacad ah","text":"Warbixino isku dheelitiran, oo ku dhisan xisaab laba-geli ah oo dhab ah."},{"title":"Taageero maxalli ah","text":"Koox dhab ah oo ku sugan Columbus, Ohio oo aad wici karto."}]},
-  "contact": {"metaTitle":"La xiriir Meksova","metaDescription":"Su'aalo ma ka qabtaa Meksova? Wac +1 (614) 966-5005, u qor info@meksova.com, ama nagu soo booqo 3130 Westerville Rd, Columbus, OH.","eyebrow":"La xiriir","title":"La hadal qof dhab ah.","lede":"Su'aalo ku saabsan habaynta, qiimaha ama xisaabtaada? Waan ku faraxsanahay inaan ku caawinno — luqaddaada.","call":"Na soo wac","email":"Iimayl","visit":"Nagu soo booqo","reviews":"Faallooyinka Google","formTitle":"Noo soo dir fariin","name":"Magacaaga","emailField":"Iimayl","phoneField":"Telefoon (ikhtiyaari)","business":"Nooca ganacsiga","businessPick":"Dooro mid","message":"Sideen kuu caawin karnaa?","send":"Ku fur app-ka iimaylkayga","required":"Fadlan buuxi tan.","invalidEmail":"Fadlan geli iimayl sax ah.","formNote":"Tani waxay furaysaa app-ka iimaylkaaga iyadoo fariintu diyaar u tahay in loo diro info@meksova.com.","subject":"Su'aal ka timid {{name}}"},
-  "blog": {"metaTitle":"Hagayaal milkiilayaasha ganacsiga yar — Meksova","metaDescription":"Hagayaal luqad fudud ah oo ku saabsan IFTA, rasiidhada, qiimaha alaabta iyo xisaabta darawallada baabuurta, milkiilayaasha dukaamada iyo ganacsiyada yaryar.","eyebrow":"Hagayaal","title":"Xisaabta, si cad loo sharaxay.","lede":"Hagayaal gaagaaban oo loogu talagalay milkiilayaasha doorbida inay ganacsigooda maamulaan intay akhrin lahaayeen sharciga canshuurta.","back":"Dhammaan hagayaasha","englishOnly":"Hagahan wuxuu ku qoran yahay Ingiriis.","disclaimer":"Hagahan waa macluumaad guud, ma aha talo canshuureed ama sharci. Xeerarku way isbeddelaan ganacsi kastana wuu ka duwan yahay — kala tasho khabiir canshuureed xaaladdaada.","related":"Ku tijaabi Meksova"},
-  "notFound": {"metaTitle":"Boggii lama helin — Meksova","title":"Boggan waddo khaldan ayuu qaaday.","lede":"Boggii aad raadinaysay ma jiro ama waa la raray.","home":"Ku noqo bogga hore"},
-  "footer": {"tagline":"Xisaab fudud ganacsiyada yaryar, luqaddaada.","product":"Badeecad","company":"Shirkad","demo":"Bandhig toos ah","privacy":"Asturnaanta","terms":"Shuruudaha","rights":"© {{year}} Meksova. Xuquuqda oo dhan way dhowran yihiin."},
-  "faqPage": {"metaTitle":"Su'aalo iyo jawaabo — Meksova","metaDescription":"Jawaabo ku saabsan qiimaha Meksova, tijaabada bilaashka ah, luqadaha, IFTA, galka xisaabiyaha iyo sida app-ku u shaqeeyo.","title":"Su'aalo iyo jawaabo"},
+  "common": {
+    "tryDemo": "Tijaabi bandhigga tooska ah",
+    "startTrial": "Bilow tijaabo bilaash ah oo 30 maalmood ah",
+    "startTrialShort": "Bilow tijaabo bilaash ah",
+    "googleRating": "{{rating}} Google",
+    "noCard": "Kaar deyn looma baahna",
+    "fromPrice": "Laga bilaabo {{price}}/bishii",
+    "seeReviews": "Ka eeg dhammaan faallooyinka Google",
+    "perMonth": "/ bishii",
+    "billedYearly": "{{price}} sannadkii",
+    "billedMonthly": "Bil kasta · jooji goor kasta",
+    "orMonthly": "ama {{price}} bil kasta",
+    "allIndustries": "Dhammaan ganacsiyada",
+    "readGuide": "Akhri hagaha",
+    "minRead": "{{count}} daqiiqo akhris",
+    "home": "Bogga hore",
+    "sample": "Tusaale"
+  },
+  "preview": {
+    "business": "Abebe Trucking",
+    "dashboard": "Dashboard",
+    "cash": "Lacagta gacanta ku jirta oo dhan",
+    "moneyIn": "Lacag soo gashay",
+    "moneyOut": "Lacag baxday",
+    "revenue": "Dakhli",
+    "payable": "Lagu leeyahay",
+    "tax": "Canshuurta la qiyaasay",
+    "scanned": "Rasiidka waa la sawiray",
+    "scannedText": "Shidaal · IN · 98.4 galaan → IFTA",
+    "chartLabel": "Lacagta gacanta ku jirta 30-kii maalmood ee la soo dhaafay, kor u kacaysa",
+    "synced": "Bangiga iyo POS waa la isku xiray",
+    "syncedText": "14 dhaqdhaqaaq oo cusub, la kala soocay"
+  },
+  "home": {
+    "metaTitle": "Meksova — Xisaab fudud oo ganacsiga yar, luqaddaada",
+    "metaDescription": "La soco dakhliga iyo kharashka, sawir rasiidhada, diiwaan geli maylka iyo shidaalka, oo hel warbixino canshuur-diyaar ah. Loogu talagalay darawallada baabuurta waaweyn, darawallada, dukaamada, maqaaxiyaha iyo kuwo kale — 7 luqadood. Tijaabo bilaash ah oo 30 maalmood ah.",
+    "eyebrow": "Xisaab ganacsiga yar · 7 luqadood",
+    "titleA": "Xisaabtaada, si sax ah.",
+    "titleEm": "Luqaddaada,",
+    "titleB": "shaqadaada.",
+    "lede": "Ku xir bangigaaga iyo POS-kaaga, sawir rasiidhada, diiwaan geli maylka iyo shidaalka, oo hel warbixino canshuur-diyaar ah — horay ugu diyaarsan darawallada baabuurta waaweyn, darawallada, dukaamada, maqaaxiyaha, nadiifinta iyo kuwo kale.",
+    "langTitle": "Wuxuu ku hadlaa luqaddaada — taabo mid si aad u beddesho goobta oo dhan",
+    "industriesEyebrow": "Loo sameeyay shaqadaada",
+    "industriesTitle": "Dooro ganacsigaaga. Wax walba waa laguu diyaariyay.",
+    "industriesLede": "Shaqo kasta waxay leedahay qaybaheeda, shaashadaheeda iyo xisaab tusaale ah — shidaal iyo IFTA darawallada baabuurta, qiimaha alaabta dukaamada iyo maqaaxiyaha.",
+    "featuredText": "Dakhliga xamuulka, shidaalka gobol kasta, maylka iyo warbixinta IFTA ee rubuc sannadeedka — adigoo baabuurka ku jira.",
+    "seePage": "Eeg Meksova ee {{name}}",
+    "moreTitle": "Qoysaska, kuwa iskood u shaqeeya iyo ganacsi kasta oo kale",
+    "moreText": "11 habayn oo dhan",
+    "stepsEyebrow": "Sida uu u shaqeeyo",
+    "stepsTitle": "Saddex tallaabo. Shahaado xisaabeed looma baahna.",
+    "steps": [
+      {
+        "title": "Ku xir ama diiwaan geli",
+        "text": "Ku xir kaarka bangiga iyo POS-ka si lacagta soo gasha iyo tan baxda ay iskood u isku xirmaan — ama adigu taabo Helay, Bixiyay ama Lagu leeyahay."
+      },
+      {
+        "title": "Sawir rasiidhadaada",
+        "text": "Sawir rasiid, Meksova ayaa kaydinaya — kharash, alaab, qalab, ama shidaal IFTA."
+      },
+      {
+        "title": "Hel warbixino canshuur-diyaar ah",
+        "text": "Bayaanka dakhliga, xaashida dheelitirka iyo buugga maalinlaha. Soo deji PDF ama u dhiib xisaabiyahaaga."
+      }
+    ],
+    "featuresEyebrow": "Wax walba hal app",
+    "featuresTitle": "Qalabka uu runtii isticmaalo milkiile mashquul ah.",
+    "scanKicker": "Sawirka rasiidka",
+    "scanTitle": "Sawir. Isagaa is kaydiya.",
+    "scanText": "Lacagta, qaybta iyo meesha uu ka tirsan yahay — kharash hawleed, alaab dib loo iibinayo, kayd ama qalab. Rasiidhada shidaalka sidoo kale waxay galaan warbixintaada IFTA.",
+    "scanTags": [
+      "Kharash",
+      "Kayd",
+      "Qalab",
+      "Shidaal IFTA"
+    ],
+    "receipt": {
+      "store": "INTERSTATE FUEL STOP",
+      "place": "I-70 Exit 91 · Indianapolis, IN",
+      "item": "Diesel 98.40 gal",
+      "total": "TOTAL"
+    },
+    "reviewsEyebrow": "Milkiilayaal adiga oo kale ah",
+    "reviewsTitle": "Macaamiil dhab ah ayaa Google ku siiyay {{rating}}.",
+    "reviewsCount": "{{count}} faallo oo Google ah",
+    "reviews": [
+      {
+        "quote": "I had receipts everywhere — fuel, wholesale invoices, repairs, utilities — and at the end of the month it was very hard to know my real profit. Now I record my daily income and expenses in one place.",
+        "name": "Tewolde Haile",
+        "role": "Milkiilaha dukaanka raashinka"
+      },
+      {
+        "quote": "The monthly reports give me a clear picture of profit and loss for each project.",
+        "name": "Heavily Realms",
+        "role": "Dhismo"
+      },
+      {
+        "quote": "I scan my receipts as I go, and at the end of the month I can see exactly where my money went.",
+        "name": "Teddy Z",
+        "role": "Qoys"
+      }
+    ],
+    "reviewSource": "Faallo Google",
+    "trust": [
+      {
+        "title": "Xogtaadu adigaa leh",
+        "text": "U dhoofi wax walba CSV goor kasta. Xayiraad ma jirto."
+      },
+      {
+        "title": "Gal gaar ah",
+        "text": "Akoon kasta wuxuu leeyahay gal ammaan ah oo u gaar ah. Xisaabiyahaagu wuxuu helaa mid kale."
+      },
+      {
+        "title": "Dad dhab ah, Columbus",
+        "text": "Wac {{phone}} ama u qor {{email}}."
+      }
+    ],
+    "faqEyebrow": "Su'aalo",
+    "faqTitle": "Waa wanaagsan tahay inaad ogaato.",
+    "faq": [
+      {
+        "q": "Imisa ayuu ku kacayaa?",
+        "a": "$29.99 bishii, ama $299.99 sannadkii — taasoo u dhiganta $24.99 bishii. Astaamaha oo dhan waa ku jiraan."
+      },
+      {
+        "q": "Kaar deyn ma u baahanahay tijaabada bilaashka ah?",
+        "a": "Maya. Tijaabi wax walba bilaash 30 maalmood, oo jooji goor kasta."
+      },
+      {
+        "q": "Ma ku xirmi karaa bangigayga iyo POS-kayga?",
+        "a": "Haa. Ku xir kaarka bangigaaga iyo nidaamka POS, dhaqdhaqaaqyaduna iskood ayay u soo galaan. Adigu waad eegaysaa, Meksova-na qaybta saxda ah ayuu dhigayaa. Had iyo jeer gacanta ayaad ku geli kartaa sidoo kale."
+      },
+      {
+        "q": "Ma ku isticmaali karaa luqaddayda?",
+        "a": "Haa — Ingiriis, Amxaari, Tigrinya, Carabi, Isbaanish, Faransiis iyo Soomaali. Beddel goor kasta."
+      },
+      {
+        "q": "Waxaan ahay darawal baabuur weyn. Ma sameeyaa IFTA?",
+        "a": "Haa. Wuxuu la socdaa maylka iyo shidaalka gobol kasta, wuxuuna diyaariyaa wadarta IFTA ee rubuc sannadeedka. Wadarta ayuu ku siinayaa — ma gudbinayo warbixinta adiga kugu beddel."
+      },
+      {
+        "q": "Xisaabiyahaygu ma arki karaa xisaabtayda?",
+        "a": "Haa. Ku martiqaad gal u gaar ah, ama soo deji warbixinada PDF oo u dir."
+      },
+      {
+        "q": "Xisaabta kuma fiicni. Ma awoodi doonaa?",
+        "a": "Haa. Waxaad taabanaysaa Helay, Bixiyay ama Lagu leeyahay oo dooranaysaa qayb. Meksova ayaa kuu samaynaya deyn-bixinta, deyn-qaadashada iyo warbixinada."
+      }
+    ],
+    "ctaTitle": "Ku arag tirooyinkaaga laba daqiiqo gudahood.",
+    "ctaText": "Fur bandhigga shaqadaada — is diiwaan gelin la'aan, wax lagu rakibo ma jiraan."
+  },
+  "features": {
+    "sync": {
+      "title": "Isku xirka bangiga iyo POS",
+      "text": "Ku xir kaarka bangigaaga iyo nidaamka POS — iibka iyo iibsiga iskood ayay u soo galaan, qoraal la'aan."
+    },
+    "mileage": {
+      "title": "La socodka maylka",
+      "text": "Bilow oo jooji safar hal taabasho, ama gacanta ku geli."
+    },
+    "trips": {
+      "title": "Taariikhda safarrada",
+      "text": "Maylka shaqada iyo dhimis la qiyaasay, taariikh ahaan."
+    },
+    "fuel": {
+      "title": "Shidaalka gobol kasta",
+      "text": "Galaannada iyo qiimaha gobol kasta, rasiidhada shidaalka."
+    },
+    "ifta": {
+      "title": "Warbixinta IFTA",
+      "text": "Maylka iyo galaannada rubuc sannadeedka gobol kasta, diyaar u ah dhoofinta."
+    },
+    "scan": {
+      "title": "Sawirka rasiidka",
+      "text": "Sawir rasiid — lacagta iyo qaybta iskood ayay u buuxsamaan."
+    },
+    "payables": {
+      "title": "Biilasha lagugu leeyahay",
+      "text": "Hadda diiwaan geli waxa lagugu leeyahay, mar dambe bixi, dhammaan ama qaybo."
+    },
+    "reports": {
+      "title": "Warbixino canshuur-diyaar ah",
+      "text": "Bayaanka dakhliga, xaashida dheelitirka iyo buugga maalinlaha oo had iyo jeer isku dheelitiran."
+    },
+    "multi": {
+      "title": "Ka badan hal ganacsi",
+      "text": "Xisaab gooni ah ganacsi kasta, hal gal."
+    },
+    "accountant": {
+      "title": "Galka xisaabiyaha",
+      "text": "Sii xisaabiyahaaga ama shuraakadaada gal u gaar ah."
+    },
+    "languages": {
+      "title": "7 luqadood",
+      "text": "Ingiriis, Amxaari, Tigrinya, Carabi, Isbaanish, Faransiis, Soomaali."
+    },
+    "documents": {
+      "title": "Dukumentiyada",
+      "text": "Ruqsadaha, heshiisyada kirada iyo qaansheegyada, oo ku kaydsan xisaabtaada agteeda."
+    },
+    "inventory": {
+      "title": "Kaydka iyo qiimaha alaabta",
+      "text": "Ogow waxa aad ku bixisay waxa aad iibisay — faa'iidadaada guud ee dhabta ah."
+    },
+    "export": {
+      "title": "Dhoofinta CSV",
+      "text": "Soo deji dhammaan diiwaannadaada goor kasta. Adigaa leh."
+    }
+  },
+  "pricing": {
+    "metaTitle": "Qiimaha — Meksova",
+    "metaDescription": "Hal qorshe oo leh astaamaha oo dhan: $29.99 bishii, ama $299.99 sannadkii ($24.99 bishii). Tijaabo bilaash ah oo 30 maalmood ah, kaar la'aan.",
+    "eyebrow": "Qiime fudud",
+    "title": "Hal qorshe. Wax walba waa ku jiraan.",
+    "lede": "Tijaabi bilaash 30 maalmood — kaar la'aan. Kadib sii wad bil kasta, ama sannadkii bixi oo badbaadi 17%.",
+    "monthly": "Bille",
+    "yearly": "Sannadle",
+    "save": "Badbaadi 17%",
+    "planName": "Meksova Pro",
+    "includes": "Wax walba oo Pro ku jira",
+    "items": [
+      "Dhaqdhaqaaq aan xad lahayn",
+      "Isku xirka bangiga iyo POS",
+      "Sawirka rasiidka",
+      "Warbixino canshuur-diyaar ah iyo PDF",
+      "Mayl, shidaal iyo IFTA",
+      "Biilasha lagugu leeyahay",
+      "Kaydka iyo qiimaha alaabta",
+      "Kaydinta dukumentiyada",
+      "Kayd iyo dhoofin CSV",
+      "Galka xisaabiyaha",
+      "Dhammaan 7-da luqadood"
+    ],
+    "fine": "Kaar looma baahna tijaabada. Jooji ka hor inta aysan dhammaan 30-kaaga maalmood, waxba ma bixin doontid.",
+    "stripTitle": "Hal qorshe · wax walba waa ku jiraan",
+    "faqTitle": "Su'aalaha qiimaha",
+    "faq": [
+      {
+        "q": "Maxaa dhacaya 30-ka maalmood kadib?",
+        "a": "Haddii aad go'aansato inaad sii wadato, qorshahaagu wuxuu ka bilaabmayaa $29.99 bishii, ama $299.99 sannadkii. Haddii kale, waxba lagaa ma jarayo."
+      },
+      {
+        "q": "Ma jiraa qorshe ka jaban oo astaamo yar leh?",
+        "a": "Maya. Hal qorshe ayaa jira wax walbana wuu ka kooban yahay, si aadan ugu xirmin bartamaha xilliga canshuurta."
+      },
+      {
+        "q": "Mar dambe ma uga beddeli karaa bille una beddeli karaa sannadle?",
+        "a": "Haa. U beddel sannadle goor kasta si kharashkaagu ugu dhaco $24.99 bishii."
+      },
+      {
+        "q": "Ma joojin karaa goor kasta?",
+        "a": "Haa. Heshiis ma jiro. Waxaad u dhoofin kartaa diiwaannadaada CSV ka hor intaadan bixin."
+      }
+    ]
+  },
+  "industriesPage": {
+    "metaTitle": "Xisaab ganacsigaaga — Meksova",
+    "metaDescription": "Meksova wuxuu u diyaarsan yahay 11 nooc oo ganacsi: gaadiidka baabuurta waaweyn, darawallada app-ka, dukaamada raashinka, maqaaxiyaha, dhismaha, nadiifinta, quruxda, ganacsiga online-ka, abuurayaasha nuxurka, qoysaska iyo kuwo kale.",
+    "eyebrow": "Ganacsiyada",
+    "title": "Loo habeeyay sida aad u shaqayso.",
+    "lede": "Dooro ganacsigaaga si aad u aragto waxa Meksova u qabto — ama si toos ah u gal bandhig leh xisaab tusaale ah.",
+    "learn": "Sida uu u shaqeeyo",
+    "demo": "Tijaabi bandhigga"
+  },
+  "industryPage": {
+    "painsEyebrow": "Ma kuu muuqataa?",
+    "painsTitle": "Waraaqo yar. Lacag badan oo aad arki karto.",
+    "weekEyebrow": "Usbuuc la jira Meksova",
+    "weekTitle": "Dhowr daqiiqo maalintii. Xisaab isku dheelitiran.",
+    "featuresEyebrow": "Loo sameeyay {{name}}",
+    "featuresTitle": "Wax walba hal dashboard.",
+    "faqEyebrow": "Su'aalo",
+    "faqTitle": "Jawaabo toos ah.",
+    "ctaTitle": "Tijaabi xisaabtaada.",
+    "ctaText": "Bandhiggu wuxuu ku furmayaa xisaab tusaale ah oo shaqadaada ah oo horay u buuxsan — is diiwaan gelin la'aan.",
+    "openDemo": "Fur bandhigga tooska ah",
+    "sampleBooks": "Xisaab tusaale · 30-kii maalmood ee la soo dhaafay",
+    "in": "Soo gal",
+    "out": "Bax",
+    "owed": "Lagu leeyahay",
+    "iftaTitle": "Warbixinta IFTA ee rubuc sannadeedka",
+    "iftaQuarter": "R3 · Luulyo–Sebtembar",
+    "state": "Gobol",
+    "miles": "Mayl",
+    "gallons": "Galaan",
+    "total": "Wadarta",
+    "fuelChip": "Rasiidka shidaalka · Indianapolis",
+    "milesTitle": "Safarrada usbuucan",
+    "business": "Shaqo",
+    "personal": "Shakhsi",
+    "otherIndustries": "Ganacsiyo kale",
+    "days": [
+      "Isniin",
+      "Talaado",
+      "Arbaco",
+      "Khamiis"
+    ]
+  },
+  "about": {
+    "metaTitle": "Ku saabsan Meksova",
+    "metaDescription": "Meksova waa shirkad ku taal Columbus, Ohio, oo dhisaysa xisaab fudud oo luqado badan leh ganacsiyada ay leeyihiin soo-galootiga iyo ganacsiyada yaryar.",
+    "eyebrow": "Nagu saabsan",
+    "title": "Waxaa dhisay milkiilayaal",
+    "em": "rasiidhadu ku hafteen.",
+    "lede": "Waxaan maamulnay ganacsiyadeenna yaryar waxaana nagu adkaatay inaan xisaabteenna nidaamsan ku hayno. Sidaas darteed waxaan dhisnay qalabkii aan jeclaan lahayn inaan haysanno — fudud, daacad ah, oo ku qoran luqadaha bulshadeenna.",
+    "storyTitle": "Sababta Meksova u jiro",
+    "story": [
+      "Barnaamijyada xisaabta badankood waxaa loo sameeyay xisaabiyayaasha. Waa Ingiriis, waxaa ka buuxa ereyo farsamo, waxayna u malaynayaan inaad horay u taqaan waxa uu yahay diiwaanka buugga maalinlaha.",
+      "Meksova wuxuu ka bilaabmaa dhinaca kale. Waxaad u sheegaysaa waxa dhacay — lacag ayaa soo gashay, lacag ayaa baxday, ama wax ayaa lagugu leeyahay — isaguna xisaabta ayuu gadaal ka sameeyaa: buugga maalinlaha, bayaanka dakhliga, xaashida dheelitirka iyo canshuurta la qiyaasay.",
+      "Habayn kasta wuxuu diyaar u yahay shaqo dhab ah, laga bilaabo gaadiidka baabuurta iyo IFTA ilaa kaydka dukaanka iyo qiimaha alaabta, app-ka oo dhanna wuxuu ku hadlaa toddoba luqadood."
+    ],
+    "valuesTitle": "Waxa aan danaynno",
+    "values": [
+      {
+        "title": "Luqad fudud",
+        "text": "Helay, Bixiyay, Lagu leeyahay. Deyn-bixin iyo deyn-qaadasho ma jiraan ilaa aad rabto mooyee."
+      },
+      {
+        "title": "Luqaddaada",
+        "text": "Ingiriis, Amxaari, Tigrinya, Carabi, Isbaanish, Faransiis iyo Soomaali."
+      },
+      {
+        "title": "Tirooyin daacad ah",
+        "text": "Warbixino isku dheelitiran, oo ku dhisan xisaab laba-geli ah oo dhab ah."
+      },
+      {
+        "title": "Taageero maxalli ah",
+        "text": "Koox dhab ah oo ku sugan Columbus, Ohio oo aad wici karto."
+      }
+    ]
+  },
+  "contact": {
+    "metaTitle": "La xiriir Meksova",
+    "metaDescription": "Su'aalo ma ka qabtaa Meksova? Wac +1 (614) 966-5005, u qor info@meksova.com, ama nagu soo booqo 3130 Westerville Rd, Columbus, OH.",
+    "eyebrow": "La xiriir",
+    "title": "La hadal qof dhab ah.",
+    "lede": "Su'aalo ku saabsan habaynta, qiimaha ama xisaabtaada? Waan ku faraxsanahay inaan ku caawinno — luqaddaada.",
+    "call": "Na soo wac",
+    "email": "Iimayl",
+    "visit": "Nagu soo booqo",
+    "reviews": "Faallooyinka Google",
+    "formTitle": "Noo soo dir fariin",
+    "name": "Magacaaga",
+    "emailField": "Iimayl",
+    "phoneField": "Telefoon (ikhtiyaari)",
+    "business": "Nooca ganacsiga",
+    "businessPick": "Dooro mid",
+    "message": "Sideen kuu caawin karnaa?",
+    "send": "Ku fur app-ka iimaylkayga",
+    "required": "Fadlan buuxi tan.",
+    "invalidEmail": "Fadlan geli iimayl sax ah.",
+    "formNote": "Tani waxay furaysaa app-ka iimaylkaaga iyadoo fariintu diyaar u tahay in loo diro info@meksova.com.",
+    "subject": "Su'aal ka timid {{name}}"
+  },
+  "blog": {
+    "metaTitle": "Hagayaal milkiilayaasha ganacsiga yar — Meksova",
+    "metaDescription": "Hagayaal luqad fudud ah oo ku saabsan IFTA, rasiidhada, qiimaha alaabta iyo xisaabta darawallada baabuurta, milkiilayaasha dukaamada iyo ganacsiyada yaryar.",
+    "eyebrow": "Hagayaal",
+    "title": "Xisaabta, si cad loo sharaxay.",
+    "lede": "Hagayaal gaagaaban oo loogu talagalay milkiilayaasha doorbida inay ganacsigooda maamulaan intay akhrin lahaayeen sharciga canshuurta.",
+    "back": "Dhammaan hagayaasha",
+    "englishOnly": "Hagahan wuxuu ku qoran yahay Ingiriis.",
+    "disclaimer": "Hagahan waa macluumaad guud, ma aha talo canshuureed ama sharci. Xeerarku way isbeddelaan ganacsi kastana wuu ka duwan yahay — kala tasho khabiir canshuureed xaaladdaada.",
+    "related": "Ku tijaabi Meksova"
+  },
+  "notFound": {
+    "metaTitle": "Boggii lama helin — Meksova",
+    "title": "Boggan waddo khaldan ayuu qaaday.",
+    "lede": "Boggii aad raadinaysay ma jiro ama waa la raray.",
+    "home": "Ku noqo bogga hore"
+  },
+  "footer": {
+    "tagline": "Xisaab fudud ganacsiyada yaryar, luqaddaada.",
+    "product": "Badeecad",
+    "company": "Shirkad",
+    "demo": "Bandhig toos ah",
+    "privacy": "Asturnaanta",
+    "terms": "Shuruudaha",
+    "rights": "© {{year}} Meksova. Xuquuqda oo dhan way dhowran yihiin."
+  },
+  "faqPage": {
+    "metaTitle": "Su'aalo iyo jawaabo — Meksova",
+    "metaDescription": "Jawaabo ku saabsan qiimaha Meksova, tijaabada bilaashka ah, luqadaha, IFTA, galka xisaabiyaha iyo sida app-ku u shaqeeyo.",
+    "title": "Su'aalo iyo jawaabo"
+  },
   "industries": {
-    "truck": {"name":"Gaadiidka baabuurta waaweyn","short":"Xamuul, shidaal gobol kasta, IFTA","metaTitle":"App xisaabeed iyo IFTA darawallada baabuurta waaweyn — Meksova","metaDescription":"Dakhliga xamuulka, rasiidhada shidaalka, maylka gobol kasta iyo wadarta IFTA ee rubuc sannadeedka hal app oo loogu talagalay darawallada iskood u shaqeeya iyo shirkadaha yaryar. Tijaabo bilaash ah oo 30 maalmood ah.","eyebrow":"Darawallada iskood u shaqeeya iyo shirkadaha yaryar","title":"Xisaab garanaysa waddada.","em":"IFTA way ku jirtaa.","lede":"Dakhliga xamuulka, shidaalka gobol kasta, dayactirka iyo kharashka waddooyinka hal meel. Sawir rasiidka shidaalka wuxuuna galayaa xisaabtaada iyo warbixintaada IFTA.","preview":["Dakhliga xamuulka","Shidaal","Lacagta dheeraadka ah ee shidaalka","Dayactirka baabuurka","Kharashka waddooyinka","Caymis (lagu leeyahay)"],"pains":[{"was":"Daboolka qorraxda oo ay ka buuxaan rasiidhada shidaalka","title":"Ku sawir saldhigga shidaalka","text":"Sawir rasiidka; lacagta, gobolka iyo galaannada waa la akhriyaa oo laguu kaydiyaa."},{"was":"Orodka IFTA ee dhammaadka rubuca","title":"Wadar diyaar ah rubuc kasta","text":"Maylka iyo galaannada gobol kasta, laga sameeyay safarradaada iyo shidaalkaaga. U dhoofi CSV warbixintaada."},{"was":"Inaadan ogayn waxa baabuurku runtii keeno","title":"Faa'iidada baabuur kasta, hal mar","text":"Bayaanka dakhliga iyo canshuurta la qiyaasay — xisaab gooni ah baabuur kasta haddii aad leedahay ka badan hal."}],"week":[{"day":"Isniin","title":"Xamuul ka baxaya Columbus","text":"Diiwaan geli safarka — 184 mayl oo Ohio iyo Indiana ah."},{"day":"Talaado","title":"Shidaal Indianapolis","text":"Sawir rasiidka. Waa kharash iyo diiwaan IFTA."},{"day":"Arbaco","title":"Dayactir bareeg, mar dambe bixin","text":"U diiwaan geli sidii deyn. Wuxuu ku jiraa Lagu leeyahay ilaa aad bixiso."},{"day":"Jimce","title":"Lacagta xamuulka ayaa soo gashay","text":"Taabo Helay. Lacagta gacanta ku jirta isla markiiba way cusboonaataa."}],"faq":[{"q":"Meksova ma ii gudbinayaa warbixinta IFTA?","a":"Maya. Wuxuu diyaariyaa maylkaaga iyo galaannadaada gobol kasta ee rubuca si gudbintu dhowr daqiiqo u qaadato. Ku isticmaal wadarta warbixintaada, ama u dhiib diyaariyahaaga canshuurta."},{"q":"Waxaan leeyahay laba baabuur. Ma u baahanahay laba akoon?","a":"Maya. Ku dar ganacsi baabuur kasta hal gal hoostiisa oo hal taabasho isku beddel."},{"q":"La socodka maylka ma u baahan yahay GPS?","a":"Maya. Isticmaal la socodka safarka ee hal taabasho, ama adigu geli maylkaaga gobol kasta."}]},
-    "rideshare": {"name":"Darawallada app-ka","short":"Lacag-raac, shidaal, mayl","metaTitle":"La socodka maylka iyo kharashka darawallada app-ka — Meksova","metaDescription":"La soco lacag-raaca, bakhshiishka, gunnooyinka, shidaalka iyo maylka shaqada ee Uber, Lyft iyo keenista. Arag faa'iidadaada dhabta ah iyo canshuurta la qiyaasay. Tijaabo bilaash ah oo 30 maalmood ah.","eyebrow":"Darawallada Uber, Lyft iyo keenista","title":"Ogow waxa aad runtii kasbato","em":"maylka kadib.","lede":"Lacag-raaca, gunnooyinka, shidaalka, khidmadda app-ka iyo mayl kasta oo shaqo hal meel — si canshuurtu aysan u noqon qiyaas.","preview":["Lacag-raac","Shidaal","Gunnooyin","Khidmadda app-ka","Dayactirka gaariga","Caymis (lagu leeyahay)"],"pains":[{"was":"Mayl aad iloowday inaad qorto","title":"Hal taabasho si aad safar u diiwaan geliso","text":"Bilow oo jooji safar, ama kadib gacanta ku geli. Shaqo iyo shakhsi kala gooni."},{"was":"Lacag-bixino qariya khidmadda","title":"Khidmadda iyo shidaalka agagaarka lacag-raaca","text":"Diiwaan geli waxa soo galay iyo waxa ku kacay, faa'iidadaada dhabta ahna dashboard-ka ayay ka muuqataa."},{"was":"Biil canshuureed lama filaan ah bisha Abriil","title":"Canshuur la qiyaasay marba marka ka dambaysa","text":"Meksova wuxuu canshuurta ka qiyaasaa faa'iidadaada si aad usbuuc kasta lacag u dhigato."}],"week":[{"day":"Isniin","title":"Safarrada garoonka subaxdii","text":"La soco safarka — 112 mayl oo shaqo ah."},{"day":"Talaado","title":"Buuxi taangiga","text":"Sawir rasiidka shidaalka. Wuxuu u kaydsamaa kharash."},{"day":"Khamiis","title":"Lacag-bixinta usbuuca ayaa timid","text":"U diiwaan geli lacag-raaca iyo gunnada dakhli."},{"day":"Axad","title":"Eeg usbuuca","text":"Faa'iidada, maylka iyo dhimista la qiyaasay hal shaashad."}],"faq":[{"q":"Ma u shaqeeyaa wax ka badan hal app?","a":"Haa. Ku xir akoonka bangiga ee lacag-bixintaadu ku dhacdo, iskood ayay u isku xirmaan — Uber, Lyft, DoorDash ama app kasta oo kale."},{"q":"Ma xisaabiyaa dhimista maylkayga?","a":"Wuxuu muujiyaa dhimis la qiyaasay oo ka timid maylkaaga shaqada. Diyaariyahaaga canshuurta ayaa xaqiijinaya tirada kama dambaysta ah."},{"q":"Ma inaan GPS daaran ku hayaa?","a":"Maya. Safarrada gacanta ayaad ku geli kartaa markaad rabto."}]},
-    "groceries": {"name":"Dukaamada raashinka","short":"Iib, kayd, alaab-keeneyaal","metaTitle":"Xisaab dukaamada raashinka iyo dukaamada yaryar — Meksova","metaDescription":"Diiwaan geli iibka maalinlaha, qaansheegyada alaab-keenayaasha iyo kaydka, arag qiimaha alaabta iyo faa'iidada guud ee dhabta ah, oo hay xisaab canshuur-diyaar ah. Tijaabo bilaash ah oo 30 maalmood ah.","eyebrow":"Dukaamada raashinka iyo dukaamada yaryar","title":"Iibka maalinta ayaa soo gala.","em":"Faa'iidada dhabta ah ayaa muuqata.","lede":"Diiwaan geli iibka maalinta, qaansheegyada alaab-keenayaasha iyo kaydka dhowr daqiiqo gudahood, oo arag waxa dukaanku runtii kasbado qiimaha alaabta kadib.","preview":["Iibka maalinlaha","Qiimaha alaabta la iibiyay","Mushaharka shaqaalaha","Khidmadda keenista","Adeegyada","Qaansheegga alaab-keenaha (lagu leeyahay)"],"pains":[{"was":"Qaansheegyada jumlada oo ku jira sanduuq kabo","title":"Sawir qaansheegyada alaab-keenayaasha","text":"Sawir qaansheegga oo u kaydi kayd ama kharash — waxba ma lumaan."},{"was":"Khasnad mashquul ah, faa'iido aan la garanayn","title":"Iibku wuxuu ka yimaadaa POS-kaaga","text":"Ku xir khasnaddaada iyo kaarka bangiga — iibku iskiis ayuu xisaabtaada u galaa, faa'iidada guudna waxay xisaabisaa qiimaha alaabta."},{"was":"Qaansheegyada alaab-keenayaasha oo is dul saaran","title":"Ogow waxa lagugu leeyahay","text":"U diiwaan geli qaansheegyada alaab-keenayaasha deyn oo bixi dhammaan ama qaybo."}],"week":[{"day":"Isniin","title":"Iibku habeenkii ayuu isku xirmaa","text":"Iibkii shalay ee khasnadda wuxuu ka yimaadaa POS-kaaga."},{"day":"Talaado","title":"Keenista khudaarta iyo miraha","text":"Sawir qaansheegga alaab-keenaha. Waxaa loogu daraa deyn."},{"day":"Khamiis","title":"Bixi kala badh qaansheegga","text":"Diiwaan geli bixin qayb ah. Inta kale waxay ku hartaa Lagu leeyahay."},{"day":"Sabti","title":"Eeg usbuuca","text":"Iibka, qiimaha alaabta iyo faa'iidada guud, dhinac dhinac."}],"faq":[{"q":"Ma ku xirmaa khasnaddayda?","a":"Haa. Ku xir nidaamka POS iyo kaarka bangiga, iibka iyo iibsiga maalinta iskood ayay u isku xirmaan. Haddii aad doorbidayso, gacanta ayaad ku diiwaan gelin kartaa wadarta."},{"q":"Ma la socon karaa alaabta aan u iibsado dib u iibin?","a":"Haa. U diiwaan geli alaabta dib loo iibinayo kayd, qiimaheeduna wuxuu u gudbaa qiimaha alaabta la iibiyay marka aad iibiso."},{"q":"Waxaan leeyahay laba dukaan. Ma kala gooyn karaa?","a":"Haa. Ku dar ganacsi dukaan kasta oo isku beddel hal gal."}]},
-    "cafe": {"name":"Maqaaxiyaha iyo makhaayadaha","short":"Iib, kharashka cuntada, shaqaale","metaTitle":"Xisaab maqaaxiyaha iyo makhaayadaha — Meksova","metaDescription":"La soco iibka cuntada iyo cabbitaanka, kharashka cuntada, shaqaalaha iyo kirada, oo ogow faa'iidadaada dhabta ah. Warbixino canshuur-diyaar ah makhaayadaha yaryar. Tijaabo bilaash ah oo 30 maalmood ah.","eyebrow":"Maqaaxiyaha, makhaayadaha iyo baabuurta cuntada","title":"Ogow kharashka cuntadaada","em":"ka hor inta aysan bishu dhammaan.","lede":"Iibka cuntada iyo cabbitaanka, kharashka alaab-keenayaasha, shaqaalaha iyo kirada hal meel — si aad u aragto faa'iidada saxan kasta, ma aha oo keliya haraaga bangiga.","preview":["Iibka cuntada","Kharashka cuntada","Iibka cabbitaanka","Mushaharka shaqaalaha","Kiro","Qaansheegga alaab-keenaha (lagu leeyahay)"],"pains":[{"was":"Rasiidhada alaab-keenayaasha oo jikada ku sudhan","title":"Isla markiiba sawir","text":"Sawir rasiid kasta oo alaab-keene; iskiis ayuu ugu kaydsamaa kharashka cuntada."},{"was":"Habeenno mashquul ah, faa'iido yar","title":"Iibku wuu isku xirmaa, kharashkuna wuu muuqdaa","text":"Iibku wuxuu si toos ah uga yimaadaa POS-kaaga, kharashka cuntada agtiisa — si aad hore ugu aragto faa'iido sii yaraanaysa."},{"was":"Kirada iyo mushaharka oo sii kordhaya","title":"Biil kasta hal meel","text":"Diiwaan geli waxa hadda lagugu leeyahay oo bixi marka lacag soo gasho."}],"week":[{"day":"Isniin","title":"Iibkii dhammaadka usbuuca ayaa yimid","text":"Iibka POS-kaagu horay ayuu xisaabta ugu jiraa."},{"day":"Talaado","title":"Keenista khudaarta iyo hilibka","text":"Sawir qaansheegga oo u calaamadee deyn."},{"day":"Khamiis","title":"Mushahar","text":"Diiwaan geli mushaharka. Faa'iidadu isla markiiba way cusboonaataa."},{"day":"Axad","title":"Eeg faa'iidada","text":"Isbarbardhig kharashka cuntada iyo iibka usbuuca."}],"faq":[{"q":"Ma ku xirmaa POS-kayga?","a":"Haa. Ku xir POS-kaaga iyo kaarka bangiga, iibka iyo bixinta alaab-keenayaasha iskood ayay u isku xirmaan — qoraal habeennimo ah ma jiro."},{"q":"Ma kala saari karaa iibka cuntada iyo cabbitaanka?","a":"Haa. Labaduba waa qaybo diyaar ah, oo ay la socdaan adeegga xafladaha iyo keenista."},{"q":"Xisaabiyahaygu ma arki karaa?","a":"Haa. Sii gal u gaar ah, ama u dir warbixinta PDF."}]},
-    "construction": {"name":"Xirfadaha dhismaha","short":"Shaqooyin, agab, kooxo","metaTitle":"Xisaab qandaraaslayaasha iyo xirfadaha dhismaha — Meksova","metaDescription":"La soco dakhliga shaqada, agabka, qandaraaslayaasha hoose, qalabka iyo maylka gaariga, oo arag faa'iidada mashruuc kasta. Qandaraaslayaasha yaryar. Tijaabo bilaash ah oo 30 maalmood ah.","eyebrow":"Qandaraaslayaasha, dib-u-habeeyayaasha iyo xirfadlayaasha","title":"Arag faa'iidada shaqo kasta,","em":"ma aha oo keliya haraaga bangiga.","lede":"Heshiisyada, agabka, qandaraaslayaasha hoose, qalabka iyo maylka goobta — marba marka ka dambaysa la diiwaan geliyo, si aad u ogaato shaqooyinka faa'iidada leh.","preview":["Heshiis dib-u-habayn","Agabka dhismaha","Qandaraaslayaasha hoose","Shaqo dayactir","Shidaalka gaariga","Qalab (lagu leeyahay)"],"pains":[{"was":"Rasiidhada dukaanka agabka oo gaariga ku jira","title":"Ku sawir miiska iibka","text":"Isla markiiba sawir rasiidhada agabka oo u kaydi kharashka shaqada ama qalab."},{"was":"Inaadan ogayn shaqooyinka lacag keenay","title":"Faa'iidada mashruuc kasta","text":"Warbixinada bilaha ah waxay muujiyaan lacagta soo gashay iyo tan baxday si natiijada shaqo kastaa u caddaato."},{"was":"Maylka goobaha shaqada oo aan la diiwaan gelin","title":"Safarro hal taabasho lagu diiwaan geliyo","text":"La soco safarrada goobaha iyo iibsiga agabka si aad u hesho dhimis mayl oo la qiyaasay."}],"week":[{"day":"Isniin","title":"Horudhac dib-u-habayn","text":"U diiwaan geli horudhaca dakhli."},{"day":"Talaado","title":"Qaadashada agabka","text":"Sawir rasiidka oo diiwaan geli safarka 52 mayl ah."},{"day":"Khamiis","title":"Qalab cusub oo deyn lagu qaatay","text":"U diiwaan geli qalab lagugu leeyahay."},{"day":"Jimce","title":"Bixi qandaraaslaha hoose","text":"Diiwaan geli bixinta. Faa'iidadu way cusboonaataa."}],"faq":[{"q":"Ma la socon karaa qalabka iyo agabka?","a":"Haa. U diiwaan geli iibsiyada waaweyn qalab si ay uga muuqdaan xaashida dheelitirka, ma aha kharash hal mar ah."},{"q":"Ma maareeyaa bixinta qandaraaslayaasha hoose?","a":"Haa. Mushaharka qandaraaslayaasha hoose waa qayb diyaar ah. Ku kaydi qaansheegyadooda Dukumentiyada."},{"q":"Ma ka isticmaali karaa goobta shaqada?","a":"Haa. Wuxuu ka shaqeeyaa biraawsarka telefoonkaaga — rakibid looma baahna."}]},
-    "cleaning": {"name":"Adeegyada nadiifinta","short":"Heshiisyo, agab, mayl","metaTitle":"Xisaab ganacsiyada nadiifinta — Meksova","metaDescription":"La soco heshiisyada nadiifinta, diyaarinta Airbnb, agabka, mushaharka iyo maylka u dhexeeya macaamiisha. Xisaab fudud oo canshuur-diyaar ah. Tijaabo bilaash ah oo 30 maalmood ah.","eyebrow":"Nadiifinta guryaha, xafiisyada iyo Airbnb","title":"Xisaab nadiif ah","em":"ganacsi nadiifin.","lede":"Heshiisyo joogto ah, diyaarinta Airbnb, agab, mushahar iyo maylka u dhexeeya macaamiisha — dhammaan hal app oo fudud.","preview":["Heshiisyo joogto ah","Agabka nadiifinta","Diyaarinta Airbnb","Mushaharka shaqaalaha","Shidaal iyo socod","Agab (lagu leeyahay)"],"pains":[{"was":"Rasiidhada agabka oo gaariga ku lumay","title":"Sawir markaad iibsato","text":"Sawir rasiidhada agabka, isla markiiba waxay u kaydsamaan kharash."},{"was":"Maylka u dhexeeya macaamiisha oo la iloobay","title":"Diiwaan geli safar kasta","text":"La soco safarrada u dhexeeya shaqooyinka si aad u hesho dhimis mayl oo la qiyaasay."},{"was":"Inaadan ogayn heshiisyada ugu lacagta badan","title":"Arag dakhligaaga nooc ahaan","text":"Heshiisyada joogtada ah, nadiifinta hal mar ah iyo diyaarinta Airbnb, mid kastaa qaybtiisa."}],"week":[{"day":"Isniin","title":"Heshiiska xafiiska waa la bixiyay","text":"U diiwaan geli heshiiska bilaha ah dakhli."},{"day":"Talaado","title":"Iibsiga agabka","text":"Sawir rasiidka; diiwaan geli safarka 18 mayl ah."},{"day":"Khamiis","title":"Laba diyaarin Airbnb","text":"Mid kasta u diiwaan geli dakhli."},{"day":"Jimce","title":"Bixi kooxda","text":"Diiwaan geli mushaharka oo arag faa'iidada usbuuca."}],"faq":[{"q":"Ma si gooni ah ula socon karaa diyaarinta Airbnb?","a":"Haa. Diyaarinta Airbnb, heshiisyada joogtada ah iyo nadiifinta hal mar ah waa qaybo diyaar ah oo kala gooni ah."},{"q":"Ma u baahanahay GPS maylka?","a":"Maya. Isticmaal la socodka safarka ama gacanta ku geli maylka."},{"q":"Ma kaydin karaa heshiisyada macaamiisha?","a":"Haa. Ku kaydi heshiisyada, caymiska iyo ruqsadaha Dukumentiyada."}]},
-    "beauty": {"name":"Quruxda iyo timo-jarayaasha","short":"Macaamiil, badeecado, kirada kursiga","metaTitle":"Xisaab saloonnada, timo-jarayaasha iyo xirfadlayaasha quruxda — Meksova","metaDescription":"La soco adeegyada, iibka badeecadaha, kirada kursiga iyo agabka. Xisaab fudud oo canshuur-diyaar ah saloonnada, timo-jarayaasha, timo-tidcayaasha iyo stylist-yada. Tijaabo bilaash ah oo 30 maalmood ah.","eyebrow":"Saloonnada, timo-jarayaasha, timo-tidcayaasha iyo stylist-yada","title":"Waqti badan oo kursiga ah,","em":"waraaqo yar.","lede":"Adeegyada, iibka badeecadaha, kirada kursiga iyo agabka hal meel — si aad u ogaato waxa kursigu runtii keeno.","preview":["Timo-jaris iyo qurxin","Badeecadaha quruxda","Midab iyo daaweyn","Kiro iyo adeegyo","Iibka badeecadaha","Dalabka badeecadaha (lagu leeyahay)"],"pains":[{"was":"Bakhshiish lacag caddaan ah iyo kaar oo aan la diiwaan gelin","title":"Diiwaan geli maalinta hal daqiiqo","text":"Ku dar adeegyada iyo badeecadaha maalinta hal ama laba diiwaan."},{"was":"Qiimaha badeecadaha oo cunaya faa'iidada","title":"Qiimaha badeecadaha marka loo eego iibka","text":"La soco waxa aad ku bixiso badeecadaha aad dib u iibiso, si iibku runtii faa'iido u kordhiyo."},{"was":"Kirada kursiga iyo biilasha oo is dul saaran","title":"Ogow waxa lagugu leeyahay","text":"U diiwaan geli dalabyada iyo kirada deyn, kadibna bixi."}],"week":[{"day":"Talaado","title":"Maalin adeeg mashquul ah","text":"U diiwaan geli timo-jarista iyo midabka dakhli."},{"day":"Arbaco","title":"Dalabka badeecadaha ayaa yimid","text":"Sawir qaansheegga oo u calaamadee deyn."},{"day":"Jimce","title":"Waqtiga kirada kursiga","text":"Diiwaan geli bixinta kirada."},{"day":"Sabti","title":"Iibka badeecadaha","text":"Diiwaan geli iibka. Faa'iidada guud way cusboonaataa."}],"faq":[{"q":"Waxaan kireystaa kursi. Ma ii habboon yahay?","a":"Haa. Kirada kursiga, agabka iyo dakhliga adeegga dhammaantood waa qaybo diyaar ah."},{"q":"Ma la socon karaa badeecadaha aan dib u iibiyo?","a":"Haa. U diiwaan geli kayd oo arag faa'iidada marka la iibiyo."},{"q":"Ma ku xirmaa akhriyaha kaarka ama POS-kayga?","a":"Haa. Ku xir POS-kaaga iyo kaarka bangiga, iibkaaguna iskiis ayuu isku xirmaa. Iibka lacagta caddaanka ah gacanta ayaad ku dari kartaa."}]},
-    "ecommerce": {"name":"Iibiyeyaasha online-ka","short":"Dalabyo, khidmado, dirid","metaTitle":"Xisaab iibiyeyaasha online-ka — Meksova","metaDescription":"La soco iibka online-ka, khidmadaha madasha, xayeysiisyada, diridda iyo kaydka iibiyeyaasha Shopify, Amazon, Etsy iyo eBay. Arag faa'iidadaada dhabta ah bil kasta. Tijaabo bilaash ah oo 30 maalmood ah.","eyebrow":"Iibiyeyaasha Shopify, Amazon, Etsy iyo eBay","title":"Iibku si fudud ayuu u muuqdaa.","em":"Faa'iidadu ma muuqan jirin. Hadda way muuqataa.","lede":"Iibka online-ka, khidmadaha madasha, xayeysiisyada, diridda iyo kaydka hal meel — si aad u aragto waxa haraaya marka qof walba qaybtiisa qaato.","preview":["Iibka online-ka","Kayd","Khidmadaha madasha","Xayeysiis online","Dalab jumlo","Agabka diridda (lagu leeyahay)"],"pains":[{"was":"Khidmado ku qarsoon warbixinada lacag-bixinta","title":"Khidmadaha khad u gaar ah","text":"Si gooni ah u diiwaan geli khidmadaha madasha iyo lacag-bixinta oo arag waxa ay runtii kugu kacaan."},{"was":"Kharash xayeysiis oo aan natiijo cad lahayn","title":"Xayeysiiska agagaarka iibka","text":"La soco kharashka xayeysiiska isla meesha dakhliga, bil ka bil."},{"was":"Kayd la iibsaday, faa'iido aan caddayn","title":"Qiimaha alaabta, laguu sameeyay","text":"U diiwaan geli alaabta kayd; qiimaheedu wuxuu u gudbaa qiimaha alaabta marka aad iibiso."}],"week":[{"day":"Isniin","title":"Lacag-bixinta usbuuca","text":"Diiwaan geli iibka iyo khidmadda madasha."},{"day":"Talaado","title":"Dib u buuxinta alaab-keenaha","text":"U diiwaan geli iibsiga kayd."},{"day":"Arbaco","title":"Qaansheegga xayeysiiska","text":"Sawir oo u kaydi xayeysiis."},{"day":"Jimce","title":"Dalab jumlo ayaa la diray","text":"Diiwaan geli dalabka. Faa'iidadu way cusboonaataa."}],"faq":[{"q":"Ma la isku xirmaa dukaankayga?","a":"Ku xir akoonka bangiga ee lacag-bixintaadu ku dhacdo, iyo POS-kaaga haddii aad sidoo kale qof ahaan wax u iibiso, dhaqdhaqaaqyaduna iskood ayay u isku xirmaan. Khidmadaha iyo lacag-bixinta hal taabasho ayaad ku kala soocaysaa."},{"q":"Ma ka iibin karaa wax ka badan hal madal?","a":"Haa. Ku diiwaan geli iibka madal kasta hal xisaab, ama madal kasta ganacsi gooni ah u yeel."},{"q":"Ma la socdaa kaydka?","a":"Haa. Alaabta dib loo iibinayo waxay galaan kaydka, qiimahooduna wuxuu u gudbaa qiimaha alaabta la iibiyay marka aad iibiso."}]},
-    "contentCreator": {"name":"Abuurayaasha nuxurka","short":"Dakhliga xayeysiiska, kafaalayaal, qalab","metaTitle":"Xisaab abuurayaasha nuxurka iyo influencer-yada — Meksova","metaDescription":"La soco dakhliga xayeysiiska, kafaalada, qalabka, software-ka iyo shaqaalaha xorta ah. Xisaab canshuur-diyaar ah abuurayaasha YouTube iyo TikTok. Tijaabo bilaash ah oo 30 maalmood ah.","eyebrow":"Abuurayaasha YouTube, TikTok iyo kuwo kale","title":"Adigu nuxurka ayaad samaysaa.","em":"Annaguna lacagta ayaan habaynaynaa.","lede":"Dakhliga xayeysiiska, kafaalada, qalabka, software-ka iyo tifaftirayaasha hal meel — xisaab nidaamsan marka foomamka 1099 yimaadaan.","preview":["Dakhliga xayeysiiska","Kafaalo","Qalabka kamarada","Tifaftiraha fiidiyowga","Software","Khidmadda wakaaladda (lagu leeyahay)"],"pains":[{"was":"Dakhli ka yimaada shan madal","title":"Dakhliga oo dhan hal muuqaal","text":"Xayeysiis, kafaalo iyo affiliate, mid kastaa qaybtiisa."},{"was":"Rasiidhada qalabka oo iimaylkaaga ku jira","title":"Qalabka waxaa loo diiwaan geliyaa qalab","text":"U diiwaan geli kamaradaha iyo nalalka qalab, ma aha kharash hal mar ah."},{"was":"Argagaxa xilliga canshuurta","title":"Warbixino diyaar u ah diyaariyahaaga","text":"Bayaanka dakhliga iyo xaashida dheelitirka, foomamkaaga 1099-na waxay ku jiraan Dukumentiyada."}],"week":[{"day":"Isniin","title":"Kafaalaha ayaa bixiyay","text":"U diiwaan geli kafaalada dakhli."},{"day":"Talaado","title":"Makarafoon cusub","text":"Sawir rasiidka oo u kaydi qalab."},{"day":"Khamiis","title":"Bixi tifaftirahaaga","text":"Diiwaan geli bixinta shaqaalaha xorta ah."},{"day":"Sabti","title":"Dakhliga xayeysiiska ayaa yimid","text":"Diiwaan geli. Arag faa'iidada bisha."}],"faq":[{"q":"Ma maareeyaa dakhli ka yimaada madallo badan?","a":"Haa. Diiwaan geli lacag-bixin kasta qaybteeda — xayeysiis, kafaalo, affiliate, badeecad."},{"q":"Xaggee ku kaydiyaa foomamka 1099 iyo heshiisyada?","a":"Dukumentiyada, xisaabtaada agteeda."},{"q":"Ma u baahanahay xisaabiye si aan u isticmaalo?","a":"Maya. Laakiin haddii aad leedahay, wuu soo geli karaa oo arki karaa warbixinadaada."}]},
-    "households": {"name":"Qoysaska","short":"Biilal, miisaaniyadda qoyska","metaTitle":"Miisaaniyadda qoyska iyo la socodka biilasha — Meksova","metaDescription":"La soco mushaharka, dakhliga dheeraadka ah, kirada, cuntada iyo biilasha qoyskaaga, oo arag meesha lacagtu aaddo bil kasta. 7 luqadood. Tijaabo bilaash ah oo 30 maalmood ah.","eyebrow":"Qoysaska iyo shakhsiyaadka","title":"Arag meesha lacagtu aaddo,","em":"bil kasta.","lede":"Mushaharka, dakhliga dheeraadka ah, kirada, cuntada iyo biilasha hal meel oo fudud — luqadda qoyskaagu ku hadlo.","preview":["Mushahar","Kiro","Cunto","Dakhli dheeraad ah","Gaadiid","Adeegyada (lagu leeyahay)"],"pains":[{"was":"Mushaharku wuu dhammaadaa ka hor 20-ka","title":"Arag kharashkaaga qayb ahaan","text":"Kiro, cunto, gaadiid iyo biilal, mid kastaa wadartiisa."},{"was":"Biilal aad iloowday waqtigooda","title":"Biilasha lagugu leeyahay, liis ahaan","text":"Diiwaan geli biilasha soo socda oo calaamadee in la bixiyay marka aad dhammayso."},{"was":"Rasiidhada canshuurta oo guriga oo dhan ku kala firirsan","title":"Rasiidhada iyo W-2 hal meel","text":"Sawir rasiidhada oo ku kaydi waraaqaha canshuurta Dukumentiyada."}],"week":[{"day":"Jimce","title":"Maalinta mushaharka","text":"U diiwaan geli mushaharkaaga dakhli."},{"day":"Sabti","title":"Suuqa usbuuca","text":"Sawir rasiidka. Wuxuu galaa cuntada."},{"day":"Isniin","title":"Biilka korontada ayaa yimid","text":"U diiwaan geli deyn ilaa aad bixiso."},{"day":"Arbaco","title":"Shaqo dheeraad ah ayaa la bixiyay","text":"Diiwaan geli oo arag bisha ilaa hadda."}],"faq":[{"q":"Ma ganacsiyada oo keliya ayaa loogu talagalay?","a":"Maya. Habaynta qoyska waxay leedahay qaybo qoys sida kirada, cuntada, gaadiidka iyo biilasha."},{"q":"Qoyska oo dhan ma isticmaali karaa?","a":"Haa. Ku martiqaad lammaanahaaga gal u gaar ah."},{"q":"Ma ku jiraa Amxaari, Tigrinya ama Soomaali?","a":"Haa — iyo sidoo kale Ingiriis, Carabi, Isbaanish iyo Faransiis."}]},
-    "other": {"name":"Ganacsi kasta oo yar","short":"Iib, adeegyo, biilal","metaTitle":"Xisaab fudud ganacsi kasta oo yar — Meksova","metaDescription":"La soco iibka, adeegyada, agabka, kirada iyo biilasha, sawir rasiidhada oo hel warbixino canshuur-diyaar ah. Xisaab fudud ganacsi kasta oo yar. Tijaabo bilaash ah oo 30 maalmood ah.","eyebrow":"Nooc kasta oo kale oo ganacsi ah","title":"Xisaab fudud","em":"wax kasta oo aad qabato.","lede":"Iib, adeegyo, agab, kiro iyo biilal — sawirka rasiidka iyo warbixino canshuur-diyaar ah, oo hal daqiiqo lagu habeeyo.","preview":["Iib","Agab","Kiro","Adeegyo","Adeegyada (lagu leeyahay)"],"pains":[{"was":"Gacanta ku qorista dhaqdhaqaaq kasta","title":"Ku xir bangigaaga iyo kaarkaaga","text":"Dhaqdhaqaaqyadu iskood ayay u isku xirmaan — Meksova ayaa sameeya deyn-bixinta iyo deyn-qaadashada."},{"was":"Rasiidho jeeb kasta ku jira","title":"Sawir oo illow","text":"Sawir rasiid wuxuuna galayaa qaybta saxda ah."},{"was":"Ka cabsiga xilliga canshuurta","title":"Warbixino diyaar ah maalin kasta","text":"Bayaanka dakhliga, xaashida dheelitirka iyo canshuurta la qiyaasay, diyaar u ah soo dejinta."}],"week":[{"day":"Isniin","title":"Macmiil ayaa bixiyay","text":"U diiwaan geli dakhli."},{"day":"Talaado","title":"Iibso agab","text":"Sawir rasiidka."},{"day":"Khamiis","title":"Waqtiga kirada","text":"U diiwaan geli deyn, kadibna bixi."},{"day":"Jimce","title":"Eeg usbuuca","text":"Faa'iidada iyo canshuurta la qiyaasay hal shaashad."}],"faq":[{"q":"Ganacsigaygu liiska kuma jiro. Ma shaqayn doonaa?","a":"Haa. Habaynta guud waxay leedahay qaybaha ganacsiyada badankood u baahan yihiin — iib, adeegyo, agab, kiro, adeegyada guriga iyo kuwo kale."},{"q":"Mar dambe ma u beddeli karaa habayn ganacsi gaar ah?","a":"Haa. Ku dar ganacsi leh habaynta ku habboon oo labadaba ku hay hal gal."},{"q":"Ma u baahanahay khibrad xisaabeed?","a":"Maya. Haddii aad taqaan waxa soo galay iyo waxa baxay, waad isticmaali kartaa Meksova."}]}
+    "truck": {
+      "name": "Gaadiidka baabuurta waaweyn",
+      "short": "Xamuul, shidaal gobol kasta, IFTA",
+      "metaTitle": "App xisaabeed iyo IFTA darawallada baabuurta waaweyn — Meksova",
+      "metaDescription": "Dakhliga xamuulka, rasiidhada shidaalka, maylka gobol kasta iyo wadarta IFTA ee rubuc sannadeedka hal app oo loogu talagalay darawallada iskood u shaqeeya iyo shirkadaha yaryar. Tijaabo bilaash ah oo 30 maalmood ah.",
+      "eyebrow": "Darawallada iskood u shaqeeya iyo shirkadaha yaryar",
+      "title": "Xisaab garanaysa waddada.",
+      "em": "IFTA way ku jirtaa.",
+      "lede": "Dakhliga xamuulka, shidaalka gobol kasta, dayactirka iyo kharashka waddooyinka hal meel. Sawir rasiidka shidaalka wuxuuna galayaa xisaabtaada iyo warbixintaada IFTA.",
+      "preview": [
+        "Dakhliga xamuulka",
+        "Shidaal",
+        "Lacagta dheeraadka ah ee shidaalka",
+        "Dayactirka baabuurka",
+        "Kharashka waddooyinka",
+        "Caymis (lagu leeyahay)"
+      ],
+      "pains": [
+        {
+          "was": "Daboolka qorraxda oo ay ka buuxaan rasiidhada shidaalka",
+          "title": "Ku sawir saldhigga shidaalka",
+          "text": "Sawir rasiidka; lacagta, gobolka iyo galaannada waa la akhriyaa oo laguu kaydiyaa."
+        },
+        {
+          "was": "Orodka IFTA ee dhammaadka rubuca",
+          "title": "Wadar diyaar ah rubuc kasta",
+          "text": "Maylka iyo galaannada gobol kasta, laga sameeyay safarradaada iyo shidaalkaaga. U dhoofi CSV warbixintaada."
+        },
+        {
+          "was": "Inaadan ogayn waxa baabuurku runtii keeno",
+          "title": "Faa'iidada baabuur kasta, hal mar",
+          "text": "Bayaanka dakhliga iyo canshuurta la qiyaasay — xisaab gooni ah baabuur kasta haddii aad leedahay ka badan hal."
+        }
+      ],
+      "week": [
+        {
+          "day": "Isniin",
+          "title": "Xamuul ka baxaya Columbus",
+          "text": "Diiwaan geli safarka — 184 mayl oo Ohio iyo Indiana ah."
+        },
+        {
+          "day": "Talaado",
+          "title": "Shidaal Indianapolis",
+          "text": "Sawir rasiidka. Waa kharash iyo diiwaan IFTA."
+        },
+        {
+          "day": "Arbaco",
+          "title": "Dayactir bareeg, mar dambe bixin",
+          "text": "U diiwaan geli sidii deyn. Wuxuu ku jiraa Lagu leeyahay ilaa aad bixiso."
+        },
+        {
+          "day": "Jimce",
+          "title": "Lacagta xamuulka ayaa soo gashay",
+          "text": "Taabo Helay. Lacagta gacanta ku jirta isla markiiba way cusboonaataa."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Meksova ma ii gudbinayaa warbixinta IFTA?",
+          "a": "Maya. Wuxuu diyaariyaa maylkaaga iyo galaannadaada gobol kasta ee rubuca si gudbintu dhowr daqiiqo u qaadato. Ku isticmaal wadarta warbixintaada, ama u dhiib diyaariyahaaga canshuurta."
+        },
+        {
+          "q": "Waxaan leeyahay laba baabuur. Ma u baahanahay laba akoon?",
+          "a": "Maya. Ku dar ganacsi baabuur kasta hal gal hoostiisa oo hal taabasho isku beddel."
+        },
+        {
+          "q": "La socodka maylka ma u baahan yahay GPS?",
+          "a": "Maya. Isticmaal la socodka safarka ee hal taabasho, ama adigu geli maylkaaga gobol kasta."
+        }
+      ]
+    },
+    "rideshare": {
+      "name": "Darawallada app-ka",
+      "short": "Lacag-raac, shidaal, mayl",
+      "metaTitle": "La socodka maylka iyo kharashka darawallada app-ka — Meksova",
+      "metaDescription": "La soco lacag-raaca, bakhshiishka, gunnooyinka, shidaalka iyo maylka shaqada ee Uber, Lyft iyo keenista. Arag faa'iidadaada dhabta ah iyo canshuurta la qiyaasay. Tijaabo bilaash ah oo 30 maalmood ah.",
+      "eyebrow": "Darawallada Uber, Lyft iyo keenista",
+      "title": "Ogow waxa aad runtii kasbato",
+      "em": "maylka kadib.",
+      "lede": "Lacag-raaca, gunnooyinka, shidaalka, khidmadda app-ka iyo mayl kasta oo shaqo hal meel — si canshuurtu aysan u noqon qiyaas.",
+      "preview": [
+        "Lacag-raac",
+        "Shidaal",
+        "Gunnooyin",
+        "Khidmadda app-ka",
+        "Dayactirka gaariga",
+        "Caymis (lagu leeyahay)"
+      ],
+      "pains": [
+        {
+          "was": "Mayl aad iloowday inaad qorto",
+          "title": "Hal taabasho si aad safar u diiwaan geliso",
+          "text": "Bilow oo jooji safar, ama kadib gacanta ku geli. Shaqo iyo shakhsi kala gooni."
+        },
+        {
+          "was": "Lacag-bixino qariya khidmadda",
+          "title": "Khidmadda iyo shidaalka agagaarka lacag-raaca",
+          "text": "Diiwaan geli waxa soo galay iyo waxa ku kacay, faa'iidadaada dhabta ahna dashboard-ka ayay ka muuqataa."
+        },
+        {
+          "was": "Biil canshuureed lama filaan ah bisha Abriil",
+          "title": "Canshuur la qiyaasay marba marka ka dambaysa",
+          "text": "Meksova wuxuu canshuurta ka qiyaasaa faa'iidadaada si aad usbuuc kasta lacag u dhigato."
+        }
+      ],
+      "week": [
+        {
+          "day": "Isniin",
+          "title": "Safarrada garoonka subaxdii",
+          "text": "La soco safarka — 112 mayl oo shaqo ah."
+        },
+        {
+          "day": "Talaado",
+          "title": "Buuxi taangiga",
+          "text": "Sawir rasiidka shidaalka. Wuxuu u kaydsamaa kharash."
+        },
+        {
+          "day": "Khamiis",
+          "title": "Lacag-bixinta usbuuca ayaa timid",
+          "text": "U diiwaan geli lacag-raaca iyo gunnada dakhli."
+        },
+        {
+          "day": "Axad",
+          "title": "Eeg usbuuca",
+          "text": "Faa'iidada, maylka iyo dhimista la qiyaasay hal shaashad."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ma u shaqeeyaa wax ka badan hal app?",
+          "a": "Haa. Ku xir akoonka bangiga ee lacag-bixintaadu ku dhacdo, iskood ayay u isku xirmaan — Uber, Lyft, DoorDash ama app kasta oo kale."
+        },
+        {
+          "q": "Ma xisaabiyaa dhimista maylkayga?",
+          "a": "Wuxuu muujiyaa dhimis la qiyaasay oo ka timid maylkaaga shaqada. Diyaariyahaaga canshuurta ayaa xaqiijinaya tirada kama dambaysta ah."
+        },
+        {
+          "q": "Ma inaan GPS daaran ku hayaa?",
+          "a": "Maya. Safarrada gacanta ayaad ku geli kartaa markaad rabto."
+        }
+      ]
+    },
+    "groceries": {
+      "name": "Dukaamada raashinka",
+      "short": "Iib, kayd, alaab-keeneyaal",
+      "metaTitle": "Xisaab dukaamada raashinka iyo dukaamada yaryar — Meksova",
+      "metaDescription": "Diiwaan geli iibka maalinlaha, qaansheegyada alaab-keenayaasha iyo kaydka, arag qiimaha alaabta iyo faa'iidada guud ee dhabta ah, oo hay xisaab canshuur-diyaar ah. Tijaabo bilaash ah oo 30 maalmood ah.",
+      "eyebrow": "Dukaamada raashinka iyo dukaamada yaryar",
+      "title": "Iibka maalinta ayaa soo gala.",
+      "em": "Faa'iidada dhabta ah ayaa muuqata.",
+      "lede": "Diiwaan geli iibka maalinta, qaansheegyada alaab-keenayaasha iyo kaydka dhowr daqiiqo gudahood, oo arag waxa dukaanku runtii kasbado qiimaha alaabta kadib.",
+      "preview": [
+        "Iibka maalinlaha",
+        "Qiimaha alaabta la iibiyay",
+        "Mushaharka shaqaalaha",
+        "Khidmadda keenista",
+        "Adeegyada",
+        "Qaansheegga alaab-keenaha (lagu leeyahay)"
+      ],
+      "pains": [
+        {
+          "was": "Qaansheegyada jumlada oo ku jira sanduuq kabo",
+          "title": "Sawir qaansheegyada alaab-keenayaasha",
+          "text": "Sawir qaansheegga oo u kaydi kayd ama kharash — waxba ma lumaan."
+        },
+        {
+          "was": "Khasnad mashquul ah, faa'iido aan la garanayn",
+          "title": "Iibku wuxuu ka yimaadaa POS-kaaga",
+          "text": "Ku xir khasnaddaada iyo kaarka bangiga — iibku iskiis ayuu xisaabtaada u galaa, faa'iidada guudna waxay xisaabisaa qiimaha alaabta."
+        },
+        {
+          "was": "Qaansheegyada alaab-keenayaasha oo is dul saaran",
+          "title": "Ogow waxa lagugu leeyahay",
+          "text": "U diiwaan geli qaansheegyada alaab-keenayaasha deyn oo bixi dhammaan ama qaybo."
+        }
+      ],
+      "week": [
+        {
+          "day": "Isniin",
+          "title": "Iibku habeenkii ayuu isku xirmaa",
+          "text": "Iibkii shalay ee khasnadda wuxuu ka yimaadaa POS-kaaga."
+        },
+        {
+          "day": "Talaado",
+          "title": "Keenista khudaarta iyo miraha",
+          "text": "Sawir qaansheegga alaab-keenaha. Waxaa loogu daraa deyn."
+        },
+        {
+          "day": "Khamiis",
+          "title": "Bixi kala badh qaansheegga",
+          "text": "Diiwaan geli bixin qayb ah. Inta kale waxay ku hartaa Lagu leeyahay."
+        },
+        {
+          "day": "Sabti",
+          "title": "Eeg usbuuca",
+          "text": "Iibka, qiimaha alaabta iyo faa'iidada guud, dhinac dhinac."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ma ku xirmaa khasnaddayda?",
+          "a": "Haa. Ku xir nidaamka POS iyo kaarka bangiga, iibka iyo iibsiga maalinta iskood ayay u isku xirmaan. Haddii aad doorbidayso, gacanta ayaad ku diiwaan gelin kartaa wadarta."
+        },
+        {
+          "q": "Ma la socon karaa alaabta aan u iibsado dib u iibin?",
+          "a": "Haa. U diiwaan geli alaabta dib loo iibinayo kayd, qiimaheeduna wuxuu u gudbaa qiimaha alaabta la iibiyay marka aad iibiso."
+        },
+        {
+          "q": "Waxaan leeyahay laba dukaan. Ma kala gooyn karaa?",
+          "a": "Haa. Ku dar ganacsi dukaan kasta oo isku beddel hal gal."
+        }
+      ]
+    },
+    "cafe": {
+      "name": "Maqaaxiyaha iyo makhaayadaha",
+      "short": "Iib, kharashka cuntada, shaqaale",
+      "metaTitle": "Xisaab maqaaxiyaha iyo makhaayadaha — Meksova",
+      "metaDescription": "La soco iibka cuntada iyo cabbitaanka, kharashka cuntada, shaqaalaha iyo kirada, oo ogow faa'iidadaada dhabta ah. Warbixino canshuur-diyaar ah makhaayadaha yaryar. Tijaabo bilaash ah oo 30 maalmood ah.",
+      "eyebrow": "Maqaaxiyaha, makhaayadaha iyo baabuurta cuntada",
+      "title": "Ogow kharashka cuntadaada",
+      "em": "ka hor inta aysan bishu dhammaan.",
+      "lede": "Iibka cuntada iyo cabbitaanka, kharashka alaab-keenayaasha, shaqaalaha iyo kirada hal meel — si aad u aragto faa'iidada saxan kasta, ma aha oo keliya haraaga bangiga.",
+      "preview": [
+        "Iibka cuntada",
+        "Kharashka cuntada",
+        "Iibka cabbitaanka",
+        "Mushaharka shaqaalaha",
+        "Kiro",
+        "Qaansheegga alaab-keenaha (lagu leeyahay)"
+      ],
+      "pains": [
+        {
+          "was": "Rasiidhada alaab-keenayaasha oo jikada ku sudhan",
+          "title": "Isla markiiba sawir",
+          "text": "Sawir rasiid kasta oo alaab-keene; iskiis ayuu ugu kaydsamaa kharashka cuntada."
+        },
+        {
+          "was": "Habeenno mashquul ah, faa'iido yar",
+          "title": "Iibku wuu isku xirmaa, kharashkuna wuu muuqdaa",
+          "text": "Iibku wuxuu si toos ah uga yimaadaa POS-kaaga, kharashka cuntada agtiisa — si aad hore ugu aragto faa'iido sii yaraanaysa."
+        },
+        {
+          "was": "Kirada iyo mushaharka oo sii kordhaya",
+          "title": "Biil kasta hal meel",
+          "text": "Diiwaan geli waxa hadda lagugu leeyahay oo bixi marka lacag soo gasho."
+        }
+      ],
+      "week": [
+        {
+          "day": "Isniin",
+          "title": "Iibkii dhammaadka usbuuca ayaa yimid",
+          "text": "Iibka POS-kaagu horay ayuu xisaabta ugu jiraa."
+        },
+        {
+          "day": "Talaado",
+          "title": "Keenista khudaarta iyo hilibka",
+          "text": "Sawir qaansheegga oo u calaamadee deyn."
+        },
+        {
+          "day": "Khamiis",
+          "title": "Mushahar",
+          "text": "Diiwaan geli mushaharka. Faa'iidadu isla markiiba way cusboonaataa."
+        },
+        {
+          "day": "Axad",
+          "title": "Eeg faa'iidada",
+          "text": "Isbarbardhig kharashka cuntada iyo iibka usbuuca."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ma ku xirmaa POS-kayga?",
+          "a": "Haa. Ku xir POS-kaaga iyo kaarka bangiga, iibka iyo bixinta alaab-keenayaasha iskood ayay u isku xirmaan — qoraal habeennimo ah ma jiro."
+        },
+        {
+          "q": "Ma kala saari karaa iibka cuntada iyo cabbitaanka?",
+          "a": "Haa. Labaduba waa qaybo diyaar ah, oo ay la socdaan adeegga xafladaha iyo keenista."
+        },
+        {
+          "q": "Xisaabiyahaygu ma arki karaa?",
+          "a": "Haa. Sii gal u gaar ah, ama u dir warbixinta PDF."
+        }
+      ]
+    },
+    "construction": {
+      "name": "Xirfadaha dhismaha",
+      "short": "Shaqooyin, agab, kooxo",
+      "metaTitle": "Xisaab qandaraaslayaasha iyo xirfadaha dhismaha — Meksova",
+      "metaDescription": "La soco dakhliga shaqada, agabka, qandaraaslayaasha hoose, qalabka iyo maylka gaariga, oo arag faa'iidada mashruuc kasta. Qandaraaslayaasha yaryar. Tijaabo bilaash ah oo 30 maalmood ah.",
+      "eyebrow": "Qandaraaslayaasha, dib-u-habeeyayaasha iyo xirfadlayaasha",
+      "title": "Arag faa'iidada shaqo kasta,",
+      "em": "ma aha oo keliya haraaga bangiga.",
+      "lede": "Heshiisyada, agabka, qandaraaslayaasha hoose, qalabka iyo maylka goobta — marba marka ka dambaysa la diiwaan geliyo, si aad u ogaato shaqooyinka faa'iidada leh.",
+      "preview": [
+        "Heshiis dib-u-habayn",
+        "Agabka dhismaha",
+        "Qandaraaslayaasha hoose",
+        "Shaqo dayactir",
+        "Shidaalka gaariga",
+        "Qalab (lagu leeyahay)"
+      ],
+      "pains": [
+        {
+          "was": "Rasiidhada dukaanka agabka oo gaariga ku jira",
+          "title": "Ku sawir miiska iibka",
+          "text": "Isla markiiba sawir rasiidhada agabka oo u kaydi kharashka shaqada ama qalab."
+        },
+        {
+          "was": "Inaadan ogayn shaqooyinka lacag keenay",
+          "title": "Faa'iidada mashruuc kasta",
+          "text": "Warbixinada bilaha ah waxay muujiyaan lacagta soo gashay iyo tan baxday si natiijada shaqo kastaa u caddaato."
+        },
+        {
+          "was": "Maylka goobaha shaqada oo aan la diiwaan gelin",
+          "title": "Safarro hal taabasho lagu diiwaan geliyo",
+          "text": "La soco safarrada goobaha iyo iibsiga agabka si aad u hesho dhimis mayl oo la qiyaasay."
+        }
+      ],
+      "week": [
+        {
+          "day": "Isniin",
+          "title": "Horudhac dib-u-habayn",
+          "text": "U diiwaan geli horudhaca dakhli."
+        },
+        {
+          "day": "Talaado",
+          "title": "Qaadashada agabka",
+          "text": "Sawir rasiidka oo diiwaan geli safarka 52 mayl ah."
+        },
+        {
+          "day": "Khamiis",
+          "title": "Qalab cusub oo deyn lagu qaatay",
+          "text": "U diiwaan geli qalab lagugu leeyahay."
+        },
+        {
+          "day": "Jimce",
+          "title": "Bixi qandaraaslaha hoose",
+          "text": "Diiwaan geli bixinta. Faa'iidadu way cusboonaataa."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ma la socon karaa qalabka iyo agabka?",
+          "a": "Haa. U diiwaan geli iibsiyada waaweyn qalab si ay uga muuqdaan xaashida dheelitirka, ma aha kharash hal mar ah."
+        },
+        {
+          "q": "Ma maareeyaa bixinta qandaraaslayaasha hoose?",
+          "a": "Haa. Mushaharka qandaraaslayaasha hoose waa qayb diyaar ah. Ku kaydi qaansheegyadooda Dukumentiyada."
+        },
+        {
+          "q": "Ma ka isticmaali karaa goobta shaqada?",
+          "a": "Haa. Wuxuu ka shaqeeyaa biraawsarka telefoonkaaga — rakibid looma baahna."
+        }
+      ]
+    },
+    "cleaning": {
+      "name": "Adeegyada nadiifinta",
+      "short": "Heshiisyo, agab, mayl",
+      "metaTitle": "Xisaab ganacsiyada nadiifinta — Meksova",
+      "metaDescription": "La soco heshiisyada nadiifinta, diyaarinta Airbnb, agabka, mushaharka iyo maylka u dhexeeya macaamiisha. Xisaab fudud oo canshuur-diyaar ah. Tijaabo bilaash ah oo 30 maalmood ah.",
+      "eyebrow": "Nadiifinta guryaha, xafiisyada iyo Airbnb",
+      "title": "Xisaab nadiif ah",
+      "em": "ganacsi nadiifin.",
+      "lede": "Heshiisyo joogto ah, diyaarinta Airbnb, agab, mushahar iyo maylka u dhexeeya macaamiisha — dhammaan hal app oo fudud.",
+      "preview": [
+        "Heshiisyo joogto ah",
+        "Agabka nadiifinta",
+        "Diyaarinta Airbnb",
+        "Mushaharka shaqaalaha",
+        "Shidaal iyo socod",
+        "Agab (lagu leeyahay)"
+      ],
+      "pains": [
+        {
+          "was": "Rasiidhada agabka oo gaariga ku lumay",
+          "title": "Sawir markaad iibsato",
+          "text": "Sawir rasiidhada agabka, isla markiiba waxay u kaydsamaan kharash."
+        },
+        {
+          "was": "Maylka u dhexeeya macaamiisha oo la iloobay",
+          "title": "Diiwaan geli safar kasta",
+          "text": "La soco safarrada u dhexeeya shaqooyinka si aad u hesho dhimis mayl oo la qiyaasay."
+        },
+        {
+          "was": "Inaadan ogayn heshiisyada ugu lacagta badan",
+          "title": "Arag dakhligaaga nooc ahaan",
+          "text": "Heshiisyada joogtada ah, nadiifinta hal mar ah iyo diyaarinta Airbnb, mid kastaa qaybtiisa."
+        }
+      ],
+      "week": [
+        {
+          "day": "Isniin",
+          "title": "Heshiiska xafiiska waa la bixiyay",
+          "text": "U diiwaan geli heshiiska bilaha ah dakhli."
+        },
+        {
+          "day": "Talaado",
+          "title": "Iibsiga agabka",
+          "text": "Sawir rasiidka; diiwaan geli safarka 18 mayl ah."
+        },
+        {
+          "day": "Khamiis",
+          "title": "Laba diyaarin Airbnb",
+          "text": "Mid kasta u diiwaan geli dakhli."
+        },
+        {
+          "day": "Jimce",
+          "title": "Bixi kooxda",
+          "text": "Diiwaan geli mushaharka oo arag faa'iidada usbuuca."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ma si gooni ah ula socon karaa diyaarinta Airbnb?",
+          "a": "Haa. Diyaarinta Airbnb, heshiisyada joogtada ah iyo nadiifinta hal mar ah waa qaybo diyaar ah oo kala gooni ah."
+        },
+        {
+          "q": "Ma u baahanahay GPS maylka?",
+          "a": "Maya. Isticmaal la socodka safarka ama gacanta ku geli maylka."
+        },
+        {
+          "q": "Ma kaydin karaa heshiisyada macaamiisha?",
+          "a": "Haa. Ku kaydi heshiisyada, caymiska iyo ruqsadaha Dukumentiyada."
+        }
+      ]
+    },
+    "beauty": {
+      "name": "Quruxda iyo timo-jarayaasha",
+      "short": "Macaamiil, badeecado, kirada kursiga",
+      "metaTitle": "Xisaab saloonnada, timo-jarayaasha iyo xirfadlayaasha quruxda — Meksova",
+      "metaDescription": "La soco adeegyada, iibka badeecadaha, kirada kursiga iyo agabka. Xisaab fudud oo canshuur-diyaar ah saloonnada, timo-jarayaasha, timo-tidcayaasha iyo stylist-yada. Tijaabo bilaash ah oo 30 maalmood ah.",
+      "eyebrow": "Saloonnada, timo-jarayaasha, timo-tidcayaasha iyo stylist-yada",
+      "title": "Waqti badan oo kursiga ah,",
+      "em": "waraaqo yar.",
+      "lede": "Adeegyada, iibka badeecadaha, kirada kursiga iyo agabka hal meel — si aad u ogaato waxa kursigu runtii keeno.",
+      "preview": [
+        "Timo-jaris iyo qurxin",
+        "Badeecadaha quruxda",
+        "Midab iyo daaweyn",
+        "Kiro iyo adeegyo",
+        "Iibka badeecadaha",
+        "Dalabka badeecadaha (lagu leeyahay)"
+      ],
+      "pains": [
+        {
+          "was": "Bakhshiish lacag caddaan ah iyo kaar oo aan la diiwaan gelin",
+          "title": "Diiwaan geli maalinta hal daqiiqo",
+          "text": "Ku dar adeegyada iyo badeecadaha maalinta hal ama laba diiwaan."
+        },
+        {
+          "was": "Qiimaha badeecadaha oo cunaya faa'iidada",
+          "title": "Qiimaha badeecadaha marka loo eego iibka",
+          "text": "La soco waxa aad ku bixiso badeecadaha aad dib u iibiso, si iibku runtii faa'iido u kordhiyo."
+        },
+        {
+          "was": "Kirada kursiga iyo biilasha oo is dul saaran",
+          "title": "Ogow waxa lagugu leeyahay",
+          "text": "U diiwaan geli dalabyada iyo kirada deyn, kadibna bixi."
+        }
+      ],
+      "week": [
+        {
+          "day": "Talaado",
+          "title": "Maalin adeeg mashquul ah",
+          "text": "U diiwaan geli timo-jarista iyo midabka dakhli."
+        },
+        {
+          "day": "Arbaco",
+          "title": "Dalabka badeecadaha ayaa yimid",
+          "text": "Sawir qaansheegga oo u calaamadee deyn."
+        },
+        {
+          "day": "Jimce",
+          "title": "Waqtiga kirada kursiga",
+          "text": "Diiwaan geli bixinta kirada."
+        },
+        {
+          "day": "Sabti",
+          "title": "Iibka badeecadaha",
+          "text": "Diiwaan geli iibka. Faa'iidada guud way cusboonaataa."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Waxaan kireystaa kursi. Ma ii habboon yahay?",
+          "a": "Haa. Kirada kursiga, agabka iyo dakhliga adeegga dhammaantood waa qaybo diyaar ah."
+        },
+        {
+          "q": "Ma la socon karaa badeecadaha aan dib u iibiyo?",
+          "a": "Haa. U diiwaan geli kayd oo arag faa'iidada marka la iibiyo."
+        },
+        {
+          "q": "Ma ku xirmaa akhriyaha kaarka ama POS-kayga?",
+          "a": "Haa. Ku xir POS-kaaga iyo kaarka bangiga, iibkaaguna iskiis ayuu isku xirmaa. Iibka lacagta caddaanka ah gacanta ayaad ku dari kartaa."
+        }
+      ]
+    },
+    "ecommerce": {
+      "name": "Iibiyeyaasha online-ka",
+      "short": "Dalabyo, khidmado, dirid",
+      "metaTitle": "Xisaab iibiyeyaasha online-ka — Meksova",
+      "metaDescription": "La soco iibka online-ka, khidmadaha madasha, xayeysiisyada, diridda iyo kaydka iibiyeyaasha Shopify, Amazon, Etsy iyo eBay. Arag faa'iidadaada dhabta ah bil kasta. Tijaabo bilaash ah oo 30 maalmood ah.",
+      "eyebrow": "Iibiyeyaasha Shopify, Amazon, Etsy iyo eBay",
+      "title": "Iibku si fudud ayuu u muuqdaa.",
+      "em": "Faa'iidadu ma muuqan jirin. Hadda way muuqataa.",
+      "lede": "Iibka online-ka, khidmadaha madasha, xayeysiisyada, diridda iyo kaydka hal meel — si aad u aragto waxa haraaya marka qof walba qaybtiisa qaato.",
+      "preview": [
+        "Iibka online-ka",
+        "Kayd",
+        "Khidmadaha madasha",
+        "Xayeysiis online",
+        "Dalab jumlo",
+        "Agabka diridda (lagu leeyahay)"
+      ],
+      "pains": [
+        {
+          "was": "Khidmado ku qarsoon warbixinada lacag-bixinta",
+          "title": "Khidmadaha khad u gaar ah",
+          "text": "Si gooni ah u diiwaan geli khidmadaha madasha iyo lacag-bixinta oo arag waxa ay runtii kugu kacaan."
+        },
+        {
+          "was": "Kharash xayeysiis oo aan natiijo cad lahayn",
+          "title": "Xayeysiiska agagaarka iibka",
+          "text": "La soco kharashka xayeysiiska isla meesha dakhliga, bil ka bil."
+        },
+        {
+          "was": "Kayd la iibsaday, faa'iido aan caddayn",
+          "title": "Qiimaha alaabta, laguu sameeyay",
+          "text": "U diiwaan geli alaabta kayd; qiimaheedu wuxuu u gudbaa qiimaha alaabta marka aad iibiso."
+        }
+      ],
+      "week": [
+        {
+          "day": "Isniin",
+          "title": "Lacag-bixinta usbuuca",
+          "text": "Diiwaan geli iibka iyo khidmadda madasha."
+        },
+        {
+          "day": "Talaado",
+          "title": "Dib u buuxinta alaab-keenaha",
+          "text": "U diiwaan geli iibsiga kayd."
+        },
+        {
+          "day": "Arbaco",
+          "title": "Qaansheegga xayeysiiska",
+          "text": "Sawir oo u kaydi xayeysiis."
+        },
+        {
+          "day": "Jimce",
+          "title": "Dalab jumlo ayaa la diray",
+          "text": "Diiwaan geli dalabka. Faa'iidadu way cusboonaataa."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ma la isku xirmaa dukaankayga?",
+          "a": "Ku xir akoonka bangiga ee lacag-bixintaadu ku dhacdo, iyo POS-kaaga haddii aad sidoo kale qof ahaan wax u iibiso, dhaqdhaqaaqyaduna iskood ayay u isku xirmaan. Khidmadaha iyo lacag-bixinta hal taabasho ayaad ku kala soocaysaa."
+        },
+        {
+          "q": "Ma ka iibin karaa wax ka badan hal madal?",
+          "a": "Haa. Ku diiwaan geli iibka madal kasta hal xisaab, ama madal kasta ganacsi gooni ah u yeel."
+        },
+        {
+          "q": "Ma la socdaa kaydka?",
+          "a": "Haa. Alaabta dib loo iibinayo waxay galaan kaydka, qiimahooduna wuxuu u gudbaa qiimaha alaabta la iibiyay marka aad iibiso."
+        }
+      ]
+    },
+    "contentCreator": {
+      "name": "Abuurayaasha nuxurka",
+      "short": "Dakhliga xayeysiiska, kafaalayaal, qalab",
+      "metaTitle": "Xisaab abuurayaasha nuxurka iyo influencer-yada — Meksova",
+      "metaDescription": "La soco dakhliga xayeysiiska, kafaalada, qalabka, software-ka iyo shaqaalaha xorta ah. Xisaab canshuur-diyaar ah abuurayaasha YouTube iyo TikTok. Tijaabo bilaash ah oo 30 maalmood ah.",
+      "eyebrow": "Abuurayaasha YouTube, TikTok iyo kuwo kale",
+      "title": "Adigu nuxurka ayaad samaysaa.",
+      "em": "Annaguna lacagta ayaan habaynaynaa.",
+      "lede": "Dakhliga xayeysiiska, kafaalada, qalabka, software-ka iyo tifaftirayaasha hal meel — xisaab nidaamsan marka foomamka 1099 yimaadaan.",
+      "preview": [
+        "Dakhliga xayeysiiska",
+        "Kafaalo",
+        "Qalabka kamarada",
+        "Tifaftiraha fiidiyowga",
+        "Software",
+        "Khidmadda wakaaladda (lagu leeyahay)"
+      ],
+      "pains": [
+        {
+          "was": "Dakhli ka yimaada shan madal",
+          "title": "Dakhliga oo dhan hal muuqaal",
+          "text": "Xayeysiis, kafaalo iyo affiliate, mid kastaa qaybtiisa."
+        },
+        {
+          "was": "Rasiidhada qalabka oo iimaylkaaga ku jira",
+          "title": "Qalabka waxaa loo diiwaan geliyaa qalab",
+          "text": "U diiwaan geli kamaradaha iyo nalalka qalab, ma aha kharash hal mar ah."
+        },
+        {
+          "was": "Argagaxa xilliga canshuurta",
+          "title": "Warbixino diyaar u ah diyaariyahaaga",
+          "text": "Bayaanka dakhliga iyo xaashida dheelitirka, foomamkaaga 1099-na waxay ku jiraan Dukumentiyada."
+        }
+      ],
+      "week": [
+        {
+          "day": "Isniin",
+          "title": "Kafaalaha ayaa bixiyay",
+          "text": "U diiwaan geli kafaalada dakhli."
+        },
+        {
+          "day": "Talaado",
+          "title": "Makarafoon cusub",
+          "text": "Sawir rasiidka oo u kaydi qalab."
+        },
+        {
+          "day": "Khamiis",
+          "title": "Bixi tifaftirahaaga",
+          "text": "Diiwaan geli bixinta shaqaalaha xorta ah."
+        },
+        {
+          "day": "Sabti",
+          "title": "Dakhliga xayeysiiska ayaa yimid",
+          "text": "Diiwaan geli. Arag faa'iidada bisha."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ma maareeyaa dakhli ka yimaada madallo badan?",
+          "a": "Haa. Diiwaan geli lacag-bixin kasta qaybteeda — xayeysiis, kafaalo, affiliate, badeecad."
+        },
+        {
+          "q": "Xaggee ku kaydiyaa foomamka 1099 iyo heshiisyada?",
+          "a": "Dukumentiyada, xisaabtaada agteeda."
+        },
+        {
+          "q": "Ma u baahanahay xisaabiye si aan u isticmaalo?",
+          "a": "Maya. Laakiin haddii aad leedahay, wuu soo geli karaa oo arki karaa warbixinadaada."
+        }
+      ]
+    },
+    "households": {
+      "name": "Qoysaska",
+      "short": "Biilal, miisaaniyadda qoyska",
+      "metaTitle": "Miisaaniyadda qoyska iyo la socodka biilasha — Meksova",
+      "metaDescription": "La soco mushaharka, dakhliga dheeraadka ah, kirada, cuntada iyo biilasha qoyskaaga, oo arag meesha lacagtu aaddo bil kasta. 7 luqadood. Tijaabo bilaash ah oo 30 maalmood ah.",
+      "eyebrow": "Qoysaska iyo shakhsiyaadka",
+      "title": "Arag meesha lacagtu aaddo,",
+      "em": "bil kasta.",
+      "lede": "Mushaharka, dakhliga dheeraadka ah, kirada, cuntada iyo biilasha hal meel oo fudud — luqadda qoyskaagu ku hadlo.",
+      "preview": [
+        "Mushahar",
+        "Kiro",
+        "Cunto",
+        "Dakhli dheeraad ah",
+        "Gaadiid",
+        "Adeegyada (lagu leeyahay)"
+      ],
+      "pains": [
+        {
+          "was": "Mushaharku wuu dhammaadaa ka hor 20-ka",
+          "title": "Arag kharashkaaga qayb ahaan",
+          "text": "Kiro, cunto, gaadiid iyo biilal, mid kastaa wadartiisa."
+        },
+        {
+          "was": "Biilal aad iloowday waqtigooda",
+          "title": "Biilasha lagugu leeyahay, liis ahaan",
+          "text": "Diiwaan geli biilasha soo socda oo calaamadee in la bixiyay marka aad dhammayso."
+        },
+        {
+          "was": "Rasiidhada canshuurta oo guriga oo dhan ku kala firirsan",
+          "title": "Rasiidhada iyo W-2 hal meel",
+          "text": "Sawir rasiidhada oo ku kaydi waraaqaha canshuurta Dukumentiyada."
+        }
+      ],
+      "week": [
+        {
+          "day": "Jimce",
+          "title": "Maalinta mushaharka",
+          "text": "U diiwaan geli mushaharkaaga dakhli."
+        },
+        {
+          "day": "Sabti",
+          "title": "Suuqa usbuuca",
+          "text": "Sawir rasiidka. Wuxuu galaa cuntada."
+        },
+        {
+          "day": "Isniin",
+          "title": "Biilka korontada ayaa yimid",
+          "text": "U diiwaan geli deyn ilaa aad bixiso."
+        },
+        {
+          "day": "Arbaco",
+          "title": "Shaqo dheeraad ah ayaa la bixiyay",
+          "text": "Diiwaan geli oo arag bisha ilaa hadda."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ma ganacsiyada oo keliya ayaa loogu talagalay?",
+          "a": "Maya. Habaynta qoyska waxay leedahay qaybo qoys sida kirada, cuntada, gaadiidka iyo biilasha."
+        },
+        {
+          "q": "Qoyska oo dhan ma isticmaali karaa?",
+          "a": "Haa. Ku martiqaad lammaanahaaga gal u gaar ah."
+        },
+        {
+          "q": "Ma ku jiraa Amxaari, Tigrinya ama Soomaali?",
+          "a": "Haa — iyo sidoo kale Ingiriis, Carabi, Isbaanish iyo Faransiis."
+        }
+      ]
+    },
+    "other": {
+      "name": "Ganacsi kasta oo yar",
+      "short": "Iib, adeegyo, biilal",
+      "metaTitle": "Xisaab fudud ganacsi kasta oo yar — Meksova",
+      "metaDescription": "La soco iibka, adeegyada, agabka, kirada iyo biilasha, sawir rasiidhada oo hel warbixino canshuur-diyaar ah. Xisaab fudud ganacsi kasta oo yar. Tijaabo bilaash ah oo 30 maalmood ah.",
+      "eyebrow": "Nooc kasta oo kale oo ganacsi ah",
+      "title": "Xisaab fudud",
+      "em": "wax kasta oo aad qabato.",
+      "lede": "Iib, adeegyo, agab, kiro iyo biilal — sawirka rasiidka iyo warbixino canshuur-diyaar ah, oo hal daqiiqo lagu habeeyo.",
+      "preview": [
+        "Iib",
+        "Agab",
+        "Kiro",
+        "Adeegyo",
+        "Adeegyada (lagu leeyahay)"
+      ],
+      "pains": [
+        {
+          "was": "Gacanta ku qorista dhaqdhaqaaq kasta",
+          "title": "Ku xir bangigaaga iyo kaarkaaga",
+          "text": "Dhaqdhaqaaqyadu iskood ayay u isku xirmaan — Meksova ayaa sameeya deyn-bixinta iyo deyn-qaadashada."
+        },
+        {
+          "was": "Rasiidho jeeb kasta ku jira",
+          "title": "Sawir oo illow",
+          "text": "Sawir rasiid wuxuuna galayaa qaybta saxda ah."
+        },
+        {
+          "was": "Ka cabsiga xilliga canshuurta",
+          "title": "Warbixino diyaar ah maalin kasta",
+          "text": "Bayaanka dakhliga, xaashida dheelitirka iyo canshuurta la qiyaasay, diyaar u ah soo dejinta."
+        }
+      ],
+      "week": [
+        {
+          "day": "Isniin",
+          "title": "Macmiil ayaa bixiyay",
+          "text": "U diiwaan geli dakhli."
+        },
+        {
+          "day": "Talaado",
+          "title": "Iibso agab",
+          "text": "Sawir rasiidka."
+        },
+        {
+          "day": "Khamiis",
+          "title": "Waqtiga kirada",
+          "text": "U diiwaan geli deyn, kadibna bixi."
+        },
+        {
+          "day": "Jimce",
+          "title": "Eeg usbuuca",
+          "text": "Faa'iidada iyo canshuurta la qiyaasay hal shaashad."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ganacsigaygu liiska kuma jiro. Ma shaqayn doonaa?",
+          "a": "Haa. Habaynta guud waxay leedahay qaybaha ganacsiyada badankood u baahan yihiin — iib, adeegyo, agab, kiro, adeegyada guriga iyo kuwo kale."
+        },
+        {
+          "q": "Mar dambe ma u beddeli karaa habayn ganacsi gaar ah?",
+          "a": "Haa. Ku dar ganacsi leh habaynta ku habboon oo labadaba ku hay hal gal."
+        },
+        {
+          "q": "Ma u baahanahay khibrad xisaabeed?",
+          "a": "Maya. Haddii aad taqaan waxa soo galay iyo waxa baxay, waad isticmaali kartaa Meksova."
+        }
+      ]
+    }
+  },
+  "tour": {
+    "eyebrow": "App-ka dhabta ah",
+    "title": "Waa kan waxa aad helayso.",
+    "lede": "Shaashado dhab ah oo Meksova ah — ma aha naqshado. Eeg qaybaha aad maalin kasta isticmaali doonto.",
+    "note": "Shaashado dhab ah oo app-ka Meksova ah, oo lagu muujiyay xog tusaale ah.",
+    "tabs": {
+      "dashboard": {
+        "label": "Dashboard",
+        "text": "Lacagta gacanta ku jirta, lacagta soo gashay iyo tan baxday, iyo canshuurta la qiyaasay hal mar.",
+        "alt": "Dashboard-ka Meksova oo muujinaya lacagta gacanta ku jirta, dakhliga, kharashka, canshuurta la qiyaasay iyo jaantus"
+      },
+      "scan": {
+        "label": "Sawirka rasiidka",
+        "text": "Sawir rasiid; lacagta, qaybta, gobolka iyo galaannada iskood ayay u buuxsamaan.",
+        "alt": "Rasiid shidaal oo lagu sawirayo Meksova oo leh lacagta, qaybta, gobolka iyo galaannada"
+      },
+      "ifta": {
+        "label": "Warbixinta IFTA",
+        "text": "Maylka iyo galaannada gobol kasta ee rubuca, diyaar u ah dhoofinta.",
+        "alt": "Warbixinta IFTA ee rubuc sannadeedka ee Meksova oo taxaysa maylka iyo galaannada gobol kasta"
+      },
+      "report": {
+        "label": "Warbixinta maaliyadda",
+        "text": "Buugga maalinlaha, bayaanka dakhliga iyo xaashida dheelitirka oo had iyo jeer isku dheelitiran.",
+        "alt": "Warbixinta maaliyadda ee Meksova oo leh soo koobid, faahfaahin iyo diiwaannada buugga maalinlaha"
+      }
+    }
   }
 }
