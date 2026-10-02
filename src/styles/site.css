@@ -242,7 +242,8 @@ html:has(.ks) body {
 .ks-brand { display: inline-flex; align-items: center; gap: 10px; flex: none; color: var(--ks-text); }
 .ks-brand__mark { height: 26px; width: auto; }
 .ks-brand__word { font-size: 15px; font-weight: 600; letter-spacing: 0.24em; line-height: 1; }
-.ks-brand__word b { color: var(--ks-accent-text); font-weight: 600; }
+/* Exact blue sampled from the Meksova logo file — fixed in both themes. */
+.ks-brand__word b { color: #086CFC; font-weight: 600; }
 [dir="rtl"] .ks-brand__word { direction: ltr; }
 
 /* Language picker */
