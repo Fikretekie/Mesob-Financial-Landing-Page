@@ -43,6 +43,8 @@ export function BusinessSwitcher({
   const [adding, setAdding] = useState(false);
   const [name, setName] = useState('');
   const [slug, setSlug] = useState(mainSlug);
+  // As in the app: check the seat first, then confirm before anything is added.
+  const [step, setStep] = useState<'form' | 'confirm'>('form');
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -68,12 +70,17 @@ export function BusinessSwitcher({
     }
     setName('');
     setSlug(mainSlug);
+    setStep('form');
     setAdding(true);
   };
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim()) return;
+    if (step === 'form') {
+      setStep('confirm');
+      return;
+    }
     onAdd(name, slug);
     setAdding(false);
   };
@@ -134,6 +141,13 @@ export function BusinessSwitcher({
             <span id="dm-biz-note" className="dm-modal__sub">{t('demo.business.billingNote')}</span>
           </div>
           <form className="dm-modal__body" onSubmit={submit}>
+            {step === 'confirm' ? (
+              <>
+                <p className="dm-biz__adding">{t('demo.business.adding', { name: name.trim() })}</p>
+                <div className="dm-biz__preview">{t('demo.business.seatPreview')}</div>
+              </>
+            ) : (
+            <>
             <div className="dm-field">
               <label className="dm-label" htmlFor="dm-biz-name">{t('demo.business.name')}</label>
               <input
@@ -153,10 +167,14 @@ export function BusinessSwitcher({
                 ))}
               </select>
             </div>
+            </>
+            )}
             <p className="dm-modal__sub" style={{ marginTop: -4 }}>{t('demo.business.demoNote', { count: 1 })}</p>
             <div style={{ display: 'flex', gap: 10 }}>
               <button type="button" className="mk-btn mk-btn--ghost" onClick={() => setAdding(false)}>{t('demo.addTransaction.cancel')}</button>
-              <button type="submit" className="mk-btn mk-btn--primary dm-save" disabled={!name.trim()}>{t('demo.business.add')}</button>
+              <button type="submit" className="mk-btn mk-btn--primary dm-save" disabled={!name.trim()}>
+                {step === 'form' ? t('demo.business.continue') : t('demo.business.confirmAdd')}
+              </button>
             </div>
           </form>
         </DialogContent>

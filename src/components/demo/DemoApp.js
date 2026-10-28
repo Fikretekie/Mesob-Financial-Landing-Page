@@ -395,7 +395,12 @@ export default function DemoApp({ industry }) {
         return (
           <Team
             storageKey={`mesob_demo_team_${industry.slug}`}
-            ownerName={businessName || t('demo.business.myBusiness')}
+            // The team belongs to the account, so the owner row shows the main business.
+            ownerName={mainBusinessName || t('demo.business.myBusiness')}
+            businesses={[
+              { id: '', name: mainBusinessName || t('demo.business.myBusiness') },
+              ...businesses.extras.map((b) => ({ id: b.id, name: b.name })),
+            ]}
             onLimit={() => setIsSignupDialogOpen(true)}
             onInvited={(role) => {
               trackDemoEvent('demo_invite_user', { industry: industry.slug, role })
