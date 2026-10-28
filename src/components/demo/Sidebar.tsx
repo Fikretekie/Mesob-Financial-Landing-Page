@@ -15,6 +15,7 @@ import {
   Link2,
   Users,
   Lock,
+  LifeBuoy,
   type LucideIcon,
 } from 'lucide-react';
 import type { ViewType } from '@/types';
@@ -48,6 +49,7 @@ const sidebarItems: SidebarItem[] = [
   { id: 'user-profile', labelKey: 'demo.sidebar.userProfile', icon: User },
   { id: 'backup-csv', labelKey: 'demo.sidebar.backupCsv', icon: Database, locked: true },
   { id: 'subscribe', labelKey: 'demo.sidebar.subscribe', icon: CreditCard },
+  { id: 'help', labelKey: 'demo.sidebar.help', icon: LifeBuoy },
 ];
 
 interface SidebarProps {

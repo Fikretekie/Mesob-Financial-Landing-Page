@@ -22,6 +22,7 @@ import { TransactionReview } from '@/components/demo/sections/TransactionReview'
 import { useDemoConnections } from '@/hooks/demo/useDemoConnections'
 import { feedIsoDate } from '@/data/demoConnections'
 import { Team } from '@/components/demo/sections/Team'
+import { HelpCenter } from '@/components/demo/sections/HelpCenter'
 import { ReceiptScan } from '@/components/demo/ReceiptScan'
 import { getIndustryExtras } from '@/data/demoIndustryExtras'
 import { DownloadReportDialog } from '@/components/demo/DownloadReportDialog'
@@ -346,6 +347,8 @@ export default function DemoApp({ industry }) {
         return <FuelPurchase purchases={fuel} canAdd={canAddEntry} onSave={handleSaveFuel} />
       case 'ifta-report':
         return <IftaReport trips={trips} fuel={fuel} />
+      case 'help':
+        return <HelpCenter />
       case 'connections':
         return (
           <Connections

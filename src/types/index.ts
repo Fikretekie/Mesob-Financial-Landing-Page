@@ -61,4 +61,5 @@ export type ViewType =
   | 'team'
   | 'user-profile'
   | 'backup-csv'
-  | 'subscribe';
+  | 'subscribe'
+  | 'help';
