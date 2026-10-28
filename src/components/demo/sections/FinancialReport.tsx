@@ -4,7 +4,7 @@ import { Trash2, Wallet, FileText, ArrowUp, ArrowDown, FileDown, Plus, CreditCar
 import type { FinancialSummary, Transaction } from '@/types';
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { purposeOf } from '@/utils/demoAccounting';
+import { DEPRECIATION_ROW, payableAging, purposeOf } from '@/utils/demoAccounting';
 
 interface FinancialReportProps {
   transactions: Transaction[];
@@ -17,7 +17,7 @@ interface FinancialReportProps {
   scanButton?: ReactNode;
 }
 
-const COLORS = { cash: '#00B4D8', payable: '#FFA53B', revenue: '#00D97E', expense: '#A855F7', positive: '#00D97E', negative: '#FF4D4D' };
+const COLORS = { cash: '#00B4D8', payable: '#FFA53B', revenue: '#00D97E', expense: '#FF4D4D', positive: '#00D97E', negative: '#FF4D4D' };
 
 const formatCurrency = (value: number) =>
   new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value || 0);
@@ -47,6 +47,18 @@ export function FinancialReport({
   // Every figure below comes from the app's accounting engine (summary).
   const netIncome = summary.netIncome;
   const totalAssets = summary.totalCashOnHand + summary.totalInventory + summary.totalFixedAssets;
+  // Fixed assets are shown at cost, less the depreciation taken (net book value).
+  const fixedAssetCost = summary.totalFixedAssets + summary.depreciation;
+  const rowLabel = (key: string) => (key === DEPRECIATION_ROW ? t('demo.financialReport.depreciationExpense') : key);
+  const agingLabels = [
+    t('demo.financialReport.agingCurrent'),
+    t('demo.financialReport.aging31'),
+    t('demo.financialReport.aging61'),
+    t('demo.financialReport.aging90'),
+  ];
+  const aging = payableAging(transactions)
+    .map((amount, i) => [agingLabels[i], amount, i] as [string, number, number])
+    .filter(([, amount]) => amount > 0);
 
   const revenueByCategory: Record<string, number> = {};
   transactions.filter((tx) => tx.type === 'income').forEach((tx) => {
@@ -61,7 +73,8 @@ export function FinancialReport({
   };
 
   const summaryTiles: { label: string; value: number; color: string; icon: LucideIcon }[] = [
-    { label: t('demo.financialReport.totalCashOnHand'), value: summary.totalCashOnHand, color: COLORS.cash, icon: Wallet },
+    // Negative cash reads red, as in the app (getBalanceColor).
+    { label: t('demo.financialReport.totalCashOnHand'), value: summary.totalCashOnHand, color: summary.totalCashOnHand < 0 ? COLORS.negative : COLORS.cash, icon: Wallet },
     { label: t('demo.financialReport.totalPayableUnpaid'), value: summary.totalPayable, color: COLORS.payable, icon: FileText },
     { label: t('demo.financialReport.revenue'), value: summary.revenue, color: COLORS.revenue, icon: ArrowUp },
     { label: t('demo.financialReport.totalExpense'), value: summary.totalExpenses, color: COLORS.expense, icon: ArrowDown },
@@ -116,8 +129,20 @@ export function FinancialReport({
               <p className="mk-eyebrow" style={{ margin: '18px 0 4px' }}>{t('demo.financialReport.breakdown')}</p>
               {expenseRows.map(([category, amount]) => (
                 <div className="dm-kv" key={category}>
-                  <span className="dm-kv__k">{category}</span>
+                  <span className="dm-kv__k">{rowLabel(category)}</span>
                   <span className="dm-kv__v" style={{ color: COLORS.negative }}>{formatCurrency(amount)}</span>
+                </div>
+              ))}
+            </>
+          )}
+
+          {aging.length > 0 && (
+            <>
+              <p className="mk-eyebrow" style={{ margin: '18px 0 4px' }}>{t('demo.financialReport.apAging')}</p>
+              {aging.map(([label, amount, i]) => (
+                <div className="dm-kv" key={label}>
+                  <span className="dm-kv__k" style={i === 3 ? { color: COLORS.negative } : undefined}>{label}</span>
+                  <span className="dm-kv__v" style={{ color: COLORS.payable }}>{formatCurrency(amount)}</span>
                 </div>
               ))}
             </>
@@ -206,7 +231,7 @@ export function FinancialReport({
                 <tr className="is-section"><td colSpan={2}>{t('demo.financialReport.expenses')}</td></tr>
                 {expenseRows.map(([category, amount]) => (
                   <tr key={category}>
-                    <td className="dm-kv__k">{category}</td>
+                    <td className="dm-kv__k">{rowLabel(category)}</td>
                     <td className="is-num">{formatCurrency(amount)}</td>
                   </tr>
                 ))}
@@ -249,10 +274,16 @@ export function FinancialReport({
                   <td className="dm-kv__k">{t('demo.financialReport.inventory')}</td>
                   <td className="is-num">{formatCurrency(summary.totalInventory)}</td>
                 </tr>
-                {summary.totalFixedAssets > 0 && (
+                {fixedAssetCost > 0 && (
                   <tr>
                     <td className="dm-kv__k">{t('demo.financialReport.fixedAssets')}</td>
-                    <td className="is-num">{formatCurrency(summary.totalFixedAssets)}</td>
+                    <td className="is-num">{formatCurrency(fixedAssetCost)}</td>
+                  </tr>
+                )}
+                {summary.depreciation > 0 && (
+                  <tr>
+                    <td className="dm-kv__k dm-kv__k--indent">{t('demo.financialReport.lessDepreciation')}</td>
+                    <td className="is-num" style={{ color: COLORS.negative }}>−{formatCurrency(summary.depreciation)}</td>
                   </tr>
                 )}
                 <tr className="is-strong">

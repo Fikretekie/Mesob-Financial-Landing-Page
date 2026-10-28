@@ -24,6 +24,16 @@ const LABEL_COLON = /\s*[:：]\s*$/;
 
 type TransactionType = 'receive' | 'pay' | 'payable' | null;
 type PaymentMode = 'recorded' | 'new' | 'boughtItem' | null;
+type AssetType = 'current' | 'fixed';
+type DepreciationMethod = 'straight_line' | 'section_179';
+
+// YYYY-MM-DD for today in local time (what <input type="date"> uses).
+const todayKey = () => {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+};
+// Noon, so a date-only value never shifts a day when read back in another timezone.
+const recordDate = (key: string) => new Date(`${key || todayKey()}T12:00:00`).toISOString();
 
 export function AddTransactionDialog({
   open,
@@ -42,6 +52,12 @@ export function AddTransactionDialog({
   const [transactionAmount, setTransactionAmount] = useState('');
   const [purposes, setPurposes] = useState<string[]>([]);
   const [showUpgradeMessage, setShowUpgradeMessage] = useState(false);
+  // As in the app: entries can be backdated (never future-dated), and a
+  // purchase is either stock (inventory) or equipment with a depreciation plan.
+  const [txDate, setTxDate] = useState(todayKey);
+  const [assetType, setAssetType] = useState<AssetType>('current');
+  const [depreciationMethod, setDepreciationMethod] = useState<DepreciationMethod>('straight_line');
+  const [usefulLifeYears, setUsefulLifeYears] = useState('5');
 
   const getBusinessPurposes = (type: string) => {
     if (businessTypes[type]) {
@@ -78,6 +94,10 @@ export function AddTransactionDialog({
     setManualPurpose('');
     setTransactionAmount('');
     setShowUpgradeMessage(false);
+    setTxDate(todayKey());
+    setAssetType('current');
+    setDepreciationMethod('straight_line');
+    setUsefulLifeYears('5');
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -92,6 +112,8 @@ export function AddTransactionDialog({
       return;
     }
 
+    if (txDate > todayKey()) return;
+
     if (transactionType === 'pay' && paymentMode === 'recorded') {
       // Settle a payable the visitor recorded earlier (full or partial).
       const payable = openPayables.find((tx) => String(tx.id) === transactionPurpose);
@@ -104,12 +126,16 @@ export function AddTransactionDialog({
         : transactionPurpose;
 
       const transaction: Omit<Transaction, 'id' | 'srNo'> = {
-        date: new Date().toISOString(),
+        date: recordDate(txDate),
         description: `New Item [Cash] ${finalPurpose}`,
         debit: numAmount,
         credit: 0,
         type: 'expense',
         category: 'New Item',
+        assetType,
+        ...(assetType === 'fixed'
+          ? { depreciationMethod, usefulLifeYears: parseFloat(usefulLifeYears) || 5 }
+          : {}),
       };
 
       onAdd(transaction);
@@ -120,7 +146,7 @@ export function AddTransactionDialog({
         : transactionPurpose;
 
       const transaction: Omit<Transaction, 'id' | 'srNo'> = {
-        date: new Date().toISOString(),
+        date: recordDate(txDate),
         description: `Receive [Cash] ${finalPurpose}`,
         debit: 0,
         credit: numAmount,
@@ -136,7 +162,7 @@ export function AddTransactionDialog({
         : transactionPurpose;
 
       const transaction: Omit<Transaction, 'id' | 'srNo'> = {
-        date: new Date().toISOString(),
+        date: recordDate(txDate),
         description: `Payable ${finalPurpose}`,
         debit: numAmount,
         credit: 0,
@@ -154,7 +180,7 @@ export function AddTransactionDialog({
         : transactionPurpose;
 
       const transaction: Omit<Transaction, 'id' | 'srNo'> = {
-        date: new Date().toISOString(),
+        date: recordDate(txDate),
         description: `Paid [Cash] ${finalPurpose}`,
         debit: numAmount,
         credit: 0,
@@ -315,6 +341,72 @@ export function AddTransactionDialog({
             </div>
           )}
 
+          {transactionType === 'pay' && paymentMode === 'boughtItem' && (
+            <div className="dm-modal__group">
+              <span className="dm-label">{label('demo.addTransaction.assetType')}</span>
+              <div className="dm-actions">
+                {(['current', 'fixed'] as AssetType[]).map((type) => (
+                  <button
+                    key={type}
+                    type="button"
+                    className={`dm-action${assetType === type ? ' is-selected' : ''}`}
+                    aria-pressed={assetType === type}
+                    onClick={() => setAssetType(type)}
+                  >
+                    {type === 'current' ? t('demo.addTransaction.currentAsset') : t('demo.addTransaction.fixedAsset')}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {transactionType === 'pay' && paymentMode === 'boughtItem' && assetType === 'fixed' && (
+            <div className="dm-modal__group">
+              <span className="dm-label">{label('demo.addTransaction.depreciation')}</span>
+              <Select value={depreciationMethod} onValueChange={(value) => setDepreciationMethod(value as DepreciationMethod)}>
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent sideOffset={6}>
+                  <SelectItem value="straight_line">{t('demo.addTransaction.straightLine')}</SelectItem>
+                  <SelectItem value="section_179">{t('demo.addTransaction.section179')}</SelectItem>
+                </SelectContent>
+              </Select>
+              {depreciationMethod === 'straight_line' && (
+                <>
+                  <label className="dm-label" htmlFor="dm-life">{label('demo.addTransaction.usefulLife')}</label>
+                  <input
+                    id="dm-life"
+                    type="number"
+                    inputMode="numeric"
+                    step="1"
+                    min="1"
+                    className="dm-input dm-input--num"
+                    value={usefulLifeYears}
+                    onChange={(e) => setUsefulLifeYears(e.target.value)}
+                  />
+                </>
+              )}
+              <small className="dm-hint">{t('demo.addTransaction.depreciationHint')}</small>
+            </div>
+          )}
+
+          {showDetails && !payingPayable && (
+            <div className="dm-modal__group">
+              <label className="dm-label" htmlFor="dm-date">{label('demo.addTransaction.date')}</label>
+              <input
+                id="dm-date"
+                type="date"
+                className="dm-input"
+                value={txDate}
+                max={todayKey()}
+                onChange={(e) => setTxDate(e.target.value)}
+                aria-invalid={txDate > todayKey()}
+              />
+              {txDate > todayKey() && <small className="dm-hint dm-hint--error">{t('demo.addTransaction.dateFuture')}</small>}
+            </div>
+          )}
+
           {showDetails && (
             <div className="dm-modal__group">
               <label className="dm-label" htmlFor="dm-amount">{label('demo.addTransaction.amount')}</label>
@@ -371,7 +463,9 @@ export function AddTransactionDialog({
                   !transactionAmount ||
                   (transactionPurpose === 'manual' && !manualPurpose.trim()) ||
                   (showPurpose && !transactionPurpose) ||
-                  (payingPayable && (!selectedPayable || Number(transactionAmount) <= 0))
+                  (payingPayable && (!selectedPayable || Number(transactionAmount) <= 0)) ||
+                  txDate > todayKey() ||
+                  (paymentMode === 'boughtItem' && assetType === 'fixed' && depreciationMethod === 'straight_line' && !(parseFloat(usefulLifeYears) > 0))
                 }
               >
                 {t('demo.addTransaction.save')}

@@ -508,7 +508,8 @@
       "transactionsCount": "ግብይታት",
       "typeIn": "ዝተቐበለ",
       "typeOut": "ዝተኸፍለ",
-      "typeOwed": "ዘይተኸፍለ"
+      "typeOwed": "ዘይተኸፍለ",
+      "negativeCashWarning": "ኣብ ኢድ ዘሎ ገንዘብ ካብ ዜሮ ትሕቲ እዩ — ካብ ዝኣተወ ንላዕሊ ዝወጸ ገንዘብ መዝጊብኩም። ዝጎደለ እቶት ወይ ብጌጋ ምድብ ዝተመዝገበ ምንቅስቓስ እንተሎ ኣረጋግጹ።"
     },
     "chart": {
       "initial": "መጀመርታ",
@@ -557,7 +558,17 @@
       "cancel": "Cancel",
       "save": "Save",
       "whichPayable": "ኣየናይ ሕሳብ ትኸፍሉ ኣለኹም?",
-      "noOpenPayables": "ክሳብ ሕጂ ዘይተኸፍለ ሕሳብ የለን። መጀመርታ ብ\"{{button}}\" ሓደ መዝግቡ።"
+      "noOpenPayables": "ክሳብ ሕጂ ዘይተኸፍለ ሕሳብ የለን። መጀመርታ ብ\"{{button}}\" ሓደ መዝግቡ።",
+      "date": "ዕለት",
+      "depreciation": "ምንካይ ዋጋ (ዲፕሪሸሽን)",
+      "straightLine": "ቀጥታዊ መስመር (ኣብ ዕድመ ኣገልግሎቱ ዝምቀል)",
+      "section179": "ሴክሽን 179 (ኣብ ቀዳማይ ዓመት ምሉእ ብምሉእ ዝንከይ)",
+      "usefulLife": "ዕድመ ኣገልግሎት (ዓመታት)",
+      "depreciationHint": "ዋጋ ንብረት ኣብ ዕድመ ኣገልግሎቱ ይምቅል፡ ወይ ኣብዚ ዓመት ምሉእ ብምሉእ የንክዮ (ሴክሽን 179)።",
+      "dateFuture": "ዕለት ኣብ መጻኢ ክኸውን ኣይክእልን።",
+      "assetType": "ዓይነት ንብረት",
+      "currentAsset": "ናይ ሕጂ ንብረት",
+      "fixedAsset": "ተረጋጋጺ ንብረት"
     },
     "signup": {
       "title": "ምሉእ መእተዊ ክፈት",
@@ -621,7 +632,14 @@
       "total": "Total",
       "subtitle": "ንግድኹም ተኸታተሉ፣ ተንትኑን ኣዕብዩን።",
       "cogs": "ዋጋ ዝተሸጡ ኣቑሑ",
-      "fixedAssets": "ቀወምቲ ንብረታት"
+      "fixedAssets": "ቀወምቲ ንብረታት",
+      "depreciationExpense": "ወጻኢ ምንካይ ዋጋ",
+      "lessDepreciation": "ይንከ፦ ምንካይ ዋጋ",
+      "apAging": "ዘይተኸፍሉ ሕሳባት ብዕድመ",
+      "agingCurrent": "ህሉው (0–30 መዓልታት)",
+      "aging31": "31–60 መዓልታት",
+      "aging61": "61–90 መዓልታት",
+      "aging90": "ካብ 90 መዓልታት ንላዕሊ (ዝሓለፎም)"
     },
     "receipts": {
       "title": "Receipts Management",

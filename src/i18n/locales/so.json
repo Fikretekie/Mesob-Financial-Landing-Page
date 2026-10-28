@@ -508,7 +508,8 @@
       "transactionsCount": "Macaamil",
       "typeIn": "La helay",
       "typeOut": "La bixiyay",
-      "typeOwed": "Lagu leeyahay"
+      "typeOwed": "Lagu leeyahay",
+      "negativeCashWarning": "Lacagta gacanta ku jirta waa ka hooseysaa eber — waxaad diiwaan gelisay lacag ka badan inta soo gashay. Hubi in deebaaji maqan yahay ama diiwaan si khaldan loo kala saaray."
     },
     "chart": {
       "initial": "Bilow",
@@ -557,7 +558,17 @@
       "cancel": "Cancel",
       "save": "Save",
       "whichPayable": "Biilkee ayaad bixinaysaa?",
-      "noOpenPayables": "Weli ma jiro biil aan la bixin. Marka hore mid ku diiwaangeli \"{{button}}\"."
+      "noOpenPayables": "Weli ma jiro biil aan la bixin. Marka hore mid ku diiwaangeli \"{{button}}\".",
+      "date": "Taariikh",
+      "depreciation": "Qiimo-dhac (depreciation)",
+      "straightLine": "Khad toosan (loo qaybiyay muddada isticmaalka)",
+      "section179": "Qodobka 179 (dhammaan laga jaro sannadka koowaad)",
+      "usefulLife": "Muddada isticmaalka (sannado)",
+      "depreciationHint": "Wuxuu u qaybiyaa qiimaha hantida muddada ay shaqaynayso, ama dhammaan sannadkan ayuu ka jaraa (Qodobka 179).",
+      "dateFuture": "Taariikhdu ma noqon karto mustaqbalka.",
+      "assetType": "Nooca Hantida",
+      "currentAsset": "Hanti hadda jirta",
+      "fixedAsset": "Hanti adag"
     },
     "signup": {
       "title": "Fur helitaanka buuxa",
@@ -621,7 +632,14 @@
       "total": "Total",
       "subtitle": "La soco, falanqee, oo kori ganacsigaaga.",
       "cogs": "Kharashka alaabta la iibiyay",
-      "fixedAssets": "Hantida go’an"
+      "fixedAssets": "Hantida go’an",
+      "depreciationExpense": "Kharashka qiimo-dhaca",
+      "lessDepreciation": "Laga jaray: qiimo-dhac",
+      "apAging": "Biilasha aan la bixin, da'da",
+      "agingCurrent": "Hadda (0–30 maalmood)",
+      "aging31": "31–60 maalmood",
+      "aging61": "61–90 maalmood",
+      "aging90": "In ka badan 90 maalmood (dib u dhacay)"
     },
     "receipts": {
       "title": "Receipts Management",

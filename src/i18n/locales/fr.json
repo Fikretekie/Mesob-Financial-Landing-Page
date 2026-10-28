@@ -508,7 +508,8 @@
       "transactionsCount": "Transactions",
       "typeIn": "Reçu",
       "typeOut": "Payé",
-      "typeOwed": "Dû"
+      "typeOwed": "Dû",
+      "negativeCashWarning": "La trésorerie est négative : vous avez enregistré plus de sorties que d'entrées. Vérifiez s'il manque un dépôt ou si une écriture est mal classée."
     },
     "chart": {
       "initial": "Initial",
@@ -557,7 +558,17 @@
       "cancel": "Cancel",
       "save": "Save",
       "whichPayable": "Quelle facture payez-vous ?",
-      "noOpenPayables": "Aucune facture impayée pour l'instant. Enregistrez-en d'abord une avec \"{{button}}\"."
+      "noOpenPayables": "Aucune facture impayée pour l'instant. Enregistrez-en d'abord une avec \"{{button}}\".",
+      "date": "Date",
+      "depreciation": "Amortissement",
+      "straightLine": "Linéaire (réparti sur la durée de vie)",
+      "section179": "Section 179 (passé en charge la première année)",
+      "usefulLife": "Durée de vie (années)",
+      "depreciationHint": "Répartit le coût du bien sur sa durée de vie, ou le passe entièrement en charge cette année (Section 179).",
+      "dateFuture": "La date ne peut pas être dans le futur.",
+      "assetType": "Type d'actif",
+      "currentAsset": "Actif circulant",
+      "fixedAsset": "Actif immobilisé"
     },
     "signup": {
       "title": "Débloquer l'accès complet",
@@ -621,7 +632,14 @@
       "total": "Total",
       "subtitle": "Suivez, analysez et développez votre entreprise.",
       "cogs": "Coût des marchandises vendues",
-      "fixedAssets": "Immobilisations"
+      "fixedAssets": "Immobilisations",
+      "depreciationExpense": "Dotation aux amortissements",
+      "lessDepreciation": "Moins : amortissement",
+      "apAging": "Factures impayées par ancienneté",
+      "agingCurrent": "Courant (0–30 jours)",
+      "aging31": "31–60 jours",
+      "aging61": "61–90 jours",
+      "aging90": "Plus de 90 jours (en retard)"
     },
     "receipts": {
       "title": "Receipts Management",

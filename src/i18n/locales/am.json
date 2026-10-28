@@ -508,7 +508,8 @@
       "transactionsCount": "ግብይቶች",
       "typeIn": "የተቀበለ",
       "typeOut": "የተከፈለ",
-      "typeOwed": "ያልተከፈለ"
+      "typeOwed": "ያልተከፈለ",
+      "negativeCashWarning": "በእጅ ያለው ገንዘብ ከዜሮ በታች ነው — ከገባው በላይ የወጣ ገንዘብ መዝግበዋል። የጎደለ ገቢ ወይም በተሳሳተ ምድብ የተመዘገበ ግብይት ካለ ያረጋግጡ።"
     },
     "chart": {
       "initial": "መነሻ",
@@ -557,7 +558,17 @@
       "cancel": "ሰርዝ",
       "save": "አስቀምጥ",
       "whichPayable": "የትኛውን ሂሳብ እየከፈሉ ነው?",
-      "noOpenPayables": "እስካሁን ያልተከፈለ ሂሳብ የለም። መጀመሪያ \"{{button}}\" በመጠቀም አንዱን ይመዝግቡ።"
+      "noOpenPayables": "እስካሁን ያልተከፈለ ሂሳብ የለም። መጀመሪያ \"{{button}}\" በመጠቀም አንዱን ይመዝግቡ።",
+      "date": "ቀን",
+      "depreciation": "የዋጋ ቅናሽ (ዲፕሪሼሽን)",
+      "straightLine": "ቀጥተኛ መስመር (በአገልግሎት ዘመኑ የሚከፋፈል)",
+      "section179": "ሴክሽን 179 (በመጀመሪያው ዓመት ሙሉ በሙሉ የሚቀነስ)",
+      "usefulLife": "የአገልግሎት ዘመን (ዓመታት)",
+      "depreciationHint": "የንብረቱን ዋጋ በአገልግሎት ዘመኑ ያከፋፍላል፣ ወይም በዚህ ዓመት ሙሉ በሙሉ ይቀንሳል (ሴክሽን 179)።",
+      "dateFuture": "ቀኑ ወደፊት ሊሆን አይችልም።",
+      "assetType": "የንብረት ዓይነት",
+      "currentAsset": "ወቅታዊ ንብረት",
+      "fixedAsset": "ቋሚ ንብረት"
     },
     "signup": {
       "title": "ሙሉ መዳረሻ ይክፈቱ",
@@ -621,7 +632,14 @@
       "total": "ጠቅላላ",
       "subtitle": "ንግድዎን ይከታተሉ፣ ይተንትኑ እና ያሳድጉ።",
       "cogs": "የተሸጡ ዕቃዎች ወጪ",
-      "fixedAssets": "ቋሚ ንብረቶች"
+      "fixedAssets": "ቋሚ ንብረቶች",
+      "depreciationExpense": "የዋጋ ቅናሽ ወጪ",
+      "lessDepreciation": "ሲቀነስ፦ የዋጋ ቅናሽ",
+      "apAging": "ያልተከፈሉ ሂሳቦች በዕድሜ",
+      "agingCurrent": "ወቅታዊ (0–30 ቀናት)",
+      "aging31": "31–60 ቀናት",
+      "aging61": "61–90 ቀናት",
+      "aging90": "ከ90 ቀናት በላይ (ያለፈባቸው)"
     },
     "receipts": {
       "title": "የደረሰኞች አስተዳደር",

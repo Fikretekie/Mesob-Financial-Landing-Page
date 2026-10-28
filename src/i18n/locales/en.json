@@ -508,7 +508,8 @@
       "transactionsCount": "Transactions",
       "typeIn": "Received",
       "typeOut": "Paid",
-      "typeOwed": "Owed"
+      "typeOwed": "Owed",
+      "negativeCashWarning": "Cash on hand is negative — you've recorded more money out than in. Check for a missing deposit or a miscategorized entry."
     },
     "chart": {
       "initial": "Initial",
@@ -557,7 +558,17 @@
       "cancel": "Cancel",
       "save": "Save",
       "whichPayable": "Which bill are you paying?",
-      "noOpenPayables": "No unpaid bills yet. Record one with \"{{button}}\" first."
+      "noOpenPayables": "No unpaid bills yet. Record one with \"{{button}}\" first.",
+      "date": "Date",
+      "depreciation": "Depreciation",
+      "straightLine": "Straight-line (spread over useful life)",
+      "section179": "Section 179 (full write-off in year one)",
+      "usefulLife": "Useful life (years)",
+      "depreciationHint": "Spreads the asset's cost across its life, or writes it all off this year (Section 179).",
+      "dateFuture": "The date can't be in the future.",
+      "assetType": "Asset Type",
+      "currentAsset": "Current Asset (inventory / stock)",
+      "fixedAsset": "Fixed Asset"
     },
     "signup": {
       "title": "Unlock Full Access",
@@ -621,7 +632,14 @@
       "total": "Total",
       "subtitle": "Track, analyze, and grow your business.",
       "cogs": "Cost of goods sold",
-      "fixedAssets": "Fixed assets"
+      "fixedAssets": "Fixed assets",
+      "depreciationExpense": "Depreciation expense",
+      "lessDepreciation": "Less: Depreciation",
+      "apAging": "Unpaid bills by age",
+      "agingCurrent": "Current (0–30 days)",
+      "aging31": "31–60 days",
+      "aging61": "61–90 days",
+      "aging90": "90+ days (overdue)"
     },
     "receipts": {
       "title": "Receipts Management",

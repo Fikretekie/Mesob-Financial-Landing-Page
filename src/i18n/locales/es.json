@@ -508,7 +508,8 @@
       "transactionsCount": "Transacciones",
       "typeIn": "Recibido",
       "typeOut": "Pagado",
-      "typeOwed": "Pendiente"
+      "typeOwed": "Pendiente",
+      "negativeCashWarning": "El efectivo disponible es negativo: registraste más salidas que entradas. Revisa si falta un depósito o hay un registro mal clasificado."
     },
     "chart": {
       "initial": "Inicial",
@@ -557,7 +558,17 @@
       "cancel": "Cancel",
       "save": "Save",
       "whichPayable": "¿Qué factura estás pagando?",
-      "noOpenPayables": "Aún no hay facturas pendientes. Primero registra una con \"{{button}}\"."
+      "noOpenPayables": "Aún no hay facturas pendientes. Primero registra una con \"{{button}}\".",
+      "date": "Fecha",
+      "depreciation": "Depreciación",
+      "straightLine": "Línea recta (repartida en su vida útil)",
+      "section179": "Sección 179 (deducción total el primer año)",
+      "usefulLife": "Vida útil (años)",
+      "depreciationHint": "Reparte el costo del activo a lo largo de su vida, o lo deduce todo este año (Sección 179).",
+      "dateFuture": "La fecha no puede ser futura.",
+      "assetType": "Tipo de activo",
+      "currentAsset": "Activo corriente",
+      "fixedAsset": "Activo fijo"
     },
     "signup": {
       "title": "Desbloquear acceso completo",
@@ -621,7 +632,14 @@
       "total": "Total",
       "subtitle": "Controla, analiza y haz crecer tu negocio.",
       "cogs": "Costo de bienes vendidos",
-      "fixedAssets": "Activos fijos"
+      "fixedAssets": "Activos fijos",
+      "depreciationExpense": "Gasto por depreciación",
+      "lessDepreciation": "Menos: depreciación",
+      "apAging": "Cuentas por pagar por antigüedad",
+      "agingCurrent": "Al día (0–30 días)",
+      "aging31": "31–60 días",
+      "aging61": "61–90 días",
+      "aging90": "Más de 90 días (vencidas)"
     },
     "receipts": {
       "title": "Receipts Management",

@@ -8,7 +8,7 @@ import type { FinancialSummary, ChartDataPoint, Transaction } from '@/types';
 import { useTranslation } from 'react-i18next';
 import { useDemoIndustrySlug } from '@/components/demo/DemoIndustryContext';
 import { goToSignup } from '@/utils/demoTracking';
-import { purposeOf } from '@/utils/demoAccounting';
+import { purposeOf, DEPRECIATION_ROW } from '@/utils/demoAccounting';
 
 interface DashboardProps {
   summary: FinancialSummary;
@@ -29,12 +29,14 @@ type MetricKey = 'cash' | 'revenue' | 'expenses' | 'payable';
 const COLORS = {
   cash: '#00B4D8',
   revenue: '#00D97E',
-  expenses: '#A855F7',
+  // Expenses share the outflow red, as in the app (was purple).
+  expenses: '#FF4D4D',
   payable: '#FFA53B',
   positive: '#00D97E',
   negative: '#FF4D4D',
 };
-const EXPENSE_COLORS = ['#A855F7', '#C084FC', '#8B5CF6', '#7C3AED', '#6D28D9'];
+// Warm/red family so every slice reads as money out, matching the app's donut.
+const EXPENSE_COLORS = ['#FF4D4D', '#F76B5C', '#D94C6A', '#C2410C', '#FF8A66'];
 
 const money = (n: number, digits = 2) =>
   `${n < 0 ? '−' : ''}$${Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
@@ -53,6 +55,10 @@ export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, p
     }
     const change = Math.round(((current - baseline) / Math.abs(baseline)) * 100);
     if (!isFinite(change) || change === 0) return `— ${t('demo.dashboard.noChange')}`;
+    // As in the app: a near-zero starting point makes the % explode, so cap it.
+    if (Math.abs(change) >= 1000) {
+      return t('demo.dashboard.changeVsLastMonth', { sign: change > 0 ? '+' : '−', percent: 999 }).replace('999%', '999%+');
+    }
     return t('demo.dashboard.changeVsLastMonth', { sign: change > 0 ? '+' : '', percent: Math.abs(change) });
   };
 
@@ -74,7 +80,10 @@ export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, p
 
   // Same expense rule as the app: accrued payables count, item purchases
   // (inventory) and payments of an already-counted payable do not.
-  const topExpenses = useMemo(() => expenseRows.slice(0, 5), [expenseRows]);
+  const topExpenses = useMemo(
+    () => expenseRows.slice(0, 5).map(([name, value]) => [name === DEPRECIATION_ROW ? t('demo.financialReport.depreciationExpense') : name, value] as [string, number]),
+    [expenseRows, t],
+  );
   const topExpenseTotal = topExpenses.reduce((sum, [, v]) => sum + v, 0);
 
   const rowStyle = (tx: Transaction) => {
@@ -111,6 +120,9 @@ export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, p
               </span>
               <span className="hero-delta" style={{ color: active.color }}>{getChange(active.data)}</span>
             </div>
+            {heroMetric === 'cash' && active.value < 0 && (
+              <p className="hero-cash-warning" role="status">{t('demo.dashboard.negativeCashWarning')}</p>
+            )}
 
             <div className="hero-flow">
               <div className="hero-flow__row">
@@ -231,7 +243,7 @@ export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, p
         <div className="dm-col">
           <section className="mk-card">
             <div className="dash-panel-head">
-              <span className="mk-chip mk-chip--sm" style={{ backgroundColor: 'rgba(168,85,247,0.14)', color: COLORS.expenses }}>
+              <span className="mk-chip mk-chip--sm" style={{ backgroundColor: 'rgba(255,77,77,0.14)', color: COLORS.expenses }}>
                 <PieIcon aria-hidden />
               </span>
               <span className="mk-eyebrow">{t('demo.dashboard.topExpenses')}</span>

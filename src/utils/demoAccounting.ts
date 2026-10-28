@@ -11,6 +11,7 @@
 //   category "Payment"     -> Pay linked to its payable via payableId
 //   category "New Item"    -> New_Item (inventory asset, not an expense)
 import {
+  calculateDepreciationExpense,
   computeSummary,
   isCountableOutflow,
   outflowAmount,
@@ -29,9 +30,14 @@ interface AppItem {
   subType?: string;
   assetType?: string;
   assetName?: string;
+  depreciationMethod?: string;
+  usefulLifeYears?: number;
 }
 
 const SYSTEM_CATEGORIES = ['Payable', 'Payment', 'New Item'];
+
+/** Row key for book depreciation in expensesByPurpose(); screens show a translated label. */
+export const DEPRECIATION_ROW = '__depreciation__';
 
 /** Human label for a transaction: its purpose, without the journal prefix. */
 export const purposeOf = (tx: Transaction) =>
@@ -76,6 +82,9 @@ export function toAppItem(tx: Transaction): AppItem {
       subType: 'New_Item',
       assetType: tx.assetType ?? 'current',
       assetName: purposeOf(tx),
+      ...(tx.assetType === 'fixed'
+        ? { depreciationMethod: tx.depreciationMethod ?? 'straight_line', usefulLifeYears: tx.usefulLifeYears ?? 5 }
+        : {}),
     };
   }
   return {
@@ -87,23 +96,39 @@ export function toAppItem(tx: Transaction): AppItem {
   };
 }
 
-export function summarize(transactions: Transaction[]): FinancialSummary {
+/** Depreciation on fixed assets from their purchase up to `asOf` (default now). */
+export function depreciationTo(transactions: Transaction[], asOf: Date = new Date()): number {
+  return parseFloat(calculateDepreciationExpense(transactions.map(toAppItem), { from: new Date(0), to: asOf })) || 0;
+}
+
+/**
+ * Headline figures, computed the way app.meksova.com's Dashboard and Financial
+ * Report do: the engine's accrual totals, plus book depreciation as an expense,
+ * which lowers net income and the tax estimate and leaves fixed assets at net
+ * book value (cost minus depreciation).
+ */
+export function summarize(transactions: Transaction[], asOf: Date = new Date()): FinancialSummary {
   const s = computeSummary(transactions.map(toAppItem), { normalize: false });
+  const depreciation = depreciationTo(transactions, asOf);
+  const totalExpenses = s.totalExpenses + depreciation;
   return {
     totalCashOnHand: s.totalCash,
     revenue: s.totalRevenue,
-    totalExpenses: s.totalExpenses,
+    totalExpenses,
     totalPayable: s.totalPayable,
     totalInventory: s.totalInventory,
-    totalFixedAssets: s.totalFixedAssets,
+    totalFixedAssets: s.totalFixedAssets - depreciation,
     cogs: s.cogs,
-    netIncome: s.netIncome,
-    estimatedTax: s.estimatedTax,
+    netIncome: s.netIncome - depreciation,
+    // 30% of net income (after depreciation), never below zero.
+    estimatedTax: Math.max(0, s.totalRevenue - totalExpenses) * 0.3,
+    depreciation,
   };
 }
 
-/** Expenses by purpose, using the engine's own rule for what counts. */
-export function expensesByPurpose(transactions: Transaction[]): [string, number][] {
+/** Expenses by purpose, using the engine's own rule for what counts. Book
+ *  depreciation is listed too, so the breakdown foots to Total Expenses. */
+export function expensesByPurpose(transactions: Transaction[], depreciationLabel = DEPRECIATION_ROW): [string, number][] {
   const items = transactions.map(toAppItem);
   const byId = new Map(items.map((item) => [item.id, item]));
   const groups: Record<string, number> = {};
@@ -113,6 +138,8 @@ export function expensesByPurpose(transactions: Transaction[]): [string, number]
     const label = (item.payableId != null && byId.get(item.payableId)?.transactionPurpose) || item.transactionPurpose || 'Other';
     groups[label] = (groups[label] || 0) + outflowAmount(item);
   });
+  const depreciation = depreciationTo(transactions);
+  if (depreciation > 0) groups[depreciationLabel] = (groups[depreciationLabel] || 0) + depreciation;
   return Object.entries(groups)
     .map(([label, amount]) => [label, Number(amount.toFixed(2))] as [string, number])
     .filter(([, amount]) => amount > 0)
@@ -150,7 +177,7 @@ export function runningSeries(transactions: Transaction[]) {
       const remaining = remainingOf(t) + paidLater;
       return { ...t, remainingAmount: remaining, status: remaining > 0 ? ('Partially Paid' as const) : t.status };
     });
-    const s = summarize(upTo);
+    const s = summarize(upTo, new Date(tx.date));
     const date = pointDate(new Date(tx.date));
     series.cash.push({ date, amount: s.totalCashOnHand });
     series.revenue.push({ date, amount: s.revenue });
@@ -158,4 +185,15 @@ export function runningSeries(transactions: Transaction[]) {
     series.payable.push({ date, amount: s.totalPayable });
   });
   return series;
+}
+
+/** Open payables bucketed by age: 0-30, 31-60, 61-90, 90+ days (remaining balance). */
+export function payableAging(transactions: Transaction[], now: number = Date.now()): [number, number, number, number] {
+  const buckets: [number, number, number, number] = [0, 0, 0, 0];
+  transactions.filter(isOpenPayable).forEach((tx) => {
+    const days = (now - new Date(tx.date).getTime()) / 86400000;
+    const i = days <= 30 ? 0 : days <= 60 ? 1 : days <= 90 ? 2 : 3;
+    buckets[i] += remainingOf(tx);
+  });
+  return buckets;
 }

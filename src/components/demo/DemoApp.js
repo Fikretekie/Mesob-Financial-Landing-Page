@@ -32,6 +32,7 @@ import { DemoIndustryContext } from '@/components/demo/DemoIndustryContext'
 import { buildSampleTransactions, getDemoIndustry } from '@/data/demoIndustries'
 import { useDemoBusinesses } from '@/hooks/demo/useDemoBusinesses'
 import { BusinessSwitcher } from '@/components/demo/BusinessSwitcher'
+import { DEPRECIATION_ROW } from '@/utils/demoAccounting'
 import { captureAttribution, trackDemoEvent } from '@/utils/demoTracking'
 
 export default function DemoApp({ industry }) {
@@ -215,7 +216,7 @@ export default function DemoApp({ industry }) {
       totalExpenses: summary.totalExpenses,
       totalPayable: summary.totalPayable,
       transactions,
-      expenseRows,
+      expenseRows: expenseRows.map(([label, amount]) => [label === DEPRECIATION_ROW ? t('demo.financialReport.depreciationExpense') : label, amount]),
       netIncome: summary.netIncome,
       totalInventory: summary.totalInventory,
       totalFixedAssets: summary.totalFixedAssets,

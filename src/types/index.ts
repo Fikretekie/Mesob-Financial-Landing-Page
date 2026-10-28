@@ -19,6 +19,10 @@ export interface Transaction {
   // expensed as COGS, or an item capitalized as inventory / fixed asset.
   subType?: 'COGS';
   assetType?: 'current' | 'fixed';
+  // Fixed assets only, as in the app's Add Transaction: straight-line over a
+  // useful life, or a Section 179 full write-off in the month of purchase.
+  depreciationMethod?: 'straight_line' | 'section_179';
+  usefulLifeYears?: number;
   scanned?: boolean;
 }
 
@@ -32,6 +36,8 @@ export interface FinancialSummary {
   netIncome: number;
   estimatedTax: number;
   revenue: number;
+  /** Book depreciation on fixed assets to date (already inside totalExpenses). */
+  depreciation: number;
 }
 
 export interface ChartDataPoint {

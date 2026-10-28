@@ -1369,3 +1369,13 @@ button.card-stats--selectable.is-selected {
 .dm-scan-review .dm-receipt { max-width: 240px; font-size: 10px; }
 .dm-scan-detected { margin-top: 10px !important; text-align: center; color: var(--green); font-family: var(--font-mono); font-size: 0.74rem; }
 @media (prefers-reduced-motion: reduce) { .dm-receipt__beam { animation: none; top: 45%; } }
+
+/* Field hints under Add Transaction inputs (depreciation, date) */
+.dm-hint { display: block; margin-top: 6px; font-size: 12px; line-height: 1.45; color: var(--text-3); }
+.dm-hint--error { color: var(--red); }
+
+/* Balance-sheet sub-line (e.g. Less: Depreciation under Fixed Assets) */
+.dm-kv__k--indent { padding-inline-start: 18px !important; color: var(--text-3); }
+
+/* Shown when cash on hand is negative, as in the app */
+.demo-app .hero-cash-warning { margin: 6px 0 0; font-size: 12px; line-height: 1.45; color: #FF4D4D; }
