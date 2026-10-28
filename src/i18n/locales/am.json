@@ -1092,6 +1092,33 @@
       "paypalSeatCardNote": "ይህን በPayPal ያጸድቃሉ — እዚያ የPayPal ቀሪ ሂሳብዎን ወይም የዴቢት/ክሬዲት ካርድ መጠቀም ይችላሉ።",
       "paypalSeatPostError": "መቀመጫዎ ጸድቋል፣ ነገር ግን የቡድን አባሉን ማከል አልተሳካም — እባክዎ ግብዣውን እንደገና ይላኩ።",
       "cancel": "ይሰርዙ"
+    },
+    "downloadReport": {
+      "title": "ሪፖርት ያውርዱ",
+      "downloadFinancialReport": "የፋይናንስ ሪፖርት ያውርዱ",
+      "downloadDashboard": "ዳሽቦርድ ያውርዱ",
+      "downloadBoth": "ሁለቱንም ያውርዱ",
+      "pdfNote": "ሪፖርቶቹ እንደ PDF ፋይሎች ይወርዳሉ",
+      "reportPeriod": "የሪፖርት ጊዜ",
+      "periodCurrent": "የአሁኑ እይታ",
+      "periodThisMonth": "ይህ ወር",
+      "periodLastMonth": "ያለፈው ወር",
+      "periodQuarter": "ይህ ሩብ ዓመት",
+      "periodYtd": "ከዓመቱ መጀመሪያ ጀምሮ",
+      "periodCustom": "ብጁ",
+      "from": "ከ",
+      "to": "እስከ",
+      "reportTypeLabel": "የሪፖርት ዓይነት",
+      "typeStatements": "የገንዘብ መግለጫዎች",
+      "typeStatementsDesc": "የገቢ መግለጫ እና ሒሳብ ሚዛን — ለሒሳብ ባለሙያዎ ወይም ባንክዎ።",
+      "typeOverview": "የአፈጻጸም አጠቃላይ እይታ",
+      "typeOverviewDesc": "ዋና ቁጥሮችዎ በአንድ እይታ።",
+      "typeComplete": "ሙሉ ሪፖርት",
+      "typeCompleteDesc": "መግለጫዎች ከንግድዎ አጠቃላይ እይታ ጋር።",
+      "includeLabel": "አካትት",
+      "includeCharts": "የአዝማሚያ ግራፎች",
+      "includeLedger": "ሙሉ የግብይት መዝገብ",
+      "generateReport": "ሪፖርት አመንጭ"
     }
   }
 }

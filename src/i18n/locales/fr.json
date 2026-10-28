@@ -1092,6 +1092,33 @@
       "paypalSeatCardNote": "Vous l'approuverez sur PayPal — vous pouvez y utiliser votre solde PayPal ou une carte de débit/crédit.",
       "paypalSeatPostError": "Votre siège a été approuvé, mais l'ajout du coéquipier a échoué — veuillez renvoyer l'invitation.",
       "cancel": "Annuler"
+    },
+    "downloadReport": {
+      "title": "Télécharger le Rapport",
+      "downloadFinancialReport": "Télécharger le Rapport Financier",
+      "downloadDashboard": "Télécharger le Tableau de Bord",
+      "downloadBoth": "Télécharger les Deux",
+      "pdfNote": "Les rapports seront téléchargés en fichiers PDF",
+      "reportPeriod": "Période du rapport",
+      "periodCurrent": "Vue actuelle",
+      "periodThisMonth": "Ce mois-ci",
+      "periodLastMonth": "Le mois dernier",
+      "periodQuarter": "Ce trimestre",
+      "periodYtd": "Depuis le début de l’année",
+      "periodCustom": "Personnalisé",
+      "from": "Du",
+      "to": "Au",
+      "reportTypeLabel": "Type de rapport",
+      "typeStatements": "États financiers",
+      "typeStatementsDesc": "Compte de résultat et bilan — pour votre comptable ou votre banque.",
+      "typeOverview": "Aperçu des performances",
+      "typeOverviewDesc": "Vos chiffres clés en un coup d’œil.",
+      "typeComplete": "Rapport complet",
+      "typeCompleteDesc": "États financiers plus l’aperçu de l’entreprise.",
+      "includeLabel": "Inclure",
+      "includeCharts": "Graphiques de tendance",
+      "includeLedger": "Journal complet des transactions",
+      "generateReport": "Générer le rapport"
     }
   }
 }

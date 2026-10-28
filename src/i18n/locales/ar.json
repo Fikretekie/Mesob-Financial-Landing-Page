@@ -1092,6 +1092,33 @@
       "paypalSeatCardNote": "ستوافق على هذا عبر PayPal — يمكنك استخدام رصيد PayPal أو بطاقة خصم/ائتمان هناك.",
       "paypalSeatPostError": "تمت الموافقة على مقعدك، لكن فشلت إضافة العضو — يرجى إرسال الدعوة مرة أخرى.",
       "cancel": "إلغاء"
+    },
+    "downloadReport": {
+      "title": "تحميل التقرير",
+      "downloadFinancialReport": "تحميل التقرير المالي",
+      "downloadDashboard": "تحميل لوحة التحكم",
+      "downloadBoth": "تحميل الاثنين",
+      "pdfNote": "سيتم تحميل التقارير كملفات PDF",
+      "reportPeriod": "فترة التقرير",
+      "periodCurrent": "العرض الحالي",
+      "periodThisMonth": "هذا الشهر",
+      "periodLastMonth": "الشهر الماضي",
+      "periodQuarter": "هذا الربع",
+      "periodYtd": "منذ بداية السنة",
+      "periodCustom": "مخصص",
+      "from": "من",
+      "to": "إلى",
+      "reportTypeLabel": "نوع التقرير",
+      "typeStatements": "القوائم المالية",
+      "typeStatementsDesc": "بيان الدخل والميزانية العمومية — لمحاسبك أو بنكك.",
+      "typeOverview": "نظرة عامة على الأداء",
+      "typeOverviewDesc": "أرقامك الرئيسية في لمحة.",
+      "typeComplete": "تقرير كامل",
+      "typeCompleteDesc": "القوائم المالية مع نظرة عامة على عملك.",
+      "includeLabel": "تضمين",
+      "includeCharts": "مخططات الاتجاه",
+      "includeLedger": "دفتر المعاملات الكامل",
+      "generateReport": "إنشاء التقرير"
     }
   }
 }

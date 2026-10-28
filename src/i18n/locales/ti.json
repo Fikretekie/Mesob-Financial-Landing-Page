@@ -1092,6 +1092,33 @@
       "paypalSeatCardNote": "ነዚ ኣብ PayPal ክትቕበሎ ኢኻ — ኣብኡ ናይ PayPal ተረፍ ሕሳብካ ወይ ዴቢት/ክሬዲት ካርድ ክትጥቀም ትኽእል።",
       "paypalSeatPostError": "መንበርካ ጸዲቑ፡ ግን ነቲ ኣባል ምውሳኽ ኣይተዓወተን — በጃኻ ነቲ ዕድመ ደጊምካ ስደዶ።",
       "cancel": "ደምስስ"
+    },
+    "downloadReport": {
+      "title": "ጸብጻብ ጫን",
+      "downloadFinancialReport": "ናይ ፋይናንስ ጸብጻብ ጫን",
+      "downloadDashboard": "ዳሽቦርድ ጫን",
+      "downloadBoth": "ክልቲኦም ጫን",
+      "pdfNote": "ጸብጻባት ከም PDF ፋይላት ኮይኖም ክጻዓኑ እዮም",
+      "reportPeriod": "ናይ ጸብጻብ ግዜ",
+      "periodCurrent": "ህልው ትርኢት",
+      "periodThisMonth": "እዚ ወርሒ",
+      "periodLastMonth": "ዝሓለፈ ወርሒ",
+      "periodQuarter": "እዚ ርብዒ ዓመት",
+      "periodYtd": "ካብ መጀመርታ ዓመት",
+      "periodCustom": "ብሕታዊ",
+      "from": "ካብ",
+      "to": "ክሳብ",
+      "reportTypeLabel": "ዓይነት ጸብጻብ",
+      "typeStatements": "ፋይናንሳዊ መግለጺታት",
+      "typeStatementsDesc": "መግለጺ ኣታዊን ባላንስ ሺትን — ንሒሳብ ክኢላኹም ወይ ባንክኹም።",
+      "typeOverview": "ሓፈሻዊ ኣፈጻጽማ",
+      "typeOverviewDesc": "ቀንዲ ቁጽርታትኩም ብሓንሳብ።",
+      "typeComplete": "ምሉእ ጸብጻብ",
+      "typeCompleteDesc": "መግለጺታት ምስ ሓፈሻዊ ትርኢት ንግድኹም።",
+      "includeLabel": "ኣካትት",
+      "includeCharts": "ግራፋት ኣዝማሚያ",
+      "includeLedger": "ምሉእ መዝገብ ግብይት",
+      "generateReport": "ጸብጻብ ኣመንጭ"
     }
   }
 }

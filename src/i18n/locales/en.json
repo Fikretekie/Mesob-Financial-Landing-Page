@@ -1084,6 +1084,33 @@
       "paypalSeatCardNote": "You'll approve this on PayPal — you can use your PayPal balance or a debit/credit card there.",
       "paypalSeatPostError": "Your seat was approved, but adding the teammate failed — please send the invite again.",
       "cancel": "Cancel"
+    },
+    "downloadReport": {
+      "title": "Download Report",
+      "downloadFinancialReport": "Download Financial Report",
+      "downloadDashboard": "Download Dashboard",
+      "downloadBoth": "Download Both",
+      "pdfNote": "Reports will be downloaded as PDF files",
+      "reportPeriod": "Report period",
+      "periodCurrent": "Current view",
+      "periodThisMonth": "This month",
+      "periodLastMonth": "Last month",
+      "periodQuarter": "This quarter",
+      "periodYtd": "Year to date",
+      "periodCustom": "Custom",
+      "from": "From",
+      "to": "To",
+      "reportTypeLabel": "Report type",
+      "typeStatements": "Financial Statements",
+      "typeStatementsDesc": "Profit & Loss and Balance Sheet — for your accountant or bank.",
+      "typeOverview": "Performance Overview",
+      "typeOverviewDesc": "Your key numbers at a glance.",
+      "typeComplete": "Complete Report",
+      "typeCompleteDesc": "Statements plus your business overview.",
+      "includeLabel": "Include",
+      "includeCharts": "Trend charts",
+      "includeLedger": "Full transaction ledger",
+      "generateReport": "Generate report"
     }
   }
 }

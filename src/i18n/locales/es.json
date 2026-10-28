@@ -1092,6 +1092,33 @@
       "paypalSeatCardNote": "Lo aprobarás en PayPal — puedes usar tu saldo de PayPal o una tarjeta de débito/crédito allí.",
       "paypalSeatPostError": "Tu asiento fue aprobado, pero no se pudo agregar al miembro — envía la invitación de nuevo.",
       "cancel": "Cancelar"
+    },
+    "downloadReport": {
+      "title": "Descargar Informe",
+      "downloadFinancialReport": "Descargar Informe Financiero",
+      "downloadDashboard": "Descargar Panel de Control",
+      "downloadBoth": "Descargar Ambos",
+      "pdfNote": "Los informes se descargarán como archivos PDF",
+      "reportPeriod": "Periodo del informe",
+      "periodCurrent": "Vista actual",
+      "periodThisMonth": "Este mes",
+      "periodLastMonth": "Mes pasado",
+      "periodQuarter": "Este trimestre",
+      "periodYtd": "Año hasta la fecha",
+      "periodCustom": "Personalizado",
+      "from": "Desde",
+      "to": "Hasta",
+      "reportTypeLabel": "Tipo de informe",
+      "typeStatements": "Estados financieros",
+      "typeStatementsDesc": "Estado de resultados y balance general — para tu contador o banco.",
+      "typeOverview": "Resumen de desempeño",
+      "typeOverviewDesc": "Tus cifras clave de un vistazo.",
+      "typeComplete": "Informe completo",
+      "typeCompleteDesc": "Estados financieros más el resumen del negocio.",
+      "includeLabel": "Incluir",
+      "includeCharts": "Gráficos de tendencia",
+      "includeLedger": "Libro de transacciones completo",
+      "generateReport": "Generar informe"
     }
   }
 }

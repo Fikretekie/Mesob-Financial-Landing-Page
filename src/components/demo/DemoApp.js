@@ -24,7 +24,7 @@ import { feedIsoDate } from '@/data/demoConnections'
 import { Team } from '@/components/demo/sections/Team'
 import { ReceiptScan } from '@/components/demo/ReceiptScan'
 import { getIndustryExtras } from '@/data/demoIndustryExtras'
-import { downloadPDFReport } from '@/utils/pdfReport'
+import { DownloadReportDialog } from '@/components/demo/DownloadReportDialog'
 import { Toaster } from '@/components/demo/ui/sonner'
 import { toast } from 'sonner'
 import { SubscriptionPlan } from '@/components/demo/sections/subscription'
@@ -219,33 +219,17 @@ export default function DemoApp({ industry }) {
     toast.success(t('demo.toast.transactionDeleted'))
   }
 
+  const [reportOpen, setReportOpen] = useState(false)
+
   const handleDownloadReport = () => {
     if (transactions.length === 0) {
       toast.error(t('demo.toast.noTransactionsForReport'))
       return
     }
+    setReportOpen(true)
+  }
 
-    const dates = transactions.map(t => new Date(t.date))
-    const minDate = new Date(Math.min(...dates.map(d => d.getTime())))
-    const maxDate = new Date(Math.max(...dates.map(d => d.getTime())))
-
-    const dateRange = `${minDate.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }).toUpperCase()} – ${maxDate.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }).toUpperCase()}`
-
-    const reportData = {
-      companyName: businessName || t('demo.defaultBusinessName'),
-      dateRange,
-      totalCashOnHand: summary.totalCashOnHand,
-      totalRevenue: summary.revenue,
-      totalExpenses: summary.totalExpenses,
-      totalPayable: summary.totalPayable,
-      transactions,
-      expenseRows: expenseRows.map(([label, amount]) => [label === DEPRECIATION_ROW ? t('demo.financialReport.depreciationExpense') : label, amount]),
-      netIncome: summary.netIncome,
-      totalInventory: summary.totalInventory,
-      totalFixedAssets: summary.totalFixedAssets,
-    }
-
-    downloadPDFReport(reportData)
+  const handleReportGenerated = () => {
     trackDemoEvent('demo_download_report', { industry: industry.slug })
     toast.success(t('demo.toast.reportReady'))
   }
@@ -500,6 +484,14 @@ export default function DemoApp({ industry }) {
           onPayPayable={handlePayPayable}
           openPayables={openPayables}
           selectedBusinessType={selectedBusinessType}
+        />
+
+        <DownloadReportDialog
+          open={reportOpen}
+          onOpenChange={setReportOpen}
+          transactions={transactions}
+          companyName={businessName || t('demo.business.myBusiness')}
+          onGenerated={handleReportGenerated}
         />
 
         <SignupDialog

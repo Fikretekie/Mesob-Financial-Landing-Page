@@ -11,8 +11,18 @@
 //   category "Payment"     -> Pay linked to its payable via payableId
 //   category "New Item"    -> New_Item (inventory asset, not an expense)
 import {
+  calculateAccumulatedDepreciation,
+  calculateCOGS,
   calculateDepreciationExpense,
+  calculateOperatingExpenses,
+  calculateTotalCash,
+  calculateTotalExpenses,
+  calculateTotalFixedAssets,
+  calculateTotalInventory,
+  calculateTotalPayable,
+  calculateTotalRevenue,
   computeSummary,
+  filterItemsByTimeRange,
   isCountableOutflow,
   outflowAmount,
 } from '@/utils/accounting';
@@ -196,4 +206,62 @@ export function payableAging(transactions: Transaction[], now: number = Date.now
     buckets[i] += remainingOf(tx);
   });
   return buckets;
+}
+
+export interface PeriodRange { from: string; to: string }
+
+/**
+ * The professional statements for a period, computed exactly as the app's
+ * Download Report does (DownloadReportModal.statements): engine figures on the
+ * period's transactions, depreciation for the period, and a balance sheet as
+ * at the period end. The demo has no opening balances, so opening equity is 0.
+ */
+export function periodStatements(transactions: Transaction[], range: PeriodRange | null) {
+  const all = transactions.map(toAppItem);
+  const filtered = filterItemsByTimeRange(all, range);
+  const n = (v: string | number) => parseFloat(String(v)) || 0;
+  const asOf = range ? new Date(`${range.to}T23:59:59`) : new Date();
+
+  const totalRevenue = n(calculateTotalRevenue(filtered));
+  const cogs = n(calculateCOGS(filtered, all));
+  const grossProfit = totalRevenue - cogs;
+  const operatingExpenses = n(calculateOperatingExpenses(filtered, all));
+  const depreciation = n(calculateDepreciationExpense(all, range ? { from: new Date(`${range.from}T00:00:00`), to: asOf } : null));
+  const totalExp = n(calculateTotalExpenses(filtered, all));
+  const otherExpense = Math.max(0, totalExp - cogs - operatingExpenses);
+  const netIncome = totalRevenue - cogs - operatingExpenses - otherExpense - depreciation;
+
+  const cash = n(calculateTotalCash(filtered, 0));
+  const inventory = n(calculateTotalInventory(filtered, 0));
+  const fixedAtCost = n(calculateTotalFixedAssets(filtered));
+  const accumDep = n(calculateAccumulatedDepreciation(all, asOf));
+  const netFixed = fixedAtCost - accumDep;
+  const payable = n(calculateTotalPayable(filtered, all, 0));
+  const openingEquity = 0;
+  const retained = netIncome;
+  const totalCurrentAssets = cash + inventory;
+  const totalAssets = totalCurrentAssets + netFixed;
+  const totalEquity = openingEquity + retained;
+  const totalLE = payable + totalEquity;
+
+  const byPurpose = (pick: (item: AppItem) => number | null) => {
+    const groups: Record<string, number> = {};
+    filtered.forEach((item) => {
+      const v = pick(item);
+      if (v == null) return;
+      const label = item.transactionPurpose || 'Other';
+      groups[label] = (groups[label] || 0) + v;
+    });
+    return Object.entries(groups).filter(([, a]) => Math.abs(a) > 0.005).sort((a, b) => b[1] - a[1]);
+  };
+  const revLines = byPurpose((item) => (item.transactionType === 'Receive' && item.subType !== 'sale_fixed' ? n(item.transactionAmount) : null));
+  const expLines = byPurpose((item) => (item.subType !== 'COGS' && isCountableOutflow(item, all) ? outflowAmount(item) : null));
+
+  return {
+    totalRevenue, cogs, grossProfit, operatingExpenses, depreciation, otherExpense, netIncome,
+    cash, inventory, totalCurrentAssets, fixedAtCost, accumDep, netFixed, totalAssets,
+    payable, openingEquity, retained, totalEquity, totalLE, revLines, expLines,
+    items: filtered,
+    balanced: Math.abs(totalAssets - totalLE) < 0.01,
+  };
 }

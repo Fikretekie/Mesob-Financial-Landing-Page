@@ -1092,6 +1092,33 @@
       "paypalSeatCardNote": "Waxaad ku ansixin doontaa PayPal — halkaas waxaad ku isticmaali kartaa hadhaaga PayPal ama kaadhka debit/credit.",
       "paypalSeatPostError": "Kursigaaga waa la ansixiyay, laakiin xubinta ku darista way fashilantay — fadlan dib u dir casuumaadda.",
       "cancel": "Ka Noqo"
+    },
+    "downloadReport": {
+      "title": "Soo Dejiso Warbixinta",
+      "downloadFinancialReport": "Soo Dejiso Warbixinta Maaliyadeed",
+      "downloadDashboard": "Soo Dejiso Xaashida Xogta",
+      "downloadBoth": "Soo Dejiso Labadaba",
+      "pdfNote": "Warbixinnadu waxay soo dejisan doonaan faylasha PDF ahaan",
+      "reportPeriod": "Muddada warbixinta",
+      "periodCurrent": "Muuqaalka hadda",
+      "periodThisMonth": "Bishan",
+      "periodLastMonth": "Bishii hore",
+      "periodQuarter": "Rubucan",
+      "periodYtd": "Sannadka ilaa hadda",
+      "periodCustom": "Gaar ah",
+      "from": "Laga bilaabo",
+      "to": "Ilaa",
+      "reportTypeLabel": "Nooca warbixinta",
+      "typeStatements": "Bayaannada maaliyadeed",
+      "typeStatementsDesc": "Bayaanka dakhliga iyo xaashida isuduwida — xisaabiyahaaga ama bangigaaga.",
+      "typeOverview": "Guudmarka waxqabadka",
+      "typeOverviewDesc": "Tiradahaaga muhiimka ah hal eegmo.",
+      "typeComplete": "Warbixin dhammaystiran",
+      "typeCompleteDesc": "Bayaannada iyo guudmarka ganacsigaaga.",
+      "includeLabel": "Ku dar",
+      "includeCharts": "Jaantusyada isbeddelka",
+      "includeLedger": "Diiwaanka dhammaystiran ee dhaqdhaqaaqa",
+      "generateReport": "Samee warbixinta"
     }
   }
 }
