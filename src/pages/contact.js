@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Mail, MapPin, Phone, Star } from "lucide-react";
+import { Mail, Phone, Star } from "lucide-react";
 import SiteLayout from "@/components/site/SiteLayout";
 import { Eyebrow } from "@/components/site/ui";
 import { CONTACT, GOOGLE_REVIEWS, INDUSTRIES } from "@/data/site";
@@ -49,7 +49,6 @@ export default function Contact() {
   const ways = [
     { icon: Phone, title: t("site.contact.call"), text: CONTACT.phone, href: CONTACT.phoneHref, ltr: true },
     { icon: Mail, title: t("site.contact.email"), text: CONTACT.email, href: `mailto:${CONTACT.email}` },
-    { icon: MapPin, title: t("site.contact.visit"), text: CONTACT.address, href: CONTACT.mapsHref, external: true },
     {
       icon: Star,
       title: t("site.contact.reviews"),

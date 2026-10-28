@@ -9,8 +9,6 @@ export const CONTACT = {
   phone: "+1 (614) 966-5005",
   phoneHref: "tel:+16149665005",
   email: "info@meksova.com",
-  address: "3130 Westerville Rd, Columbus, OH 43224",
-  mapsHref: "https://www.google.com/maps?cid=14178045998735940585",
 };
 
 export const GOOGLE_REVIEWS = {

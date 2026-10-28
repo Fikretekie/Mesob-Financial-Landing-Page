@@ -38,14 +38,6 @@ export default function Home() {
       logo: `${SITE_URL}/android-chrome-512x512.png`,
       email: CONTACT.email,
       telephone: "+1-614-966-5005",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "3130 Westerville Rd",
-        addressLocality: "Columbus",
-        addressRegion: "OH",
-        postalCode: "43224",
-        addressCountry: "US",
-      },
       sameAs: SOCIALS.map((social) => social.href),
     },
     {

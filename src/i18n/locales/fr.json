@@ -201,9 +201,7 @@
     "pageTitle": "Contact",
     "details": {
       "title": "Contactez-nous",
-      "text": "Nous offrons la meilleure expérience client",
-      "addressLabel": "Notre bureau",
-      "address": "3130 Westerville Rd, Columbus, OH 43224"
+      "text": "Nous offrons la meilleure expérience client"
     },
     "form": {
       "tagline": "CONTACTEZ-NOUS",

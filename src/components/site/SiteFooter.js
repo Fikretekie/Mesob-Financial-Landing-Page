@@ -67,7 +67,6 @@ export default function SiteFooter() {
         </div>
         <div className="ks-footer__bottom">
           <span>{t("site.footer.rights", { year })}</span>
-          <span>{CONTACT.address}</span>
         </div>
       </div>
     </footer>
