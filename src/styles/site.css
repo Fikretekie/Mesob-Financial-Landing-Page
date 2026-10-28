@@ -354,6 +354,34 @@ html:has(.ks) body {
 .ks-chip--a { inset-inline-start: -36px; bottom: -22px; }
 .ks-chip--b { inset-inline-end: -18px; top: -22px; }
 
+/* ---- Centred hero with the real product ----------------------------------- */
+.ks-hero--center .ks-hero__copy { text-align: center; max-width: 900px; margin-inline: auto; }
+.ks-hero--center .ks-hero__copy .ks-lede { margin-inline: auto; max-width: 640px; }
+.ks-hero--center .ks-actions, .ks-hero--center .ks-proof { justify-content: center; }
+.ks-hero--center .ks-display { font-size: clamp(42px, 7.4vw, 92px); }
+.ks-product { position: relative; z-index: 1; max-width: 1120px; margin: clamp(48px, 7vw, 88px) auto 0; }
+.ks-product__glow { width: 80%; height: 70%; left: 10%; top: 8%; opacity: 0.9; }
+.ks-product__frame { position: relative; box-shadow: 0 60px 120px -60px rgba(0, 0, 0, 0.9); }
+.ks-product__img { width: 100%; height: auto; display: block; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; }
+.ks-product__phone {
+  position: absolute; inset-inline-end: -28px; bottom: -56px; width: 22%; min-width: 180px;
+  padding: 7px; border-radius: 38px; background: #0A0A0B;
+  border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.ks-product__phone img { width: 100%; height: auto; aspect-ratio: 390 / 760; object-fit: cover; object-position: top; border-radius: 31px; display: block; }
+.ks-product__chip { position: absolute; }
+.ks-product__chip--a { inset-inline-start: -32px; bottom: 18%; }
+.ks-product__chip--b { inset-inline-end: 4%; top: -30px; }
+@media (max-width: 760px) {
+  .ks-hero--center .ks-eyebrow { font-size: 10px; letter-spacing: 0.12em; padding: 6px 12px; }
+  .ks-product { max-width: 320px; margin-top: 44px; }
+  .ks-product__frame { display: none; }
+  .ks-product__phone { position: relative; inset: auto; width: 100%; min-width: 0; }
+  .ks-product__glow { width: 120%; left: -10%; height: 80%; }
+  .ks-product__chip--a { inset-inline-start: -14px; bottom: 22%; }
+  .ks-product__chip--b { inset-inline-start: auto; inset-inline-end: -10px; top: -30px; }
+}
+
 /* ---- Language strip ------------------------------------------------------ */
 .ks-langs { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin-top: 22px; }
 .ks-langs__btn {
@@ -367,6 +395,32 @@ html:has(.ks) body {
 /* Native language names use the device's own fonts (every phone ships Ethiopic and
    Arabic system fonts), so the language buttons don't pull in a 190 KB web font. */
 .ks-langs__btn, .ks-lang__opt, .ks-menu__langs .ks-langs__btn { font-family: var(--font-geist, 'Geist'), system-ui, -apple-system, 'Segoe UI', 'Nyala', 'Kefa', 'Noto Sans Ethiopic', sans-serif; }
+
+/* ---- Language band ----------------------------------------------------------- */
+.ks-langband { position: relative; padding-block: clamp(72px, 10vw, 128px); background: var(--ks-bg-2); border-block: 1px solid var(--ks-line); overflow: hidden; }
+.ks-langband__head { max-width: 720px; }
+.ks-langband__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 48px; }
+.ks-langtile {
+  position: relative; display: grid; align-content: space-between; gap: 22px; min-height: 172px; text-align: start;
+  padding: 22px; border-radius: 22px; border: 1px solid var(--ks-line); background: var(--ks-surface); color: var(--ks-text);
+  box-shadow: var(--ks-highlight); cursor: pointer;
+  transition: transform 700ms var(--ks-ease), border-color 600ms var(--ks-ease), background 600ms var(--ks-ease);
+}
+.ks-langtile:hover { transform: translateY(-4px); border-color: var(--ks-accent-line); }
+.ks-langtile[aria-pressed="true"] { border-color: var(--ks-accent); background: color-mix(in srgb, var(--ks-accent) 9%, var(--ks-surface)); }
+.ks-langtile[aria-pressed="true"]::after { content: ""; position: absolute; inset-inline-end: 18px; top: 20px; width: 8px; height: 8px; border-radius: 50%; background: var(--ks-accent); box-shadow: 0 0 0 4px var(--ks-accent-soft); }
+.ks-langtile__name { font-size: 15px; font-weight: 600; color: var(--ks-text-2); font-family: var(--font-geist, 'Geist'), var(--font-ethiopic, 'Noto Sans Ethiopic'), var(--font-arabic, 'Noto Sans Arabic'), system-ui, sans-serif; }
+.ks-langtile__sample { font-size: clamp(22px, 2.2vw, 28px); line-height: 1.2; font-weight: 600; letter-spacing: -0.02em; font-family: var(--font-geist, 'Geist'), var(--font-ethiopic, 'Noto Sans Ethiopic'), var(--font-arabic, 'Noto Sans Arabic'), system-ui, sans-serif; }
+.ks-langtile__sample:lang(am), .ks-langtile__sample:lang(ti), .ks-langtile__sample:lang(ar) { letter-spacing: 0; }
+.ks-langtile__code { font-family: var(--ks-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--ks-text-3); }
+.ks-langband__grid > :first-child { grid-column: span 2; }
+.ks-langband__hint { margin-top: 20px; font-size: 14px; color: var(--ks-text-3); }
+@media (max-width: 1080px) { .ks-langband__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .ks-langband__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .ks-langtile { min-height: 132px; padding: 16px; gap: 14px; border-radius: 18px; }
+  .ks-langtile__sample { font-size: 19px; }
+}
 
 /* ---- Industries bento ---------------------------------------------------- */
 .ks-bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 48px; }
@@ -402,6 +456,38 @@ html:has(.ks) body {
 .ks-step__n { font-family: var(--ks-mono); font-size: 13px; color: var(--ks-accent-text); }
 .ks-step h3 { margin-top: 34px; }
 .ks-step p { margin-top: 10px; color: var(--ks-text-2); font-size: 15px; }
+
+/* ---- Split sections (sticky heading left, content right) ---------------- */
+.ks-splitsec { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.ks-splitsec__head { position: sticky; top: 120px; }
+.ks-splitsec .ks-faq { margin-top: 0; }
+.ks-splitsec .ks-faq details:first-child { border-top: 0; }
+.ks-splitsec__links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 28px; }
+.ks-timeline { display: grid; }
+.ks-timeline li { position: relative; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 22px; padding-bottom: 44px; }
+.ks-timeline li:last-child { padding-bottom: 0; }
+.ks-timeline li:not(:last-child)::before {
+  content: ""; position: absolute; inset-inline-start: 25px; top: 60px; bottom: 8px; width: 1px;
+  background: linear-gradient(var(--ks-accent-line), var(--ks-line));
+}
+.ks-timeline__n {
+  width: 52px; height: 52px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--ks-mono); font-size: 15px; color: var(--ks-accent-text);
+  background: var(--ks-accent-soft); border: 1px solid var(--ks-accent-line);
+}
+.ks-timeline h3 { font-size: clamp(20px, 2vw, 26px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; margin-top: 10px; }
+.ks-timeline p { margin-top: 8px; font-size: 16px; color: var(--ks-text-2); max-width: 540px; }
+@media (max-width: 1080px) {
+  .ks-splitsec { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .ks-splitsec__head { position: static; }
+}
+@media (max-width: 760px) {
+  .ks-timeline li { grid-template-columns: 40px minmax(0, 1fr); gap: 14px; padding-bottom: 28px; }
+  .ks-timeline__n { width: 40px; height: 40px; border-radius: 12px; font-size: 13px; }
+  .ks-timeline li:not(:last-child)::before { inset-inline-start: 19px; top: 48px; }
+  .ks-timeline h3 { font-size: 18px; margin-top: 7px; }
+  .ks-timeline p { font-size: 14px; }
+}
 
 /* ---- Feature bento ------------------------------------------------------- */
 .ks-feat { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; margin-top: 48px; }
@@ -733,4 +819,50 @@ a.ks-way:hover { border-color: var(--ks-accent-line); }
   .ks-app__kpi { padding: 10px 8px; }
   .ks-app__kpi b { font-size: 13px; }
   .ks-actions .ks-btn { flex: 1 1 auto; }
+}
+
+/* ---- Phone: denser grids so the page isn't a 13,000px scroll --------------- */
+@media (max-width: 760px) {
+  /* Industries: two per row; Trucking and the closing tile span the full width */
+  .ks-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .ks-bento .ks-tile { min-height: 0; padding: 16px; gap: 8px; border-radius: 18px; }
+  .ks-bento .ks-tile--feature, .ks-bento .ks-tile--wide { grid-column: 1 / -1; }
+  .ks-bento .ks-tile--feature { padding: 22px; }
+  .ks-bento .ks-tile__ic { width: 36px; height: 36px; border-radius: 11px; }
+  .ks-bento .ks-tile__ic svg { width: 18px; height: 18px; }
+  .ks-bento .ks-tile__title { font-size: 15px; }
+  .ks-bento .ks-tile__text { font-size: 13px; }
+  /* Feature cards: two per row under the big receipt-scan card */
+  .ks-feat { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .ks-feat__item--lg { grid-column: 1 / -1; }
+  .ks-feat__body { padding: 16px; gap: 6px; }
+  .ks-feat__body .ks-h3 { font-size: 16px; }
+  .ks-feat__body p { font-size: 13px; }
+  .ks-feat__ic { width: 34px; height: 34px; margin-bottom: 4px; }
+  /* How it works: compact numbered rows */
+  .ks-steps { gap: 10px; }
+  .ks-step { padding: 18px 18px 18px 56px; position: relative; }
+  [dir="rtl"] .ks-step { padding: 18px 56px 18px 18px; }
+  .ks-step__n { position: absolute; inset-inline-start: 18px; top: 20px; }
+  .ks-step h3 { margin-top: 0; font-size: 17px; }
+  .ks-step p { margin-top: 6px; font-size: 14px; }
+  /* Industry-page feature list and pains: two per row as well */
+  .ks-flist { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .ks-fcell { padding: 16px; }
+  .ks-fcell h3 { font-size: 15px; }
+  .ks-fcell p { font-size: 13px; }
+  .ks-section { padding-block: clamp(56px, 14vw, 72px); }
+  .ks-feat > :last-child { grid-column: 1 / -1; }
+  /* Reviews: swipeable row, next card peeking in */
+  .ks-reviews { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: calc(var(--ks-gutter) * -1); padding: 2px var(--ks-gutter) 8px; scrollbar-width: none; }
+  .ks-reviews::-webkit-scrollbar { display: none; }
+  .ks-reviews > * { flex: 0 0 84%; scroll-snap-align: start; }
+  .ks-review { padding: 20px; }
+  .ks-review--lg blockquote { font-size: 17px; }
+  /* Trust row and pricing checklist: tighter */
+  .ks-trust { gap: 10px; margin-top: 28px; }
+  .ks-trust__item { padding: 16px; gap: 12px; }
+  .ks-checks--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; }
+  .ks-checks li { font-size: 14px; gap: 8px; }
+  .ks-price__main, .ks-price__side { padding: 22px; }
 }

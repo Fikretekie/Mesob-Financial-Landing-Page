@@ -166,7 +166,11 @@
       }
     ],
     "ctaTitle": "Ku arag tirooyinkaaga laba daqiiqo gudahood.",
-    "ctaText": "Fur bandhigga shaqadaada — is diiwaan gelin la'aan, wax lagu rakibo ma jiraan."
+    "ctaText": "Fur bandhigga shaqadaada — is diiwaan gelin la'aan, wax lagu rakibo ma jiraan.",
+    "langEyebrow": "7 luqadood",
+    "langHeading": "Xisaab ku hadasha luqaddaada.",
+    "langLede": "Shaashad kasta, badhan kasta iyo warbixin kasta — luqadda aad ku fikirto. Beddel goor kasta; xisaabtaadu sideeda ayay ahaanaysaa.",
+    "langHint": "Taabo luqad si aad u beddesho goobta oo dhan."
   },
   "features": {
     "sync": {

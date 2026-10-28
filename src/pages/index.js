@@ -3,10 +3,10 @@ import { useTranslation } from "react-i18next";
 import SiteLayout from "@/components/site/SiteLayout";
 import { Arrow, Cta, Eyebrow, FeatureGlyph, IndustryGlyph, Section } from "@/components/site/ui";
 import {
-  AppPreview,
+  HeroProduct,
   CtaBand,
   Faq,
-  LanguageStrip,
+  LanguageBand,
   PricingCard,
   ProductTour,
   ProofLine,
@@ -58,11 +58,11 @@ export default function Home() {
   return (
     <SiteLayout title={t("site.home.metaTitle")} description={t("site.home.metaDescription")} jsonLd={jsonLd}>
       {/* Hero */}
-      <section className="ks-hero">
+      <section className="ks-hero ks-hero--center">
         <div className="ks-orb ks-glow-a ks-hero__orb-a" aria-hidden />
         <div className="ks-orb ks-glow-b ks-hero__orb-b" aria-hidden />
         <div className="ks-wrap">
-          <div className="ks-hero__grid">
+          <div>
             <div className="ks-hero__copy">
               <div className="ks-rise">
                 <Eyebrow>{t("site.home.eyebrow")}</Eyebrow>
@@ -79,12 +79,12 @@ export default function Home() {
                 <ProofLine />
               </div>
             </div>
-            <AppPreview />
+            <HeroProduct />
           </div>
         </div>
       </section>
 
-      <LanguageStrip />
+      <LanguageBand />
 
       {/* Industries */}
       <Section id="industries" labelledBy="industries-title">
@@ -131,20 +131,27 @@ export default function Home() {
 
       {/* How it works */}
       <Section line labelledBy="steps-title">
-        <div className="ks-head ks-reveal">
-          <Eyebrow>{t("site.home.stepsEyebrow")}</Eyebrow>
-          <h2 className="ks-h2" id="steps-title">{t("site.home.stepsTitle")}</h2>
+        <div className="ks-splitsec">
+          <div className="ks-head ks-splitsec__head ks-reveal">
+            <Eyebrow>{t("site.home.stepsEyebrow")}</Eyebrow>
+            <h2 className="ks-h2" id="steps-title">{t("site.home.stepsTitle")}</h2>
+            <div className="ks-actions">
+              <Cta href="/demo/" track="steps_demo">{t("site.common.tryDemo")}</Cta>
+            </div>
+          </div>
+          <ol className="ks-timeline">
+            {Array.isArray(steps) &&
+              steps.map((step, index) => (
+                <li key={step.title} className="ks-reveal" data-delay={index}>
+                  <span className="ks-timeline__n" aria-hidden>0{index + 1}</span>
+                  <div>
+                    <h3>{step.title}</h3>
+                    <p>{step.text}</p>
+                  </div>
+                </li>
+              ))}
+          </ol>
         </div>
-        <ol className="ks-steps">
-          {Array.isArray(steps) &&
-            steps.map((step, index) => (
-              <li key={step.title} className="ks-card ks-step ks-reveal" data-delay={index}>
-                <span className="ks-step__n">0{index + 1}</span>
-                <h3 className="ks-h3">{step.title}</h3>
-                <p>{step.text}</p>
-              </li>
-            ))}
-        </ol>
       </Section>
 
       {/* Real product screens */}
@@ -216,11 +223,17 @@ export default function Home() {
 
       {/* FAQ */}
       <Section line labelledBy="faq-title">
-        <div className="ks-head ks-reveal">
-          <Eyebrow>{t("site.home.faqEyebrow")}</Eyebrow>
-          <h2 className="ks-h2" id="faq-title">{t("site.home.faqTitle")}</h2>
+        <div className="ks-splitsec">
+          <div className="ks-head ks-splitsec__head ks-reveal">
+            <Eyebrow>{t("site.home.faqEyebrow")}</Eyebrow>
+            <h2 className="ks-h2" id="faq-title">{t("site.home.faqTitle")}</h2>
+            <p className="ks-splitsec__links">
+              <Link className="ks-link" href="/faq/">{t("site.faqPage.title")} <Arrow /></Link>
+              <Link className="ks-link" href="/contact/">{t("site.nav.contact")} <Arrow /></Link>
+            </p>
+          </div>
+          <Faq items={faq} />
         </div>
-        <Faq items={faq} />
       </Section>
 
       <CtaBand title={t("site.home.ctaTitle")} text={t("site.home.ctaText")} source="home_footer" />

@@ -166,7 +166,11 @@
       }
     ],
     "ctaTitle": "Mira tus propios números en dos minutos.",
-    "ctaText": "Abre la demo de tu oficio — sin registro, nada que instalar."
+    "ctaText": "Abre la demo de tu oficio — sin registro, nada que instalar.",
+    "langEyebrow": "7 idiomas",
+    "langHeading": "Contabilidad que habla tu idioma.",
+    "langLede": "Cada pantalla, botón e informe — en el idioma en que piensas. Cambia cuando quieras; tus cuentas siguen igual.",
+    "langHint": "Toca un idioma para cambiar todo el sitio."
   },
   "features": {
     "sync": {

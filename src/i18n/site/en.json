@@ -166,7 +166,11 @@
       }
     ],
     "ctaTitle": "See your own numbers in two minutes.",
-    "ctaText": "Open the demo for your trade — no sign-up, nothing to install."
+    "ctaText": "Open the demo for your trade — no sign-up, nothing to install.",
+    "langEyebrow": "7 languages",
+    "langHeading": "Bookkeeping that speaks your language.",
+    "langLede": "Every screen, button and report — in the language you think in. Switch any time; your books stay the same.",
+    "langHint": "Tap a language to switch the whole site."
   },
   "features": {
     "sync": {

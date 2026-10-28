@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { Check, Fuel, Mail, MapPin, Phone, ShieldCheck, Download, RefreshCw, Truck } from "lucide-react";
+import { Check, Fuel, Mail, MapPin, Phone, ShieldCheck, Download, RefreshCw } from "lucide-react";
 import { LANGUAGES } from "@/i18n/languages";
 import { CONTACT, GOOGLE_REVIEWS, PRICES } from "@/data/site";
 import { trackDemoEvent } from "@/utils/demoTracking";
@@ -10,50 +10,40 @@ import { nativeName, pickLanguage } from "./SiteNav";
 
 const S = 1.5;
 
-/* ---------- Product preview (hero) -------------------------------------- */
-export function AppPreview() {
+/* ---------- Hero product shot: real screens, desktop + phone -------------- */
+export function HeroProduct() {
   const { t } = useTranslation();
+  const alt = t("site.tour.tabs.dashboard.alt");
   return (
-    <div className="ks-hero__visual ks-rise" data-delay="2">
-      <div className="ks-shell">
-        <div className="ks-core ks-app">
-          <div className="ks-app__top">
-            <div className="ks-app__biz">
-              <span className="ks-app__logo"><Truck strokeWidth={S} aria-hidden /></span>
-              {t("site.preview.business")}
-            </div>
-            <span className="ks-app__pill">{t("site.preview.dashboard")}</span>
+    <div className="ks-product ks-rise" data-delay="3">
+      <div className="ks-orb ks-glow-a ks-product__glow" aria-hidden />
+      <div className="ks-shell ks-product__frame">
+        <div className="ks-core ks-tour__core">
+          <div className="ks-tour__bar" aria-hidden>
+            <span /><span /><span />
+            <i>Meksova</i>
           </div>
-          <div className="ks-app__hero">
-            <div className="ks-app__label">{t("site.preview.cash")}</div>
-            <div className="ks-app__big">$3,494.00</div>
-            <div className="ks-app__split">
-              <span>{t("site.preview.moneyIn")} <b className="ks-app__in">$5,490</b></span>
-              <span>{t("site.preview.moneyOut")} <b>$2,646</b></span>
-            </div>
-            <svg className="ks-app__chart" viewBox="0 0 400 74" preserveAspectRatio="none" role="img" aria-label={t("site.preview.chartLabel")}>
-              <defs>
-                <linearGradient id="ks-area" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stopColor="#2563EB" stopOpacity="0.35" />
-                  <stop offset="1" stopColor="#2563EB" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-              <path d="M0 62 L40 58 L80 60 L120 44 L160 47 L200 36 L240 39 L280 26 L320 30 L360 16 L400 10 L400 74 L0 74 Z" fill="url(#ks-area)" />
-              <path d="M0 62 L40 58 L80 60 L120 44 L160 47 L200 36 L240 39 L280 26 L320 30 L360 16 L400 10" fill="none" stroke="#2563EB" strokeWidth="2" vectorEffect="non-scaling-stroke" />
-            </svg>
-          </div>
-          <div className="ks-app__kpis">
-            <div className="ks-app__kpi"><span className="ks-app__label">{t("site.preview.revenue")}</span><b>$5,490</b></div>
-            <div className="ks-app__kpi"><span className="ks-app__label">{t("site.preview.payable")}</span><b className="ks-amt--owed">$650</b></div>
-            <div className="ks-app__kpi"><span className="ks-app__label">{t("site.preview.tax")}</span><b>$853</b></div>
-          </div>
+          <img
+            className="ks-product__img"
+            src="/shots/dashboard-1600.webp"
+            srcSet="/shots/dashboard-900.webp 900w, /shots/dashboard-1600.webp 1600w"
+            sizes="(max-width: 1200px) 100vw, 1120px"
+            width="1600"
+            height="1000"
+            fetchPriority="high"
+            decoding="async"
+            alt={alt}
+          />
         </div>
       </div>
-      <div className="ks-chip ks-chip--a" aria-hidden>
+      <div className="ks-product__phone">
+        <img src="/shots/dashboard-m.webp" width="780" height="1688" loading="eager" decoding="async" alt="" />
+      </div>
+      <div className="ks-chip ks-product__chip ks-product__chip--a" aria-hidden>
         <span className="ks-chip__ic"><Fuel strokeWidth={S} /></span>
         <span>{t("site.preview.scanned")}<small>{t("site.preview.scannedText")}</small></span>
       </div>
-      <div className="ks-chip ks-chip--b" aria-hidden>
+      <div className="ks-chip ks-product__chip ks-product__chip--b" aria-hidden>
         <span className="ks-chip__ic ks-chip__ic--blue"><RefreshCw strokeWidth={S} /></span>
         <span>{t("site.preview.synced")}<small>{t("site.preview.syncedText")}</small></span>
       </div>
@@ -98,6 +88,50 @@ export function LanguageStrip() {
         ))}
       </div>
     </div>
+  );
+}
+
+/* ---------- Language band: the headline in every supported script -------- */
+// Each tile shows the hero line in its own language, whatever the site language is.
+const LANG_SAMPLES = {
+  "en": "Your books, done right.",
+  "es": "Tus cuentas, bien hechas.",
+  "fr": "Vos comptes, bien tenus.",
+  "ar": "حساباتك، كما يجب.",
+  "am": "ሂሳብዎ፣ በትክክል።",
+  "ti": "ሕሳብኩም፡ ብልክዕ።",
+  "so": "Xisaabtaada, si sax ah."
+};
+
+export function LanguageBand() {
+  const { t, i18n } = useTranslation();
+  return (
+    <section className="ks-langband" aria-labelledby="langband-title">
+      <div className="ks-wrap">
+        <div className="ks-langband__head ks-reveal">
+          <Eyebrow>{t("site.home.langEyebrow")}</Eyebrow>
+          <h2 className="ks-h2" id="langband-title">{t("site.home.langHeading")}</h2>
+          <p className="ks-lede">{t("site.home.langLede")}</p>
+        </div>
+        <div className="ks-langband__grid">
+          {LANGUAGES.map((lang, index) => (
+            <button
+              key={lang.code}
+              type="button"
+              className="ks-langtile ks-reveal"
+              data-delay={index % 4}
+              aria-pressed={lang.code === i18n.language}
+              onClick={() => pickLanguage(lang.code)}
+            >
+              <span className="ks-langtile__name" lang={lang.code} dir={lang.dir}>{nativeName(lang)}</span>
+              <span className="ks-langtile__sample" lang={lang.code} dir={lang.dir}>{LANG_SAMPLES[lang.code]}</span>
+              <span className="ks-langtile__code">{lang.code.toUpperCase()}</span>
+            </button>
+          ))}
+        </div>
+        <p className="ks-langband__hint ks-reveal">{t("site.home.langHint")}</p>
+      </div>
+    </section>
   );
 }
 

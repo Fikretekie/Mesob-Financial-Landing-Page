@@ -37,7 +37,7 @@ export function Brand() {
   return (
     <>
       <img className="ks-brand__mark" src="/brand/mark.webp" alt="" width="34" height="26" />
-      <span className="ks-brand__word">
+      <span className="ks-brand__word" aria-hidden="true">
         <b>MEK</b>SOVA
       </span>
     </>
