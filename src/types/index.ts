@@ -24,6 +24,8 @@ export interface Transaction {
   depreciationMethod?: 'straight_line' | 'section_179';
   usefulLifeYears?: number;
   scanned?: boolean;
+  // Brought in by a bank (Plaid) or POS (Square) connection rather than typed.
+  synced?: 'bank' | 'pos';
 }
 
 export interface FinancialSummary {
@@ -55,6 +57,7 @@ export type ViewType =
   | 'fuel-purchase'
   | 'ifta-report'
   | 'connections'
+  | 'review-transactions'
   | 'team'
   | 'user-profile'
   | 'backup-csv'

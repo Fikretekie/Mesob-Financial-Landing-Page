@@ -19,7 +19,8 @@ export function useTransactions(industrySlug: string, sampleTransactions: Transa
   const [transactions, setTransactions] = useState<Transaction[]>(initialTransactions);
   const [loaded, setLoaded] = useState(false);
 
-  const ownCount = transactions.filter((t) => !t.sample).length;
+  // Synced rows come from a connection, not typing, so they don't use up the cap.
+  const ownCount = transactions.filter((t) => !t.sample && !t.synced).length;
   const hasReachedLimit = ownCount >= MAX_DEMO_TRANSACTIONS;
 
   useEffect(() => {
@@ -91,6 +92,16 @@ export function useTransactions(industrySlug: string, sampleTransactions: Transa
     return true;
   }, [ownCount]);
 
+  // Bank / POS imports: always accepted (no cap), as a connection would.
+  const importSynced = useCallback((rows: Omit<Transaction, 'id' | 'srNo'>[]) => {
+    if (!rows.length) return;
+    setTransactions((prev) => {
+      let next = prev;
+      rows.forEach((row) => { next = [...next, { ...row, ...nextIds(next) }]; });
+      return next;
+    });
+  }, []);
+
   const deleteTransaction = useCallback((id: number) => {
     setTransactions((prev) => {
       const target = prev.find((t) => t.id === id);
@@ -139,6 +150,7 @@ export function useTransactions(industrySlug: string, sampleTransactions: Transa
     maxTransactions: MAX_DEMO_TRANSACTIONS,
     hasSamples: transactions.some((t) => t.sample),
     addTransaction,
+    importSynced,
     payPayable,
     deleteTransaction,
     clearSamples,

@@ -18,6 +18,9 @@ import { FuelPurchase } from '@/components/demo/sections/FuelPurchase'
 import { IftaReport } from '@/components/demo/sections/IftaReport'
 import { Documents } from '@/components/demo/sections/Documents'
 import { Connections } from '@/components/demo/sections/Connections'
+import { TransactionReview } from '@/components/demo/sections/TransactionReview'
+import { useDemoConnections } from '@/hooks/demo/useDemoConnections'
+import { feedIsoDate } from '@/data/demoConnections'
 import { Team } from '@/components/demo/sections/Team'
 import { ReceiptScan } from '@/components/demo/ReceiptScan'
 import { getIndustryExtras } from '@/data/demoIndustryExtras'
@@ -68,9 +71,29 @@ export default function DemoApp({ industry }) {
     maxTransactions,
     hasSamples,
     addTransaction,
+    importSynced,
     deleteTransaction,
     clearSamples,
   } = useTransactions(dataKey, sampleTransactions)
+  const connections = useDemoConnections(dataKey, activeIndustry.slug)
+
+  // A connection's rows become ordinary transactions, tagged as synced.
+  const handleImport = (rows, source) => {
+    importSynced(rows.map((row) => {
+      const incoming = row.amount < 0
+      const amount = Math.abs(row.amount)
+      return {
+        date: feedIsoDate(row.daysAgo),
+        description: `${incoming ? 'Receive' : 'Paid'} [Cash] ${row.purpose}`,
+        debit: incoming ? 0 : amount,
+        credit: incoming ? amount : 0,
+        type: incoming ? 'income' : 'expense',
+        category: row.purpose,
+        synced: source,
+      }
+    }))
+    if (rows.length) trackDemoEvent('demo_sync_import', { industry: industry.slug, source, count: rows.length })
+  }
   const { trips, fuel, addTrip, addFuel, clearSampleLogs, ownLogCount, hasSampleLogs } = useDemoLogs(dataKey)
 
   // One demo cap across everything the visitor adds: transactions, trips and
@@ -293,6 +316,7 @@ export default function DemoApp({ industry }) {
     'fuel-purchase': t('demo.app.nav.fuelPurchase'),
     'ifta-report': t('demo.app.nav.iftaReport'),
     'connections': t('demo.connections.nav'),
+    'review-transactions': t('demo.review.title'),
     'team': t('demo.team.nav'),
     'user-profile': t('demo.sidebar.userProfile'),
     'backup-csv': t('demo.sidebar.backupCsv'),
@@ -339,7 +363,34 @@ export default function DemoApp({ industry }) {
       case 'ifta-report':
         return <IftaReport trips={trips} fuel={fuel} />
       case 'connections':
-        return <Connections industry={activeIndustry} />
+        return (
+          <Connections
+            state={connections.state}
+            onConnectBank={connections.connectBank}
+            onConnectSquare={connections.connectSquare}
+            onSyncSquare={connections.syncSquare}
+            onDisconnect={connections.disconnect}
+            onToggleAutoSync={connections.setAutoSync}
+            onImport={handleImport}
+            onOpenReview={() => setCurrentView('review-transactions')}
+            onOpenReport={() => setCurrentView('financial-report')}
+          />
+        )
+      case 'review-transactions':
+        return (
+          <TransactionReview
+            pending={connections.state.plaid.pending}
+            businessType={selectedBusinessType}
+            autoImportAll={!!connections.state.plaid.autoImportAll}
+            onReceiptUpsell={() => setIsSignupDialogOpen(true)}
+            onConfirm={(rows, autoImportAll) => {
+              handleImport(rows, 'bank')
+              connections.finishReview(autoImportAll)
+              toast.success(t('demo.toast.transactionAdded'))
+              setCurrentView('connections')
+            }}
+          />
+        )
       case 'team':
         return (
           <Team
@@ -376,6 +427,8 @@ export default function DemoApp({ industry }) {
             expenseRows={expenseRows}
             intro={intro}
             onViewAll={() => setCurrentView('financial-report')}
+            pendingReview={connections.state.plaid.connected ? connections.state.plaid.pending.length : 0}
+            onReview={() => setCurrentView('review-transactions')}
           />
         )
     }
@@ -385,7 +438,7 @@ export default function DemoApp({ industry }) {
     <DemoIndustryContext.Provider value={industry.slug}>
       <div className="demo-app">
         <Sidebar
-          currentView={currentView}
+          currentView={currentView === 'review-transactions' ? 'connections' : currentView}
           onViewChange={setCurrentView}
           isOpen={isSidebarOpen}
           onClose={closeSidebar}

@@ -186,6 +186,7 @@ export function FinancialReport({
                           {tx.description.split('\n')[0]}
                           {tx.sample && <span className="mk-badge dm-table__sample">{t('demo.industry.sampleBadge')}</span>}
                           {tx.scanned && <span className="mk-badge mk-badge--info dm-table__sample">{t('demo.scan.badge')}</span>}
+                          {tx.synced && <span className="mk-badge mk-badge--ok dm-table__sample">{t('demo.conn.syncedBadge')}</span>}
                         </td>
                         <td className="is-num"><Pill value={amount} color={debitColor} /></td>
                         <td className="is-num"><Pill value={amount} color={creditColor} /></td>

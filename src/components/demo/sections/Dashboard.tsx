@@ -20,6 +20,9 @@ interface DashboardProps {
   expenseRows: [string, number][];
   intro?: ReactNode;
   onViewAll: () => void;
+  /** Bank rows waiting in Review (shows the app's pending-review banner). */
+  pendingReview?: number;
+  onReview?: () => void;
 }
 
 type MetricKey = 'cash' | 'revenue' | 'expenses' | 'payable';
@@ -41,7 +44,7 @@ const EXPENSE_COLORS = ['#FF4D4D', '#F76B5C', '#D94C6A', '#C2410C', '#FF8A66'];
 const money = (n: number, digits = 2) =>
   `${n < 0 ? '−' : ''}$${Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
 
-export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, payableData, transactions, expenseRows, intro, onViewAll }: DashboardProps) {
+export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, payableData, transactions, expenseRows, intro, onViewAll, pendingReview = 0, onReview }: DashboardProps) {
   const { t } = useTranslation();
   const industrySlug = useDemoIndustrySlug();
   const [heroMetric, setHeroMetric] = useState<MetricKey>('cash');
@@ -96,6 +99,15 @@ export function Dashboard({ summary, cashOnHandData, revenueData, expenseData, p
   return (
     <div className="dm-stack">
       {intro}
+
+      {pendingReview > 0 && onReview && (
+        <div className="pending-review-banner">
+          <span>{t('demo.review.bannerText', { count: pendingReview })}</span>
+          <button type="button" className="pending-review-banner-btn" onClick={onReview}>
+            {t('demo.review.bannerButton')}
+          </button>
+        </div>
+      )}
 
       <section className="mk-card dm-upsell">
         <span className="mk-chip mk-chip--sm" style={{ background: 'var(--accent-soft)', color: 'var(--accent)' }}>
